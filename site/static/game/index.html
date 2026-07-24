@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>3D Game Environment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; background: #0b1020; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #eaf2ff; }
+    #app { position: fixed; inset: 0; }
+    canvas { display: block; }
+
+    /* HUD */
+    #hud { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+    #crosshair {
+      position: absolute; top: 50%; left: 50%; width: 22px; height: 22px;
+      transform: translate(-50%, -50%); opacity: 0.85;
+    }
+    #crosshair::before, #crosshair::after {
+      content: ""; position: absolute; background: #eaf2ff; box-shadow: 0 0 4px rgba(0,0,0,.6);
+    }
+    #crosshair::before { left: 50%; top: 0; width: 2px; height: 100%; transform: translateX(-50%); }
+    #crosshair::after  { top: 50%; left: 0; height: 2px; width: 100%; transform: translateY(-50%); }
+
+    #stats {
+      position: absolute; top: 16px; left: 16px; display: flex; gap: 10px;
+    }
+    .chip {
+      background: rgba(12, 18, 38, 0.72); border: 1px solid rgba(120,160,255,0.35);
+      padding: 8px 14px; border-radius: 10px; font-size: 14px; letter-spacing: .3px;
+      backdrop-filter: blur(4px);
+    }
+    .chip b { color: #6cf3c6; font-variant-numeric: tabular-nums; }
+
+    #hint {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      background: rgba(12, 18, 38, 0.72); border: 1px solid rgba(120,160,255,0.35);
+      padding: 8px 16px; border-radius: 999px; font-size: 13px; opacity: .9;
+    }
+
+    /* Overlays */
+    .overlay {
+      position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(1200px 600px at 50% 30%, rgba(38,58,120,.55), rgba(6,10,24,.92));
+      pointer-events: auto; text-align: center;
+    }
+    .card {
+      max-width: 520px; padding: 34px 40px; border-radius: 18px;
+      background: rgba(10, 16, 34, 0.86); border: 1px solid rgba(120,160,255,0.35);
+      box-shadow: 0 24px 80px rgba(0,0,0,.5);
+    }
+    .card h1 { font-size: 30px; margin-bottom: 6px; letter-spacing: .4px; }
+    .card .accent { color: #6cf3c6; }
+    .card p { color: #b9c6e6; font-size: 15px; line-height: 1.55; margin: 12px 0; }
+    .keys { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 16px 0 4px; }
+    .key {
+      min-width: 34px; padding: 6px 10px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      background: #17213f; border: 1px solid rgba(120,160,255,0.4);
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,.35);
+    }
+    .btn {
+      margin-top: 18px; pointer-events: auto; cursor: pointer; border: 0; border-radius: 12px;
+      padding: 13px 26px; font-size: 16px; font-weight: 700; color: #05231a;
+      background: linear-gradient(180deg, #7cf7cd, #38d39b);
+      box-shadow: 0 10px 26px rgba(56, 211, 155, .35);
+    }
+    .btn:hover { filter: brightness(1.06); }
+    .hidden { display: none !important; }
+    #win .card h1 { color: #6cf3c6; }
+    .small { font-size: 12px; color: #8ea3cf; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <div id="hud" class="hidden">
+    <div id="stats">
+      <div class="chip">Orbs <b><span id="score">0</span>/<span id="total">0</span></b></div>
+      <div class="chip">Time <b><span id="time">0.0</span>s</b></div>
+    </div>
+    <div id="crosshair"></div>
+    <div id="hint">WASD move &middot; Mouse look &middot; Space jump &middot; Esc release</div>
+  </div>
+
+  <div id="start" class="overlay">
+    <div class="card">
+      <h1>3D Game <span class="accent">Environment</span></h1>
+      <p>Explore the arena and collect every glowing orb. Watch out &mdash; the pillars are solid!</p>
+      <div class="keys">
+        <span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span>
+        <span class="key">Space</span><span class="key">Mouse</span>
+      </div>
+      <button class="btn" id="playBtn">Click to Play</button>
+      <div class="small">Click enables pointer lock for mouse look. Press Esc to release.</div>
+    </div>
+  </div>
+
+  <div id="win" class="overlay hidden">
+    <div class="card">
+      <h1>Arena Cleared!</h1>
+      <p>You collected all the orbs in <b class="accent" id="finalTime">0.0</b>s.</p>
+      <button class="btn" id="restartBtn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="./vendor/three.min.js"></script>
+  <script src="./vendor/PointerLockControls.js"></script>
+  <script>
+  (function () {
+    "use strict";
+
+    var app = document.getElementById("app");
+    var startOverlay = document.getElementById("start");
+    var winOverlay = document.getElementById("win");
+    var hud = document.getElementById("hud");
+    var scoreEl = document.getElementById("score");
+    var totalEl = document.getElementById("total");
+    var timeEl = document.getElementById("time");
+    var finalTimeEl = document.getElementById("finalTime");
+
+    // ---- Renderer ----
+    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    app.appendChild(renderer.domElement);
+
+    // ---- Scene & camera ----
+    var scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0b1020);
+    scene.fog = new THREE.Fog(0x0b1020, 30, 90);
+
+    var camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 400);
+    camera.position.set(0, 1.7, 0);
+
+    // ---- Lighting ----
+    var hemi = new THREE.HemisphereLight(0x9fc0ff, 0x202844, 0.7);
+    scene.add(hemi);
+
+    var sun = new THREE.DirectionalLight(0xffffff, 0.9);
+    sun.position.set(20, 34, 12);
+    sun.castShadow = true;
+    sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.camera.near = 1;
+    sun.shadow.camera.far = 120;
+    sun.shadow.camera.left = -60;
+    sun.shadow.camera.right = 60;
+    sun.shadow.camera.top = 60;
+    sun.shadow.camera.bottom = -60;
+    scene.add(sun);
+
+    // ---- Ground ----
+    var ARENA = 40; // half-size of playable area
+    var groundGeo = new THREE.PlaneGeometry(ARENA * 2, ARENA * 2);
+    var groundMat = new THREE.MeshStandardMaterial({ color: 0x151b33, roughness: 0.95, metalness: 0.0 });
+    var ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    var grid = new THREE.GridHelper(ARENA * 2, 40, 0x3a4a80, 0x223056);
+    grid.position.y = 0.02;
+    scene.add(grid);
+
+    // ---- Collision registry (axis-aligned boxes on XZ) ----
+    var colliders = []; // { minX, maxX, minZ, maxZ }
+    function addCollider(cx, cz, halfX, halfZ) {
+      colliders.push({ minX: cx - halfX, maxX: cx + halfX, minZ: cz - halfZ, maxZ: cz + halfZ });
+    }
+
+    // ---- Boundary walls ----
+    var wallMat = new THREE.MeshStandardMaterial({ color: 0x2a3566, roughness: 0.6, metalness: 0.1 });
+    var wallH = 4, wallT = 1;
+    function addWall(w, d, x, z) {
+      var m = new THREE.Mesh(new THREE.BoxGeometry(w, wallH, d), wallMat);
+      m.position.set(x, wallH / 2, z);
+      m.castShadow = true; m.receiveShadow = true;
+      scene.add(m);
+      addCollider(x, z, w / 2, d / 2);
+    }
+    addWall(ARENA * 2, wallT, 0, -ARENA);
+    addWall(ARENA * 2, wallT, 0, ARENA);
+    addWall(wallT, ARENA * 2, -ARENA, 0);
+    addWall(wallT, ARENA * 2, ARENA, 0);
+
+    // ---- Obstacle pillars ----
+    var pillarMat = new THREE.MeshStandardMaterial({ color: 0x3b4d8a, roughness: 0.45, metalness: 0.25 });
+    var pillarPositions = [
+      [-14, -12], [12, -16], [18, 8], [-18, 14], [-6, 6],
+      [6, 18], [-22, -4], [22, -10], [0, -22], [10, 2]
+    ];
+    pillarPositions.forEach(function (p) {
+      var h = 3 + Math.random() * 4;
+      var s = 1.6 + Math.random() * 1.6;
+      var m = new THREE.Mesh(new THREE.BoxGeometry(s, h, s), pillarMat);
+      m.position.set(p[0], h / 2, p[1]);
+      m.castShadow = true; m.receiveShadow = true;
+      scene.add(m);
+      addCollider(p[0], p[1], s / 2, s / 2);
+    });
+
+    // A central raised platform for visual interest (non-blocking, low)
+    var platform = new THREE.Mesh(
+      new THREE.CylinderGeometry(5, 5.6, 0.6, 32),
+      new THREE.MeshStandardMaterial({ color: 0x243060, roughness: 0.5, metalness: 0.3 })
+    );
+    platform.position.set(0, 0.3, 0);
+    platform.receiveShadow = true; platform.castShadow = true;
+    scene.add(platform);
+
+    // ---- Collectible orbs ----
+    var orbs = [];
+    var ORB_COUNT = 12;
+    var orbGeo = new THREE.IcosahedronGeometry(0.55, 1);
+    function spawnOrbs() {
+      for (var i = 0; i < ORB_COUNT; i++) {
+        var color = new THREE.Color().setHSL((i / ORB_COUNT), 0.7, 0.6);
+        var mat = new THREE.MeshStandardMaterial({
+          color: color, emissive: color, emissiveIntensity: 0.9, roughness: 0.3, metalness: 0.2
+        });
+        var orb = new THREE.Mesh(orbGeo, mat);
+        var pos = randomFreePosition();
+        orb.position.set(pos.x, 1.2, pos.z);
+        orb.castShadow = true;
+        var glow = new THREE.PointLight(color, 0.8, 6);
+        orb.add(glow);
+        orb.userData.baseY = 1.2;
+        orb.userData.phase = Math.random() * Math.PI * 2;
+        scene.add(orb);
+        orbs.push(orb);
+      }
+    }
+
+    function isBlocked(x, z, pad) {
+      for (var i = 0; i < colliders.length; i++) {
+        var c = colliders[i];
+        if (x > c.minX - pad && x < c.maxX + pad && z > c.minZ - pad && z < c.maxZ + pad) return true;
+      }
+      return false;
+    }
+
+    function randomFreePosition() {
+      for (var tries = 0; tries < 200; tries++) {
+        var x = (Math.random() * 2 - 1) * (ARENA - 4);
+        var z = (Math.random() * 2 - 1) * (ARENA - 4);
+        if (!isBlocked(x, z, 1.5) && (x * x + z * z) > 36) return { x: x, z: z };
+      }
+      return { x: 0, z: 0 };
+    }
+
+    // ---- Controls ----
+    var controls = new THREE.PointerLockControls(camera, renderer.domElement);
+    scene.add(controls.getObject());
+
+    var keys = { forward: false, backward: false, left: false, right: false };
+    var velocity = new THREE.Vector3();
+    var direction = new THREE.Vector3();
+    var canJump = false;
+    var verticalVel = 0;
+    var PLAYER_RADIUS = 0.6;
+
+    function onKey(down) {
+      return function (e) {
+        switch (e.code) {
+          case "KeyW": case "ArrowUp": keys.forward = down; break;
+          case "KeyS": case "ArrowDown": keys.backward = down; break;
+          case "KeyA": case "ArrowLeft": keys.left = down; break;
+          case "KeyD": case "ArrowRight": keys.right = down; break;
+          case "Space":
+            if (down && canJump) { verticalVel = 7.0; canJump = false; }
+            break;
+        }
+      };
+    }
+    document.addEventListener("keydown", onKey(true));
+    document.addEventListener("keyup", onKey(false));
+
+    var playBtn = document.getElementById("playBtn");
+    var restartBtn = document.getElementById("restartBtn");
+    playBtn.addEventListener("click", function () { controls.lock(); });
+    restartBtn.addEventListener("click", function () { resetGame(); controls.lock(); });
+
+    controls.addEventListener("lock", function () {
+      startOverlay.classList.add("hidden");
+      winOverlay.classList.add("hidden");
+      hud.classList.remove("hidden");
+      running = true;
+    });
+    controls.addEventListener("unlock", function () {
+      if (!won) startOverlay.classList.remove("hidden");
+      running = false;
+    });
+
+    // ---- Game state ----
+    var score = 0, elapsed = 0, running = false, won = false;
+
+    function resetGame() {
+      orbs.forEach(function (o) { scene.remove(o); });
+      orbs.length = 0;
+      score = 0; elapsed = 0; won = false;
+      scoreEl.textContent = "0";
+      timeEl.textContent = "0.0";
+      spawnOrbs();
+      totalEl.textContent = String(orbs.length);
+      controls.getObject().position.set(0, 1.7, 0);
+      verticalVel = 0;
+      winOverlay.classList.add("hidden");
+    }
+
+    // ---- Movement with collision ----
+    function tryMove(obj, dx, dz) {
+      var p = obj.position;
+      if (!isBlocked(p.x + dx, p.z, PLAYER_RADIUS)) p.x += dx;
+      if (!isBlocked(p.x, p.z + dz, PLAYER_RADIUS)) p.z += dz;
+      var lim = ARENA - 1.2;
+      p.x = Math.max(-lim, Math.min(lim, p.x));
+      p.z = Math.max(-lim, Math.min(lim, p.z));
+    }
+
+    var clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      var delta = Math.min(clock.getDelta(), 0.05);
+
+      if (running && !won) {
+        elapsed += delta;
+        timeEl.textContent = elapsed.toFixed(1);
+
+        // Horizontal movement (damped)
+        velocity.x -= velocity.x * 10.0 * delta;
+        velocity.z -= velocity.z * 10.0 * delta;
+        direction.z = Number(keys.forward) - Number(keys.backward);
+        direction.x = Number(keys.right) - Number(keys.left);
+        direction.normalize();
+        var SPEED = 55.0;
+        if (keys.forward || keys.backward) velocity.z -= direction.z * SPEED * delta;
+        if (keys.left || keys.right) velocity.x -= direction.x * SPEED * delta;
+
+        var obj = controls.getObject();
+        // PointerLockControls.moveRight/moveForward move along facing direction
+        var before = obj.position.clone();
+        controls.moveRight(-velocity.x * delta);
+        controls.moveForward(-velocity.z * delta);
+        var dx = obj.position.x - before.x;
+        var dz = obj.position.z - before.z;
+        obj.position.copy(before);
+        tryMove(obj, dx, dz);
+
+        // Gravity / jump
+        verticalVel -= 20.0 * delta;
+        obj.position.y += verticalVel * delta;
+        if (obj.position.y < 1.7) { obj.position.y = 1.7; verticalVel = 0; canJump = true; }
+
+        // Orb animation + pickup
+        for (var j = orbs.length - 1; j >= 0; j--) {
+          var o = orbs[j];
+          o.rotation.y += delta * 1.6;
+          o.position.y = o.userData.baseY + Math.sin((elapsed + o.userData.phase) * 2.2) * 0.18;
+          var mdx = o.position.x - obj.position.x;
+          var mdz = o.position.z - obj.position.z;
+          if (mdx * mdx + mdz * mdz < 1.6 * 1.6) {
+            scene.remove(o);
+            orbs.splice(j, 1);
+            score++;
+            scoreEl.textContent = String(score);
+            if (orbs.length === 0) winGame();
+          }
+        }
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    function winGame() {
+      won = true;
+      running = false;
+      finalTimeEl.textContent = elapsed.toFixed(1);
+      hud.classList.remove("hidden");
+      winOverlay.classList.remove("hidden");
+      controls.unlock();
+    }
+
+    window.addEventListener("resize", function () {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // init
+    resetGame();
+    animate();
+  })();
+  </script>
+</body>
+</html>
