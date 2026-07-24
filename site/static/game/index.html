@@ -78,6 +78,7 @@
     <div id="stats">
       <div class="chip">Orbs <b><span id="score">0</span>/<span id="total">0</span></b></div>
       <div class="chip">Time <b><span id="time">0.0</span>s</b></div>
+      <div class="chip">Nearest <b><span id="near">&ndash;</span></b> <span id="arrow" style="display:inline-block; color:#6cf3c6; transform:rotate(0deg)">&#9650;</span></div>
     </div>
     <div id="crosshair"></div>
     <div id="hint">WASD move &middot; Mouse look &middot; Space jump &middot; Esc release</div>
@@ -117,6 +118,8 @@
     var scoreEl = document.getElementById("score");
     var totalEl = document.getElementById("total");
     var timeEl = document.getElementById("time");
+    var nearEl = document.getElementById("near");
+    var arrowEl = document.getElementById("arrow");
     var finalTimeEl = document.getElementById("finalTime");
 
     // ---- Renderer ----
@@ -213,7 +216,7 @@
     // ---- Collectible orbs ----
     var orbs = [];
     var ORB_COUNT = 12;
-    var orbGeo = new THREE.IcosahedronGeometry(0.55, 1);
+    var orbGeo = new THREE.IcosahedronGeometry(0.7, 1);
     function spawnOrbs() {
       for (var i = 0; i < ORB_COUNT; i++) {
         var color = new THREE.Color().setHSL((i / ORB_COUNT), 0.7, 0.6);
@@ -221,10 +224,10 @@
           color: color, emissive: color, emissiveIntensity: 0.9, roughness: 0.3, metalness: 0.2
         });
         var orb = new THREE.Mesh(orbGeo, mat);
-        var pos = randomFreePosition();
+        var pos = ringPosition(i, ORB_COUNT);
         orb.position.set(pos.x, 1.2, pos.z);
         orb.castShadow = true;
-        var glow = new THREE.PointLight(color, 0.8, 6);
+        var glow = new THREE.PointLight(color, 0.9, 7);
         orb.add(glow);
         orb.userData.baseY = 1.2;
         orb.userData.phase = Math.random() * Math.PI * 2;
@@ -233,21 +236,29 @@
       }
     }
 
+    // Place orbs on concentric rings around the spawn point so they are always
+    // visible and reachable; nudge outward if a ring slot lands inside an obstacle.
+    function ringPosition(i, count) {
+      var angle = (i / count) * Math.PI * 2 + (Math.floor(i / 6)) * 0.5;
+      var radius = 9 + (i % 3) * 5; // 9, 14, 19 rings
+      for (var step = 0; step < 12; step++) {
+        var r = radius + step * 1.5;
+        var x = Math.cos(angle) * r;
+        var z = Math.sin(angle) * r;
+        var lim = ARENA - 3;
+        x = Math.max(-lim, Math.min(lim, x));
+        z = Math.max(-lim, Math.min(lim, z));
+        if (!isBlocked(x, z, 1.5)) return { x: x, z: z };
+      }
+      return { x: Math.cos(angle) * radius, z: Math.sin(angle) * radius };
+    }
+
     function isBlocked(x, z, pad) {
       for (var i = 0; i < colliders.length; i++) {
         var c = colliders[i];
         if (x > c.minX - pad && x < c.maxX + pad && z > c.minZ - pad && z < c.maxZ + pad) return true;
       }
       return false;
-    }
-
-    function randomFreePosition() {
-      for (var tries = 0; tries < 200; tries++) {
-        var x = (Math.random() * 2 - 1) * (ARENA - 4);
-        var z = (Math.random() * 2 - 1) * (ARENA - 4);
-        if (!isBlocked(x, z, 1.5) && (x * x + z * z) > 36) return { x: x, z: z };
-      }
-      return { x: 0, z: 0 };
     }
 
     // ---- Controls ----
@@ -361,7 +372,7 @@
           o.position.y = o.userData.baseY + Math.sin((elapsed + o.userData.phase) * 2.2) * 0.18;
           var mdx = o.position.x - obj.position.x;
           var mdz = o.position.z - obj.position.z;
-          if (mdx * mdx + mdz * mdz < 1.6 * 1.6) {
+          if (mdx * mdx + mdz * mdz < 2.2 * 2.2) {
             scene.remove(o);
             orbs.splice(j, 1);
             score++;
@@ -369,9 +380,29 @@
             if (orbs.length === 0) winGame();
           }
         }
+
+        updateNearestIndicator(obj);
       }
 
       renderer.render(scene, camera);
+    }
+
+    var _local = new THREE.Vector3();
+    function updateNearestIndicator(obj) {
+      if (orbs.length === 0) { nearEl.textContent = "\u2013"; return; }
+      var best = null, bestD = Infinity;
+      for (var i = 0; i < orbs.length; i++) {
+        var dx = orbs[i].position.x - obj.position.x;
+        var dz = orbs[i].position.z - obj.position.z;
+        var d = dx * dx + dz * dz;
+        if (d < bestD) { bestD = d; best = orbs[i]; }
+      }
+      nearEl.textContent = Math.sqrt(bestD).toFixed(1) + "m";
+      // Bearing of nearest orb relative to where the camera is looking.
+      _local.copy(best.position);
+      camera.worldToLocal(_local);
+      var deg = Math.atan2(_local.x, -_local.z) * 180 / Math.PI;
+      arrowEl.style.transform = "rotate(" + deg.toFixed(1) + "deg)";
     }
 
     function winGame() {
