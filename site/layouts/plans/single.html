@@ -1,0 +1,59 @@
+{{ partial "header" . }}
+
+<div class="content container plan-detail-page">
+  <div class="page-header">
+    <span class="page-ornament">❧</span>
+    <h1>{{ .Title }}</h1>
+    <p class="plan-subtitle">{{ .Params.description }}</p>
+  </div>
+
+  <div class="plan-hero-specs">
+    <div class="plan-hero-image">
+      <img src="{{ .Params.image }}" alt="{{ .Title }} elevation">
+    </div>
+    <dl class="plan-specs-grid">
+      <div class="spec-item"><dt>Main Floor</dt><dd>{{ .Params.sqft }} sq ft</dd></div>
+      {{ if .Params.loft_sqft }}
+      <div class="spec-item"><dt>Loft</dt><dd>{{ .Params.loft_sqft }} sq ft</dd></div>
+      {{ end }}
+      <div class="spec-item"><dt>Footprint</dt><dd>{{ .Params.footprint }}</dd></div>
+      <div class="spec-item"><dt>Bedrooms</dt><dd>{{ .Params.bedrooms }}</dd></div>
+      <div class="spec-item"><dt>Bathrooms</dt><dd>{{ .Params.bathrooms }}</dd></div>
+      <div class="spec-item"><dt>Climate Zone</dt><dd>{{ .Params.climate_zone }}</dd></div>
+      <div class="spec-item"><dt>Snow Load</dt><dd>{{ .Params.snow_load }}</dd></div>
+      <div class="spec-item spec-price"><dt>Pricing</dt><dd>{{ .Params.price }}</dd></div>
+    </dl>
+  </div>
+
+  {{ if .Params.features }}
+  <div class="plan-features">
+    <h2>Key Features</h2>
+    <ul>
+      {{ range .Params.features }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  <div class="plan-content">
+    {{ .Content }}
+  </div>
+
+  {{ if .Params.siting }}
+  <div class="plan-siting">
+    <h2>Catskills Siting Notes</h2>
+    <ul>
+      {{ range .Params.siting }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  <div class="plan-cta">
+    <a href="/contact/" class="btn-link">Request These Plans</a>
+  </div>
+</div>
+
+{{ partial "footer" . }}

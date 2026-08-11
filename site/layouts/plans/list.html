@@ -1,0 +1,35 @@
+{{ partial "header" . }}
+
+<div class="content container plans-page">
+  <div class="page-header">
+    <span class="page-ornament">❧</span>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+
+  <div class="plans-grid">
+    {{ range where .Pages "Section" "plans" }}
+      {{ if ne .File.LogicalName "_index.md" }}
+        <article class="plan-card">
+          <div class="plan-card-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+          </div>
+          <div class="plan-card-body">
+            <h2>{{ .Title }}</h2>
+            <p class="plan-description">{{ .Params.description }}</p>
+            <dl class="plan-specs-summary">
+              <div><dt>Size</dt><dd>{{ .Params.sqft }} sq ft{{ if .Params.loft_sqft }} + {{ .Params.loft_sqft }} loft{{ end }}</dd></div>
+              <div><dt>Footprint</dt><dd>{{ .Params.footprint }}</dd></div>
+              <div><dt>Climate</dt><dd>{{ .Params.climate_zone }}</dd></div>
+              <div><dt>Snow Load</dt><dd>{{ .Params.snow_load }}</dd></div>
+            </dl>
+            <p class="plan-price">{{ .Params.price }}</p>
+            <a href="{{ .URL }}" class="service-cta">View Full Plans</a>
+          </div>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "footer" . }}

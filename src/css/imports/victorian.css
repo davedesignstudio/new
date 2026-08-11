@@ -499,3 +499,219 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.5rem;
   }
 }
+
+/* Design Plans */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.plan-card {
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--cream);
+  transition: box-shadow 0.2s ease;
+}
+
+.plan-card:hover {
+  box-shadow: 0 6px 24px rgba(74, 28, 46, 0.12);
+}
+
+.plan-card-image img {
+  width: 100%;
+  min-height: auto;
+  height: 200px;
+  object-fit: contain;
+  background: var(--ivory);
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0;
+}
+
+.plan-card-body {
+  padding: 1.5rem;
+}
+
+.plan-card-body h2 {
+  font-size: 1.35rem;
+  margin-top: 0;
+}
+
+.plan-description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.plan-specs-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+
+.plan-specs-summary div {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-specs-summary dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.plan-specs-summary dd {
+  font-size: 0.85rem;
+  margin: 0;
+  color: var(--text);
+}
+
+.plan-price {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
+
+/* Plan detail page */
+.plan-detail-page {
+  max-width: 48rem;
+}
+
+.plan-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+}
+
+.plan-hero-specs {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+.plan-hero-image img {
+  width: 100%;
+  min-height: auto;
+  border: 2px solid rgba(184, 134, 11, 0.3);
+  border-radius: 2px;
+  margin: 0;
+}
+
+.plan-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.spec-item {
+  padding: 0.6rem 0.75rem;
+  background: var(--cream);
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  border-radius: 2px;
+}
+
+.spec-item dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.spec-item dd {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.spec-price dd {
+  color: var(--burgundy);
+}
+
+.plan-features,
+.plan-siting {
+  margin-bottom: 2rem;
+}
+
+.plan-features ul,
+.plan-siting ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-features li,
+.plan-siting li {
+  padding: 0.4rem 0 0.4rem 1.25rem;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.plan-features li::before,
+.plan-siting li::before {
+  content: "❧";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+.plan-content img {
+  width: 100%;
+  min-height: auto;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 2px;
+}
+
+.plan-content table {
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.85rem;
+}
+
+.plan-content blockquote {
+  border-left-color: var(--gold);
+  background: var(--cream);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.plan-cta {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(184, 134, 11, 0.25);
+  margin-top: 2rem;
+}
+
+@media (min-width: 48em) {
+  .plans-page.content,
+  .plan-detail-page.content {
+    max-width: 52rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .plan-hero-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
