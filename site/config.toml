@@ -1,11 +1,26 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Slice Heaven"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Artisan pizza made fresh daily. Order online for pickup or delivery."
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/pizza/"
+    weight = 1
+
+[[menu.main]]
+    name = "Order"
+    url  = "/order/"
+    weight = 2
 
 [[menu.main]]
     name = "About"
-    url  = "/about"
-    weight = 1
+    url  = "/about/"
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+    weight = 4

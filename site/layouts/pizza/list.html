@@ -1,0 +1,49 @@
+{{ partial "header" . }}
+
+<div class="content container pizza-menu">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class="pizza-grid">
+    {{ range where .Pages "Section" "pizza" }}
+      {{ if ne .File.LogicalName "_index.md" }}
+        <article class="pizza-card" data-pizza-id="{{ .File.BaseFileName }}">
+          <div class="pizza-card-emoji">{{ .Params.emoji }}</div>
+          <h2>{{ .Title }}</h2>
+          <p class="pizza-description">{{ .Params.description }}</p>
+          <p class="pizza-price">From <strong>${{ printf "%.2f" .Params.price }}</strong></p>
+
+          <div class="pizza-size-select">
+            <label for="size-{{ .File.BaseFileName }}">Size</label>
+            <select id="size-{{ .File.BaseFileName }}" class="size-select">
+              {{ range $size, $price := .Params.sizes }}
+                <option value="{{ $size }}" data-price="{{ $price }}">{{ $size | title }} — ${{ printf "%.2f" $price }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div class="pizza-qty">
+            <label>Qty</label>
+            <div class="qty-controls">
+              <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">−</button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="add-to-cart-btn"
+            data-id="{{ .File.BaseFileName }}"
+            data-name="{{ .Title }}"
+            data-emoji="{{ .Params.emoji }}"
+          >
+            Add to Cart
+          </button>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "footer" . }}

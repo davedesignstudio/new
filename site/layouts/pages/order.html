@@ -1,0 +1,56 @@
+{{ partial "header" . }}
+
+<div class="content container order-page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div id="cart-empty" class="cart-empty" hidden>
+    <p>Your cart is empty.</p>
+    <a href="/pizza/" class="btn-link">Browse the Menu</a>
+  </div>
+
+  <div id="cart-items" class="cart-items"></div>
+
+  <div id="cart-summary" class="cart-summary" hidden>
+    <div class="cart-totals">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Tax (8%)</span>
+        <span id="cart-tax">$0.00</span>
+      </div>
+      <div class="cart-total-row cart-total-final">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+    </div>
+
+    <form id="order-form" class="order-form" name="pizza-order">
+      <h2>Checkout</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <select name="delivery" required>
+        <option value="">Delivery or Pickup?</option>
+        <option value="pickup">Pickup</option>
+        <option value="delivery">Delivery</option>
+      </select>
+      <textarea name="address" placeholder="Delivery address (if applicable)"></textarea>
+      <textarea name="notes" placeholder="Special instructions (extra napkins, well-done crust, etc.)"></textarea>
+      <input type="hidden" name="order-details" id="order-details">
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <div id="order-success" class="order-success" hidden>
+    <div class="success-icon">✓</div>
+    <h2>Order Placed!</h2>
+    <p>Thanks for your order. We'll have your pizza ready soon.</p>
+    <p id="order-confirmation-details"></p>
+    <a href="/pizza/" class="btn-link">Order More Pizza</a>
+  </div>
+</div>
+
+{{ partial "footer" . }}

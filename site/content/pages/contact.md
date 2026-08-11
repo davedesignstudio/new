@@ -4,13 +4,18 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Get in Touch
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Have a question about your order or want to book a large catering order? Reach out!
 
-<form name="reservation">
+<form name="contact">
   <input type="text" placeholder="Your Name" name="name">
   <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <textarea name="message" placeholder="How can we help?"></textarea>
+  <button>Send Message</button>
 </form>
+
+**Slice Heaven**  
+123 Main Street  
+Open daily 11am – 11pm  
+(555) 123-PIZZA
