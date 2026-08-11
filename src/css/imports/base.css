@@ -655,12 +655,12 @@ html {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255, 255, 255, 0.5);
-  background-color: #202020;
+  background-color: #2d1119;
   a {
     color: #fff;
     transition: color .2s ease;
     &:hover, &:focus, &:hover h1, &:focus h1 {
-      color: #ff7660;
+      color: #b8860b;
       text-decoration: none;
     }
   }
@@ -681,8 +681,8 @@ html {
   h1 {
     color: #fff;
     margin: 0 0 .35em 0;
-    font-family: "Rock Salt", cursive;
-    font-size: 3.25rem;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2rem;
     transition: color .2s ease;
     -webkit-font-smoothing: antialiased;
   }
@@ -702,7 +702,7 @@ html {
 
 a.sidebar-nav-item {
   &:hover, &:focus {
-    color: #ff7660;
+    color: #b8860b;
   }
 }
 

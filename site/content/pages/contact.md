@@ -1,21 +1,33 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-11T00:00:00Z"
 title = "Contact"
-url = "/contact"
+url = "/contact/"
 +++
 
-## Get in Touch
+## Start Your Project
 
-Have a question about your order or want to book a large catering order? Reach out!
+Tell us about your vision — whether it's a complete tiny house build, custom millwork, or a restoration project. We'll respond within two business days.
 
-<form name="contact">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="How can we help?"></textarea>
-  <button>Send Message</button>
+<form name="inquiry" class="inquiry-form">
+  <input type="text" placeholder="Your Name" name="name" required>
+  <input type="email" placeholder="Your Email" name="email" required>
+  <input type="tel" placeholder="Phone Number" name="phone">
+  <select name="project-type" required>
+    <option value="">Project Type</option>
+    <option value="tiny-house">Custom Tiny House Build</option>
+    <option value="millwork">Victorian Millwork & Trim</option>
+    <option value="cabinetry">Built-in Cabinetry</option>
+    <option value="restoration">Heritage Restoration</option>
+    <option value="doors">Custom Doors & Windows</option>
+    <option value="paneling">Interior Wood Paneling</option>
+    <option value="other">Other</option>
+  </select>
+  <textarea name="message" placeholder="Describe your project — size, style, timeline, and any inspiration you have in mind." rows="5" required></textarea>
+  <button type="submit">Send Inquiry</button>
 </form>
 
-**Slice Heaven**  
-123 Main Street  
-Open daily 11am – 11pm  
-(555) 123-PIZZA
+---
+
+**Gable & Grain Victorian Carpentry**  
+Workshop visits by appointment  
+Mon – Fri, 8am – 5pm

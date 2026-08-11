@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <rect width="300" height="200" fill="#f5f0e6"/>
+  <rect x="40" y="60" width="220" height="120" fill="#8B6914" stroke="#5c4610" stroke-width="2"/>
+  <polygon points="30,60 150,20 270,60" fill="#4a1c2e" stroke="#2d1119" stroke-width="2"/>
+  <!-- porch roof -->
+  <polygon points="20,100 150,70 280,100" fill="#5c2030" stroke="#2d1119" stroke-width="1.5"/>
+  <!-- columns -->
+  <rect x="50" y="100" width="14" height="80" fill="#f5f0e6" stroke="#5c4610" stroke-width="1.5"/>
+  <rect x="136" y="100" width="14" height="80" fill="#f5f0e6" stroke="#5c4610" stroke-width="1.5"/>
+  <rect x="222" y="100" width="14" height="80" fill="#f5f0e6" stroke="#5c4610" stroke-width="1.5"/>
+  <!-- brackets -->
+  <path d="M50,100 L50,90 L64,100" fill="#b8860b"/>
+  <path d="M136,100 L136,90 L150,100" fill="#b8860b"/>
+  <path d="M222,100 L222,90 L236,100" fill="#b8860b"/>
+  <!-- railing -->
+  <rect x="30" y="155" width="240" height="5" fill="#5c4610"/>
+  <line x1="45" y1="140" x2="45" y2="155" stroke="#5c4610" stroke-width="2"/>
+  <line x1="65" y1="140" x2="65" y2="155" stroke="#5c4610" stroke-width="2"/>
+  <line x1="85" y1="140" x2="85" y2="155" stroke="#5c4610" stroke-width="2"/>
+  <rect x="30" y="135" width="240" height="5" fill="#5c4610"/>
+  <!-- door -->
+  <rect x="120" y="130" width="50" height="50" fill="#4a1c2e" stroke="#2d1119" stroke-width="1.5"/>
+</svg>

@@ -1,18 +1,20 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Slice Heaven"
+title = "Gable & Grain"
 
 [params]
-  description = "Artisan pizza made fresh daily. Order online for pickup or delivery."
+  description = "Custom tiny house carpentry in the 1920s Victorian tradition — hand-cut joinery, heritage millwork, and homes built to endure."
+  tagline = "Victorian Craftsmanship for Modern Living"
+  est = "Est. 1920"
 
 [[menu.main]]
-    name = "Menu"
-    url  = "/pizza/"
+    name = "Services"
+    url  = "/services/"
     weight = 1
 
 [[menu.main]]
-    name = "Order"
-    url  = "/order/"
+    name = "Portfolio"
+    url  = "/portfolio/"
     weight = 2
 
 [[menu.main]]

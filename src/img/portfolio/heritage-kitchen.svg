@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <rect width="300" height="200" fill="#f5f0e6"/>
+  <rect x="30" y="30" width="240" height="150" fill="#5c4610" stroke="#3d2914" stroke-width="2"/>
+  <!-- upper cabinets -->
+  <rect x="40" y="40" width="70" height="50" fill="#8B6914" stroke="#5c4610" stroke-width="1.5"/>
+  <rect x="115" y="40" width="70" height="50" fill="#8B6914" stroke="#5c4610" stroke-width="1.5"/>
+  <rect x="190" y="40" width="70" height="50" fill="#8B6914" stroke="#5c4610" stroke-width="1.5"/>
+  <circle cx="100" cy="65" r="3" fill="#b8860b"/>
+  <circle cx="175" cy="65" r="3" fill="#b8860b"/>
+  <circle cx="250" cy="65" r="3" fill="#b8860b"/>
+  <!-- glass doors -->
+  <rect x="45" y="45" width="28" height="40" fill="#a8d4f0" opacity="0.5" stroke="#5c4610" stroke-width="0.5"/>
+  <rect x="120" y="45" width="28" height="40" fill="#a8d4f0" opacity="0.5" stroke="#5c4610" stroke-width="0.5"/>
+  <!-- lower cabinets -->
+  <rect x="40" y="100" width="100" height="70" fill="#8B6914" stroke="#5c4610" stroke-width="1.5"/>
+  <rect x="150" y="100" width="110" height="70" fill="#8B6914" stroke="#5c4610" stroke-width="1.5"/>
+  <line x1="90" y1="100" x2="90" y2="170" stroke="#5c4610" stroke-width="1"/>
+  <line x1="205" y1="100" x2="205" y2="170" stroke="#5c4610" stroke-width="1"/>
+  <circle cx="75" cy="140" r="3" fill="#b8860b"/>
+  <circle cx="130" cy="140" r="3" fill="#b8860b"/>
+  <circle cx="180" cy="140" r="3" fill="#b8860b"/>
+  <circle cx="240" cy="140" r="3" fill="#b8860b"/>
+  <!-- counter -->
+  <rect x="35" y="95" width="230" height="8" fill="#3d2914"/>
+</svg>

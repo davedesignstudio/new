@@ -1,33 +1,44 @@
 {{ partial "header" . }}
 
-<div class="content container home-hero">
+<div class="content container home-hero victorian-hero">
+  <div class="hero-ornament hero-ornament-top">✦ ✦ ✦</div>
+
   <div class="hero-content">
-    <span class="hero-emoji">🍕</span>
-    <h1>Slice Heaven</h1>
-    <p class="hero-tagline">Wood-fired pizza, delivered hot to your door.</p>
-    <p class="hero-description">
-      Hand-tossed dough, San Marzano sauce, and the finest toppings.
-      Order online in minutes.
-    </p>
-    <div class="hero-actions">
-      <a href="/pizza/" class="hero-btn hero-btn-primary">View Menu</a>
-      <a href="/order/" class="hero-btn hero-btn-secondary">View Cart <span id="hero-cart-count" class="cart-badge">0</span></a>
+    <p class="hero-est">{{ .Site.Params.est }}</p>
+    <h1>{{ .Site.Title }}</h1>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+
+    <div class="hero-illustration">
+      <img src="/img/victorian-tiny-house.svg" alt="Victorian tiny house illustration">
     </div>
+
+    <p class="hero-description">
+      We build bespoke tiny homes and custom carpentry in the spirit of the 1920s Victorian era —
+      ornate millwork, hand-fitted joinery, and timeless craftsmanship scaled for modern living.
+    </p>
+
+    <div class="hero-actions">
+      <a href="/services/" class="hero-btn hero-btn-primary">Our Services</a>
+      <a href="/portfolio/" class="hero-btn hero-btn-secondary">View Portfolio</a>
+    </div>
+
     <div class="hero-features">
       <div class="hero-feature">
-        <span>🔥</span>
-        <p>Wood-Fired</p>
+        <span class="feature-icon">⌂</span>
+        <p>Tiny House Builds</p>
       </div>
       <div class="hero-feature">
-        <span>🚗</span>
-        <p>Fast Delivery</p>
+        <span class="feature-icon">✂</span>
+        <p>Custom Millwork</p>
       </div>
       <div class="hero-feature">
-        <span>🌿</span>
-        <p>Fresh Ingredients</p>
+        <span class="feature-icon">❧</span>
+        <p>Heritage Restoration</p>
       </div>
     </div>
   </div>
+
+  <div class="hero-ornament hero-ornament-bottom">— ❦ —</div>
 </div>
 
 {{ partial "footer" . }}

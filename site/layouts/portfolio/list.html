@@ -1,0 +1,30 @@
+{{ partial "header" . }}
+
+<div class="content container portfolio-page">
+  <div class="page-header">
+    <span class="page-ornament">❧</span>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+
+  <div class="portfolio-grid">
+    {{ range where .Pages "Section" "portfolio" }}
+      {{ if ne .File.LogicalName "_index.md" }}
+        <article class="portfolio-card">
+          <div class="portfolio-card-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            <span class="portfolio-year">{{ .Params.year }}</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="portfolio-type">{{ .Params.type }}</span>
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Params.description }}</p>
+            <span class="portfolio-location">{{ .Params.location }}</span>
+          </div>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "footer" . }}

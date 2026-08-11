@@ -1,0 +1,501 @@
+/* Victorian Tiny House Carpentry Theme */
+
+@import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,700|Libre+Baskerville:400,400italic,700);
+
+:root {
+  --burgundy: #4a1c2e;
+  --burgundy-dark: #2d1119;
+  --forest: #2c4a3e;
+  --cream: #f5f0e6;
+  --ivory: #faf7f2;
+  --gold: #b8860b;
+  --walnut: #5c4610;
+  --oak: #8B6914;
+  --text: #3d2914;
+  --text-muted: #7a6a5a;
+}
+
+/* Override base typography */
+html {
+  font-family: "Libre Baskerville", Georgia, serif;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--ivory);
+}
+
+a {
+  color: var(--burgundy);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--burgundy-dark);
+  font-weight: 700;
+}
+
+/* Sidebar */
+.victorian-sidebar {
+  background-color: var(--burgundy-dark);
+  background-image:
+  linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 30%),
+  repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(184, 134, 11, 0.03) 40px,
+    rgba(184, 134, 11, 0.03) 41px
+  );
+}
+
+.victorian-sidebar a {
+  color: var(--cream);
+}
+
+.victorian-sidebar a:hover,
+.victorian-sidebar a:focus,
+.victorian-sidebar a:hover h1,
+.victorian-sidebar a:focus h1 {
+  color: var(--gold);
+}
+
+.victorian-sidebar .sidebar-about h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+}
+
+.sidebar-monogram {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+}
+
+.victorian-sidebar .lead {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(245, 240, 230, 0.65);
+}
+
+.sidebar-nav a:hover {
+  color: var(--gold);
+}
+
+.sidebar-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.sidebar-est {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Hero */
+.victorian-hero {
+  text-align: center;
+  min-height: auto;
+  padding-top: 2rem;
+}
+
+.hero-ornament {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 0.5em;
+  margin: 1rem 0;
+}
+
+.hero-est {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.victorian-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--forest);
+  margin-bottom: 1.5rem;
+}
+
+.hero-illustration {
+  margin: 1.5rem auto;
+  max-width: 400px;
+}
+
+.hero-illustration img {
+  width: 100%;
+  min-height: auto;
+  border-radius: 4px;
+  border: 3px solid var(--gold);
+  box-shadow: 0 4px 20px rgba(74, 28, 46, 0.15);
+  margin: 0 auto;
+}
+
+.hero-description {
+  color: var(--text-muted);
+  max-width: 32rem;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.hero-btn-primary {
+  background: var(--burgundy);
+  color: var(--cream);
+  border: 2px solid var(--burgundy);
+}
+
+.hero-btn-primary:hover {
+  background: var(--burgundy-dark);
+  color: var(--cream);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: var(--burgundy);
+  border: 2px solid var(--burgundy);
+}
+
+.hero-btn-secondary:hover {
+  background: var(--burgundy);
+  color: var(--cream);
+}
+
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(184, 134, 11, 0.3);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.hero-feature {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--gold);
+}
+
+.hero-feature p {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+/* Page headers */
+.page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-ornament {
+  display: block;
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--cream);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 6px 24px rgba(74, 28, 46, 0.12);
+  transform: translateY(-2px);
+}
+
+.service-card-image img {
+  width: 100%;
+  min-height: auto;
+  height: 180px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+.service-card-body {
+  padding: 1.5rem;
+}
+
+.service-card-body h2 {
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+.service-features li {
+  font-size: 0.85rem;
+  padding: 0.3rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text);
+}
+
+.service-features li::before {
+  content: "❧";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+.service-cta {
+  display: inline-block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.15rem;
+  transition: color 0.15s ease;
+}
+
+.service-cta:hover {
+  color: var(--gold);
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-card {
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--cream);
+  transition: box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 6px 24px rgba(74, 28, 46, 0.12);
+}
+
+.portfolio-card-image {
+  position: relative;
+}
+
+.portfolio-card-image img {
+  width: 100%;
+  min-height: auto;
+  height: 200px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+.portfolio-year {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--burgundy);
+  color: var(--cream);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.portfolio-type {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.portfolio-card-body h2 {
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.portfolio-card-body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Forms */
+.content button,
+.btn-link {
+  background: var(--burgundy);
+  color: var(--cream);
+  border: none;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.content button:hover,
+.btn-link:hover {
+  background: var(--burgundy-dark);
+  color: var(--cream);
+}
+
+.content input:focus,
+.content textarea:focus,
+.content select:focus {
+  border-color: var(--burgundy);
+}
+
+.inquiry-form select {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  background: #fff;
+  font-family: "Libre Baskerville", Georgia, serif;
+}
+
+/* Content headings */
+.content h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.content h2 em::after {
+  color: var(--gold);
+}
+
+/* Wider content area for grids */
+@media (min-width: 48em) {
+  .services-page.content,
+  .portfolio-page.content {
+    max-width: 52rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .services-page.content,
+  .portfolio-page.content {
+    max-width: 58rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .victorian-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-features {
+    gap: 1.5rem;
+  }
+}

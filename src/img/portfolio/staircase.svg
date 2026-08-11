@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <rect width="300" height="200" fill="#f5f0e6"/>
+  <!-- staircase -->
+  <polygon points="50,170 50,80 80,80 80,140 110,140 110,100 140,100 140,170" fill="#8B6914" stroke="#5c4610" stroke-width="2"/>
+  <!-- balusters -->
+  <line x1="55" y1="80" x2="55" y2="60" stroke="#5c4610" stroke-width="3"/>
+  <line x1="65" y1="80" x2="65" y2="60" stroke="#5c4610" stroke-width="2"/>
+  <line x1="75" y1="80" x2="75" y2="60" stroke="#5c4610" stroke-width="2"/>
+  <rect x="48" y="55" width="34" height="8" fill="#5c4610"/>
+  <!-- newel post -->
+  <rect x="48" y="40" width="12" height="30" rx="3" fill="#5c4610"/>
+  <circle cx="54" cy="38" r="6" fill="#b8860b"/>
+  <!-- handrail -->
+  <path d="M54,55 Q100,45 140,55" fill="none" stroke="#5c4610" stroke-width="4"/>
+  <!-- tools -->
+  <rect x="200" y="120" width="60" height="8" rx="2" fill="#888" transform="rotate(-30 230 124)"/>
+  <rect x="210" y="100" width="8" height="50" fill="#5c4610" transform="rotate(-30 214 125)"/>
+  <text x="200" y="190" font-family="serif" font-size="10" fill="#4a1c2e" opacity="0.6">Restoration in progress</text>
+</svg>
