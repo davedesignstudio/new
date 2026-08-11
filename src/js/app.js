@@ -1,6 +1,11 @@
 import { initCart } from './cart';
+import { initPizzaBuilder } from './pizza-builder';
 
 initCart();
+
+if (document.querySelector('.pizza-menu')) {
+  initPizzaBuilder();
+}
 
 if (document.querySelector('.gallery-carousel')) {
   const mySiema = new Siema({

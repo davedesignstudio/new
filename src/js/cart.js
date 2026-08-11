@@ -33,18 +33,22 @@ function updateCartBadge() {
   });
 }
 
-function addToCart(id, name, emoji, size, price, quantity) {
+function cartItemKey(item) {
+  return [item.id, item.size, item.customization || ''].join('|');
+}
+
+function addCustomPizza(item) {
   const cart = getCart();
-  const existing = cart.find((item) => item.id === id && item.size === size);
+  const key = cartItemKey(item);
+  const existing = cart.find((c) => cartItemKey(c) === key);
 
   if (existing) {
-    existing.quantity += quantity;
+    existing.quantity += item.quantity;
   } else {
-    cart.push({ id, name, emoji, size, price, quantity });
+    cart.push(item);
   }
 
   saveCart(cart);
-  showToast(name + ' (' + size + ') added to cart!');
 }
 
 function removeFromCart(index) {
@@ -80,43 +84,6 @@ function showToast(message) {
   toast._timer = setTimeout(() => toast.classList.remove('visible'), 2500);
 }
 
-function initMenuPage() {
-  document.querySelectorAll('.pizza-card').forEach((card) => {
-    const qtyValue = card.querySelector('.qty-value');
-    let qty = 1;
-
-    card.querySelector('.qty-minus').addEventListener('click', () => {
-      if (qty > 1) {
-        qty -= 1;
-        qtyValue.textContent = qty;
-      }
-    });
-
-    card.querySelector('.qty-plus').addEventListener('click', () => {
-      qty += 1;
-      qtyValue.textContent = qty;
-    });
-
-    card.querySelector('.add-to-cart-btn').addEventListener('click', () => {
-      const btn = card.querySelector('.add-to-cart-btn');
-      const select = card.querySelector('.size-select');
-      const option = select.options[select.selectedIndex];
-
-      addToCart(
-        btn.dataset.id,
-        btn.dataset.name,
-        btn.dataset.emoji,
-        option.value,
-        parseFloat(option.dataset.price),
-        qty
-      );
-
-      qty = 1;
-      qtyValue.textContent = qty;
-    });
-  });
-}
-
 function renderOrderPage() {
   const cart = getCart();
   const emptyEl = document.getElementById('cart-empty');
@@ -140,7 +107,9 @@ function renderOrderPage() {
       '<span class="cart-item-emoji">' + item.emoji + '</span>' +
       '<div class="cart-item-info">' +
         '<strong>' + item.name + '</strong>' +
-        '<span class="cart-item-size">' + item.size.charAt(0).toUpperCase() + item.size.slice(1) + '</span>' +
+        (item.customization
+          ? '<span class="cart-item-custom">' + item.customization + '</span>'
+          : '<span class="cart-item-size">' + item.size.charAt(0).toUpperCase() + item.size.slice(1) + '</span>') +
       '</div>' +
       '<div class="cart-item-qty">' +
         '<button type="button" class="qty-btn qty-minus" data-index="' + index + '">−</button>' +
@@ -190,9 +159,10 @@ function initOrderPage() {
     const tax = subtotal * 0.08;
     const total = subtotal + tax;
 
-    const orderSummary = cart.map((item) =>
-      item.quantity + 'x ' + item.name + ' (' + item.size + ') — ' + formatPrice(item.price * item.quantity)
-    ).join('\n');
+    const orderSummary = cart.map((item) => {
+      const detail = item.customization || item.size;
+      return item.quantity + 'x ' + item.name + ' (' + detail + ') — ' + formatPrice(item.price * item.quantity);
+    }).join('\n');
 
     document.getElementById('order-details').value = orderSummary + '\nTotal: ' + formatPrice(total);
 
@@ -213,13 +183,9 @@ function initOrderPage() {
 function initCart() {
   updateCartBadge();
 
-  if (document.querySelector('.pizza-menu')) {
-    initMenuPage();
-  }
-
   if (document.querySelector('.order-page')) {
     initOrderPage();
   }
 }
 
-export { initCart, getCart, getCartCount };
+export { initCart, addCustomPizza, showToast, getCart, getCartCount };

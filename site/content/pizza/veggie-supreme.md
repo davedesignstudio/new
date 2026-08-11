@@ -10,4 +10,12 @@ emoji: "🥦"
 type: specialty
 categories:
   - vegetarian
+default_sauce: marinara
+default_cheese: mozzarella
+default_toppings:
+  - peppers
+  - mushrooms
+  - onions
+  - olives
+  - tomatoes
 ---

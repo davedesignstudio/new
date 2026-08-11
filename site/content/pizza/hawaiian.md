@@ -10,4 +10,9 @@ emoji: "🍍"
 type: classic
 categories:
   - meat
+default_sauce: marinara
+default_cheese: mozzarella
+default_toppings:
+  - ham
+  - pineapple
 ---

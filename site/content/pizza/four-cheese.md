@@ -10,4 +10,7 @@ emoji: "🧀"
 type: specialty
 categories:
   - vegetarian
+default_sauce: garlic
+default_cheese: mozzarella
+default_toppings: []
 ---

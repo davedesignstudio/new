@@ -10,4 +10,9 @@ emoji: "🍗"
 type: specialty
 categories:
   - meat
+default_sauce: bbq
+default_cheese: mozzarella
+default_toppings:
+  - chicken
+  - onions
 ---

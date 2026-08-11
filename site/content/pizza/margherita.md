@@ -10,4 +10,9 @@ emoji: "🍕"
 type: classic
 categories:
   - vegetarian
+default_sauce: marinara
+default_cheese: mozzarella
+default_toppings:
+  - basil
+  - tomatoes
 ---

@@ -1,0 +1,90 @@
+<div id="pizza-builder" class="pizza-builder" hidden>
+  <div class="builder-overlay"></div>
+  <div class="builder-panel">
+    <button type="button" class="builder-close" aria-label="Close builder">&times;</button>
+
+    <div class="builder-header">
+      <h2 id="builder-pizza-name">Customize Your Pizza</h2>
+      <p id="builder-pizza-desc" class="builder-desc"></p>
+    </div>
+
+    <div class="builder-body">
+      <div class="builder-preview-col">
+        <div class="pizza-preview">
+          <div class="pizza-preview-base">
+            <img src="/img/toppings/pizza-base.svg" alt="Pizza preview" class="pizza-base-img">
+            <div id="preview-sauce" class="preview-layer preview-sauce"></div>
+            <div id="preview-cheese" class="preview-layer preview-cheese"></div>
+            <div id="preview-toppings" class="preview-toppings"></div>
+          </div>
+          <div id="preview-label" class="preview-label">Your custom pizza</div>
+        </div>
+
+        <div class="builder-price-box">
+          <span class="builder-price-label">Total</span>
+          <span id="builder-total-price" class="builder-price">$0.00</span>
+        </div>
+      </div>
+
+      <div class="builder-options-col">
+        <div class="builder-section">
+          <h3>1. Choose Size</h3>
+          <div id="builder-sizes" class="option-pills"></div>
+        </div>
+
+        <div class="builder-section">
+          <h3>2. Pick Your Crust</h3>
+          <div id="builder-crusts" class="option-pills"></div>
+        </div>
+
+        <div class="builder-section">
+          <h3>3. Select Sauce</h3>
+          <div id="builder-sauces" class="topping-grid"></div>
+          <label class="extra-toggle">
+            <input type="checkbox" id="extra-sauce-toggle">
+            <img src="/img/toppings/extra-sauce.svg" alt="Extra sauce">
+            <span>Extra Sauce <em>+$0.75</em></span>
+          </label>
+        </div>
+
+        <div class="builder-section">
+          <h3>4. Choose Cheese</h3>
+          <div id="builder-cheeses" class="topping-grid"></div>
+          <div class="cheese-amount">
+            <span>Cheese Amount:</span>
+            <div id="cheese-amount" class="option-pills option-pills-sm">
+              <button type="button" class="pill" data-amount="light">Light</button>
+              <button type="button" class="pill active" data-amount="normal">Normal</button>
+              <button type="button" class="pill" data-amount="extra">Extra +$1.50</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="builder-section">
+          <h3>5. Add Toppings</h3>
+          <p class="section-hint">Tap any topping to add or remove it</p>
+          <h4>Meats</h4>
+          <div id="builder-meats" class="topping-grid"></div>
+          <h4>Veggies</h4>
+          <div id="builder-veggies" class="topping-grid"></div>
+        </div>
+
+        <div class="builder-section">
+          <h3>6. Special Instructions</h3>
+          <textarea id="builder-notes" placeholder="Well-done crust, light on sauce, cut into squares…" rows="2"></textarea>
+        </div>
+
+        <div class="builder-actions">
+          <div class="builder-qty">
+            <button type="button" class="qty-btn builder-qty-minus">−</button>
+            <span id="builder-qty">1</span>
+            <button type="button" class="qty-btn builder-qty-plus">+</button>
+          </div>
+          <button type="button" id="builder-add-btn" class="builder-add-btn">
+            Add to Cart — <span id="builder-add-price">$0.00</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,4 +10,11 @@ emoji: "🥩"
 type: specialty
 categories:
   - meat
+default_sauce: marinara
+default_cheese: mozzarella
+default_toppings:
+  - pepperoni
+  - sausage
+  - bacon
+  - ham
 ---
