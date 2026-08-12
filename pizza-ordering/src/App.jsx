@@ -3,6 +3,7 @@ import Header from './components/Header';
 import OrderTypeBar from './components/OrderTypeBar';
 import MenuGrid from './components/MenuGrid';
 import StoriesSection from './components/StoriesSection';
+import PizzeriaOrigin from './components/PizzeriaOrigin';
 import StoryModal from './components/StoryModal';
 import PizzaBuilder from './components/PizzaBuilder';
 import PizzaGame from './components/PizzaGame';
@@ -43,14 +44,15 @@ function HeroBanner() {
             <p class="hero-eyebrow">Via dei Tribunali · Napoli</p>
             <h1 class="hero-title">L'Arte della Pizza Napoletana</h1>
             <p class="hero-subtitle">
-              Forno a legna · Impasto lievitato 24 ore · Ingredienti DOP
+              {SITE.origin.headline}
             </p>
             <div class="hero-divider" aria-hidden="true">
               <span>✦</span>
               <span class="divider-line" />
               <span>✦</span>
             </div>
-            <a href="#storie" class="hero-story-link">Scopri le nostre storie</a>
+            <a href="#la-nostra-storia" class="hero-story-link">La nostra storia</a>
+            <a href="#storie" class="hero-story-link hero-story-link--secondary">Tutte le storie</a>
             <a href="#gioco" class="hero-game-link">Gioca: diventa pizzaiolo →</a>
           </div>
         </div>
@@ -126,6 +128,7 @@ function AppContent() {
       <OrderTypeBar />
       <HeroBanner />
       <RenaissanceOrnament variant="frieze" className="section-ornament" />
+      <PizzeriaOrigin onSelectStory={setActiveStory} />
       <PizzaGame onSelectStory={setActiveStory} />
       <StoriesSection onSelectStory={setActiveStory} />
       <RenaissanceOrnament variant="mandorla" className="section-ornament section-ornament--compact" />

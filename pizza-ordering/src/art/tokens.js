@@ -52,6 +52,7 @@ export function storyVariant(id) {
     'impasto-24-ore': 'impasto',
     'sfogliatella-mare': 'sfogliatella',
     'vesuvio-vigilia': 'vesuvio',
+    'antica-pizzeria': 'tribunali',
   };
   return map[id] ?? 'forno';
 }

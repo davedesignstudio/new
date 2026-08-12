@@ -1,5 +1,25 @@
 export const STORIES = [
   {
+    id: 'antica-pizzeria',
+    featured: true,
+    tag: 'Fondazione',
+    year: '1738 — oggi',
+    title: 'Antica Pizzeria Napoletana',
+    subtitle: 'La storia di una famiglia, un forno e una strada che non smettono di nutrire Napoli',
+    excerpt:
+      'Al numero 32 di Via dei Tribunali non c\'è solo una pizzeria. C\'è una promessa fatta trecento anni fa: tenere acceso il fuoco, anche quando la città tremava.',
+    body: [
+      'Si dice che Napoli si riconosca dal rumore che fa a mezzogiorno: motorini, voci, pentole, risate. Ma chi ha camminato per Via dei Tribunali almeno una volta nella vita sa che c\'è un altro suono — più antico, più basso — che attraversa tutto il resto. È il respiro del forno. Un sibilo caldo, regolare, paziente. Da tre secoli, al numero 32, qualcuno lo ascolta come si ascolta il battito di una persona cara.',
+      'La nostra storia inizia nel 1738, quando Raffaele Esposito — fornaio, marinaio mancato, uomo di poche parole e di molte braci — decise che quel vicolo meritava qualcosa di più di pane tondo. Accese un forno a legna con legna di castagno da Castellammare e iniziò a stendere dischi di impasto per i vicini: stampatori con le mani nere d\'inchiostro, pescatori che sapevano di sale, monelli di Spaccanapoli che rubavano il cornicione e scappavano ridendo. Non era ancora «Antica Pizzeria Napoletana». Era solo un rifugio. Ma i rifugi, a Napoli, diventano radici.',
+      'Le generazioni passarono come passano le stagioni del pomodoro. Teresa mescolò il lievito madre che usiamo ancora. Vincenzo portò la pizza alla Regina Margherita e tornò con una lettera che oggi è ingiallita ma non spenta. Nonno Antonio tenne acceso il forno la notte del Vesuvio del 1944, quando la cenere copriva i tetti e la marinara diventò pane condiviso. La nonna Carmela cantò *O sole mio* mentre raccendeva le braci dopo l\'unica notte in cui il fuoco si spense davvero. Ognuno lasciò un gesto. Nessuno lasciò il locale.',
+      'Noi siamo arrivati dopo, con le stesse mani e un compito semplice da spiegare e difficile da compiere: non tradire il tempo. L\'impasto riposa ventiquattro ore perché il lievito non mente. La mozzarella arriva da caseifici che conosciamo per nome. Il basilico profuma ancora dell\'orto che non c\'è più, ma che sopravvive nella memoria di chi lo annaffiava. Il forno è stato rifatto tre volte; la cenere, dicono i più anziani del quartiere, conserva un granello della prima fiamma. Non lo sappiamo con certezza. Lo sentiamo.',
+      'Via dei Tribunali oggi è piena di luci al neon, turisti, code e fotografie. Eppure, quando apri la nostra porta, il rumore si fa più lontano. Vedi il marmo consumato dai passi, la vetrina con la lettera reale, il vapore che sale dal bancone come un incenso laico. Ordini una Margherita e ricevi due secoli di equilibrio: rosso, bianco, verde. Ordini una marinara e ricevi una notte di guerra e di generosità. Ordini una sfogliatella e ricevi le monache di Santa Rosa e il mare della Costiera.',
+      'Antica Pizzeria Napoletana non è un nome scelto per nostalgia. È un impegno. *Antica* perché il fuoco viene da lontano. *Pizzeria* perché non abbiamo voluto essere altro. *Napoletana* perché questa città non è un decoro: è l\'ingrediente segreto che non compare in etichetta ma si sente in ogni morso. Se mangi da noi — al tavolo, in asporto, o con un clic da lontano — non stai solo comprando una pizza. Stai entrando in una storia che continua a scriversi ogni sera, un impasto alla volta, finché qualcuno crederà che valga la pena accendere il forno.',
+    ],
+    relatedDish: 'margherita',
+    readTime: '6 min',
+  },
+  {
     id: 'forno-1738',
     tag: 'Origini',
     year: '1738',
@@ -105,6 +125,10 @@ export const STORIES = [
 
 export function getStoryById(id) {
   return STORIES.find((s) => s.id === id);
+}
+
+export function getFeaturedStory() {
+  return STORIES.find((s) => s.featured) ?? STORIES[0];
 }
 
 export function getStoryForDish(dishId) {

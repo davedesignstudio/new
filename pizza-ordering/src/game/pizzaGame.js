@@ -59,6 +59,7 @@ export const STAGE_STORIES = {
 
 /** All six heritage stories — every prompt wired into the game */
 export const GAME_STORY_IDS = [
+  'antica-pizzeria',
   'forno-1738',
   'regina-margherita',
   'via-tribunali',
@@ -402,7 +403,7 @@ export const GAME_RULES = [
 export const GAME_FEATURES = [
   { icon: '🇮🇹', label: 'Grafica italiana', detail: 'Campania, Napoli, Costiera' },
   { icon: '🏛️', label: 'Arte dei musei', detail: 'Met, Cleveland, Chicago, Rijksmuseum' },
-  { icon: '📖', label: '6 storie originali', detail: 'Tutta la tradizione della pizzeria' },
+  { icon: '📖', label: '7 storie originali', detail: 'Dalla fondazione al Vesuvio' },
   { icon: '📱', label: 'Stile App Store', detail: 'Ordini, mance, giorni, clienti' },
   { icon: '🎮', label: 'Vibes Sega Genesis', detail: '9 vite, HUD arcade, Gatto Bubù' },
 ];

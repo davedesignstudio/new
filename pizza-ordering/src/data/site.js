@@ -21,6 +21,11 @@ export const SITE = {
     'Ingredienti DOP e biologici',
     'Via dei Tribunali — cuore di Napoli',
   ],
+  origin: {
+    headline: 'Tre secoli di fuoco, famiglia e fede in un impasto',
+    pullQuote:
+      'Al numero 32 non c\'è solo una pizzeria. C\'è una promessa fatta trecento anni fa: tenere acceso il fuoco, anche quando la città tremava.',
+  },
   photoCredit:
     'Arte: Met Museum, Cleveland Museum of Art, Art Institute of Chicago, Rijksmuseum (open access) · Fotografie: Unsplash · Illustrazioni: Fresco Napoletano',
 };

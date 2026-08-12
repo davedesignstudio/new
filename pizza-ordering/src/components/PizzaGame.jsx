@@ -722,7 +722,7 @@ export default function PizzaGame(props) {
         </div>
 
         <div class="game-stories-strip">
-          <h3 class="game-stories-strip-title">Storie del gioco — tutte e 6</h3>
+          <h3 class="game-stories-strip-title">Storie del gioco — tutte e 7</h3>
           <div class="game-stories-row">
             <For each={gameStories()}>
               {(story) => (

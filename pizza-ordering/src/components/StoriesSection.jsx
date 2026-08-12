@@ -14,12 +14,12 @@ export default function StoriesSection(props) {
           </div>
           <h2 id="stories-heading">Le Nostre Storie</h2>
           <p class="stories-intro">
-            Tre secoli di forno, vicoli e ricordi — racconti scritti dal fuoco e dalla memoria di Napoli.
+            Sette racconti — dalla fondazione al Vesuvio — scritti dal fuoco e dalla memoria di Napoli.
           </p>
         </header>
 
         <div class="stories-grid">
-          <For each={STORIES}>
+          <For each={STORIES.filter((s) => !s.featured)}>
             {(story) => (
               <article class="story-card fresco-card-bg">
                 <button
