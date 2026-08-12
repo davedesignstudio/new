@@ -1,5 +1,15 @@
 /* ── Pizza Making Game ───────────────────────────────────── */
 
+.pizza-game-section--sega {
+  --sega-magenta: #E040A0;
+  --sega-cyan: #40C0E0;
+  --sega-yellow: #F0D020;
+  --sega-blue: #2040A0;
+  background:
+    linear-gradient(180deg, rgba(32, 64, 160, 0.06) 0%, transparent 30%),
+    linear-gradient(180deg, var(--fresco-warm) 0%, var(--marble) 100%);
+}
+
 .pizza-game-section {
   padding: 3rem 0;
   background: linear-gradient(180deg, var(--fresco-warm) 0%, var(--marble) 100%);
@@ -998,4 +1008,266 @@
 
 .btn-game-secondary:hover {
   background: var(--fresco-cream);
+}
+
+/* ── Sega Genesis / Bubsy platformer influence ───────────── */
+
+.game-sega-hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.75rem;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0d0d18 100%);
+  border: 3px solid var(--sega-cyan);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 2px var(--sega-magenta),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+}
+
+.game-hud-cell {
+  text-align: center;
+}
+
+.game-hud-label {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.45rem;
+  color: var(--sega-yellow);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.game-hud-value {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.game-hud-lives .game-hud-value {
+  color: var(--sega-magenta);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.game-mascot-bubble {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #fffef0 0%, #f8f0d8 100%);
+  border: 3px solid var(--umber);
+  border-radius: 12px 12px 12px 4px;
+  box-shadow: 4px 4px 0 var(--sega-magenta);
+  position: relative;
+}
+
+.game-mascot-bubble::after {
+  content: '';
+  position: absolute;
+  left: 52px;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--umber);
+}
+
+.game-mascot-sprite {
+  flex-shrink: 0;
+  animation: mascot-bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes mascot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.retro-mascot--excited {
+  animation: mascot-bounce 0.4s ease-in-out infinite;
+}
+
+.retro-mascot--happy {
+  filter: drop-shadow(0 0 4px var(--sega-yellow));
+}
+
+.retro-mascot--sad {
+  filter: grayscale(0.4);
+  transform: rotate(-5deg);
+}
+
+.game-mascot-speech {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-mascot-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--sega-blue);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.game-mascot-speech p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--charcoal);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.game-board--sega {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--sega-cyan);
+  box-shadow:
+    0 0 0 2px var(--sega-magenta),
+    var(--shadow-lg);
+}
+
+.game-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  border-radius: inherit;
+}
+
+.game-score-pop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  animation: score-pop-rise 1.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes score-pop-rise {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
+  30% { transform: translate(-50%, -60%) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -90%) scale(1); }
+}
+
+.game-score-pop-label {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: var(--sega-yellow);
+  text-shadow: 2px 2px 0 var(--sega-magenta);
+  margin-bottom: 0.25rem;
+}
+
+.game-score-pop-pts {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--sega-blue);
+}
+
+.game-lobby--sega {
+  border: 3px solid var(--sega-cyan);
+  box-shadow: 4px 4px 0 var(--sega-magenta);
+}
+
+.game-phone-frame--sega {
+  background: linear-gradient(160deg, #2040A0 0%, #102060 100%);
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 3px var(--sega-yellow),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.game-sega-logo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: var(--sega-yellow);
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+  text-shadow: 2px 2px 0 var(--sega-magenta);
+}
+
+.game-phone-tagline--retro {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 0.45rem !important;
+  color: var(--sega-cyan) !important;
+  animation: press-start-blink 1s step-end infinite;
+}
+
+@keyframes press-start-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.btn-game-press-start {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 0.65rem !important;
+  background: linear-gradient(180deg, var(--sega-magenta) 0%, #A02070 100%) !important;
+  border-color: var(--sega-yellow) !important;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  animation: press-start-blink 1.5s step-end infinite;
+}
+
+.game-mascot-verdict {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--sega-cyan);
+  line-height: 1.6;
+  margin: 0.5rem 0 1rem;
+}
+
+.game-life-lost {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: #E04040;
+  margin-bottom: 0.5rem;
+}
+
+.game-life-gained {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: #40E080;
+  margin-bottom: 0.5rem;
+}
+
+.game-step.active {
+  border-color: var(--sega-cyan);
+  box-shadow: 0 0 0 2px rgba(64, 192, 224, 0.3);
+}
+
+.game-step.done .game-step-num {
+  background: var(--sega-magenta);
+  color: #fff;
+  border-color: var(--sega-yellow);
+}
+
+@media (max-width: 600px) {
+  .game-sega-hud {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .game-hud-label {
+    font-size: 0.4rem;
+  }
+
+  .game-hud-value {
+    font-size: 0.5rem;
+  }
 }

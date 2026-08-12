@@ -18,6 +18,9 @@ import {
   BAKE_IDEAL,
   CUSTOMERS,
   GAME_FEATURES,
+  MASCOT_NAME,
+  MASCOT_INTRO,
+  STARTING_LIVES,
   scoreKnead,
   scoreStretch,
   scoreToppings,
@@ -26,18 +29,67 @@ import {
   totalScore,
   starRating,
   verdict,
+  mascotVerdict,
   customerReaction,
   calcTip,
   pickCustomer,
+  getStageQuip,
   loadHighScore,
   saveHighScore,
   loadGameDay,
   advanceGameDay,
   loadTotalTips,
   addTips,
+  loadLives,
+  loseLife,
+  gainLife,
+  resetLives,
   GAME_RULES,
 } from '../game/pizzaGame';
+import RetroMascot from '../game/RetroMascot';
 import '../game/game.css';
+
+function MascotBubble(props) {
+  return (
+    <div class="game-mascot-bubble" aria-live="polite">
+      <RetroMascot
+        class="game-mascot-sprite"
+        size={56}
+        mood={props.mood}
+        holdingPizza={props.holdingPizza}
+        label={MASCOT_NAME}
+        decorative={false}
+      />
+      <div class="game-mascot-speech">
+        <span class="game-mascot-name">{MASCOT_NAME}</span>
+        <p>{props.line}</p>
+      </div>
+    </div>
+  );
+}
+
+function SegaHud(props) {
+  return (
+    <div class="game-sega-hud" aria-label="Punteggio arcade">
+      <div class="game-hud-cell">
+        <span class="game-hud-label">SCORE</span>
+        <span class="game-hud-value">{props.score}</span>
+      </div>
+      <div class="game-hud-cell">
+        <span class="game-hud-label">HI</span>
+        <span class="game-hud-value">{props.highScore}</span>
+      </div>
+      <div class="game-hud-cell">
+        <span class="game-hud-label">DAY</span>
+        <span class="game-hud-value">{props.day}</span>
+      </div>
+      <div class="game-hud-cell game-hud-lives">
+        <span class="game-hud-label">LIVES</span>
+        <span class="game-hud-value">{'♥'.repeat(props.lives)}{'♡'.repeat(Math.max(0, STARTING_LIVES - props.lives))}</span>
+      </div>
+    </div>
+  );
+}
 
 function GameStoryPanel(props) {
   const config = () => STAGE_STORIES[props.stage] ?? STAGE_STORIES.knead;
@@ -190,6 +242,10 @@ export default function PizzaGame(props) {
   const [highScore, setHighScore] = createSignal(loadHighScore());
   const [gameDay, setGameDay] = createSignal(loadGameDay());
   const [totalTips, setTotalTips] = createSignal(loadTotalTips());
+  const [lives, setLives] = createSignal(loadLives());
+  const [mascotLine, setMascotLine] = createSignal(MASCOT_INTRO[0]);
+  const [mascotMood, setMascotMood] = createSignal('idle');
+  const [scorePop, setScorePop] = createSignal(null);
   const [customer, setCustomer] = createSignal(pickCustomer(loadGameDay()));
   const [kneadPop, setKneadPop] = createSignal(false);
   const [stage, setStage] = createSignal('knead');
@@ -229,6 +285,17 @@ export default function PizzaGame(props) {
     onCleanup(() => cancelAnimationFrame(bakeFrame));
   });
 
+  createEffect(() => {
+    const s = stage();
+    setMascotLine(getStageQuip(s));
+    setMascotMood(s === 'bake' ? 'excited' : s === 'result' ? 'happy' : 'idle');
+  });
+
+  const showScorePop = (label, points) => {
+    setScorePop({ label, points });
+    setTimeout(() => setScorePop(null), 1200);
+  };
+
   const kneadProgress = () => Math.min(100, (kneadClicks() / KNEAD_TARGET) * 100);
 
   const handleKnead = () => {
@@ -238,13 +305,17 @@ export default function PizzaGame(props) {
     const next = kneadClicks() + 1;
     setKneadClicks(next);
     if (next >= KNEAD_TARGET) {
-      setScores((s) => ({ ...s, knead: scoreKnead(next) }));
+      const pts = scoreKnead(next);
+      setScores((s) => ({ ...s, knead: pts }));
+      showScorePop('IMPASTO', pts);
       setTimeout(() => setStage('stretch'), 400);
     }
   };
 
   const confirmStretch = () => {
-    setScores((s) => ({ ...s, stretch: scoreStretch(stretch()) }));
+    const pts = scoreStretch(stretch());
+    setScores((s) => ({ ...s, stretch: pts }));
+    showScorePop('STESURA', pts);
     setStage('top');
   };
 
@@ -260,7 +331,9 @@ export default function PizzaGame(props) {
 
   const confirmToppings = () => {
     if (!hasCheese() || toppings().length < 2) return;
-    setScores((s) => ({ ...s, top: scoreToppings(toppings()) }));
+    const pts = scoreToppings(toppings());
+    setScores((s) => ({ ...s, top: pts }));
+    showScorePop('TOPPING', pts);
     setStage('bake');
     setBaking(true);
   };
@@ -286,12 +359,18 @@ export default function PizzaGame(props) {
     setTipEarned(tip);
     setHighScore(saveHighScore(total));
     setTotalTips(addTips(tip));
+    if (total < 40) setLives(loseLife());
+    else if (total >= 90) setLives(gainLife());
+    setMascotLine(mascotVerdict(total));
+    setMascotMood(total >= 75 ? 'happy' : 'sad');
     setBaked(true);
     setStage('result');
   };
 
   const startGame = () => {
     resetGame();
+    setLives(resetLives());
+    setMascotLine(MASCOT_INTRO[Math.floor(Math.random() * MASCOT_INTRO.length)]);
     setStarted(true);
   };
 
@@ -334,7 +413,7 @@ export default function PizzaGame(props) {
   const gameStories = () => STORIES.filter((s) => GAME_STORY_IDS.includes(s.id));
 
   return (
-    <section id="gioco" class="pizza-game-section fresco-maiolica fresco-grain" aria-labelledby="game-heading">
+    <section id="gioco" class="pizza-game-section pizza-game-section--sega fresco-maiolica fresco-grain" aria-labelledby="game-heading">
       <div class="container">
         <header class="game-header">
           <div class="game-header-rose" aria-hidden="true">
@@ -342,31 +421,33 @@ export default function PizzaGame(props) {
           </div>
           <h2 id="game-heading">Il Gioco del Pizzaiolo</h2>
           <p class="game-intro">
-            Impasta, stendi, condisci e inforna — grafica italiana, arte dei musei e tutte le storie della pizzeria in un gioco stile App Store.
+            Impasta, stendi, condisci e inforna — con {MASCOT_NAME}, 9 vite arcade e vibes Sega Genesis nel cuore di Napoli.
           </p>
           <div class="game-stats-bar">
             <Show when={highScore() > 0}>
-              <span class="game-stat">Record: <strong>{highScore()}</strong></span>
+              <span class="game-stat">HI-SCORE: <strong>{highScore()}</strong></span>
             </Show>
-            <span class="game-stat">Giorno <strong>{gameDay()}</strong></span>
-            <span class="game-stat">Mance: <strong>€{totalTips().toFixed(2)}</strong></span>
+            <span class="game-stat">DAY <strong>{gameDay()}</strong></span>
+            <span class="game-stat">TIPS <strong>€{totalTips().toFixed(2)}</strong></span>
+            <span class="game-stat">LIVES <strong>{'♥'.repeat(lives())}</strong></span>
           </div>
         </header>
 
         <Show when={!started()}>
-          <div class="game-lobby fresco-card-bg">
+          <div class="game-lobby fresco-card-bg game-lobby--sega">
+            <MascotBubble line={MASCOT_INTRO[1]} mood="happy" holdingPizza />
             <div class="game-phone-preview">
-              <div class="game-phone-frame">
-                <div class="game-phone-notch" aria-hidden="true" />
+              <div class="game-phone-frame game-phone-frame--sega">
+                <div class="game-sega-logo" aria-hidden="true">SEGA</div>
                 <div class="game-phone-screen">
                   <div class="game-lobby-art fresco-frame fresco-frame--round">
                     <FrescoArt variant="margherita" type="food" label="Pizza" />
                   </div>
-                  <p class="game-phone-tagline">Good Pizza, Napoli Style</p>
+                  <p class="game-phone-tagline game-phone-tagline--retro">PRESS START</p>
                 </div>
               </div>
             </div>
-            <h3 class="game-lobby-title">Diventa Pizzaiolo per un giorno</h3>
+            <h3 class="game-lobby-title">Gatto Bubù's Pizza Quest</h3>
             <p class="game-lobby-desc">
               Leggi l'ordine del cliente, cucina la pizza perfetta, guadagna mance e avanza di giorno in giorno.
             </p>
@@ -405,13 +486,26 @@ export default function PizzaGame(props) {
                 </For>
               </div>
             </div>
-            <button type="button" class="btn-game-action btn-game-start" onClick={startGame}>
-              🔥 Inizia a cucinare
+            <button type="button" class="btn-game-action btn-game-start btn-game-press-start" onClick={startGame}>
+              ▶ PRESS START
             </button>
           </div>
         </Show>
 
         <Show when={started()}>
+        <SegaHud
+          score={stage() === 'result' ? finalScore() : Object.values(scores()).reduce((a, b) => a + b, 0)}
+          highScore={highScore()}
+          day={gameDay()}
+          lives={lives()}
+        />
+
+        <MascotBubble
+          line={mascotLine()}
+          mood={mascotMood()}
+          holdingPizza={stage() === 'result' && finalScore() >= 60}
+        />
+
         <div class="game-progress" aria-label="Progresso">
           <For each={STAGES.filter((s) => s !== 'result')}>
             {(s, i) => (
@@ -429,7 +523,14 @@ export default function PizzaGame(props) {
           </For>
         </div>
 
-        <div class="game-board fresco-card-bg">
+        <div class="game-board fresco-card-bg game-board--sega">
+          <div class="game-scanlines" aria-hidden="true" />
+          <Show when={scorePop()}>
+            <div class="game-score-pop" aria-live="assertive">
+              <span class="game-score-pop-label">{scorePop().label}</span>
+              <span class="game-score-pop-pts">+{scorePop().points}</span>
+            </div>
+          </Show>
           <div class="game-workspace">
             <GameStoryPanel stage={stage()} onSelectStory={props.onSelectStory} />
 
@@ -586,6 +687,13 @@ export default function PizzaGame(props) {
                   </p>
                   <p class="game-tip-earned">Mancia: <strong>€{tipEarned().toFixed(2)}</strong></p>
                   <p class="game-verdict">{verdict(finalScore())}</p>
+                  <p class="game-mascot-verdict">{mascotLine()}</p>
+                  <Show when={finalScore() < 40 && lives() < STARTING_LIVES}>
+                    <p class="game-life-lost">💔 -1 LIFE</p>
+                  </Show>
+                  <Show when={finalScore() >= 90 && lives() <= STARTING_LIVES}>
+                    <p class="game-life-gained">💚 +1 LIFE!</p>
+                  </Show>
                   <Show when={finalScore() >= highScore() && finalScore() > 0}>
                     <p class="game-new-record">🏆 Nuovo record!</p>
                   </Show>

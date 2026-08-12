@@ -156,6 +156,95 @@ export const STRETCH_TOLERANCE = 12;
 export const BAKE_IDEAL = 72;
 export const BAKE_TOLERANCE = 14;
 
+/** Bubsy-on-Sega: 9 lives marketing nod + Genesis arcade HUD */
+export const STARTING_LIVES = 9;
+export const LIVES_KEY = 'antica-pizzeria-lives';
+
+/** Snarky 90s platformer quips — Italian spin on Bubsy attitude */
+export const MASCOT_NAME = 'Gatto Bubù';
+
+export const MASCOT_INTRO = [
+  'Cosa potrebbe andare storto? Solo la pizza.',
+  '9 vite. 1 forno. Zero rimpianti.',
+  'SEGA vibes, Napoli rules.',
+];
+
+export const STAGE_QUIPS = {
+  knead: [
+    'Impasta forte! I gatti napoletani non scherzano.',
+    'Più clic, più lievito. Trust me.',
+    'What could possibly go wrong? L\'impasto.',
+  ],
+  stretch: [
+    'Stendi come un platformer — non cadere nel forno!',
+    'Cornicione perfetto = bonus stage unlocked.',
+    'Allarga quel disco o il cliente salta via.',
+  ],
+  top: [
+    'Condimenti! È come raccogliere anelli dorati.',
+    'Segui l\'ordine o Bubù ti guarda male.',
+    'Più topping, più punti. Classico arcade.',
+  ],
+  bake: [
+    'FORNO A 485°C! Ferma l\'ago, eroe!',
+    'Non bruciare nulla. Ho detto NIENTE.',
+    'Timing perfetto = combo x2. Forse.',
+  ],
+  result: [
+    'LEVEL CLEAR! ...o game over?',
+    'Cliente soddisfatto = extra life!',
+    'Insert coin per un\'altra pizza.',
+  ],
+};
+
+export function getStageQuip(stage) {
+  const lines = STAGE_QUIPS[stage] ?? STAGE_QUIPS.knead;
+  return lines[Math.floor(Math.random() * lines.length)];
+}
+
+export function mascotVerdict(score) {
+  if (score >= 90) return 'MAESTRO! Hai battuto il high score di Bubù!';
+  if (score >= 75) return 'Ottimo! Il gatto approva con la coda alta.';
+  if (score >= 60) return 'Non male. Un altro tentativo e passi il livello.';
+  if (score >= 40) return 'Game over? No, solo pizza media.';
+  return 'Riprovare non costa vite. Ne hai ancora 9.';
+}
+
+export function loadLives() {
+  try {
+    const stored = localStorage.getItem(LIVES_KEY);
+    if (stored === null) return STARTING_LIVES;
+    return Math.max(0, Number(stored));
+  } catch {
+    return STARTING_LIVES;
+  }
+}
+
+export function saveLives(lives) {
+  try {
+    localStorage.setItem(LIVES_KEY, String(Math.max(0, lives)));
+    return lives;
+  } catch {
+    return lives;
+  }
+}
+
+export function loseLife() {
+  const next = Math.max(0, loadLives() - 1);
+  saveLives(next);
+  return next;
+}
+
+export function gainLife() {
+  const next = Math.min(STARTING_LIVES, loadLives() + 1);
+  saveLives(next);
+  return next;
+}
+
+export function resetLives() {
+  return saveLives(STARTING_LIVES);
+}
+
 export function pickCustomer(day = 1) {
   const index = (day - 1) % CUSTOMERS.length;
   return CUSTOMERS[index];
@@ -315,6 +404,7 @@ export const GAME_FEATURES = [
   { icon: '🏛️', label: 'Arte dei musei', detail: 'Met, Cleveland, Chicago, Rijksmuseum' },
   { icon: '📖', label: '6 storie originali', detail: 'Tutta la tradizione della pizzeria' },
   { icon: '📱', label: 'Stile App Store', detail: 'Ordini, mance, giorni, clienti' },
+  { icon: '🎮', label: 'Vibes Sega Genesis', detail: '9 vite, HUD arcade, Gatto Bubù' },
 ];
 
 export function randomToppingPosition(seed) {
