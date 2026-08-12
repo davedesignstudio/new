@@ -1,11 +1,12 @@
 {
   "name": "Pizza Ordering Dev",
   "install": "cd pizza-ordering && npm install",
+  "start": "cd pizza-ordering && npm run dev",
   "terminals": [
     {
       "name": "pizza-dev",
       "command": "cd pizza-ordering && npm run dev",
-      "description": "SolidJS Vite dev server for the pizza ordering UI on port 5173"
+      "description": "SolidJS Vite dev server on port 5173"
     }
   ],
   "ports": [
