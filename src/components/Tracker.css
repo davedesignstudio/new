@@ -1,0 +1,112 @@
+.tracker {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.tracker__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem;
+  background:
+    linear-gradient(135deg, var(--blue) 0%, #003d5c 55%, #00253a 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  animation: rise-in 0.55s ease both;
+}
+
+.tracker__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tracker__copy h2 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin: 0.35rem 0 0.55rem;
+}
+
+.tracker__copy p:last-child {
+  max-width: 34rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.45;
+}
+
+.tracker__stages {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.tracker__stage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+}
+
+.tracker__stage.is-done,
+.tracker__stage.is-active {
+  opacity: 1;
+}
+
+.tracker__dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.tracker__stage.is-done .tracker__dot {
+  background: #7ddea3;
+  border-color: #7ddea3;
+}
+
+.tracker__stage.is-active .tracker__dot {
+  background: var(--red);
+  border-color: white;
+  box-shadow: 0 0 0 4px rgba(227, 24, 55, 0.35);
+  animation: pulse-soft 1.4s ease infinite;
+}
+
+.tracker__label {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 760px) {
+  .tracker__stages {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+
+  .tracker__stage {
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+  }
+
+  .tracker__stage:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0.45rem;
+    left: calc(50% + 12px);
+    width: calc(100% - 24px);
+    height: 2px;
+    background: rgba(255, 255, 255, 0.28);
+  }
+}
+
+@media (max-width: 1180px) {
+  .tracker__inner {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+}

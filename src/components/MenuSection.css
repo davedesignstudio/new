@@ -1,0 +1,163 @@
+.menu {
+  padding: 3.5rem 0 4rem;
+}
+
+.menu__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.menu__intro {
+  margin-bottom: 1.75rem;
+  animation: rise-in 0.55s ease both;
+}
+
+.menu__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--red);
+  margin-bottom: 0.35rem;
+}
+
+.menu__intro h2 {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  color: var(--blue);
+  line-height: 0.95;
+}
+
+.menu__sub {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.menu__tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  scrollbar-width: thin;
+}
+
+.menu__tab {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu__tab.is-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.menu-card {
+  background: white;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 180px auto;
+  animation: rise-in 0.5s ease both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.menu-card__media {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.menu-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.menu-card:hover .menu-card__media img {
+  transform: scale(1.05);
+}
+
+.menu-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--red);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.55rem;
+}
+
+.menu-card__body {
+  padding: 1rem 1.1rem 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.menu-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.menu-card__top h3 {
+  font-size: 1.55rem;
+  color: var(--ink);
+}
+
+.menu-card__price {
+  font-weight: 800;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.menu-card__body p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.menu-card__cta {
+  justify-self: start;
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 640px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .menu__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu-card {
+    grid-template-rows: 200px auto;
+  }
+}
