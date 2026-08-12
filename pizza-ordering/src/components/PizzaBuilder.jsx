@@ -10,6 +10,7 @@ import {
 } from '../data/menu';
 import RenaissanceMedia from '../art/RenaissanceMedia';
 import { getItemVariant } from '../data/images';
+import { useCart } from '../store/cart';
 
 export default function PizzaBuilder() {
   const cart = useCart();
