@@ -264,11 +264,18 @@ function initPizzaOrder() {
       price: linePrice()
     });
 
+    // Reset builder so a second click doesn't duplicate the same line
+    state.pizzaId = null;
+    state.sizeId = "medium";
+    state.crustId = "hand";
+    state.toppings = [];
+    state.qty = 1;
+    renderMenu();
+    renderOptions();
+    updateBuilder();
     renderCart();
-    els.addBtn.style.animation = "none";
-    // reflow to restart pulse
-    void els.addBtn.offsetWidth;
-    els.addBtn.style.animation = "";
+
+    els.bagItems.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
   // Events
