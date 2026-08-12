@@ -1,5 +1,5 @@
-import { createContext, useContext } from 'solid-js'
-import type { ParentComponent } from 'solid-js'
+import { createContext, useContext, createMemo } from 'solid-js'
+import type { ParentComponent, Accessor } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 import type { CrustId, SizeId, ToppingId } from '../data/menu'
 import { CRUSTS, SIZES, getTopping, SPECIALTY_PIZZAS } from '../data/menu'
@@ -111,8 +111,8 @@ type StoreApi = {
   addSideToCart: (name: string, price: number, summary?: string) => void
   updateQty: (id: string, delta: number) => void
   removeLine: (id: string) => void
-  cartCount: () => number
-  cartTotal: () => number
+  cartCount: Accessor<number>
+  cartTotal: Accessor<number>
 }
 
 const CartContext = createContext<StoreApi>()
@@ -126,6 +126,12 @@ export const CartProvider: ParentComponent = (props) => {
     cartOpen: false,
     builderOpen: false,
     builder: defaultBuilder(),
+  })
+
+  const cartCount = createMemo(() => state.cart.reduce((n, l) => n + l.quantity, 0))
+  const cartTotal = createMemo(() => {
+    const sub = state.cart.reduce((n, l) => n + l.unitPrice * l.quantity, 0)
+    return Math.round(sub * 100) / 100
   })
 
   const api: StoreApi = {
@@ -242,13 +248,8 @@ export const CartProvider: ParentComponent = (props) => {
         }),
       )
     },
-    cartCount() {
-      return state.cart.reduce((n, l) => n + l.quantity, 0)
-    },
-    cartTotal() {
-      const sub = state.cart.reduce((n, l) => n + l.unitPrice * l.quantity, 0)
-      return Math.round(sub * 100) / 100
-    },
+    cartCount,
+    cartTotal,
   }
 
   return <CartContext.Provider value={api}>{props.children}</CartContext.Provider>

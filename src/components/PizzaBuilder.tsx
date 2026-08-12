@@ -289,6 +289,13 @@ export function PizzaBuilder() {
               </div>
             </aside>
           </div>
+
+          <div class="builder-mobile-bar">
+            <span class="mobile-price">${(price() * b().quantity).toFixed(2)}</span>
+            <button type="button" class="primary-btn" onClick={() => cart.addBuilderToCart()}>
+              Add to order
+            </button>
+          </div>
         </div>
       </div>
     </Show>
