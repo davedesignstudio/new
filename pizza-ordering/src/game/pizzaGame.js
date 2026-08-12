@@ -140,14 +140,14 @@ export const CUSTOMERS = [
     quirk: '«Il forno non mente mai.»',
   },
   {
-    id: 'regina-ombra',
-    name: 'Una signora elegante',
-    emoji: '👑',
-    location: 'Palazzo Reale',
-    order: 'Solo i migliori ingredienti DOP — bufala, pomodoro San Marzano, basilico.',
-    storyId: 'regina-margherita',
-    wants: { sauce: true, cheese: true, toppings: ['bufala', 'pomodoro', 'basilico'], minToppings: 3 },
-    quirk: '«La regina non accetta compromessi.»',
+    id: 'vecchio-vicolo',
+    name: 'Il Cantastorie del 32',
+    emoji: '📜',
+    location: 'Antica Pizzeria Napoletana',
+    order: 'Cucina come tre secoli di promesse — salsa, formaggio e i colori di Napoli.',
+    storyId: 'antica-pizzeria',
+    wants: { sauce: true, cheese: true, toppings: ['basilico', 'bufala', 'pomodoro'], minToppings: 3 },
+    quirk: '«Ogni pizza è un capitolo della nostra storia.»',
   },
 ];
 
@@ -271,8 +271,8 @@ export function scoreToppings(toppings) {
   return Math.min(100, variety + amount + hasBasil);
 }
 
-export function scoreBake(needle) {
-  const diff = Math.abs(needle - BAKE_IDEAL);
+export function scoreBake(needle, ideal = BAKE_IDEAL) {
+  const diff = Math.abs(needle - ideal);
   if (diff <= BAKE_TOLERANCE) return 100 - diff * 3;
   return Math.max(0, 50 - (diff - BAKE_TOLERANCE) * 5);
 }
@@ -293,14 +293,15 @@ export function scoreOrderMatch(customer, { hasSauce, hasCheese, toppings }) {
   return Math.max(0, Math.min(100, Math.round(score)));
 }
 
-export function totalScore(scores, orderMatch = 0) {
-  const weights = { knead: 0.15, stretch: 0.2, top: 0.2, bake: 0.25, order: 0.2 };
+export function totalScore(scores, orderMatch = 0, storyBonus = 0) {
+  const weights = { knead: 0.13, stretch: 0.17, top: 0.17, bake: 0.22, order: 0.18, story: 0.13 };
   const sum =
     scores.knead * weights.knead +
     scores.stretch * weights.stretch +
     scores.top * weights.top +
     scores.bake * weights.bake +
-    orderMatch * weights.order;
+    orderMatch * weights.order +
+    Math.min(100, storyBonus) * weights.story;
   return Math.round(sum);
 }
 
@@ -392,12 +393,13 @@ export function addTips(amount) {
 }
 
 export const GAME_RULES = [
-  { stage: 'Ordine', tip: 'Leggi il biglietto del cliente — ogni ordine è unico.' },
-  { stage: 'Impasta', tip: 'Tocca 12 volte per lievitare l\'impasto madre napoletano.' },
-  { stage: 'Stendi', tip: 'Porta il diametro al 78% per il cornicione perfetto.' },
-  { stage: 'Condimenti', tip: 'Salsa, formaggio e condimenti come richiesto.' },
-  { stage: 'Forno', tip: 'Ferma l\'ago nella zona dorata del forno a legna.' },
-  { stage: 'Servi', tip: 'Guadagna mance e stelle — arte dei musei e storie incluse.' },
+  { stage: 'Storia', tip: 'Scegli come racconta la storia del cliente — ogni scelta conta.' },
+  { stage: 'Ordine', tip: 'Leggi il biglietto — la storia guida salsa, formaggio e condimenti.' },
+  { stage: 'Impasta', tip: 'Segui la storia dell\'impasto, poi impasta 12 volte.' },
+  { stage: 'Stendi', tip: 'La storia suggerisce il cornicione — punta al diametro giusto.' },
+  { stage: 'Condimenti', tip: 'Ingredienti evidenziati = capitoli della storia del cliente.' },
+  { stage: 'Forno', tip: 'La scelta narrativa indica la zona dorata del forno.' },
+  { stage: 'Servi', tip: 'Punteggio storia + ordine = mance e stelle.' },
 ];
 
 export const GAME_FEATURES = [

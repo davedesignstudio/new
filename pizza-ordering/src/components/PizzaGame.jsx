@@ -16,6 +16,7 @@ import {
   KNEAD_TARGET,
   STRETCH_IDEAL,
   BAKE_IDEAL,
+  BAKE_TOLERANCE,
   CUSTOMERS,
   GAME_FEATURES,
   MASCOT_NAME,
@@ -46,6 +47,17 @@ import {
   resetLives,
   GAME_RULES,
 } from '../game/pizzaGame';
+import {
+  getStageChoices,
+  scoreStoryChoice,
+  totalStoryChoiceScore,
+  isToppingStoryHighlighted,
+  storyGuidesSauce,
+  storyGuidesCheese,
+  getCustomerStoryReaction,
+} from '../game/storyChoices';
+import { resolveStory } from '../data/storyBlend';
+import { useStoryLang } from '../store/storyLang';
 import RetroMascot from '../game/RetroMascot';
 import '../game/game.css';
 
@@ -91,9 +103,43 @@ function SegaHud(props) {
   );
 }
 
+function StoryChoicePanel(props) {
+  const { lang } = useStoryLang();
+  const story = () => resolveStory(getStoryById(props.storyId), lang());
+  const choices = () => getStageChoices(props.storyId, props.stage);
+
+  return (
+    <div class="game-story-choice" aria-label="Scelta narrativa">
+      <p class="game-story-choice-tag">Capitolo: {story()?.title}</p>
+      <p class="game-story-choice-intro story-blend-text">{story()?.excerpt}</p>
+      <p class="game-story-choice-prompt">Come racconti questa storia?</p>
+      <div class="game-story-choice-list">
+        <For each={choices()}>
+          {(choice) => (
+            <button
+              type="button"
+              class="game-story-choice-btn"
+              onClick={() => props.onPick(choice)}
+            >
+              <span class="game-story-choice-label">{choice.label}</span>
+              <span class="game-story-choice-hint">{choice.hint}</span>
+            </button>
+          )}
+        </For>
+      </div>
+    </div>
+  );
+}
+
 function GameStoryPanel(props) {
-  const config = () => STAGE_STORIES[props.stage] ?? STAGE_STORIES.knead;
-  const story = () => getStoryById(config().storyId);
+  const { lang } = useStoryLang();
+  const storyId = () => props.storyId ?? STAGE_STORIES[props.stage]?.storyId;
+  const config = () => ({
+    ...(STAGE_STORIES[props.stage] ?? STAGE_STORIES.knead),
+    storyId: storyId(),
+  });
+  const story = () => resolveStory(getStoryById(storyId()), lang());
+  const stageChoice = () => props.stageChoice;
   const museumCredit = () => getMuseumAttribution(config().museumVariant);
 
   return (
@@ -102,10 +148,10 @@ function GameStoryPanel(props) {
         <RenaissanceMedia
           class="game-story-art ren-media--card"
           source="blend"
-          variant={config().variant}
-          storyId={config().storyId}
-          type={config().type}
-          scene={config().scene}
+          variant={getStoryVariant(storyId())}
+          storyId={storyId()}
+          type="story"
+          scene={['forno-1738', 'vesuvio-vigilia', 'antica-pizzeria'].includes(storyId())}
           frame="arch"
           geometry={config().geometry}
           label={story()?.title}
@@ -116,7 +162,13 @@ function GameStoryPanel(props) {
           <span class="story-tag">{story().tag}</span>
           <span class="story-year">{story().year}</span>
           <h3 class="game-story-title">{story().title}</h3>
-          <p class="game-story-excerpt">{story().excerpt}</p>
+          <p class="game-story-excerpt story-blend-text">{story().excerpt}</p>
+          <Show when={stageChoice()}>
+            <div class="game-story-pick">
+              <span class="game-story-pick-label">La tua scelta</span>
+              <p class="game-story-pick-text">{stageChoice().label}</p>
+            </div>
+          </Show>
           <Show when={config().heritage}>
             <p class="game-heritage-line">{config().heritage}</p>
           </Show>
@@ -127,7 +179,7 @@ function GameStoryPanel(props) {
             <button
               type="button"
               class="game-story-read"
-              onClick={() => props.onSelectStory(story())}
+              onClick={() => props.onSelectStory(getStoryById(storyId()))}
             >
               Leggi la storia →
             </button>
@@ -139,8 +191,9 @@ function GameStoryPanel(props) {
 }
 
 function CustomerTicket(props) {
+  const { lang } = useStoryLang();
   const customer = () => props.customer;
-  const story = () => getStoryById(customer()?.storyId);
+  const story = () => resolveStory(getStoryById(customer()?.storyId), lang());
 
   return (
     <Show when={customer()}>
@@ -156,8 +209,8 @@ function CustomerTicket(props) {
         <p class="game-ticket-order">«{customer().order}»</p>
         <p class="game-ticket-quirk">{customer().quirk}</p>
         <Show when={story()}>
-          <p class="game-ticket-story">
-            Storia: <strong>{story().title}</strong>
+          <p class="game-ticket-story story-blend-text">
+            Storia: <strong>{story().title}</strong> — {story().excerpt}
           </p>
         </Show>
       </div>
@@ -174,7 +227,7 @@ function GamePizzaStage(props) {
     <div
       class="game-pizza-stage fresco-frame fresco-frame--round"
       classList={{
-        'game-pizza-stage--interactive': props.stage === 'top' && props.hasCheese,
+        'game-pizza-stage--interactive': props.stage === 'top' && props.canTop,
         'game-pizza-stage--baked': props.baked,
         'game-pizza-stage--knead-pop': props.kneadPop,
         'game-pizza-stage--baking': props.stage === 'bake',
@@ -247,6 +300,10 @@ export default function PizzaGame(props) {
   const [mascotMood, setMascotMood] = createSignal('idle');
   const [scorePop, setScorePop] = createSignal(null);
   const [customer, setCustomer] = createSignal(pickCustomer(loadGameDay()));
+  const [storyChoices, setStoryChoices] = createSignal({});
+  const [storyScore, setStoryScore] = createSignal(0);
+  const [storyReaction, setStoryReaction] = createSignal(null);
+  const [bakeIdeal, setBakeIdeal] = createSignal(BAKE_IDEAL);
   const [kneadPop, setKneadPop] = createSignal(false);
   const [stage, setStage] = createSignal('knead');
   const [kneadClicks, setKneadClicks] = createSignal(0);
@@ -297,6 +354,40 @@ export default function PizzaGame(props) {
   };
 
   const kneadProgress = () => Math.min(100, (kneadClicks() / KNEAD_TARGET) * 100);
+  const stageChoice = () => storyChoices()[stage()] ?? null;
+  const needsStoryChoice = () => stage() !== 'result' && !stageChoice();
+  const topChoice = () => storyChoices().top ?? null;
+  const needsCheeseForPizza = () => {
+    const c = topChoice();
+    if (c && storyGuidesCheese(c) === false) return false;
+    return true;
+  };
+  const canAddToppings = () => {
+    if (stage() !== 'top') return false;
+    if (!hasSauce()) return false;
+    if (needsCheeseForPizza()) return hasCheese();
+    return true;
+  };
+  const canConfirmToppings = () => {
+    if (!hasSauce()) return false;
+    if (needsCheeseForPizza() && !hasCheese()) return false;
+    const min = needsCheeseForPizza() ? 2 : 1;
+    return toppings().length >= min;
+  };
+
+  const pickStoryChoice = (choice) => {
+    const s = stage();
+    setStoryChoices((prev) => ({ ...prev, [s]: choice }));
+    if (choice.stretchHint != null) setStretch(choice.stretchHint);
+    if (choice.bakeHint != null) setBakeIdeal(choice.bakeHint);
+    const bonus = scoreStoryChoice(choice);
+    setStoryScore((prev) => prev + bonus);
+    showScorePop(choice.correct ? 'STORIA ✓' : 'STORIA', bonus);
+    setMascotLine(choice.hint);
+    setMascotMood(choice.correct ? 'happy' : 'sad');
+  };
+
+  const choiceBonus = () => scoreStoryChoice(stageChoice());
 
   const handleKnead = () => {
     if (kneadClicks() >= KNEAD_TARGET) return;
@@ -305,7 +396,7 @@ export default function PizzaGame(props) {
     const next = kneadClicks() + 1;
     setKneadClicks(next);
     if (next >= KNEAD_TARGET) {
-      const pts = scoreKnead(next);
+      const pts = scoreKnead(next) + choiceBonus();
       setScores((s) => ({ ...s, knead: pts }));
       showScorePop('IMPASTO', pts);
       setTimeout(() => setStage('stretch'), 400);
@@ -313,14 +404,14 @@ export default function PizzaGame(props) {
   };
 
   const confirmStretch = () => {
-    const pts = scoreStretch(stretch());
+    const pts = scoreStretch(stretch()) + choiceBonus();
     setScores((s) => ({ ...s, stretch: pts }));
     showScorePop('STESURA', pts);
     setStage('top');
   };
 
   const addTopping = (e) => {
-    if (stage() !== 'top' || !hasCheese()) return;
+    if (!canAddToppings()) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -330,8 +421,8 @@ export default function PizzaGame(props) {
   };
 
   const confirmToppings = () => {
-    if (!hasCheese() || toppings().length < 2) return;
-    const pts = scoreToppings(toppings());
+    if (!canConfirmToppings()) return;
+    const pts = scoreToppings(toppings()) + choiceBonus();
     setScores((s) => ({ ...s, top: pts }));
     showScorePop('TOPPING', pts);
     setStage('bake');
@@ -341,14 +432,15 @@ export default function PizzaGame(props) {
   const stopBake = () => {
     if (!baking()) return;
     setBaking(false);
-    const bakeScore = scoreBake(needle());
+    const bakeScore = scoreBake(needle(), bakeIdeal()) + choiceBonus();
     const all = { ...scores(), bake: bakeScore };
     const match = scoreOrderMatch(customer(), {
       hasSauce: hasSauce(),
       hasCheese: hasCheese(),
       toppings: toppings(),
     });
-    const total = totalScore(all, match);
+    const storyTotal = totalStoryChoiceScore(storyChoices());
+    const total = totalScore(all, match, storyTotal);
     const react = customerReaction(total);
     const tip = calcTip(total);
 
@@ -363,6 +455,7 @@ export default function PizzaGame(props) {
     else if (total >= 90) setLives(gainLife());
     setMascotLine(mascotVerdict(total));
     setMascotMood(total >= 75 ? 'happy' : 'sad');
+    setStoryReaction(getCustomerStoryReaction(customer(), storyTotal, match));
     setBaked(true);
     setStage('result');
   };
@@ -391,6 +484,10 @@ export default function PizzaGame(props) {
     setOrderMatch(0);
     setTipEarned(0);
     setFinalScore(0);
+    setStoryChoices({});
+    setStoryScore(0);
+    setStoryReaction(null);
+    setBakeIdeal(BAKE_IDEAL);
     setReaction(null);
     bakeDir = 1;
   };
@@ -532,7 +629,12 @@ export default function PizzaGame(props) {
             </div>
           </Show>
           <div class="game-workspace">
-            <GameStoryPanel stage={stage()} onSelectStory={props.onSelectStory} />
+            <GameStoryPanel
+              stage={stage()}
+              storyId={customer().storyId}
+              stageChoice={stageChoice()}
+              onSelectStory={props.onSelectStory}
+            />
 
             <div class="game-center">
               <div class="game-phone-active">
@@ -544,14 +646,14 @@ export default function PizzaGame(props) {
                       type="button"
                       class="game-pizza-hitarea"
                       onClick={addTopping}
-                      disabled={stage() !== 'top' || !hasCheese()}
+                      disabled={stage() !== 'top' || !canAddToppings()}
                       aria-label="Area pizza"
                     >
                       <GamePizzaStage
                         stage={stage()}
                         stretch={stretch()}
                         kneadProgress={kneadProgress()}
-                        hasCheese={hasCheese()}
+                        canTop={canAddToppings()}
                         toppings={toppings()}
                         baked={baked()}
                         kneadPop={kneadPop()}
@@ -563,9 +665,17 @@ export default function PizzaGame(props) {
             </div>
 
             <div class="game-controls">
-              <Show when={stage() === 'knead'}>
+              <Show when={needsStoryChoice()}>
+                <StoryChoicePanel
+                  storyId={customer().storyId}
+                  stage={stage()}
+                  onPick={pickStoryChoice}
+                />
+              </Show>
+
+              <Show when={!needsStoryChoice() && stage() === 'knead'}>
                 <p class="game-instruction">
-                  {customer().name} aspetta — impasta <strong>{KNEAD_TARGET}</strong> volte come nella storia dell'impasto madre.
+                  {customer().name} aspetta — impasta <strong>{KNEAD_TARGET}</strong> volte. La tua scelta: «{stageChoice()?.label}».
                 </p>
                 <div class="game-meter">
                   <div class="game-meter-fill" style={{ width: `${kneadProgress()}%` }} />
@@ -576,9 +686,9 @@ export default function PizzaGame(props) {
                 </button>
               </Show>
 
-              <Show when={stage() === 'stretch'}>
+              <Show when={!needsStoryChoice() && stage() === 'stretch'}>
                 <p class="game-instruction">
-                  Stendi dal centro verso il bordo. Punta a <strong>{STRETCH_IDEAL}%</strong> per il cornicione perfetto.
+                  Stendi come nella storia — «{stageChoice()?.label}». Punta a <strong>{stretch()}%</strong>.
                 </p>
                 <input
                   type="range"
@@ -595,15 +705,28 @@ export default function PizzaGame(props) {
                 </button>
               </Show>
 
-              <Show when={stage() === 'top'}>
+              <Show when={!needsStoryChoice() && stage() === 'top'}>
                 <p class="game-instruction">
-                  Segui l'ordine: {customer().order}
+                  Segui la storia e l'ordine: {customer().order}
                 </p>
+                <Show when={topChoice()}>
+                  <p class="game-story-guide">
+                    <Show when={storyGuidesSauce(topChoice()) === false}>
+                      📖 La storia suggerisce: <strong>senza formaggio</strong>
+                    </Show>
+                    <Show when={storyGuidesSauce(topChoice()) !== false && storyGuidesCheese(topChoice())}>
+                      📖 Ingredienti della storia evidenziati in oro
+                    </Show>
+                  </p>
+                </Show>
                 <div class="game-topping-actions">
                   <button
                     type="button"
                     class="btn-game-chip"
-                    classList={{ done: hasSauce() }}
+                    classList={{
+                      done: hasSauce(),
+                      'btn-game-chip--story': topChoice() && storyGuidesSauce(topChoice()) !== false,
+                    }}
                     disabled={hasSauce()}
                     onClick={() => setHasSauce(true)}
                   >
@@ -612,21 +735,28 @@ export default function PizzaGame(props) {
                   <button
                     type="button"
                     class="btn-game-chip"
-                    classList={{ done: hasCheese() }}
-                    disabled={!hasSauce() || hasCheese()}
+                    classList={{
+                      done: hasCheese(),
+                      'btn-game-chip--story': topChoice() && storyGuidesCheese(topChoice()) === true,
+                      'btn-game-chip--warn': topChoice() && storyGuidesCheese(topChoice()) === false,
+                    }}
+                    disabled={!hasSauce() || hasCheese() || (topChoice() && storyGuidesCheese(topChoice()) === false)}
                     onClick={() => setHasCheese(true)}
                   >
                     🧀 Formaggio
                   </button>
                 </div>
-                <Show when={hasCheese()}>
+                <Show when={canAddToppings()}>
                   <div class="game-topping-palette" role="toolbar" aria-label="Condimenti">
                     <For each={TOPPING_OPTIONS}>
                       {(t) => (
                         <button
                           type="button"
                           class="btn-topping-pick"
-                          classList={{ active: selectedTopping() === t.id }}
+                          classList={{
+                            active: selectedTopping() === t.id,
+                            'btn-topping-pick--story': isToppingStoryHighlighted(t.id, topChoice()),
+                          }}
                           onClick={() => setSelectedTopping(t.id)}
                           aria-pressed={selectedTopping() === t.id}
                         >
@@ -640,19 +770,19 @@ export default function PizzaGame(props) {
                 <button
                   type="button"
                   class="btn-game-action"
-                  disabled={!hasCheese() || toppings().length < 2}
+                  disabled={!canConfirmToppings()}
                   onClick={confirmToppings}
                 >
                   🔥 Al forno!
                 </button>
               </Show>
 
-              <Show when={stage() === 'bake'}>
+              <Show when={!needsStoryChoice() && stage() === 'bake'}>
                 <p class="game-instruction">
-                  Il forno del 1738 è a 485°C. Ferma l'ago nella zona dorata!
+                  «{stageChoice()?.label}» — forno a 485°C. Ferma l'ago nella zona dorata!
                 </p>
                 <div class="game-oven-meter" role="meter" aria-valuenow={needle()} aria-valuemin={0} aria-valuemax={100}>
-                  <div class="game-oven-zone" style={{ left: `${BAKE_IDEAL - 14}%`, width: '28%' }} />
+                  <div class="game-oven-zone" style={{ left: `${bakeIdeal() - 14}%`, width: '28%' }} />
                   <div class="game-oven-needle" style={{ left: `${needle()}%` }} />
                 </div>
                 <p class="game-meter-label">Temperatura cottura</p>
@@ -688,6 +818,11 @@ export default function PizzaGame(props) {
                   <p class="game-tip-earned">Mancia: <strong>€{tipEarned().toFixed(2)}</strong></p>
                   <p class="game-verdict">{verdict(finalScore())}</p>
                   <p class="game-mascot-verdict">{mascotLine()}</p>
+                  <Show when={storyReaction()}>
+                    <p class="game-story-reaction">
+                      <span>{storyReaction().mood}</span> {storyReaction().line}
+                    </p>
+                  </Show>
                   <Show when={finalScore() < 40 && lives() < STARTING_LIVES}>
                     <p class="game-life-lost">💔 -1 LIFE</p>
                   </Show>
@@ -703,6 +838,7 @@ export default function PizzaGame(props) {
                     <div><dt>Condimenti</dt><dd>{scores().top}</dd></div>
                     <div><dt>Forno</dt><dd>{scores().bake}</dd></div>
                     <div><dt>Ordine</dt><dd>{orderMatch()}</dd></div>
+                    <div><dt>Storia</dt><dd>{totalStoryChoiceScore(storyChoices())}</dd></div>
                   </dl>
                   <div class="game-result-actions">
                     <button type="button" class="btn-game-action" onClick={addToCart}>
