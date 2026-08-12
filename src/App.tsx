@@ -6,7 +6,7 @@ import Tracker from './components/Tracker'
 import Footer from './components/Footer'
 import PizzaBuilder from './components/PizzaBuilder'
 import CartDrawer from './components/CartDrawer'
-import { orderPlaced, setOrderPlaced } from './store'
+import { showConfirmation, setShowConfirmation } from './store'
 import './App.css'
 
 export default function App() {
@@ -21,12 +21,12 @@ export default function App() {
       <Footer />
       <PizzaBuilder />
       <CartDrawer />
-      <Show when={orderPlaced()}>
+      <Show when={showConfirmation()}>
         <div class="toast" role="status">
           <div class="toast__card">
             <h2>Order confirmed!</h2>
             <p>Your pizza is in the oven. Check the tracker for live updates.</p>
-            <button type="button" class="btn btn--blue" onClick={() => setOrderPlaced(false)}>
+            <button type="button" class="btn btn--blue" onClick={() => setShowConfirmation(false)}>
               Keep Browsing
             </button>
           </div>

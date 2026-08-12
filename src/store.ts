@@ -1,6 +1,6 @@
 import { createSignal, createMemo } from 'solid-js'
 import type { MenuItem, CrustOption, SizeOption } from './data/menu'
-import { crusts, sizes, toppings } from './data/menu'
+import { crusts, sizes, sauces, cheeseAmounts, toppings } from './data/menu'
 
 export type Fulfillment = 'delivery' | 'carryout'
 
@@ -32,6 +32,7 @@ const [builderItem, setBuilderItem] = createSignal<MenuItem | null>(null)
 const [cart, setCart] = createSignal<CartLine[]>([])
 const [activeCategory, setActiveCategory] = createSignal('pizza')
 const [orderPlaced, setOrderPlaced] = createSignal(false)
+const [showConfirmation, setShowConfirmation] = createSignal(false)
 
 export {
   fulfillment,
@@ -46,6 +47,8 @@ export {
   setActiveCategory,
   orderPlaced,
   setOrderPlaced,
+  showConfirmation,
+  setShowConfirmation,
 }
 
 export const cartCount = createMemo(() =>
@@ -84,8 +87,8 @@ export function addPizzaToCart(build: PizzaBuild) {
 
   const details = [
     `${size.name} · ${crust.name}`,
-    `Sauce: ${build.sauceId.replace(/-/g, ' ')}`,
-    `Cheese: ${build.cheeseId}`,
+    `Sauce: ${sauces.find((s) => s.id === build.sauceId)?.name ?? build.sauceId}`,
+    `Cheese: ${cheeseAmounts.find((c) => c.id === build.cheeseId)?.name ?? build.cheeseId}`,
     ...(toppingNames.length ? [`Toppings: ${toppingNames.join(', ')}`] : ['Cheese pizza']),
   ]
 
@@ -151,6 +154,7 @@ export function clearCart() {
 export function placeOrder() {
   if (cart().length === 0) return
   setOrderPlaced(true)
+  setShowConfirmation(true)
   clearCart()
   setCartOpen(false)
 }
