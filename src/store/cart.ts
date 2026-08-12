@@ -92,13 +92,41 @@ export function pizzaDetails(config: PizzaConfig) {
   return `${size} · ${crust}${toppingNames.length ? ` · ${toppingNames.join(', ')}${more}` : ''}`
 }
 
-const [serviceMethod, setServiceMethod] = createSignal<ServiceMethod>('delivery')
+const STORAGE_KEY = 'ninos-pizza-cart'
+const SERVICE_KEY = 'ninos-pizza-service'
+
+function loadCart(): CartLine[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as CartLine[]
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
+function loadService(): ServiceMethod {
+  const value = localStorage.getItem(SERVICE_KEY)
+  return value === 'carryout' ? 'carryout' : 'delivery'
+}
+
+const [serviceMethod, setServiceMethodSignal] = createSignal<ServiceMethod>(loadService())
 const [cartOpen, setCartOpen] = createSignal(false)
 const [builderOpen, setBuilderOpen] = createSignal(false)
 const [builderConfig, setBuilderConfig] = createSignal<PizzaConfig>(createDefaultPizza())
 const [orderPlaced, setOrderPlaced] = createSignal(false)
 
-const [cart, setCart] = createStore<{ lines: CartLine[] }>({ lines: [] })
+const [cart, setCart] = createStore<{ lines: CartLine[] }>({ lines: loadCart() })
+
+function persistCart() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(cart.lines))
+}
+
+export function setServiceMethod(method: ServiceMethod) {
+  setServiceMethodSignal(method)
+  localStorage.setItem(SERVICE_KEY, method)
+}
 
 function uid() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
@@ -145,6 +173,7 @@ export function addPizzaToCart(config: PizzaConfig) {
       })
     }),
   )
+  persistCart()
   setBuilderOpen(false)
   setCartOpen(true)
 }
@@ -174,6 +203,7 @@ export function addItemToCart(item: {
       }
     }),
   )
+  persistCart()
   setCartOpen(true)
 }
 
@@ -188,6 +218,7 @@ export function changeQty(id: string, delta: number) {
       }
     }),
   )
+  persistCart()
 }
 
 export function removeLine(id: string) {
@@ -196,10 +227,12 @@ export function removeLine(id: string) {
       state.lines = state.lines.filter((l) => l.id !== id)
     }),
   )
+  persistCart()
 }
 
 export function clearCart() {
   setCart({ lines: [] })
+  persistCart()
 }
 
 export function cartCount() {
@@ -225,7 +258,6 @@ export {
   builderConfig,
   setBuilderConfig,
   serviceMethod,
-  setServiceMethod,
   orderPlaced,
   setOrderPlaced,
 }
