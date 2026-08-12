@@ -1,37 +1,27 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# Dommino's — SolidJS Pizza Ordering UI
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+A Domino's-inspired pizza ordering experience built with **SolidJS** and Vite.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+## Features
 
-To install and run the example site locally, here’s what you’ll need:
+- Delivery / carryout toggle
+- Category navigation (Deals, Pizza, Wings, Sides, Desserts, Drinks)
+- Full pizza builder (size, crust, sauce, toppings)
+- Cart drawer with quantity controls, tax & delivery fee
+- Place-order confirmation flow
 
-## System Requirements
-
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
-
-## Usage
-
-Clone this repository and run:
+## Develop
 
 ```bash
 npm install
-npm run start
+npm run dev
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
-
-To build your static output to the `/dist` folder, use:
+## Build
 
 ```bash
 npm run build
+npm run preview
 ```
 
-## License
-
-[MIT](LICENSE)
+Demo only — not affiliated with Domino's Pizza.
