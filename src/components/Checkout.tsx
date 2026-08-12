@@ -5,21 +5,23 @@ import './Checkout.css'
 
 export default function Checkout() {
   const [entered, setEntered] = createSignal(false)
-  const [name, setName] = createSignal('')
-  const [phone, setPhone] = createSignal('')
-  const [address, setAddress] = createSignal(store.storeAddress())
-  const [note, setNote] = createSignal('')
   const [error, setError] = createSignal('')
 
   onMount(() => requestAnimationFrame(() => setEntered(true)))
 
   const submit = (e: Event) => {
     e.preventDefault()
-    if (!name().trim() || !phone().trim()) {
+    const form = e.currentTarget as HTMLFormElement
+    const data = new FormData(form)
+    const name = String(data.get('name') ?? '').trim()
+    const phone = String(data.get('phone') ?? '').trim()
+    const address = String(data.get('address') ?? '').trim()
+
+    if (!name || !phone) {
       setError('Add your name and phone so we can confirm the order.')
       return
     }
-    if (store.orderType() === 'delivery' && !address().trim()) {
+    if (store.orderType() === 'delivery' && !address) {
       setError('Delivery needs a street address.')
       return
     }
@@ -47,20 +49,22 @@ export default function Checkout() {
         <form class="checkout__form" onSubmit={submit}>
           <label>
             Name
-            <input value={name()} onInput={(e) => setName(e.currentTarget.value)} placeholder="Alex Rivera" autocomplete="name" />
+            <input name="name" placeholder="Alex Rivera" autocomplete="name" required />
           </label>
           <label>
             Phone
-            <input value={phone()} onInput={(e) => setPhone(e.currentTarget.value)} placeholder="(555) 010-4820" autocomplete="tel" />
+            <input name="phone" placeholder="(555) 010-4820" autocomplete="tel" required />
           </label>
           <Show when={store.orderType() === 'delivery'}>
             <label>
               Delivery address
               <input
-                value={address()}
-                onInput={(e) => setAddress(e.currentTarget.value)}
+                name="address"
+                value={store.storeAddress()}
+                onInput={(e) => store.setStoreAddress(e.currentTarget.value)}
                 placeholder="Street, city, ZIP"
                 autocomplete="street-address"
+                required
               />
             </label>
           </Show>
@@ -73,8 +77,7 @@ export default function Checkout() {
           <label>
             Order notes
             <textarea
-              value={note()}
-              onInput={(e) => setNote(e.currentTarget.value)}
+              name="note"
               placeholder="Gate code, extra napkins, well-done crust…"
               rows={3}
             />

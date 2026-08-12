@@ -11,17 +11,17 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(255, 255, 255, 0.12), transparent 55%),
-    linear-gradient(135deg, #9b1228 0%, var(--red) 38%, #c41430 62%, var(--blue-deep) 100%);
-  animation: hero-shift 14s ease-in-out infinite alternate;
+    radial-gradient(ellipse 70% 55% at 72% 38%, rgba(255, 255, 255, 0.14), transparent 55%),
+    linear-gradient(118deg, #b3122a 0%, var(--red) 42%, #a81f3d 58%, #0a5a80 78%, var(--blue-deep) 100%);
+  animation: hero-glow 10s ease-in-out infinite alternate;
 }
 
-@keyframes hero-shift {
+@keyframes hero-glow {
   from {
-    filter: hue-rotate(0deg);
+    transform: scale(1);
   }
   to {
-    filter: hue-rotate(-8deg);
+    transform: scale(1.03);
   }
 }
 
