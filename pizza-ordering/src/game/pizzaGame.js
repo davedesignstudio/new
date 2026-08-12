@@ -5,24 +5,33 @@ export const STAGE_STORIES = {
     variant: 'impasto',
     type: 'story',
     geometry: 'vitruvian',
+    scene: false,
     artVariant: 'impasto',
     artType: 'story',
+    museumVariant: 'impasto',
+    heritage: 'Impasto lievitato 24 ore — Napoli',
   },
   stretch: {
     storyId: 'impasto-24-ore',
     variant: 'impasto',
     type: 'story',
     geometry: 'vitruvian',
+    scene: false,
     artVariant: 'impasto',
     artType: 'story',
+    museumVariant: 'impasto',
+    heritage: 'Stesura a mano — cornicione napoletano',
   },
   top: {
     storyId: 'regina-margherita',
     variant: 'margherita',
     type: 'story',
     geometry: 'mandorla',
+    scene: false,
     artVariant: 'margherita',
     artType: 'food',
+    museumVariant: 'margherita',
+    heritage: 'I tre colori della Regina — 1889',
   },
   bake: {
     storyId: 'forno-1738',
@@ -32,22 +41,29 @@ export const STAGE_STORIES = {
     scene: true,
     artVariant: 'hero-forno',
     artType: 'scene',
+    museumVariant: 'hero-forno',
+    heritage: 'Forno a legna dal 1738 — Via dei Tribunali',
   },
   result: {
     storyId: 'regina-margherita',
     variant: 'margherita',
     type: 'story',
     geometry: 'mandorla',
+    scene: false,
     artVariant: 'margherita',
     artType: 'food',
+    museumVariant: 'margherita',
+    heritage: 'Giudizio del cliente',
   },
 };
 
-/** All heritage stories referenced in the game */
+/** All six heritage stories — every prompt wired into the game */
 export const GAME_STORY_IDS = [
-  'impasto-24-ore',
-  'regina-margherita',
   'forno-1738',
+  'regina-margherita',
+  'via-tribunali',
+  'impasto-24-ore',
+  'sfogliatella-mare',
   'vesuvio-vigilia',
 ];
 
@@ -58,7 +74,7 @@ export const STAGE_LABELS = {
   stretch: 'Stendi',
   top: 'Condimenti',
   bake: 'Forno',
-  result: 'Giudizio',
+  result: 'Servi',
 };
 
 export const TOPPING_OPTIONS = [
@@ -70,11 +86,80 @@ export const TOPPING_OPTIONS = [
   { id: 'funghi', label: 'Funghi', color: '#C49A30', emoji: '🍄' },
 ];
 
+/** App Store–style customers with quirky Napoli orders (Good Pizza, Great Pizza inspired) */
+export const CUSTOMERS = [
+  {
+    id: 'nonna-carmela',
+    name: 'Nonna Carmela',
+    emoji: '👵',
+    location: 'Via dei Tribunali',
+    order: 'Una Margherita come nel 1889: salsa, mozzarella e basilico fresco.',
+    storyId: 'regina-margherita',
+    wants: { sauce: true, cheese: true, toppings: ['basilico'], minToppings: 2 },
+    quirk: '«I tre colori della bandiera, o niente!»',
+  },
+  {
+    id: 'marinaio-luigi',
+    name: 'Luigi il Marinaio',
+    emoji: '⚓',
+    location: 'Porto di Napoli',
+    order: 'Marinara semplice — solo salsa e aglio, niente formaggio.',
+    storyId: 'vesuvio-vigilia',
+    wants: { sauce: true, cheese: false, toppings: ['pomodoro'], minToppings: 1 },
+    quirk: '«La marinara del Vesuvio mi tiene in piedi.»',
+  },
+  {
+    id: 'studente-arte',
+    name: 'Chiara dell\'Accademia',
+    emoji: '🎨',
+    location: 'Spaccanapoli',
+    order: 'Bufala DOP con pomodoro e funghi — come un quadro rinascimentale.',
+    storyId: 'via-tribunali',
+    wants: { sauce: true, cheese: true, toppings: ['bufala', 'funghi'], minToppings: 3 },
+    quirk: '«Ogni ingrediente deve essere un colore diverso.»',
+  },
+  {
+    id: 'turista-amalfi',
+    name: 'Marco della Costiera',
+    emoji: '🍋',
+    location: 'Costiera Amalfitana',
+    order: 'Pizza con olive e salame piccante — e una sfogliatella dopo!',
+    storyId: 'sfogliatella-mare',
+    wants: { sauce: true, cheese: true, toppings: ['olive', 'salame'], minToppings: 2 },
+    quirk: '«Il limoncello aspetta, ma prima la pizza!»',
+  },
+  {
+    id: 'fornaio-raffaele',
+    name: 'Raffaele Esposito',
+    emoji: '🔥',
+    location: 'Forno storico, 1738',
+    order: 'Impasto perfetto, cornicione alto, cottura dorata nel forno a legna.',
+    storyId: 'forno-1738',
+    wants: { sauce: true, cheese: true, toppings: ['basilico', 'bufala'], minToppings: 2 },
+    quirk: '«Il forno non mente mai.»',
+  },
+  {
+    id: 'regina-ombra',
+    name: 'Una signora elegante',
+    emoji: '👑',
+    location: 'Palazzo Reale',
+    order: 'Solo i migliori ingredienti DOP — bufala, pomodoro San Marzano, basilico.',
+    storyId: 'regina-margherita',
+    wants: { sauce: true, cheese: true, toppings: ['bufala', 'pomodoro', 'basilico'], minToppings: 3 },
+    quirk: '«La regina non accetta compromessi.»',
+  },
+];
+
 export const KNEAD_TARGET = 12;
 export const STRETCH_IDEAL = 78;
 export const STRETCH_TOLERANCE = 12;
 export const BAKE_IDEAL = 72;
 export const BAKE_TOLERANCE = 14;
+
+export function pickCustomer(day = 1) {
+  const index = (day - 1) % CUSTOMERS.length;
+  return CUSTOMERS[index];
+}
 
 export function scoreKnead(clicks) {
   const diff = Math.abs(clicks - KNEAD_TARGET);
@@ -102,13 +187,30 @@ export function scoreBake(needle) {
   return Math.max(0, 50 - (diff - BAKE_TOLERANCE) * 5);
 }
 
-export function totalScore(scores) {
-  const weights = { knead: 0.2, stretch: 0.25, top: 0.25, bake: 0.3 };
+/** How well the pizza matches the customer's order (App Store order-matching) */
+export function scoreOrderMatch(customer, { hasSauce, hasCheese, toppings }) {
+  if (!customer?.wants) return 50;
+  const ids = toppings.map((t) => t.id);
+  let score = 0;
+  if (hasSauce === customer.wants.sauce) score += 25;
+  else score -= 15;
+  if (hasCheese === customer.wants.cheese) score += 25;
+  else score -= 15;
+  const wanted = customer.wants.toppings ?? [];
+  const matched = wanted.filter((id) => ids.includes(id)).length;
+  score += wanted.length ? (matched / wanted.length) * 35 : 0;
+  if (ids.length >= (customer.wants.minToppings ?? 2)) score += 15;
+  return Math.max(0, Math.min(100, Math.round(score)));
+}
+
+export function totalScore(scores, orderMatch = 0) {
+  const weights = { knead: 0.15, stretch: 0.2, top: 0.2, bake: 0.25, order: 0.2 };
   const sum =
     scores.knead * weights.knead +
     scores.stretch * weights.stretch +
     scores.top * weights.top +
-    scores.bake * weights.bake;
+    scores.bake * weights.bake +
+    orderMatch * weights.order;
   return Math.round(sum);
 }
 
@@ -120,6 +222,19 @@ export function starRating(score) {
   return 1;
 }
 
+export function customerReaction(score) {
+  if (score >= 90) return { mood: '😍', label: 'Perfetta!', tipMult: 1.4 };
+  if (score >= 75) return { mood: '😊', label: 'Ottima pizza!', tipMult: 1.2 };
+  if (score >= 60) return { mood: '🙂', label: 'Buona.', tipMult: 1.0 };
+  if (score >= 40) return { mood: '😐', label: 'Mah...', tipMult: 0.7 };
+  return { mood: '😞', label: 'Non era quello che volevo.', tipMult: 0.4 };
+}
+
+export function calcTip(score, baseTip = 2.5) {
+  const reaction = customerReaction(score);
+  return Math.round(baseTip * reaction.tipMult * 100) / 100;
+}
+
 export function verdict(score) {
   if (score >= 90) return 'Maestro Pizzaiolo! Una vera opera d\'arte napoletana.';
   if (score >= 75) return 'Eccellente! Il forno approva con orgoglio.';
@@ -129,6 +244,8 @@ export function verdict(score) {
 }
 
 export const HIGH_SCORE_KEY = 'antica-pizzeria-best-score';
+export const DAY_KEY = 'antica-pizzeria-game-day';
+export const TIPS_KEY = 'antica-pizzeria-total-tips';
 
 export function loadHighScore() {
   try {
@@ -148,11 +265,56 @@ export function saveHighScore(score) {
   }
 }
 
+export function loadGameDay() {
+  try {
+    return Number(localStorage.getItem(DAY_KEY)) || 1;
+  } catch {
+    return 1;
+  }
+}
+
+export function advanceGameDay() {
+  try {
+    const next = loadGameDay() + 1;
+    localStorage.setItem(DAY_KEY, String(next));
+    return next;
+  } catch {
+    return 2;
+  }
+}
+
+export function loadTotalTips() {
+  try {
+    return Number(localStorage.getItem(TIPS_KEY)) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+export function addTips(amount) {
+  try {
+    const total = loadTotalTips() + amount;
+    localStorage.setItem(TIPS_KEY, String(Math.round(total * 100) / 100));
+    return total;
+  } catch {
+    return amount;
+  }
+}
+
 export const GAME_RULES = [
-  { stage: 'Impasta', tip: 'Clicca 12 volte per lievitare l\'impasto madre.' },
+  { stage: 'Ordine', tip: 'Leggi il biglietto del cliente — ogni ordine è unico.' },
+  { stage: 'Impasta', tip: 'Tocca 12 volte per lievitare l\'impasto madre napoletano.' },
   { stage: 'Stendi', tip: 'Porta il diametro al 78% per il cornicione perfetto.' },
-  { stage: 'Condimenti', tip: 'Salsa, formaggio e almeno 2 condimenti sulla pizza.' },
-  { stage: 'Forno', tip: 'Ferma l\'ago nella zona dorata a 485°C.' },
+  { stage: 'Condimenti', tip: 'Salsa, formaggio e condimenti come richiesto.' },
+  { stage: 'Forno', tip: 'Ferma l\'ago nella zona dorata del forno a legna.' },
+  { stage: 'Servi', tip: 'Guadagna mance e stelle — arte dei musei e storie incluse.' },
+];
+
+export const GAME_FEATURES = [
+  { icon: '🇮🇹', label: 'Grafica italiana', detail: 'Campania, Napoli, Costiera' },
+  { icon: '🏛️', label: 'Arte dei musei', detail: 'Met, Cleveland, Chicago, Rijksmuseum' },
+  { icon: '📖', label: '6 storie originali', detail: 'Tutta la tradizione della pizzeria' },
+  { icon: '📱', label: 'Stile App Store', detail: 'Ordini, mance, giorni, clienti' },
 ];
 
 export function randomToppingPosition(seed) {

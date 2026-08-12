@@ -2,6 +2,7 @@ import { createSignal, createEffect, onCleanup, For, Show } from 'solid-js';
 import { useCart } from '../store/cart';
 import { formatPrice } from '../data/menu';
 import { STORIES, getStoryById } from '../data/stories';
+import { getMuseumAttribution } from '../data/museumArt';
 import RenaissanceMedia from '../art/RenaissanceMedia';
 import FrescoArt from '../art/FrescoArt';
 import { RenaissanceOrnament } from '../art/RenaissanceOrnament';
@@ -15,15 +16,25 @@ import {
   KNEAD_TARGET,
   STRETCH_IDEAL,
   BAKE_IDEAL,
+  CUSTOMERS,
+  GAME_FEATURES,
   scoreKnead,
   scoreStretch,
   scoreToppings,
   scoreBake,
+  scoreOrderMatch,
   totalScore,
   starRating,
   verdict,
+  customerReaction,
+  calcTip,
+  pickCustomer,
   loadHighScore,
   saveHighScore,
+  loadGameDay,
+  advanceGameDay,
+  loadTotalTips,
+  addTips,
   GAME_RULES,
 } from '../game/pizzaGame';
 import '../game/game.css';
@@ -31,6 +42,7 @@ import '../game/game.css';
 function GameStoryPanel(props) {
   const config = () => STAGE_STORIES[props.stage] ?? STAGE_STORIES.knead;
   const story = () => getStoryById(config().storyId);
+  const museumCredit = () => getMuseumAttribution(config().museumVariant);
 
   return (
     <aside class="game-story-panel fresco-frame fresco-frame--arch">
@@ -53,6 +65,12 @@ function GameStoryPanel(props) {
           <span class="story-year">{story().year}</span>
           <h3 class="game-story-title">{story().title}</h3>
           <p class="game-story-excerpt">{story().excerpt}</p>
+          <Show when={config().heritage}>
+            <p class="game-heritage-line">{config().heritage}</p>
+          </Show>
+          <Show when={museumCredit()}>
+            <p class="game-museum-credit">{museumCredit()}</p>
+          </Show>
           <Show when={props.onSelectStory}>
             <button
               type="button"
@@ -65,6 +83,33 @@ function GameStoryPanel(props) {
         </div>
       </Show>
     </aside>
+  );
+}
+
+function CustomerTicket(props) {
+  const customer = () => props.customer;
+  const story = () => getStoryById(customer()?.storyId);
+
+  return (
+    <Show when={customer()}>
+      <div class="game-order-ticket" aria-label="Ordine del cliente">
+        <div class="game-ticket-header">
+          <span class="game-ticket-emoji">{customer().emoji}</span>
+          <div>
+            <p class="game-ticket-name">{customer().name}</p>
+            <p class="game-ticket-location">{customer().location}</p>
+          </div>
+          <span class="game-ticket-day">Giorno {props.day}</span>
+        </div>
+        <p class="game-ticket-order">«{customer().order}»</p>
+        <p class="game-ticket-quirk">{customer().quirk}</p>
+        <Show when={story()}>
+          <p class="game-ticket-story">
+            Storia: <strong>{story().title}</strong>
+          </p>
+        </Show>
+      </div>
+    </Show>
   );
 }
 
@@ -143,6 +188,9 @@ export default function PizzaGame(props) {
 
   const [started, setStarted] = createSignal(false);
   const [highScore, setHighScore] = createSignal(loadHighScore());
+  const [gameDay, setGameDay] = createSignal(loadGameDay());
+  const [totalTips, setTotalTips] = createSignal(loadTotalTips());
+  const [customer, setCustomer] = createSignal(pickCustomer(loadGameDay()));
   const [kneadPop, setKneadPop] = createSignal(false);
   const [stage, setStage] = createSignal('knead');
   const [kneadClicks, setKneadClicks] = createSignal(0);
@@ -155,7 +203,10 @@ export default function PizzaGame(props) {
   const [baking, setBaking] = createSignal(false);
   const [baked, setBaked] = createSignal(false);
   const [scores, setScores] = createSignal({ knead: 0, stretch: 0, top: 0, bake: 0 });
+  const [orderMatch, setOrderMatch] = createSignal(0);
+  const [tipEarned, setTipEarned] = createSignal(0);
   const [finalScore, setFinalScore] = createSignal(0);
+  const [reaction, setReaction] = createSignal(null);
 
   let bakeFrame;
   let bakeDir = 1;
@@ -218,12 +269,24 @@ export default function PizzaGame(props) {
     if (!baking()) return;
     setBaking(false);
     const bakeScore = scoreBake(needle());
-    setScores((s) => ({ ...s, bake: bakeScore }));
-    setBaked(true);
     const all = { ...scores(), bake: bakeScore };
-    const total = totalScore(all);
+    const match = scoreOrderMatch(customer(), {
+      hasSauce: hasSauce(),
+      hasCheese: hasCheese(),
+      toppings: toppings(),
+    });
+    const total = totalScore(all, match);
+    const react = customerReaction(total);
+    const tip = calcTip(total);
+
+    setScores(all);
+    setOrderMatch(match);
     setFinalScore(total);
+    setReaction(react);
+    setTipEarned(tip);
     setHighScore(saveHighScore(total));
+    setTotalTips(addTips(tip));
+    setBaked(true);
     setStage('result');
   };
 
@@ -233,6 +296,9 @@ export default function PizzaGame(props) {
   };
 
   const resetGame = () => {
+    const day = loadGameDay();
+    setGameDay(day);
+    setCustomer(pickCustomer(day));
     setStage('knead');
     setKneadClicks(0);
     setStretch(45);
@@ -243,13 +309,23 @@ export default function PizzaGame(props) {
     setBaking(false);
     setBaked(false);
     setScores({ knead: 0, stretch: 0, top: 0, bake: 0 });
+    setOrderMatch(0);
+    setTipEarned(0);
     setFinalScore(0);
+    setReaction(null);
     bakeDir = 1;
+  };
+
+  const nextDay = () => {
+    const next = advanceGameDay();
+    setGameDay(next);
+    setCustomer(pickCustomer(next));
+    resetGame();
   };
 
   const addToCart = () => {
     cart.addCustomItem(
-      `Pizza del Maestro (${finalScore()} pts)`,
+      `Pizza per ${customer().name} (${finalScore()} pts)`,
       9.5 + (finalScore() / 100) * 3
     );
   };
@@ -266,22 +342,47 @@ export default function PizzaGame(props) {
           </div>
           <h2 id="game-heading">Il Gioco del Pizzaiolo</h2>
           <p class="game-intro">
-            Impasta, stendi, condisci e inforna — le stesse storie e immagini della nostra pizzeria prendono vita tra le tue mani.
+            Impasta, stendi, condisci e inforna — grafica italiana, arte dei musei e tutte le storie della pizzeria in un gioco stile App Store.
           </p>
-          <Show when={highScore() > 0}>
-            <p class="game-high-score">Record: <strong>{highScore()}</strong> punti</p>
-          </Show>
+          <div class="game-stats-bar">
+            <Show when={highScore() > 0}>
+              <span class="game-stat">Record: <strong>{highScore()}</strong></span>
+            </Show>
+            <span class="game-stat">Giorno <strong>{gameDay()}</strong></span>
+            <span class="game-stat">Mance: <strong>€{totalTips().toFixed(2)}</strong></span>
+          </div>
         </header>
 
         <Show when={!started()}>
           <div class="game-lobby fresco-card-bg">
-            <div class="game-lobby-art fresco-frame fresco-frame--round">
-              <FrescoArt variant="margherita" type="food" label="Pizza" />
+            <div class="game-phone-preview">
+              <div class="game-phone-frame">
+                <div class="game-phone-notch" aria-hidden="true" />
+                <div class="game-phone-screen">
+                  <div class="game-lobby-art fresco-frame fresco-frame--round">
+                    <FrescoArt variant="margherita" type="food" label="Pizza" />
+                  </div>
+                  <p class="game-phone-tagline">Good Pizza, Napoli Style</p>
+                </div>
+              </div>
             </div>
             <h3 class="game-lobby-title">Diventa Pizzaiolo per un giorno</h3>
             <p class="game-lobby-desc">
-              Quattro fasi, un forno a legna, un giudizio finale. Vinci stelle e aggiungi la tua creazione al carrello.
+              Leggi l'ordine del cliente, cucina la pizza perfetta, guadagna mance e avanza di giorno in giorno.
             </p>
+            <div class="game-features">
+              <For each={GAME_FEATURES}>
+                {(feat) => (
+                  <div class="game-feature-chip">
+                    <span class="game-feature-icon">{feat.icon}</span>
+                    <div>
+                      <span class="game-feature-label">{feat.label}</span>
+                      <span class="game-feature-detail">{feat.detail}</span>
+                    </div>
+                  </div>
+                )}
+              </For>
+            </div>
             <ol class="game-rules">
               <For each={GAME_RULES}>
                 {(rule) => (
@@ -292,6 +393,18 @@ export default function PizzaGame(props) {
                 )}
               </For>
             </ol>
+            <div class="game-customers-preview">
+              <p class="game-customers-label">Clienti di Napoli</p>
+              <div class="game-customers-row">
+                <For each={CUSTOMERS}>
+                  {(c) => (
+                    <span class="game-customer-avatar" title={c.name}>
+                      {c.emoji}
+                    </span>
+                  )}
+                </For>
+              </div>
+            </div>
             <button type="button" class="btn-game-action btn-game-start" onClick={startGame}>
               🔥 Inizia a cucinare
             </button>
@@ -321,29 +434,37 @@ export default function PizzaGame(props) {
             <GameStoryPanel stage={stage()} onSelectStory={props.onSelectStory} />
 
             <div class="game-center">
-              <button
-                type="button"
-                class="game-pizza-hitarea"
-                onClick={addTopping}
-                disabled={stage() !== 'top' || !hasCheese()}
-                aria-label="Area pizza"
-              >
-                <GamePizzaStage
-                  stage={stage()}
-                  stretch={stretch()}
-                  kneadProgress={kneadProgress()}
-                  hasCheese={hasCheese()}
-                  toppings={toppings()}
-                  baked={baked()}
-                  kneadPop={kneadPop()}
-                />
-              </button>
+              <div class="game-phone-active">
+                <div class="game-phone-frame game-phone-frame--compact">
+                  <div class="game-phone-notch" aria-hidden="true" />
+                  <div class="game-phone-screen">
+                    <CustomerTicket customer={customer()} day={gameDay()} />
+                    <button
+                      type="button"
+                      class="game-pizza-hitarea"
+                      onClick={addTopping}
+                      disabled={stage() !== 'top' || !hasCheese()}
+                      aria-label="Area pizza"
+                    >
+                      <GamePizzaStage
+                        stage={stage()}
+                        stretch={stretch()}
+                        kneadProgress={kneadProgress()}
+                        hasCheese={hasCheese()}
+                        toppings={toppings()}
+                        baked={baked()}
+                        kneadPop={kneadPop()}
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="game-controls">
               <Show when={stage() === 'knead'}>
                 <p class="game-instruction">
-                  Il lievito madre aspetta le tue mani — come racconta la storia dell'impasto. Impasta <strong>{KNEAD_TARGET}</strong> volte.
+                  {customer().name} aspetta — impasta <strong>{KNEAD_TARGET}</strong> volte come nella storia dell'impasto madre.
                 </p>
                 <div class="game-meter">
                   <div class="game-meter-fill" style={{ width: `${kneadProgress()}%` }} />
@@ -375,7 +496,7 @@ export default function PizzaGame(props) {
 
               <Show when={stage() === 'top'}>
                 <p class="game-instruction">
-                  Come la Regina Margherita del 1889: salsa, formaggio e almeno 2 condimenti sulla pizza.
+                  Segui l'ordine: {customer().order}
                 </p>
                 <div class="game-topping-actions">
                   <button
@@ -441,12 +562,17 @@ export default function PizzaGame(props) {
 
               <Show when={stage() === 'result'}>
                 <div class="game-result">
+                  <div class="game-customer-reaction" aria-live="polite">
+                    <span class="game-reaction-mood">{reaction()?.mood}</span>
+                    <p class="game-reaction-label">{reaction()?.label}</p>
+                    <p class="game-reaction-customer">— {customer().name}</p>
+                  </div>
                   <div class="game-result-art fresco-frame fresco-frame--octagon">
                     <RenaissanceMedia
                       class="ren-media--card"
                       source="blend"
-                      variant="margherita"
-                      storyId="regina-margherita"
+                      variant={getStoryVariant(customer().storyId)}
+                      storyId={customer().storyId}
                       type="story"
                       frame="octagon"
                       geometry="mandorla"
@@ -458,6 +584,7 @@ export default function PizzaGame(props) {
                     {'★'.repeat(starRating(finalScore()))}
                     <span class="game-stars-dim">{'★'.repeat(5 - starRating(finalScore()))}</span>
                   </p>
+                  <p class="game-tip-earned">Mancia: <strong>€{tipEarned().toFixed(2)}</strong></p>
                   <p class="game-verdict">{verdict(finalScore())}</p>
                   <Show when={finalScore() >= highScore() && finalScore() > 0}>
                     <p class="game-new-record">🏆 Nuovo record!</p>
@@ -467,6 +594,7 @@ export default function PizzaGame(props) {
                     <div><dt>Stesura</dt><dd>{scores().stretch}</dd></div>
                     <div><dt>Condimenti</dt><dd>{scores().top}</dd></div>
                     <div><dt>Forno</dt><dd>{scores().bake}</dd></div>
+                    <div><dt>Ordine</dt><dd>{orderMatch()}</dd></div>
                   </dl>
                   <div class="game-result-actions">
                     <button type="button" class="btn-game-action" onClick={addToCart}>
@@ -474,6 +602,9 @@ export default function PizzaGame(props) {
                     </button>
                     <button type="button" class="btn-game-secondary" onClick={resetGame}>
                       ↺ Riprova
+                    </button>
+                    <button type="button" class="btn-game-secondary btn-game-next-day" onClick={nextDay}>
+                      ☀️ Giorno successivo
                     </button>
                   </div>
                 </div>
@@ -483,7 +614,7 @@ export default function PizzaGame(props) {
         </div>
 
         <div class="game-stories-strip">
-          <h3 class="game-stories-strip-title">Storie del gioco</h3>
+          <h3 class="game-stories-strip-title">Storie del gioco — tutte e 6</h3>
           <div class="game-stories-row">
             <For each={gameStories()}>
               {(story) => (
