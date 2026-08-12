@@ -12,6 +12,8 @@ import Cart from './components/Cart';
 import RenaissanceMedia from './art/RenaissanceMedia';
 import { RenaissanceOrnament } from './art/RenaissanceOrnament';
 import { CartProvider, useCart } from './store/cart';
+import { StoryLangProvider, useStoryLang } from './store/storyLang';
+import { resolveSiteOrigin } from './data/storyBlend';
 import { SCENE_VARIANTS } from './data/images';
 import { SITE } from './data/site';
 import { DEALS } from './data/deals';
@@ -20,6 +22,9 @@ import './art/photoTreatment.css';
 import './App.css';
 
 function HeroBanner() {
+  const { lang } = useStoryLang();
+  const copy = () => resolveSiteOrigin(lang());
+
   return (
     <section class="hero-banner fresco-grain" aria-label="Benvenuti">
       <div class="fresco-scene-bg hero-scene-bg">
@@ -44,7 +49,7 @@ function HeroBanner() {
             <p class="hero-eyebrow">Via dei Tribunali · Napoli</p>
             <h1 class="hero-title">L'Arte della Pizza Napoletana</h1>
             <p class="hero-subtitle">
-              {SITE.origin.headline}
+              {copy().headline}
             </p>
             <div class="hero-divider" aria-hidden="true">
               <span>✦</span>
@@ -195,7 +200,9 @@ function AppContent() {
 export default function App() {
   return (
     <CartProvider>
-      <AppContent />
+      <StoryLangProvider>
+        <AppContent />
+      </StoryLangProvider>
     </CartProvider>
   );
 }

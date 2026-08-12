@@ -1,9 +1,11 @@
 import FrescoArt from '../art/FrescoArt';
 import { SITE } from '../data/site';
 import { useCart } from '../store/cart';
+import { useStoryLang } from '../store/storyLang';
 
 export default function Header() {
   const cart = useCart();
+  const { lang, setLang } = useStoryLang();
 
   return (
     <header class="header fresco-grain">
@@ -30,12 +32,32 @@ export default function Header() {
           <nav class="header-nav" aria-label="Main navigation">
             <a href="#menu" class="nav-link">Menu</a>
             <a href="#gioco" class="nav-link">Gioco</a>
-            <a href="#storie" class="nav-link">La Storia</a>
+            <a href="#la-nostra-storia" class="nav-link">La Storia</a>
             <a href="#musei" class="nav-link">Musei</a>
             <a href="#offerte" class="nav-link">Offerte</a>
             <a href="#contatti" class="nav-link">Contatti</a>
           </nav>
           <div class="header-actions">
+            <div class="lang-toggle" role="group" aria-label="Story language">
+              <button
+                type="button"
+                class="lang-toggle-btn"
+                classList={{ active: lang() === 'it' }}
+                onClick={() => setLang('it')}
+                aria-pressed={lang() === 'it'}
+              >
+                IT
+              </button>
+              <button
+                type="button"
+                class="lang-toggle-btn"
+                classList={{ active: lang() === 'blend' }}
+                onClick={() => setLang('blend')}
+                aria-pressed={lang() === 'blend'}
+              >
+                EN·RU
+              </button>
+            </div>
             <button type="button" class="btn-sign-in">Accedi</button>
             <button
               type="button"

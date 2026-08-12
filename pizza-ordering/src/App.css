@@ -135,6 +135,50 @@
   gap: 0.75rem;
 }
 
+.lang-toggle {
+  display: flex;
+  border: 1px solid rgba(248, 244, 238, 0.35);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lang-toggle-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.5rem;
+  color: rgba(248, 244, 238, 0.75);
+  background: transparent;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-toggle-btn.active {
+  background: var(--gold);
+  color: var(--umber-dark);
+}
+
+.lang-toggle-btn:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--marble);
+}
+
+.story-blend-text {
+  line-height: 1.7;
+}
+
+.origin-layout--blend .origin-subtitle,
+.story-modal--blend .story-subtitle {
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .lang-toggle-btn {
+    font-size: 0.55rem;
+    padding: 0.3rem 0.4rem;
+  }
+}
+
 .btn-sign-in {
   color: var(--marble);
   font-family: 'Cinzel', serif;
