@@ -1,0 +1,77 @@
+import { createStore } from 'solid-js/store';
+import { createContext, useContext, createSignal } from 'solid-js';
+import { calcPizzaPrice } from '../data/menu';
+
+const CartContext = createContext();
+
+let nextId = 1;
+
+export function CartProvider(props) {
+  const [orderType, setOrderType] = createSignal('delivery');
+  const [address, setAddress] = createSignal('');
+  const [cartOpen, setCartOpen] = createSignal(false);
+  const [builderItem, setBuilderItem] = createSignal(null);
+  const [store, setStore] = createStore({ items: [] });
+
+  const addItem = (item, options = null) => {
+    const price = options ? calcPizzaPrice(item, options) : item.basePrice;
+    setStore('items', (items) => [
+      ...items,
+      {
+        cartId: nextId++,
+        itemId: item.id,
+        name: item.name,
+        price,
+        quantity: 1,
+        options,
+      },
+    ]);
+    setCartOpen(true);
+  };
+
+  const removeItem = (cartId) => {
+    setStore('items', (items) => items.filter((i) => i.cartId !== cartId));
+  };
+
+  const updateQuantity = (cartId, delta) => {
+    const index = store.items.findIndex((i) => i.cartId === cartId);
+    if (index === -1) return;
+    setStore('items', index, 'quantity', (q) => Math.max(1, q + delta));
+  };
+
+  const clearCart = () => setStore('items', []);
+
+  const subtotal = () =>
+    store.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+  const itemCount = () =>
+    store.items.reduce((sum, i) => sum + i.quantity, 0);
+
+  const value = {
+    orderType,
+    setOrderType,
+    address,
+    setAddress,
+    cartOpen,
+    setCartOpen,
+    builderItem,
+    setBuilderItem,
+    items: () => store.items,
+    addItem,
+    removeItem,
+    updateQuantity,
+    clearCart,
+    subtotal,
+    itemCount,
+  };
+
+  return (
+    <CartContext.Provider value={value}>{props.children}</CartContext.Provider>
+  );
+}
+
+export function useCart() {
+  const ctx = useContext(CartContext);
+  if (!ctx) throw new Error('useCart must be used within CartProvider');
+  return ctx;
+}
