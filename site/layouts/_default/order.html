@@ -1,0 +1,84 @@
+{{ partial "header" . }}
+
+<div class="content container order-page">
+  <h1>Order Pizza</h1>
+  <p class="order-intro">Build your pie, add it to the bag, and we&rsquo;ll fire it when you&rsquo;re ready.</p>
+
+  <section class="pizza-menu" aria-labelledby="pizza-menu-heading">
+    <h2 id="pizza-menu-heading"><em>Choose</em> your pizza</h2>
+    <div class="pizza-grid" id="pizza-grid" role="listbox" aria-label="Pizza menu">
+      <!-- Populated by pizza-order.js -->
+    </div>
+  </section>
+
+  <section class="pizza-builder" id="pizza-builder" hidden aria-labelledby="builder-heading">
+    <h2 id="builder-heading"><em>Customize</em> <span id="builder-pizza-name"></span></h2>
+
+    <fieldset class="builder-group">
+      <legend>Size</legend>
+      <div class="option-row" id="size-options" role="radiogroup" aria-label="Pizza size"></div>
+    </fieldset>
+
+    <fieldset class="builder-group">
+      <legend>Crust</legend>
+      <div class="option-row" id="crust-options" role="radiogroup" aria-label="Crust type"></div>
+    </fieldset>
+
+    <fieldset class="builder-group">
+      <legend>Extra toppings</legend>
+      <div class="toppings-grid" id="toppings-options"></div>
+    </fieldset>
+
+    <div class="builder-footer">
+      <div class="qty-control" aria-label="Quantity">
+        <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">&minus;</button>
+        <span id="qty-value" aria-live="polite">1</span>
+        <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+      </div>
+      <p class="builder-price">$<span id="builder-total">0.00</span></p>
+      <button type="button" class="add-to-order" id="add-to-order">Add to order</button>
+    </div>
+  </section>
+
+  <section class="order-bag" id="order-bag" aria-labelledby="bag-heading">
+    <h2 id="bag-heading"><em>Your</em> order</h2>
+    <ul class="bag-items" id="bag-items">
+      <li class="bag-empty" id="bag-empty">No pizzas yet &mdash; pick one above.</li>
+    </ul>
+    <div class="bag-summary" id="bag-summary" hidden>
+      <p class="bag-total">Total <strong>$<span id="bag-total">0.00</span></strong></p>
+    </div>
+  </section>
+
+  <section class="checkout" id="checkout" hidden aria-labelledby="checkout-heading">
+    <h2 id="checkout-heading"><em>Checkout</em></h2>
+    <form name="pizza-order" id="order-form" novalidate>
+      <div class="fulfillment-toggle" role="radiogroup" aria-label="Pickup or delivery">
+        <label class="toggle-option">
+          <input type="radio" name="fulfillment" value="pickup" checked>
+          <span>Pickup</span>
+        </label>
+        <label class="toggle-option">
+          <input type="radio" name="fulfillment" value="delivery">
+          <span>Delivery</span>
+        </label>
+      </div>
+
+      <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+      <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel">
+      <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      <textarea name="address" id="address-field" placeholder="Delivery address" hidden rows="3"></textarea>
+      <textarea name="notes" placeholder="Special instructions (optional)" rows="2"></textarea>
+
+      <button type="submit" id="place-order">Place order &mdash; $<span id="checkout-total">0.00</span></button>
+    </form>
+  </section>
+
+  <div class="order-success" id="order-success" hidden role="status" aria-live="polite">
+    <h2>You&rsquo;re all set</h2>
+    <p id="success-message"></p>
+    <button type="button" id="order-again">Order again</button>
+  </div>
+</div>
+
+{{ partial "footer" . }}
