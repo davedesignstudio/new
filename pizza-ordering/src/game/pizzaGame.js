@@ -1,3 +1,56 @@
+/** Each game stage links to a heritage story + media from the site catalog */
+export const STAGE_STORIES = {
+  knead: {
+    storyId: 'impasto-24-ore',
+    variant: 'impasto',
+    type: 'story',
+    geometry: 'vitruvian',
+    artVariant: 'impasto',
+    artType: 'story',
+  },
+  stretch: {
+    storyId: 'impasto-24-ore',
+    variant: 'impasto',
+    type: 'story',
+    geometry: 'vitruvian',
+    artVariant: 'impasto',
+    artType: 'story',
+  },
+  top: {
+    storyId: 'regina-margherita',
+    variant: 'margherita',
+    type: 'story',
+    geometry: 'mandorla',
+    artVariant: 'margherita',
+    artType: 'food',
+  },
+  bake: {
+    storyId: 'forno-1738',
+    variant: 'forno',
+    type: 'story',
+    geometry: 'rose',
+    scene: true,
+    artVariant: 'hero-forno',
+    artType: 'scene',
+  },
+  result: {
+    storyId: 'regina-margherita',
+    variant: 'margherita',
+    type: 'story',
+    geometry: 'mandorla',
+    artVariant: 'margherita',
+    artType: 'food',
+  },
+};
+
+/** All heritage stories referenced in the game */
+export const GAME_STORY_IDS = [
+  'impasto-24-ore',
+  'regina-margherita',
+  'forno-1738',
+  'vesuvio-vigilia',
+];
+
 export const STAGES = ['knead', 'stretch', 'top', 'bake', 'result'];
 
 export const STAGE_LABELS = {

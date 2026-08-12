@@ -95,51 +95,240 @@
 
 .game-workspace {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: minmax(200px, 1fr) minmax(220px, 280px) minmax(200px, 1fr);
+  gap: 1.25rem;
+  align-items: start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .game-workspace {
     grid-template-columns: 1fr;
   }
 }
 
+.game-header-rose {
+  max-width: 72px;
+  margin: 0 auto 0.75rem;
+}
+
+/* Story panel — same media as StoriesSection */
+.game-story-panel {
+  overflow: hidden;
+  background: var(--marble);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-story-media {
+  height: 160px;
+  overflow: hidden;
+}
+
+.game-story-art {
+  width: 100%;
+  height: 100%;
+}
+
+.game-story-caption {
+  padding: 1rem;
+}
+
+.game-story-title {
+  font-size: 0.95rem;
+  color: var(--umber);
+  margin: 0.35rem 0 0.5rem;
+  line-height: 1.3;
+}
+
+.game-story-excerpt {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.game-story-read {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mediterranean);
+  transition: color 0.2s;
+}
+
+.game-story-read:hover {
+  color: var(--terracotta);
+}
+
+.game-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-pizza-hitarea {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 300px;
+  cursor: default;
+}
+
+.game-pizza-hitarea:not(:disabled) {
+  cursor: crosshair;
+}
+
 .game-pizza-stage {
   position: relative;
   aspect-ratio: 1;
-  max-width: 320px;
-  margin: 0 auto;
   width: 100%;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 65%),
     linear-gradient(160deg, var(--marble) 0%, var(--fresco-warm) 100%);
-  border: 2px solid var(--gold);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: default;
-  padding: 1rem;
   box-shadow: inset 0 0 24px rgba(61, 41, 20, 0.08);
-}
-
-.game-pizza-stage--interactive {
-  cursor: crosshair;
 }
 
 .game-pizza-stage--interactive:hover {
   box-shadow: inset 0 0 24px rgba(201, 162, 39, 0.15), 0 0 0 3px rgba(201, 162, 39, 0.25);
 }
 
-.game-pizza-svg {
+.game-pizza-stage--baked {
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.35), inset 0 0 16px rgba(184, 92, 56, 0.2);
+}
+
+.game-pizza-scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.game-oven-bg {
   width: 100%;
   height: 100%;
 }
 
-.game-pizza--baked {
-  filter: drop-shadow(0 2px 6px rgba(184, 92, 56, 0.35));
+.game-pizza-art {
+  position: relative;
+  z-index: 1;
+  width: 72%;
+  height: 72%;
+  transition: transform 0.2s ease;
+}
+
+.game-pizza-art--stretch {
+  transform: scale(var(--game-stretch, 1));
+}
+
+.game-pizza-art--dough {
+  width: 60%;
+  height: 60%;
+}
+
+.game-fresco-pizza,
+.game-pizza-art .fresco-art {
+  width: 100%;
+  height: 100%;
+}
+
+.game-topping-marker {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 244, 238, 0.85);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(61, 41, 20, 0.2);
+  pointer-events: none;
+}
+
+.game-result-art {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+}
+
+.game-result-art .ren-media {
+  width: 100%;
+  height: 100%;
+}
+
+/* Story strip below game */
+.game-stories-strip {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.game-stories-strip-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--umber);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.game-stories-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.game-story-chip {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-story-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.game-story-chip-art {
+  height: 100px;
+  overflow: hidden;
+}
+
+.game-story-chip-art .ren-media {
+  width: 100%;
+  height: 100%;
+}
+
+.game-story-chip-tag {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  padding: 0.5rem 0.75rem 0;
+}
+
+.game-story-chip-title {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--umber);
+  padding: 0.25rem 0.75rem 0.75rem;
+  line-height: 1.35;
 }
 
 .game-knead-hint {

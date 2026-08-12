@@ -1,9 +1,16 @@
 import { createSignal, createEffect, onCleanup, For, Show } from 'solid-js';
 import { useCart } from '../store/cart';
 import { formatPrice } from '../data/menu';
+import { STORIES, getStoryById } from '../data/stories';
+import RenaissanceMedia from '../art/RenaissanceMedia';
+import FrescoArt from '../art/FrescoArt';
+import { RenaissanceOrnament } from '../art/RenaissanceOrnament';
+import { getStoryVariant } from '../data/images';
 import {
   STAGES,
   STAGE_LABELS,
+  STAGE_STORIES,
+  GAME_STORY_IDS,
   TOPPING_OPTIONS,
   KNEAD_TARGET,
   STRETCH_IDEAL,
@@ -18,68 +25,115 @@ import {
 } from '../game/pizzaGame';
 import '../game/game.css';
 
-function PizzaCanvas(props) {
-  const stretch = () => props.stretch ?? 40;
-  const baked = () => props.baked ?? false;
-  const toppings = () => props.toppings ?? [];
-
-  const radius = () => 28 + (stretch() / 100) * 18;
+function GameStoryPanel(props) {
+  const config = () => STAGE_STORIES[props.stage] ?? STAGE_STORIES.knead;
+  const story = () => getStoryById(config().storyId);
 
   return (
-    <svg class="game-pizza-svg" viewBox="0 0 100 100" aria-hidden="true">
-      <defs>
-        <radialGradient id="gameCrust" cx="40%" cy="35%">
-          <stop offset="0%" stop-color="#E8C878" />
-          <stop offset="100%" stop-color="#C49A30" />
-        </radialGradient>
-        <radialGradient id="gameSauce" cx="45%" cy="40%">
-          <stop offset="0%" stop-color="#D4845C" />
-          <stop offset="100%" stop-color="#A03020" />
-        </radialGradient>
-        <radialGradient id="gameCheese" cx="50%" cy="45%">
-          <stop offset="0%" stop-color="#FFF8E0" />
-          <stop offset="100%" stop-color="#E8C878" />
-        </radialGradient>
-      </defs>
-
-      <Show when={props.stage === 'knead'}>
-        <ellipse cx="50" cy="58" rx="22" ry="14" fill="#F5EDE0" stroke="#3D2914" stroke-width="1.5" />
-        <ellipse cx="50" cy="52" rx="18" ry="10" fill="#EDE4D3" stroke="#3D2914" stroke-width="1" opacity="0.8" />
-      </Show>
-
-      <Show when={props.stage !== 'knead'}>
-        <circle
-          cx="50"
-          cy="50"
-          r={radius() + 4}
-          fill="url(#gameCrust)"
-          stroke="#3D2914"
-          stroke-width="1.5"
-          classList={{ 'game-pizza--baked': baked() }}
+    <aside class="game-story-panel fresco-frame fresco-frame--arch">
+      <div class="game-story-media">
+        <RenaissanceMedia
+          class="game-story-art ren-media--card"
+          source="blend"
+          variant={config().variant}
+          storyId={config().storyId}
+          type={config().type}
+          scene={config().scene}
+          frame="arch"
+          geometry={config().geometry}
+          label={story()?.title}
         />
-        <Show when={props.hasSauce}>
-          <circle cx="50" cy="50" r={radius()} fill="url(#gameSauce)" />
-        </Show>
-        <Show when={props.hasCheese}>
-          <circle cx="50" cy="50" r={radius() - 2} fill="url(#gameCheese)" opacity="0.92" />
-        </Show>
-        <For each={toppings()}>
-          {(t) => (
-            <g>
-              <circle cx={t.x} cy={t.y} r="3.5" fill={t.color} stroke="#3D2914" stroke-width="0.6" />
-              <text x={t.x} y={t.y + 1} text-anchor="middle" font-size="4">{t.emoji}</text>
-            </g>
-          )}
-        </For>
-        <Show when={baked()}>
-          <circle cx="50" cy="50" r={radius() + 4} fill="none" stroke="#C9A227" stroke-width="0.8" opacity="0.5" />
-        </Show>
+      </div>
+      <Show when={story()}>
+        <div class="game-story-caption">
+          <span class="story-tag">{story().tag}</span>
+          <span class="story-year">{story().year}</span>
+          <h3 class="game-story-title">{story().title}</h3>
+          <p class="game-story-excerpt">{story().excerpt}</p>
+          <Show when={props.onSelectStory}>
+            <button
+              type="button"
+              class="game-story-read"
+              onClick={() => props.onSelectStory(story())}
+            >
+              Leggi la storia →
+            </button>
+          </Show>
+        </div>
       </Show>
-    </svg>
+    </aside>
   );
 }
 
-export default function PizzaGame() {
+function GamePizzaStage(props) {
+  const config = () => STAGE_STORIES[props.stage] ?? STAGE_STORIES.knead;
+  const scale = () => 0.65 + ((props.stretch ?? 45) / 100) * 0.45;
+  const showPizza = () => props.stage !== 'knead' || props.kneadProgress > 30;
+
+  return (
+    <div
+      class="game-pizza-stage fresco-frame fresco-frame--round"
+      classList={{
+        'game-pizza-stage--interactive': props.stage === 'top' && props.hasCheese,
+        'game-pizza-stage--baked': props.baked,
+      }}
+      style={{ '--game-stretch': scale() }}
+    >
+      <Show when={props.stage === 'bake'}>
+        <div class="game-pizza-scene" aria-hidden="true">
+          <RenaissanceMedia
+            class="game-oven-bg"
+            source="blend"
+            variant="hero-forno"
+            type="scene"
+            scene
+            geometry="rose"
+            label="Forno a legna"
+          />
+        </div>
+      </Show>
+
+      <Show when={showPizza()}>
+        <div
+          class="game-pizza-art"
+          classList={{ 'game-pizza-art--stretch': props.stage === 'stretch' || props.stage === 'top' }}
+        >
+          <FrescoArt
+            class="game-fresco-pizza"
+            variant={config().artVariant}
+            type={config().artType}
+            scene={config().scene}
+            label="La tua pizza"
+          />
+        </div>
+      </Show>
+
+      <Show when={props.stage === 'knead' && props.kneadProgress <= 30}>
+        <div class="game-pizza-art game-pizza-art--dough">
+          <FrescoArt variant="impasto" type="story" label="Impasto" />
+        </div>
+      </Show>
+
+      <For each={props.toppings}>
+        {(t) => (
+          <span
+            class="game-topping-marker"
+            style={{ left: `${t.x}%`, top: `${t.y}%`, '--topping-color': t.color }}
+            aria-hidden="true"
+          >
+            {t.emoji}
+          </span>
+        )}
+      </For>
+
+      <Show when={props.stage === 'knead'}>
+        <div class="game-knead-hint">Clicca per impastare!</div>
+      </Show>
+    </div>
+  );
+}
+
+export default function PizzaGame(props) {
   const cart = useCart();
 
   const [stage, setStage] = createSignal('knead');
@@ -134,7 +188,7 @@ export default function PizzaGame() {
   };
 
   const addTopping = (e) => {
-    if (!hasCheese()) return;
+    if (stage() !== 'top' || !hasCheese()) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -184,15 +238,18 @@ export default function PizzaGame() {
   };
 
   const stageIndex = () => STAGES.indexOf(stage());
+  const gameStories = () => STORIES.filter((s) => GAME_STORY_IDS.includes(s.id));
 
   return (
-    <section id="gioco" class="pizza-game-section fresco-grain" aria-labelledby="game-heading">
+    <section id="gioco" class="pizza-game-section fresco-maiolica fresco-grain" aria-labelledby="game-heading">
       <div class="container">
         <header class="game-header">
-          <span class="game-ornament" aria-hidden="true">❧</span>
+          <div class="game-header-rose" aria-hidden="true">
+            <RenaissanceOrnament variant="rose" />
+          </div>
           <h2 id="game-heading">Il Gioco del Pizzaiolo</h2>
           <p class="game-intro">
-            Impasta, stendi, condisci e inforna — diventa maestro come Vincenzo nel 1889.
+            Impasta, stendi, condisci e inforna — le stesse storie e immagini della nostra pizzeria prendono vita tra le tue mani.
           </p>
         </header>
 
@@ -215,31 +272,31 @@ export default function PizzaGame() {
 
         <div class="game-board fresco-card-bg">
           <div class="game-workspace">
-            <button
-              type="button"
-              class="game-pizza-stage"
-              classList={{ 'game-pizza-stage--interactive': stage() === 'top' && hasCheese() }}
-              onClick={addTopping}
-              disabled={stage() !== 'top' || !hasCheese()}
-              aria-label="Area pizza"
-            >
-              <PizzaCanvas
-                stage={stage()}
-                stretch={stretch()}
-                hasSauce={hasSauce()}
-                hasCheese={hasCheese()}
-                toppings={toppings()}
-                baked={baked()}
-              />
-              <Show when={stage() === 'knead'}>
-                <div class="game-knead-hint">Clicca per impastare!</div>
-              </Show>
-            </button>
+            <GameStoryPanel stage={stage()} onSelectStory={props.onSelectStory} />
+
+            <div class="game-center">
+              <button
+                type="button"
+                class="game-pizza-hitarea"
+                onClick={addTopping}
+                disabled={stage() !== 'top' || !hasCheese()}
+                aria-label="Area pizza"
+              >
+                <GamePizzaStage
+                  stage={stage()}
+                  stretch={stretch()}
+                  kneadProgress={kneadProgress()}
+                  hasCheese={hasCheese()}
+                  toppings={toppings()}
+                  baked={baked()}
+                />
+              </button>
+            </div>
 
             <div class="game-controls">
               <Show when={stage() === 'knead'}>
                 <p class="game-instruction">
-                  Il lievito madre aspetta le tue mani. Impasta <strong>{KNEAD_TARGET}</strong> volte con ritmo costante.
+                  Il lievito madre aspetta le tue mani — come racconta la storia dell'impasto. Impasta <strong>{KNEAD_TARGET}</strong> volte.
                 </p>
                 <div class="game-meter">
                   <div class="game-meter-fill" style={{ width: `${kneadProgress()}%` }} />
@@ -252,7 +309,7 @@ export default function PizzaGame() {
 
               <Show when={stage() === 'stretch'}>
                 <p class="game-instruction">
-                  Stendi l'impasto dal centro verso il bordo. Punta a <strong>{STRETCH_IDEAL}%</strong> per il cornicione perfetto.
+                  Stendi dal centro verso il bordo. Punta a <strong>{STRETCH_IDEAL}%</strong> per il cornicione perfetto.
                 </p>
                 <input
                   type="range"
@@ -271,7 +328,7 @@ export default function PizzaGame() {
 
               <Show when={stage() === 'top'}>
                 <p class="game-instruction">
-                  Aggiungi salsa, formaggio e almeno 2 condimenti. Clicca sulla pizza per posizionarli.
+                  Come la Regina Margherita del 1889: salsa, formaggio e almeno 2 condimenti sulla pizza.
                 </p>
                 <div class="game-topping-actions">
                   <button
@@ -309,7 +366,7 @@ export default function PizzaGame() {
                       )}
                     </For>
                   </div>
-                  <p class="game-meter-label">{toppings().length} / 8 condimenti</p>
+                  <p class="game-meter-label">{toppings().length} / 8 condimenti — clicca sulla pizza</p>
                 </Show>
                 <button
                   type="button"
@@ -323,7 +380,7 @@ export default function PizzaGame() {
 
               <Show when={stage() === 'bake'}>
                 <p class="game-instruction">
-                  Il forno a legna è a 485°C. Ferma l'ago nella zona dorata!
+                  Il forno del 1738 è a 485°C. Ferma l'ago nella zona dorata!
                 </p>
                 <div class="game-oven-meter" role="meter" aria-valuenow={needle()} aria-valuemin={0} aria-valuemax={100}>
                   <div class="game-oven-zone" style={{ left: `${BAKE_IDEAL - 14}%`, width: '28%' }} />
@@ -337,6 +394,18 @@ export default function PizzaGame() {
 
               <Show when={stage() === 'result'}>
                 <div class="game-result">
+                  <div class="game-result-art fresco-frame fresco-frame--octagon">
+                    <RenaissanceMedia
+                      class="ren-media--card"
+                      source="blend"
+                      variant="margherita"
+                      storyId="regina-margherita"
+                      type="story"
+                      frame="octagon"
+                      geometry="mandorla"
+                      label="Pizza del Maestro"
+                    />
+                  </div>
                   <p class="game-score">{finalScore()}<span>/100</span></p>
                   <p class="game-stars" aria-label={`${starRating(finalScore())} stelle`}>
                     {'★'.repeat(starRating(finalScore()))}
@@ -360,6 +429,37 @@ export default function PizzaGame() {
                 </div>
               </Show>
             </div>
+          </div>
+        </div>
+
+        <div class="game-stories-strip">
+          <h3 class="game-stories-strip-title">Storie del gioco</h3>
+          <div class="game-stories-row">
+            <For each={gameStories()}>
+              {(story) => (
+                <button
+                  type="button"
+                  class="game-story-chip fresco-card-bg"
+                  onClick={() => props.onSelectStory?.(story)}
+                >
+                  <div class="game-story-chip-art fresco-frame fresco-frame--octagon">
+                    <RenaissanceMedia
+                      class="ren-media--card"
+                      source="blend"
+                      variant={getStoryVariant(story.id)}
+                      storyId={story.id}
+                      type="story"
+                      frame="octagon"
+                      geometry="rose"
+                      scene={['forno-1738', 'vesuvio-vigilia'].includes(story.id)}
+                      label={story.title}
+                    />
+                  </div>
+                  <span class="game-story-chip-tag">{story.tag}</span>
+                  <span class="game-story-chip-title">{story.title}</span>
+                </button>
+              )}
+            </For>
           </div>
         </div>
       </div>

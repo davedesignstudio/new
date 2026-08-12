@@ -125,7 +125,7 @@ function AppContent() {
       <OrderTypeBar />
       <HeroBanner />
       <RenaissanceOrnament variant="frieze" className="section-ornament" />
-      <PizzaGame />
+      <PizzaGame onSelectStory={setActiveStory} />
       <StoriesSection onSelectStory={setActiveStory} />
       <RenaissanceOrnament variant="mandorla" className="section-ornament section-ornament--compact" />
       <DealsBanner />
