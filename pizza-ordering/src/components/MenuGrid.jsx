@@ -1,5 +1,6 @@
 import { createSignal, createMemo, For } from 'solid-js';
 import { CATEGORIES, MENU_ITEMS } from '../data/menu';
+import { getCategoryImage } from '../data/images';
 import CategoryNav from './CategoryNav';
 import ProductCard from './ProductCard';
 
@@ -18,6 +19,8 @@ export default function MenuGrid() {
     () => CATEGORIES.find((c) => c.id === activeCategory())?.sublabel ?? ''
   );
 
+  const sectionImage = createMemo(() => getCategoryImage(activeCategory()));
+
   return (
     <section class="menu-section">
       <CategoryNav
@@ -26,9 +29,15 @@ export default function MenuGrid() {
         onSelect={setActiveCategory}
       />
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">{categoryLabel()}</h2>
-          <p class="section-sublabel">{categorySublabel()}</p>
+        <div
+          class="section-header"
+          style={{ '--section-image': `url("${sectionImage()}")` }}
+        >
+          <div class="section-header-overlay" />
+          <div class="section-header-content">
+            <h2 class="section-title">{categoryLabel()}</h2>
+            <p class="section-sublabel">{categorySublabel()}</p>
+          </div>
         </div>
         <div class="product-grid">
           <For each={filteredItems()}>

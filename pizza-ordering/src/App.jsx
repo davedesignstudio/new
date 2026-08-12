@@ -3,12 +3,18 @@ import OrderTypeBar from './components/OrderTypeBar';
 import MenuGrid from './components/MenuGrid';
 import PizzaBuilder from './components/PizzaBuilder';
 import Cart from './components/Cart';
+import UiImage from './components/UiImage';
 import { CartProvider, useCart } from './store/cart';
+import { HERO_IMAGE, FOOTER_IMAGE, DEALS, getDealImage } from './data/images';
 import './App.css';
 
 function HeroBanner() {
   return (
-    <section class="hero-banner" aria-label="Benvenuti">
+    <section
+      class="hero-banner"
+      aria-label="Benvenuti"
+      style={{ '--hero-image': `url("${HERO_IMAGE}")` }}
+    >
       <div class="hero-columns" aria-hidden="true">
         <div class="column" />
         <div class="column" />
@@ -43,24 +49,27 @@ function DealsBanner() {
           <span class="deals-ornament" aria-hidden="true">❧</span>
         </h2>
         <div class="deals-inner">
-          <div class="deal-card featured">
-            <span class="deal-tag">Menu Degustazione</span>
-            <h3>Pizza + Antipasto + Dolce</h3>
-            <p>Margherita, bruschetta e sfogliatella — <strong>€16,90</strong></p>
-            <button type="button" class="btn-deal">Scopri</button>
-          </div>
-          <div class="deal-card">
-            <span class="deal-tag">Asporto</span>
-            <h3>Due Pizze al Prezzo di Una</h3>
-            <p>Ogni martedì, dalle 18:00 — <strong>asporto</strong></p>
-            <button type="button" class="btn-deal">Scopri</button>
-          </div>
-          <div class="deal-card">
-            <span class="deal-tag">Consegna</span>
-            <h3>Consegna Gratuita</h3>
-            <p>Per ordini superiori a <strong>€25</strong> in centro Napoli</p>
-            <button type="button" class="btn-deal">Ordina Ora</button>
-          </div>
+          {DEALS.map((deal) => (
+            <article class="deal-card" classList={{ featured: deal.featured }}>
+              <div class="deal-image-wrap">
+                <UiImage
+                  class="deal-photo"
+                  src={getDealImage(deal.id)}
+                  alt={deal.title}
+                />
+              </div>
+              <div class="deal-body">
+                <span class="deal-tag">{deal.tag}</span>
+                <h3>{deal.title}</h3>
+                <p>
+                  {deal.description}{' '}
+                  <strong>{deal.price ?? deal.priceLabel}</strong>
+                  {deal.priceSuffix ? ` ${deal.priceSuffix}` : ''}
+                </p>
+                <button type="button" class="btn-deal">{deal.cta}</button>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </div>
@@ -97,7 +106,10 @@ function AppContent() {
       <PizzaBuilder />
       <Cart />
       <CheckoutBar />
-      <footer class="site-footer">
+      <footer
+        class="site-footer"
+        style={{ '--footer-image': `url("${FOOTER_IMAGE}")` }}
+      >
         <div class="footer-ornament" aria-hidden="true">✦ ✦ ✦</div>
         <div class="container">
           <p class="footer-name">Antica Pizzeria Napoletana</p>

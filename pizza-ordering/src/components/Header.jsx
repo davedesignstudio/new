@@ -1,3 +1,5 @@
+import UiImage from './UiImage';
+import { LOGO_IMAGE } from '../data/images';
 import { useCart } from '../store/cart';
 
 export default function Header() {
@@ -13,7 +15,14 @@ export default function Header() {
       <div class="header-top">
         <div class="container header-top-inner">
           <a href="#" class="logo" aria-label="Antica Pizzeria Napoletana">
-            <span class="logo-emblem" aria-hidden="true">⚜</span>
+            <span class="logo-emblem">
+              <UiImage
+                class="logo-photo"
+                src={LOGO_IMAGE}
+                alt=""
+                loading="eager"
+              />
+            </span>
             <span class="logo-text">
               <span class="logo-name">Antica Pizzeria</span>
               <span class="logo-sub">Napoletana · dal 1738</span>

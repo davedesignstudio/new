@@ -1,10 +1,10 @@
 export const CATEGORIES = [
-  { id: 'pizza', label: 'Pizze', sublabel: 'Pizzas', icon: '🍕' },
-  { id: 'antipasti', label: 'Antipasti', sublabel: 'Starters', icon: '🫒' },
-  { id: 'secondi', label: 'Secondi', sublabel: 'Mains', icon: '🍖' },
-  { id: 'contorni', label: 'Contorni', sublabel: 'Sides', icon: '🥗' },
-  { id: 'dolci', label: 'Dolci', sublabel: 'Desserts', icon: '🍰' },
-  { id: 'bevande', label: 'Bevande', sublabel: 'Drinks', icon: '🍷' },
+  { id: 'pizza', label: 'Pizze', sublabel: 'Pizzas' },
+  { id: 'antipasti', label: 'Antipasti', sublabel: 'Starters' },
+  { id: 'secondi', label: 'Secondi', sublabel: 'Mains' },
+  { id: 'contorni', label: 'Contorni', sublabel: 'Sides' },
+  { id: 'dolci', label: 'Dolci', sublabel: 'Desserts' },
+  { id: 'bevande', label: 'Bevande', sublabel: 'Drinks' },
 ];
 
 export const SIZES = [

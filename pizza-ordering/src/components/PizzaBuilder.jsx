@@ -8,7 +8,9 @@ import {
   calcPizzaPrice,
   formatPrice,
 } from '../data/menu';
+import { getItemImage, DEFAULT_FOOD_IMAGE } from '../data/images';
 import { useCart } from '../store/cart';
+import UiImage from './UiImage';
 
 export default function PizzaBuilder() {
   const cart = useCart();
@@ -19,6 +21,7 @@ export default function PizzaBuilder() {
   const [sauce, setSauce] = createSignal('pomodoro');
   const [cheese, setCheese] = createSignal('normale');
   const [toppings, setToppings] = createSignal([]);
+  const [previewSrc, setPreviewSrc] = createSignal(DEFAULT_FOOD_IMAGE);
 
   createEffect(() => {
     const i = item();
@@ -28,6 +31,7 @@ export default function PizzaBuilder() {
       setSauce('pomodoro');
       setCheese('normale');
       setToppings([...(i.defaultToppings ?? [])]);
+      setPreviewSrc(getItemImage(i));
     }
   });
 
@@ -81,17 +85,12 @@ export default function PizzaBuilder() {
           <div class="builder-body">
             <div class="builder-preview">
               <div class="builder-pizza">
-                <div class="pizza-visual large medallion-frame">
-                  <div class="medallion-ring" />
-                  <div class="pizza-base" />
-                  <div class="pizza-sauce" />
-                  <div class="pizza-cheese" />
-                  <For each={toppings().slice(0, 8)}>
-                    {(t, i) => (
-                      <span class={`pizza-topping topping-${t}`} style={{ '--i': i() }} />
-                    )}
-                  </For>
-                </div>
+                <UiImage
+                  class="builder-photo"
+                  src={previewSrc()}
+                  alt={item()?.name}
+                  fallback={DEFAULT_FOOD_IMAGE}
+                />
               </div>
               <p class="builder-price">{formatPrice(price())}</p>
             </div>
