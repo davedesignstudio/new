@@ -1,6 +1,9 @@
+import { createSignal } from 'solid-js';
 import Header from './components/Header';
 import OrderTypeBar from './components/OrderTypeBar';
 import MenuGrid from './components/MenuGrid';
+import StoriesSection from './components/StoriesSection';
+import StoryModal from './components/StoryModal';
 import PizzaBuilder from './components/PizzaBuilder';
 import Cart from './components/Cart';
 import UiImage from './components/UiImage';
@@ -32,6 +35,7 @@ function HeroBanner() {
               <span class="divider-line" />
               <span>✦</span>
             </div>
+            <a href="#storie" class="hero-story-link">Scopri le nostre storie</a>
           </div>
         </div>
       </div>
@@ -41,7 +45,7 @@ function HeroBanner() {
 
 function DealsBanner() {
   return (
-    <div class="deals-banner">
+    <div id="offerte" class="deals-banner">
       <div class="container">
         <h2 class="deals-title">
           <span class="deals-ornament" aria-hidden="true">❧</span>
@@ -94,19 +98,24 @@ function CheckoutBar() {
 }
 
 function AppContent() {
+  const [activeStory, setActiveStory] = createSignal(null);
+
   return (
     <div class="app">
       <Header />
       <OrderTypeBar />
       <HeroBanner />
+      <StoriesSection onSelectStory={setActiveStory} />
       <DealsBanner />
-      <main>
-        <MenuGrid />
+      <main id="menu">
+        <MenuGrid onSelectStory={setActiveStory} />
       </main>
+      <StoryModal story={activeStory()} onClose={() => setActiveStory(null)} />
       <PizzaBuilder />
       <Cart />
       <CheckoutBar />
       <footer
+        id="contatti"
         class="site-footer"
         style={{ '--footer-image': `url("${FOOTER_IMAGE}")` }}
       >

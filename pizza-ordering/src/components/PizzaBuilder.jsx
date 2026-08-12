@@ -21,7 +21,6 @@ export default function PizzaBuilder() {
   const [sauce, setSauce] = createSignal('pomodoro');
   const [cheese, setCheese] = createSignal('normale');
   const [toppings, setToppings] = createSignal([]);
-  const [previewSrc, setPreviewSrc] = createSignal(DEFAULT_FOOD_IMAGE);
 
   createEffect(() => {
     const i = item();
@@ -31,7 +30,6 @@ export default function PizzaBuilder() {
       setSauce('pomodoro');
       setCheese('normale');
       setToppings([...(i.defaultToppings ?? [])]);
-      setPreviewSrc(getItemImage(i));
     }
   });
 
@@ -87,7 +85,7 @@ export default function PizzaBuilder() {
               <div class="builder-pizza">
                 <UiImage
                   class="builder-photo"
-                  src={previewSrc()}
+                  src={getItemImage(item())}
                   alt={item()?.name}
                   fallback={DEFAULT_FOOD_IMAGE}
                 />

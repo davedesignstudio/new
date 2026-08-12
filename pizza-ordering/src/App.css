@@ -1520,6 +1520,273 @@
   font-size: 0.9rem;
 }
 
+/* ── Hero story link ──────────────────────────────────────── */
+.hero-story-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232, 212, 139, 0.5);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero-story-link:hover {
+  color: var(--marble);
+  border-color: var(--marble);
+}
+
+/* ── Stories Section ────────────────────────────────────── */
+.stories-section {
+  padding: 3.5rem 0;
+  background:
+    linear-gradient(180deg, var(--fresco-cream) 0%, var(--marble) 50%, var(--fresco-warm) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.stories-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.stories-ornament {
+  display: block;
+  color: var(--gold);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.stories-header h2 {
+  font-size: 2rem;
+  color: var(--umber);
+  margin-bottom: 0.75rem;
+}
+
+.stories-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.story-card {
+  background: var(--marble);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-card-btn {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.story-card-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.story-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.story-card:hover .story-photo {
+  transform: scale(1.05);
+}
+
+.story-card-year {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(44, 24, 16, 0.75);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.story-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.story-tag {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+}
+
+.story-card h3 {
+  font-size: 1.1rem;
+  color: var(--umber);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.story-excerpt {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 0.875rem;
+}
+
+.story-cta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--mediterranean);
+  transition: color 0.2s;
+}
+
+.story-card:hover .story-cta {
+  color: var(--terracotta);
+}
+
+/* ── Story Modal ──────────────────────────────────────────── */
+.story-modal {
+  max-width: 680px;
+  max-height: calc(100vh - 3rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.story-modal-hero {
+  position: relative;
+  min-height: 220px;
+  background:
+    linear-gradient(180deg, rgba(44, 24, 16, 0.3) 0%, rgba(44, 24, 16, 0.88) 100%),
+    var(--story-image) center / cover no-repeat;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.story-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--marble);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.story-modal-hero-content {
+  color: var(--marble);
+}
+
+.story-modal-hero .story-tag {
+  color: var(--gold-light);
+  margin-bottom: 0.25rem;
+}
+
+.story-year {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(248, 244, 238, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.story-modal-hero h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.story-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gold-light);
+  opacity: 0.95;
+}
+
+.story-modal-body {
+  padding: 1.75rem 1.5rem 1.5rem;
+  overflow-y: auto;
+}
+
+.story-modal-body p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 1.1rem;
+}
+
+.story-read-time {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* ── Product story link ───────────────────────────────────── */
+.product-story-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--mediterranean);
+  margin-bottom: 0.875rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.product-story-link:hover {
+  color: var(--terracotta-dark);
+  text-decoration: underline;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .header-nav {

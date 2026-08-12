@@ -41,7 +41,7 @@ export default function MenuGrid() {
         </div>
         <div class="product-grid">
           <For each={filteredItems()}>
-            {(item) => <ProductCard item={item} />}
+            {(item) => <ProductCard item={item} onSelectStory={props.onSelectStory} />}
           </For>
         </div>
       </div>
