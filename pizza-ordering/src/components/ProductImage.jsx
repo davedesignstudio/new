@@ -1,12 +1,16 @@
-import UiImage from './UiImage';
-import { getItemImage } from '../data/images';
+import RenaissanceMedia from '../art/RenaissanceMedia';
+import { getItemVariant } from '../data/images';
 
 export default function ProductImage(props) {
   return (
-    <UiImage
-      class="product-photo"
-      src={getItemImage(props.item)}
-      alt={props.item.name}
+    <RenaissanceMedia
+      class="product-art ren-media--card"
+      source="blend"
+      variant={getItemVariant(props.item)}
+      type="food"
+      frame="octagon"
+      geometry="rose"
+      label={props.item.name}
     />
   );
 }

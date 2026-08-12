@@ -1,22 +1,17 @@
 import { For } from 'solid-js';
-import UiImage from './UiImage';
-import { STORIES, STORY_IMAGES } from '../data/stories';
-
-const IMAGE_KEYS = {
-  'forno-1738': 'forno',
-  'regina-margherita': 'margherita',
-  'via-tribunali': 'tribunali',
-  'impasto-24-ore': 'impasto',
-  'sfogliatella-mare': 'sfogliatella',
-  'vesuvio-vigilia': 'vesuvio',
-};
+import RenaissanceMedia from '../art/RenaissanceMedia';
+import { RenaissanceOrnament } from '../art/RenaissanceOrnament';
+import { STORIES } from '../data/stories';
+import { getStoryVariant } from '../data/images';
 
 export default function StoriesSection(props) {
   return (
-    <section id="storie" class="stories-section" aria-labelledby="stories-heading">
+    <section id="storie" class="stories-section fresco-maiolica" aria-labelledby="stories-heading">
       <div class="container">
         <header class="stories-header">
-          <span class="stories-ornament" aria-hidden="true">❧</span>
+          <div class="stories-header-rose" aria-hidden="true">
+            <RenaissanceOrnament variant="rose" />
+          </div>
           <h2 id="stories-heading">Le Nostre Storie</h2>
           <p class="stories-intro">
             Tre secoli di forno, vicoli e ricordi — racconti scritti dal fuoco e dalla memoria di Napoli.
@@ -26,17 +21,23 @@ export default function StoriesSection(props) {
         <div class="stories-grid">
           <For each={STORIES}>
             {(story) => (
-              <article class="story-card">
+              <article class="story-card fresco-card-bg">
                 <button
                   type="button"
                   class="story-card-btn"
-                  onClick={() => props.onSelectStory({ ...story, imageKey: IMAGE_KEYS[story.id] })}
+                  onClick={() => props.onSelectStory(story)}
                 >
-                  <div class="story-card-image">
-                    <UiImage
-                      class="story-photo"
-                      src={STORY_IMAGES[IMAGE_KEYS[story.id]]}
-                      alt={story.title}
+                  <div class="story-card-image fresco-frame fresco-frame--octagon">
+                    <RenaissanceMedia
+                      class="story-art ren-media--card"
+                      source="blend"
+                      variant={getStoryVariant(story.id)}
+                      storyId={story.id}
+                      type="story"
+                      frame="octagon"
+                      geometry="mandorla"
+                      scene={['forno', 'tribunali', 'vesuvio'].includes(getStoryVariant(story.id))}
+                      label={story.title}
                     />
                     <span class="story-card-year">{story.year}</span>
                   </div>

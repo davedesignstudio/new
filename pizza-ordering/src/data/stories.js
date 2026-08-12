@@ -1,15 +1,3 @@
-const IMG = (id, w = 600, h = 400) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
-
-export const STORY_IMAGES = {
-  forno: IMG('photo-1517248135467-4c7edcad34c4', 800, 500),
-  margherita: IMG('photo-1574071318508-1cdbab80d002', 800, 500),
-  tribunali: IMG('photo-1523906834658-6e24ef2386f9', 800, 500),
-  impasto: IMG('photo-1571997478779-2adcbbe9ab2f', 800, 500),
-  sfogliatella: IMG('photo-1555507036-ab1f4038808a', 800, 500),
-  vesuvio: IMG('photo-1534445867742-6bfd976a24d6', 800, 500),
-};
-
 export const STORIES = [
   {
     id: 'forno-1738',

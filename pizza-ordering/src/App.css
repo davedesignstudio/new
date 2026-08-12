@@ -1518,6 +1518,85 @@
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contact a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-hours {
+  margin: 1rem auto 1.25rem;
+  max-width: 360px;
+}
+
+.footer-hours-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.footer-hours ul {
+  list-style: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-hours li span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-light);
+  margin-right: 0.35rem;
+}
+
+.footer-heritage {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.footer-heritage li {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 238, 0.65);
+}
+
+.footer-heritage li::before {
+  content: '✦ ';
+  color: var(--gold);
+}
+
+.footer-credit {
+  font-size: 0.7rem;
+  opacity: 0.55;
+  margin-top: 1rem;
+}
+
+.footer-tech {
+  font-size: 0.7rem;
+  opacity: 0.45;
+  margin-top: 0.25rem;
 }
 
 /* ── Hero story link ──────────────────────────────────────── */
@@ -1756,6 +1835,26 @@
   line-height: 1.7;
   color: var(--text-dark);
   margin-bottom: 1.1rem;
+}
+
+.story-related-dish {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.story-dish-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--terracotta);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.story-dish-link:hover {
+  color: var(--mediterranean);
 }
 
 .story-read-time {

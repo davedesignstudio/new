@@ -1,8 +1,8 @@
 import { For, Show } from 'solid-js';
 import { formatPrice } from '../data/menu';
-import { EMPTY_CART_IMAGE, getItemImageById, ORDER_IMAGES } from '../data/images';
+import { SCENE_VARIANTS, getItemVariantById } from '../data/images';
 import { useCart } from '../store/cart';
-import UiImage from './UiImage';
+import FrescoArt from '../art/FrescoArt';
 
 function formatOptions(options) {
   if (!options) return null;
@@ -47,11 +47,13 @@ export default function Cart() {
         </div>
 
         <div class="cart-order-type">
-          <UiImage
-            class="cart-order-photo"
-            src={ORDER_IMAGES[cart.orderType() === 'delivery' ? 'delivery' : 'carryout']}
-            alt=""
-          />
+          <span class="cart-order-thumb fresco-frame fresco-frame--round">
+            <FrescoArt
+              class="cart-order-art"
+              variant={cart.orderType() === 'delivery' ? SCENE_VARIANTS.delivery : SCENE_VARIANTS.carryout}
+              type="scene"
+            />
+          </span>
           <span class={`order-badge ${cart.orderType()}`}>
             {cart.orderType() === 'delivery' ? 'Consegna' : 'Asporto'}
           </span>
@@ -65,11 +67,13 @@ export default function Cart() {
             when={cart.items().length > 0}
             fallback={
               <div class="cart-empty">
-                <UiImage
-                  class="cart-empty-photo"
-                  src={EMPTY_CART_IMAGE}
-                  alt="Pizza napoletana"
-                />
+                <div class="cart-empty-art fresco-frame">
+                  <FrescoArt
+                    class="cart-empty-illustration"
+                    variant={SCENE_VARIANTS.emptyCart}
+                    type="food"
+                  />
+                </div>
                 <p>Il carrello è vuoto. Aggiungi una pizza napoletana!</p>
               </div>
             }
@@ -77,11 +81,14 @@ export default function Cart() {
             <For each={cart.items()}>
               {(line) => (
                 <div class="cart-item">
-                  <UiImage
-                    class="cart-item-photo"
-                    src={getItemImageById(line.itemId)}
-                    alt={line.name}
-                  />
+                  <span class="cart-item-thumb fresco-frame">
+                    <FrescoArt
+                      class="cart-item-art"
+                      variant={getItemVariantById(line.itemId)}
+                      type="food"
+                      label={line.name}
+                    />
+                  </span>
                   <div class="cart-item-body">
                     <div class="cart-item-info">
                       <h4>{line.name}</h4>

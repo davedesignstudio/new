@@ -1,5 +1,5 @@
-import UiImage from './UiImage';
-import { ORDER_IMAGES } from '../data/images';
+import FrescoArt from '../art/FrescoArt';
+import { SCENE_VARIANTS } from '../data/images';
 import { useCart } from '../store/cart';
 
 export default function OrderTypeBar() {
@@ -17,12 +17,13 @@ export default function OrderTypeBar() {
             aria-selected={cart.orderType() === 'delivery'}
             onClick={() => cart.setOrderType('delivery')}
           >
-            <UiImage
-              class="order-type-photo"
-              src={ORDER_IMAGES.delivery}
-              alt=""
-              loading="eager"
-            />
+            <span class="order-type-thumb fresco-frame fresco-frame--round">
+              <FrescoArt
+                class="order-type-art"
+                variant={SCENE_VARIANTS.delivery}
+                type="scene"
+              />
+            </span>
             Consegna
           </button>
           <button
@@ -33,12 +34,13 @@ export default function OrderTypeBar() {
             aria-selected={cart.orderType() === 'carryout'}
             onClick={() => cart.setOrderType('carryout')}
           >
-            <UiImage
-              class="order-type-photo"
-              src={ORDER_IMAGES.carryout}
-              alt=""
-              loading="eager"
-            />
+            <span class="order-type-thumb fresco-frame fresco-frame--round">
+              <FrescoArt
+                class="order-type-art"
+                variant={SCENE_VARIANTS.carryout}
+                type="scene"
+              />
+            </span>
             Asporto
           </button>
         </div>

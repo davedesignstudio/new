@@ -20,15 +20,7 @@ export default function ProductCard(props) {
     e.stopPropagation();
     const s = story();
     if (s && props.onSelectStory) {
-      const imageKeys = {
-        'forno-1738': 'forno',
-        'regina-margherita': 'margherita',
-        'via-tribunali': 'tribunali',
-        'impasto-24-ore': 'impasto',
-        'sfogliatella-mare': 'sfogliatella',
-        'vesuvio-vigilia': 'vesuvio',
-      };
-      props.onSelectStory({ ...s, imageKey: imageKeys[s.id] });
+      props.onSelectStory(s);
     }
   };
 

@@ -1,5 +1,5 @@
-import UiImage from './UiImage';
-import { getCategoryImage } from '../data/images';
+import FrescoArt from '../art/FrescoArt';
+import { getCategoryVariant } from '../data/images';
 
 export default function CategoryNav(props) {
   return (
@@ -14,12 +14,12 @@ export default function CategoryNav(props) {
                 classList={{ active: props.active === cat.id }}
                 onClick={() => props.onSelect(cat.id)}
               >
-                <span class="category-thumb">
-                  <UiImage
-                    class="category-photo"
-                    src={getCategoryImage(cat.id)}
-                    alt={cat.label}
-                    loading="eager"
+                <span class="category-thumb fresco-frame fresco-frame--round">
+                  <FrescoArt
+                    class="category-art"
+                    variant={getCategoryVariant(cat.id)}
+                    type="category"
+                    label={cat.label}
                   />
                 </span>
                 <span class="category-label">{cat.label}</span>

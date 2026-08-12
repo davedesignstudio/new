@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createSignal, For } from 'solid-js';
 import Header from './components/Header';
 import OrderTypeBar from './components/OrderTypeBar';
 import MenuGrid from './components/MenuGrid';
@@ -6,24 +6,37 @@ import StoriesSection from './components/StoriesSection';
 import StoryModal from './components/StoryModal';
 import PizzaBuilder from './components/PizzaBuilder';
 import Cart from './components/Cart';
-import UiImage from './components/UiImage';
+import RenaissanceMedia from './art/RenaissanceMedia';
+import { RenaissanceOrnament } from './art/RenaissanceOrnament';
 import { CartProvider, useCart } from './store/cart';
-import { HERO_IMAGE, FOOTER_IMAGE, DEALS, getDealImage } from './data/images';
+import { SCENE_VARIANTS } from './data/images';
+import { SITE } from './data/site';
+import { DEALS } from './data/deals';
+import './art/patterns.css';
+import './art/photoTreatment.css';
 import './App.css';
 
 function HeroBanner() {
   return (
-    <section
-      class="hero-banner"
-      aria-label="Benvenuti"
-      style={{ '--hero-image': `url("${HERO_IMAGE}")` }}
-    >
+    <section class="hero-banner fresco-grain" aria-label="Benvenuti">
+      <div class="fresco-scene-bg hero-scene-bg">
+        <RenaissanceMedia
+          class="ren-media--scene"
+          source="blend"
+          variant={SCENE_VARIANTS.hero}
+          type="scene"
+          scene
+          geometry="mandorla"
+          label="Forno a legna napoletano"
+        />
+      </div>
+      <div class="fresco-scene-overlay hero-overlay" />
       <div class="hero-columns" aria-hidden="true">
         <div class="column" />
         <div class="column" />
       </div>
       <div class="container hero-inner">
-        <div class="hero-arch-frame">
+        <div class="hero-arch-frame fresco-frame fresco-frame--arch fresco-frame--octagon">
           <div class="hero-content">
             <p class="hero-eyebrow">Via dei Tribunali · Napoli</p>
             <h1 class="hero-title">L'Arte della Pizza Napoletana</h1>
@@ -54,12 +67,16 @@ function DealsBanner() {
         </h2>
         <div class="deals-inner">
           {DEALS.map((deal) => (
-            <article class="deal-card" classList={{ featured: deal.featured }}>
-              <div class="deal-image-wrap">
-                <UiImage
-                  class="deal-photo"
-                  src={getDealImage(deal.id)}
-                  alt={deal.title}
+            <article class="deal-card fresco-card-bg" classList={{ featured: deal.featured }}>
+              <div class="deal-image-wrap fresco-frame fresco-frame--octagon">
+                <RenaissanceMedia
+                  class="deal-art ren-media--card"
+                  source="blend"
+                  variant={deal.id}
+                  type="deal"
+                  frame="octagon"
+                  geometry="rose"
+                  label={deal.title}
                 />
               </div>
               <div class="deal-body">
@@ -101,12 +118,15 @@ function AppContent() {
   const [activeStory, setActiveStory] = createSignal(null);
 
   return (
-    <div class="app">
+    <div class="app fresco-maiolica">
       <Header />
       <OrderTypeBar />
       <HeroBanner />
+      <RenaissanceOrnament variant="frieze" className="section-ornament" />
       <StoriesSection onSelectStory={setActiveStory} />
+      <RenaissanceOrnament variant="mandorla" className="section-ornament section-ornament--compact" />
       <DealsBanner />
+      <RenaissanceOrnament variant="vitruvian" className="section-ornament" />
       <main id="menu">
         <MenuGrid onSelectStory={setActiveStory} />
       </main>
@@ -114,15 +134,49 @@ function AppContent() {
       <PizzaBuilder />
       <Cart />
       <CheckoutBar />
-      <footer
-        id="contatti"
-        class="site-footer"
-        style={{ '--footer-image': `url("${FOOTER_IMAGE}")` }}
-      >
+      <footer id="contatti" class="site-footer fresco-grain">
+        <div class="fresco-scene-bg footer-scene-bg">
+          <RenaissanceMedia
+            class="ren-media--scene"
+            source="blend"
+            variant={SCENE_VARIANTS.footer}
+            type="scene"
+            scene
+            geometry="vitruvian"
+            label="Vista su Napoli"
+          />
+        </div>
+        <div class="fresco-scene-overlay footer-overlay" />
         <div class="footer-ornament" aria-hidden="true">✦ ✦ ✦</div>
         <div class="container">
-          <p class="footer-name">Antica Pizzeria Napoletana</p>
-          <p class="footer-sub">Via dei Tribunali, 32 · 80138 Napoli · Realizzato con SolidJS</p>
+          <p class="footer-name">{SITE.name}</p>
+          <p class="footer-sub">
+            {SITE.address} · {SITE.city}
+          </p>
+          <p class="footer-contact">
+            <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phone}</a>
+            {' · '}
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+          <div class="footer-hours">
+            <p class="footer-hours-title">{SITE.hours.label}</p>
+            <ul>
+              <For each={SITE.hours.schedule}>
+                {(row) => (
+                  <li>
+                    <span>{row.days}</span> {row.time}
+                  </li>
+                )}
+              </For>
+            </ul>
+          </div>
+          <ul class="footer-heritage" aria-label="Tradizione">
+            <For each={SITE.heritage}>
+              {(line) => <li>{line}</li>}
+            </For>
+          </ul>
+          <p class="footer-credit">{SITE.photoCredit}</p>
+          <p class="footer-tech">Realizzato con SolidJS</p>
         </div>
       </footer>
     </div>

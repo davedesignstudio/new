@@ -8,9 +8,8 @@ import {
   calcPizzaPrice,
   formatPrice,
 } from '../data/menu';
-import { getItemImage, DEFAULT_FOOD_IMAGE } from '../data/images';
-import { useCart } from '../store/cart';
-import UiImage from './UiImage';
+import RenaissanceMedia from '../art/RenaissanceMedia';
+import { getItemVariant } from '../data/images';
 
 export default function PizzaBuilder() {
   const cart = useCart();
@@ -82,12 +81,15 @@ export default function PizzaBuilder() {
 
           <div class="builder-body">
             <div class="builder-preview">
-              <div class="builder-pizza">
-                <UiImage
-                  class="builder-photo"
-                  src={getItemImage(item())}
-                  alt={item()?.name}
-                  fallback={DEFAULT_FOOD_IMAGE}
+              <div class="builder-pizza fresco-frame fresco-frame--round">
+                <RenaissanceMedia
+                  class="builder-art ren-media--card"
+                  source="blend"
+                  variant={getItemVariant(item())}
+                  type="food"
+                  frame="round"
+                  geometry="mandorla"
+                  label={item()?.name}
                 />
               </div>
               <p class="builder-price">{formatPrice(price())}</p>

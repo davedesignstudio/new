@@ -1,12 +1,12 @@
-import UiImage from './UiImage';
-import { LOGO_IMAGE } from '../data/images';
+import FrescoArt from '../art/FrescoArt';
+import { SITE } from '../data/site';
 import { useCart } from '../store/cart';
 
 export default function Header() {
   const cart = useCart();
 
   return (
-    <header class="header">
+    <header class="header fresco-grain">
       <div class="header-ornament" aria-hidden="true">
         <span class="ornament-left">❧</span>
         <span class="ornament-center">✦ ✦ ✦</span>
@@ -15,17 +15,16 @@ export default function Header() {
       <div class="header-top">
         <div class="container header-top-inner">
           <a href="#" class="logo" aria-label="Antica Pizzeria Napoletana">
-            <span class="logo-emblem">
-              <UiImage
-                class="logo-photo"
-                src={LOGO_IMAGE}
-                alt=""
-                loading="eager"
+            <span class="logo-emblem fresco-frame fresco-frame--round">
+              <FrescoArt
+                class="logo-art"
+                variant="margherita"
+                type="food"
               />
             </span>
             <span class="logo-text">
-              <span class="logo-name">Antica Pizzeria</span>
-              <span class="logo-sub">Napoletana · dal 1738</span>
+              <span class="logo-name">{SITE.name.replace(' Napoletana', '')}</span>
+              <span class="logo-sub">{SITE.tagline}</span>
             </span>
           </a>
           <nav class="header-nav" aria-label="Main navigation">

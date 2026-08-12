@@ -220,6 +220,10 @@ export const MENU_ITEMS = [
   },
 ];
 
+export function getMenuItemById(id) {
+  return MENU_ITEMS.find((item) => item.id === id);
+}
+
 export function calcPizzaPrice(item, options) {
   const size = SIZES.find((s) => s.id === options.size) ?? SIZES[1];
   const crust = CRUSTS.find((c) => c.id === options.crust) ?? CRUSTS[0];

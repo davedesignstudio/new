@@ -1,10 +1,11 @@
 import { createSignal, createMemo, For } from 'solid-js';
 import { CATEGORIES, MENU_ITEMS } from '../data/menu';
-import { getCategoryImage } from '../data/images';
+import { getCategoryVariant } from '../data/images';
 import CategoryNav from './CategoryNav';
 import ProductCard from './ProductCard';
+import RenaissanceMedia from '../art/RenaissanceMedia';
 
-export default function MenuGrid() {
+export default function MenuGrid(props) {
   const [activeCategory, setActiveCategory] = createSignal('pizza');
 
   const filteredItems = createMemo(() =>
@@ -19,8 +20,6 @@ export default function MenuGrid() {
     () => CATEGORIES.find((c) => c.id === activeCategory())?.sublabel ?? ''
   );
 
-  const sectionImage = createMemo(() => getCategoryImage(activeCategory()));
-
   return (
     <section class="menu-section">
       <CategoryNav
@@ -29,11 +28,18 @@ export default function MenuGrid() {
         onSelect={setActiveCategory}
       />
       <div class="container">
-        <div
-          class="section-header"
-          style={{ '--section-image': `url("${sectionImage()}")` }}
-        >
-          <div class="section-header-overlay" />
+        <div class="section-header">
+          <div class="section-header-art fresco-scene-bg">
+            <RenaissanceMedia
+              class="section-art ren-media--scene"
+              source="blend"
+              variant={getCategoryVariant(activeCategory())}
+              type="category"
+              geometry="frieze"
+              label={categoryLabel()}
+            />
+          </div>
+          <div class="fresco-scene-overlay section-header-overlay" />
           <div class="section-header-content">
             <h2 class="section-title">{categoryLabel()}</h2>
             <p class="section-sublabel">{categorySublabel()}</p>
