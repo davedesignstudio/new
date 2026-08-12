@@ -29,9 +29,116 @@
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1.1rem;
+  line-height: 1.55;
   color: var(--text-muted);
-  max-width: 520px;
+  max-width: 36rem;
   margin: 0 auto;
+}
+
+.game-high-score {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+.game-lobby {
+  max-width: 32rem;
+  margin: 0 auto 2rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.game-lobby-art {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.25rem;
+  overflow: hidden;
+}
+
+.game-lobby-art .fresco-art {
+  width: 100%;
+  height: 100%;
+}
+
+.game-lobby-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: var(--umber-dark);
+  margin-bottom: 0.75rem;
+}
+
+.game-lobby-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin-bottom: 1.25rem;
+}
+
+.game-rules {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+.game-rules li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.game-rule-stage {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.game-rule-tip {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.btn-game-start {
+  width: 100%;
+  font-size: 0.95rem;
+  padding: 1rem 1.5rem;
+}
+
+.game-pizza-stage--knead-pop {
+  animation: game-knead-pop 0.18s ease-out;
+}
+
+@keyframes game-knead-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.game-pizza-stage--baking {
+  box-shadow: 0 0 24px rgba(184, 92, 56, 0.45), inset 0 0 40px rgba(255, 140, 60, 0.15);
+  animation: game-oven-glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes game-oven-glow {
+  from { box-shadow: 0 0 16px rgba(184, 92, 56, 0.35); }
+  to { box-shadow: 0 0 32px rgba(201, 162, 39, 0.5); }
+}
+
+.game-new-record {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
 }
 
 .game-progress {

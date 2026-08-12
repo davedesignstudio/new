@@ -128,6 +128,33 @@ export function verdict(score) {
   return 'La nonna Carmela ti guarda... ma non giudica. Riprova!';
 }
 
+export const HIGH_SCORE_KEY = 'antica-pizzeria-best-score';
+
+export function loadHighScore() {
+  try {
+    return Number(localStorage.getItem(HIGH_SCORE_KEY)) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+export function saveHighScore(score) {
+  try {
+    const best = Math.max(score, loadHighScore());
+    localStorage.setItem(HIGH_SCORE_KEY, String(best));
+    return best;
+  } catch {
+    return score;
+  }
+}
+
+export const GAME_RULES = [
+  { stage: 'Impasta', tip: 'Clicca 12 volte per lievitare l\'impasto madre.' },
+  { stage: 'Stendi', tip: 'Porta il diametro al 78% per il cornicione perfetto.' },
+  { stage: 'Condimenti', tip: 'Salsa, formaggio e almeno 2 condimenti sulla pizza.' },
+  { stage: 'Forno', tip: 'Ferma l\'ago nella zona dorata a 485°C.' },
+];
+
 export function randomToppingPosition(seed) {
   const angle = (seed * 137.5 * Math.PI) / 180;
   const r = 25 + (seed % 5) * 8;

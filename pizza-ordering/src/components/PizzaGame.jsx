@@ -22,6 +22,9 @@ import {
   totalScore,
   starRating,
   verdict,
+  loadHighScore,
+  saveHighScore,
+  GAME_RULES,
 } from '../game/pizzaGame';
 import '../game/game.css';
 
@@ -76,6 +79,8 @@ function GamePizzaStage(props) {
       classList={{
         'game-pizza-stage--interactive': props.stage === 'top' && props.hasCheese,
         'game-pizza-stage--baked': props.baked,
+        'game-pizza-stage--knead-pop': props.kneadPop,
+        'game-pizza-stage--baking': props.stage === 'bake',
       }}
       style={{ '--game-stretch': scale() }}
     >
@@ -136,6 +141,9 @@ function GamePizzaStage(props) {
 export default function PizzaGame(props) {
   const cart = useCart();
 
+  const [started, setStarted] = createSignal(false);
+  const [highScore, setHighScore] = createSignal(loadHighScore());
+  const [kneadPop, setKneadPop] = createSignal(false);
   const [stage, setStage] = createSignal('knead');
   const [kneadClicks, setKneadClicks] = createSignal(0);
   const [stretch, setStretch] = createSignal(45);
@@ -174,6 +182,8 @@ export default function PizzaGame(props) {
 
   const handleKnead = () => {
     if (kneadClicks() >= KNEAD_TARGET) return;
+    setKneadPop(true);
+    setTimeout(() => setKneadPop(false), 180);
     const next = kneadClicks() + 1;
     setKneadClicks(next);
     if (next >= KNEAD_TARGET) {
@@ -211,8 +221,15 @@ export default function PizzaGame(props) {
     setScores((s) => ({ ...s, bake: bakeScore }));
     setBaked(true);
     const all = { ...scores(), bake: bakeScore };
-    setFinalScore(totalScore(all));
+    const total = totalScore(all);
+    setFinalScore(total);
+    setHighScore(saveHighScore(total));
     setStage('result');
+  };
+
+  const startGame = () => {
+    resetGame();
+    setStarted(true);
   };
 
   const resetGame = () => {
@@ -251,8 +268,37 @@ export default function PizzaGame(props) {
           <p class="game-intro">
             Impasta, stendi, condisci e inforna — le stesse storie e immagini della nostra pizzeria prendono vita tra le tue mani.
           </p>
+          <Show when={highScore() > 0}>
+            <p class="game-high-score">Record: <strong>{highScore()}</strong> punti</p>
+          </Show>
         </header>
 
+        <Show when={!started()}>
+          <div class="game-lobby fresco-card-bg">
+            <div class="game-lobby-art fresco-frame fresco-frame--round">
+              <FrescoArt variant="margherita" type="food" label="Pizza" />
+            </div>
+            <h3 class="game-lobby-title">Diventa Pizzaiolo per un giorno</h3>
+            <p class="game-lobby-desc">
+              Quattro fasi, un forno a legna, un giudizio finale. Vinci stelle e aggiungi la tua creazione al carrello.
+            </p>
+            <ol class="game-rules">
+              <For each={GAME_RULES}>
+                {(rule) => (
+                  <li>
+                    <span class="game-rule-stage">{rule.stage}</span>
+                    <span class="game-rule-tip">{rule.tip}</span>
+                  </li>
+                )}
+              </For>
+            </ol>
+            <button type="button" class="btn-game-action btn-game-start" onClick={startGame}>
+              🔥 Inizia a cucinare
+            </button>
+          </div>
+        </Show>
+
+        <Show when={started()}>
         <div class="game-progress" aria-label="Progresso">
           <For each={STAGES.filter((s) => s !== 'result')}>
             {(s, i) => (
@@ -289,6 +335,7 @@ export default function PizzaGame(props) {
                   hasCheese={hasCheese()}
                   toppings={toppings()}
                   baked={baked()}
+                  kneadPop={kneadPop()}
                 />
               </button>
             </div>
@@ -412,6 +459,9 @@ export default function PizzaGame(props) {
                     <span class="game-stars-dim">{'★'.repeat(5 - starRating(finalScore()))}</span>
                   </p>
                   <p class="game-verdict">{verdict(finalScore())}</p>
+                  <Show when={finalScore() >= highScore() && finalScore() > 0}>
+                    <p class="game-new-record">🏆 Nuovo record!</p>
+                  </Show>
                   <dl class="game-breakdown">
                     <div><dt>Impasto</dt><dd>{scores().knead}</dd></div>
                     <div><dt>Stesura</dt><dd>{scores().stretch}</dd></div>
@@ -462,6 +512,7 @@ export default function PizzaGame(props) {
             </For>
           </div>
         </div>
+        </Show>
       </div>
     </section>
   );
