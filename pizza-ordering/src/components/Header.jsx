@@ -29,6 +29,7 @@ export default function Header() {
           </a>
           <nav class="header-nav" aria-label="Main navigation">
             <a href="#menu" class="nav-link">Menu</a>
+            <a href="#gioco" class="nav-link">Gioco</a>
             <a href="#storie" class="nav-link">La Storia</a>
             <a href="#offerte" class="nav-link">Offerte</a>
             <a href="#contatti" class="nav-link">Contatti</a>

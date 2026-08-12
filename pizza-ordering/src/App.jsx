@@ -5,6 +5,7 @@ import MenuGrid from './components/MenuGrid';
 import StoriesSection from './components/StoriesSection';
 import StoryModal from './components/StoryModal';
 import PizzaBuilder from './components/PizzaBuilder';
+import PizzaGame from './components/PizzaGame';
 import Cart from './components/Cart';
 import RenaissanceMedia from './art/RenaissanceMedia';
 import { RenaissanceOrnament } from './art/RenaissanceOrnament';
@@ -49,6 +50,7 @@ function HeroBanner() {
               <span>✦</span>
             </div>
             <a href="#storie" class="hero-story-link">Scopri le nostre storie</a>
+            <a href="#gioco" class="hero-game-link">Gioca: diventa pizzaiolo →</a>
           </div>
         </div>
       </div>
@@ -123,6 +125,7 @@ function AppContent() {
       <OrderTypeBar />
       <HeroBanner />
       <RenaissanceOrnament variant="frieze" className="section-ornament" />
+      <PizzaGame />
       <StoriesSection onSelectStory={setActiveStory} />
       <RenaissanceOrnament variant="mandorla" className="section-ornament section-ornament--compact" />
       <DealsBanner />

@@ -1620,6 +1620,32 @@
   border-color: var(--marble);
 }
 
+.hero-game-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-left: 1.25rem;
+  color: var(--marble);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.hero-game-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .hero-game-link {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
 /* ── Stories Section ────────────────────────────────────── */
 .stories-section {
   padding: 3.5rem 0;

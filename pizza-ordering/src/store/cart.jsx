@@ -29,6 +29,21 @@ export function CartProvider(props) {
     setCartOpen(true);
   };
 
+  const addCustomItem = (name, price) => {
+    setStore('items', (items) => [
+      ...items,
+      {
+        cartId: nextId++,
+        itemId: 'game-pizza',
+        name,
+        price,
+        quantity: 1,
+        options: null,
+      },
+    ]);
+    setCartOpen(true);
+  };
+
   const removeItem = (cartId) => {
     setStore('items', (items) => items.filter((i) => i.cartId !== cartId));
   };
@@ -58,6 +73,7 @@ export function CartProvider(props) {
     setBuilderItem,
     items: () => store.items,
     addItem,
+    addCustomItem,
     removeItem,
     updateQuantity,
     clearCart,
