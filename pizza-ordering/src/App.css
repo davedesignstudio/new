@@ -1912,6 +1912,142 @@
   text-decoration: underline;
 }
 
+/* ── Museum gallery ───────────────────────────────────────── */
+.museum-gallery {
+  padding: 4rem 0 3rem;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--parchment) 100%);
+}
+
+.museum-gallery-header {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+}
+
+.museum-gallery-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.museum-gallery-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--umber-dark);
+  margin-bottom: 1rem;
+}
+
+.museum-gallery-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  opacity: 0.9;
+}
+
+.museum-group {
+  margin-bottom: 3rem;
+}
+
+.museum-group-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.museum-group-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: var(--umber-dark);
+}
+
+.museum-group-location {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mediterranean);
+}
+
+.museum-works {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.museum-work {
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.museum-work:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+}
+
+.museum-work-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.museum-work-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--umber-dark);
+}
+
+.museum-work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.museum-work-body {
+  padding: 1rem 1rem 1.25rem;
+}
+
+.museum-work-body h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--umber-dark);
+  margin-bottom: 0.35rem;
+}
+
+.museum-work-artist {
+  font-size: 0.85rem;
+  color: var(--terracotta);
+  margin-bottom: 0.25rem;
+}
+
+.museum-work-meta {
+  font-size: 0.8rem;
+  color: var(--charcoal);
+  opacity: 0.75;
+  margin-bottom: 0.35rem;
+}
+
+.museum-work-variant {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.ren-media--museum .ren-media__wash {
+  opacity: 0.35;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .header-nav {

@@ -93,21 +93,48 @@ export const CATEGORY_ART = {
 export const SCENE_ART = {
   'hero-forno': `
     <rect width="400" height="200" fill="${P.umberDark}"/>
-    <path d="M0 160 Q200 120 400 150 L400 200 L0 200Z" fill="${P.charcoal}"/>
-    <path d="M120 200 L120 80 Q200 40 280 80 L280 200" fill="${P.terracotta}" stroke="${P.umber}" stroke-width="2"/>
-    <ellipse cx="200" cy="130" rx="45" ry="35" fill="${P.pomodoroDeep}" stroke="${P.gold}" stroke-width="2"/>
-    <ellipse cx="200" cy="130" rx="30" ry="22" fill="${P.pomodoro}" opacity="0.8"/>
-    <circle cx="200" cy="125" r="8" fill="${P.goldLight}" opacity="0.9"/>
-    <path d="M60 200 L60 100 L80 90 L80 200" fill="${P.cream}" stroke="${P.umber}" stroke-width="1.5" opacity="0.3"/>
-    <path d="M320 200 L320 100 L340 90 L340 200" fill="${P.cream}" stroke="${P.umber}" stroke-width="1.5" opacity="0.3"/>
-    <circle cx="350" cy="50" r="25" fill="${P.goldLight}" opacity="0.4"/>
+    <path d="M0 28 Q200 -8 400 28" fill="none" stroke="${P.gold}" stroke-width="1.5" opacity="0.55"/>
+    <path d="M0 38 Q200 8 400 38" fill="none" stroke="${P.gold}" stroke-width="0.8" opacity="0.35"/>
+    <rect x="0" y="38" width="400" height="162" fill="${P.terracotta}" opacity="0.22"/>
+    <rect x="48" y="48" width="20" height="152" fill="${P.cream}" opacity="0.18" stroke="${P.gold}" stroke-width="1"/>
+    <rect x="332" y="48" width="20" height="152" fill="${P.cream}" opacity="0.18" stroke="${P.gold}" stroke-width="1"/>
+    <path d="M118 200 L118 68 Q200 22 282 68 L282 200" fill="${P.charcoal}" stroke="${P.gold}" stroke-width="2"/>
+    <ellipse cx="200" cy="118" rx="52" ry="40" fill="${P.pomodoroDeep}" stroke="${P.gold}" stroke-width="2"/>
+    <ellipse cx="200" cy="112" rx="36" ry="26" fill="${P.pomodoro}" opacity="0.88"/>
+    <path d="M182 108 Q188 82 194 108 Q200 72 206 108 Q212 84 218 108" fill="${P.goldLight}" opacity="0.75"/>
+    <circle cx="200" cy="108" r="6" fill="${P.goldLight}" opacity="0.95"/>
+    <ellipse cx="88" cy="52" rx="16" ry="5" fill="${P.gold}" opacity="0.45"/>
+    <path d="M88 52 L88 62" stroke="${P.gold}" stroke-width="1.5" opacity="0.5"/>
+    <path d="M0 178 H400 M0 188 H400 M50 178 V200 M130 178 V200 M210 178 V200 M290 178 V200 M370 178 V200" stroke="${P.umber}" stroke-width="0.6" opacity="0.35"/>
+    <path d="M60 200 L60 95 L78 86 L78 200" fill="${P.cream}" stroke="${P.umber}" stroke-width="1.2" opacity="0.28"/>
+    <path d="M322 200 L322 95 L340 86 L340 200" fill="${P.cream}" stroke="${P.umber}" stroke-width="1.2" opacity="0.28"/>
   `,
   'footer-napoli': `
-    <rect width="400" height="120" fill="${P.mediterranean}"/>
-    <path d="M0 90 L80 60 L160 75 L240 50 L320 70 L400 55 L400 120 L0 120Z" fill="${P.charcoal}" opacity="0.5"/>
-    <path d="M150 120 L150 50 L170 40 L190 50 L190 120" fill="${P.cream}" opacity="0.25" stroke="${P.gold}" stroke-width="1"/>
-    <path d="M210 120 L210 55 L230 45 L250 55 L250 120" fill="${P.cream}" opacity="0.25" stroke="${P.gold}" stroke-width="1"/>
-    <ellipse cx="200" cy="40" rx="60" ry="20" fill="url(#skyGrad)" opacity="0.6"/>
+    <rect width="400" height="120" fill="url(#skyGrad)"/>
+    <path d="M0 82 Q120 72 200 78 Q280 84 400 76 L400 120 L0 120Z" fill="${P.mediterranean}" opacity="0.85"/>
+    <path d="M268 120 L308 38 L348 120Z" fill="url(#vesuvioGrad)" stroke="${P.umber}" stroke-width="1.5"/>
+    <ellipse cx="308" cy="42" rx="10" ry="5" fill="${P.cream}" opacity="0.65"/>
+    <path d="M302 44 Q308 28 314 44" fill="${P.pomodoro}" opacity="0.4"/>
+    <path d="M0 92 L36 78 L72 90 L108 74 L144 86 L180 68 L216 82 L252 70 L288 84 L324 72 L360 82 L400 88 L400 120 L0 120Z" fill="${P.terracotta}" opacity="0.88" stroke="${P.umber}" stroke-width="0.5"/>
+    <ellipse cx="96" cy="76" rx="20" ry="13" fill="${P.cream}" opacity="0.32" stroke="${P.gold}" stroke-width="1"/>
+    <rect x="92" y="76" width="8" height="22" fill="${P.cream}" opacity="0.28"/>
+    <path d="M150 120 L150 52 L170 42 L190 52 L190 120" fill="${P.cream}" opacity="0.22" stroke="${P.gold}" stroke-width="1"/>
+    <path d="M210 120 L210 58 L230 48 L250 58 L250 120" fill="${P.cream}" opacity="0.22" stroke="${P.gold}" stroke-width="1"/>
+    <circle cx="48" cy="32" r="14" fill="${P.goldLight}" opacity="0.45"/>
+  `,
+  tribunali: `
+    <rect width="400" height="200" fill="${P.ochreLight}" opacity="0.25"/>
+    <path d="M110 200 L155 35 L245 35 L290 200Z" fill="${P.terracotta}" stroke="${P.umber}" stroke-width="1.5" opacity="0.75"/>
+    <path d="M130 200 L165 55 L235 55 L270 200Z" fill="${P.ochre}" opacity="0.35"/>
+    <line x1="135" y1="68" x2="265" y2="68" stroke="${P.cream}" stroke-width="1.2" opacity="0.55"/>
+    <path d="M160 68 Q168 88 176 68 M200 68 Q208 92 216 68 M230 68 Q238 86 246 68" fill="none" stroke="${P.cream}" stroke-width="1" opacity="0.45"/>
+    <rect x="172" y="88" width="22" height="28" fill="${P.mediterranean}" opacity="0.42" stroke="${P.gold}" stroke-width="1"/>
+    <rect x="206" y="94" width="20" height="24" fill="${P.mediterranean}" opacity="0.42" stroke="${P.gold}" stroke-width="1"/>
+    <rect x="188" y="130" width="24" height="32" fill="${P.umberDark}" opacity="0.5" stroke="${P.gold}" stroke-width="0.8"/>
+    <ellipse cx="200" cy="172" rx="28" ry="9" fill="${P.charcoal}" opacity="0.55"/>
+    <circle cx="218" cy="52" r="20" fill="${P.goldLight}" opacity="0.5"/>
+    <path d="M60 200 L60 120 L75 115 L75 200" fill="${P.cream}" opacity="0.2" stroke="${P.umber}" stroke-width="1"/>
+    <path d="M325 200 L325 115 L340 110 L340 200" fill="${P.cream}" opacity="0.2" stroke="${P.umber}" stroke-width="1"/>
   `,
   'order-delivery': `<rect x="50" y="70" width="100" height="55" rx="8" fill="${P.terracotta}" stroke="${P.umber}" stroke-width="${STROKE}"/><circle cx="70" cy="130" r="12" fill="${P.charcoal}" stroke="${P.umber}" stroke-width="1.5"/><circle cx="130" cy="130" r="12" fill="${P.charcoal}" stroke="${P.umber}" stroke-width="1.5"/><ellipse cx="100" cy="85" rx="20" ry="12" fill="${P.cream}" stroke="${P.umber}" stroke-width="1"/>`,
   'order-carryout': `<path d="M100 50 L60 95 H140Z" fill="${P.terracotta}" stroke="${P.umber}" stroke-width="${STROKE}"/><rect x="75" y="95" width="50" height="45" fill="${P.ochreLight}" stroke="${P.umber}" stroke-width="${STROKE}"/><rect x="85" y="105" width="12" height="18" fill="${P.mediterranean}" opacity="0.5"/><rect x="103" y="105" width="12" height="18" fill="${P.mediterranean}" opacity="0.5"/>`,
@@ -117,10 +144,10 @@ export const SCENE_ART = {
 export const STORY_ART = {
   forno: SCENE_ART['hero-forno'],
   margherita: PIZZA_ART.margherita,
-  tribunali: SCENE_ART['footer-napoli'],
+  tribunali: SCENE_ART.tribunali,
   impasto: `<ellipse cx="100" cy="110" rx="60" ry="25" fill="${P.cream}" stroke="${P.umber}" stroke-width="${STROKE}"/><ellipse cx="100" cy="95" rx="50" ry="18" fill="${P.ochreLight}" stroke="${P.umber}" stroke-width="1.5" opacity="0.8"/><circle cx="70" cy="88" r="6" fill="${P.cream}" opacity="0.7"/><circle cx="100" cy="82" r="8" fill="${P.cream}" opacity="0.7"/><circle cx="130" cy="88" r="5" fill="${P.cream}" opacity="0.7"/>`,
   sfogliatella: dishArt('sfogliatella'),
-  vesuvio: `<path d="M40 150 L100 40 L160 150Z" fill="url(#vesuvioGrad)" stroke="${P.umber}" stroke-width="${STROKE}"/><ellipse cx="100" cy="45" rx="15" ry="8" fill="${P.cream}" opacity="0.7"/><path d="M90 50 Q100 30 110 50" fill="${P.pomodoro}" opacity="0.5"/>`,
+  vesuvio: `<path d="M40 150 L100 40 L160 150Z" fill="url(#vesuvioGrad)" stroke="${P.umber}" stroke-width="${STROKE}"/><ellipse cx="100" cy="45" rx="15" ry="8" fill="${P.cream}" opacity="0.7"/><path d="M90 50 Q100 30 110 50" fill="${P.pomodoro}" opacity="0.5"/><path d="M0 150 Q50 130 100 140 Q150 125 200 150" fill="${P.mediterranean}" opacity="0.35"/>`,
 };
 
 export const DEAL_ART = {
@@ -155,9 +182,14 @@ export function renderArt(variant, viewBox = '0 0 200 200') {
 }
 
 export function renderScene(variant) {
-  const vb = variant === 'hero-forno' ? '0 0 400 200' : variant === 'footer-napoli' ? '0 0 400 120' : '0 0 200 200';
+  const viewBoxes = {
+    'hero-forno': '0 0 400 200',
+    'footer-napoli': '0 0 400 120',
+    tribunali: '0 0 400 200',
+  };
+  const vb = viewBoxes[variant] ?? '0 0 200 200';
   const [,, w, h] = vb.split(' ').map(Number);
-  const sceneContent = SCENE_ART[variant] ?? '';
+  const sceneContent = SCENE_ART[variant] ?? STORY_ART[variant] ?? '';
   const geometry = sceneGeometry(w, h);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" role="img" aria-hidden="true">${defs}${geometry}<g opacity="0.92">${sceneContent}</g></svg>`;

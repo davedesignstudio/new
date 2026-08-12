@@ -22,7 +22,7 @@ export default function FrescoArt(props) {
   const svg = () => {
     const v = resolveVariant();
     if (local.scene || local.type === 'scene' || local.type === 'story') {
-      const sceneVariants = ['hero-forno', 'footer-napoli'];
+      const sceneVariants = ['hero-forno', 'footer-napoli', 'tribunali'];
       if (sceneVariants.includes(v) || local.scene) return renderScene(v);
     }
     return renderArt(v);

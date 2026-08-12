@@ -21,5 +21,6 @@ export const SITE = {
     'Ingredienti DOP e biologici',
     'Via dei Tribunali — cuore di Napoli',
   ],
-  photoCredit: 'Fotografie: Unsplash · Illustrazioni: Fresco Napoletano',
+  photoCredit:
+    'Arte: Met Museum, Cleveland Museum of Art, Art Institute of Chicago, Rijksmuseum (open access) · Fotografie: Unsplash · Illustrazioni: Fresco Napoletano',
 };
