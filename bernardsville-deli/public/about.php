@@ -5,7 +5,8 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/src/includes/helpers.php';
 
 $site = site_config();
-$sections = menu_sections();
+$burgerStory = story_by_id('angus-prime');
+$brandStory = story_by_id('philhower-brand');
 $pageTitle = 'About Us — ' . $site['name'];
 
 require dirname(__DIR__) . '/src/includes/header.php';
@@ -17,25 +18,44 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <h1 class="page-gold-title">Burgers At Bville</h1>
     <div class="about-hero-image">
       <p class="script-stack">So Sweet<br />So Tasty<br />So Juicy</p>
-      <div class="burger-placeholder" aria-hidden="true">🍔</div>
+      <img class="about-hero-photo" src="<?= e(asset_url($site['photos']['categories']['burgers'])) ?>" alt="Angus burger at Bville Pizza and Grill" width="420" height="320" loading="lazy" />
     </div>
   </div>
 
   <div class="container about-copy">
     <h2 class="script-heading">About Us</h2>
     <p class="about-text"><?= e($site['about']) ?></p>
+
+    <?php if ($burgerStory): ?>
+      <blockquote class="about-story-quote story-text" data-story-id="angus-prime" data-field="quote">“<?= e($burgerStory['quote']) ?>”</blockquote>
+      <button type="button" class="btn btn-gold story-open" data-story-id="angus-prime">The burger story</button>
+    <?php endif; ?>
+
     <div class="about-actions">
       <a class="btn btn-gold btn-block" href="tel:<?= e($site['phone_raw']) ?>">Call us <?= e($site['phone']) ?></a>
       <a class="btn btn-gold btn-block" href="<?= e(asset_url('contact.php')) ?>">Make A Reservation</a>
     </div>
+
+    <div class="heritage-list">
+      <?php foreach ($site['heritage'] as $pillar): ?>
+        <span><?= e($pillar) ?></span>
+      <?php endforeach; ?>
+    </div>
+
     <?php $designer = $site['designer']; ?>
     <div class="about-designer">
       <p>Branding &amp; design by <?= e($designer['person']) ?></p>
       <a href="<?= e($designer['url']) ?>" target="_blank" rel="noopener noreferrer">
         <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="200" height="50" />
       </a>
+      <?php if ($brandStory): ?>
+        <button type="button" class="menu-story-link menu-story-link--light story-open" data-story-id="philhower-brand">
+          How the brand came together →
+        </button>
+      <?php endif; ?>
     </div>
   </div>
 </section>
 
+<?php require dirname(__DIR__) . '/src/includes/story-modal.php'; ?>
 <?php require dirname(__DIR__) . '/src/includes/footer.php'; ?>

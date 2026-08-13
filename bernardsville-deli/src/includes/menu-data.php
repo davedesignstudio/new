@@ -8,10 +8,10 @@ return [
         'title' => 'Stone Oven Pizza',
         'note' => 'Creative pies from our stone oven',
         'items' => [
-            ['name' => 'Margherita', 'desc' => 'Fresh mozzarella, basil, tomato sauce', 'price' => '14.99'],
-            ['name' => 'Bville Special', 'desc' => 'Pepperoni, sausage, peppers, onion', 'price' => '17.99'],
-            ['name' => 'Mediterranean', 'desc' => 'Feta, olives, spinach, sun-dried tomato', 'price' => '16.99'],
-            ['name' => 'BBQ Chicken', 'desc' => 'Grilled chicken, red onion, BBQ drizzle', 'price' => '16.99'],
+            ['name' => 'Margherita', 'slug' => 'margherita', 'desc' => 'Fresh mozzarella, basil, tomato sauce', 'price' => '14.99'],
+            ['name' => 'Bville Special', 'slug' => 'bville-special', 'desc' => 'Pepperoni, sausage, peppers, onion', 'price' => '17.99'],
+            ['name' => 'Mediterranean', 'slug' => 'mediterranean', 'desc' => 'Feta, olives, spinach, sun-dried tomato', 'price' => '16.99'],
+            ['name' => 'BBQ Chicken', 'slug' => 'bbq-chicken', 'desc' => 'Grilled chicken, red onion, BBQ drizzle', 'price' => '16.99'],
         ],
     ],
     [
@@ -28,7 +28,7 @@ return [
         'title' => 'Handhelds',
         'items' => [
             ['name' => 'Chicken Kabob Plate', 'desc' => 'Marinated chicken, rice, salad', 'price' => '14.99'],
-            ['name' => 'Lamb Skewers', 'desc' => 'Grilled lamb, pita, hummus', 'price' => '16.99'],
+            ['name' => 'Lamb Skewers', 'slug' => 'lamb-skewers', 'desc' => 'Grilled lamb, pita, hummus', 'price' => '16.99'],
             ['name' => 'Falafel Pocket', 'desc' => 'Crispy falafel, tahini, pickles', 'price' => '10.99'],
         ],
     ],
@@ -36,7 +36,7 @@ return [
         'id' => 'sandwiches',
         'title' => 'Sandwiches',
         'items' => [
-            ['name' => 'Italian Sub', 'desc' => 'Ham, salami, provolone, oil & vinegar', 'price' => '11.99'],
+            ['name' => 'Italian Sub', 'slug' => 'italian-sub', 'desc' => 'Ham, salami, provolone, oil & vinegar', 'price' => '11.99'],
             ['name' => 'Turkey Avocado', 'desc' => 'Roasted turkey, avocado, sprouts', 'price' => '12.49'],
             ['name' => 'Philly Cheesesteak', 'desc' => 'Onions, peppers, melted provolone', 'price' => '13.99'],
         ],
@@ -56,7 +56,7 @@ return [
         'note' => 'Angus · Prime Rib — So Sweet, So Tasty, So Juicy',
         'items' => [
             ['name' => 'Classic Angus Burger', 'desc' => 'Lettuce, tomato, pickle, brioche bun', 'price' => '13.99'],
-            ['name' => 'Prime Rib Burger', 'desc' => 'Aged cheddar, caramelized onions', 'price' => '15.99'],
+            ['name' => 'Prime Rib Burger', 'slug' => 'prime-rib-burger', 'desc' => 'Aged cheddar, caramelized onions', 'price' => '15.99'],
             ['name' => 'Bville Bacon Burger', 'desc' => 'Crispy bacon, special sauce', 'price' => '14.99'],
         ],
     ],

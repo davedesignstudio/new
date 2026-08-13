@@ -83,3 +83,84 @@ function current_page(): string
     $page = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php', '.php');
     return $page === 'index' ? 'home' : $page;
 }
+
+function stories(): array
+{
+    static $stories = null;
+    if ($stories === null) {
+        $stories = require dirname(__DIR__) . '/includes/stories.php';
+    }
+    return $stories;
+}
+
+function story_blend_map(): array
+{
+    static $blend = null;
+    if ($blend === null) {
+        $blend = require dirname(__DIR__) . '/includes/story-blend.php';
+    }
+    return $blend;
+}
+
+function resolve_story(array $story, string $lang = 'en'): array
+{
+    if ($lang !== 'blend') {
+        return $story;
+    }
+
+    $overlay = story_blend_map()[$story['id']] ?? [];
+    return array_merge($story, array_filter($overlay, static fn ($value) => $value !== null && $value !== ''));
+}
+
+function featured_story(string $lang = 'en'): array
+{
+    foreach (stories() as $story) {
+        if (!empty($story['featured'])) {
+            return resolve_story($story, $lang);
+        }
+    }
+    return resolve_story(stories()[0], $lang);
+}
+
+function story_by_id(string $id, string $lang = 'en'): ?array
+{
+    foreach (stories() as $story) {
+        if ($story['id'] === $id) {
+            return resolve_story($story, $lang);
+        }
+    }
+    return null;
+}
+
+function story_for_item(string $slug, string $lang = 'en'): ?array
+{
+    foreach (stories() as $story) {
+        if (($story['related_item'] ?? null) === $slug) {
+            return resolve_story($story, $lang);
+        }
+    }
+    return null;
+}
+
+function story_for_category(string $categoryId, string $lang = 'en'): ?array
+{
+    foreach (stories() as $story) {
+        if (($story['related_category'] ?? null) === $categoryId) {
+            return resolve_story($story, $lang);
+        }
+    }
+    return null;
+}
+
+function category_photo(string $categoryId): string
+{
+    $photos = site_config()['photos']['categories'];
+    return asset_url($photos[$categoryId] ?? 'assets/photos/hero-restaurant.jpg');
+}
+
+function item_slug(string $name): string
+{
+    $slug = strtolower($name);
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug) ?? $slug;
+    return trim($slug, '-');
+}

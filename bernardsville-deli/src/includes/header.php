@@ -39,9 +39,15 @@ $title = $pageTitle ?? $site['name'];
         <a href="<?= e(asset_url('catering.php')) ?>" class="<?= $page === 'catering' ? 'active' : '' ?>">Catering</a>
         <a href="<?= e(asset_url('contact.php')) ?>" class="<?= $page === 'contact' ? 'active' : '' ?>">Contact</a>
       </nav>
-      <div class="header-social" aria-label="Social media">
-        <a href="<?= e($site['social']['instagram']) ?>" aria-label="Instagram">IG</a>
-        <a href="<?= e($site['social']['facebook']) ?>" aria-label="Facebook">FB</a>
+      <div class="header-tools">
+        <div class="lang-toggle" role="group" aria-label="Story language">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="blend">EN·RU</button>
+        </div>
+        <div class="header-social" aria-label="Social media">
+          <a href="<?= e($site['social']['instagram']) ?>" aria-label="Instagram">IG</a>
+          <a href="<?= e($site['social']['facebook']) ?>" aria-label="Facebook">FB</a>
+        </div>
       </div>
     </div>
   </header>

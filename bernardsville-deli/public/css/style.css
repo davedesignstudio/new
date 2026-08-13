@@ -179,10 +179,20 @@ a { color: inherit; }
 .hero-order-bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><rect fill="%23333" width="800" height="400"/><circle cx="400" cy="200" r="120" fill="%23c41e3a" opacity="0.3"/></svg>') center/cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.hero-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
+.hero-eyebrow--light { color: var(--gold-text); }
 
 .hero-order-inner {
   position: relative;
@@ -275,6 +285,41 @@ a { color: inherit; }
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4);
   text-align: center;
   min-width: 140px;
+}
+
+.menu-grid-item--photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 3px solid #222;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.menu-grid-item--photo img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.menu-grid-item--photo .menu-grid-banner {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.menu-grid-story {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--gold-text);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
 }
 
 .menu-grid-icon {
@@ -418,6 +463,15 @@ a { color: inherit; }
 .burger-placeholder {
   font-size: 8rem;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+.about-hero-photo {
+  width: min(100%, 420px);
+  border-radius: var(--radius);
+  border: 4px solid var(--gold);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 .about-text {
@@ -719,4 +773,371 @@ a { color: inherit; }
     margin-left: 0;
     width: 100%;
   }
+}
+
+/* Header tools + language toggle */
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-toggle {
+  display: flex;
+  border: 2px solid var(--red);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  border: none;
+  background: var(--white);
+  color: var(--text);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--red);
+  color: var(--white);
+}
+
+.story-blend-text {
+  font-style: italic;
+}
+
+/* Heritage + origin + stories */
+.heritage-strip {
+  background: var(--burgundy);
+  color: var(--gold-text);
+  padding: 0.85rem 0;
+}
+
+.heritage-strip-inner,
+.heritage-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1rem;
+}
+
+.heritage-strip-inner span,
+.heritage-list span {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(245, 215, 110, 0.35);
+  border-radius: 999px;
+}
+
+.heritage-list { margin: 2rem 0 0; }
+
+.origin-section,
+.stories-section {
+  padding: 3rem 0;
+  background: var(--cream);
+}
+
+.origin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.origin-media {
+  position: relative;
+}
+
+.origin-media img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.origin-badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+}
+
+.origin-eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.origin-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  margin: 0 0 0.75rem;
+  color: var(--burgundy);
+}
+
+.origin-quote {
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  color: var(--wood);
+}
+
+.origin-lead,
+.origin-body {
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.section-header h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--burgundy);
+  margin: 0 0 0.35rem;
+}
+
+.section-lead {
+  margin: 0;
+  color: var(--muted);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.story-card-btn {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.story-card-btn:hover { transform: translateY(-3px); }
+
+.story-card-btn img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.story-card-body { padding: 1rem; }
+
+.story-card-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.35rem;
+}
+
+.story-card-body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: var(--burgundy);
+}
+
+.story-card-body p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.page-hero-photo {
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.page-hero-photo-inner .page-gold-title { color: var(--gold-text); }
+
+.menu-section-header--photo {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.menu-section-header--photo img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.menu-story-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--red);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menu-story-link--light { color: var(--gold-text); }
+
+.about-story-quote {
+  margin: 1.25rem auto;
+  max-width: 520px;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.cafe-robust-hero--photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.cafe-hero-photo {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.28;
+}
+
+.cafe-robust-hero--photo .cafe-robust-hero-grid { position: relative; z-index: 1; }
+
+.cafe-robust-banner--photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.cafe-banner-photo {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.22;
+}
+
+.cafe-robust-banner--photo .cafe-banner-inner { position: relative; z-index: 1; }
+
+/* Story modal */
+.story-modal[hidden] { display: none; }
+
+.story-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.story-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.story-modal-panel {
+  position: relative;
+  width: min(100%, 640px);
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.story-modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--white);
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.story-modal-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.story-modal-content { padding: 1.25rem 1.5rem 1.5rem; }
+
+.story-modal-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.35rem;
+}
+
+.story-modal-content h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  margin: 0 0 0.35rem;
+  color: var(--burgundy);
+}
+
+.story-modal-subtitle {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.story-modal-quote {
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  color: var(--wood);
+}
+
+.story-modal-body p {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .header-tools { display: none; }
+
+  .origin-grid { grid-template-columns: 1fr; }
+
+  .menu-section-header--photo { flex-direction: column; }
 }
