@@ -28,6 +28,13 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <a class="btn btn-gold btn-block" href="tel:<?= e($site['phone_raw']) ?>">Call us <?= e($site['phone']) ?></a>
       <a class="btn btn-gold btn-block" href="<?= e(asset_url('contact.php')) ?>">Make A Reservation</a>
     </div>
+    <?php $designer = $site['designer']; ?>
+    <div class="about-designer">
+      <p>Branding &amp; design by <?= e($designer['person']) ?></p>
+      <a href="<?= e($designer['url']) ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="200" height="50" />
+      </a>
+    </div>
   </div>
 </section>
 

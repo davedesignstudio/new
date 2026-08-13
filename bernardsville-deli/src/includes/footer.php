@@ -8,10 +8,15 @@
       </div>
     </div>
   </section>
+  <?php $designer = site_config()['designer']; ?>
   <footer class="site-footer">
     <div class="container footer-inner">
       <img class="footer-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e(site_config()['name']) ?>" width="100" height="100" />
       <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e(site_config()['name']) ?>. All rights reserved.</p>
+      <a class="footer-designer" href="<?= e($designer['url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Designed by <?= e($designer['name']) ?>">
+        <span class="footer-designer-label">Designed by</span>
+        <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="180" height="48" />
+      </a>
     </div>
   </footer>
   <script src="<?= e(asset_url('js/app.js')) ?>" defer></script>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="Philhower">
+  <defs>
+    <linearGradient id="d-purple" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#8B4FC4"/>
+      <stop offset="45%" stop-color="#6B35A0"/>
+      <stop offset="100%" stop-color="#4A2080"/>
+    </linearGradient>
+    <linearGradient id="swoosh-blue" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#17408F"/>
+      <stop offset="100%" stop-color="#2B6FD4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Blue swoosh -->
+  <path d="M52 62 C110 30, 200 24, 310 42 C380 54, 430 50, 468 38 L474 56 C420 72, 340 82, 260 74 C180 66, 110 78, 58 86 Z" fill="url(#swoosh-blue)"/>
+
+  <!-- Yellow circle -->
+  <circle cx="290" cy="58" r="36" fill="#F5C518"/>
+
+  <!-- Ornate purple D -->
+  <g transform="translate(8, 8)">
+    <path d="M12 96 C12 48, 26 8, 64 4 C88 1, 104 18, 104 42 C104 62, 86 76, 66 76 C52 76, 40 68, 36 54 C32 40, 42 28, 58 26 C46 24, 38 16, 38 6 C38 -4, 50 -6, 62 -6 C82 -6, 96 12, 98 34 L98 96 Z" fill="url(#d-purple)" stroke="#F0C830" stroke-width="3"/>
+    <path d="M62 -6 C54 -14, 36 -10, 30 4 C24 16, 32 28, 44 26" fill="none" stroke="#F0C830" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M36 54 C34 44, 40 34, 52 32" fill="none" stroke="#F0C830" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Philhower wordmark -->
+  <text x="148" y="72" font-family="Pacifico, 'Segoe Script', cursive" font-size="46" font-weight="400" fill="#0D2B6E" stroke="#F5C518" stroke-width="1.5" paint-order="stroke fill">Philhower</text>
+</svg>

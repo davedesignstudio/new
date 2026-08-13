@@ -342,6 +342,30 @@ a { color: inherit; }
   color: #999;
 }
 
+.footer-designer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.footer-designer:hover { opacity: 1; }
+
+.footer-designer-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.footer-designer img {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+}
+
 /* About / Burgundy page */
 .page-burgundy {
   background: var(--burgundy);
@@ -407,6 +431,27 @@ a { color: inherit; }
 }
 
 .about-actions { max-width: 320px; margin: 0 auto; }
+
+.about-designer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(245, 215, 110, 0.25);
+  text-align: center;
+}
+
+.about-designer p {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(245, 215, 110, 0.7);
+}
+
+.about-designer a {
+  display: inline-block;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.about-designer a:hover { opacity: 1; }
 
 .page-hero-simple {
   background: var(--cream);

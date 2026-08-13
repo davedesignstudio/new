@@ -49,6 +49,19 @@ return [
             ['name' => 'Seasonal Special', 'desc' => 'Ask your barista', 'price' => '5.49'],
         ],
     ],
+    'designer' => [
+        'name' => 'Philhower',
+        'studio' => 'Warped Minds Design',
+        'person' => 'David Philhower',
+        'logo' => 'assets/philhower/philhower-logo.svg',
+        'url' => 'https://linkedin.com/in/david-philhower-984264169',
+        'colors' => [
+            'purple' => '#5B2488',
+            'blue' => '#1E4FA8',
+            'gold' => '#F5C518',
+            'navy' => '#0D2B6E',
+        ],
+    ],
     'menu_graphic' => [
         'ai' => 'assets/source/graphic for front menu deli bernardsville.ai',
         'idlk' => 'assets/source/~bernardsville deli~07z_p2.idlk',
