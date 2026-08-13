@@ -1,20 +1,18 @@
   </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <p class="footer-name"><?= e(site_config()['name']) ?></p>
-        <p><?= e(site_config()['address']) ?><br /><?= e(site_config()['city']) ?></p>
-      </div>
-      <div>
-        <p><a href="tel:<?= e(site_config()['phone_raw']) ?>"><?= e(site_config()['phone']) ?></a></p>
-        <p><?= e(site_config()['hours']) ?></p>
-      </div>
-      <div>
-        <p><a href="<?= e(asset_url('menu.php')) ?>">View menu</a></p>
-        <p class="footer-note">Fresh food from the lunch counter · Groceries &amp; local favorites</p>
+  <section class="newsletter">
+    <div class="container newsletter-inner">
+      <h2 class="newsletter-title">NewsLetter</h2>
+      <div class="newsletter-bar">
+        <p>Get 15% off your first purchase when you sign up!</p>
+        <button type="button" class="btn btn-signup">Sign Up</button>
       </div>
     </div>
-    <p class="footer-copy container">© <?= date('Y') ?> <?= e(site_config()['name']) ?></p>
+  </section>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img class="footer-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e(site_config()['name']) ?>" width="100" height="100" />
+      <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e(site_config()['name']) ?>. All rights reserved.</p>
+    </div>
   </footer>
   <script src="<?= e(asset_url('js/app.js')) ?>" defer></script>
 </body>

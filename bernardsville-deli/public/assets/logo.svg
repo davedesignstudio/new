@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Bville Pizza and Grill">
+  <circle cx="60" cy="60" r="56" fill="#fff" stroke="#c41e3a" stroke-width="3"/>
+  <path d="M18 58 Q60 18 102 58" fill="none" stroke="#009246" stroke-width="5" stroke-linecap="round"/>
+  <path d="M18 62 Q60 102 102 62" fill="none" stroke="#c41e3a" stroke-width="5" stroke-linecap="round"/>
+  <text x="60" y="52" text-anchor="middle" fill="#c41e3a" font-family="Georgia, serif" font-size="28" font-weight="700">B</text>
+  <text x="78" y="50" fill="#d4af37" font-family="cursive" font-size="14">ville</text>
+  <text x="60" y="78" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="9" letter-spacing="1">PIZZA &amp; GRILL</text>
+</svg>
