@@ -1,29 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="Philhower">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 128" role="img" aria-label="D Philhower">
   <defs>
-    <linearGradient id="d-purple" x1="0%" y1="0%" x2="80%" y2="100%">
-      <stop offset="0%" stop-color="#8B4FC4"/>
-      <stop offset="45%" stop-color="#6B35A0"/>
+    <linearGradient id="d-face" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#7B52C8"/>
+      <stop offset="40%" stop-color="#5B2488"/>
+      <stop offset="100%" stop-color="#2E1560"/>
+    </linearGradient>
+    <linearGradient id="d-depth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9B6FD4"/>
       <stop offset="100%" stop-color="#4A2080"/>
     </linearGradient>
-    <linearGradient id="swoosh-blue" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#17408F"/>
+    <linearGradient id="swoosh" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#123A8C"/>
+      <stop offset="55%" stop-color="#1E4FA8"/>
       <stop offset="100%" stop-color="#2B6FD4"/>
     </linearGradient>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
   </defs>
 
-  <!-- Blue swoosh -->
-  <path d="M52 62 C110 30, 200 24, 310 42 C380 54, 430 50, 468 38 L474 56 C420 72, 340 82, 260 74 C180 66, 110 78, 58 86 Z" fill="url(#swoosh-blue)"/>
+  <!-- Blue swoosh / wing -->
+  <path
+    d="M68 78
+       C120 42, 210 28, 320 38
+       C390 46, 450 42, 508 28
+       L514 48
+       C468 66, 400 78, 330 74
+       C250 70, 170 84, 92 96
+       C78 98, 68 92, 68 78 Z"
+    fill="url(#swoosh)"
+    filter="url(#soft-shadow)"
+  />
 
-  <!-- Yellow circle -->
-  <circle cx="290" cy="58" r="36" fill="#F5C518"/>
+  <!-- Yellow spotlight circle -->
+  <circle cx="292" cy="56" r="34" fill="#F5C518"/>
 
-  <!-- Ornate purple D -->
-  <g transform="translate(8, 8)">
-    <path d="M12 96 C12 48, 26 8, 64 4 C88 1, 104 18, 104 42 C104 62, 86 76, 66 76 C52 76, 40 68, 36 54 C32 40, 42 28, 58 26 C46 24, 38 16, 38 6 C38 -4, 50 -6, 62 -6 C82 -6, 96 12, 98 34 L98 96 Z" fill="url(#d-purple)" stroke="#F0C830" stroke-width="3"/>
-    <path d="M62 -6 C54 -14, 36 -10, 30 4 C24 16, 32 28, 44 26" fill="none" stroke="#F0C830" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M36 54 C34 44, 40 34, 52 32" fill="none" stroke="#F0C830" stroke-width="2" stroke-linecap="round"/>
+  <!-- Ornate script D -->
+  <g transform="translate(4, 6)">
+    <!-- 3D depth -->
+    <path
+      d="M18 104 L18 28 C18 10, 34 -2, 56 -2 C78 -2, 92 12, 92 32 C92 48, 80 58, 66 58 C52 58, 42 50, 40 38
+         C38 26, 48 18, 60 18 C50 16, 44 10, 44 2 C44 -6, 54 -10, 66 -10 C88 -10, 104 8, 104 30 L104 104 Z"
+      fill="url(#d-depth)"
+      transform="translate(3, 3)"
+    />
+    <!-- Main D body -->
+    <path
+      d="M14 104 L14 28 C14 10, 30 -2, 52 -2 C74 -2, 88 12, 88 32 C88 48, 76 58, 62 58 C48 58, 38 50, 36 38
+         C34 26, 44 18, 56 18 C46 16, 40 10, 40 2 C40 -6, 50 -10, 62 -10 C84 -10, 100 8, 100 30 L100 104 Z"
+      fill="url(#d-face)"
+      stroke="#F0C830"
+      stroke-width="2.5"
+      stroke-linejoin="round"
+    />
+    <!-- Top flourish -->
+    <path
+      d="M62 -10 C54 -18, 36 -16, 28 -4 C22 6, 28 16, 40 14"
+      fill="none"
+      stroke="#F0C830"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    />
+    <!-- Lower flourish -->
+    <path
+      d="M36 38 C32 30, 36 22, 46 20"
+      fill="none"
+      stroke="#F0C830"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <!-- Bottom curl -->
+    <path
+      d="M14 104 C8 96, 10 88, 18 84"
+      fill="none"
+      stroke="#F0C830"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
   </g>
 
   <!-- Philhower wordmark -->
-  <text x="148" y="72" font-family="Pacifico, 'Segoe Script', cursive" font-size="46" font-weight="400" fill="#0D2B6E" stroke="#F5C518" stroke-width="1.5" paint-order="stroke fill">Philhower</text>
+  <text
+    x="152"
+    y="72"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-size="44"
+    font-weight="900"
+    font-style="italic"
+    letter-spacing="-0.5"
+    fill="#0D2B6E"
+    stroke="#F5C518"
+    stroke-width="2.2"
+    paint-order="stroke fill"
+  >Philhower</text>
 </svg>
