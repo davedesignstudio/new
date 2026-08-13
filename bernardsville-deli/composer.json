@@ -1,0 +1,16 @@
+{
+  "name": "bernardsville/deli-website",
+  "description": "Bernardsville Deli & Food Store website",
+  "type": "project",
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "BernardsvilleDeli\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

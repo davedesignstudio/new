@@ -1,0 +1,17 @@
+{
+  "install": "cd bernardsville-deli && chmod +x composer-installer.sh 2>/dev/null; true",
+  "start": "cd bernardsville-deli && php -S 0.0.0.0:8080 -t public",
+  "terminals": [
+    {
+      "name": "deli-dev",
+      "command": "cd bernardsville-deli && php -S 0.0.0.0:8080 -t public",
+      "description": "Bernardsville Deli PHP dev server on port 8080"
+    }
+  ],
+  "ports": [
+    {
+      "name": "bernardsville-deli",
+      "port": 8080
+    }
+  ]
+}
