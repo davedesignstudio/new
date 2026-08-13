@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" role="img" aria-label="Cafe Robust bean logo">
+  <ellipse cx="60" cy="80" rx="52" ry="72" fill="#4B2C20"/>
+  <ellipse cx="60" cy="80" rx="44" ry="62" fill="none" stroke="#D4A34F" stroke-width="2" opacity="0.35"/>
+  <circle cx="60" cy="80" r="28" fill="none" stroke="#D4A34F" stroke-width="2"/>
+  <path d="M60 52 Q72 58 78 72 Q72 86 60 92 Q48 86 42 72 Q48 58 60 52" fill="none" stroke="#D4A34F" stroke-width="1.5"/>
+  <text x="60" y="86" text-anchor="middle" fill="#D4A34F" font-family="Georgia, serif" font-size="22" font-weight="700">CR</text>
+</svg>

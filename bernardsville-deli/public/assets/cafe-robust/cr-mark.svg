@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Cafe Robust CR mark">
+  <text x="55" y="95" fill="#4B2C20" font-family="Georgia, serif" font-size="72" font-weight="700">C</text>
+  <polygon points="28,88 36,72 44,88" fill="#D4A34F"/>
+  <rect x="30" y="92" width="18" height="14" rx="2" fill="#fff" stroke="#4B2C20" stroke-width="1.5"/>
+  <rect x="32" y="94" width="14" height="8" fill="#4B2C20"/>
+  <text x="95" y="95" fill="#4B2C20" font-family="Georgia, serif" font-size="72" font-weight="700">R</text>
+</svg>

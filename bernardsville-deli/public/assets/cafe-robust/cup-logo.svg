@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" role="img" aria-label="Cafe Robust cup logo">
+  <path d="M55 55 Q100 20 145 55" fill="none" stroke="#D4A34F" stroke-width="3"/>
+  <text x="100" y="48" text-anchor="middle" fill="#D4A34F" font-family="Georgia, serif" font-size="18" font-weight="600">Cafe Robust</text>
+  <path d="M60 70 L60 130 Q60 150 100 150 Q140 150 140 130 L140 70 Z" fill="#fff" stroke="#4B2C20" stroke-width="3"/>
+  <ellipse cx="100" cy="70" rx="42" ry="10" fill="#fff" stroke="#4B2C20" stroke-width="3"/>
+  <ellipse cx="100" cy="95" rx="30" ry="22" fill="#4B2C20"/>
+  <circle cx="100" cy="95" r="14" fill="none" stroke="#D4A34F" stroke-width="1.5"/>
+  <text x="100" y="100" text-anchor="middle" fill="#D4A34F" font-family="Georgia, serif" font-size="11" font-weight="700">CR</text>
+  <path d="M140 85 Q165 85 168 100 Q165 115 140 115" fill="none" stroke="#4B2C20" stroke-width="3"/>
+</svg>

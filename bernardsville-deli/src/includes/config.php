@@ -25,6 +25,30 @@ return [
         ['id' => 'panini', 'label' => 'Panini', 'emoji' => '🥙'],
         ['id' => 'burgers', 'label' => 'Burgers', 'emoji' => '🍔'],
     ],
+    'cafe_robust' => [
+        'name' => 'Cafe Robust',
+        'tagline' => 'Bold coffee · Fresh roasts',
+        'colors' => [
+            'brown' => '#4B2C20',
+            'gold' => '#D4A34F',
+            'white' => '#FFFFFF',
+        ],
+        'logos' => [
+            'bean' => 'assets/cafe-robust/bean-logo.svg',
+            'cup' => 'assets/cafe-robust/cup-logo.svg',
+            'wordmark' => 'assets/cafe-robust/wordmark-bubble.svg',
+            'arch' => 'assets/cafe-robust/wordmark-arch.svg',
+            'cr' => 'assets/cafe-robust/cr-mark.svg',
+        ],
+        'drinks' => [
+            ['name' => 'Robust House Blend', 'desc' => 'Dark roast, smooth finish', 'price' => '2.99'],
+            ['name' => 'Espresso', 'desc' => 'Single or double shot', 'price' => '2.49'],
+            ['name' => 'Cappuccino', 'desc' => 'Steamed milk, thick foam', 'price' => '4.49'],
+            ['name' => 'Latte', 'desc' => 'Espresso with steamed milk', 'price' => '4.99'],
+            ['name' => 'Cold Brew', 'desc' => 'Slow-steeped, served over ice', 'price' => '4.49'],
+            ['name' => 'Seasonal Special', 'desc' => 'Ask your barista', 'price' => '5.49'],
+        ],
+    ],
     'menu_graphic' => [
         'ai' => 'assets/source/graphic for front menu deli bernardsville.ai',
         'idlk' => 'assets/source/~bernardsville deli~07z_p2.idlk',

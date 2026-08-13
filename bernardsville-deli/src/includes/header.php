@@ -34,6 +34,7 @@ $title = $pageTitle ?? $site['name'];
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="<?= e(asset_url('index.php')) ?>" class="<?= $page === 'home' ? 'active' : '' ?>">Home</a>
         <a href="<?= e(asset_url('menu.php')) ?>" class="<?= $page === 'menu' ? 'active' : '' ?>">Menu</a>
+        <a href="<?= e(asset_url('cafe.php')) ?>" class="<?= $page === 'cafe' ? 'active' : '' ?>">Cafe Robust</a>
         <a href="<?= e(asset_url('about.php')) ?>" class="<?= $page === 'about' ? 'active' : '' ?>">About Us</a>
         <a href="<?= e(asset_url('catering.php')) ?>" class="<?= $page === 'catering' ? 'active' : '' ?>">Catering</a>
         <a href="<?= e(asset_url('contact.php')) ?>" class="<?= $page === 'contact' ? 'active' : '' ?>">Contact</a>

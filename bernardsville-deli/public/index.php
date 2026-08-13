@@ -42,4 +42,15 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
+<section class="cafe-robust-banner">
+  <div class="container cafe-banner-inner">
+    <img src="<?= e(asset_url($site['cafe_robust']['logos']['bean'])) ?>" alt="" width="72" height="96" aria-hidden="true" />
+    <div>
+      <h2>Cafe Robust</h2>
+      <p>Bold coffee roasted for Bernardsville — espresso, lattes, cold brew &amp; more.</p>
+    </div>
+    <a class="btn btn-cafe" href="<?= e(asset_url('cafe.php')) ?>">View Coffee Menu</a>
+  </div>
+</section>
+
 <?php require dirname(__DIR__) . '/src/includes/footer.php'; ?>
