@@ -1,19 +1,27 @@
 :root {
-  --burgundy: #4a1520;
-  --burgundy-dark: #2f0c14;
-  --red: #c41e3a;
-  --red-dark: #9a1830;
-  --gold: #f0c020;
-  --gold-dark: #d4af37;
-  --gold-text: #f5d76e;
-  --wood: #3d2817;
+  --burgundy: #6b2030;
+  --burgundy-dark: #4a1520;
+  --red: #e36a1c;
+  --red-dark: #6b1a10;
+  --gold: #c9a227;
+  --gold-dark: #9a7b1a;
+  --gold-text: #e8d48b;
+  --gold-light: #e8c878;
+  --terracotta: #b85c38;
+  --terracotta-light: #d4845c;
+  --ultramarine: #2b5f7a;
+  --wood: #3d2914;
   --wood-light: #5c3d24;
-  --cream: #f8f4ee;
-  --text: #1a1a1a;
-  --muted: #666;
+  --cream: #f5ede0;
+  --marble: #f8f4ee;
+  --text: #3d2914;
+  --muted: #6b5a48;
   --white: #fff;
   --max: 1100px;
-  --radius: 8px;
+  --radius: 4px;
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -22,10 +30,15 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
   color: var(--text);
-  background: var(--cream);
-  line-height: 1.6;
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(201, 162, 39, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(184, 92, 56, 0.05) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='80' height='69' viewBox='0 0 80 69' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='40,2 78,22 78,47 40,67 2,47 2,22' fill='none' stroke='%23C9A227' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+  line-height: 1.65;
 }
 
 img, iframe { max-width: 100%; display: block; }
@@ -49,11 +62,28 @@ a { color: inherit; }
 
 /* Header */
 .site-header {
-  background: var(--white);
-  border-bottom: 3px solid var(--red);
+  background: linear-gradient(180deg, var(--marble) 0%, var(--cream) 100%);
+  border-bottom: 3px double var(--gold);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 4px 20px rgba(61, 41, 20, 0.08);
+}
+
+.site-header::after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gold) 0,
+    var(--gold) 8px,
+    var(--terracotta) 8px,
+    var(--terracotta) 16px,
+    var(--ultramarine) 16px,
+    var(--ultramarine) 24px
+  );
+  opacity: 0.35;
 }
 
 .header-inner {
@@ -74,9 +104,10 @@ a { color: inherit; }
 
 .site-nav a {
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   color: var(--text);
   text-transform: uppercase;
 }
@@ -127,10 +158,11 @@ a { color: inherit; }
   justify-content: center;
   padding: 0.7rem 1.4rem;
   border-radius: var(--radius);
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
   text-decoration: none;
+  text-transform: uppercase;
   border: 2px solid transparent;
   cursor: pointer;
   transition: transform 0.15s, filter 0.15s;
@@ -184,14 +216,6 @@ a { color: inherit; }
   background-repeat: no-repeat;
 }
 
-.hero-eyebrow {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gold-text);
-}
-
 .hero-eyebrow--light { color: var(--gold-text); }
 
 .hero-order-inner {
@@ -202,14 +226,23 @@ a { color: inherit; }
 }
 
 .hero-order-title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
-  color: var(--gold);
-  -webkit-text-stroke: 2px var(--red);
-  paint-order: stroke fill;
-  text-shadow: 3px 3px 0 var(--red-dark);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4.25rem);
+  font-weight: 700;
+  color: var(--gold-text);
+  letter-spacing: 0.08em;
+  text-shadow: 2px 2px 0 var(--red-dark), 0 0 40px rgba(201, 162, 39, 0.3);
   margin: 0 0 1.5rem;
-  line-height: 1;
+  line-height: 1.1;
+}
+
+.hero-eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
 }
 
 .hero-order-actions {
@@ -238,21 +271,21 @@ a { color: inherit; }
 }
 
 .hero-or {
-  font-family: "Pacifico", cursive;
+  font-family: var(--font-serif);
   color: var(--gold-text);
   font-size: 1.1rem;
 }
 
-/* Menu grid — wood board */
+/* Menu grid — Renaissance panel */
 .menu-grid-section {
   background:
-    repeating-linear-gradient(
-      90deg,
-      var(--wood) 0,
-      var(--wood-light) 8px,
-      var(--wood) 16px
-    );
+    linear-gradient(180deg, rgba(43, 95, 122, 0.08) 0%, transparent 40%),
+    linear-gradient(0deg, rgba(107, 32, 48, 0.06) 0%, transparent 35%),
+    var(--wood);
+  background-color: var(--wood);
   padding: 2.5rem 0;
+  border-top: 3px double var(--gold);
+  border-bottom: 3px double var(--gold);
 }
 
 .menu-grid {
@@ -276,7 +309,7 @@ a { color: inherit; }
 .menu-grid-banner {
   background: linear-gradient(180deg, #ffe066, var(--gold));
   color: var(--text);
-  font-family: "Bebas Neue", sans-serif;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   letter-spacing: 0.04em;
   padding: 0.45rem 1rem;
@@ -291,8 +324,10 @@ a { color: inherit; }
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
-  border: 3px solid #222;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--gold);
+  box-shadow:
+    inset 0 0 0 1px var(--gold-light),
+    0 8px 24px rgba(61, 41, 20, 0.35);
 }
 
 .menu-grid-item--photo img {
@@ -349,7 +384,7 @@ a { color: inherit; }
 }
 
 .newsletter-title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 2rem;
   margin: 0 0 1rem;
 }
@@ -420,7 +455,7 @@ a { color: inherit; }
 }
 
 .page-gold-title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 2.75rem);
   color: var(--gold-text);
   text-align: center;
@@ -431,7 +466,8 @@ a { color: inherit; }
 
 .script-accent,
 .script-heading {
-  font-family: "Pacifico", cursive;
+  font-family: var(--font-serif);
+  font-style: italic;
   color: var(--gold);
   text-align: center;
 }
@@ -453,7 +489,7 @@ a { color: inherit; }
 }
 
 .script-stack {
-  font-family: "Pacifico", cursive;
+  font-family: var(--font-serif);
   font-size: 1.35rem;
   line-height: 1.6;
   margin: 0;
@@ -475,7 +511,7 @@ a { color: inherit; }
 }
 
 .about-text {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--gold-text);
@@ -553,7 +589,7 @@ a { color: inherit; }
 }
 
 .menu-section-header h2 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: var(--font-display);
   font-size: 1.75rem;
   letter-spacing: 0.04em;
   margin: 0;
@@ -648,7 +684,7 @@ a { color: inherit; }
 }
 
 .cafe-tagline {
-  font-family: "Pacifico", cursive;
+  font-family: var(--font-serif);
   color: #D4A34F;
   font-size: 1.25rem;
   margin: 0.5rem 0;
@@ -680,7 +716,7 @@ a { color: inherit; }
 }
 
 .cafe-menu-title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   color: #4B2C20;
   text-align: center;
   margin: 0 0 1.5rem;
@@ -745,7 +781,7 @@ a { color: inherit; }
 }
 
 .cafe-banner-inner h2 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   color: #D4A34F;
   margin: 0 0 0.25rem;
 }
@@ -811,9 +847,11 @@ a { color: inherit; }
 
 /* Heritage + origin + stories */
 .heritage-strip {
-  background: var(--burgundy);
+  background: linear-gradient(90deg, var(--burgundy-dark), var(--ultramarine), var(--burgundy-dark));
   color: var(--gold-text);
   padding: 0.85rem 0;
+  border-top: 1px solid rgba(232, 212, 139, 0.3);
+  border-bottom: 1px solid rgba(232, 212, 139, 0.3);
 }
 
 .heritage-strip-inner,
@@ -884,17 +922,18 @@ a { color: inherit; }
 }
 
 .origin-title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 4vw, 2.35rem);
   margin: 0 0 0.75rem;
   color: var(--burgundy);
+  letter-spacing: 0.04em;
 }
 
 .origin-quote {
   margin: 0 0 1rem;
   padding-left: 1rem;
   border-left: 4px solid var(--gold);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-style: italic;
   color: var(--wood);
 }
@@ -911,9 +950,20 @@ a { color: inherit; }
 }
 
 .section-header h2 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   color: var(--burgundy);
   margin: 0 0 0.35rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 0.65rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--terracotta), var(--gold), transparent);
 }
 
 .section-lead {
@@ -930,13 +980,15 @@ a { color: inherit; }
 .story-card-btn {
   width: 100%;
   padding: 0;
-  border: none;
-  background: var(--white);
+  border: 2px solid var(--gold);
+  background: var(--marble);
   border-radius: var(--radius);
   overflow: hidden;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    inset 0 0 0 1px rgba(232, 212, 139, 0.5),
+    0 8px 20px rgba(61, 41, 20, 0.12);
   transition: transform 0.2s;
 }
 
@@ -1014,7 +1066,7 @@ a { color: inherit; }
   margin: 1.25rem auto;
   max-width: 520px;
   text-align: center;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-style: italic;
   color: var(--gold);
 }
@@ -1109,7 +1161,7 @@ a { color: inherit; }
 }
 
 .story-modal-content h2 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   margin: 0 0 0.35rem;
   color: var(--burgundy);
 }
@@ -1124,7 +1176,7 @@ a { color: inherit; }
   margin: 0 0 1rem;
   padding-left: 1rem;
   border-left: 4px solid var(--gold);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-style: italic;
   color: var(--wood);
 }
@@ -1140,4 +1192,205 @@ a { color: inherit; }
   .origin-grid { grid-template-columns: 1fr; }
 
   .menu-section-header--photo { flex-direction: column; }
+}
+
+/* Italian Renaissance — frames & fresco texture */
+.renaissance-frame {
+  position: relative;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-light) 100%);
+  box-shadow: 0 8px 28px rgba(61, 41, 20, 0.18);
+}
+
+.renaissance-frame > img,
+.renaissance-frame > .frame-inner {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--burgundy-dark);
+}
+
+.renaissance-frame--arch > img {
+  border-radius: 50% 50% 8px 8px / 28% 28% 8px 8px;
+}
+
+.fresco-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
+}
+
+.origin-section,
+.stories-section {
+  position: relative;
+}
+
+/* Print-board menu (from Bville boards) */
+.print-menu-hero {
+  background: linear-gradient(180deg, #F26522 0%, #c94a12 100%);
+  color: #fff8e8;
+  text-align: center;
+  padding: 2rem 0 1.5rem;
+  border-bottom: 10px solid #3d1f10;
+}
+
+.print-menu-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  margin: 0.35rem 0 0.25rem;
+  letter-spacing: 0.04em;
+  text-shadow: 2px 3px 0 #7a2a08;
+}
+
+.print-menu-hero p { margin: 0; font-style: italic; }
+
+.print-menu-mark { margin: 0 auto; }
+
+.print-menu-jump {
+  background: #3d1f10;
+  padding: 0.65rem 0;
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+}
+
+.print-menu-jump-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+  justify-content: center;
+}
+
+.print-menu-jump a {
+  color: #f5c542;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.print-menu-jump a:hover { color: #fff; }
+
+.print-menu {
+  background: #f4e6c8;
+  padding: 2rem 0 3rem;
+}
+
+.print-menu-board {
+  position: relative;
+  background: #fbf3de;
+  border: 14px solid #e36a1c;
+  padding: 1.5rem 1.25rem 2rem;
+  box-shadow: inset 0 0 0 3px #f4c27a;
+}
+
+.print-section {
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.print-watermark {
+  position: absolute;
+  right: 0;
+  top: 1.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: rgba(90, 40, 10, 0.07);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  pointer-events: none;
+  font-family: var(--font-display);
+}
+
+.print-heading {
+  font-family: "Trebuchet MS", var(--font-sans);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  margin: 0 0 0.35rem;
+  background: linear-gradient(180deg, #ffe566 0%, #7cb342 45%, #f26522 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(2px 2px 0 #3d1f10);
+  letter-spacing: -0.02em;
+}
+
+.print-note {
+  font-size: 0.88rem;
+  color: #8b2e12;
+  font-style: italic;
+  margin: 0 0 0.75rem;
+}
+
+.print-sizes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: #8b2e12;
+}
+
+.print-items { list-style: none; padding: 0; margin: 0; }
+
+.print-item {
+  padding: 0.45rem 0;
+  border-bottom: 1px dotted rgba(139, 46, 18, 0.25);
+}
+
+.print-item-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.print-item h3 {
+  margin: 0;
+  color: #9a2a12;
+  font-family: Georgia, serif;
+  font-size: 1.02rem;
+}
+
+.print-item p {
+  margin: 0.15rem 0 0;
+  font-style: italic;
+  color: #6b2e18;
+  font-size: 0.9rem;
+}
+
+.print-price,
+.print-prices em {
+  color: #9a2a12;
+  font-weight: 700;
+  font-style: normal;
+  font-family: Georgia, serif;
+}
+
+.print-prices { display: flex; gap: 1.25rem; }
+
+.badge-veg,
+.badge-spicy {
+  display: inline-grid;
+  place-items: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 800;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+.badge-veg { background: #3d8b37; color: #fff; }
+.badge-spicy { background: #c41e1e; color: #fff; }
+
+@media (max-width: 768px) {
+  .print-menu-board { border-width: 8px; padding: 1rem; }
+  .print-watermark { display: none; }
 }

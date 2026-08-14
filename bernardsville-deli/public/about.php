@@ -18,7 +18,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <h1 class="page-gold-title">Burgers At Bville</h1>
     <div class="about-hero-image">
       <p class="script-stack">So Sweet<br />So Tasty<br />So Juicy</p>
-      <img class="about-hero-photo" src="<?= e(asset_url($site['photos']['categories']['burgers'])) ?>" alt="Angus burger at Bville Pizza and Grill" width="420" height="320" loading="lazy" />
+      <img class="about-hero-photo renaissance-frame renaissance-frame--arch" src="<?= e(asset_url($site['photos']['categories']['burgers'])) ?>" alt="Angus burger at Bville Pizza and Grill" width="420" height="320" loading="lazy" />
     </div>
   </div>
 

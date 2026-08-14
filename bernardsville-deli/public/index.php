@@ -33,9 +33,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<section class="origin-section" id="our-story">
+<section class="origin-section fresco-grain" id="our-story">
   <div class="container origin-grid">
-    <div class="origin-media">
+    <div class="origin-media renaissance-frame renaissance-frame--arch">
       <img src="<?= e(asset_url($origin['image'])) ?>" alt="" width="560" height="360" loading="lazy" />
       <span class="origin-badge"><?= e($origin['tag']) ?> · <?= e($origin['year']) ?></span>
     </div>
@@ -52,7 +52,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<section class="stories-section">
+<section class="stories-section fresco-grain">
   <div class="container">
     <header class="section-header">
       <h2>Stories from Bville</h2>
