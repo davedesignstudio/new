@@ -25,7 +25,8 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <p class="hero-sub">Pizza &amp; Grill</p>
       <p class="lede">Stone oven pizza, Angus burgers, and Italian gelato — the same boards, the same kitchen.</p>
       <div class="hero-actions">
-        <a class="btn btn-red btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
+        <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order Online</a>
+        <a class="btn btn-gold btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
         <a class="btn btn-gold btn-lg" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
       </div>
     </div>
@@ -91,8 +92,8 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>In a hurry? Don’t worry — call ahead</p>
-    <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
+    <p>Customize your pie — size, crust, sauce, toppings</p>
+    <a class="btn btn-gold" href="<?= e(asset_url('order/')) ?>">Order Online</a>
   </div>
 </section>
 

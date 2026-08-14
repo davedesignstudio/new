@@ -93,8 +93,11 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>In a hurry? Don’t worry — call ahead</p>
-    <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
+    <p>Build a custom pizza online — or call ahead</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="<?= e(asset_url('order/')) ?>">Order Online</a>
+      <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
+    </div>
   </div>
 </section>
 
