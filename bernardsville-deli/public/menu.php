@@ -27,7 +27,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 </nav>
 
 <section class="print-menu">
-  <div class="container print-menu-board">
+  <div class="container print-menu-board print-menu-board--cols">
     <?php foreach (menu_sections() as $section): ?>
       <article class="print-section" id="<?= e($section['id']) ?>">
         <?php if (!empty($section['watermark'])): ?>
