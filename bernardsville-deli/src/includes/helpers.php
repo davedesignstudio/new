@@ -205,3 +205,19 @@ function item_slug(string $name): string
     $slug = preg_replace('/[^a-z0-9]+/', '-', $slug) ?? $slug;
     return trim($slug, '-');
 }
+
+function wordmark_img(string $slug, string $alt, array $attrs = []): string
+{
+    $src = asset_url('assets/brand/wordmarks/' . $slug . '.png');
+    $class = e((string) ($attrs['class'] ?? 'print-wordmark'));
+    $width = (int) ($attrs['width'] ?? 640);
+    $height = (int) ($attrs['height'] ?? 180);
+    return sprintf(
+        '<img class="%s" src="%s" alt="%s" width="%d" height="%d" decoding="async" />',
+        $class,
+        e($src),
+        e($alt),
+        $width,
+        $height
+    );
+}

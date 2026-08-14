@@ -7,38 +7,35 @@ require_once dirname(__DIR__) . '/src/includes/helpers.php';
 $site = site_config();
 $origin = featured_story();
 $pageTitle = $site['name'] . ' — Order Online';
-$homeCats = ['pizza', 'platters', 'burgers', 'wraps', 'sandwiches', 'garden'];
+$homeCats = ['pizza', 'burgers', 'wraps', 'platters', 'garden', 'desserts'];
 
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="hero-order hero-bag">
-  <div class="hero-order-bg" style="background-image: linear-gradient(90deg, rgba(26,18,12,.78) 0%, rgba(242,101,34,.38) 55%, rgba(26,18,12,.55) 100%), url('<?= e(photo_meta('hero')['src']) ?>')" aria-hidden="true"></div>
-  <div class="container hero-order-inner hero-bag-inner">
-    <img class="hero-bag-logo" src="<?= e(asset_url('assets/brand/takeout-bag.svg')) ?>" alt="<?= e($site['name']) ?> takeout bag" width="160" height="206" />
+<section class="slate-hero slate-hero--home">
+  <div class="container slate-hero-grid">
     <div>
+      <?= wordmark_img('burgers', 'Burgers', ['class' => 'slate-wordmark', 'width' => 720, 'height' => 140]) ?>
       <p class="hero-eyebrow">159 Morristown Rd · Bernardsville</p>
-      <h1 class="hero-order-title">Order Online</h1>
-      <p class="hero-bag-tag">Stone oven pizza · Angus burgers · Mediterranean grill</p>
+      <p class="hero-bag-tag">Stone oven pizza · Angus burgers · Italian gelato</p>
       <div class="hero-order-actions">
         <a class="btn btn-red btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
         <a class="btn btn-gold btn-lg" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
       </div>
     </div>
+    <?= photo_img('bacon_burger', ['class' => 'slate-hero-photo', 'width' => 520, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
 
-<section class="pack-strip">
-  <div class="container pack-strip-inner pack-strip-inner--photos">
-    <img src="<?= e(asset_url('assets/brand/burger-sleeve.svg')) ?>" alt="Angus Beefy Burgers sleeve" width="280" height="175" />
-    <?= photo_img('angus', ['class' => 'pack-strip-photo', 'width' => 320, 'height' => 400]) ?>
-    <div>
-      <p class="origin-eyebrow">From the bag</p>
-      <h2 class="origin-title">Angus · Beefy · Burgers</h2>
-      <p>Same mark as the takeout sleeve — Classic, Boom Boom, Chetzel, and the rest of the grill line.</p>
-      <a class="btn btn-gold" href="<?= e(asset_url('menu.php#burgers')) ?>">Burger menu</a>
-    </div>
-  </div>
+<section class="poster-row">
+  <a class="poster-card" href="<?= e(asset_url('menu.php#pizza')) ?>">
+    <?= photo_img('pizza', ['width' => 800, 'height' => 520]) ?>
+    <?= wordmark_img('pizza', 'Stone Oven Baked', ['class' => 'poster-wordmark', 'width' => 480, 'height' => 160]) ?>
+  </a>
+  <a class="poster-card" href="<?= e(asset_url('menu.php#burgers')) ?>">
+    <?= photo_img('angus', ['width' => 800, 'height' => 520]) ?>
+    <?= wordmark_img('burgers', 'Burgers', ['class' => 'poster-wordmark', 'width' => 480, 'height' => 120]) ?>
+  </a>
 </section>
 
 <section class="origin-section" id="our-story">
@@ -61,7 +58,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="container">
     <header class="section-header section-header--light">
       <h2>From the boards</h2>
-      <p class="section-lead">The same sections as the printed menu — with the food in frame.</p>
+      <p class="section-lead">The same Parkside headers as the printed menu.</p>
     </header>
     <div class="menu-grid menu-grid--home">
       <?php foreach ($site['menu_categories'] as $cat): ?>
@@ -73,23 +70,6 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <?php endforeach; ?>
     </div>
     <p class="home-menu-cta"><a class="btn btn-red btn-lg" href="<?= e(asset_url('menu.php')) ?>">See full menu</a></p>
-  </div>
-</section>
-
-<section class="photo-gallery-section" aria-labelledby="gallery-heading">
-  <div class="container">
-    <header class="section-header">
-      <h2 id="gallery-heading">From the kitchen</h2>
-      <p class="section-lead">Pizza, platters, burgers, and coffee — the plates that match the boards.</p>
-    </header>
-    <div class="photo-mosaic">
-      <?php foreach ($site['photos']['gallery'] as $i => $shot): ?>
-        <figure class="photo-mosaic-item<?= $i === 0 ? ' photo-mosaic-item--wide' : '' ?><?= $i === 6 ? ' photo-mosaic-item--wide' : '' ?>">
-          <?= photo_img($shot['key'], ['width' => $i === 0 || $i === 6 ? 960 : 480, 'height' => 360]) ?>
-          <figcaption><?= e($shot['caption']) ?></figcaption>
-        </figure>
-      <?php endforeach; ?>
-    </div>
   </div>
 </section>
 
