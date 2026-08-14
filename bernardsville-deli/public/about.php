@@ -10,11 +10,11 @@ $pageTitle = 'About Us — ' . $site['name'];
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="slate-hero">
+<section class="paper-hero">
   <div class="container about-pack-grid">
     <?= photo_img('bacon_burger', ['class' => 'about-hero-photo', 'width' => 560, 'height' => 420, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
     <div>
-      <?= wordmark_img('burgers', 'Burgers', ['class' => 'slate-wordmark', 'width' => 520, 'height' => 120]) ?>
+      <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="script-stack">Angus · Beefy</p>
       <p class="about-text" style="text-align:left;max-width:none"><?= e($site['about']) ?></p>
       <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>

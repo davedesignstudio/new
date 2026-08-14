@@ -12,10 +12,10 @@ $homeCats = ['pizza', 'burgers', 'wraps', 'platters', 'garden', 'desserts'];
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="slate-hero slate-hero--home">
-  <div class="container slate-hero-grid">
+<section class="paper-hero paper-hero--home">
+  <div class="container paper-hero-grid">
     <div>
-      <?= wordmark_img('burgers', 'Burgers', ['class' => 'slate-wordmark', 'width' => 720, 'height' => 140]) ?>
+      <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-eyebrow">159 Morristown Rd · Bernardsville</p>
       <p class="hero-bag-tag">Stone oven pizza · Angus burgers · Italian gelato</p>
       <div class="hero-order-actions">
@@ -30,11 +30,11 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="poster-row">
   <a class="poster-card" href="<?= e(asset_url('menu.php#pizza')) ?>">
     <?= photo_img('pizza', ['width' => 800, 'height' => 520]) ?>
-    <?= wordmark_img('pizza', 'Stone Oven Baked', ['class' => 'poster-wordmark', 'width' => 480, 'height' => 160]) ?>
+    <?= print_title('Stone Oven Baked', 'print-title print-title--poster') ?>
   </a>
   <a class="poster-card" href="<?= e(asset_url('menu.php#burgers')) ?>">
     <?= photo_img('angus', ['width' => 800, 'height' => 520]) ?>
-    <?= wordmark_img('burgers', 'Burgers', ['class' => 'poster-wordmark', 'width' => 480, 'height' => 120]) ?>
+    <?= print_title('Burgers', 'print-title print-title--poster') ?>
   </a>
 </section>
 
@@ -56,9 +56,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="menu-grid-section">
   <div class="container">
-    <header class="section-header section-header--light">
-      <h2>From the boards</h2>
-      <p class="section-lead">The same Parkside headers as the printed menu.</p>
+    <header class="section-header">
+      <h2><?= print_title('From the boards') ?></h2>
+      <p class="section-lead">The same outlined script as the printed menu.</p>
     </header>
     <div class="menu-grid menu-grid--home">
       <?php foreach ($site['menu_categories'] as $cat): ?>

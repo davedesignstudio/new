@@ -16,10 +16,10 @@ $boards = [
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="slate-hero">
-  <div class="container slate-hero-inner">
-    <?= wordmark_img('burgers', 'Burgers', ['class' => 'slate-wordmark', 'width' => 720, 'height' => 140]) ?>
-    <p>The printed boards — Parkside headers, cream stock, orange frame.</p>
+<section class="paper-hero">
+  <div class="container paper-hero-inner">
+    <h1><?= print_title('The Menu', 'print-title print-title--hero') ?></h1>
+    <p>Cream stock, orange frame, and outlined script titles — just like the printed boards.</p>
   </div>
 </section>
 
@@ -48,8 +48,8 @@ require dirname(__DIR__) . '/src/includes/header.php';
         <?php if (!empty($section['watermark'])): ?>
           <span class="print-watermark" aria-hidden="true"><?= e($section['watermark']) ?></span>
         <?php endif; ?>
-        <h2 class="print-heading-img">
-          <?= wordmark_img($section['wordmark'] ?? $section['id'], $section['title']) ?>
+        <h2 class="print-heading">
+          <?= print_title($section['title']) ?>
         </h2>
         <?php if (!empty($section['note'])): ?>
           <p class="print-note"><?= e($section['note']) ?></p>
