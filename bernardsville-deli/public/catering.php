@@ -16,18 +16,21 @@ $cateringShots = [
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="page-hero-photo">
-  <?= photo_img('platters', ['class' => 'page-hero-photo-img', 'width' => 1600, 'height' => 640, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
-  <div class="container page-hero-photo-inner">
-    <h1 class="page-gold-title">Catering</h1>
-    <p class="lead-on-photo">Pizza trays, party platters, and grill favorites for your next event in Bernardsville.</p>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Parties · Office lunch · Trays</p>
+      <h1><?= print_title('Catering', 'print-title print-title--hero') ?></h1>
+      <p class="lede">Pizza trays, party platters, and grill favorites for your next event in Bernardsville.</p>
+      <a class="btn btn-red btn-lg" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
+    </div>
+    <?= photo_img('platters', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
 
 <section class="content-section">
   <div class="container content-card">
     <p>From stone oven pizza to wraps and kabobs, Bville Pizza &amp; Grill caters gatherings of all sizes. Call us to build a custom menu for your party or office lunch.</p>
-    <a class="btn btn-red btn-lg" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
   </div>
 </section>
 

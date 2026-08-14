@@ -10,11 +10,19 @@ $pageTitle = 'Contact — ' . $site['name'];
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="page-hero-photo">
-  <?= photo_img('dining', ['class' => 'page-hero-photo-img', 'width' => 1600, 'height' => 640, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
-  <div class="container page-hero-photo-inner">
-    <h1 class="page-gold-title">Contact</h1>
-    <p class="lead-on-photo">159 Morristown Rd · Bernardsville, NJ</p>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Visit · Call ahead</p>
+      <h1><?= print_title('Contact', 'print-title print-title--hero') ?></h1>
+      <p class="lede"><?= e($site['address']) ?> · <?= e($site['city']) ?></p>
+      <p><a href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a></p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="tel:<?= e($site['phone_raw']) ?>">Call Us</a>
+        <a class="btn btn-gold" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
+      </div>
+    </div>
+    <?= photo_img('dining', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
 
@@ -22,16 +30,12 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="container contact-grid">
     <div class="content-card">
       <?= photo_img('pass', ['class' => 'contact-card-photo', 'width' => 640, 'height' => 360]) ?>
-      <h2>Visit</h2>
+      <h2><?= print_title('Visit') ?></h2>
       <address>
         <?= e($site['address']) ?><br />
         <?= e($site['city']) ?>
       </address>
       <p><a href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a></p>
-      <div class="about-actions">
-        <a class="btn btn-gold btn-block" href="tel:<?= e($site['phone_raw']) ?>">Call Us</a>
-        <a class="btn btn-gold btn-block" href="<?= e(asset_url('menu.php')) ?>">Order Online</a>
-      </div>
     </div>
     <div class="map-card">
       <iframe

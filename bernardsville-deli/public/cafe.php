@@ -43,7 +43,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="cafe-menu-section">
   <div class="container">
-    <h2 class="cafe-menu-title">Coffee Menu</h2>
+    <h2 class="cafe-menu-title"><?= print_title('Coffee Menu') ?></h2>
     <ul class="cafe-menu-list">
       <?php foreach ($cafe['drinks'] as $drink): ?>
         <li class="cafe-menu-item">

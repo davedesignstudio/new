@@ -8,44 +8,48 @@ $site = site_config();
 $origin = featured_story();
 $pageTitle = $site['name'] . ' — Order Online';
 $homeCats = ['pizza', 'burgers', 'wraps', 'platters', 'garden', 'desserts'];
+$features = [
+    ['id' => 'pizza', 'title' => 'Stone Oven Baked', 'photo' => 'pizza'],
+    ['id' => 'burgers', 'title' => 'Burgers', 'photo' => 'angus'],
+    ['id' => 'desserts', 'title' => 'Sweet Endings', 'photo' => 'desserts'],
+];
 
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="paper-hero paper-hero--home">
-  <div class="container paper-hero-grid">
-    <div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker"><?= e($site['address']) ?> · Bernardsville</p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
-      <p class="hero-eyebrow">159 Morristown Rd · Bernardsville</p>
-      <p class="hero-bag-tag">Stone oven pizza · Angus burgers · Italian gelato</p>
-      <div class="hero-order-actions">
+      <p class="hero-sub">Pizza &amp; Grill</p>
+      <p class="lede">Stone oven pizza, Angus burgers, and Italian gelato — the same boards, the same kitchen.</p>
+      <div class="hero-actions">
         <a class="btn btn-red btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
         <a class="btn btn-gold btn-lg" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
       </div>
     </div>
-    <?= photo_img('bacon_burger', ['class' => 'slate-hero-photo', 'width' => 520, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+    <?= photo_img('pizza', ['class' => 'hero-photo frame-photo', 'width' => 640, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
 
-<section class="poster-row">
-  <a class="poster-card" href="<?= e(asset_url('menu.php#pizza')) ?>">
-    <?= photo_img('pizza', ['width' => 800, 'height' => 520]) ?>
-    <?= print_title('Stone Oven Baked', 'print-title print-title--poster') ?>
-  </a>
-  <a class="poster-card" href="<?= e(asset_url('menu.php#burgers')) ?>">
-    <?= photo_img('angus', ['width' => 800, 'height' => 520]) ?>
-    <?= print_title('Burgers', 'print-title print-title--poster') ?>
-  </a>
+<section class="feature-tiles" aria-label="Featured menu">
+  <?php foreach ($features as $feature): ?>
+    <a class="feature-tile" href="<?= e(asset_url('menu.php#' . $feature['id'])) ?>">
+      <?= photo_img($feature['photo'], ['width' => 720, 'height' => 480]) ?>
+      <?= print_title($feature['title'], 'print-title print-title--poster') ?>
+    </a>
+  <?php endforeach; ?>
 </section>
 
-<section class="origin-section" id="our-story">
-  <div class="container origin-grid">
-    <div class="origin-media renaissance-frame">
+<section class="split origin-section" id="our-story">
+  <div class="container split-grid origin-grid">
+    <div class="split-media origin-media">
       <?= photo_img('table', ['width' => 720, 'height' => 480]) ?>
       <span class="origin-badge"><?= e($origin['tag']) ?> · <?= e($origin['year']) ?></span>
     </div>
     <div class="origin-copy">
-      <p class="origin-eyebrow"><?= e($origin['subtitle']) ?></p>
+      <p class="kicker"><?= e($origin['subtitle']) ?></p>
       <h2 class="origin-title story-text" data-story-id="<?= e($origin['id']) ?>"><?= e($origin['title']) ?></h2>
       <blockquote class="origin-quote story-text" data-story-id="<?= e($origin['id']) ?>" data-field="quote">“<?= e($origin['quote']) ?>”</blockquote>
       <p class="origin-lead story-text" data-story-id="<?= e($origin['id']) ?>" data-field="excerpt"><?= e($origin['excerpt']) ?></p>
@@ -54,16 +58,16 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<section class="menu-grid-section">
+<section class="menu-preview">
   <div class="container">
     <header class="section-header">
       <h2><?= print_title('From the boards') ?></h2>
-      <p class="section-lead">The same outlined script as the printed menu.</p>
+      <p class="section-lead">Pizza, burgers, wraps, platters, salads, and gelato.</p>
     </header>
-    <div class="menu-grid menu-grid--home">
+    <div class="menu-grid">
       <?php foreach ($site['menu_categories'] as $cat): ?>
         <?php if (!in_array($cat['id'], $homeCats, true)) continue; ?>
-        <a class="menu-grid-item menu-grid-item--photo" href="<?= e(asset_url('menu.php#' . $cat['id'])) ?>">
+        <a class="menu-grid-item" href="<?= e(asset_url('menu.php#' . $cat['id'])) ?>">
           <?= photo_img($cat['id'], ['width' => 480, 'height' => 320]) ?>
           <span class="menu-grid-banner"><?= e($cat['label']) ?></span>
         </a>
@@ -73,15 +77,22 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<section class="cafe-robust-banner cafe-robust-banner--photo">
+<section class="cafe-band cafe-robust-banner">
   <div class="cafe-banner-photo" style="background-image: url('<?= e(photo_meta('cafe')['src']) ?>')" aria-hidden="true"></div>
   <div class="container cafe-banner-inner">
     <img src="<?= e(asset_url($site['cafe_robust']['logos']['bean'])) ?>" alt="" width="72" height="96" aria-hidden="true" />
     <div>
       <h2>Cafe Robust</h2>
-      <p>House blend, espresso, and cold brew inside Bville — brown and gold on the cup.</p>
+      <p>House blend, espresso, and cold brew inside Bville.</p>
     </div>
     <a class="btn btn-cafe" href="<?= e(asset_url('cafe.php')) ?>">Coffee menu</a>
+  </div>
+</section>
+
+<section class="call-bar order-bar">
+  <div class="container order-bar-inner">
+    <p>In a hurry? Don’t worry — call ahead</p>
+    <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
   </div>
 </section>
 

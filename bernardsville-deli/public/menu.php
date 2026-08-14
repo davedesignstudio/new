@@ -16,10 +16,10 @@ $boards = [
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="paper-hero">
+<section class="hero">
   <div class="container paper-hero-inner">
     <h1><?= print_title('The Menu', 'print-title print-title--hero') ?></h1>
-    <p>Outlined script titles — the same orange fill and dark stroke as the printed boards.</p>
+    <p class="lede">Orange script, cream boards — the same titles as the printed menu.</p>
   </div>
 </section>
 
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
         <?php if (!empty($section['sizes'])): ?>
           <p class="print-sizes"><span>12"</span><span>16"</span></p>
         <?php endif; ?>
-        <ul class="print-items<?= !empty($section['id']) && $section['id'] === 'desserts' ? ' print-items--dessert' : '' ?>">
+        <ul class="print-items<?= $section['id'] === 'desserts' ? ' print-items--dessert' : '' ?>">
           <?php foreach ($section['items'] as $item): ?>
             <li class="print-item">
               <?php if (!empty($item['photo'])): ?>
@@ -91,10 +91,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<section class="order-bar">
+<section class="call-bar order-bar">
   <div class="container order-bar-inner">
     <p>In a hurry? Don’t worry — call ahead</p>
-    <a class="btn btn-red" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
+    <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
   </div>
 </section>
 

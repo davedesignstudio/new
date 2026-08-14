@@ -8,11 +8,13 @@
       </div>
     </div>
   </section>
-  <?php $designer = site_config()['designer']; ?>
+  <?php $cfg = site_config(); $designer = $cfg['designer']; ?>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <img class="footer-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e(site_config()['name']) ?>" width="100" height="100" />
-      <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e(site_config()['name']) ?>. All rights reserved.</p>
+      <img class="footer-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e($cfg['name']) ?>" width="100" height="100" />
+      <p><?= e($cfg['address']) ?> · <?= e($cfg['city']) ?></p>
+      <p><a href="tel:<?= e($cfg['phone_raw']) ?>"><?= e($cfg['phone']) ?></a></p>
+      <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e($cfg['name']) ?>. All rights reserved.</p>
       <a class="footer-designer" href="<?= e($designer['url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Designed by <?= e($designer['name']) ?>">
         <span class="footer-designer-label">Designed by</span>
         <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="180" height="48" />
