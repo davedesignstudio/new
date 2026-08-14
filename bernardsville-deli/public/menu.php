@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="paper-hero">
   <div class="container paper-hero-inner">
     <h1><?= print_title('The Menu', 'print-title print-title--hero') ?></h1>
-    <p>Cream stock, orange frame, and outlined script titles — just like the printed boards.</p>
+    <p>Outlined script titles — the same orange fill and dark stroke as the printed boards.</p>
   </div>
 </section>
 
