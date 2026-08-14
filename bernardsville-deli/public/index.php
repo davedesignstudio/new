@@ -13,9 +13,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
 <section class="hero-order hero-bag">
-  <div class="hero-order-bg" style="background-image: linear-gradient(90deg, rgba(26,18,12,.82) 0%, rgba(242,101,34,.45) 100%), url('<?= e(asset_url($site['photos']['hero'])) ?>')" aria-hidden="true"></div>
+  <div class="hero-order-bg" style="background-image: linear-gradient(90deg, rgba(26,18,12,.78) 0%, rgba(242,101,34,.38) 55%, rgba(26,18,12,.55) 100%), url('<?= e(photo_meta('hero')['src']) ?>')" aria-hidden="true"></div>
   <div class="container hero-order-inner hero-bag-inner">
-    <img class="hero-bag-logo" src="<?= e(asset_url('assets/brand/takeout-bag.svg')) ?>" alt="" width="160" height="206" />
+    <img class="hero-bag-logo" src="<?= e(asset_url('assets/brand/takeout-bag.svg')) ?>" alt="<?= e($site['name']) ?> takeout bag" width="160" height="206" />
     <div>
       <p class="hero-eyebrow">159 Morristown Rd · Bernardsville</p>
       <h1 class="hero-order-title">Order Online</h1>
@@ -29,8 +29,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
 </section>
 
 <section class="pack-strip">
-  <div class="container pack-strip-inner">
-    <img src="<?= e(asset_url('assets/brand/burger-sleeve.svg')) ?>" alt="Angus Beefy Burgers" width="280" height="175" />
+  <div class="container pack-strip-inner pack-strip-inner--photos">
+    <img src="<?= e(asset_url('assets/brand/burger-sleeve.svg')) ?>" alt="Angus Beefy Burgers sleeve" width="280" height="175" />
+    <?= photo_img('angus', ['class' => 'pack-strip-photo', 'width' => 320, 'height' => 400]) ?>
     <div>
       <p class="origin-eyebrow">From the bag</p>
       <h2 class="origin-title">Angus · Beefy · Burgers</h2>
@@ -42,8 +43,8 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="origin-section" id="our-story">
   <div class="container origin-grid">
-    <div class="origin-media">
-      <img src="<?= e(asset_url($origin['image'])) ?>" alt="" width="560" height="360" loading="lazy" />
+    <div class="origin-media renaissance-frame">
+      <?= photo_img('table', ['width' => 720, 'height' => 480]) ?>
       <span class="origin-badge"><?= e($origin['tag']) ?> · <?= e($origin['year']) ?></span>
     </div>
     <div class="origin-copy">
@@ -58,15 +59,15 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="menu-grid-section">
   <div class="container">
-    <header class="section-header">
+    <header class="section-header section-header--light">
       <h2>From the boards</h2>
-      <p class="section-lead">The same sections as the printed menu.</p>
+      <p class="section-lead">The same sections as the printed menu — with the food in frame.</p>
     </header>
     <div class="menu-grid menu-grid--home">
       <?php foreach ($site['menu_categories'] as $cat): ?>
         <?php if (!in_array($cat['id'], $homeCats, true)) continue; ?>
         <a class="menu-grid-item menu-grid-item--photo" href="<?= e(asset_url('menu.php#' . $cat['id'])) ?>">
-          <img src="<?= e(category_photo($cat['id'])) ?>" alt="" loading="lazy" width="320" height="220" />
+          <?= photo_img($cat['id'], ['width' => 480, 'height' => 320]) ?>
           <span class="menu-grid-banner"><?= e($cat['label']) ?></span>
         </a>
       <?php endforeach; ?>
@@ -75,8 +76,25 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
+<section class="photo-gallery-section" aria-labelledby="gallery-heading">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="gallery-heading">From the kitchen</h2>
+      <p class="section-lead">Pizza, platters, burgers, and coffee — the plates that match the boards.</p>
+    </header>
+    <div class="photo-mosaic">
+      <?php foreach ($site['photos']['gallery'] as $i => $shot): ?>
+        <figure class="photo-mosaic-item<?= $i === 0 ? ' photo-mosaic-item--wide' : '' ?><?= $i === 6 ? ' photo-mosaic-item--wide' : '' ?>">
+          <?= photo_img($shot['key'], ['width' => $i === 0 || $i === 6 ? 960 : 480, 'height' => 360]) ?>
+          <figcaption><?= e($shot['caption']) ?></figcaption>
+        </figure>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
 <section class="cafe-robust-banner cafe-robust-banner--photo">
-  <div class="cafe-banner-photo" style="background-image: url('<?= e(asset_url($site['photos']['cafe'])) ?>')" aria-hidden="true"></div>
+  <div class="cafe-banner-photo" style="background-image: url('<?= e(photo_meta('cafe')['src']) ?>')" aria-hidden="true"></div>
   <div class="container cafe-banner-inner">
     <img src="<?= e(asset_url($site['cafe_robust']['logos']['bean'])) ?>" alt="" width="72" height="96" aria-hidden="true" />
     <div>

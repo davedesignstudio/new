@@ -154,8 +154,49 @@ function story_for_category(string $categoryId, string $lang = 'en'): ?array
 
 function category_photo(string $categoryId): string
 {
-    $photos = site_config()['photos']['categories'];
-    return asset_url($photos[$categoryId] ?? 'assets/photos/hero-restaurant.jpg');
+    return photo_meta($categoryId)['src'];
+}
+
+function photo_meta(string $key): array
+{
+    $site = site_config();
+    $photos = $site['photos'];
+    $file = $photos['categories'][$key]
+        ?? ($photos[$key] ?? null)
+        ?? $photos['hero'];
+    $alt = $photos['alts'][$key] ?? $site['name'];
+
+    return [
+        'file' => $file,
+        'src' => asset_url($file),
+        'alt' => $alt,
+    ];
+}
+
+function photo_img(string $key, array $attrs = []): string
+{
+    $meta = photo_meta($key);
+    $class = e((string) ($attrs['class'] ?? ''));
+    $width = (int) ($attrs['width'] ?? 800);
+    $height = (int) ($attrs['height'] ?? 520);
+    $loading = e((string) ($attrs['loading'] ?? 'lazy'));
+    $decoding = e((string) ($attrs['decoding'] ?? 'async'));
+    $extra = '';
+    if (!empty($attrs['fetchpriority'])) {
+        $extra .= ' fetchpriority="' . e((string) $attrs['fetchpriority']) . '"';
+    }
+
+    return sprintf(
+        '<img src="%s" alt="%s" class="%s" width="%d" height="%d" loading="%s" decoding="%s"%s />',
+        e($meta['src']),
+        e($meta['alt']),
+        $class,
+        $width,
+        $height,
+        $loading,
+        $decoding,
+        $extra
+    );
 }
 
 function item_slug(string $name): string

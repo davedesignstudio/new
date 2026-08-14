@@ -10,15 +10,18 @@ $pageTitle = 'Contact — ' . $site['name'];
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="page-hero-simple">
-  <div class="container">
-    <h1 class="page-gold-title page-gold-title--dark">Contact</h1>
+<section class="page-hero-photo">
+  <?= photo_img('dining', ['class' => 'page-hero-photo-img', 'width' => 1600, 'height' => 640, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+  <div class="container page-hero-photo-inner">
+    <h1 class="page-gold-title">Contact</h1>
+    <p class="lead-on-photo">159 Morristown Rd · Bernardsville, NJ</p>
   </div>
 </section>
 
 <section class="content-section">
   <div class="container contact-grid">
     <div class="content-card">
+      <?= photo_img('pass', ['class' => 'contact-card-photo', 'width' => 640, 'height' => 360]) ?>
       <h2>Visit</h2>
       <address>
         <?= e($site['address']) ?><br />

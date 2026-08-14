@@ -12,7 +12,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="about-pack">
   <div class="container about-pack-grid">
-    <img src="<?= e(asset_url('assets/brand/burger-sleeve.svg')) ?>" alt="Bville Burgers sleeve" width="360" height="225" />
+    <?= photo_img('bacon_burger', ['class' => 'about-hero-photo', 'width' => 560, 'height' => 420, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
     <div>
       <p class="origin-eyebrow">Angus · Beefy</p>
       <h1 class="page-gold-title" style="text-align:left;color:#f5c542">Burgers At Bville</h1>
@@ -20,6 +20,23 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <p class="about-text" style="text-align:left;max-width:none"><?= e($site['about']) ?></p>
       <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
     </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container about-photo-trio">
+    <figure>
+      <?= photo_img('table', ['width' => 640, 'height' => 420]) ?>
+      <figcaption>Plates from the grill</figcaption>
+    </figure>
+    <figure>
+      <?= photo_img('kitchen', ['width' => 640, 'height' => 420]) ?>
+      <figcaption>Made to order</figcaption>
+    </figure>
+    <figure>
+      <?= photo_img('pass', ['width' => 640, 'height' => 420]) ?>
+      <figcaption>The kitchen pass</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -34,6 +51,13 @@ require dirname(__DIR__) . '/src/includes/header.php';
         <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="200" height="50" />
       </a>
     </div>
+  </div>
+</section>
+
+<section class="content-section about-sleeve-row">
+  <div class="container about-brand-row">
+    <img src="<?= e(asset_url('assets/brand/burger-sleeve.svg')) ?>" alt="Bville Burgers sleeve" width="280" height="175" />
+    <?= photo_img('angus', ['class' => 'about-sleeve-photo', 'width' => 360, 'height' => 450]) ?>
   </div>
 </section>
 

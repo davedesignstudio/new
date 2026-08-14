@@ -10,7 +10,8 @@ $pageTitle = 'Menu — ' . $site['name'];
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="print-menu-hero">
+<section class="print-menu-hero print-menu-hero--photo">
+  <?= photo_img('pizza', ['class' => 'print-menu-hero-photo', 'width' => 1600, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   <div class="container print-menu-hero-inner">
     <img class="print-menu-mark" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="" width="88" height="88" />
     <h1>Stone Oven Pizza</h1>
@@ -33,6 +34,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
         <?php if (!empty($section['watermark'])): ?>
           <span class="print-watermark" aria-hidden="true"><?= e($section['watermark']) ?></span>
         <?php endif; ?>
+        <figure class="print-section-photo">
+          <?= photo_img($section['id'], ['class' => 'print-section-photo-img', 'width' => 720, 'height' => 280]) ?>
+        </figure>
         <h2 class="print-heading"><?= e($section['title']) ?></h2>
         <?php if (!empty($section['note'])): ?>
           <p class="print-note"><?= e($section['note']) ?></p>

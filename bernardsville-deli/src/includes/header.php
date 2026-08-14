@@ -26,7 +26,7 @@ $title = $pageTitle ?? $site['name'];
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="<?= e(asset_url('index.php')) ?>" aria-label="<?= e($site['name']) ?>">
-        <img class="brand-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="" width="64" height="64" />
+        <img class="brand-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e($site['name']) ?>" width="64" height="64" />
         <span class="brand-text">
           <strong>Bville</strong>
           <em>Pizza &amp; Grill</em>
