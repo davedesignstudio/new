@@ -1358,13 +1358,14 @@ a { color: inherit; }
   color: #8b2e12;
   font-style: italic;
   margin: 0 0 0.75rem;
+  padding-right: 5rem;
 }
 
 .print-sizes {
   display: flex;
   justify-content: flex-end;
   gap: 1.5rem;
-  margin: 0 0 0.5rem;
+  margin: -0.25rem 0 0.5rem;
   font-weight: 700;
   color: #8b2e12;
 }

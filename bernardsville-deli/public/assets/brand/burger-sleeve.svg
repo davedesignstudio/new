@@ -6,7 +6,7 @@
   <path d="M128 102 C134 78, 146 56, 160 52" fill="none" stroke="#7CB342" stroke-width="2.5" stroke-linecap="round"/>
   <text x="160" y="86" text-anchor="middle" fill="#F5C542" font-family="Georgia, serif" font-size="28" font-style="italic" font-weight="700">Bville</text>
   <text x="160" y="104" text-anchor="middle" fill="#F26522" font-family="Georgia, serif" font-size="10" font-style="italic">Pizza &amp; Grill</text>
-  <text x="22" y="120" fill="#1a120c" font-family="Georgia, serif" font-size="14" transform="rotate(-90 22 120)">Angus</text>
-  <text x="298" y="120" fill="#1a120c" font-family="Georgia, serif" font-size="14" transform="rotate(90 298 120)">Beefy</text>
+  <text x="14" y="118" fill="#1a120c" font-family="Georgia, serif" font-size="12" transform="rotate(-90 14 118)">Angus</text>
+  <text x="306" y="118" fill="#1a120c" font-family="Georgia, serif" font-size="12" transform="rotate(90 306 118)">Beefy</text>
   <text x="160" y="170" text-anchor="middle" fill="#F5C542" font-family="Georgia, serif" font-size="28" font-style="italic" font-weight="700">Burgers</text>
 </svg>
