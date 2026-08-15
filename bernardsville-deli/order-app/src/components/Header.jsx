@@ -16,13 +16,19 @@ export default function Header() {
       <div class="header-top">
         <div class="container header-top-inner">
           <a href={SITE.website} class="logo" aria-label={SITE.name}>
-            <img
-              class="logo-mark"
-              src={`${import.meta.env.BASE_URL}logo.png`}
-              alt={SITE.name}
-              width="72"
-              height="72"
-            />
+            <span class="logo-emblem fresco-frame fresco-frame--round">
+              <img
+                class="logo-photo"
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt=""
+                width="48"
+                height="48"
+              />
+            </span>
+            <span class="logo-text">
+              <span class="logo-name">Bville</span>
+              <span class="logo-sub">{SITE.tagline}</span>
+            </span>
           </a>
           <nav class="header-nav" aria-label="Main navigation">
             <a href={SITE.website} class="nav-link">Home</a>
