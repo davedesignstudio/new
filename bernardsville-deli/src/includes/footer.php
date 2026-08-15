@@ -11,7 +11,7 @@
   <?php $cfg = site_config(); $designer = $cfg['designer']; ?>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <img class="footer-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e($cfg['name']) ?>" width="100" height="100" />
+      <img class="footer-logo" src="<?= e(asset_url('assets/logo.png')) ?>" alt="<?= e($cfg['name']) ?>" width="140" height="140" />
       <p><?= e($cfg['address']) ?> · <?= e($cfg['city']) ?></p>
       <p><a href="tel:<?= e($cfg['phone_raw']) ?>"><?= e($cfg['phone']) ?></a></p>
       <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e($cfg['name']) ?>. All rights reserved.</p>

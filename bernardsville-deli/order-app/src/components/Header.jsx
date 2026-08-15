@@ -1,4 +1,3 @@
-import FrescoArt from '../art/FrescoArt';
 import { SITE } from '../data/site';
 import { useCart } from '../store/cart';
 import { useStoryLang } from '../store/storyLang';
@@ -17,17 +16,13 @@ export default function Header() {
       <div class="header-top">
         <div class="container header-top-inner">
           <a href={SITE.website} class="logo" aria-label={SITE.name}>
-            <span class="logo-emblem fresco-frame fresco-frame--round">
-              <FrescoArt
-                class="logo-art"
-                variant="margherita"
-                type="food"
-              />
-            </span>
-            <span class="logo-text">
-              <span class="logo-name">Bville</span>
-              <span class="logo-sub">{SITE.tagline}</span>
-            </span>
+            <img
+              class="logo-mark"
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt={SITE.name}
+              width="72"
+              height="72"
+            />
           </a>
           <nav class="header-nav" aria-label="Main navigation">
             <a href={SITE.website} class="nav-link">Home</a>

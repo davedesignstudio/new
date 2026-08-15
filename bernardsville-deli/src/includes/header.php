@@ -19,18 +19,14 @@ $title = $pageTitle ?? $site['name'];
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>" />
-  <link rel="icon" href="<?= e(asset_url('favicon.svg')) ?>" type="image/svg+xml" />
+  <link rel="icon" href="<?= e(asset_url('favicon.png')) ?>" type="image/png" />
 </head>
 <body class="bville-brand">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="<?= e(asset_url('index.php')) ?>" aria-label="<?= e($site['name']) ?>">
-        <img class="brand-logo" src="<?= e(asset_url('assets/logo.svg')) ?>" alt="<?= e($site['name']) ?>" width="64" height="64" />
-        <span class="brand-text">
-          <strong>Bville</strong>
-          <em>Pizza &amp; Grill</em>
-        </span>
+        <img class="brand-logo" src="<?= e(asset_url('assets/logo.png')) ?>" alt="<?= e($site['name']) ?>" width="88" height="88" />
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span></span><span></span><span></span>
