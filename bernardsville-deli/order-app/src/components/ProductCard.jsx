@@ -26,7 +26,7 @@ export default function ProductCard(props) {
   };
 
   return (
-    <article class="product-card fresco-card">
+    <article class="product-card fresco-card dish-line-card">
       <div class="card-cornice" aria-hidden="true" />
       <div class="product-image">
         <ProductImage item={item()} />

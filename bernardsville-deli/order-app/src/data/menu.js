@@ -1,8 +1,18 @@
+import { CATALOG_ITEMS } from './catalog';
+
 export const CATEGORIES = [
   { id: 'pizza', label: 'Stone Oven', sublabel: 'Pizzas' },
-  { id: 'burgers', label: 'Burgers', sublabel: 'Angus' },
+  { id: 'garden', label: 'Garden', sublabel: 'Salads' },
   { id: 'starters', label: 'Starters', sublabel: 'Share' },
+  { id: 'burgers', label: 'Burgers', sublabel: 'Angus' },
   { id: 'wraps', label: 'Wraps', sublabel: 'Handhelds' },
+  { id: 'pasta', label: 'Pasta', sublabel: 'Bowls' },
+  { id: 'cheesesteak', label: 'Cheesesteak', sublabel: 'Bville' },
+  { id: 'sandwiches', label: 'Sandwiches', sublabel: 'Hot' },
+  { id: 'panini', label: 'Panini', sublabel: 'Pressed' },
+  { id: 'platters', label: 'Headlines', sublabel: 'Platters' },
+  { id: 'kids', label: 'Kids', sublabel: 'Menu' },
+  { id: 'shakes', label: 'Shakes', sublabel: 'Fountain' },
   { id: 'desserts', label: 'Sweet Endings', sublabel: 'Gelato' },
   { id: 'drinks', label: 'Drinks', sublabel: 'Cafe' },
 ];
@@ -53,7 +63,7 @@ export const TOPPINGS = [
   { id: 'ricotta', label: 'Ricotta', category: 'carne', price: 1.5 },
 ];
 
-export const MENU_ITEMS = [
+const CORE_MENU_ITEMS = [
   {
     id: 'classic',
     category: 'pizza',
@@ -62,7 +72,7 @@ export const MENU_ITEMS = [
     basePrice: 9.95,
     badge: 'Build',
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-classic.jpg',
     defaultToppings: [],
   },
   {
@@ -73,7 +83,7 @@ export const MENU_ITEMS = [
     basePrice: 13.95,
     badge: 'Classic',
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-margherita.jpg',
     defaultToppings: ['basil'],
   },
   {
@@ -83,7 +93,7 @@ export const MENU_ITEMS = [
     description: 'Pepperoni, sausage, bacon & meatballs.',
     basePrice: 14.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-meat-lovers.jpg',
     defaultToppings: ['pepperoni', 'sausage', 'bacon', 'meatball'],
   },
   {
@@ -93,7 +103,7 @@ export const MENU_ITEMS = [
     description: 'Mozzarella & ricotta cheese.',
     basePrice: 13.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-white-pie.jpg',
     defaultToppings: ['ricotta'],
   },
   {
@@ -103,7 +113,7 @@ export const MENU_ITEMS = [
     description: 'Breaded chicken cutlet, pomodoro, mozzarella & fresh basil.',
     basePrice: 14.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-chicken-parm.jpg',
     defaultToppings: ['chicken', 'basil'],
   },
   {
@@ -113,7 +123,7 @@ export const MENU_ITEMS = [
     description: 'Choose BBQ or buffalo sauce with chicken.',
     basePrice: 15.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-bbq-buffalo.jpg',
     defaultToppings: ['chicken'],
   },
   {
@@ -124,7 +134,7 @@ export const MENU_ITEMS = [
     basePrice: 12.95,
     badge: 'Veg',
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-veggie.jpg',
     defaultToppings: ['peppers', 'onions', 'mushrooms', 'olives'],
   },
   {
@@ -134,7 +144,7 @@ export const MENU_ITEMS = [
     description: 'Sautéed beef, onions, peppers, mushrooms & mozzarella with American cheese.',
     basePrice: 15.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-philly.jpg',
     defaultToppings: ['onions', 'peppers', 'mushrooms'],
   },
   {
@@ -145,7 +155,7 @@ export const MENU_ITEMS = [
     basePrice: 14.95,
     badge: 'House',
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-bville-special.jpg',
     defaultToppings: ['shawarma', 'onions', 'tomato'],
   },
   {
@@ -156,7 +166,7 @@ export const MENU_ITEMS = [
     basePrice: 14.95,
     badge: 'Spicy',
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-thai-chili.jpg',
     defaultToppings: ['chicken'],
   },
   {
@@ -166,7 +176,7 @@ export const MENU_ITEMS = [
     description: 'Mozzarella, fresh plum tomatoes, basil, grated pecorino.',
     basePrice: 13.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-don-pomodoro.jpg',
     defaultToppings: ['tomato', 'basil'],
   },
   {
@@ -176,7 +186,7 @@ export const MENU_ITEMS = [
     description: 'Pepperoni, sausage, mushroom, onion & peppers.',
     basePrice: 14.95,
     customizable: true,
-    photo: '/assets/photos/pizza.jpg',
+    photo: '/assets/photos/menu/pizza-combination.jpg',
     defaultToppings: ['pepperoni', 'sausage', 'mushrooms', 'onions', 'peppers'],
   },
   {
@@ -186,7 +196,7 @@ export const MENU_ITEMS = [
     description: 'Angus beef, lettuce, tomato, onion — add cheese if you like.',
     basePrice: 10.95,
     customizable: false,
-    photo: '/assets/photos/burger.jpg',
+    photo: '/assets/photos/menu/burgers-classic.jpg',
   },
   {
     id: 'boom-boom',
@@ -195,7 +205,7 @@ export const MENU_ITEMS = [
     description: 'House favorite with spicy boom boom sauce.',
     basePrice: 12.95,
     customizable: false,
-    photo: '/assets/photos/burger.jpg',
+    photo: '/assets/photos/menu/burgers-boom-boom.jpg',
   },
   {
     id: 'wings',
@@ -204,7 +214,7 @@ export const MENU_ITEMS = [
     description: 'Buffalo, teriyaki, BBQ or sweet chili with carrots & celery.',
     basePrice: 8.95,
     customizable: false,
-    photo: '/assets/photos/plated-grill.jpg',
+    photo: '/assets/photos/menu/starters-wings.jpg',
   },
   {
     id: 'mozz-sticks',
@@ -213,26 +223,16 @@ export const MENU_ITEMS = [
     description: 'Golden-fried with marinara.',
     basePrice: 7.95,
     customizable: false,
-    photo: '/assets/photos/grill.jpg',
+    photo: '/assets/photos/menu/starters-mozzarella-sticks.jpg',
   },
   {
     id: 'chicken-wrap',
     category: 'wraps',
-    name: 'Grilled Chicken Wrap',
-    description: 'Lettuce, tomato, cheese & house dressing.',
-    basePrice: 10.95,
+    name: 'Grilled Chicken Caesar Wrap',
+    description: 'Romaine, Parmesan & homemade creamy Caesar dressing.',
+    basePrice: 9.95,
     customizable: false,
-    photo: '/assets/photos/wraps.jpg',
-  },
-  {
-    id: 'gelato',
-    category: 'desserts',
-    name: 'Italian Gelato Coppa',
-    description: 'Sweet Endings — pick your favorite flavor at pickup.',
-    basePrice: 5.95,
-    badge: '5.95',
-    customizable: false,
-    photo: '/assets/photos/gelato-pistachio.png',
+    photo: '/assets/photos/menu/wraps-chicken-caesar.jpg',
   },
   {
     id: 'house-blend',
@@ -252,6 +252,11 @@ export const MENU_ITEMS = [
     customizable: false,
     photo: '/assets/photos/cafe-dining.jpg',
   },
+];
+
+export const MENU_ITEMS = [
+  ...CORE_MENU_ITEMS,
+  ...CATALOG_ITEMS.map((item) => ({ customizable: false, ...item })),
 ];
 
 /** Pizza-only customization gate */

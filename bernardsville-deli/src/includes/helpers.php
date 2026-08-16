@@ -206,6 +206,37 @@ function item_slug(string $name): string
     return trim($slug, '-');
 }
 
+function item_photo_url(array $item): ?string
+{
+    $photo = (string) ($item['photo'] ?? '');
+    if ($photo === '') {
+        return null;
+    }
+
+    $root = dirname(__DIR__, 2) . '/public/';
+    $candidates = [];
+    if (str_starts_with($photo, 'gelato-')) {
+        $candidates[] = 'assets/photos/' . $photo . '.png';
+    }
+    $candidates[] = 'assets/photos/menu/' . $photo . '.jpg';
+    $candidates[] = 'assets/photos/' . $photo . '.png';
+    $candidates[] = 'assets/photos/' . $photo . '.jpg';
+
+    foreach ($candidates as $rel) {
+        if (is_file($root . $rel)) {
+            return asset_url($rel);
+        }
+    }
+
+    return null;
+}
+
+function item_photo_contain(array $item): bool
+{
+    $photo = (string) ($item['photo'] ?? '');
+    return str_starts_with($photo, 'gelato-');
+}
+
 /**
  * Render a print title.
  * Menu section titles with designed wordmark art use transparent PNGs.

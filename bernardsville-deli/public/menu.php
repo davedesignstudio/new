@@ -16,10 +16,10 @@ $boards = [
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="hero">
+<section class="hero menu-hero-clean">
   <div class="container paper-hero-inner">
     <h1><?= print_title('The Menu', 'print-title print-title--hero') ?></h1>
-    <p class="lede">Orange script, cream boards — the same titles as the printed menu.</p>
+    <p class="lede">Every plate, photographed. Clean lines. The same titles as the printed boards.</p>
   </div>
 </section>
 
@@ -42,28 +42,33 @@ require dirname(__DIR__) . '/src/includes/header.php';
 </section>
 
 <section class="print-menu">
-  <div class="container print-menu-board print-menu-board--cols">
+  <div class="container menu-catalog">
     <?php foreach (menu_sections() as $section): ?>
-      <article class="print-section" id="<?= e($section['id']) ?>">
+      <article class="print-section menu-catalog-section" id="<?= e($section['id']) ?>">
         <?php if (!empty($section['watermark'])): ?>
           <span class="print-watermark" aria-hidden="true"><?= e($section['watermark']) ?></span>
         <?php endif; ?>
-        <h2 class="print-heading">
-          <?= print_title($section['title'], 'print-title', $section['wordmark'] ?? $section['id']) ?>
-        </h2>
-        <?php if (!empty($section['note'])): ?>
-          <p class="print-note"><?= e($section['note']) ?></p>
-        <?php endif; ?>
-        <?php if (!empty($section['sizes'])): ?>
-          <p class="print-sizes"><span>12"</span><span>16"</span></p>
-        <?php endif; ?>
-        <ul class="print-items<?= $section['id'] === 'desserts' ? ' print-items--dessert' : '' ?>">
+        <header class="menu-catalog-head">
+          <h2 class="print-heading">
+            <?= print_title($section['title'], 'print-title', $section['wordmark'] ?? $section['id']) ?>
+          </h2>
+          <?php if (!empty($section['note'])): ?>
+            <p class="print-note"><?= e($section['note']) ?></p>
+          <?php endif; ?>
+          <?php if (!empty($section['sizes'])): ?>
+            <p class="print-sizes"><span>12"</span><span>16"</span></p>
+          <?php endif; ?>
+        </header>
+        <ul class="dish-grid<?= $section['id'] === 'desserts' ? ' dish-grid--dessert' : '' ?>">
           <?php foreach ($section['items'] as $item): ?>
-            <li class="print-item">
-              <?php if (!empty($item['photo'])): ?>
-                <img class="dessert-thumb" src="<?= e(asset_url('assets/photos/' . $item['photo'] . '.png')) ?>" alt="" width="120" height="140" loading="lazy" />
+            <?php $photo = item_photo_url($item); ?>
+            <li class="dish-card">
+              <?php if ($photo): ?>
+                <div class="dish-photo<?= item_photo_contain($item) ? ' dish-photo--contain' : '' ?>">
+                  <img src="<?= e($photo) ?>" alt="<?= e($item['name']) ?>" width="480" height="360" loading="lazy" decoding="async" />
+                </div>
               <?php endif; ?>
-              <div>
+              <div class="dish-body">
                 <div class="print-item-row">
                   <h3>
                     <?= e($item['name']) ?>
@@ -88,6 +93,11 @@ require dirname(__DIR__) . '/src/includes/header.php';
         </ul>
       </article>
     <?php endforeach; ?>
+    <p class="menu-photo-credit">
+      Dish photos include restaurant photography and
+      <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> images.
+      <a href="<?= e(asset_url('assets/photos/menu/CREDITS.json')) ?>">Photo credits</a>.
+    </p>
   </div>
 </section>
 
