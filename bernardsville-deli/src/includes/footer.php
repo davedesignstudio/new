@@ -15,6 +15,14 @@
       <p><?= e($cfg['address']) ?> · <?= e($cfg['city']) ?></p>
       <p><a href="tel:<?= e($cfg['phone_raw']) ?>"><?= e($cfg['phone']) ?></a></p>
       <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e($cfg['name']) ?>. All rights reserved.</p>
+      <?php if (!empty($cfg['photo_credit'])): ?>
+        <p class="footer-photos">
+          <?= e($cfg['photo_credit']) ?>
+          <?php if (!empty($cfg['yelp'])): ?>
+            · <a href="<?= e($cfg['yelp']) ?>" target="_blank" rel="noopener noreferrer">See on Yelp</a>
+          <?php endif; ?>
+        </p>
+      <?php endif; ?>
       <a class="footer-designer" href="<?= e($designer['url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Designed by <?= e($designer['name']) ?>">
         <span class="footer-designer-label">Designed by</span>
         <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="180" height="48" />

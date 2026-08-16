@@ -30,60 +30,60 @@ export const FOOD_PHOTOS = buildTable('food', 640, 480);
 export const DEAL_PHOTOS = buildTable('deal', 640, 400);
 
 const LOCAL_FOOD = {
-  classic: '/assets/photos/pizza.jpg',
-  margherita: '/assets/photos/pizza.jpg',
-  'meat-lovers': '/assets/photos/pizza.jpg',
-  'white-pie': '/assets/photos/pizza.jpg',
-  'chicken-parm': '/assets/photos/pizza.jpg',
-  'bbq-buffalo': '/assets/photos/pizza.jpg',
-  veggie: '/assets/photos/pizza.jpg',
-  philly: '/assets/photos/pizza.jpg',
-  'bville-special': '/assets/photos/pizza.jpg',
-  'thai-chili': '/assets/photos/pizza.jpg',
-  'don-pomodoro': '/assets/photos/pizza.jpg',
-  combination: '/assets/photos/pizza.jpg',
-  'classic-burger': '/assets/photos/burger.jpg',
-  'boom-boom': '/assets/photos/burger.jpg',
-  wings: '/assets/photos/plated-grill.jpg',
-  'mozz-sticks': '/assets/photos/grill.jpg',
-  'chicken-wrap': '/assets/photos/wraps.jpg',
+  classic: '/assets/photos/listing/pizza.jpg',
+  margherita: '/assets/photos/listing/pizza.jpg',
+  'meat-lovers': '/assets/photos/listing/pizza.jpg',
+  'white-pie': '/assets/photos/listing/pizza.jpg',
+  'chicken-parm': '/assets/photos/listing/pizza.jpg',
+  'bbq-buffalo': '/assets/photos/listing/pizza.jpg',
+  veggie: '/assets/photos/listing/pizza.jpg',
+  philly: '/assets/photos/listing/quesadilla.jpg',
+  'bville-special': '/assets/photos/listing/chicken-platter.jpg',
+  'thai-chili': '/assets/photos/listing/pizza.jpg',
+  'don-pomodoro': '/assets/photos/listing/pizza.jpg',
+  combination: '/assets/photos/listing/pizza.jpg',
+  'classic-burger': '/assets/photos/listing/chicken-pesto-sub.jpg',
+  'boom-boom': '/assets/photos/listing/quesadilla.jpg',
+  wings: '/assets/photos/listing/chicken-platter.jpg',
+  'mozz-sticks': '/assets/photos/listing/falafel.jpg',
+  'chicken-wrap': '/assets/photos/listing/wrap-fries.jpg',
   gelato: '/assets/photos/gelato-pistachio.png',
   'house-blend': '/assets/photos/coffee.jpg',
-  latte: '/assets/photos/cafe-dining.jpg',
+  latte: '/assets/photos/listing/interior.jpg',
 };
 
 const LOCAL_CATEGORY = {
-  pizza: '/assets/photos/pizza.jpg',
-  burgers: '/assets/photos/burger.jpg',
-  starters: '/assets/photos/plated-grill.jpg',
-  wraps: '/assets/photos/wraps.jpg',
-  garden: '/assets/photos/salad.jpg',
+  pizza: '/assets/photos/listing/pizza.jpg',
+  burgers: '/assets/photos/listing/chicken-pesto-sub.jpg',
+  starters: '/assets/photos/listing/falafel.jpg',
+  wraps: '/assets/photos/listing/wrap-fries.jpg',
+  garden: '/assets/photos/listing/chicken-kabob-salad.jpg',
   desserts: '/assets/photos/gelato-mascarpone.png',
   drinks: '/assets/photos/coffee.jpg',
 };
 
 const LOCAL_SCENE = {
-  'hero-forno': '/assets/photos/hero-restaurant.jpg',
-  'footer-napoli': '/assets/photos/exterior.jpg',
-  'order-delivery': '/assets/photos/grill.jpg',
-  'order-carryout': '/assets/photos/pizza.jpg',
-  'empty-cart': '/assets/photos/pizza.jpg',
-  tribunali: '/assets/photos/kitchen-bar.jpg',
+  'hero-forno': '/assets/photos/listing/interior.jpg',
+  'footer-napoli': '/assets/photos/listing/menu-cover.jpg',
+  'order-delivery': '/assets/photos/listing/chicken-platter.jpg',
+  'order-carryout': '/assets/photos/listing/pizza.jpg',
+  'empty-cart': '/assets/photos/listing/pizza.jpg',
+  tribunali: '/assets/photos/listing/interior-alt.jpg',
 };
 
 const LOCAL_STORY = {
-  forno: '/assets/photos/steam-kitchen.jpg',
-  margherita: '/assets/photos/pizza.jpg',
-  tribunali: '/assets/photos/table-spread.jpg',
-  impasto: '/assets/photos/kitchen-bar.jpg',
+  forno: '/assets/photos/listing/chicken-kabob-salad.jpg',
+  margherita: '/assets/photos/listing/pizza.jpg',
+  tribunali: '/assets/photos/listing/falafel-salad.jpg',
+  impasto: '/assets/photos/listing/interior-alt.jpg',
   sfogliatella: '/assets/photos/gelato-mascarpone.png',
-  vesuvio: '/assets/photos/exterior.jpg',
+  vesuvio: '/assets/photos/listing/menu-cover.jpg',
 };
 
 const LOCAL_DEAL = {
-  degustazione: '/assets/photos/pizza.jpg',
-  asporto: '/assets/photos/pizza.jpg',
-  consegna: '/assets/photos/grill.jpg',
+  degustazione: '/assets/photos/listing/pizza.jpg',
+  asporto: '/assets/photos/listing/wrap-fries.jpg',
+  consegna: '/assets/photos/listing/chicken-platter.jpg',
 };
 
 export function getPhotoUrl(key, group = 'food') {

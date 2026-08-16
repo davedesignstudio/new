@@ -1290,6 +1290,18 @@ address { font-style: normal; }
   color: #9a9080;
 }
 
+.footer-photos {
+  font-size: 0.75rem;
+  margin: 0.65rem 0 0;
+  color: #8a8070;
+}
+
+.footer-photos a {
+  color: var(--gold, #d4a34f);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .footer-designer {
   display: inline-flex;
   flex-direction: column;

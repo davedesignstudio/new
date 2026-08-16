@@ -25,7 +25,8 @@ export const SITE = {
       'This is the official order page — not an app marketplace.',
   },
   photoCredit:
-    'Photos & art for demo ordering · Bville Pizza & Grill, Bernardsville NJ',
+    'Guest photos from the Bville Pizza & Grill Yelp listing · Bernardsville NJ',
+  yelp: 'https://yelp.to/viEc5U-sWj',
   website: '../index.php',
   menuPage: '../menu.php',
 };
