@@ -50,15 +50,25 @@
       </section>
     {{ end }}
   {{ else if eq .Section "gallery" }}
+    <p class="gallery-intro">
+      Photos from our guests on
+      <a href="{{ .Site.Params.yelp }}" target="_blank" rel="noopener">Yelp</a>.
+    </p>
     <div class="gallery-carousel">
       {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        <div>
+          <img src="{{ .Params.image }}" alt="{{ .Title }}"/>
+          <p class="gallery-caption">{{ .Title }} · {{ .Params.credit }}</p>
+        </div>
       {{ end }}
     </div>
     <div class="buttons">
       <button class="prev half-button">Prev</button>
       <button class="next half-button">Next</button>
     </div>
+    <p class="gallery-yelp-link">
+      <a href="{{ .Site.Params.yelp }}" target="_blank" rel="noopener">See all photos on Yelp →</a>
+    </p>
   {{ end }}
 </div>
 

@@ -3,13 +3,24 @@
     <div class="sidebar-about">
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
+      {{ if .Site.Params.phone }}
+      <p class="sidebar-contact">
+        <a href="tel:+19087661666">{{ .Site.Params.phone }}</a><br>
+        {{ .Site.Params.address }}
+      </p>
+      {{ end }}
+      {{ if .Site.Params.yelp }}
+      <p class="sidebar-yelp">
+        <a href="{{ .Site.Params.yelp }}" target="_blank" rel="noopener">★ {{ .Site.Params.rating }} on Yelp</a>
+      </p>
+      {{ end }}
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a href="/">Home</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
     </ul>
   </div>
 </div>

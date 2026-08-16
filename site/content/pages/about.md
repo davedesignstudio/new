@@ -4,11 +4,35 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Welcome to Bville Pizza & Grill
 
----
+Bville Pizza & Grill brings together stone-oven pizza, a full grill menu, and Mediterranean classics in the heart of Bernardsville. Whether you are stopping in for a quick lunch, picking up pies for the family, or hosting a casual dinner with friends, our kitchen aims to make everyone feel at home.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+### What we serve
 
-Sincerely,
-# Mr. Bojangles
+- Stone-oven pizza — from classic cheese to specialty pies
+- Angus burgers, cheesesteaks, and hearty grill plates
+- Mediterranean favorites like hummus, falafel, and chicken kabobs
+- Fresh salads, wraps, and shareable appetizers
+
+### Our story
+
+For years, 159 Morristown Rd was known locally as **The Grill** — a neighborhood spot for burgers, kabobs, and friendly service. When the restaurant became Bville Pizza & Grill, the team added a stone oven and expanded the menu without losing the warm, welcoming atmosphere regulars loved.
+
+Guests praise our generous portions, friendly staff, and the pizza that quickly became a local favorite. Owner Omar and the team take pride in clean dining rooms, fair pricing, and food made to order.
+
+### Hours
+
+| Day | Hours |
+| --- | --- |
+| Monday | 11:00 AM – 7:30 PM |
+| Tuesday – Friday | 11:00 AM – 9:00 PM |
+| Saturday | 11:00 AM – 9:00 PM |
+| Sunday | 11:00 AM – 7:30 PM |
+
+### Find us
+
+**159 Morristown Rd, Bernardsville, NJ 07924**  
+**Phone:** [(908) 766-1666](tel:+19087661666)
+
+See photos and reviews from our guests on [Yelp](https://www.yelp.com/biz/bville-pizza-and-grill-bernardsville).
