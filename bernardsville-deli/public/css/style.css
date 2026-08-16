@@ -687,6 +687,11 @@ address { font-style: normal; }
 .print-section {
   position: relative;
   margin-bottom: 1.5rem;
+  overflow: visible;
+}
+
+.print-section:has(.print-watermark) {
+  padding-right: 2.6rem;
 }
 
 .print-heading {
@@ -694,20 +699,27 @@ address { font-style: normal; }
   padding: 0.1rem 0 0.2rem;
   line-height: 1;
   background: none;
+  position: relative;
+  z-index: 1;
 }
 
 .print-watermark {
   position: absolute;
-  right: 0.15rem;
-  top: 3.1rem;
-  font-size: clamp(1.8rem, 5vw, 3.1rem);
-  font-weight: 700;
-  color: rgba(31, 61, 50, 0.08);
+  right: 0;
+  top: 50%;
+  z-index: 0;
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+  font-family: var(--font-script);
+  font-size: clamp(2.1rem, 4.6vw, 3.7rem);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  color: rgba(31, 61, 50, 0.16);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
   pointer-events: none;
-  font-family: var(--font-sans);
-  letter-spacing: 0.04em;
+  user-select: none;
 }
 
 .print-note {
@@ -1231,7 +1243,14 @@ address { font-style: normal; }
   .about-hero-photo,
   .cafe-hero-cup-photo { height: 260px; width: 100%; }
 
-  .print-watermark { display: none; }
+  .print-watermark {
+    font-size: clamp(1.7rem, 8vw, 2.7rem);
+    color: rgba(31, 61, 50, 0.15);
+  }
+
+  .print-section:has(.print-watermark) {
+    padding-right: 2.1rem;
+  }
 }
 
 @media (max-width: 768px) {
