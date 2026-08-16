@@ -159,7 +159,7 @@ address { font-style: normal; }
   top: 0;
   left: 0;
   display: block;
-  width: clamp(32px, 3.6vw, 62px);
+  width: clamp(36px, 4.1vw, 70px);
   height: auto;
   filter:
     drop-shadow(0 2px 2px rgba(70, 45, 25, 0.18))
@@ -168,21 +168,21 @@ address { font-style: normal; }
 }
 
 .cheese-shred--ball {
-  width: clamp(28px, 3.1vw, 52px);
+  width: clamp(32px, 3.6vw, 58px);
   filter:
     drop-shadow(0 3px 4px rgba(70, 45, 25, 0.22))
     drop-shadow(0 0 10px rgba(255, 255, 250, 0.78));
 }
 
 .cheese-shred--pull {
-  width: clamp(18px, 2.2vw, 36px);
+  width: clamp(20px, 2.5vw, 40px);
   filter:
     drop-shadow(0 2px 3px rgba(70, 45, 25, 0.16))
     drop-shadow(0 0 6px rgba(255, 250, 242, 0.5));
 }
 
 .cheese-shred--blob {
-  width: clamp(36px, 4vw, 70px);
+  width: clamp(40px, 4.6vw, 78px);
 }
 
 @media (prefers-reduced-motion: reduce) {

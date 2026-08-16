@@ -160,7 +160,7 @@ if (storiesDataEl && storyModal) {
 
   function spawnColumn(col, side) {
     if (!col) return;
-    const count = 32;
+    const count = 48;
     for (let i = 0; i < count; i += 1) {
       const kind = cheeseKinds[Math.floor(Math.random() * cheeseKinds.length)];
       const img = document.createElement('img');
@@ -171,16 +171,16 @@ if (storiesDataEl && storyModal) {
       img.height = kind.h;
       col.appendChild(img);
       const scale = kind.cls.includes('ball')
-        ? 0.7 + Math.random() * 0.75
+        ? 0.78 + Math.random() * 0.7
         : kind.cls.includes('pull')
-          ? 0.8 + Math.random() * 0.95
-          : 0.72 + Math.random() * 0.9;
+          ? 0.85 + Math.random() * 0.95
+          : 0.8 + Math.random() * 0.85;
       const piece = {
         el: img,
         side,
-        x: 4 + Math.random() * 72,
-        y: Math.random() * 220,
-        speed: 0.28 + Math.random() * 0.85,
+        x: 2 + Math.random() * 78,
+        y: Math.random() * 130,
+        speed: 0.22 + Math.random() * 0.7,
         rot: -70 + Math.random() * 140,
         spin: -0.05 + Math.random() * 0.1,
         wobble: 5 + Math.random() * 14,
