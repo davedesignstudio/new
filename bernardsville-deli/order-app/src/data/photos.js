@@ -57,6 +57,7 @@ const LOCAL_CATEGORY = {
   burgers: '/assets/photos/burger.jpg',
   starters: '/assets/photos/plated-grill.jpg',
   wraps: '/assets/photos/wraps.jpg',
+  garden: '/assets/photos/salad.jpg',
   desserts: '/assets/photos/gelato-mascarpone.png',
   drinks: '/assets/photos/coffee.jpg',
 };

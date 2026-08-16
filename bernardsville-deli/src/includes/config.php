@@ -38,7 +38,7 @@ return [
         'categories' => [
             'pizza' => 'assets/photos/pizza.jpg',
             'platters' => 'assets/photos/handhelds.jpg',
-            'garden' => 'assets/photos/wraps.jpg',
+            'garden' => 'assets/photos/salad.jpg',
             'starters' => 'assets/photos/plated-grill.jpg',
             'wraps' => 'assets/photos/wraps.jpg',
             'pasta' => 'assets/photos/table-spread.jpg',
@@ -54,7 +54,7 @@ return [
             'hero' => 'Stone oven cheese pizza with cherry tomatoes and rosemary',
             'pizza' => 'Sliced stone oven cheese pizza on a wood board',
             'platters' => 'Char-grilled kebab platter with fries, pita, and tzatziki',
-            'garden' => 'Fresh chicken and vegetable wraps on a wood tray',
+            'garden' => 'Fresh garden salad with greens, tomatoes, avocado, and vegetables',
             'starters' => 'Plated grill special with roasted potatoes and pastry',
             'wraps' => 'Chicken vegetable wraps cut to show the filling',
             'pasta' => 'Table spread of grilled plates, bread, and house sides',
