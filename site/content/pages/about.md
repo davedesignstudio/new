@@ -15,7 +15,7 @@ Whether you're stopping in for a quick lunch, picking up dinner for the family, 
 - **Fresh pizza** — from classic cheese to creative specialty pies
 - **Mediterranean favorites** — gyros, kabobs, falafel, hummus, and more
 - **Grill classics** — burgers, sandwiches, salads, and hearty platters
-- **Warm hospitality** — our team goes out of their way to make every guest feel welcome
+- **Warm hospitality** — friendly service that makes every guest feel welcome
 
 ### Visit Us
 

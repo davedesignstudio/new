@@ -7,12 +7,13 @@
 }
 
 .hero-image {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
+  object-position: center;
   margin: 0;
   border-radius: 0;
-  min-height: 100vh;
+  min-height: auto;
   max-height: none;
 }
 
@@ -76,6 +77,19 @@
 
   .hero-overlay {
     left: calc(50% + 11rem);
+  }
+}
+
+.gallery-carousel {
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    width: 100%;
+    min-height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    margin: 0 auto;
   }
 }
 
