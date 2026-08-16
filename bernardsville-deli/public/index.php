@@ -6,7 +6,7 @@ require_once dirname(__DIR__) . '/src/includes/helpers.php';
 
 $site = site_config();
 $origin = featured_story();
-$pageTitle = $site['name'] . ' — Order Online';
+$pageTitle = $site['tagline'];
 $homeCats = ['pizza', 'burgers', 'wraps', 'platters', 'garden', 'desserts'];
 $features = [
     ['id' => 'pizza', 'title' => 'Stone Oven Baked', 'photo' => 'pizza'],
@@ -23,7 +23,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <p class="kicker"><?= e($site['address']) ?> · Bernardsville</p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-sub">Pizza &amp; Grill</p>
-      <p class="lede">Stone oven pizza, Angus burgers, and Italian gelato — the same boards, the same kitchen.</p>
+      <p class="lede"><?= e($site['tagline']) ?> Stone oven pizza, Angus burgers, and Italian gelato — the same boards, the same kitchen.</p>
       <div class="hero-actions">
         <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order Online</a>
         <a class="btn btn-gold btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>

@@ -13,7 +13,9 @@ $title = $pageTitle ?? $site['name'];
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="<?= e($site['name']) ?> — pizza, burgers, wraps, and Mediterranean cuisine in Bernardsville, NJ." />
+  <meta name="description" content="<?= e($site['tagline']) ?> Stone oven pizza, burgers, wraps, salads, and gelato in Bernardsville, NJ." />
+  <meta property="og:title" content="<?= e($site['tagline']) ?>" />
+  <meta property="og:description" content="<?= e($site['tagline']) ?> Stone oven pizza, burgers, wraps, salads, and gelato in Bernardsville, NJ." />
   <title><?= e($title) ?></title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

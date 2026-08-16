@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Bville Pizza & Grill',
     'short_name' => 'Bville',
-    'tagline' => 'Stone oven pizza · Mediterranean & American cuisine',
+    'tagline' => 'Check out Bville Pizza & Grill!',
     'address' => '159 Morristown Rd',
     'city' => 'Bernardsville, NJ 07924',
     'phone' => '(908) 766-1666',
