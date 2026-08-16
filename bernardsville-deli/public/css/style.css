@@ -691,7 +691,7 @@ address { font-style: normal; }
 }
 
 .print-section:has(.print-watermark) {
-  padding-right: 2.6rem;
+  padding-right: 3.15rem;
 }
 
 .print-heading {
@@ -727,7 +727,9 @@ address { font-style: normal; }
   color: var(--maroon);
   font-style: italic;
   margin: 0 0 0.75rem;
-  padding-right: 4rem;
+  padding-right: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .print-sizes {
@@ -739,7 +741,7 @@ address { font-style: normal; }
   color: var(--maroon);
 }
 
-.print-items { list-style: none; padding: 0; margin: 0; }
+.print-items { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
 
 .print-item {
   padding: 0.5rem 0;
@@ -1249,7 +1251,7 @@ address { font-style: normal; }
   }
 
   .print-section:has(.print-watermark) {
-    padding-right: 2.1rem;
+    padding-right: 2.4rem;
   }
 }
 
