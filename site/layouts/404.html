@@ -1,8 +1,13 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main id="main" class="interior">
+  <header class="page-hero">
+    <div class="page-hero__content" data-reveal>
+      <h1>Page not found</h1>
+      <p>That page wandered off the menu.</p>
+      <a class="btn btn--primary" href="/">Back home</a>
+    </div>
+  </header>
+</main>
 
 {{ partial "footer" . }}

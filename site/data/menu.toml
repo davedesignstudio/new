@@ -1,0 +1,152 @@
+[[sections]]
+name = "Appetizers"
+intro = "Shareable starters from the fryer and the grill."
+
+  [[sections.items]]
+  name = "Mac & Cheese Bites"
+  price = "$7.95"
+
+  [[sections.items]]
+  name = "Mozzarella Sticks"
+  price = "$7.95"
+  note = "Served with marinara"
+
+  [[sections.items]]
+  name = "Wings"
+  price = "6 for $8.95 · 12 for $14.95"
+  note = "Buffalo, BBQ, Sweet Chili, Teriyaki, Lemon Pepper, or Hot Garlic"
+
+  [[sections.items]]
+  name = "Falafel"
+  price = "$7.95"
+  note = "Served with tahini"
+
+  [[sections.items]]
+  name = "Hummus"
+  price = "$7.95"
+  note = "Chickpeas, lemon, sesame tahini"
+
+  [[sections.items]]
+  name = "Burger Sliders"
+  price = "$10.95"
+  note = "Three mini Angus burgers with onions & cheddar"
+
+  [[sections.items]]
+  name = "Fried Calamari"
+  price = "$10.95"
+
+  [[sections.items]]
+  name = "B’ville Fries"
+  price = "$7.95"
+  note = "Bacon, fried onions, jalapeño & cheese sauce"
+
+[[sections]]
+name = "Salads"
+intro = "Fresh greens with Mediterranean and classic toppings."
+
+  [[sections.items]]
+  name = "House"
+  price = "$7.95"
+  note = "Romaine, tomato, cucumber, carrot, red onion"
+
+  [[sections.items]]
+  name = "Greek"
+  price = "$9.95"
+  note = "Olives, feta, Greek vinaigrette"
+
+  [[sections.items]]
+  name = "Cobb"
+  price = "$9.95"
+  note = "Egg, blue cheese, bacon, avocado"
+
+  [[sections.items]]
+  name = "Chicken Kabob Salad"
+  price = "Add kabob $7"
+  note = "Grilled chicken skewers over greens — a house favorite"
+
+[[sections]]
+name = "Pizza"
+intro = "Classic pies and Bville specialties, whole or by the slice."
+
+  [[sections.items]]
+  name = "Regular Classic"
+  price = "$14.95"
+
+  [[sections.items]]
+  name = "Margarita"
+  price = "$17.95"
+  note = "Fresh mozzarella, basil, pizza sauce"
+
+  [[sections.items]]
+  name = "Grandma"
+  price = "$19.95"
+  note = "Square pan pie with plum tomato, oregano, pecorino"
+
+  [[sections.items]]
+  name = "Meat Lovers"
+  price = "$20.95"
+  note = "Pepperoni, sausage, peppers, meatballs"
+
+  [[sections.items]]
+  name = "B’ville Special"
+  price = "$21.95"
+  note = "Shawarma chicken, lettuce, tomato, onion, garlic sauce"
+
+  [[sections.items]]
+  name = "Athens"
+  price = "$22.95"
+  note = "Gyro, feta, tzatziki"
+
+  [[sections.items]]
+  name = "Gluten-Free Pie"
+  price = "$12.95"
+  note = "12\" cauliflower crust"
+
+[[sections]]
+name = "Burgers & Grill"
+intro = "Char-grilled Angus, heroes, and handhelds."
+
+  [[sections.items]]
+  name = "Classic Burger"
+  price = "$9.95"
+
+  [[sections.items]]
+  name = "B’ville Burger"
+  price = "$11.95"
+  note = "Potatoes, caramelized onions, mozzarella, Thousand Island"
+
+  [[sections.items]]
+  name = "Philly Cheesesteak"
+  price = "$9.95"
+
+  [[sections.items]]
+  name = "Chicken Parmesan Hero"
+  price = "$10.95"
+
+[[sections]]
+name = "Wraps & Pasta"
+intro = "Falafel to vodka sauce — quick lunches and hearty dinners."
+
+  [[sections.items]]
+  name = "Falafel Wrap"
+  price = "$8.95"
+
+  [[sections.items]]
+  name = "Shawarma Wrap"
+  price = "$9.95"
+
+  [[sections.items]]
+  name = "Gyro Wrap"
+  price = "$9.95"
+
+  [[sections.items]]
+  name = "Penne alla Vodka"
+  price = "$13.95"
+
+  [[sections.items]]
+  name = "Pasta Bolognese"
+  price = "$15.95"
+
+  [[sections.items]]
+  name = "Baked Ziti"
+  price = "$15.95"

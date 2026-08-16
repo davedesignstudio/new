@@ -1,4 +1,23 @@
-<script src="/js/siema.min.js"></script>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <p class="brand__script">Bville</p>
+      <p class="site-footer__tag">Pizza &amp; Grill · Bernardsville</p>
+    </div>
+    <div class="site-footer__meta">
+      <p>{{ .Site.Params.address }}</p>
+      <p><a href="{{ .Site.Params.phoneHref | safeURL }}">{{ .Site.Params.phone }}</a></p>
+      <p>{{ .Site.Params.hours }}</p>
+    </div>
+    <div class="site-footer__links">
+      <a href="/menu">Menu</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/visit">Visit</a>
+      <a href="{{ .Site.Params.yelp }}" rel="noopener" target="_blank">Yelp</a>
+    </div>
+  </div>
+  <p class="site-footer__note">Photos from the public Bville Pizza &amp; Grill listing · BYOB · We deliver &amp; cater</p>
+</footer>
 <script src="/app.js"></script>
 </body>
 </html>

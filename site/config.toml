@@ -1,11 +1,30 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Bville Pizza & Grill"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Pizza, Mediterranean platters, and grill favorites in the heart of Bernardsville, NJ."
+  address = "159 Morristown Rd, Bernardsville, NJ 07924"
+  phone = "(908) 766-1666"
+  phoneHref = "tel:+19087661666"
+  hours = "Mon–Sun 11am–9pm"
+  yelp = "https://www.yelp.com/biz/bville-pizza-and-grill-bernardsville"
+  price = "$$"
+  rating = "4.0"
+  reviewCount = "146"
+  tagline = "Pizza, platters & the grill — made fresh on Morristown Road."
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
+    name = "Menu"
+    url  = "/menu"
     weight = 1
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery"
+    weight = 2
+
+[[menu.main]]
+    name = "Visit"
+    url  = "/visit"
+    weight = 3

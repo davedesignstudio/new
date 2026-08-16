@@ -1,0 +1,45 @@
+{{ partial "header" . }}
+
+<main id="main" class="interior">
+  <header class="page-hero page-hero--visit">
+    <div class="page-hero__media">
+      <img src="/img/bville/dining.jpg" alt="Interior of Bville Pizza & Grill" width="1600" height="900">
+    </div>
+    <div class="page-hero__veil"></div>
+    <div class="page-hero__content" data-reveal>
+      <p class="eyebrow">Bernardsville, NJ</p>
+      <h1>Visit</h1>
+      <p>Open daily for lunch and dinner. Call ahead for takeout, delivery, or catering.</p>
+    </div>
+  </header>
+
+  <section class="visit-grid">
+    <div class="visit-card" data-reveal>
+      <h2>Find us</h2>
+      <p>{{ .Site.Params.address }}</p>
+      <a class="text-link" href="https://maps.google.com/?q=159+Morristown+Rd,+Bernardsville,+NJ+07924" rel="noopener" target="_blank">Open in Maps →</a>
+    </div>
+    <div class="visit-card" data-reveal>
+      <h2>Hours</h2>
+      <p>{{ .Site.Params.hours }}</p>
+      <p class="muted">Delivery available · Catering · BYOB</p>
+    </div>
+    <div class="visit-card" data-reveal>
+      <h2>Call</h2>
+      <p><a href="{{ .Site.Params.phoneHref | safeURL }}">{{ .Site.Params.phone }}</a></p>
+      <p class="muted">{{ .Site.Params.rating }}★ · {{ .Site.Params.reviewCount }} reviews on Yelp</p>
+      <a class="btn btn--primary" href="{{ .Site.Params.yelp }}" rel="noopener" target="_blank">View on Yelp</a>
+    </div>
+  </section>
+
+  <section class="visit-map" data-reveal>
+    <iframe
+      title="Map to Bville Pizza & Grill"
+      src="https://maps.google.com/maps?q=159%20Morristown%20Rd%2C%20Bernardsville%2C%20NJ%2007924&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen></iframe>
+  </section>
+</main>
+
+{{ partial "footer" . }}

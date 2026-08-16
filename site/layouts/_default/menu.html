@@ -1,0 +1,44 @@
+{{ partial "header" . }}
+
+<main id="main" class="interior">
+  <header class="page-hero page-hero--menu">
+    <div class="page-hero__media">
+      <img src="/img/bville/menu-board.jpg" alt="Printed menu boards from Bville Pizza & Grill" width="1600" height="778">
+    </div>
+    <div class="page-hero__veil"></div>
+    <div class="page-hero__content" data-reveal>
+      <p class="eyebrow">From the boards</p>
+      <h1>The Menu</h1>
+      <p>Pizza, Mediterranean plates, burgers, wraps, and pasta — priced for everyday Bernardsville nights.</p>
+    </div>
+  </header>
+
+  <div class="menu-page">
+    {{ range $.Site.Data.menu.sections }}
+    <section class="menu-section" data-reveal>
+      <header class="menu-section__head">
+        <h2>{{ .name }}</h2>
+        {{ with .intro }}<p>{{ . }}</p>{{ end }}
+      </header>
+      <ul class="menu-list">
+        {{ range .items }}
+        <li class="menu-list__item">
+          <div class="menu-list__row">
+            <h3>{{ .name }}</h3>
+            <span class="menu-list__price">{{ .price }}</span>
+          </div>
+          {{ with .note }}<p class="menu-list__note">{{ . }}</p>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    <aside class="menu-aside" data-reveal>
+      <p>Full boards include more pies, toppings, kids options, and catering platters. Call {{ .Site.Params.phone }} to order or ask about catering.</p>
+      <a class="btn btn--primary" href="{{ .Site.Params.phoneHref | safeURL }}">Call to order</a>
+    </aside>
+  </div>
+</main>
+
+{{ partial "footer" . }}

@@ -1,14 +1,11 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-16T00:00:00-04:00"
 title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+Bville Pizza & Grill is a neighborhood spot on Morristown Road in Bernardsville — pizza pies, Mediterranean platters, burgers, wraps, and grilled favorites under one roof.
 
----
+Guests come for the chicken kabobs, hummus and pita, falafel, and pies like the B’ville Special and Athens. We deliver, we cater, and we’re BYOB.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
-
-Sincerely,
-# Mr. Bojangles
+Stop in for lunch or dinner. Call ahead for takeout or a catering platter for your next gathering.

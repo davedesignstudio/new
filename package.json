@@ -6,10 +6,10 @@
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
-    "build": "gulp build",
-    "build-preview": "gulp build-preview",
-    "start": "gulp server",
-    "start-preview": "gulp server-preview",
+    "build": "bash scripts/build.sh",
+    "build-preview": "bash scripts/build.sh",
+    "start": "bash scripts/build.sh && python3 -m http.server 3000 --directory dist",
+    "start-preview": "bash scripts/build.sh && python3 -m http.server 3000 --directory dist",
     "lint": "eslint src"
   },
   "author": "",
