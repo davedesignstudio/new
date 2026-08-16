@@ -95,17 +95,18 @@ a {
 
 .slash {
   position: absolute;
-  left: -8%;
-  top: 38%;
+  left: 4%;
+  top: 22%;
   margin: 0;
   font-family: Anton, Impact, sans-serif;
-  font-size: clamp(4rem, 16vw, 12rem);
+  font-size: clamp(3.4rem, 11vw, 8.5rem);
   line-height: 0.8;
   color: #ffe500;
   text-transform: uppercase;
   letter-spacing: -0.04em;
-  transform: rotate(-18deg);
-  white-space: nowrap;
+  transform: rotate(-14deg);
+  transform-origin: left center;
+  white-space: pre-line;
   pointer-events: none;
   text-shadow: 6px 6px 0 #111;
 }
@@ -194,7 +195,7 @@ a {
   }
 
   .slash {
-    top: 42%;
-    font-size: 22vw;
+    top: 24%;
+    font-size: 18vw;
   }
 }
