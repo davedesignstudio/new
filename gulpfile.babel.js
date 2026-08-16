@@ -22,20 +22,20 @@ gulp.task("hugo", cb => buildSite(cb));
 gulp.task("hugo-preview", cb => buildSite(cb, hugoArgsPreview));
 
 // Run server tasks
-gulp.task("server", ["hugo", "css", "js", "fonts", "videos", "images"], cb =>
+gulp.task("server", ["hugo", "css", "js", "vendor-js", "fonts", "videos", "images"], cb =>
   runServer(cb)
 );
 gulp.task(
   "server-preview",
-  ["hugo-preview", "css", "js", "fonts", "videos", "images"],
+  ["hugo-preview", "css", "js", "vendor-js", "fonts", "videos", "images"],
   cb => runServer(cb)
 );
 
 // Build/production tasks
-gulp.task("build", ["css", "js", "fonts", "videos", "images"], cb =>
+gulp.task("build", ["css", "js", "vendor-js", "fonts", "videos", "images"], cb =>
   buildSite(cb, [], "production")
 );
-gulp.task("build-preview", ["css", "js", "fonts", "videos", "images"], cb =>
+gulp.task("build-preview", ["css", "js", "vendor-js", "fonts", "videos", "images"], cb =>
   buildSite(cb, hugoArgsPreview, "production")
 );
 
@@ -94,6 +94,14 @@ gulp.task("images", () =>
   gulp
     .src("./src/img/**/*")
     .pipe(gulp.dest("./dist/img"))
+    .pipe(browserSync.stream())
+);
+
+// Copy vendor JS (Siema carousel) separately from webpack bundle
+gulp.task("vendor-js", () =>
+  gulp
+    .src("./src/js/siema.min.js")
+    .pipe(gulp.dest("./dist/js"))
     .pipe(browserSync.stream())
 );
 
