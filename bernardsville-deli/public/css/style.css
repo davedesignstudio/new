@@ -23,11 +23,12 @@
 @font-face {
   font-family: "Parkside";
   src:
-    url("/assets/fonts/Parkside-Black.woff") format("woff"),
-    url("/assets/fonts/Parkside-Black.otf") format("opentype");
+    url("/assets/fonts/Parkside-Black.woff?v=kern") format("woff"),
+    url("/assets/fonts/Parkside-Black.otf?v=kern") format("opentype");
   font-weight: 700 900;
   font-style: normal;
   font-display: swap;
+  font-kerning: normal;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -84,7 +85,9 @@ address { font-style: normal; }
   font-style: normal;
   font-size: clamp(2.1rem, 5vw, 3.35rem);
   line-height: 0.95;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
   color: var(--orange);
   background: none;
   -webkit-text-fill-color: var(--orange);
@@ -186,6 +189,8 @@ address { font-style: normal; }
   font-family: var(--font-script);
   font-size: 1.55rem;
   font-weight: 700;
+  letter-spacing: 0;
+  font-kerning: normal;
   color: var(--orange);
   -webkit-text-stroke: 1.2px var(--ink);
   paint-order: stroke fill;
@@ -716,7 +721,9 @@ address { font-style: normal; }
   font-style: normal;
   line-height: 1;
   color: rgba(31, 61, 50, 0.16);
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
