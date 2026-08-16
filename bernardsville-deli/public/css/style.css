@@ -721,7 +721,7 @@ address { font-style: normal; }
   font-style: normal;
   line-height: 1;
   color: rgba(31, 61, 50, 0.16);
-  letter-spacing: 0;
+  letter-spacing: 0.14em;
   font-kerning: normal;
   font-feature-settings: "kern" 1;
   white-space: nowrap;
