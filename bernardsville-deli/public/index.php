@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<section class="feature-tiles" aria-label="Featured menu">
+<section class="container feature-tiles" aria-label="Featured menu">
   <?php foreach ($features as $feature): ?>
     <a class="feature-tile" href="<?= e(asset_url('menu.php#' . $feature['id'])) ?>">
       <?= photo_img($feature['photo'], ['width' => 720, 'height' => 480]) ?>
