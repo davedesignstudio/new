@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel:400,700|Cinzel+Decorative:700|Cormorant+Garamond:400,400i,600,700");
+
+:root {
+  --paper: #efe2c4;
+  --paper-2: #e6d3ad;
+  --ink: #2a1b12;
+  --muted: #5c4636;
+  --burgundy: #6e1c28;
+  --gold: #b0893e;
+  --stone: #7a6a55;
+  --sea: #1c3358;
+  --ash: #1a1410;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.trattato {
+  background: var(--ash);
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.wrap {
+  width: min(46rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: Cinzel, serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.topnav a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.book {
+  background: linear-gradient(180deg, #f6ead0, var(--paper) 30%, var(--paper-2));
+  padding: 2.2rem 1.4rem 2.8rem;
+  border: 1px solid var(--gold);
+  outline: 8px solid #2b2116;
+}
+
+.kicker {
+  margin: 0;
+  font-family: Cinzel, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  text-align: center;
+}
+
+h1 {
+  font-family: "Cinzel Decorative", Cinzel, serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  text-align: center;
+  color: var(--burgundy);
+  margin: 0.4rem 0 0.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-family: Cinzel, serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sea);
+  margin: 2rem 0 0.6rem;
+}
+
+p { margin: 0 0 1rem; }
+
+blockquote {
+  margin: 1.2rem 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--gold);
+  font-style: italic;
+  color: var(--muted);
+}
+
+.rooms {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+}
+
+.rooms li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(176, 137, 62, 0.35);
+}
+
+.rooms strong {
+  font-family: Cinzel, serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.note {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.continue {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--burgundy);
+  font-family: Cinzel, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+
+@media (min-width: 48em) {
+  .book {
+    padding: 3rem 3.2rem 3.4rem;
+  }
+}
