@@ -151,7 +151,7 @@ address { font-style: normal; }
 /* Header */
 .site-header {
   background: var(--ink-dark);
-  border-bottom: 6px solid var(--orange);
+  border: 6px solid var(--orange);
   position: sticky;
   top: 0;
   z-index: 100;
