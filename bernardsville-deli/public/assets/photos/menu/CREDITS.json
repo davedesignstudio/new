@@ -491,18 +491,20 @@
     {
       "slug": "pizza-margherita",
       "source": "commons",
-      "title": "File:Pizza Margherita.jpg",
-      "license": "CC BY-SA 4.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Pizza_Margherita.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nicholas_Gemini\" title=\"User:Nicholas Gemini\">Nicholas Gemini</a>"
+      "title": "File:Margherita Originale.JPG",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Margherita_Originale.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Mario56&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Mario56 (page does not exist)\">Mario56</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "pizza-meat-lovers",
       "source": "commons",
-      "title": "File:Pepperoni pizza.jpg",
-      "license": "Public domain",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Pepperoni_pizza.jpg",
-      "artist": ""
+      "title": "File:Pizza (meat deluxe).jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pizza_(meat_deluxe).jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Flixtey\" title=\"User:Flixtey\">Flixtey</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "pizza-white-pie",
@@ -515,50 +517,56 @@
     {
       "slug": "pizza-chicken-parm",
       "source": "commons",
-      "title": "File:A \"chicken parm pizza\" variant from Quality Italian in Denver, CO, USA.jpg",
-      "license": "CC BY-SA 4.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:A_%22chicken_parm_pizza%22_variant_from_Quality_Italian_in_Denver,_CO,_USA.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Gatorfan252525&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Gatorfan252525 (page does not exist)\">Gatorfan252525</a>"
+      "title": "File:\"Marry Me\" Chicken - PizzaExpress, Stanford Cottage, Worthing 2026-06-16.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:%22Marry_Me%22_Chicken_-_PizzaExpress,_Stanford_Cottage,_Worthing_2026-06-16.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>",
+      "note": "Chicken, tomato, mozzarella \u2014 closest Commons match to Chicken Parmesan pizza"
     },
     {
       "slug": "pizza-bbq-buffalo",
       "source": "commons",
-      "title": "File:Chicken BBQ Pizza.jpg",
+      "title": "File:BBQ CHICKEN PIZZA.jpg",
       "license": "CC BY-SA 4.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_BBQ_Pizza.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Cbhavani02&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Cbhavani02 (page does not exist)\">Cbhavani02</a>"
+      "page_url": "https://commons.wikimedia.org/wiki/File:BBQ_CHICKEN_PIZZA.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Zeeshan93&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Zeeshan93 (page does not exist)\">Zeeshan93</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "pizza-veggie",
       "source": "commons",
-      "title": "File:Vegetarian pizza.jpg",
-      "license": "CC BY 2.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Vegetarian_pizza.jpg",
-      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/69864026@N00\">Food Recipes</a>"
+      "title": "File:Vegetarian pizza platter.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Vegetarian_pizza_platter.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Gwasheya\" title=\"User:Gwasheya\">Gwasheya</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "pizza-philly",
       "source": "commons",
-      "title": "File:Papa John's Philly Cheesesteak Pizza (15892737857).jpg",
+      "title": "File:Papa John's Philly Cheesesteak Pizza Slice (15891055528).jpg",
       "license": "CC BY-SA 2.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Papa_John%27s_Philly_Cheesesteak_Pizza_(15892737857).jpg",
-      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/27410581@N07\">theimpulsivebuy</a>"
+      "page_url": "https://commons.wikimedia.org/wiki/File:Papa_John%27s_Philly_Cheesesteak_Pizza_Slice_(15891055528).jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/27410581@N07\">theimpulsivebuy</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "pizza-bville-special",
       "source": "commons",
-      "title": "File:Chicken pizza.jpg",
-      "license": "Public domain",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_pizza.jpg",
-      "artist": "Jon Sullivan"
+      "title": "File:Round Table chicken & garlic pizza.JPG",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Round_Table_chicken_%26_garlic_pizza.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:BrokenSphere\" title=\"User:BrokenSphere\">BrokenSphere</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "pizza-thai-chili",
       "source": "commons",
-      "title": "File:Thai Chicken Salad Pizza.jpg",
-      "license": "CC BY 2.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Thai_Chicken_Salad_Pizza.jpg",
-      "artist": "TheCulinaryGeek"
+      "title": "File:Kotipizza Pollo Americana.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Kotipizza_Pollo_Americana.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JIP&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JIP (page does not exist)\">JIP</a>",
+      "note": "Orange chili-style chicken pizza \u2014 closest match to Sesame Thai Chili"
     },
     {
       "slug": "pizza-don-pomodoro",
@@ -571,10 +579,11 @@
     {
       "slug": "pizza-combination",
       "source": "commons",
-      "title": "File:Supreme pizza.jpg",
-      "license": "Public domain",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Supreme_pizza.jpg",
-      "artist": "Scott Bauer"
+      "title": "File:Pizza with sausage, onion, pepperoni, olives and cheeses.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pizza_with_sausage,_onion,_pepperoni,_olives_and_cheeses.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7927684@N03\">jeffreyw</a>",
+      "note": "Retitled to match the printed pizza name"
     },
     {
       "slug": "platters-shrimp-kababs",
