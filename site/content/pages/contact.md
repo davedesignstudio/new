@@ -1,12 +1,24 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-16T12:00:00Z"
 title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Get in Touch
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+**Bville Pizza & Grill**  
+159 Morristown Rd  
+Bernardsville, NJ 07924
+
+**Phone:** [(908) 766-1666](tel:+19087661666)
+
+**Yelp:** [Bville Pizza & Grill on Yelp](https://www.yelp.com/biz/bville-pizza-and-grill-bernardsville)
+
+---
+
+## Request a Reservation
+
+Let us know when you'd like to dine with us and we'll get back to you shortly to confirm.
 
 <form name="reservation">
   <input type="text" placeholder="Your Name" name="name">

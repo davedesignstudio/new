@@ -1,14 +1,25 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-16T12:00:00Z"
 title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Welcome to Bville Pizza & Grill
 
----
+Located at 159 Morristown Road in Bernardsville, Bville Pizza & Grill brings together Mediterranean favorites and American comfort food under one roof. From chargrilled chicken and beef kababs to Philly cheesesteaks, fresh salads, and house-made pizza, there is something for everyone at our table.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Our kitchen serves generous portions of classics like hummus, falafel, gyro platters, and ribeye steak alongside burgers, wraps, and family-friendly kids meals. Whether you are stopping in for a quick lunch, picking up dinner for the family, or catering a gathering, our team is known for warm hospitality and food made with care.
 
-Sincerely,
-# Mr. Bojangles
+**Hours**
+
+- Monday–Friday: 11:00 AM – 9:30 PM
+- Saturday: 12:00 AM – 11:59 PM
+- Sunday: 11:00 AM – 9:30 PM
+
+**Contact**
+
+- Phone: [(908) 766-1666](tel:+19087661666)
+- Address: 159 Morristown Rd, Bernardsville, NJ 07924
+- [View us on Yelp](https://www.yelp.com/biz/bville-pizza-and-grill-bernardsville)
+
+We look forward to serving you!
