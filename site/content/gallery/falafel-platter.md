@@ -1,4 +1,4 @@
 ---
-title: Falafel platter
+title: Kabab salad
 image: /img/gallery/yelp-3.jpg
 ---

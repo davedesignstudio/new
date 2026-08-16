@@ -1,4 +1,4 @@
 ---
-title: Chicken kabab
+title: Side salad
 image: /img/gallery/yelp-5.jpg
 ---
