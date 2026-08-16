@@ -4,11 +4,23 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Welcome to B'Ville Pizza & Grill
 
----
+Located in the heart of Bernardsville, New Jersey, B'Ville Pizza & Grill has been serving the community since 2016. We're a family-owned restaurant blending Mediterranean flavors with classic American grill fare — and, of course, pizza made with care.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Whether you're stopping in for a quick lunch, picking up dinner for the family, or sitting down for a relaxed meal, you'll find generous portions, friendly service, and a menu that has something for everyone.
 
-Sincerely,
-# Mr. Bojangles
+### What We're Known For
+
+- **Fresh pizza** — from classic cheese to creative specialty pies
+- **Mediterranean favorites** — gyros, kabobs, falafel, hummus, and more
+- **Grill classics** — burgers, sandwiches, salads, and hearty platters
+- **Warm hospitality** — our team goes out of their way to make every guest feel welcome
+
+### Visit Us
+
+**Address:** 159 Morristown Rd, Bernardsville, NJ 07924  
+**Phone:** (908) 766-1666  
+**Hours:** Monday – Sunday, 11:00 AM – 9:00 PM
+
+We look forward to seeing you!

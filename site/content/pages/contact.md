@@ -4,13 +4,26 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Get in Touch
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+We'd love to hear from you! Call us to place an order, ask about catering, or let us know when you'd like to dine in.
 
-<form name="reservation">
+**B'Ville Pizza & Grill**  
+159 Morristown Rd  
+Bernardsville, NJ 07924
+
+**Phone:** [(908) 766-1666](tel:+19087661666)  
+**Hours:** Monday – Sunday, 11:00 AM – 9:00 PM
+
+[View us on Yelp](https://www.yelp.com/biz/bville-pizza-and-grill-bernardsville)
+
+---
+
+## Send Us a Message
+
+<form name="contact">
   <input type="text" placeholder="Your Name" name="name">
   <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
+  <textarea name="message" placeholder="Your message or reservation request"></textarea>
   <button>Send</button>
 </form>
