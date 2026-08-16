@@ -1,9 +1,8 @@
-import FrescoArt from '../art/FrescoArt';
-import { getCategoryVariant } from '../data/images';
+import { getCategoryPhotoUrl } from '../data/photos';
 
 export default function CategoryNav(props) {
   return (
-    <nav class="category-nav" aria-label="Categorie menu">
+    <nav class="category-nav" aria-label="Menu categories">
       <div class="container">
         <ul class="category-list">
           {props.categories.map((cat) => (
@@ -15,11 +14,12 @@ export default function CategoryNav(props) {
                 onClick={() => props.onSelect(cat.id)}
               >
                 <span class="category-thumb fresco-frame fresco-frame--round">
-                  <FrescoArt
-                    class="category-art"
-                    variant={getCategoryVariant(cat.id)}
-                    type="category"
-                    label={cat.label}
+                  <img
+                    class="category-photo"
+                    src={getCategoryPhotoUrl(cat.id)}
+                    alt=""
+                    width="72"
+                    height="72"
                   />
                 </span>
                 <span class="category-label">{cat.label}</span>

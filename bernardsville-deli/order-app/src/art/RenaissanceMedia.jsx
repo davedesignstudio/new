@@ -66,13 +66,9 @@ export default function RenaissanceMedia(props) {
     return getPhotoUrl(key, group);
   };
 
-  const photoSrc = () => {
-    const museum = museumRec();
-    if (prefersMuseum() && museum?.image) return museum.image;
-    return unsplashSrc();
-  };
+  const photoSrc = () => unsplashSrc();
 
-  const usingMuseum = () => Boolean(prefersMuseum() && museumRec()?.image && !errored());
+  const usingMuseum = () => false;
 
   const ariaLabel = () => {
     if (usingMuseum()) {
