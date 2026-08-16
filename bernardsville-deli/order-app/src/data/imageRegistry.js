@@ -267,7 +267,7 @@ export const STORY_ID_TO_KEY = {
   'impasto-24-ore': 'impasto',
   'sfogliatella-mare': 'sfogliatella',
   'vesuvio-vigilia': 'vesuvio',
-  'antica-pizzeria': 'tribunali',
+  'antica-pizzeria': 'forno',
 };
 
 /** Fresco SVG art variants — geometric Renaissance illustrations */

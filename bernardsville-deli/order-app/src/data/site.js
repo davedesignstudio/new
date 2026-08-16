@@ -20,9 +20,9 @@ export const SITE = {
     'Cafe Robust coffee daily',
   ],
   origin: {
-    headline: 'Same kitchen. New flame. Order stone-oven pizza and grill favorites for pickup or delivery.',
+    headline: 'Pickup at 159 Morristown Rd. Delivery to the Hills. Order stone-oven pizza and grill plates from this kitchen.',
     pullQuote:
-      'We didn’t change the heart of the place — we gave it a louder welcome.',
+      'This is the official order page — not an app marketplace.',
   },
   photoCredit:
     'Photos & art for demo ordering · Bville Pizza & Grill, Bernardsville NJ',

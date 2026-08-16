@@ -6,15 +6,15 @@ export const STORY_STAGE_CHOICES = {
     knead: [
       {
         id: 'promise',
-        label: 'La promessa del 1738',
-        hint: 'Tre secoli di fuoco — non tradire il tempo.',
+        label: 'Keep the pass lit',
+        hint: 'Same kitchen as The Grill — do not rush the dough.',
         correct: true,
         bonus: 12,
       },
       {
         id: 'rush',
-        label: 'Chiudere presto stasera',
-        hint: 'La città può aspettare, il forno no.',
+        label: 'Close early tonight',
+        hint: 'Morristown Road still wants pies.',
         correct: false,
         bonus: 0,
       },
@@ -22,16 +22,16 @@ export const STORY_STAGE_CHOICES = {
     stretch: [
       {
         id: 'tribunali',
-        label: 'Stendi come sul pavimento storico',
-        hint: 'Dal centro al bordo, con rispetto.',
+        label: 'Stretch for the stone oven',
+        hint: 'Center to rim, like a Friday Bville Special.',
         correct: true,
         bonus: 10,
         stretchHint: 78,
       },
       {
         id: 'thin',
-        label: 'Pizza sottile da asporto',
-        hint: 'Veloce, ma non è la nostra strada.',
+        label: 'Paper-thin for the app bag',
+        hint: 'Fast, but that is not this kitchen.',
         correct: false,
         bonus: 0,
         stretchHint: 55,
@@ -40,8 +40,8 @@ export const STORY_STAGE_CHOICES = {
     top: [
       {
         id: 'tricolor',
-        label: 'I colori di Napoli',
-        hint: 'Pomodoro, mozzarella, basilico — equilibrio.',
+        label: 'Name the pie',
+        hint: 'Sauce, mozzarella, basil — a pie with a name, not «famous pizza».',
         correct: true,
         bonus: 12,
         wantsSauce: true,
@@ -50,8 +50,8 @@ export const STORY_STAGE_CHOICES = {
       },
       {
         id: 'plain',
-        label: 'Solo il necessario',
-        hint: 'Pochi ingredienti, ma non vuota.',
+        label: 'Whatever is left',
+        hint: 'NJ shops name the dish. Empty is not a name.',
         correct: false,
         bonus: 0,
         wantsSauce: true,
@@ -62,16 +62,16 @@ export const STORY_STAGE_CHOICES = {
     bake: [
       {
         id: 'first-flame',
-        label: 'La prima fiamma',
-        hint: 'Cottura dorata — senti la cenere antica.',
+        label: 'Stone heat, not a blaze',
+        hint: 'Golden rim — this oven, this road.',
         correct: true,
         bonus: 12,
         bakeHint: 72,
       },
       {
         id: 'blaze',
-        label: 'Fuoco al massimo',
-        hint: 'Troppo aggressivo per un forno antico.',
+        label: 'Crank it like a marketplace timer',
+        hint: 'Too hot, too fast — the box will taste like haste.',
         correct: false,
         bonus: 0,
         bakeHint: 90,

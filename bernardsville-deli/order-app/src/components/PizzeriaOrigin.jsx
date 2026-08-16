@@ -12,7 +12,7 @@ export default function PizzeriaOrigin(props) {
   const copy = () => resolveSiteOrigin(lang());
 
   return (
-    <section id="la-nostra-storia" class="pizzeria-origin fresco-maiolica" aria-labelledby="origin-heading">
+    <section id="our-story" class="pizzeria-origin fresco-maiolica" aria-labelledby="origin-heading">
       <div class="container">
         <div class="origin-layout fresco-card-bg" classList={{ 'origin-layout--blend': lang() === 'blend' }}>
           <div class="origin-media fresco-frame fresco-frame--arch">

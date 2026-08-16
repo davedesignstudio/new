@@ -6,25 +6,24 @@ export const STORY_LANG_KEY = 'bville-order-story-lang';
 
 export const STORY_BLEND = {
   'antica-pizzeria': {
-    tag: 'Foundation / Основание',
-    year: '1738 — today / сегодня',
-    title: 'Antica Pizzeria Napoletana',
+    tag: 'This kitchen / Эта кухня',
+    year: '159 Morristown Rd',
+    title: 'The Grill Becomes Bville / Гриль становится Bville',
     subtitle:
-      'A family, a forno, and a street that never stops feeding Naples — семья, печь и улица, которая кормит Неаполь уже три века',
+      'Same pass, stone-oven pies, grill plates — order here, not the app / Та же линия, пицца из печи, гриль — заказ здесь, не в чужом приложении',
     excerpt:
-      'At number 32, Via dei Tribunali — на Via dei Tribunali, 32 — there is more than a pizzeria. Здесь живёт обещание, данное триста лет назад: keep the fire burning, даже когда весь город дрожит.',
+      'This address was The Grill. The name changed. The kitchen did not. / Этот адрес был The Grill. Имя сменилось. Кухня — нет. Order pizza, kabobs, burgers, and Cafe Robust from the official page — pickup or delivery, no marketplace in the middle.',
     pullQuote:
-      'At number 32 there is more than a pizzeria. На этом адресе — не просто еда. A promise made three hundred years ago: держать огонь живым, even when the city trembles.',
+      'NJ shops that work lead with the phone, the hours, and the road. / Рабочие пиццерии Нью-Джерси начинают с телефона, часов и улицы. We do too: 159 Morristown Rd. Order from this kitchen.',
     body: [
-      'They say you can recognize Naples by the noise at noon — scooters, voices, pots, laughter. Говорят, Неаполь узнаёшь по полуденному шуму. But anyone who has walked Via dei Tribunali even once knows another sound — older, lower — beneath everything else. That\'s it. A warm, steady, patient hiss. For three centuries, at number 32, someone listens to it the way you listen to a loved one\'s heartbeat.',
-      'Our story begins in 1738, when Raffaele Esposito — baker, almost-sailor, man of few words and many embers — decided this alley deserved more than round bread. He lit a wood-fired oven with chestnut wood from Castellammare, and began stretching dough for the neighbors: printers with ink-black hands, fishermen who smelled of salt, kids from Spaccanapoli stealing the crust and running away laughing. It was not yet «Antica Pizzeria Napoletana». Just a shelter. Let\'s not forget the story.',
-      'Generations passed like tomato seasons. Teresa mixed the sourdough we still use. Винченцо brought pizza to Queen Margherita and returned with a letter — yellowed now, but not extinguished. Nonno Antonio kept the oven lit on the night Vesuvius woke in 1944, when ash covered the roofs and marinara became shared bread. Nonna Carmela sang *O sole mio* as she relit the coals after the only night the fire truly went out. Каждый оставил жест. No one left the shop.',
-      'We came after, with the same hands and a task simple to explain, hard to keep: do not betray time. The dough rests twenty-four hours because yeast does not lie. Моцарелла приезжает из сыроварен, whose names we know. Basil still smells of a garden that no longer exists — but survives in the memory of whoever watered it. The oven was rebuilt three times; the elders say the ashes still hold a grain of the first flame. Мы не знаем наверняка. We feel it.',
-      'Via dei Tribunali today glows with neon, tourists, queues, photographs. Но когда открываешь нашу дверь, the noise steps back. You see marble worn by centuries of footsteps, the royal letter in the window, steam rising from the counter like secular incense. Order a Margherita — получаешь два века balance: red, white, green. Order marinara — a night of war and generosity. Order sfogliatella — the nuns of Santa Rosa and the Amalfi sea.',
-      'Antica Pizzeria Napoletana is not a nostalgic name. It is a commitment. *Antica* — because the fire comes from far away. *Pizzeria* — because we chose nothing else. *Napoletana* — because this city is not decoration: it is the secret ingredient, not on the label, but in every bite. If you eat with us — at the table, to go, or with a click from far away — you are not just buying pizza. Ты входишь в историю, written every evening, one dough at a time, as long as someone believes the oven is worth lighting.',
+      'Serious New Jersey pizzerias do not open with a Naples alley. They open with a number, a clock, and a street. / Серьёзные пиццерии Нью-Джерси не открываются неаполитанским переулком. Papa\'s writes takeout and delivery open to close. R&J in Rahway says order directly — skip the third-party fees. Kinchley\'s and Star put the phone under the name. We do the same: 159 Morristown Rd, Bernardsville. (908) 766-1666. Pickup at the counter. Delivery to the Hills.',
+      'For years this room was The Grill — wings on game night, paninis at lunch, kabobs that survived the ride to Far Hills. / Годами это был The Grill. The rename to Bville Pizza & Grill is not a museum reset. It is the move neighborhood shops make when the stone oven joins the pass: Mediterranean and American plates you already ordered, plus pies from the same line. Regulars still say «the usual». First-timers come for the Bville Special and stay for the rest of the board.',
+      'Shops that last in this state name the pie. They do not say «our famous pizza». / Те, кто держится, называют блюдо. Papa\'s has Mustard Pie. Tuccillo\'s lists dine-in, call, pickup, delivery, drive-thru. Razza in Jersey City will not even let you call it Neapolitan. We will not invent 1738. We have a stone oven and a grill. Margherita. Bville Special. Kabob. Angus. Cafe Robust before noon.',
+      'If you order on this page, you order from the kitchen. / Если заказываешь здесь — заказываешь с кухни. Not from a marketplace that keeps a cut and cools the box. Pickup: your name at the counter. Delivery: an address in the Somerset Hills. The printed boards are still orange — garden, headlines, stone oven, sweet endings. Here the same menu gets built, paid, and bagged.',
+      'The Grill becomes Bville is not a vitrine legend. It is a road fact. / Это не легенда в витрине. Это факт улицы. Same kitchen. New oven. Official order. If you eat with us — in a booth, in the car, or with a click from Basking Ridge — you are not buying a myth. You are ordering from 159 Morristown Rd, as long as someone keeps the pass lit.',
     ],
-    readTime: '6 min / 6 мин',
-    cta: 'Read the full story / Читать дальше →',
+    readTime: '4 min / 4 мин',
+    cta: 'Read the kitchen story / Читать историю кухни →',
   },
   'forno-1738': {
     tag: 'Origins / Истоки',
@@ -114,11 +113,11 @@ export const STORY_BLEND = {
 
 export const SITE_BLEND = {
   originHeadline:
-    'Three centuries of fire, family, and faith in one dough — три века огня, семьи и веры в одном тесте',
+    'Pickup at 159 Morristown Rd. Delivery to the Hills. / Самовывоз на Morristown Road. Доставка по холмам.',
   originPullQuote:
-    'At number 32 there is more than a pizzeria. На этом адресе — не просто еда. A promise from three hundred years ago: держать огонь живым, even when the city trembles.',
+    'This is the official order page — stone-oven pies and grill plates from this kitchen, not an app marketplace. / Официальный заказ: пицца из печи и гриль с этой кухни, не с чужого сервиса.',
   storiesIntro:
-    'Seven tales — from foundation to Vesuvius — written by fire and Naples\' memory. Семь историй, написанных огнём и памятью Неаполя.',
+    'Kitchen stories from a New Jersey shop: the rename, the stone oven, the road. / Истории кухни в Нью-Джерси: новое имя, каменная печь, дорога.',
 };
 
 export function loadStoryLang() {
@@ -162,10 +161,10 @@ export function resolveSiteOrigin(lang = 'blend') {
   if (lang === 'it') {
     return {
       headline: SITE.origin?.headline
-        || 'Same kitchen. New flame. Order stone-oven pizza and grill favorites for pickup or delivery.',
+        || 'Pickup at 159 Morristown Rd. Delivery to the Hills. Order stone-oven pizza and grill plates from this kitchen.',
       pullQuote: SITE.origin?.pullQuote
-        || 'We didn’t change the heart of the place — we gave it a louder welcome.',
-      storiesIntro: 'Stories from the grill, the stone oven, and Cafe Robust.',
+        || 'This is the official order page — not an app marketplace.',
+      storiesIntro: 'Kitchen stories from this shop: the rename, the stone oven, the road.',
       cta: 'Read the full story →',
       readTimeSuffix: 'read',
       orderPrefix: 'Order',

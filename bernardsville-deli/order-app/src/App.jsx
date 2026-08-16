@@ -56,9 +56,9 @@ function HeroBanner() {
               <span class="divider-line" />
               <span>✦</span>
             </div>
-            <a href="#menu" class="hero-story-link">Build your pizza</a>
+            <a href="#menu" class="hero-story-link">Start an order</a>
+            <a href={`tel:${SITE.phone.replace(/\D/g, '')}`} class="hero-story-link hero-story-link--secondary">Call {SITE.phone}</a>
             <a href={SITE.menuPage} class="hero-story-link hero-story-link--secondary">Full printed menu</a>
-            <a href="#gioco" class="hero-game-link">Play: pizza maker →</a>
           </div>
         </div>
       </div>

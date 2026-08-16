@@ -17,7 +17,7 @@ export default function StoriesSection(props) {
           <div class="stories-header-rose" aria-hidden="true">
             <RenaissanceOrnament variant="rose" />
           </div>
-          <h2 id="stories-heading">Le Nostre Storie</h2>
+          <h2 id="stories-heading">{lang() === 'blend' ? 'Kitchen stories / Истории кухни' : 'Le storie della cucina'}</h2>
           <p class="stories-intro story-blend-text">
             {copy().storiesIntro}
           </p>
