@@ -206,7 +206,76 @@ function item_slug(string $name): string
     return trim($slug, '-');
 }
 
-function print_title(string $title, string $class = 'print-title'): string
+/**
+ * Render a print title as the branded wordmark PNG file.
+ *
+ * @param string      $title    Accessible alt text / fallback label
+ * @param string      $class    CSS class list (supports print-title--hero / --poster)
+ * @param string|null $wordmark Optional wordmark slug (file under assets/brand/wordmarks/)
+ */
+function print_title(string $title, string $class = 'print-title', ?string $wordmark = null): string
 {
-    return sprintf('<span class="%s">%s</span>', e($class), e($title));
+    $slug = $wordmark ?? print_title_wordmark_slug($title);
+    $rel = 'assets/brand/wordmarks/' . $slug . '.png';
+    $fs = dirname(__DIR__, 2) . '/public/' . $rel;
+
+    if (!is_file($fs)) {
+        return sprintf('<span class="%s">%s</span>', e($class), e($title));
+    }
+
+    $width = 640;
+    $height = 180;
+    if (str_contains($class, 'print-title--hero')) {
+        $width = 720;
+        $height = 220;
+    } elseif (str_contains($class, 'print-title--poster')) {
+        $width = 480;
+        $height = 160;
+    }
+
+    return sprintf(
+        '<img class="%s" src="%s" alt="%s" width="%d" height="%d" decoding="async" />',
+        e($class),
+        e(asset_url($rel)),
+        e($title),
+        $width,
+        $height
+    );
+}
+
+function print_title_wordmark_slug(string $title): string
+{
+    static $map = [
+        'Bville' => 'bville',
+        'The Menu' => 'the-menu',
+        'Catering' => 'catering',
+        'Contact' => 'contact',
+        'Visit' => 'visit',
+        'Coffee Menu' => 'coffee-menu',
+        'The bag' => 'the-bag',
+        'From the boards' => 'from-the-boards',
+        'From The Garden' => 'garden',
+        'Starters' => 'starters',
+        'Shakes' => 'shakes',
+        'Burgers' => 'burgers',
+        'Wraps' => 'wraps',
+        'Wrap & Roll' => 'wraps',
+        'Pasta' => 'pasta',
+        'Pastabilities' => 'pasta',
+        'Philly Cheese Steak' => 'cheesesteak',
+        'Cheesesteak' => 'cheesesteak',
+        'Sandwiches' => 'sandwiches',
+        'Panini' => 'panini',
+        'Stone Oven Baked' => 'pizza',
+        'Headlines' => 'platters',
+        "Kids' Menu" => 'kids',
+        'Kids Menu' => 'kids',
+        'Sweet Endings' => 'desserts',
+    ];
+
+    if (isset($map[$title])) {
+        return $map[$title];
+    }
+
+    return item_slug($title);
 }

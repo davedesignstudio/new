@@ -49,7 +49,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
           <span class="print-watermark" aria-hidden="true"><?= e($section['watermark']) ?></span>
         <?php endif; ?>
         <h2 class="print-heading">
-          <?= print_title($section['title']) ?>
+          <?= print_title($section['title'], 'print-title', $section['wordmark'] ?? $section['id']) ?>
         </h2>
         <?php if (!empty($section['note'])): ?>
           <p class="print-note"><?= e($section['note']) ?></p>

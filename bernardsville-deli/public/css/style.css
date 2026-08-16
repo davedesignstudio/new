@@ -52,25 +52,20 @@ address { font-style: normal; }
 
 .skip-link:focus { left: 1rem; top: 1rem; }
 
-/* Titles — live script, orange fill, dark stroke, no backdrop */
+/* Titles — branded wordmark PNG files from the printed menu */
 .print-title {
-  font-family: var(--font-script);
-  font-weight: 700;
-  font-style: normal;
-  font-size: clamp(2.1rem, 5vw, 3.35rem);
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  color: var(--orange);
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  max-width: 100%;
   background: none;
-  -webkit-text-fill-color: var(--orange);
-  -webkit-text-stroke: 2.35px var(--ink);
-  paint-order: stroke fill;
-  display: inline-block;
+  -webkit-text-fill-color: unset;
+  -webkit-text-stroke: 0;
+  filter: none;
 }
 
 .print-title--hero {
-  font-size: clamp(3.4rem, 10vw, 6.2rem);
-  -webkit-text-stroke-width: 3.5px;
+  width: min(100%, 560px);
 }
 
 .print-title--poster {
@@ -78,11 +73,9 @@ address { font-style: normal; }
   left: 50%;
   bottom: 1.1rem;
   transform: translateX(-50%);
-  width: max-content;
+  width: min(86%, 420px);
   max-width: 90%;
-  text-align: center;
-  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
-  -webkit-text-stroke-width: 2.8px;
+  height: auto;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
 }
 
@@ -474,6 +467,10 @@ address { font-style: normal; }
 .section-header h2 {
   margin: 0 0 0.35rem;
   line-height: 1;
+}
+
+.section-header h2 .print-title {
+  margin-inline: auto;
 }
 
 .section-header h2::after { display: none; }
