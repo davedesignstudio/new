@@ -772,3 +772,71 @@ video {
   left: 0;
   z-index: -1;
 }
+
+.home-hero {
+  position: relative;
+  padding: 0;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (min-width: 48em) {
+  .home-hero {
+    margin-left: 20rem;
+    margin-right: 0;
+    max-width: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .home-hero {
+    margin-left: 22rem;
+  }
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 8rem);
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: 4px;
+
+  h2 {
+    color: #fff;
+    margin: 0 0 0.25rem;
+    font-family: "Rock Salt", cursive;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+}
+
+.hero-yelp-link {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: #d32323;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  &:hover, &:focus {
+    background: #a61c1c;
+    color: #fff;
+  }
+}
