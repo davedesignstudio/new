@@ -62,6 +62,7 @@ export const MENU_ITEMS = [
     basePrice: 9.95,
     badge: 'Build',
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: [],
   },
   {
@@ -72,6 +73,7 @@ export const MENU_ITEMS = [
     basePrice: 13.95,
     badge: 'Classic',
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['basil'],
   },
   {
@@ -81,6 +83,7 @@ export const MENU_ITEMS = [
     description: 'Pepperoni, sausage, bacon & meatballs.',
     basePrice: 14.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['pepperoni', 'sausage', 'bacon', 'meatball'],
   },
   {
@@ -90,6 +93,7 @@ export const MENU_ITEMS = [
     description: 'Mozzarella & ricotta cheese.',
     basePrice: 13.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['ricotta'],
   },
   {
@@ -99,6 +103,7 @@ export const MENU_ITEMS = [
     description: 'Breaded chicken cutlet, pomodoro, mozzarella & fresh basil.',
     basePrice: 14.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['chicken', 'basil'],
   },
   {
@@ -108,6 +113,7 @@ export const MENU_ITEMS = [
     description: 'Choose BBQ or buffalo sauce with chicken.',
     basePrice: 15.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['chicken'],
   },
   {
@@ -118,6 +124,7 @@ export const MENU_ITEMS = [
     basePrice: 12.95,
     badge: 'Veg',
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['peppers', 'onions', 'mushrooms', 'olives'],
   },
   {
@@ -127,6 +134,7 @@ export const MENU_ITEMS = [
     description: 'Sautéed beef, onions, peppers, mushrooms & mozzarella with American cheese.',
     basePrice: 15.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['onions', 'peppers', 'mushrooms'],
   },
   {
@@ -137,6 +145,7 @@ export const MENU_ITEMS = [
     basePrice: 14.95,
     badge: 'House',
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['shawarma', 'onions', 'tomato'],
   },
   {
@@ -147,6 +156,7 @@ export const MENU_ITEMS = [
     basePrice: 14.95,
     badge: 'Spicy',
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['chicken'],
   },
   {
@@ -156,6 +166,7 @@ export const MENU_ITEMS = [
     description: 'Mozzarella, fresh plum tomatoes, basil, grated pecorino.',
     basePrice: 13.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['tomato', 'basil'],
   },
   {
@@ -165,6 +176,7 @@ export const MENU_ITEMS = [
     description: 'Pepperoni, sausage, mushroom, onion & peppers.',
     basePrice: 14.95,
     customizable: true,
+    photo: '/assets/photos/pizza.jpg',
     defaultToppings: ['pepperoni', 'sausage', 'mushrooms', 'onions', 'peppers'],
   },
   {
@@ -174,6 +186,7 @@ export const MENU_ITEMS = [
     description: 'Angus beef, lettuce, tomato, onion — add cheese if you like.',
     basePrice: 10.95,
     customizable: false,
+    photo: '/assets/photos/burger.jpg',
   },
   {
     id: 'boom-boom',
@@ -182,6 +195,7 @@ export const MENU_ITEMS = [
     description: 'House favorite with spicy boom boom sauce.',
     basePrice: 12.95,
     customizable: false,
+    photo: '/assets/photos/burger.jpg',
   },
   {
     id: 'wings',
@@ -190,6 +204,7 @@ export const MENU_ITEMS = [
     description: 'Buffalo, teriyaki, BBQ or sweet chili with carrots & celery.',
     basePrice: 8.95,
     customizable: false,
+    photo: '/assets/photos/plated-grill.jpg',
   },
   {
     id: 'mozz-sticks',
@@ -198,6 +213,7 @@ export const MENU_ITEMS = [
     description: 'Golden-fried with marinara.',
     basePrice: 7.95,
     customizable: false,
+    photo: '/assets/photos/grill.jpg',
   },
   {
     id: 'chicken-wrap',
@@ -206,6 +222,7 @@ export const MENU_ITEMS = [
     description: 'Lettuce, tomato, cheese & house dressing.',
     basePrice: 10.95,
     customizable: false,
+    photo: '/assets/photos/wraps.jpg',
   },
   {
     id: 'gelato',
@@ -215,6 +232,7 @@ export const MENU_ITEMS = [
     basePrice: 5.95,
     badge: '5.95',
     customizable: false,
+    photo: '/assets/photos/gelato-pistachio.png',
   },
   {
     id: 'house-blend',
@@ -223,6 +241,7 @@ export const MENU_ITEMS = [
     description: 'Dark roast, smooth finish.',
     basePrice: 2.99,
     customizable: false,
+    photo: '/assets/photos/coffee.jpg',
   },
   {
     id: 'latte',
@@ -231,9 +250,14 @@ export const MENU_ITEMS = [
     description: 'Espresso with steamed milk.',
     basePrice: 4.99,
     customizable: false,
+    photo: '/assets/photos/cafe-dining.jpg',
   },
 ];
 
+/** Pizza-only customization gate */
+export function isPizzaItem(item) {
+  return Boolean(item && item.category === 'pizza' && item.customizable);
+}
 export function getMenuItemById(id) {
   return MENU_ITEMS.find((item) => item.id === id);
 }

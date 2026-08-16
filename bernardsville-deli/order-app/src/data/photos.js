@@ -47,11 +47,41 @@ export function getStoryPhotoUrl(storyId) {
 }
 
 export function getFoodPhotoUrl(itemId) {
-  return FOOD_PHOTOS[itemId] ?? FOOD_PHOTOS.margherita;
+  const local = {
+    classic: '/assets/photos/pizza.jpg',
+    margherita: '/assets/photos/pizza.jpg',
+    'meat-lovers': '/assets/photos/pizza.jpg',
+    'white-pie': '/assets/photos/pizza.jpg',
+    'chicken-parm': '/assets/photos/pizza.jpg',
+    'bbq-buffalo': '/assets/photos/pizza.jpg',
+    veggie: '/assets/photos/pizza.jpg',
+    philly: '/assets/photos/pizza.jpg',
+    'bville-special': '/assets/photos/pizza.jpg',
+    'thai-chili': '/assets/photos/pizza.jpg',
+    'don-pomodoro': '/assets/photos/pizza.jpg',
+    combination: '/assets/photos/pizza.jpg',
+    'classic-burger': '/assets/photos/burger.jpg',
+    'boom-boom': '/assets/photos/burger.jpg',
+    wings: '/assets/photos/plated-grill.jpg',
+    'mozz-sticks': '/assets/photos/grill.jpg',
+    'chicken-wrap': '/assets/photos/wraps.jpg',
+    gelato: '/assets/photos/gelato-pistachio.png',
+    'house-blend': '/assets/photos/coffee.jpg',
+    latte: '/assets/photos/cafe-dining.jpg',
+  };
+  return local[itemId] ?? FOOD_PHOTOS[itemId] ?? local['classic-burger'];
 }
 
 export function getCategoryPhotoUrl(categoryId) {
-  return CATEGORY_PHOTOS[categoryId] ?? CATEGORY_PHOTOS.pizza;
+  const local = {
+    pizza: '/assets/photos/pizza.jpg',
+    burgers: '/assets/photos/burger.jpg',
+    starters: '/assets/photos/plated-grill.jpg',
+    wraps: '/assets/photos/wraps.jpg',
+    desserts: '/assets/photos/gelato-mascarpone.png',
+    drinks: '/assets/photos/coffee.jpg',
+  };
+  return local[categoryId] ?? CATEGORY_PHOTOS[categoryId] ?? local.starters;
 }
 
 export function getPhotoMeta(group, key) {

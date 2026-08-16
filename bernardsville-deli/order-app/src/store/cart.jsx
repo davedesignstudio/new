@@ -10,7 +10,14 @@ export function CartProvider(props) {
   const [orderType, setOrderType] = createSignal('delivery');
   const [address, setAddress] = createSignal('');
   const [cartOpen, setCartOpen] = createSignal(false);
-  const [builderItem, setBuilderItem] = createSignal(null);
+  const [builderItem, setBuilderItemRaw] = createSignal(null);
+  const setBuilderItem = (item) => {
+    if (item && item.category !== 'pizza') {
+      setBuilderItemRaw(null);
+      return;
+    }
+    setBuilderItemRaw(item);
+  };
   const [store, setStore] = createStore({ items: [] });
 
   const addItem = (item, options = null) => {
@@ -23,7 +30,7 @@ export function CartProvider(props) {
         name: item.name,
         price,
         quantity: 1,
-        options,
+        options: item.category === 'pizza' ? options : null,
       },
     ]);
     setCartOpen(true);

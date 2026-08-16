@@ -37,11 +37,46 @@ export const ART_VARIANTS = {
 };
 
 export function foodVariant(id) {
-  return ART_VARIANTS.food.includes(id) ? id : 'margherita';
+  const map = {
+    classic: 'margherita',
+    margherita: 'margherita',
+    'meat-lovers': 'diavola',
+    'white-pie': 'bufala',
+    'chicken-parm': 'capricciosa',
+    'bbq-buffalo': 'diavola',
+    veggie: 'quattro-stagioni',
+    philly: 'napoletana',
+    'bville-special': 'capricciosa',
+    'thai-chili': 'diavola',
+    'don-pomodoro': 'margherita',
+    combination: 'quattro-stagioni',
+    'classic-burger': 'polpette',
+    'boom-boom': 'polpette',
+    wings: 'frittatina',
+    'mozz-sticks': 'frittatina',
+    'chicken-wrap': 'bruschetta',
+    gelato: 'sfogliatella',
+    'house-blend': 'acqua',
+    latte: 'limoncello',
+  };
+  return map[id] ?? (ART_VARIANTS.food.includes(id) ? id : 'bruschetta');
 }
 
 export function categoryVariant(id) {
-  return ART_VARIANTS.category.includes(id) ? id : 'pizza';
+  const map = {
+    pizza: 'pizza',
+    burgers: 'secondi',
+    starters: 'antipasti',
+    wraps: 'secondi',
+    desserts: 'dolci',
+    drinks: 'bevande',
+    antipasti: 'antipasti',
+    secondi: 'secondi',
+    contorni: 'contorni',
+    dolci: 'dolci',
+    bevande: 'bevande',
+  };
+  return map[id] ?? (ART_VARIANTS.category.includes(id) ? id : 'antipasti');
 }
 
 export function storyVariant(id) {

@@ -63,7 +63,7 @@ export default function PizzaBuilder() {
   const close = () => cart.setBuilderItem(null);
 
   return (
-    <Show when={item()}>
+    <Show when={item() && item().category === 'pizza'}>
       <div class="modal-overlay" onClick={close} role="presentation">
         <div
           class="modal pizza-builder"

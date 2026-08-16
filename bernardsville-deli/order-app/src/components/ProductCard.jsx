@@ -1,4 +1,4 @@
-import { formatPrice } from '../data/menu';
+import { formatPrice, isPizzaItem } from '../data/menu';
 import { getStoryForDish } from '../data/stories';
 import { useCart } from '../store/cart';
 import ProductImage from './ProductImage';
@@ -7,9 +7,10 @@ export default function ProductCard(props) {
   const cart = useCart();
   const item = () => props.item;
   const story = () => getStoryForDish(item().id);
+  const canCustomize = () => isPizzaItem(item());
 
   const handleAction = () => {
-    if (item().customizable) {
+    if (canCustomize()) {
       cart.setBuilderItem(item());
     } else {
       cart.addItem(item());
@@ -40,9 +41,11 @@ export default function ProductCard(props) {
           </button>
         )}
         <div class="product-footer">
-          <span class="product-price">from {formatPrice(item().basePrice)}</span>
+          <span class="product-price">
+            {canCustomize() ? `from ${formatPrice(item().basePrice)}` : formatPrice(item().basePrice)}
+          </span>
           <button type="button" class="btn-add" onClick={handleAction}>
-            {item().customizable ? 'Customize' : 'Add'}
+            {canCustomize() ? 'Customize' : 'Add'}
           </button>
         </div>
       </div>
