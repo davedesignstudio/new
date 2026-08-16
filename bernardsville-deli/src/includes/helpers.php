@@ -207,53 +207,53 @@ function item_slug(string $name): string
 }
 
 /**
- * Render a print title as the branded wordmark PNG file.
+ * Render a print title.
+ * Menu section titles with designed wordmark art use transparent PNGs.
+ * Other titles use live Parkside text (no background).
  *
- * @param string      $title    Accessible alt text / fallback label
+ * @param string      $title    Accessible label / live text
  * @param string      $class    CSS class list (supports print-title--hero / --poster)
- * @param string|null $wordmark Optional wordmark slug (file under assets/brand/wordmarks/)
+ * @param string|null $wordmark Optional wordmark slug under assets/brand/wordmarks/
  */
 function print_title(string $title, string $class = 'print-title', ?string $wordmark = null): string
 {
+    static $graphicWordmarks = [
+        'garden', 'starters', 'shakes', 'burgers', 'wraps', 'pasta',
+        'cheesesteak', 'sandwiches', 'panini', 'pizza', 'platters', 'kids', 'desserts',
+    ];
+
     $slug = $wordmark ?? print_title_wordmark_slug($title);
     $rel = 'assets/brand/wordmarks/' . $slug . '.png';
     $fs = dirname(__DIR__, 2) . '/public/' . $rel;
+    $useGraphic = in_array($slug, $graphicWordmarks, true) && is_file($fs);
 
-    if (!is_file($fs)) {
-        return sprintf('<span class="%s">%s</span>', e($class), e($title));
+    if ($useGraphic) {
+        $width = 640;
+        $height = 180;
+        if (str_contains($class, 'print-title--hero')) {
+            $width = 720;
+            $height = 220;
+        } elseif (str_contains($class, 'print-title--poster')) {
+            $width = 480;
+            $height = 160;
+        }
+
+        return sprintf(
+            '<img class="%s print-title--img" src="%s" alt="%s" width="%d" height="%d" decoding="async" />',
+            e($class),
+            e(asset_url($rel)),
+            e($title),
+            $width,
+            $height
+        );
     }
 
-    $width = 640;
-    $height = 180;
-    if (str_contains($class, 'print-title--hero')) {
-        $width = 720;
-        $height = 220;
-    } elseif (str_contains($class, 'print-title--poster')) {
-        $width = 480;
-        $height = 160;
-    }
-
-    return sprintf(
-        '<img class="%s" src="%s" alt="%s" width="%d" height="%d" decoding="async" />',
-        e($class),
-        e(asset_url($rel)),
-        e($title),
-        $width,
-        $height
-    );
+    return sprintf('<span class="%s print-title--text">%s</span>', e($class), e($title));
 }
 
 function print_title_wordmark_slug(string $title): string
 {
     static $map = [
-        'Bville' => 'bville',
-        'The Menu' => 'the-menu',
-        'Catering' => 'catering',
-        'Contact' => 'contact',
-        'Visit' => 'visit',
-        'Coffee Menu' => 'coffee-menu',
-        'The bag' => 'the-bag',
-        'From the boards' => 'from-the-boards',
         'From The Garden' => 'garden',
         'Starters' => 'starters',
         'Shakes' => 'shakes',

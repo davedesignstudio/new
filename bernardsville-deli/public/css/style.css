@@ -14,10 +14,20 @@
   --cafe-gold: #d4a34f;
   --max: 1120px;
   --radius: 4px;
-  --font-script: "Oleo Script Swash Caps", "Palatino Linotype", cursive;
+  --font-script: "Parkside", "Oleo Script Swash Caps", "Palatino Linotype", cursive;
   --font-serif: "Alegreya", Georgia, serif;
   --font-sans: "Oswald", "Trebuchet MS", sans-serif;
   --font-ui: "DM Sans", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Parkside";
+  src:
+    url("/assets/fonts/Parkside-Black.woff") format("woff"),
+    url("/assets/fonts/Parkside-Black.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -52,20 +62,48 @@ address { font-style: normal; }
 
 .skip-link:focus { left: 1rem; top: 1rem; }
 
-/* Titles — branded wordmark PNG files from the printed menu */
+/* Titles — transparent Parkside wordmark art, or live Parkside text (no backdrop) */
 .print-title {
+  display: inline-block;
+  max-width: 100%;
+  background: none;
+  background-color: transparent;
+}
+
+.print-title--img {
   display: block;
   width: min(100%, 420px);
   height: auto;
-  max-width: 100%;
   background: none;
-  -webkit-text-fill-color: unset;
-  -webkit-text-stroke: 0;
-  filter: none;
+  mix-blend-mode: normal;
 }
 
-.print-title--hero {
+.print-title--text {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(2.1rem, 5vw, 3.35rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--orange);
+  background: none;
+  -webkit-text-fill-color: var(--orange);
+  -webkit-text-stroke: 2.35px var(--ink);
+  paint-order: stroke fill;
+}
+
+.print-title--hero.print-title--img,
+.print-title--hero.print-title--text {
+  width: auto;
+}
+
+.print-title--hero.print-title--img {
   width: min(100%, 560px);
+}
+
+.print-title--hero.print-title--text {
+  font-size: clamp(3.4rem, 10vw, 6.2rem);
+  -webkit-text-stroke-width: 3.5px;
 }
 
 .print-title--poster {
@@ -73,10 +111,21 @@ address { font-style: normal; }
   left: 50%;
   bottom: 1.1rem;
   transform: translateX(-50%);
-  width: min(86%, 420px);
   max-width: 90%;
-  height: auto;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
+}
+
+.print-title--poster.print-title--img {
+  width: min(86%, 420px);
+  height: auto;
+}
+
+.print-title--poster.print-title--text {
+  width: max-content;
+  text-align: center;
+  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+  -webkit-text-stroke-width: 2.8px;
+  -webkit-text-stroke-color: #142820;
 }
 
 .lede {
