@@ -136,3 +136,80 @@ if (storiesDataEl && storyModal) {
     if (event.key === 'Escape' && !storyModal.hidden) closeStory();
   });
 }
+
+(function initFoodParallax() {
+  const root = document.querySelector('.food-parallax');
+  if (!root || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const sauceA = root.querySelector('.sauce-sheet--a');
+  const sauceB = root.querySelector('.sauce-sheet--b');
+  const dripL = root.querySelector('.sauce-drip--left');
+  const dripR = root.querySelector('.sauce-drip--right');
+  const leftCol = root.querySelector('.food-parallax-cheese--left');
+  const rightCol = root.querySelector('.food-parallax-cheese--right');
+  const cheeseSrc = '/assets/parallax/cheese.svg';
+
+  const shreds = [];
+
+  function spawnColumn(col, side) {
+    if (!col) return;
+    const count = 14;
+    for (let i = 0; i < count; i += 1) {
+      const img = document.createElement('img');
+      img.className = 'cheese-shred';
+      img.src = cheeseSrc;
+      img.alt = '';
+      img.width = 64;
+      img.height = 28;
+      col.appendChild(img);
+      const piece = {
+        el: img,
+        side,
+        x: 8 + Math.random() * 42,
+        y: Math.random() * 160,
+        speed: 0.35 + Math.random() * 0.55,
+        rot: -40 + Math.random() * 80,
+        spin: -0.04 + Math.random() * 0.08,
+        wobble: 6 + Math.random() * 10,
+        phase: Math.random() * Math.PI * 2,
+      };
+      img.style.left = `${piece.x}%`;
+      shreds.push(piece);
+    }
+  }
+
+  spawnColumn(leftCol, 'left');
+  spawnColumn(rightCol, 'right');
+
+  let ticking = false;
+
+  function paint() {
+    ticking = false;
+    const y = window.scrollY || 0;
+    const vh = window.innerHeight || 800;
+    const cycle = vh * 1.8;
+
+    if (sauceA) sauceA.style.transform = `translate3d(0, ${-y * 0.22}px, 0)`;
+    if (sauceB) sauceB.style.transform = `translate3d(0, ${-y * 0.12}px, 0)`;
+    if (dripL) dripL.style.transform = `translate3d(0, ${y * 0.38}px, 0)`;
+    if (dripR) dripR.style.transform = `scaleX(-1) translate3d(0, ${y * 0.46}px, 0)`;
+
+    shreds.forEach((shred) => {
+      const fall = (shred.y * vh / 100 + y * shred.speed) % cycle;
+      const sway = Math.sin((y * 0.012) + shred.phase) * shred.wobble;
+      const rot = shred.rot + y * shred.spin;
+      shred.el.style.transform = `translate3d(${sway}px, ${fall - 80}px, 0) rotate(${rot}deg)`;
+    });
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(paint);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  paint();
+})();
+

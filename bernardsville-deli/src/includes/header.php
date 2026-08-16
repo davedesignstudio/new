@@ -23,6 +23,16 @@ $title = $pageTitle ?? $site['name'];
 </head>
 <body class="bville-brand">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="food-parallax" aria-hidden="true">
+    <div class="food-parallax-sauce">
+      <div class="sauce-sheet sauce-sheet--a"></div>
+      <div class="sauce-sheet sauce-sheet--b"></div>
+      <div class="sauce-drip sauce-drip--left"></div>
+      <div class="sauce-drip sauce-drip--right"></div>
+    </div>
+    <div class="food-parallax-cheese food-parallax-cheese--left" data-side="left"></div>
+    <div class="food-parallax-cheese food-parallax-cheese--right" data-side="right"></div>
+  </div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="<?= e(asset_url('index.php')) ?>" aria-label="<?= e($site['name']) ?>">

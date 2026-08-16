@@ -76,6 +76,127 @@ address { font-style: normal; }
 
 .skip-link:focus { left: 1rem; top: 1rem; }
 
+/* Tomato sauce + falling cheese in the 10% side gutters */
+.food-parallax {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 10.5%,
+    transparent 12.5%,
+    transparent 87.5%,
+    #000 89.5%,
+    #000 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 10.5%,
+    transparent 12.5%,
+    transparent 87.5%,
+    #000 89.5%,
+    #000 100%
+  );
+}
+
+.food-parallax-sauce {
+  position: absolute;
+  inset: -20% 0;
+}
+
+.sauce-sheet {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/parallax/sauce.svg");
+  background-repeat: repeat-y;
+  background-size: 100% 120vh;
+}
+
+.sauce-sheet--a {
+  left: 0;
+  width: 12%;
+  opacity: 0.98;
+}
+
+.sauce-sheet--b {
+  right: 0;
+  left: auto;
+  width: 12%;
+  background-position: 40% 0;
+  filter: hue-rotate(-6deg) saturate(1.1);
+}
+
+.sauce-drip {
+  position: absolute;
+  top: -10%;
+  width: 4.5vw;
+  min-width: 36px;
+  height: 140%;
+  background-image: url("/assets/parallax/drip.svg");
+  background-repeat: repeat-y;
+  background-size: 100% 90vh;
+}
+
+.sauce-drip--left { left: 6.4%; }
+.sauce-drip--right { right: 6.4%; transform: scaleX(-1); }
+
+.food-parallax-cheese {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  width: 11%;
+}
+
+.food-parallax-cheese--left { left: 0; }
+.food-parallax-cheese--right { right: 0; }
+
+.cheese-shred {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: clamp(28px, 4.2vw, 58px);
+  height: auto;
+  filter: drop-shadow(0 2px 2px rgba(80, 40, 10, 0.28));
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-parallax { display: none; }
+}
+
+@media (max-width: 768px) {
+  .food-parallax {
+    mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 7%,
+      transparent 10%,
+      transparent 90%,
+      #000 93%,
+      #000 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 7%,
+      transparent 10%,
+      transparent 90%,
+      #000 93%,
+      #000 100%
+    );
+  }
+
+  .sauce-sheet--a,
+  .sauce-sheet--b { width: 9%; }
+
+  .cheese-shred { width: clamp(18px, 6vw, 32px); }
+}
+
 /* Titles — transparent Parkside wordmark art, or live Parkside text (no backdrop) */
 .print-title {
   display: inline-block;
