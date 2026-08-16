@@ -1,0 +1,603 @@
+[
+  {
+    "id": "garden",
+    "title": "From The Garden",
+    "note": "Add on: Chicken 4 \u00b7 Grilled Salmon 7 \u00b7 Shawarma 6 \u00b7 Tuna Salad 4 \u00b7 Steak 8 \u00b7 Gyro (Lamb) 5 \u00b7 Chicken Kabab 7 \u00b7 Buffalo Chicken 4 \u00b7 Cajun Salmon 8 (spicy) \u00b7 Cajun Chicken 5 (spicy) \u00b7 Shrimp 6",
+    "items": [
+      {
+        "name": "House",
+        "desc": "Romaine lettuce, tomatoes, cucumbers, carrots & red onions with oil & vinegar",
+        "price": "7.95"
+      },
+      {
+        "name": "Greek",
+        "desc": "Romaine lettuce, tomatoes, cucumbers, olives, red onions & feta cheese with greek vinaigrette",
+        "price": "9.95"
+      },
+      {
+        "name": "Caesar",
+        "desc": "Romaine lettuce with our freshly made Caesar dressing, parmesan cheese & cro\u00fbtons",
+        "price": "7.95"
+      },
+      {
+        "name": "Baby Spinach",
+        "desc": "Spinach, strawberries, walnuts & goat cheese with balsamic vinaigrette",
+        "price": "9.95"
+      },
+      {
+        "name": "Arugula",
+        "desc": "Roasted red peppers, red onions, Parmesan cheese, with balsamic glaze",
+        "price": "9.95"
+      },
+      {
+        "name": "Cobb",
+        "desc": "Mixed greens, tomatoes, cucumbers, boiled egg, crumbled blue cheese, bacon, & avocado with balsamic vinaigrette",
+        "price": "9.95"
+      },
+      {
+        "name": "Mixed Greens",
+        "desc": "Tomato, onion, cucumber, carrots & fresh mozzarella with raspberry vinaigrette",
+        "price": "9.95"
+      }
+    ]
+  },
+  {
+    "id": "starters",
+    "title": "Starters",
+    "note": "(6) / (12)",
+    "items": [
+      {
+        "name": "Homemade Wings",
+        "desc": "Choice of bone-in or boneless (white meat) served with carrots, celery; buffalo, teriyaki, BBQ or sweet chili",
+        "price": "8.95 / 14.95"
+      },
+      {
+        "name": "Mozzarella Sticks",
+        "desc": "Golden-fried & served with marinara sauce",
+        "price": "7.95"
+      },
+      {
+        "name": "Fried Calamari",
+        "desc": "Choice of spicy or sweet marinara",
+        "price": "10.95"
+      },
+      {
+        "name": "Mac & Cheese Bites",
+        "desc": "Golden-fried & served with marinara sauce",
+        "price": "7.95"
+      },
+      {
+        "name": "Hummus",
+        "desc": "Homemade blended chick peas, lemon & tahini (pita or veggie)",
+        "price": "7.95"
+      },
+      {
+        "name": "Falafel",
+        "desc": "Ground mix of chick peas, onion, garlic & parsley with our secret spices",
+        "price": "7.95"
+      },
+      {
+        "name": "Teriyaki Dumplings",
+        "desc": "Fried chicken dumplings served with teriyaki sauce",
+        "price": "7.95"
+      },
+      {
+        "name": "Buffalo Chicken Mac & Cheese",
+        "desc": "",
+        "price": "9.95"
+      },
+      {
+        "name": "Chicken Nuggets & Fries",
+        "desc": "6 chicken nuggets with sauce",
+        "price": "7.95"
+      },
+      {
+        "name": "Chicken Tenders",
+        "desc": "5 chicken tenders with fries & sauce",
+        "price": "7.95"
+      },
+      {
+        "name": "Rice",
+        "desc": "",
+        "price": "3.95"
+      },
+      {
+        "name": "Sweet Potato Fries",
+        "desc": "",
+        "price": "3.95"
+      },
+      {
+        "name": "French Fries",
+        "desc": "",
+        "price": "3.95"
+      },
+      {
+        "name": "Disco Fries",
+        "desc": "",
+        "price": "6.95"
+      },
+      {
+        "name": "Onion Rings",
+        "desc": "",
+        "price": "5.95"
+      },
+      {
+        "name": "Saut\u00e9ed Veggie",
+        "desc": "",
+        "price": "4.95"
+      }
+    ]
+  },
+  {
+    "id": "shakes",
+    "title": "Shakes",
+    "note": null,
+    "items": [
+      {
+        "name": "Milkshake",
+        "desc": "NutterButter, Cookies & Cream, Chocolate, Vanilla, Strawberry",
+        "price": "4.95"
+      }
+    ]
+  },
+  {
+    "id": "burgers",
+    "title": "Burgers",
+    "note": "Angus \u00b7 Beefy",
+    "items": [
+      {
+        "name": "Classic",
+        "desc": "With lettuce, tomato & onion",
+        "price": "9.95"
+      },
+      {
+        "name": "Cheese Deluxe",
+        "desc": "With lettuce, tomato, onion & American cheese",
+        "price": "10.95"
+      },
+      {
+        "name": "The Fry",
+        "desc": "Breaded chicken cutlet, coleslaw & pickles with fry sauce",
+        "price": "10.95"
+      },
+      {
+        "name": "Boom Boom",
+        "desc": "Naked (no bun) lettuce, tomato, avocado, bacon & boom-boom sauce",
+        "price": "11.95"
+      },
+      {
+        "name": "Chetzel",
+        "desc": "Bacon, melted cheddar & jack cheese served on toasted pretzel bun",
+        "price": "12.95"
+      },
+      {
+        "name": "Shroom",
+        "desc": "Saut\u00e9ed mushrooms & onions with swiss",
+        "price": "10.95"
+      },
+      {
+        "name": "Falafel Burger",
+        "desc": "Lettuce, tomato, & pickle with tahini sauce",
+        "price": "9.95"
+      }
+    ]
+  },
+  {
+    "id": "wraps",
+    "title": "Wrap & Roll",
+    "note": "Choice of white, wheat or spinach, pita. Gluten free wrap +1.50 extra",
+    "items": [
+      {
+        "name": "Grilled Chicken Caesar",
+        "desc": "Romaine lettuce, Parmesan cheese & homemade creamy Caesar dressing",
+        "price": "9.95"
+      },
+      {
+        "name": "Buffalo Chicken",
+        "desc": "Breaded chicken tossed in buffalo sauce with lettuce, tomato & blue cheese",
+        "price": "9.95"
+      },
+      {
+        "name": "Gyro",
+        "desc": "Choice of thinly sliced chicken or lamb with lettuce, tomato & onion with tzatziki sauce on pita wrap",
+        "price": "9.95"
+      },
+      {
+        "name": "Shawarma",
+        "desc": "Thinly sliced chicken grilled to perfection, with lettuce, tomato, onion & garlic sauce",
+        "price": "9.95"
+      },
+      {
+        "name": "Falafel",
+        "desc": "Lettuce, tomato, tahini & hummus on pita wrap",
+        "price": "8.95"
+      },
+      {
+        "name": "Kebab",
+        "desc": "Chicken with lettuce, tomato & onion, garlic sauce on pita wrap",
+        "price": "9.95"
+      },
+      {
+        "name": "Chicken Milanese",
+        "desc": "Breaded chicken, mozzarella cheese, arugula, roasted red peppers, red onions with balsamic vinaigrette",
+        "price": "9.95"
+      },
+      {
+        "name": "Honey Chicken",
+        "desc": "Breaded chicken, lettuce, tomato & crispy bacon with honey mustard",
+        "price": "9.95"
+      }
+    ]
+  },
+  {
+    "id": "pasta",
+    "title": "Pastabilities",
+    "note": null,
+    "items": [
+      {
+        "name": "Penne Alla Vodka",
+        "desc": "Penne pasta tossed in a creamy pink sauce (try it spicy)",
+        "price": "13.95"
+      },
+      {
+        "name": "Pasta Bolognese",
+        "desc": "Diced onions, fresh garlic & ground beef, saut\u00e9ed then cooked in our homemade marinara sauce & touch of cream",
+        "price": "15.95"
+      },
+      {
+        "name": "Pasta Marinara",
+        "desc": "Penne pasta with our homemade marinara sauce",
+        "price": "9.95"
+      },
+      {
+        "name": "Cajun Alfredo",
+        "desc": "Roasted red peppers and bacon saut\u00e9ed then tossed in a creamy alfredo sauce",
+        "price": "14.95"
+      },
+      {
+        "name": "Tortellini Leo",
+        "desc": "Tricolor cheese tortellini pasta, sun-dried tomatoes, fresh spinach & fresh garlic saut\u00e9ed in creamy pink vodka sauce topped with pecorino cheese",
+        "price": "14.95"
+      }
+    ]
+  },
+  {
+    "id": "cheesesteak",
+    "title": "Cheesesteak",
+    "note": null,
+    "items": [
+      {
+        "name": "Philly Cheesesteak",
+        "desc": "Shredded steak, onions, peppers with American cheese",
+        "price": "9.95"
+      },
+      {
+        "name": "Jersey Cheesesteak",
+        "desc": "With brown gravy potatoes & mozzarella cheese",
+        "price": "10.95"
+      },
+      {
+        "name": "California Cheesesteak",
+        "desc": "With lettuce, tomato, mayonnaise & American cheese",
+        "price": "10.95"
+      },
+      {
+        "name": "Chicken Cheesesteak",
+        "desc": "Thinly sliced chicken breast, saut\u00e9ed mushrooms, peppers, onions & American cheese",
+        "price": "9.95"
+      }
+    ]
+  },
+  {
+    "id": "sandwiches",
+    "title": "Sandwiches",
+    "note": null,
+    "items": [
+      {
+        "name": "Chicken Parmesan",
+        "desc": "Try it with pink vodka sauce +1",
+        "price": "10.95"
+      },
+      {
+        "name": "Meatball Parmesan",
+        "desc": "",
+        "price": "10.95"
+      },
+      {
+        "name": "Buttermilk Fried Chicken Sandwich",
+        "desc": "With lettuce, tomato & onion",
+        "price": "10.95"
+      },
+      {
+        "name": "Grilled Chicken",
+        "desc": "Lettuce, tomato & mayo",
+        "price": "9.95"
+      },
+      {
+        "name": "Pastrami Reuben",
+        "desc": "Sliced pastrami, sauerkraut, Russian dressing & Swiss cheese on rye toast",
+        "price": "10.95"
+      },
+      {
+        "name": "Buffalo Chicken",
+        "desc": "Lettuce, tomato & blue cheese",
+        "price": "10.95"
+      },
+      {
+        "name": "Italian Hot Dog",
+        "desc": "Sliced hot dog, potatoes, peppers, onions",
+        "price": "9.95"
+      },
+      {
+        "name": "Hot Pastrami",
+        "desc": "Sliced pastrami, Swiss cheese & mustard on rye bread",
+        "price": "10.95"
+      },
+      {
+        "name": "Tuna Melt",
+        "desc": "Solid white tuna with mayo & melted American cheese, served on white toast",
+        "price": "9.95"
+      },
+      {
+        "name": "Turkey Club",
+        "desc": "Turkey, bacon, lettuce, tomato & mayo on white toast",
+        "price": "9.95"
+      }
+    ]
+  },
+  {
+    "id": "panini",
+    "title": "Panini",
+    "note": null,
+    "items": [
+      {
+        "name": "Chipotle Chicken",
+        "desc": "Char-grilled chicken, avocado & pepper jack cheese with homemade chipotle mayo",
+        "price": "9.95"
+      },
+      {
+        "name": "Chicken",
+        "desc": "Char-grilled chicken, roasted peppers & mozzarella cheese with balsamic glaze",
+        "price": "9.95"
+      },
+      {
+        "name": "Veggie",
+        "desc": "Grilled eggplant, roasted red peppers & mozzarella cheese with balsamic glaze",
+        "price": "9.95"
+      },
+      {
+        "name": "Milano",
+        "desc": "Char-grilled chicken, pesto, roasted peppers, arugula & melted mozzarella cheese",
+        "price": "10.95"
+      },
+      {
+        "name": "Turkey",
+        "desc": "Oven-roasted turkey, roasted peppers & mozzarella cheese with balsamic glaze",
+        "price": "9.95"
+      }
+    ]
+  },
+  {
+    "id": "pizza",
+    "title": "Stone Oven Baked",
+    "note": "Customize your pizza sauce: Fra Diavolo (spicy) +1 \u00b7 B-ville pink vodka sauce +2 extra",
+    "items": [
+      {
+        "name": "Regular Classic Pizza",
+        "desc": "",
+        "price": ""
+      },
+      {
+        "name": "Margherita",
+        "desc": "Fresh mozzarella, fresh basil & pizza sauce",
+        "price": ""
+      },
+      {
+        "name": "Meat Lover's",
+        "desc": "Pepperoni, sausage, bacon & meatballs",
+        "price": ""
+      },
+      {
+        "name": "White Pie",
+        "desc": "Mozzarella & ricotta cheese",
+        "price": ""
+      },
+      {
+        "name": "Chicken Parmesan",
+        "desc": "Breaded chicken cutlet, pomodoro sauce mozzarella & fresh basil",
+        "price": ""
+      },
+      {
+        "name": "BBQ or Buffalo Chicken",
+        "desc": "",
+        "price": ""
+      },
+      {
+        "name": "Vegetarian Lover's",
+        "desc": "Peppers, onions, mushrooms & olives",
+        "price": ""
+      },
+      {
+        "name": "Philly Cheesesteak",
+        "desc": "Saut\u00e9ed beef, onions, peppers, mushrooms & mozzarella cheese topped with American cheese",
+        "price": ""
+      },
+      {
+        "name": "B'Ville Special",
+        "desc": "Shawarma chicken, lettuce, tomato, onion & parsley with garlic sauce drizzle",
+        "price": ""
+      },
+      {
+        "name": "Sesame Thai Chili",
+        "desc": "Thai chili spread topped with sesame chicken, mozzarella and garnished with ranch dressing",
+        "price": ""
+      },
+      {
+        "name": "Don Pomodoro",
+        "desc": "Mozzarella, fresh plum tomatoes, fresh basil garnished with grated pecorino cheese",
+        "price": ""
+      },
+      {
+        "name": "Combination",
+        "desc": "Pepperoni, sausage, mushroom, onion & peppers",
+        "price": ""
+      }
+    ]
+  },
+  {
+    "id": "platters",
+    "title": "Headlines",
+    "note": null,
+    "items": [
+      {
+        "name": "Char-Grilled Shrimp Kababs",
+        "desc": "Served with house salad",
+        "price": "17.95"
+      },
+      {
+        "name": "Norwegian Salmon",
+        "desc": "Fresh, hand-cut, lightly seasoned & grilled salmon served with house salad",
+        "price": "16.95"
+      },
+      {
+        "name": "Gyro",
+        "desc": "Sliced fresh lamb served with tzatziki sauce, rice & house salad",
+        "price": "14.95"
+      },
+      {
+        "name": "Falafel Platter",
+        "desc": "Ground chick peas, onions, garlic, parsley, & our secret spice blend, served with tahini sauce, rice & house salad",
+        "price": "12.95"
+      },
+      {
+        "name": "Chicken Kabab",
+        "desc": "Char-grilled marinated chicken breast served with rice, salad and topped with saut\u00e9ed onions & peppers",
+        "price": "14.95"
+      },
+      {
+        "name": "Chicken Gyro",
+        "desc": "Greek-style sliced chicken breast with peppers & onions, served with rice, salad & tzatziki sauce",
+        "price": "14.95"
+      },
+      {
+        "name": "Shawarma",
+        "desc": "Marinated & thinly sliced chicken breast with saut\u00e9ed peppers & onions. Served with rice, salad & garlic sauce",
+        "price": "14.95"
+      },
+      {
+        "name": "Chicken Parmesan",
+        "desc": "Breaded chicken breast topped with our homemade marinara sauce & mozzarella, served over pasta",
+        "price": "15.95"
+      },
+      {
+        "name": "Chicken Quesadilla",
+        "desc": "Saut\u00e9ed marinated chicken with onions & peppers",
+        "price": "11.95"
+      },
+      {
+        "name": "Sausage, Peppers & Onion Parmesan",
+        "desc": "",
+        "price": "12.95"
+      },
+      {
+        "name": "Eggplant Parmesan",
+        "desc": "Eggplant cutlets, marinara & mozzarella cheese, topped with grated pecorino",
+        "price": "12.95"
+      }
+    ]
+  },
+  {
+    "id": "kids",
+    "title": "Kids Menu",
+    "note": "Choice of fries or broccoli on grilled cheese, tenders & hot dog. Mac & cheese and pasta not served with a side.",
+    "items": [
+      {
+        "name": "Grilled Cheese",
+        "desc": "Choice of fries or broccoli",
+        "price": "7.95"
+      },
+      {
+        "name": "Chicken Tenders",
+        "desc": "Choice of fries or broccoli",
+        "price": "7.95"
+      },
+      {
+        "name": "Hot Dog",
+        "desc": "Choice of fries or broccoli",
+        "price": "7.95"
+      },
+      {
+        "name": "Mac & Cheese",
+        "desc": "Not served with a side",
+        "price": "7.95"
+      },
+      {
+        "name": "Pasta with Butter or Marinara",
+        "desc": "Not served with a side",
+        "price": "7.95"
+      }
+    ]
+  },
+  {
+    "id": "desserts",
+    "title": "Sweet Endings",
+    "note": "All 5.95",
+    "items": [
+      {
+        "name": "Coppa Yogurt & Berries",
+        "desc": "Yogurt gelato swirled together with mixed berry sauce, topped with blueberries and currants",
+        "price": "5.95"
+      },
+      {
+        "name": "Espresso Creme Brulee",
+        "desc": "Creamy custard flavored with espresso, topped with caramelized sugar",
+        "price": "5.95"
+      },
+      {
+        "name": "Coppa Mascarpone",
+        "desc": "A chocolate cream followed by a smooth mascarpone cream, topped with Amaretto cookie crumbs and chocolate curls",
+        "price": "5.95"
+      },
+      {
+        "name": "Limoncello Flute",
+        "desc": "Refreshing lemon gelato made with lemons from Sicily, swirled together with Limoncello sauce",
+        "price": "5.95"
+      },
+      {
+        "name": "Hazelnut Chocolate Flute",
+        "desc": "Smooth hazelnut gelato swirled with rich chocolate sauce presented in a flute glass",
+        "price": "5.95"
+      },
+      {
+        "name": "Coppa Spagnola",
+        "desc": "Vanilla and Amarena cherry gelato swirled together, topped with real Amarena cherries",
+        "price": "5.95"
+      },
+      {
+        "name": "Coppa Stracciatella",
+        "desc": "Chocolate chip gelato swirled together with chocolate syrup, topped with cocoa powder and hazelnuts",
+        "price": "5.95"
+      },
+      {
+        "name": "Coppa Pistachio",
+        "desc": "Custard gelato swirled with chocolate and pistachio gelato topped with praline pistachios",
+        "price": "5.95"
+      },
+      {
+        "name": "Guava Mango Flute",
+        "desc": "Creamy tropical guava gelato swirled with sweet mango sauce",
+        "price": "5.95"
+      },
+      {
+        "name": "Coppa Cafe",
+        "desc": "Fior di latte gelato with rich coffee and pure cocoa swirl",
+        "price": "5.95"
+      },
+      {
+        "name": "Coppa Catalana",
+        "desc": "Creamy custard topped with caramelized sugar",
+        "price": "5.95"
+      }
+    ]
+  }
+]
