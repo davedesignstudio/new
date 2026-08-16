@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 132">
+  <defs>
+    <linearGradient id="mozzPull" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#f8f4ee"/>
+      <stop offset="100%" stop-color="#e4dbd0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#mozzPull)" stroke="#d9d0c4" stroke-width="0.65" d="M20 3 C32 8 38 20 34 36 C30 54 38 66 32 84 C26 104 34 116 24 129 C14 124 10 108 16 90 C22 70 8 56 14 36 C18 18 10 8 20 3 Z"/>
+  <path fill="#fff" opacity="0.5" d="M22 12 C28 22 28 36 24 48 C20 34 20 18 22 12 Z"/>
+  <path fill="#fff" opacity="0.28" d="M18 58 C24 68 26 82 22 96 C16 82 16 68 18 58 Z"/>
+</svg>

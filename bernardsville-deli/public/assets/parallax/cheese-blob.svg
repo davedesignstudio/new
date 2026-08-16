@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 56">
+  <defs>
+    <radialGradient id="mozzBlob" cx="40%" cy="35%" r="68%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#f7f2eb"/>
+      <stop offset="100%" stop-color="#e2d8cc"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#mozzBlob)" stroke="#d6cdc2" stroke-width="0.55" d="M10 30 C8 16 22 8 38 12 C50 4 68 8 78 18 C86 26 84 38 74 44 C62 52 44 50 30 46 C16 44 12 38 10 30 Z"/>
+  <ellipse cx="32" cy="22" rx="12" ry="7" fill="#fff" opacity="0.5"/>
+  <ellipse cx="58" cy="30" rx="8" ry="4.5" fill="#cfc6ba" opacity="0.22"/>
+</svg>

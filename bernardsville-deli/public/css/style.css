@@ -159,10 +159,30 @@ address { font-style: normal; }
   top: 0;
   left: 0;
   display: block;
-  width: clamp(28px, 4.2vw, 58px);
+  width: clamp(32px, 3.6vw, 62px);
   height: auto;
-  filter: drop-shadow(0 2px 2px rgba(80, 40, 10, 0.28));
+  filter:
+    drop-shadow(0 2px 2px rgba(70, 45, 25, 0.18))
+    drop-shadow(0 0 7px rgba(255, 252, 246, 0.65));
   will-change: transform;
+}
+
+.cheese-shred--ball {
+  width: clamp(28px, 3.1vw, 52px);
+  filter:
+    drop-shadow(0 3px 4px rgba(70, 45, 25, 0.22))
+    drop-shadow(0 0 10px rgba(255, 255, 250, 0.78));
+}
+
+.cheese-shred--pull {
+  width: clamp(18px, 2.2vw, 36px);
+  filter:
+    drop-shadow(0 2px 3px rgba(70, 45, 25, 0.16))
+    drop-shadow(0 0 6px rgba(255, 250, 242, 0.5));
+}
+
+.cheese-shred--blob {
+  width: clamp(36px, 4vw, 70px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -194,7 +214,10 @@ address { font-style: normal; }
   .sauce-sheet--a,
   .sauce-sheet--b { width: 9%; }
 
-  .cheese-shred { width: clamp(18px, 6vw, 32px); }
+  .cheese-shred { width: clamp(20px, 7vw, 36px); }
+  .cheese-shred--ball { width: clamp(18px, 6vw, 32px); }
+  .cheese-shred--pull { width: clamp(12px, 4.2vw, 22px); }
+  .cheese-shred--blob { width: clamp(22px, 7.5vw, 40px); }
 }
 
 /* Titles — transparent Parkside wordmark art, or live Parkside text (no backdrop) */

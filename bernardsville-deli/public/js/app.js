@@ -147,31 +147,45 @@ if (storiesDataEl && storyModal) {
   const dripR = root.querySelector('.sauce-drip--right');
   const leftCol = root.querySelector('.food-parallax-cheese--left');
   const rightCol = root.querySelector('.food-parallax-cheese--right');
-  const cheeseSrc = '/assets/parallax/cheese.svg';
+  const cheeseKinds = [
+    { src: '/assets/parallax/cheese.svg', cls: 'cheese-shred--shred', w: 96, h: 44 },
+    { src: '/assets/parallax/cheese.svg', cls: 'cheese-shred--shred', w: 96, h: 44 },
+    { src: '/assets/parallax/cheese-ball.svg', cls: 'cheese-shred--ball', w: 72, h: 72 },
+    { src: '/assets/parallax/cheese-ball.svg', cls: 'cheese-shred--ball', w: 72, h: 72 },
+    { src: '/assets/parallax/cheese-blob.svg', cls: 'cheese-shred--blob', w: 88, h: 56 },
+    { src: '/assets/parallax/cheese-pull.svg', cls: 'cheese-shred--pull', w: 44, h: 132 },
+  ];
 
   const shreds = [];
 
   function spawnColumn(col, side) {
     if (!col) return;
-    const count = 14;
+    const count = 32;
     for (let i = 0; i < count; i += 1) {
+      const kind = cheeseKinds[Math.floor(Math.random() * cheeseKinds.length)];
       const img = document.createElement('img');
-      img.className = 'cheese-shred';
-      img.src = cheeseSrc;
+      img.className = `cheese-shred ${kind.cls}`;
+      img.src = kind.src;
       img.alt = '';
-      img.width = 64;
-      img.height = 28;
+      img.width = kind.w;
+      img.height = kind.h;
       col.appendChild(img);
+      const scale = kind.cls.includes('ball')
+        ? 0.7 + Math.random() * 0.75
+        : kind.cls.includes('pull')
+          ? 0.8 + Math.random() * 0.95
+          : 0.72 + Math.random() * 0.9;
       const piece = {
         el: img,
         side,
-        x: 8 + Math.random() * 42,
-        y: Math.random() * 160,
-        speed: 0.35 + Math.random() * 0.55,
-        rot: -40 + Math.random() * 80,
-        spin: -0.04 + Math.random() * 0.08,
-        wobble: 6 + Math.random() * 10,
+        x: 4 + Math.random() * 72,
+        y: Math.random() * 220,
+        speed: 0.28 + Math.random() * 0.85,
+        rot: -70 + Math.random() * 140,
+        spin: -0.05 + Math.random() * 0.1,
+        wobble: 5 + Math.random() * 14,
         phase: Math.random() * Math.PI * 2,
+        scale,
       };
       img.style.left = `${piece.x}%`;
       shreds.push(piece);
@@ -198,7 +212,7 @@ if (storiesDataEl && storyModal) {
       const fall = (shred.y * vh / 100 + y * shred.speed) % cycle;
       const sway = Math.sin((y * 0.012) + shred.phase) * shred.wobble;
       const rot = shred.rot + y * shred.spin;
-      shred.el.style.transform = `translate3d(${sway}px, ${fall - 80}px, 0) rotate(${rot}deg)`;
+      shred.el.style.transform = `translate3d(${sway}px, ${fall - 80}px, 0) rotate(${rot}deg) scale(${shred.scale})`;
     });
   }
 
