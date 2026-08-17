@@ -170,6 +170,14 @@ export function step(state, dtScale = 1) {
     vy = Math.abs(vy);
   }
 
+  // Nudge a flat bounce so the ball can find a way out of a wall trap.
+  if (Math.abs(vy) < 1.6) {
+    vy = vy <= 0 ? -2.4 : 2.4;
+  }
+  if (Math.abs(vx) < 0.4) {
+    vx = (x < state.w / 2 ? 1 : -1) * 1.8;
+  }
+
   ball = { ...ball, x, y, vx, vy };
 
   if (vy > 0 && circleRectOverlap(ball.x, ball.y, r, paddle.x, paddle.y, paddle.w, paddle.h)) {

@@ -154,6 +154,7 @@ export default function BreakoutGame() {
   };
 
   const loop = (now) => {
+    if (!canvas) return;
     const dt = Math.min(32, now - last || 16) / 16;
     last = now;
     if (keys.left || keys.right) {
@@ -203,6 +204,17 @@ export default function BreakoutGame() {
     syncHud();
   };
 
+  const exitGame = () => {
+    setHigh(saveHighScore(state.score));
+    cancelAnimationFrame(raf);
+    raf = 0;
+    keys.left = false;
+    keys.right = false;
+    state = createState(1);
+    setStarted(false);
+    syncHud();
+  };
+
   const addPrize = () => {
     cart.addCustomItem(`Breakout pie (${state.score} pts)`, prizePrice(state.score));
   };
@@ -212,12 +224,19 @@ export default function BreakoutGame() {
     ovenImg = new Image();
     ovenImg.src = OVEN;
     const onKey = (event) => {
+      if (!started()) return;
+      if (event.key === 'Escape') {
+        if (event.type === 'keydown') {
+          event.preventDefault();
+          exitGame();
+        }
+        return;
+      }
       if (event.key === 'ArrowLeft' || event.key === 'a') keys.left = event.type === 'keydown';
       if (event.key === 'ArrowRight' || event.key === 'd') keys.right = event.type === 'keydown';
       if (event.type === 'keydown' && (event.key === ' ' || event.key === 'Enter')) {
         event.preventDefault();
-        if (!started()) start();
-        else serveOrAdvance();
+        serveOrAdvance();
       }
     };
     window.addEventListener('keydown', onKey);
@@ -276,15 +295,29 @@ export default function BreakoutGame() {
             <p class="game-phone-tagline game-phone-tagline--retro">INSERT COIN</p>
             <p class="game-lobby-desc">
               Move with the mouse, finger, or ← →. Space or click serves the ball.
-              Clear a board to keep the combo going.
+              Esc or Exit leaves the oven. Clear a board to keep the combo going.
             </p>
-            <button type="button" class="btn-game-action btn-game-start btn-game-press-start" onClick={start}>
-              ▶ PRESS START
-            </button>
+            <div class="breakout-exits">
+              <button type="button" class="btn-game-action btn-game-start btn-game-press-start" onClick={start}>
+                ▶ PRESS START
+              </button>
+              <a class="btn-game-action breakout-exit-link" href="#menu">
+                Order pizza →
+              </a>
+            </div>
           </div>
         </Show>
 
         <Show when={started()}>
+          <div class="breakout-exits breakout-exits--play">
+            <button type="button" class="btn-game-action breakout-exit" onClick={exitGame}>
+              Exit
+            </button>
+            <a class="btn-game-action breakout-exit-link" href="#menu">
+              Order pizza →
+            </a>
+            <span class="breakout-exit-hint">Esc also leaves</span>
+          </div>
           <div class="game-sega-hud" aria-live="polite">
             <div class="game-hud-cell">
               <span class="game-hud-label">SCORE</span>
@@ -338,6 +371,9 @@ export default function BreakoutGame() {
                 <button type="button" class="btn-game-action btn-game-start" onClick={addPrize}>
                   Add pie to cart — {formatPrice(prizePrice(hud().score))}
                 </button>
+                <button type="button" class="btn-game-action breakout-exit" onClick={exitGame}>
+                  Leave oven
+                </button>
               </div>
             </Show>
             <Show when={hud().status === 'lost'}>
@@ -345,6 +381,9 @@ export default function BreakoutGame() {
                 <p>BALL IN THE ASHES</p>
                 <button type="button" class="btn-game-action btn-game-press-start" onClick={reset}>
                   Play again
+                </button>
+                <button type="button" class="btn-game-action breakout-exit" onClick={exitGame}>
+                  Leave oven
                 </button>
               </div>
             </Show>

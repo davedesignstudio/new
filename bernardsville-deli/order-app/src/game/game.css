@@ -1436,8 +1436,36 @@
   display: block;
   width: 100%;
   height: auto;
-  cursor: none;
+  cursor: crosshair;
   touch-action: none;
+}
+
+.breakout-exits {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 auto 1rem;
+}
+
+.breakout-exits--play {
+  margin-bottom: 0.75rem;
+}
+
+.breakout-exit,
+.breakout-exit-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.breakout-exit-hint {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.45rem;
+  color: var(--sega-cyan);
+  letter-spacing: 0.04em;
 }
 
 .breakout-banner {
