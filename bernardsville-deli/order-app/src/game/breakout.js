@@ -157,7 +157,7 @@ function __dbgBreakoutLog(hypothesisId, location, message, data) {
     message,
     data,
     timestamp: Date.now(),
-    runId: 'pre-fix',
+    runId: 'post-fix',
   };
   // eslint-disable-next-line no-console
   console.warn('[BREAKOUT-DBG]', message, data);
@@ -280,15 +280,48 @@ export function step(state, dtScale = 1) {
     const overlapBottom = b.y + b.h - (ball.y - r);
     const minX = Math.min(overlapLeft, overlapRight);
     const minY = Math.min(overlapTop, overlapBottom);
+    const SEPARATION_EPS = 0.51;
     // #region agent log
     const __vxBefore = ball.vx;
     const __vyBefore = ball.vy;
     const __axis = minX < minY ? 'x' : 'y';
+    const __overlapBeforeSep = true;
     // #endregion
     if (minX < minY) {
-      ball = { ...ball, vx: -ball.vx };
+      // Bounce on X, then push out along the outgoing velocity (avoids re-entry when deeply embedded).
+      const nvx = -ball.vx;
+      const nx = nvx < 0 ? b.x - r - SEPARATION_EPS : b.x + b.w + r + SEPARATION_EPS;
+      ball = { ...ball, x: nx, vx: nvx };
     } else {
-      ball = { ...ball, vy: -ball.vy };
+      // Bounce on Y, then push out along the outgoing velocity (avoids re-entry when deeply embedded).
+      const nvy = -ball.vy;
+      const ny = nvy < 0 ? b.y - r - SEPARATION_EPS : b.y + b.h + r + SEPARATION_EPS;
+      ball = { ...ball, y: ny, vy: nvy };
+    }
+    // Safety: if still inside the same brick after axis separation, drive away from center.
+    // #region agent log
+    let __forcedAway = false;
+    // #endregion
+    if (circleRectOverlap(ball.x, ball.y, r, b.x, b.y, b.w, b.h)) {
+      const cx = b.x + b.w / 2;
+      const cy = b.y + b.h / 2;
+      let dx = ball.x - cx;
+      let dy = ball.y - cy;
+      if (dx === 0 && dy === 0) dy = -1;
+      const len = Math.hypot(dx, dy) || 1;
+      dx /= len;
+      dy /= len;
+      const speed = Math.max(5, Math.hypot(ball.vx, ball.vy));
+      ball = {
+        ...ball,
+        x: ball.x + dx * SEPARATION_EPS,
+        y: ball.y + dy * SEPARATION_EPS,
+        vx: dx * speed,
+        vy: dy * speed,
+      };
+      // #region agent log
+      __forcedAway = true;
+      // #endregion
     }
     const hp = b.hp - 1;
     const alive = hp > 0;
@@ -321,7 +354,7 @@ export function step(state, dtScale = 1) {
     __dbgBrickPrev.vx = ball.vx;
     __dbgBrickPrev.vy = ball.vy;
     __dbgBrickPrev.stillOverlap = stillOverlap;
-    if (stillOverlap || oscillating || __dbgBrickPrev.streak >= 2 || __nudgeVx || __nudgeVy) {
+    if (stillOverlap || oscillating || __dbgBrickPrev.streak >= 2 || __nudgeVx || __nudgeVy || __forcedAway || __overlapBeforeSep) {
       __dbgBreakoutLog(
         oscillating || __dbgBrickPrev.streak >= 3 ? 'A' : alive && stillOverlap ? 'B' : __nudgeVx || __nudgeVy ? 'C' : 'A',
         'breakout.js:step:brickHit',
@@ -346,7 +379,8 @@ export function step(state, dtScale = 1) {
           flips: __dbgBrickPrev.flips,
           nudgeVx: __nudgeVx,
           nudgeVy: __nudgeVy,
-          noSeparation: true,
+          forcedAway: __forcedAway,
+          noSeparation: stillOverlap,
         }
       );
     }
