@@ -136,41 +136,6 @@ export default function BreakoutGame() {
   let raf = 0;
   let last = 0;
   const keys = { left: false, right: false };
-  // #region agent log
-  let __dbgLoopTicks = 0;
-  let __dbgLoopAliveAfterExit = 0;
-  let __dbgExited = false;
-  const __dbgUiLog = (hypothesisId, location, message, data) => {
-    const payload = {
-      hypothesisId,
-      location,
-      message,
-      data,
-      timestamp: Date.now(),
-      runId: 'post-fix',
-    };
-    // eslint-disable-next-line no-console
-    console.warn('[BREAKOUT-DBG]', message, data);
-    try {
-      fetch('http://127.0.0.1:7243/ingest/c2f0a0e0-breakout-dbg', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'breakout-loop' },
-        body: JSON.stringify(payload),
-      }).catch(() => {});
-    } catch {
-      /* ignore */
-    }
-    try {
-      const key = '__breakout_dbg_logs';
-      const prev = JSON.parse(localStorage.getItem(key) || '[]');
-      prev.push(payload);
-      while (prev.length > 200) prev.shift();
-      localStorage.setItem(key, JSON.stringify(prev));
-    } catch {
-      /* ignore */
-    }
-  };
-  // #endregion
 
   const syncHud = () => {
     setHud({
@@ -189,33 +154,6 @@ export default function BreakoutGame() {
   };
 
   const loop = (now) => {
-    // #region agent log
-    __dbgLoopTicks += 1;
-    if (__dbgExited) {
-      __dbgLoopAliveAfterExit += 1;
-      if (__dbgLoopAliveAfterExit <= 5 || __dbgLoopAliveAfterExit % 60 === 0) {
-        __dbgUiLog('D', 'BreakoutGame.jsx:loop:afterExit', '[BREAKOUT-DBG] RAF tick AFTER exitGame', {
-          raf,
-          hasCanvas: !!canvas,
-          started: started(),
-          ticksAfterExit: __dbgLoopAliveAfterExit,
-          totalTicks: __dbgLoopTicks,
-          status: state.status,
-        });
-      }
-    } else if (__dbgLoopTicks <= 3 || __dbgLoopTicks % 120 === 0) {
-      __dbgUiLog('D', 'BreakoutGame.jsx:loop', '[BREAKOUT-DBG] RAF tick', {
-        raf,
-        hasCanvas: !!canvas,
-        started: started(),
-        totalTicks: __dbgLoopTicks,
-        status: state.status,
-        ball: state.ball
-          ? { x: state.ball.x, y: state.ball.y, vx: state.ball.vx, vy: state.ball.vy, stuck: state.ball.stuck }
-          : null,
-      });
-    }
-    // #endregion
     if (!canvas) return;
     const dt = Math.min(32, now - last || 16) / 16;
     last = now;
@@ -242,20 +180,6 @@ export default function BreakoutGame() {
   };
 
   const start = () => {
-    // #region agent log
-    __dbgExited = false;
-    __dbgLoopAliveAfterExit = 0;
-    __dbgLoopTicks = 0;
-    try {
-      localStorage.removeItem('__breakout_dbg_logs');
-    } catch {
-      /* ignore */
-    }
-    __dbgUiLog('E', 'BreakoutGame.jsx:start', '[BREAKOUT-DBG] start() — lobby → play', {
-      rafBefore: raf,
-      startedBefore: started(),
-    });
-    // #endregion
     state = createState(1);
     setStarted(true);
     syncHud();
@@ -281,18 +205,6 @@ export default function BreakoutGame() {
   };
 
   const exitGame = () => {
-    // #region agent log
-    const rafBefore = raf;
-    __dbgExited = true;
-    __dbgUiLog('E', 'BreakoutGame.jsx:exitGame:before', '[BREAKOUT-DBG] exitGame() BEFORE cancel', {
-      raf: rafBefore,
-      hasCanvas: !!canvas,
-      started: started(),
-      status: state.status,
-      score: state.score,
-      loopTicks: __dbgLoopTicks,
-    });
-    // #endregion
     setHigh(saveHighScore(state.score));
     cancelAnimationFrame(raf);
     raf = 0;
@@ -301,25 +213,6 @@ export default function BreakoutGame() {
     state = createState(1);
     setStarted(false);
     syncHud();
-    // #region agent log
-    __dbgUiLog('E', 'BreakoutGame.jsx:exitGame:after', '[BREAKOUT-DBG] exitGame() AFTER cancel + setStarted(false)', {
-      rafAfter: raf,
-      hasCanvas: !!canvas,
-      startedSignal: started(),
-      status: state.status,
-      ticksAfterExitSoFar: __dbgLoopAliveAfterExit,
-    });
-    // schedule a probe: if RAF keeps firing, loop logs will show ticksAfterExit > 0
-    setTimeout(() => {
-      __dbgUiLog('E', 'BreakoutGame.jsx:exitGame:probe250ms', '[BREAKOUT-DBG] exitGame() +250ms probe', {
-        raf,
-        hasCanvas: !!canvas,
-        started: started(),
-        ticksAfterExit: __dbgLoopAliveAfterExit,
-        lobbyVisible: !started(),
-      });
-    }, 250);
-    // #endregion
   };
 
   const addPrize = () => {
@@ -356,22 +249,9 @@ export default function BreakoutGame() {
   });
 
   const bindCanvas = (el) => {
-    // #region agent log
-    __dbgUiLog('D', 'BreakoutGame.jsx:bindCanvas', '[BREAKOUT-DBG] bindCanvas()', {
-      elPresent: !!el,
-      rafBefore: raf,
-      exited: __dbgExited,
-      started: started(),
-    });
-    // #endregion
     canvas = el;
     if (!el) {
       cancelAnimationFrame(raf);
-      // #region agent log
-      __dbgUiLog('D', 'BreakoutGame.jsx:bindCanvas:unmount', '[BREAKOUT-DBG] canvas unmount — cancel RAF', {
-        rafWas: raf,
-      });
-      // #endregion
       return;
     }
     const ctx = el.getContext('2d');
@@ -390,11 +270,6 @@ export default function BreakoutGame() {
     cancelAnimationFrame(raf);
     last = performance.now();
     raf = requestAnimationFrame(loop);
-    // #region agent log
-    __dbgUiLog('D', 'BreakoutGame.jsx:bindCanvas:startRaf', '[BREAKOUT-DBG] canvas mount — RAF started', {
-      raf,
-    });
-    // #endregion
   };
 
   return (
