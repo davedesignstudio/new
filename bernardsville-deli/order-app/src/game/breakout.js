@@ -148,6 +148,70 @@ export function bounceFromPaddle(ball, paddle) {
   };
 }
 
+// #region agent log
+const __dbgBrickPrev = { hitIndex: -1, vx: 0, vy: 0, stillOverlap: false, streak: 0, flips: 0 };
+function __dbgBreakoutLog(hypothesisId, location, message, data) {
+  const payload = {
+    hypothesisId,
+    location,
+    message,
+    data,
+    timestamp: Date.now(),
+    runId: 'pre-fix',
+  };
+  // eslint-disable-next-line no-console
+  console.warn('[BREAKOUT-DBG]', message, data);
+  try {
+    if (typeof fetch === 'function') {
+      fetch('http://127.0.0.1:7243/ingest/c2f0a0e0-breakout-dbg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'breakout-loop' },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+    }
+  } catch {
+    /* ignore */
+  }
+  try {
+    if (typeof require === 'function') {
+      require('fs').appendFileSync(
+        '/opt/cursor/logs/debug.log',
+        JSON.stringify(payload) + '\n'
+      );
+    }
+  } catch {
+    /* browser — fall through to localStorage ring */
+  }
+  try {
+    if (typeof localStorage !== 'undefined') {
+      const key = '__breakout_dbg_logs';
+      const prev = JSON.parse(localStorage.getItem(key) || '[]');
+      prev.push(payload);
+      while (prev.length > 200) prev.shift();
+      localStorage.setItem(key, JSON.stringify(prev));
+    }
+    if (typeof window !== 'undefined') {
+      window.__BREAKOUT_DBG_DUMP__ = () => {
+        try {
+          return JSON.parse(localStorage.getItem('__breakout_dbg_logs') || '[]');
+        } catch {
+          return [];
+        }
+      };
+      window.__BREAKOUT_DBG_CLEAR__ = () => {
+        try {
+          localStorage.removeItem('__breakout_dbg_logs');
+        } catch {
+          /* ignore */
+        }
+      };
+    }
+  } catch {
+    /* ignore */
+  }
+}
+// #endregion
+
 export function step(state, dtScale = 1) {
   if (state.status !== 'playing' || state.ball.stuck) return state;
 
@@ -157,6 +221,9 @@ export function step(state, dtScale = 1) {
   let x = ball.x + vx;
   let y = ball.y + vy;
   const r = ball.r;
+  // #region agent log
+  const __prePos = { x: ball.x, y: ball.y, vx: ball.vx, vy: ball.vy, dtScale };
+  // #endregion
 
   if (x - r < 0) {
     x = r;
@@ -171,10 +238,20 @@ export function step(state, dtScale = 1) {
   }
 
   // Nudge a flat bounce so the ball can find a way out of a wall trap.
+  // #region agent log
+  let __nudgeVy = false;
+  let __nudgeVx = false;
+  // #endregion
   if (Math.abs(vy) < 1.6) {
+    // #region agent log
+    __nudgeVy = true;
+    // #endregion
     vy = vy <= 0 ? -2.4 : 2.4;
   }
   if (Math.abs(vx) < 0.4) {
+    // #region agent log
+    __nudgeVx = true;
+    // #endregion
     vx = (x < state.w / 2 ? 1 : -1) * 1.8;
   }
 
@@ -203,6 +280,11 @@ export function step(state, dtScale = 1) {
     const overlapBottom = b.y + b.h - (ball.y - r);
     const minX = Math.min(overlapLeft, overlapRight);
     const minY = Math.min(overlapTop, overlapBottom);
+    // #region agent log
+    const __vxBefore = ball.vx;
+    const __vyBefore = ball.vy;
+    const __axis = minX < minY ? 'x' : 'y';
+    // #endregion
     if (minX < minY) {
       ball = { ...ball, vx: -ball.vx };
     } else {
@@ -216,6 +298,74 @@ export function step(state, dtScale = 1) {
     bricks = bricks.map((brick, i) =>
       i === hitIndex ? { ...brick, hp, alive } : brick
     );
+    // #region agent log
+    const stillOverlap = circleRectOverlap(ball.x, ball.y, r, b.x, b.y, b.w, b.h);
+    const sameBrick = __dbgBrickPrev.hitIndex === hitIndex;
+    const flippedVx = sameBrick && Math.sign(__vxBefore) !== 0 && Math.sign(ball.vx) === -Math.sign(__dbgBrickPrev.vx);
+    const flippedVy = sameBrick && Math.sign(__vyBefore) !== 0 && Math.sign(ball.vy) === -Math.sign(__dbgBrickPrev.vy);
+    const oscillating =
+      sameBrick &&
+      __dbgBrickPrev.stillOverlap &&
+      stillOverlap &&
+      (flippedVx || flippedVy || Math.sign(ball.vx) !== Math.sign(__vxBefore) || Math.sign(ball.vy) !== Math.sign(__vyBefore));
+    if (sameBrick && stillOverlap) {
+      __dbgBrickPrev.streak += 1;
+      if (flippedVx || flippedVy || Math.sign(ball.vx) !== Math.sign(__vxBefore) || Math.sign(ball.vy) !== Math.sign(__vyBefore)) {
+        __dbgBrickPrev.flips += 1;
+      }
+    } else {
+      __dbgBrickPrev.streak = stillOverlap ? 1 : 0;
+      __dbgBrickPrev.flips = 0;
+    }
+    __dbgBrickPrev.hitIndex = hitIndex;
+    __dbgBrickPrev.vx = ball.vx;
+    __dbgBrickPrev.vy = ball.vy;
+    __dbgBrickPrev.stillOverlap = stillOverlap;
+    if (stillOverlap || oscillating || __dbgBrickPrev.streak >= 2 || __nudgeVx || __nudgeVy) {
+      __dbgBreakoutLog(
+        oscillating || __dbgBrickPrev.streak >= 3 ? 'A' : alive && stillOverlap ? 'B' : __nudgeVx || __nudgeVy ? 'C' : 'A',
+        'breakout.js:step:brickHit',
+        '[BREAKOUT-DBG] brick hit — post-bounce overlap check',
+        {
+          hitIndex,
+          kind: b.kind,
+          hpBefore: b.hp,
+          hpAfter: hp,
+          alive,
+          axis: __axis,
+          minX,
+          minY,
+          prePos: __prePos,
+          postPos: { x: ball.x, y: ball.y, vx: ball.vx, vy: ball.vy },
+          vxBefore: __vxBefore,
+          vyBefore: __vyBefore,
+          stillOverlap,
+          sameBrick,
+          oscillating,
+          streak: __dbgBrickPrev.streak,
+          flips: __dbgBrickPrev.flips,
+          nudgeVx: __nudgeVx,
+          nudgeVy: __nudgeVy,
+          noSeparation: true,
+        }
+      );
+    }
+    // #endregion
+  } else {
+    // #region agent log
+    if (__dbgBrickPrev.streak > 0) {
+      __dbgBreakoutLog('A', 'breakout.js:step:noHit', '[BREAKOUT-DBG] overlap streak ended', {
+        prevHitIndex: __dbgBrickPrev.hitIndex,
+        streak: __dbgBrickPrev.streak,
+        flips: __dbgBrickPrev.flips,
+        pos: { x: ball.x, y: ball.y, vx: ball.vx, vy: ball.vy },
+      });
+    }
+    __dbgBrickPrev.hitIndex = -1;
+    __dbgBrickPrev.stillOverlap = false;
+    __dbgBrickPrev.streak = 0;
+    __dbgBrickPrev.flips = 0;
+    // #endregion
   }
 
   const remaining = bricks.some((b) => b.alive);
