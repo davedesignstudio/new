@@ -1,7 +1,13 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main id="main" class="page-main">
+  <header class="page-hero">
+    <p class="eyebrow">Tunnel Test</p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="page-body prose">
+    {{ .Content }}
+  </div>
+</main>
 
 {{ partial "footer" . }}

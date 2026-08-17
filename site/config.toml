@@ -1,11 +1,25 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Tunnel Test Pizzeria"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Pizza that exits 0. Fired through the tunnel oven on Vine."
+  tagline = "Pizza that exits 0."
+  address = "412 Vine Tunnel, Suite 0"
+  hours = "Daily 11am – 11pm"
+  phone = "(555) 010-0000"
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food"
+    weight = 1
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 2
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact"
+    weight = 3

@@ -1,8 +1,11 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main id="main" class="page-main">
+  <header class="page-hero">
+    <p class="eyebrow">Tunnel Test</p>
+    <h1>404 · wrong tunnel</h1>
+    <p>This path does not compile. Try the <a href="/">home oven</a> or the <a href="/food">menu</a>.</p>
+  </header>
+</main>
 
 {{ partial "footer" . }}

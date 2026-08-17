@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/food/shrimp/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/contact/</loc>
+    <lastmod>2026-08-16T13:04:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/imperial-roll/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/about/</loc>
+    <lastmod>2026-08-16T13:03:58-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/vegan-imperial-roll/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/food/refusal-cliff/</loc>
+    <lastmod>2026-08-16T12:05:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/oysters/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/food/crash-hot-honey/</loc>
+    <lastmod>2026-08-16T12:04:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/scallop/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/food/sparse-funghi/</loc>
+    <lastmod>2026-08-16T12:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/spring-roll/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/food/quad-formaggio/</loc>
+    <lastmod>2026-08-16T12:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/tartare/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/food/pepperoni-loop/</loc>
+    <lastmod>2026-08-16T12:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/food/vegan-spring-roll/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <loc>/food/exit-0-margherita/</loc>
+    <lastmod>2026-08-16T12:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -48,19 +49,25 @@
   
   <url>
     <loc>/categories/dinner/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <lastmod>2026-08-16T12:05:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/food/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <lastmod>2026-08-16T12:05:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/lunch/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <lastmod>2026-08-16T12:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pages/</loc>
+    <lastmod>2026-08-16T13:04:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -71,7 +78,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-05-17T13:03:58-04:00</lastmod>
+    <lastmod>2026-08-16T13:04:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,16 +1,17 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-16T13:04:00-04:00"
 title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Find the tunnel
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+**Address:** 412 Vine Tunnel, Suite 0  
+**Hours:** Daily 11am – 11pm  
+**Phone:** (555) 010-0000
 
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
-</form>
+Walk-ins welcome. Large groups: call ahead so the belt stays clear.
+
+## Say something
+
+Questions, catering, or a pie that failed your personal compile — call the number above. We answer when the oven isn’t screaming.
