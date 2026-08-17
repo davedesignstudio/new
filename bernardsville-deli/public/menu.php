@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="hero menu-hero-clean">
   <div class="container paper-hero-inner">
     <h1><?= print_title('The Menu', 'print-title print-title--hero') ?></h1>
-    <p class="lede">Every plate, photographed. Clean lines. The same titles as the printed boards.</p>
+    <p class="lede">Clean lines. Every plate, photographed.</p>
   </div>
 </section>
 
@@ -31,23 +31,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </nav>
 
-<section class="print-boards" aria-label="Printed menu boards">
-  <div class="container print-boards-grid">
-    <?php foreach ($boards as $i => $board): ?>
-      <a class="print-board-card" href="<?= e(asset_url($board['src'])) ?>">
-        <img src="<?= e(asset_url($board['src'])) ?>" alt="<?= e($board['alt']) ?>" width="674" height="872" loading="<?= $i === 0 ? 'eager' : 'lazy' ?>" />
-      </a>
-    <?php endforeach; ?>
-  </div>
-</section>
-
 <section class="print-menu">
   <div class="container menu-catalog">
     <?php foreach (menu_sections() as $section): ?>
       <article class="print-section menu-catalog-section" id="<?= e($section['id']) ?>">
-        <?php if (!empty($section['watermark'])): ?>
-          <span class="print-watermark" aria-hidden="true"><?= e($section['watermark']) ?></span>
-        <?php endif; ?>
         <header class="menu-catalog-head">
           <h2 class="print-heading">
             <?= print_title($section['title'], 'print-title', $section['wordmark'] ?? $section['id']) ?>
@@ -79,6 +66,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
                       <?php if (!empty($item['veg'])): ?><span class="badge-veg" title="Vegetarian">V</span><?php endif; ?>
                       <?php if (!empty($item['spicy'])): ?><span class="badge-spicy" title="Spicy">!</span><?php endif; ?>
                     </h3>
+                    <span class="menu-leader" aria-hidden="true"></span>
                     <?php if (!empty($item['price_12'])): ?>
                       <span class="print-prices">
                         <em><?= e($item['price_12']) ?></em>
@@ -91,7 +79,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
                   <?php if (!empty($item['desc'])): ?>
                     <p><?= e($item['desc']) ?></p>
                   <?php endif; ?>
-                  <span class="dish-order">Add to cart</span>
+                  <span class="dish-order">Add →</span>
                 </div>
               </a>
             </li>
@@ -104,6 +92,22 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> images.
       <a href="<?= e(asset_url('assets/photos/menu/CREDITS.json')) ?>">Photo credits</a>.
     </p>
+  </div>
+</section>
+
+<section class="print-boards print-boards--footer" aria-label="Printed menu boards">
+  <div class="container">
+    <header class="menu-catalog-head menu-catalog-head--boards">
+      <h2 class="boards-heading">Printed boards</h2>
+      <p class="section-lead">The house menu sheets, for reference.</p>
+    </header>
+    <div class="print-boards-grid">
+      <?php foreach ($boards as $i => $board): ?>
+        <a class="print-board-card" href="<?= e(asset_url($board['src'])) ?>">
+          <img src="<?= e(asset_url($board['src'])) ?>" alt="<?= e($board['alt']) ?>" width="674" height="872" loading="lazy" />
+        </a>
+      <?php endforeach; ?>
+    </div>
   </div>
 </section>
 
