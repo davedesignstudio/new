@@ -3,33 +3,34 @@
 <div class="content container {{ .Title }} {{ .Section | urlize }}">
   <h1>{{ .Section }}</h1>
   {{ if eq .Section "food" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
-                {{ range .Pages }}
-                  {{ $itemTitle := .Title }}
-                  <li class="menu-item{{ if .Params.image }} menu-item--has-image{{ end }}">
-                    {{ with .Params.image }}
-                    <img class="menu-item-image" src="{{ . }}" alt="{{ $itemTitle }}" />
-                    {{ end }}
-                    <div class="menu-item-copy">
-                      <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                      <p class="menu-item-price">{{ .Params.price }}</p>
-                    </div>
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
+    <p class="menu-lede">Poster plates. Pick one. Order it.</p>
+    <div class="menu-order-bar">
+      <a class="order-cta order-cta--bar" href="{{ .Site.Params.orderUrl | default "/order" }}">Order Online</a>
+    </div>
+    {{ range (.Pages.ByParam "weight").GroupByParam "type" }}
+      <section class="menu-section">
+        <h2><em>{{ .Key }}</em></h2>
+        <hr>
+        <ul class="menu-poster-list">
+        {{ range .Pages }}
+          {{ $itemTitle := .Title }}
+          <li class="menu-poster">
+            {{ with .Params.image }}
+            <div class="menu-poster-media">
+              <img class="menu-poster-image" src="{{ . }}" alt="{{ $itemTitle }}" />
+            </div>
             {{ end }}
-          {{ end }}
+            <div class="menu-poster-body">
+              <div class="menu-poster-meta">
+                <h3 class="menu-poster-title">{{ .Title }}</h3>
+                <p class="menu-poster-price">${{ .Params.price }}</p>
+              </div>
+              <p class="menu-poster-desc">{{ .Params.description }}</p>
+              <a class="menu-poster-order" href="{{ $.Site.Params.orderUrl | default "/order" }}">Order this</a>
+            </div>
+          </li>
         {{ end }}
+        </ul>
       </section>
     {{ end }}
   {{ else if eq .Section "drinks" }}
@@ -39,7 +40,7 @@
           {{ range $key, $value := $taxonomy }}
             {{ if eq $key "drinks"}}
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
+                <h2><em>{{ .Key }}</em></h2>
                 <hr>
                 <ul>
                 {{ range .Pages }}

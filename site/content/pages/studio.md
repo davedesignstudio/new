@@ -8,35 +8,27 @@ url = "/studio"
 
 A working loop for design: take in history, decide with intent, ship something real.
 
-### Learn
+---
 
-Design is problem-solving under constraint — from cave marks to print to Bauhaus to screens.
+### Cycle 1 — Paths
 
-- **Prehistory:** a mark stands for something not present  
-- **Print:** the same message can travel many times  
-- **Bauhaus:** form follows function; art + industry share one grammar  
-- **Swiss:** grid, type, and systems beat one-off decoration  
-- **Digital:** behavior (click, load, access) is part of the design  
+**Learn:** Bauhaus function + Swiss systems.  
+**Think:** Guests need one clear next step.  
+**Build:** Order CTA, homepage path strip, design tokens, motion.
 
-### Think
+### Cycle 2 — Plates
 
-Brief for this site: hungry people need a fast next step.
+**Learn:** Poster-era attention (Chéret / Lautrec) → Swiss clarity. A plate should stop the eye, then explain itself, then invite action.  
+**Think:**
 
 | | |
 |---|---|
-| **Problem** | Guests bounce without ordering or booking |
-| **Constraint** | One video hero, fixed sidebar, no live POS yet |
-| **Move** | One primary Order path, Swiss-clear secondary paths, tokens for a repeatable system |
+| **Problem** | Menu is text-first; hard to crave, no path to Order |
+| **Constraint** | Existing gallery photos only — no new shoot |
+| **Move** | Treat each dish as a mini-poster: image, title, price, **Order this** |
 
-### Build
-
-Shipped on this site from that brief:
-
-1. Persistent **Order Online** CTA (Bauhaus: function first)  
-2. Homepage **path strip** — Order / Menu / Reserve (Swiss: clear hierarchy)  
-3. CSS **design tokens** — color, type, space as a small system  
-4. Light **motion** — presence, not noise  
+**Build:** Four poster plates on `/food`, menu Order bar, per-item Order links, no lunch/dinner duplicate list.
 
 ---
 
-Next cycle: pick a plate, photograph it like a poster (Art Nouveau attention → Swiss clarity), then wire it into the menu with price and Order.
+Next cycle: real kitchen photos + live Toast/ChowNow `orderUrl` in config.
