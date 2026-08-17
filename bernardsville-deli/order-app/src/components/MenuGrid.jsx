@@ -1,13 +1,35 @@
-import { createSignal, createMemo, For, Show } from 'solid-js';
-import { CATEGORIES, MENU_ITEMS } from '../data/menu';
+import { createSignal, createMemo, For, Show, onMount } from 'solid-js';
+import { CATEGORIES, MENU_ITEMS, findMenuItem, isPizzaItem } from '../data/menu';
 import { getCategoryPhotoUrl } from '../data/photos';
 import { getCategoryVariant } from '../data/images';
+import { useCart } from '../store/cart';
 import CategoryNav from './CategoryNav';
 import ProductCard from './ProductCard';
 import RenaissanceMedia from '../art/RenaissanceMedia';
 
 export default function MenuGrid(props) {
+  const cart = useCart();
   const [activeCategory, setActiveCategory] = createSignal('pizza');
+
+  onMount(() => {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('item');
+    if (!query) return;
+    const found = findMenuItem(query);
+    if (!found) return;
+    setActiveCategory(found.category);
+    window.requestAnimationFrame(() => {
+      document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    if (isPizzaItem(found)) {
+      cart.setBuilderItem(found);
+    } else {
+      cart.addItem(found);
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.delete('item');
+    window.history.replaceState({}, '', `${url.pathname}${url.hash}`);
+  });
 
   const filteredItems = createMemo(() =>
     MENU_ITEMS.filter((item) => item.category === activeCategory())

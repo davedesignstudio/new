@@ -1,3 +1,4 @@
+import { createSignal } from 'solid-js';
 import { formatPrice, isPizzaItem } from '../data/menu';
 import { getStoryForDish } from '../data/stories';
 import { useCart } from '../store/cart';
@@ -8,17 +9,27 @@ export default function ProductCard(props) {
   const item = () => props.item;
   const story = () => getStoryForDish(item().id);
   const canCustomize = () => isPizzaItem(item());
+  const [justAdded, setJustAdded] = createSignal(false);
 
-  const handleAction = () => {
+  const addDish = () => {
     if (canCustomize()) {
       cart.setBuilderItem(item());
-    } else {
-      cart.addItem(item());
+      return;
+    }
+    cart.addItem(item());
+    setJustAdded(true);
+    window.setTimeout(() => setJustAdded(false), 900);
+  };
+
+  const handleKey = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      addDish();
     }
   };
 
-  const handleStory = (e) => {
-    e.stopPropagation();
+  const handleStory = (event) => {
+    event.stopPropagation();
     const s = story();
     if (s && props.onSelectStory) {
       props.onSelectStory(s);
@@ -26,7 +37,16 @@ export default function ProductCard(props) {
   };
 
   return (
-    <article class="product-card fresco-card dish-line-card">
+    <article
+      id={`item-${item().id}`}
+      class="product-card fresco-card dish-line-card product-card--clickable"
+      classList={{ 'is-added': justAdded() }}
+      role="button"
+      tabIndex={0}
+      aria-label={canCustomize() ? `Customize ${item().name}` : `Add ${item().name} to cart`}
+      onClick={addDish}
+      onKeyDown={handleKey}
+    >
       <div class="card-cornice" aria-hidden="true" />
       <div class="product-image">
         <ProductImage item={item()} />
@@ -44,9 +64,9 @@ export default function ProductCard(props) {
           <span class="product-price">
             {canCustomize() ? `from ${formatPrice(item().basePrice)}` : formatPrice(item().basePrice)}
           </span>
-          <button type="button" class="btn-add" onClick={handleAction}>
-            {canCustomize() ? 'Customize' : 'Add'}
-          </button>
+          <span class="btn-add" aria-hidden="true">
+            {justAdded() ? 'Added' : canCustomize() ? 'Customize' : 'Add'}
+          </span>
         </div>
       </div>
     </article>

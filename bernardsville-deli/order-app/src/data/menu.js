@@ -264,7 +264,33 @@ export function isPizzaItem(item) {
   return Boolean(item && item.category === 'pizza' && item.customizable);
 }
 export function getMenuItemById(id) {
-  return MENU_ITEMS.find((item) => item.id === id);
+  return findMenuItem(id);
+}
+
+function photoSlug(item) {
+  const file = String(item.photo || '').split('/').pop() || '';
+  return file.replace(/\.(jpe?g|png|webp)$/i, '').toLowerCase();
+}
+
+/** Match catalog ids, photo slugs, and printed-menu / cafe deep links. */
+export function findMenuItem(query) {
+  if (!query) return undefined;
+  const q = decodeURIComponent(String(query)).trim().toLowerCase();
+  const compact = q.replace(/^(drinks|pizza)-/, '');
+
+  return MENU_ITEMS.find((item) => {
+    const id = String(item.id).toLowerCase();
+    const slug = photoSlug(item);
+    if (id === q || slug === q || id === compact || slug === compact) return true;
+    if (slug === `pizza-${q}` || id === `pizza-${q}`) return true;
+    if (id === 'house-blend' && (compact === 'robust-house-blend' || q === 'drinks-robust-house-blend')) {
+      return true;
+    }
+    if (q.startsWith('drinks-') && (id === compact || slug === compact)) {
+      return true;
+    }
+    return false;
+  });
 }
 
 export function calcPizzaPrice(item, options) {

@@ -99,4 +99,9 @@ export const CATALOG_ITEMS = [
   { id: 'desserts-guava', category: 'desserts', name: 'Guava Mango Flute', description: 'Guava gelato swirled with mango sauce.', basePrice: 5.95, photo: g('gelato-guava') },
   { id: 'desserts-cafe', category: 'desserts', name: 'Coppa Cafe', description: 'Fior di latte with coffee and cocoa swirl.', basePrice: 5.95, photo: g('gelato-cafe') },
   { id: 'desserts-catalana', category: 'desserts', name: 'Coppa Catalana', description: 'Creamy custard topped with caramelized sugar.', basePrice: 5.95, photo: g('gelato-espresso') },
+
+  { id: 'espresso', category: 'drinks', name: 'Espresso', description: 'Single or double shot.', basePrice: 2.49, photo: '/assets/photos/coffee.jpg' },
+  { id: 'cappuccino', category: 'drinks', name: 'Cappuccino', description: 'Steamed milk, thick foam.', basePrice: 4.49, photo: '/assets/photos/coffee.jpg' },
+  { id: 'cold-brew', category: 'drinks', name: 'Cold Brew', description: 'Slow-steeped, served over ice.', basePrice: 4.49, photo: '/assets/photos/coffee.jpg' },
+  { id: 'seasonal-special', category: 'drinks', name: 'Seasonal Special', description: 'Ask your barista.', basePrice: 5.49, photo: '/assets/photos/coffee.jpg' },
 ];

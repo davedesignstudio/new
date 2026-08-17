@@ -47,11 +47,17 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <ul class="cafe-menu-list">
       <?php foreach ($cafe['drinks'] as $drink): ?>
         <li class="cafe-menu-item">
-          <div class="cafe-menu-item-head">
-            <h3><?= e($drink['name']) ?></h3>
-            <span><?= e($drink['price']) ?></span>
-          </div>
-          <p><?= e($drink['desc']) ?></p>
+          <?php
+            $drinkSlug = (string) ($drink['slug'] ?? item_slug((string) $drink['name']));
+          ?>
+          <a class="cafe-menu-hit" href="<?= e(asset_url('order/?item=' . rawurlencode('drinks-' . $drinkSlug))) ?>">
+            <div class="cafe-menu-item-head">
+              <h3><?= e($drink['name']) ?></h3>
+              <span><?= e($drink['price']) ?></span>
+            </div>
+            <p><?= e($drink['desc']) ?></p>
+            <span class="dish-order">Add to cart</span>
+          </a>
         </li>
       <?php endforeach; ?>
     </ul>

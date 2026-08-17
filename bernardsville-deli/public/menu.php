@@ -61,33 +61,39 @@ require dirname(__DIR__) . '/src/includes/header.php';
         </header>
         <ul class="dish-grid<?= $section['id'] === 'desserts' ? ' dish-grid--dessert' : '' ?>">
           <?php foreach ($section['items'] as $item): ?>
-            <?php $photo = item_photo_url($item); ?>
+            <?php
+              $photo = item_photo_url($item);
+              $orderId = (string) ($item['photo'] ?? item_slug((string) $item['name']));
+            ?>
             <li class="dish-card">
-              <?php if ($photo): ?>
-                <div class="dish-photo<?= item_photo_contain($item) ? ' dish-photo--contain' : '' ?>">
-                  <img src="<?= e($photo) ?>" alt="<?= e($item['name']) ?>" width="480" height="360" loading="lazy" decoding="async" />
-                </div>
-              <?php endif; ?>
-              <div class="dish-body">
-                <div class="print-item-row">
-                  <h3>
-                    <?= e($item['name']) ?>
-                    <?php if (!empty($item['veg'])): ?><span class="badge-veg" title="Vegetarian">V</span><?php endif; ?>
-                    <?php if (!empty($item['spicy'])): ?><span class="badge-spicy" title="Spicy">!</span><?php endif; ?>
-                  </h3>
-                  <?php if (!empty($item['price_12'])): ?>
-                    <span class="print-prices">
-                      <em><?= e($item['price_12']) ?></em>
-                      <em><?= e($item['price_16']) ?></em>
-                    </span>
-                  <?php else: ?>
-                    <span class="print-price"><?= e($item['price']) ?></span>
-                  <?php endif; ?>
-                </div>
-                <?php if (!empty($item['desc'])): ?>
-                  <p><?= e($item['desc']) ?></p>
+              <a class="dish-card-hit" href="<?= e(asset_url('order/?item=' . rawurlencode($orderId))) ?>">
+                <?php if ($photo): ?>
+                  <div class="dish-photo<?= item_photo_contain($item) ? ' dish-photo--contain' : '' ?>">
+                    <img src="<?= e($photo) ?>" alt="" width="480" height="360" loading="lazy" decoding="async" />
+                  </div>
                 <?php endif; ?>
-              </div>
+                <div class="dish-body">
+                  <div class="print-item-row">
+                    <h3>
+                      <?= e($item['name']) ?>
+                      <?php if (!empty($item['veg'])): ?><span class="badge-veg" title="Vegetarian">V</span><?php endif; ?>
+                      <?php if (!empty($item['spicy'])): ?><span class="badge-spicy" title="Spicy">!</span><?php endif; ?>
+                    </h3>
+                    <?php if (!empty($item['price_12'])): ?>
+                      <span class="print-prices">
+                        <em><?= e($item['price_12']) ?></em>
+                        <em><?= e($item['price_16']) ?></em>
+                      </span>
+                    <?php else: ?>
+                      <span class="print-price"><?= e($item['price']) ?></span>
+                    <?php endif; ?>
+                  </div>
+                  <?php if (!empty($item['desc'])): ?>
+                    <p><?= e($item['desc']) ?></p>
+                  <?php endif; ?>
+                  <span class="dish-order">Add to cart</span>
+                </div>
+              </a>
             </li>
           <?php endforeach; ?>
         </ul>
@@ -103,7 +109,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>Build a custom pizza online — or call ahead</p>
+    <p>Every printed item is in the online order — or call ahead</p>
     <div class="hero-actions">
       <a class="btn btn-gold" href="<?= e(asset_url('order/')) ?>">Order Online</a>
       <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>

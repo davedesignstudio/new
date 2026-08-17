@@ -22,6 +22,17 @@ export function CartProvider(props) {
 
   const addItem = (item, options = null) => {
     const price = options ? calcPizzaPrice(item, options) : item.basePrice;
+    const lineOptions = item.category === 'pizza' ? options : null;
+    const existing = store.items.findIndex(
+      (line) =>
+        line.itemId === item.id &&
+        JSON.stringify(line.options) === JSON.stringify(lineOptions)
+    );
+    if (existing !== -1) {
+      setStore('items', existing, 'quantity', (qty) => qty + 1);
+      setCartOpen(true);
+      return;
+    }
     setStore('items', (items) => [
       ...items,
       {
@@ -30,7 +41,7 @@ export function CartProvider(props) {
         name: item.name,
         price,
         quantity: 1,
-        options: item.category === 'pizza' ? options : null,
+        options: lineOptions,
       },
     ]);
     setCartOpen(true);
