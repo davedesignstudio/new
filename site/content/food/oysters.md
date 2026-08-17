@@ -9,6 +9,5 @@ description: >-
   gold (ca)
 type: raw bar
 price: 24
+image: /img/gallery/photo4.jpg
 ---
-
-

@@ -3,9 +3,29 @@ languageCode = "en-us"
 title = "Tasty Licks"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Fresh plates, open kitchen, and ordering that gets you fed fast."
+  orderUrl = "/order"
+  phone = "(555) 010-1947"
+  address = "214 Market Street, Newark, NJ"
+  hoursWeekday = "Mon–Thu 11:30am–9:30pm"
+  hoursWeekend = "Fri–Sat 11:30am–10:30pm · Sun 11am–9pm"
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food"
+    weight = 1
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery"
+    weight = 2
+
+[[menu.main]]
+    name = "Reserve"
+    url  = "/contact"
+    weight = 3
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 4

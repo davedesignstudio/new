@@ -14,9 +14,15 @@
                 <h3>{{ .Key }}</h3>
                 <ul>
                 {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                  {{ $itemTitle := .Title }}
+                  <li class="menu-item{{ if .Params.image }} menu-item--has-image{{ end }}">
+                    {{ with .Params.image }}
+                    <img class="menu-item-image" src="{{ . }}" alt="{{ $itemTitle }}" />
+                    {{ end }}
+                    <div class="menu-item-copy">
+                      <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
+                      <p class="menu-item-price">{{ .Params.price }}</p>
+                    </div>
                   </li>
                 {{ end }}
                 </ul>
@@ -37,9 +43,15 @@
                 <hr>
                 <ul>
                 {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                  {{ $itemTitle := .Title }}
+                  <li class="menu-item{{ if .Params.image }} menu-item--has-image{{ end }}">
+                    {{ with .Params.image }}
+                    <img class="menu-item-image" src="{{ . }}" alt="{{ $itemTitle }}" />
+                    {{ end }}
+                    <div class="menu-item-copy">
+                      <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
+                      <p class="menu-item-price">{{ .Params.price }}</p>
+                    </div>
                   </li>
                 {{ end }}
                 </ul>

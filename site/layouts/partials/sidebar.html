@@ -5,11 +5,30 @@
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
+    <a class="order-cta" href="{{ .Site.Params.orderUrl | default "/order" }}">Order Online</a>
+
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a href="/">Home</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
     </ul>
+
+    {{ if or .Site.Params.address .Site.Params.hoursWeekday }}
+    <div class="sidebar-meta">
+      {{ with .Site.Params.address }}
+      <p class="sidebar-meta-label">Visit</p>
+      <p>{{ . }}</p>
+      {{ end }}
+      {{ with .Site.Params.phone }}
+      <p><a href="tel:{{ . | replaceRE "[^0-9+]" "" }}">{{ . }}</a></p>
+      {{ end }}
+      {{ if or .Site.Params.hoursWeekday .Site.Params.hoursWeekend }}
+      <p class="sidebar-meta-label">Hours</p>
+      {{ with .Site.Params.hoursWeekday }}<p>{{ . }}</p>{{ end }}
+      {{ with .Site.Params.hoursWeekend }}<p>{{ . }}</p>{{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
   </div>
 </div>
