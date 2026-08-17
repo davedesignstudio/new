@@ -35,6 +35,7 @@ export default function Header() {
             <a href="#menu" class="nav-link">Order</a>
             <a href={SITE.menuPage} class="nav-link">Full Menu</a>
             <a href="#gioco" class="nav-link">Pizza Game</a>
+            <a href="#breakout" class="nav-link">Breakout</a>
             <a href="#contatti" class="nav-link">Contact</a>
           </nav>
           <div class="header-actions">

@@ -7,6 +7,7 @@ import PizzeriaOrigin from './components/PizzeriaOrigin';
 import StoryModal from './components/StoryModal';
 import PizzaBuilder from './components/PizzaBuilder';
 import PizzaGame from './components/PizzaGame';
+import BreakoutGame from './components/BreakoutGame';
 import MuseumGallery from './components/MuseumGallery';
 import Cart from './components/Cart';
 import RenaissanceMedia from './art/RenaissanceMedia';
@@ -151,6 +152,7 @@ function AppContent() {
       <RenaissanceOrnament variant="frieze" className="section-ornament" />
       <PizzeriaOrigin onSelectStory={setActiveStory} />
       <PizzaGame onSelectStory={setActiveStory} />
+      <BreakoutGame />
       <StoriesSection onSelectStory={setActiveStory} />
       <RenaissanceOrnament variant="mandorla" className="section-ornament section-ornament--compact" />
       <MuseumGallery />
