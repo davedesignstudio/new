@@ -3,3 +3,4 @@ dist/
 node_modules
 bernardsville-deli/data/orders/*.json
 bernardsville-deli/data/orders/.seq-*
+bernardsville-deli/.env

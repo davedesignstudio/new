@@ -42,6 +42,13 @@ $woo = wc_rest_create_order($order);
 if (!empty($woo['ok'])) {
     $order['woocommerce_id'] = $woo['woocommerce_id'];
     $order['woocommerce_number'] = $woo['woocommerce_number'];
+    $order['woocommerce_order_key'] = $woo['order_key'] ?? null;
+    $order['payment_url'] = $woo['payment_url'] ?? null;
+    if (!empty($woo['payment_url'])) {
+        $order['status'] = 'pending_payment';
+        $order['payment']['method'] = 'woocommerce';
+        $order['payment']['title'] = 'Pay online with WooCommerce';
+    }
     file_put_contents(
         $order['_path'],
         json_encode($order, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) ?: '{}',
@@ -56,4 +63,6 @@ echo json_encode([
     'order_id' => $order['id'],
     'order' => $order,
     'woocommerce' => $woo,
+    'payment_url' => $order['payment_url'] ?? null,
+    'pay_online' => !empty($order['payment_url']),
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);

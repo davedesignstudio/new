@@ -75,12 +75,33 @@ function wc_validate_checkout(array $payload, array $catalog): array
             continue;
         }
         $id = (string) ($raw['id'] ?? $raw['sku'] ?? $raw['itemId'] ?? '');
-        $product = wc_find_product($catalog, $id);
+        $product = $id !== '' ? wc_find_product($catalog, $id) : null;
+        $qty = max(1, (int) ($raw['quantity'] ?? 1));
+
         if (!$product) {
-            $errors[] = 'Unknown item: ' . $id;
+            $customName = trim((string) ($raw['name'] ?? ''));
+            $customPrice = (float) ($raw['price'] ?? $raw['unit_price'] ?? 0);
+            if ($customName === '' || $customPrice <= 0) {
+                $errors[] = 'Unknown item: ' . ($id !== '' ? $id : 'custom');
+                continue;
+            }
+            $lineTotal = round($customPrice * $qty, 2);
+            $subtotal += $lineTotal;
+            $lines[] = [
+                'id' => $id !== '' ? $id : 'custom',
+                'sku' => 'BVL-CUSTOM',
+                'parent_sku' => 'BVL-CUSTOM',
+                'name' => $customName,
+                'quantity' => $qty,
+                'unit_price' => wc_money($customPrice),
+                'total' => wc_money($lineTotal),
+                'meta' => [
+                    ['key' => 'source', 'value' => 'custom'],
+                ],
+            ];
             continue;
         }
-        $qty = max(1, (int) ($raw['quantity'] ?? 1));
+
         $unit = wc_line_unit_price($product, $raw);
         $lineTotal = round($unit * $qty, 2);
         $subtotal += $lineTotal;
@@ -100,6 +121,15 @@ function wc_validate_checkout(array $payload, array $catalog): array
     $taxRate = (float) $catalog['store']['tax_rate'];
     $tax = round($subtotal * $taxRate, 2);
     $total = round($subtotal + $tax, 2);
+
+    $payMethod = (string) ($payload['payment_method'] ?? 'auto');
+    $wcConnected = wc_store_config()['enabled'];
+    if ($payMethod === 'auto') {
+        $payMethod = $wcConnected ? 'woocommerce' : 'cod';
+    }
+    if ($payMethod === 'woocommerce' && !$wcConnected) {
+        $payMethod = 'cod';
+    }
 
     return [
         'ok' => $errors === [],
@@ -122,8 +152,10 @@ function wc_validate_checkout(array $payload, array $catalog): array
                 'currency' => $catalog['store']['currency'],
             ],
             'payment' => [
-                'method' => 'cod',
-                'title' => $fulfillment === 'delivery' ? 'Pay on delivery' : 'Pay at pickup',
+                'method' => $payMethod === 'woocommerce' ? 'woocommerce' : 'cod',
+                'title' => $payMethod === 'woocommerce'
+                    ? 'Pay online with WooCommerce'
+                    : ($fulfillment === 'delivery' ? 'Pay on delivery' : 'Pay at pickup'),
             ],
         ],
     ];
@@ -155,22 +187,25 @@ function wc_rest_create_order(array $order): array
 
     $lineItems = [];
     foreach ($order['items'] as $line) {
-        $item = [
+        $lineItems[] = [
             'name' => $line['name'],
             'quantity' => $line['quantity'],
             'subtotal' => $line['total'],
             'total' => $line['total'],
-            'sku' => $line['sku'],
-            'meta_data' => $line['meta'],
+            'sku' => $line['sku'] ?? '',
+            'meta_data' => $line['meta'] ?? [],
         ];
-        $lineItems[] = $item;
     }
 
+    $wantsOnlinePay = (($order['payment']['method'] ?? 'cod') !== 'cod');
+
     $body = [
-        'payment_method' => 'cod',
-        'payment_method_title' => $order['payment']['title'],
+        'payment_method' => $wantsOnlinePay ? '' : 'cod',
+        'payment_method_title' => $wantsOnlinePay
+            ? 'Pay online'
+            : ($order['payment']['title'] ?? 'Pay at pickup'),
         'set_paid' => false,
-        'status' => 'processing',
+        'status' => $wantsOnlinePay ? 'pending' : 'processing',
         'billing' => [
             'first_name' => $order['customer']['name'],
             'phone' => $order['customer']['phone'],
@@ -210,11 +245,22 @@ function wc_rest_create_order(array $order): array
 
     $json = json_decode((string) $raw, true);
     if ($code >= 200 && $code < 300 && is_array($json)) {
+        $wooId = $json['id'] ?? null;
+        $orderKey = (string) ($json['order_key'] ?? '');
+        $paymentUrl = null;
+        if ($wooId && $orderKey !== '') {
+            $paymentUrl = $cfg['url'] . '/checkout/order-pay/' . rawurlencode((string) $wooId)
+                . '/?pay_for_order=true&key=' . rawurlencode($orderKey);
+        }
+
         return [
             'ok' => true,
             'skipped' => false,
-            'woocommerce_id' => $json['id'] ?? null,
+            'woocommerce_id' => $wooId,
             'woocommerce_number' => $json['number'] ?? null,
+            'order_key' => $orderKey !== '' ? $orderKey : null,
+            'payment_url' => $paymentUrl,
+            'status' => $json['status'] ?? null,
         ];
     }
 
