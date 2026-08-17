@@ -1,0 +1,1419 @@
+/* ── Pizza Making Game ───────────────────────────────────── */
+
+.pizza-game-section--sega {
+  --sega-magenta: #E040A0;
+  --sega-cyan: #40C0E0;
+  --sega-yellow: #F0D020;
+  --sega-blue: #2040A0;
+  background:
+    linear-gradient(180deg, rgba(32, 64, 160, 0.06) 0%, transparent 30%),
+    linear-gradient(180deg, var(--fresco-warm) 0%, var(--marble) 100%);
+}
+
+.pizza-game-section {
+  padding: 3rem 0;
+  background: linear-gradient(180deg, var(--fresco-warm) 0%, var(--marble) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-ornament {
+  color: var(--gold);
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.game-header h2 {
+  font-size: 1.75rem;
+  color: var(--umber);
+  margin-bottom: 0.5rem;
+}
+
+.game-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.game-stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.game-stat {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.game-stat strong {
+  color: var(--gold);
+}
+
+.game-high-score {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+.game-lobby {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+/* iPhone-inspired phone frame */
+.game-phone-preview {
+  margin-bottom: 1.5rem;
+}
+
+.game-phone-frame {
+  position: relative;
+  width: 220px;
+  margin: 0 auto;
+  padding: 12px 10px 14px;
+  background: linear-gradient(160deg, #2a2a2e 0%, #1a1a1c 100%);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 2px #3a3a3e,
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.game-phone-frame--compact {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 8px 12px;
+  border-radius: 24px;
+}
+
+.game-phone-notch {
+  width: 72px;
+  height: 18px;
+  margin: 0 auto 8px;
+  background: #0a0a0c;
+  border-radius: 0 0 12px 12px;
+}
+
+.game-phone-screen {
+  background: var(--fresco-cream);
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.game-phone-frame--compact .game-phone-screen {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.game-phone-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  padding: 0.75rem;
+  margin: 0;
+}
+
+.game-phone-active {
+  width: 100%;
+  max-width: 300px;
+}
+
+.game-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.game-feature-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--fresco-cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.game-feature-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.game-feature-label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--umber);
+}
+
+.game-feature-detail {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.game-customers-preview {
+  margin-bottom: 1.25rem;
+}
+
+.game-customers-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.game-customers-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.game-customer-avatar {
+  font-size: 1.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fresco-cream);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: default;
+  transition: transform 0.15s;
+}
+
+.game-customer-avatar:hover {
+  transform: scale(1.1);
+}
+
+/* Order ticket — App Store style */
+.game-order-ticket {
+  background: #fffef8;
+  border: 2px dashed var(--terracotta-light);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(61, 41, 20, 0.08);
+}
+
+.game-ticket-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-ticket-emoji {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.game-ticket-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--umber-dark);
+  margin: 0;
+}
+
+.game-ticket-location {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.game-ticket-day {
+  margin-left: auto;
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201, 162, 39, 0.12);
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.game-ticket-order {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.45;
+  margin: 0 0 0.35rem;
+}
+
+.game-ticket-quirk {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  margin: 0 0 0.35rem;
+}
+
+.game-ticket-story {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Customer reaction */
+.game-customer-reaction {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--fresco-cream);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.game-reaction-mood {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.game-reaction-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--umber);
+  margin: 0;
+}
+
+.game-reaction-customer {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0;
+}
+
+.game-tip-earned {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--basil);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.game-tip-earned strong {
+  color: var(--basil);
+  font-size: 1rem;
+}
+
+.btn-game-next-day {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-game-next-day:hover {
+  background: rgba(201, 162, 39, 0.1);
+}
+
+.game-heritage-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--terracotta);
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+}
+
+.game-museum-credit {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0 0 0.75rem;
+  opacity: 0.85;
+}
+
+.game-lobby-art {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.25rem;
+  overflow: hidden;
+}
+
+.game-lobby-art .fresco-art {
+  width: 100%;
+  height: 100%;
+}
+
+.game-lobby-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: var(--umber-dark);
+  margin-bottom: 0.75rem;
+}
+
+.game-lobby-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin-bottom: 1.25rem;
+}
+
+.game-rules {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+.game-rules li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.game-rule-stage {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.game-rule-tip {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.btn-game-start {
+  width: 100%;
+  font-size: 0.95rem;
+  padding: 1rem 1.5rem;
+}
+
+.game-pizza-stage--knead-pop {
+  animation: game-knead-pop 0.18s ease-out;
+}
+
+@keyframes game-knead-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.game-pizza-stage--baking {
+  box-shadow: 0 0 24px rgba(184, 92, 56, 0.45), inset 0 0 40px rgba(255, 140, 60, 0.15);
+  animation: game-oven-glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes game-oven-glow {
+  from { box-shadow: 0 0 16px rgba(184, 92, 56, 0.35); }
+  to { box-shadow: 0 0 32px rgba(201, 162, 39, 0.5); }
+}
+
+.game-new-record {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.game-progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.game-step {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--marble);
+  opacity: 0.55;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.game-step.active {
+  opacity: 1;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+}
+
+.game-step.done {
+  opacity: 0.85;
+  border-color: var(--terracotta-light);
+}
+
+.game-step-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+}
+
+.game-step-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.game-board {
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gold-dark);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.game-workspace {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(220px, 280px) minmax(200px, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .game-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+.game-header-rose {
+  max-width: 72px;
+  margin: 0 auto 0.75rem;
+}
+
+/* Story panel — same media as StoriesSection */
+.game-story-panel {
+  overflow: hidden;
+  background: var(--marble);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-story-media {
+  height: 160px;
+  overflow: hidden;
+}
+
+.game-story-art {
+  width: 100%;
+  height: 100%;
+}
+
+.game-story-caption {
+  padding: 1rem;
+}
+
+.game-story-title {
+  font-size: 0.95rem;
+  color: var(--umber);
+  margin: 0.35rem 0 0.5rem;
+  line-height: 1.3;
+}
+
+.game-story-excerpt {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.game-story-read {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mediterranean);
+  transition: color 0.2s;
+}
+
+.game-story-read:hover {
+  color: var(--terracotta);
+}
+
+.game-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-pizza-hitarea {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 300px;
+  cursor: default;
+}
+
+.game-phone-frame--compact .game-pizza-hitarea {
+  max-width: none;
+  width: 100%;
+}
+
+.game-pizza-hitarea:not(:disabled) {
+  cursor: crosshair;
+}
+
+.game-pizza-stage {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 65%),
+    linear-gradient(160deg, var(--marble) 0%, var(--fresco-warm) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 24px rgba(61, 41, 20, 0.08);
+}
+
+.game-pizza-stage--interactive:hover {
+  box-shadow: inset 0 0 24px rgba(201, 162, 39, 0.15), 0 0 0 3px rgba(201, 162, 39, 0.25);
+}
+
+.game-pizza-stage--baked {
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.35), inset 0 0 16px rgba(184, 92, 56, 0.2);
+}
+
+.game-pizza-scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.game-oven-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.game-pizza-art {
+  position: relative;
+  z-index: 1;
+  width: 72%;
+  height: 72%;
+  transition: transform 0.2s ease;
+}
+
+.game-pizza-art--stretch {
+  transform: scale(var(--game-stretch, 1));
+}
+
+.game-pizza-art--dough {
+  width: 60%;
+  height: 60%;
+}
+
+.game-fresco-pizza,
+.game-pizza-art .fresco-art {
+  width: 100%;
+  height: 100%;
+}
+
+.game-topping-marker {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 244, 238, 0.85);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(61, 41, 20, 0.2);
+  pointer-events: none;
+}
+
+.game-result-art {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+}
+
+.game-result-art .ren-media {
+  width: 100%;
+  height: 100%;
+}
+
+/* Story strip below game */
+.game-stories-strip {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.game-stories-strip-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--umber);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.game-stories-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.game-story-chip {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-story-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.game-story-chip-art {
+  height: 100px;
+  overflow: hidden;
+}
+
+.game-story-chip-art .ren-media {
+  width: 100%;
+  height: 100%;
+}
+
+.game-story-chip-tag {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  padding: 0.5rem 0.75rem 0;
+}
+
+.game-story-chip-title {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--umber);
+  padding: 0.25rem 0.75rem 0.75rem;
+  line-height: 1.35;
+}
+
+.game-knead-hint {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  animation: game-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes game-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.game-instruction {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-dark);
+}
+
+.game-meter {
+  height: 10px;
+  background: var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.game-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--terracotta), var(--gold));
+  border-radius: 5px;
+  transition: width 0.15s ease;
+}
+
+.game-meter-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.game-slider {
+  width: 100%;
+  accent-color: var(--terracotta);
+}
+
+.btn-game-action {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(180deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+  color: var(--marble);
+  border: 2px solid var(--gold-dark);
+  border-radius: var(--radius);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-game-action:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.35);
+}
+
+.btn-game-action:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-game-bake {
+  animation: game-pulse 0.8s ease-in-out infinite;
+}
+
+.game-topping-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-game-chip {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--marble);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-game-chip.done {
+  background: rgba(58, 107, 53, 0.12);
+  border-color: var(--basil);
+  opacity: 0.7;
+}
+
+.btn-game-chip:disabled:not(.done) {
+  opacity: 0.4;
+}
+
+.game-topping-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.btn-topping-pick {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--fresco-cream);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.btn-topping-pick.active {
+  border-color: var(--gold);
+  background: rgba(201, 162, 39, 0.15);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+}
+
+.game-oven-meter {
+  position: relative;
+  height: 28px;
+  background: linear-gradient(90deg, #4A3728 0%, #B85C38 40%, #C9A227 55%, #A03020 80%, #2C1810 100%);
+  border-radius: 14px;
+  border: 2px solid var(--umber);
+  overflow: hidden;
+}
+
+.game-oven-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+.game-oven-needle {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 4px;
+  margin-left: -2px;
+  background: var(--marble);
+  border: 1px solid var(--umber);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  transition: left 0.03s linear;
+}
+
+.game-result {
+  text-align: center;
+}
+
+.game-score {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.game-score span {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.game-stars {
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin: 0.5rem 0;
+}
+
+.game-stars-dim {
+  color: var(--border);
+}
+
+.game-verdict {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--umber);
+  margin-bottom: 1rem;
+}
+
+.game-breakdown {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem;
+  text-align: left;
+}
+
+.game-breakdown div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.game-breakdown div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0.5rem;
+  background: var(--fresco-cream);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+}
+
+.game-breakdown dt {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.game-breakdown dd {
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.game-result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn-game-secondary {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 0.65rem;
+  color: var(--mediterranean);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.btn-game-secondary:hover {
+  background: var(--fresco-cream);
+}
+
+/* ── Story choices in gameplay ───────────────────────────── */
+.game-story-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.game-story-choice-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sega-cyan);
+}
+
+.game-story-choice-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  background: rgba(64, 192, 224, 0.08);
+  border-left: 3px solid var(--sega-cyan);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.game-story-choice-prompt {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--umber);
+  margin: 0;
+}
+
+.game-story-choice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.game-story-choice-btn {
+  text-align: left;
+  padding: 0.75rem 0.85rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--fresco-cream);
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.game-story-choice-btn:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  box-shadow: -3px 3px 0 var(--sega-magenta);
+}
+
+.game-story-choice-label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--umber-dark);
+  margin-bottom: 0.25rem;
+}
+
+.game-story-choice-hint {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.game-story-pick {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.65rem;
+  background: rgba(201, 162, 39, 0.12);
+  border-radius: var(--radius);
+  border: 1px dashed var(--gold);
+}
+
+.game-story-pick-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.game-story-pick-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--umber);
+  margin: 0.2rem 0 0;
+}
+
+.game-story-guide {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--mediterranean);
+  margin: 0 0 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(43, 95, 122, 0.08);
+  border-radius: var(--radius);
+}
+
+.btn-game-chip--story {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.25);
+}
+
+.btn-game-chip--warn {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.btn-topping-pick--story {
+  border-color: var(--gold);
+  background: rgba(201, 162, 39, 0.18);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+}
+
+.game-story-reaction {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--mediterranean);
+  margin: 0 0 1rem;
+  padding: 0.65rem;
+  background: var(--fresco-cream);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.game-story-reaction span {
+  font-size: 1.25rem;
+  margin-right: 0.35rem;
+}
+
+.game-breakdown div:nth-child(6):last-child {
+  grid-column: 1 / -1;
+}
+
+/* ── Sega Genesis / Bubsy platformer influence ───────────── */
+
+.game-sega-hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.75rem;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0d0d18 100%);
+  border: 3px solid var(--sega-cyan);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 2px var(--sega-magenta),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+}
+
+.game-hud-cell {
+  text-align: center;
+}
+
+.game-hud-label {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.45rem;
+  color: var(--sega-yellow);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.game-hud-value {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.game-hud-lives .game-hud-value {
+  color: var(--sega-magenta);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.game-mascot-bubble {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #fffef0 0%, #f8f0d8 100%);
+  border: 3px solid var(--umber);
+  border-radius: 12px 12px 12px 4px;
+  box-shadow: 4px 4px 0 var(--sega-magenta);
+  position: relative;
+}
+
+.game-mascot-bubble::after {
+  content: '';
+  position: absolute;
+  left: 52px;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--umber);
+}
+
+.game-mascot-sprite {
+  flex-shrink: 0;
+  animation: mascot-bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes mascot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.retro-mascot--excited {
+  animation: mascot-bounce 0.4s ease-in-out infinite;
+}
+
+.retro-mascot--happy {
+  filter: drop-shadow(0 0 4px var(--sega-yellow));
+}
+
+.retro-mascot--sad {
+  filter: grayscale(0.4);
+  transform: rotate(-5deg);
+}
+
+.game-mascot-speech {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-mascot-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--sega-blue);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.game-mascot-speech p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--charcoal);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.game-board--sega {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--sega-cyan);
+  box-shadow:
+    0 0 0 2px var(--sega-magenta),
+    var(--shadow-lg);
+}
+
+.game-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  border-radius: inherit;
+}
+
+.game-score-pop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  animation: score-pop-rise 1.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes score-pop-rise {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
+  30% { transform: translate(-50%, -60%) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -90%) scale(1); }
+}
+
+.game-score-pop-label {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: var(--sega-yellow);
+  text-shadow: 2px 2px 0 var(--sega-magenta);
+  margin-bottom: 0.25rem;
+}
+
+.game-score-pop-pts {
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--sega-blue);
+}
+
+.game-lobby--sega {
+  border: 3px solid var(--sega-cyan);
+  box-shadow: 4px 4px 0 var(--sega-magenta);
+}
+
+.game-phone-frame--sega {
+  background: linear-gradient(160deg, #2040A0 0%, #102060 100%);
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 3px var(--sega-yellow),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.game-sega-logo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: var(--sega-yellow);
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+  text-shadow: 2px 2px 0 var(--sega-magenta);
+}
+
+.game-phone-tagline--retro {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 0.45rem !important;
+  color: var(--sega-cyan) !important;
+  animation: press-start-blink 1s step-end infinite;
+}
+
+@keyframes press-start-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.btn-game-press-start {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 0.65rem !important;
+  background: linear-gradient(180deg, var(--sega-magenta) 0%, #A02070 100%) !important;
+  border-color: var(--sega-yellow) !important;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  animation: press-start-blink 1.5s step-end infinite;
+}
+
+.game-mascot-verdict {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--sega-cyan);
+  line-height: 1.6;
+  margin: 0.5rem 0 1rem;
+}
+
+.game-life-lost {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: #E04040;
+  margin-bottom: 0.5rem;
+}
+
+.game-life-gained {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: #40E080;
+  margin-bottom: 0.5rem;
+}
+
+.game-step.active {
+  border-color: var(--sega-cyan);
+  box-shadow: 0 0 0 2px rgba(64, 192, 224, 0.3);
+}
+
+.game-step.done .game-step-num {
+  background: var(--sega-magenta);
+  color: #fff;
+  border-color: var(--sega-yellow);
+}
+
+@media (max-width: 600px) {
+  .game-sega-hud {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .game-hud-label {
+    font-size: 0.4rem;
+  }
+
+  .game-hud-value {
+    font-size: 0.5rem;
+  }
+}
