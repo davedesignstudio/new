@@ -69,12 +69,16 @@ const LOCAL_CATEGORY = {
   drinks: '/assets/photos/coffee.jpg',
 };
 
+export const STONE_OVEN_PHOTO = '/assets/photos/stone-oven.jpg';
+export const FALLBACK_FOOD_PHOTO = '/assets/photos/pizza.jpg';
+
 const LOCAL_SCENE = {
   'hero-forno': '/assets/photos/hero-restaurant.jpg',
   'footer-napoli': '/assets/photos/exterior.jpg',
   'order-delivery': '/assets/photos/grill.jpg',
   'order-carryout': '/assets/photos/pizza.jpg',
   'empty-cart': '/assets/photos/pizza.jpg',
+  'stone-oven': STONE_OVEN_PHOTO,
   tribunali: '/assets/photos/kitchen-bar.jpg',
 };
 
@@ -108,11 +112,17 @@ export function getStoryPhotoUrl(storyId) {
 }
 
 export function getFoodPhotoUrl(itemId) {
+  if (!itemId) return FALLBACK_FOOD_PHOTO;
+  if (itemId === 'game-pizza') return FALLBACK_FOOD_PHOTO;
   if (LOCAL_FOOD[itemId]) return LOCAL_FOOD[itemId];
-  if (itemId && itemId.startsWith('desserts-')) {
+  if (itemId.startsWith('desserts-')) {
     return `/assets/photos/gelato-pistachio.png`;
   }
   return `/assets/photos/menu/${itemId}.jpg`;
+}
+
+export function resolveLinePhoto(line) {
+  return line?.photo || getFoodPhotoUrl(line?.itemId);
 }
 
 export function getCategoryPhotoUrl(categoryId) {

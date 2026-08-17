@@ -1,8 +1,7 @@
 import { For, Show } from 'solid-js';
 import { formatPrice } from '../data/menu';
-import { SCENE_VARIANTS, getItemVariantById } from '../data/images';
+import { FALLBACK_FOOD_PHOTO, STONE_OVEN_PHOTO, resolveLinePhoto } from '../data/photos';
 import { useCart } from '../store/cart';
-import FrescoArt from '../art/FrescoArt';
 
 function formatOptions(options) {
   if (!options) return null;
@@ -13,10 +12,34 @@ function formatOptions(options) {
   return parts.join(' · ');
 }
 
+function FoodPhoto(props) {
+  return (
+    <img
+      class={props.class}
+      src={props.src}
+      alt={props.alt ?? ''}
+      width={props.width}
+      height={props.height}
+      onError={(event) => {
+        event.currentTarget.src = FALLBACK_FOOD_PHOTO;
+      }}
+    />
+  );
+}
+
 export default function Cart() {
   const cart = useCart();
   const tax = () => cart.subtotal() * 0.06625;
   const total = () => cart.subtotal() + tax();
+  const lastLine = () => {
+    const items = cart.items();
+    return items.length ? items[items.length - 1] : null;
+  };
+  const heroFood = () => {
+    const line = lastLine();
+    return line ? resolveLinePhoto(line) : FALLBACK_FOOD_PHOTO;
+  };
+  const heroAlt = () => lastLine()?.name ?? 'Stone-oven pizza';
 
   return (
     <>
@@ -33,6 +56,26 @@ export default function Cart() {
         classList={{ open: cart.cartOpen() }}
         aria-label="Cart"
       >
+        <div class="cart-oven-hero">
+          <FoodPhoto
+            class="cart-oven-hero-bg"
+            src={STONE_OVEN_PHOTO}
+            alt="Wood-fired stone pizza oven"
+            width={800}
+            height={460}
+          />
+          <FoodPhoto
+            class="cart-oven-hero-food"
+            src={heroFood()}
+            alt={heroAlt()}
+            width={224}
+            height={224}
+          />
+          <p class="cart-oven-hero-caption">
+            {lastLine() ? lastLine().name : 'From the stone oven'}
+          </p>
+        </div>
+
         <div class="cart-header">
           <span class="cart-ornament" aria-hidden="true">❧</span>
           <h2>Your Order</h2>
@@ -47,13 +90,13 @@ export default function Cart() {
         </div>
 
         <div class="cart-order-type">
-          <span class="cart-order-thumb fresco-frame fresco-frame--round">
-            <FrescoArt
-              class="cart-order-art"
-              variant={cart.orderType() === 'delivery' ? SCENE_VARIANTS.delivery : SCENE_VARIANTS.carryout}
-              type="scene"
-            />
-          </span>
+          <FoodPhoto
+            class="cart-order-photo"
+            src={STONE_OVEN_PHOTO}
+            alt=""
+            width={56}
+            height={56}
+          />
           <span class={`order-badge ${cart.orderType()}`}>
             {cart.orderType() === 'delivery' ? 'Delivery' : 'Pickup'}
           </span>
@@ -67,13 +110,13 @@ export default function Cart() {
             when={cart.items().length > 0}
             fallback={
               <div class="cart-empty">
-                <div class="cart-empty-art fresco-frame">
-                  <FrescoArt
-                    class="cart-empty-illustration"
-                    variant={SCENE_VARIANTS.emptyCart}
-                    type="food"
-                  />
-                </div>
+                <FoodPhoto
+                  class="cart-empty-photo"
+                  src={FALLBACK_FOOD_PHOTO}
+                  alt="Stone-oven pizza"
+                  width={400}
+                  height={280}
+                />
                 <p>Your cart is empty. Build a stone-oven pizza!</p>
               </div>
             }
@@ -81,14 +124,13 @@ export default function Cart() {
             <For each={cart.items()}>
               {(line) => (
                 <div class="cart-item">
-                  <span class="cart-item-thumb fresco-frame">
-                    <FrescoArt
-                      class="cart-item-art"
-                      variant={getItemVariantById(line.itemId)}
-                      type="food"
-                      label={line.name}
-                    />
-                  </span>
+                  <FoodPhoto
+                    class="cart-item-photo"
+                    src={resolveLinePhoto(line)}
+                    alt={line.name}
+                    width={160}
+                    height={160}
+                  />
                   <div class="cart-item-body">
                     <div class="cart-item-info">
                       <h4>{line.name}</h4>

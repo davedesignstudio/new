@@ -17,6 +17,7 @@ import { resolveSiteOrigin } from './data/storyBlend';
 import { SCENE_VARIANTS } from './data/images';
 import { SITE } from './data/site';
 import { DEALS } from './data/deals';
+import { resolveLinePhoto } from './data/photos';
 import './art/patterns.css';
 import './art/photoTreatment.css';
 import './App.css';
@@ -113,9 +114,24 @@ function CheckoutBar() {
   return (
     <div class="checkout-bar" classList={{ visible: cart.itemCount() > 0 }}>
       <div class="container checkout-bar-inner">
-        <span class="checkout-items">
-          {cart.itemCount()} {cart.itemCount() === 1 ? 'item' : 'items'}
-        </span>
+        <div class="checkout-bar-preview">
+          <div class="checkout-bar-thumbs" aria-hidden="true">
+            <For each={cart.items().slice(-3)}>
+              {(line) => (
+                <img
+                  class="checkout-bar-photo"
+                  src={resolveLinePhoto(line)}
+                  alt=""
+                  width="48"
+                  height="48"
+                />
+              )}
+            </For>
+          </div>
+          <span class="checkout-items">
+            {cart.itemCount()} {cart.itemCount() === 1 ? 'item' : 'items'}
+          </span>
+        </div>
         <button type="button" class="btn-checkout-bar" onClick={() => cart.setCartOpen(true)}>
           Cart — ${cart.subtotal().toFixed(2)}
         </button>

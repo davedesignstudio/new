@@ -1,6 +1,7 @@
 import { createStore } from 'solid-js/store';
 import { createContext, useContext, createSignal } from 'solid-js';
 import { calcPizzaPrice } from '../data/menu';
+import { FALLBACK_FOOD_PHOTO, getFoodPhotoUrl } from '../data/photos';
 
 const CartContext = createContext();
 
@@ -42,6 +43,7 @@ export function CartProvider(props) {
         price,
         quantity: 1,
         options: lineOptions,
+        photo: item.photo || getFoodPhotoUrl(item.id),
       },
     ]);
     setCartOpen(true);
@@ -57,6 +59,7 @@ export function CartProvider(props) {
         price,
         quantity: 1,
         options: null,
+        photo: FALLBACK_FOOD_PHOTO,
       },
     ]);
     setCartOpen(true);
