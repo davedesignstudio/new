@@ -203,10 +203,39 @@ export function step(state, dtScale = 1) {
     const overlapBottom = b.y + b.h - (ball.y - r);
     const minX = Math.min(overlapLeft, overlapRight);
     const minY = Math.min(overlapTop, overlapBottom);
+    const SEPARATION_EPS = 0.51;
+    // Shortest-exit separation: push out on the shallowest overlap side and set
+    // velocity away from the brick so multi-HP mozzarella cannot re-hit next frame.
     if (minX < minY) {
-      ball = { ...ball, vx: -ball.vx };
+      if (overlapLeft <= overlapRight) {
+        ball = { ...ball, x: b.x - r - SEPARATION_EPS, vx: -Math.abs(ball.vx) || -2.4 };
+      } else {
+        ball = { ...ball, x: b.x + b.w + r + SEPARATION_EPS, vx: Math.abs(ball.vx) || 2.4 };
+      }
+    } else if (overlapTop <= overlapBottom) {
+      ball = { ...ball, y: b.y - r - SEPARATION_EPS, vy: -Math.abs(ball.vy) || -2.4 };
     } else {
-      ball = { ...ball, vy: -ball.vy };
+      ball = { ...ball, y: b.y + b.h + r + SEPARATION_EPS, vy: Math.abs(ball.vy) || 2.4 };
+    }
+    // Safety: if still inside after shortest-exit (numerical edge), eject fully past extents.
+    if (circleRectOverlap(ball.x, ball.y, r, b.x, b.y, b.w, b.h)) {
+      const cx = b.x + b.w / 2;
+      const cy = b.y + b.h / 2;
+      let dx = ball.x - cx;
+      let dy = ball.y - cy;
+      if (Math.abs(dx) < 1e-6 && Math.abs(dy) < 1e-6) dy = -1;
+      const len = Math.hypot(dx, dy) || 1;
+      dx /= len;
+      dy /= len;
+      const eject = Math.hypot(b.w / 2, b.h / 2) + r + SEPARATION_EPS;
+      const speed = Math.max(5, Math.hypot(ball.vx, ball.vy));
+      ball = {
+        ...ball,
+        x: cx + dx * eject,
+        y: cy + dy * eject,
+        vx: dx * speed,
+        vy: dy * speed,
+      };
     }
     const hp = b.hp - 1;
     const alive = hp > 0;
