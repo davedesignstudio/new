@@ -1,0 +1,755 @@
+{
+  "items": [
+    {
+      "slug": "garden-house",
+      "source": "local",
+      "title": "salad.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "garden-greek",
+      "source": "commons",
+      "title": "File:Greek salad.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Greek_salad.jpg",
+      "artist": "pastitio"
+    },
+    {
+      "slug": "garden-caesar",
+      "source": "commons",
+      "title": "File:Caesar salad.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Caesar_salad.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Lenarc&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Lenarc (page does not exist)\">lenarc</a>"
+    },
+    {
+      "slug": "garden-spinach",
+      "source": "commons",
+      "title": "File:Spinach salad.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Spinach_salad.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Cholenashan&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Cholenashan (page does not exist)\">Cholena Nashan</a>"
+    },
+    {
+      "slug": "garden-arugula",
+      "source": "commons",
+      "title": "File:20240510 Arugula parmesan salad Restaurant MeGusto anagoria.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:20240510_Arugula_parmesan_salad_Restaurant_MeGusto_anagoria.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Anagoria\" title=\"User:Anagoria\">Anagoria</a>"
+    },
+    {
+      "slug": "garden-cobb",
+      "source": "commons",
+      "title": "File:Cobb salad.jpg",
+      "license": "Public domain",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Cobb_salad,_9_May_2006.jpg",
+      "artist": "<a href=\"https://en.wikipedia.org/wiki/User:Novellina\" class=\"extiw\" title=\"wikipedia:User:Novellina\">Novellina</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>"
+    },
+    {
+      "slug": "garden-mixed-greens",
+      "source": "commons",
+      "title": "File:Insalata caprese.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Insalata_caprese.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Pantone801&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Pantone801 (page does not exist)\">Pantone801</a>"
+    },
+    {
+      "slug": "starters-wings",
+      "source": "commons",
+      "title": "File:Buffalo wings.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Buffalo_wings.jpg",
+      "artist": "John Tornow"
+    },
+    {
+      "slug": "starters-mozzarella-sticks",
+      "source": "commons",
+      "title": "File:Mozzarella sticks.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Mozzarella_sticks.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/traveloriented/\">travel oriented</a>"
+    },
+    {
+      "slug": "starters-fried-calamari",
+      "source": "commons",
+      "title": "File:Fried calamari.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Fried_calamari.jpg",
+      "artist": "<a href=\"https://en.wikipedia.org/wiki/User:Chensiyuan\" class=\"extiw\" title=\"en:User:Chensiyuan\">en:User:Chensiyuan</a>"
+    },
+    {
+      "slug": "starters-mac-bites",
+      "source": "commons",
+      "title": "File:Macaroni and cheese.jpg",
+      "license": "CC BY-SA 2.5",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Macaroni_and_cheese.jpg",
+      "artist": ""
+    },
+    {
+      "slug": "starters-hummus",
+      "source": "commons",
+      "title": "File:Hummus.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Hummus.jpg",
+      "artist": "Donovan Govan."
+    },
+    {
+      "slug": "starters-falafel",
+      "source": "commons",
+      "title": "File:Falafel.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Falafel.jpg",
+      "artist": "NB"
+    },
+    {
+      "slug": "starters-dumplings",
+      "source": "commons",
+      "title": "File:Gyoza.jpg",
+      "license": "CC BY 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Gyoza.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Douglaspperkins\" title=\"User:Douglaspperkins\">Douglas Paul Perkins</a>"
+    },
+    {
+      "slug": "starters-buffalo-mac",
+      "source": "commons",
+      "title": "File:Baked macaroni and cheese close-up.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Baked_macaroni_and_cheese_close-up.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/90155432@N02\">Scott Veg</a>"
+    },
+    {
+      "slug": "starters-nuggets",
+      "source": "commons",
+      "title": "File:Chicken nuggets.jpg",
+      "license": "CC BY 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tubby3\" title=\"User:Tubby3\">Horacio Cambeiro</a>"
+    },
+    {
+      "slug": "starters-tenders",
+      "source": "commons",
+      "title": "File:Chicken tenders and french fries - June 2023 - Sarah Stierch.jpg",
+      "license": "CC BY 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_tenders_and_french_fries_-_June_2023_-_Sarah_Stierch.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Missvain\" title=\"User:Missvain\">Missvain</a>"
+    },
+    {
+      "slug": "starters-rice",
+      "source": "commons",
+      "title": "File:White rice.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:White_rice.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Lucy_Gull&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Lucy Gull (page does not exist)\">Lucy Gull</a>"
+    },
+    {
+      "slug": "starters-sweet-potato-fries",
+      "source": "commons",
+      "title": "File:Sweet potato fries.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Sweet_potato_fries.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7927684@N03\">jeffreyw</a>"
+    },
+    {
+      "slug": "starters-french-fries",
+      "source": "commons",
+      "title": "File:French fries.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:French_fries.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Sidg13&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Sidg13 (page does not exist)\">Sidg13</a>"
+    },
+    {
+      "slug": "starters-disco-fries",
+      "source": "commons",
+      "title": "File:Disco fries.jpg",
+      "license": "CC BY 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Disco_fries.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:BanjoZebra\" title=\"User:BanjoZebra\">BanjoZebra</a>"
+    },
+    {
+      "slug": "starters-onion-rings",
+      "source": "commons",
+      "title": "File:Onion rings.jpg",
+      "license": "Public domain",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Onion_rings.jpg",
+      "artist": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/User:LukeSurl\" class=\"extiw\" title=\"wikipedia:User:LukeSurl\">LukeSurl</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>."
+    },
+    {
+      "slug": "starters-sauteed-veggie",
+      "source": "commons",
+      "title": "File:Grilled vegetables.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Grilled_vegetables.jpg",
+      "artist": ""
+    },
+    {
+      "slug": "shakes-milkshake",
+      "source": "commons",
+      "title": "File:New chocolate milk.JPG",
+      "license": "Public domain",
+      "page_url": "https://commons.wikimedia.org/wiki/File:New_chocolate_milk.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Sugar_Bear&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Sugar Bear (page does not exist)\">Sugar Bear</a>"
+    },
+    {
+      "slug": "burgers-classic",
+      "source": "local",
+      "title": "burger.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "burgers-cheese-deluxe",
+      "source": "commons",
+      "title": "File:Cheeseburger.jpg",
+      "license": "Public domain",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Cheeseburger.jpg",
+      "artist": "Renee Comet (photographer)"
+    },
+    {
+      "slug": "burgers-the-fry",
+      "source": "commons",
+      "title": "File:Fried chicken sandwich.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Fried_chicken_sandwich.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Breawycker\" title=\"User:Breawycker\">Breawycker</a>"
+    },
+    {
+      "slug": "burgers-boom-boom",
+      "source": "commons",
+      "title": "File:Avocado burger and bacon cheeseburger.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Avocado_burger_and_bacon_cheeseburger.jpg",
+      "artist": "lazy fri13th"
+    },
+    {
+      "slug": "burgers-chetzel",
+      "source": "commons",
+      "title": "File:The Kuma burger.png",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:The_Kuma_burger.png",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JWaltersK&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JWaltersK (page does not exist)\">JWaltersK</a>"
+    },
+    {
+      "slug": "burgers-shroom",
+      "source": "commons",
+      "title": "File:Mushroom Swiss burger on an onion roll.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Mushroom_Swiss_burger_on_an_onion_roll.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7927684@N03\">jeffreyw</a>"
+    },
+    {
+      "slug": "burgers-falafel",
+      "source": "commons",
+      "title": "File:Falafel Burger with Fries (3389411458).jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Falafel_Burger_with_Fries_(3389411458).jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/25128194@N02\">Vegan Feast Catering</a>"
+    },
+    {
+      "slug": "wraps-chicken-caesar",
+      "source": "local",
+      "title": "wraps.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "wraps-buffalo-chicken",
+      "source": "commons",
+      "title": "File:Buffalo chicken wrap - Dunedin, New Zealand.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Buffalo_chicken_wrap_-_Dunedin,_New_Zealand.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>"
+    },
+    {
+      "slug": "wraps-gyro",
+      "source": "commons",
+      "title": "File:Gyros.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Gyros.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/strph/\">Stephanie D.</a> from Oklahoma City, Oklahoma, USA"
+    },
+    {
+      "slug": "wraps-shawarma",
+      "source": "commons",
+      "title": "File:Chicken shawarma.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_shawarma.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Deepak_Official_Id&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Deepak Official Id (page does not exist)\">Deepak Official Id</a>"
+    },
+    {
+      "slug": "wraps-kebab",
+      "source": "commons",
+      "title": "File:Shish taouk.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Shish_taouk.jpg",
+      "artist": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/User:Basel15\" class=\"extiw\" title=\"wikipedia:User:Basel15\">Basel15</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>."
+    },
+    {
+      "slug": "wraps-milanese",
+      "source": "commons",
+      "title": "File:03 Chicken Milanese Sandwich - Cafe Medina.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:03_Chicken_Milanese_Sandwich_-_Cafe_Medina.jpg",
+      "artist": "jasonlam"
+    },
+    {
+      "slug": "wraps-honey-chicken",
+      "source": "commons",
+      "title": "File:Grilled Chicken Wrap, Steel Magnolias, Valdosta.JPG",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Grilled_Chicken_Wrap,_Steel_Magnolias,_Valdosta.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Mjrmtg\" title=\"User:Mjrmtg\">Michael Rivera</a>"
+    },
+    {
+      "slug": "pasta-penne-vodka",
+      "source": "commons",
+      "title": "File:PenneAllaVodka.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:PenneAllaVodka.jpg",
+      "artist": "Joseph O'Connell - <a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/joconnell/\">https://www.flickr.com/photos/joconnell/</a>"
+    },
+    {
+      "slug": "pasta-bolognese",
+      "source": "commons",
+      "title": "File:Spaghetti bolognese.jpg",
+      "license": "CC BY-SA 2.5",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Spaghetti_bolognese.jpg",
+      "artist": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/User:Noblige\" class=\"extiw\" title=\"wikipedia:User:Noblige\">Noblige</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>."
+    },
+    {
+      "slug": "pasta-marinara",
+      "source": "commons",
+      "title": "File:Penne with tomato 20100915.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Penne_with_tomato_20100915.jpg",
+      "artist": "Georges Seguin (<a href=\"//commons.wikimedia.org/wiki/User:Okki\" title=\"User:Okki\">Okki</a>)"
+    },
+    {
+      "slug": "pasta-tortellini-leo",
+      "source": "commons",
+      "title": "File:Tortellini.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Tortellini.jpg",
+      "artist": "<a href=\"https://en.wikipedia.org/wiki/nl:User:Algont\" class=\"extiw\" title=\"w:nl:User:Algont\">Algont</a> at <a href=\"https://en.wikipedia.org/wiki/nl:\" class=\"extiw\" title=\"w:nl:\">Dutch Wikipedia</a>"
+    },
+    {
+      "slug": "cheesesteak-philly",
+      "source": "commons",
+      "title": "File:Cheesesteak.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Cheesesteak.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kabu_Sawsaw\" title=\"User:Kabu Sawsaw\">Kabu Sawsaw</a>"
+    },
+    {
+      "slug": "cheesesteak-jersey",
+      "source": "commons",
+      "title": "File:Cheesesteak sandwich.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Cheesesteak_sandwich.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/23126594@N00\">Jennifer</a>"
+    },
+    {
+      "slug": "cheesesteak-california",
+      "source": "commons",
+      "title": "File:Steak sandwich.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Steak_sandwich.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7927684@N03\">jeffreyw</a>"
+    },
+    {
+      "slug": "cheesesteak-chicken",
+      "source": "commons",
+      "title": "File:Willy's Cheesesteak, Red Bank, New Jersey (4381845450).jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Willy%27s_Cheesesteak,_Red_Bank,_New_Jersey_(4381845450).jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/9341577@N08\">Jazz Guy</a> from New Jersey, United States"
+    },
+    {
+      "slug": "sandwiches-chicken-parm",
+      "source": "commons",
+      "title": "File:Chicken parmigiana.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_parmigiana.jpg",
+      "artist": "Tristan Kenney"
+    },
+    {
+      "slug": "sandwiches-meatball-parm",
+      "source": "commons",
+      "title": "File:Meatball sandwich.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Meatball_sandwich.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/78011127@N00\">Ginny</a>"
+    },
+    {
+      "slug": "sandwiches-fried-chicken",
+      "source": "commons",
+      "title": "File:Chick'n Shack, Crispy chicken breast with lettuce, pickles and buttermilk herb mayo.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chick%27n_Shack,_Crispy_chicken_breast_with_lettuce,_pickles_and_buttermilk_herb_mayo.jpg",
+      "artist": "T.Tseng"
+    },
+    {
+      "slug": "sandwiches-grilled-chicken",
+      "source": "local",
+      "title": "sandwich.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "sandwiches-reuben",
+      "source": "commons",
+      "title": "File:Pastrami Reuben from Brent's Deli.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pastrami_Reuben_from_Brent%27s_Deli.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Loganfrick&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Loganfrick (page does not exist)\">Logan Frick</a>"
+    },
+    {
+      "slug": "sandwiches-buffalo-chicken",
+      "source": "commons",
+      "title": "File:Spicy fried chicken breast cabbage cole slaw Louisiana hot sauce mayo mayonnaise red onion pickles jalapenos brioche bun (27801929654).jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Spicy_fried_chicken_breast_cabbage_cole_slaw_Louisiana_hot_sauce_mayo_mayonnaise_red_onion_pickles_jalapenos_brioche_bun_(27801929654).jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/127294011@N07\">Personal Creations</a>"
+    },
+    {
+      "slug": "sandwiches-italian-hot-dog",
+      "source": "commons",
+      "title": "File:Hot dog.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Hot_dog.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Tednmiki&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Tednmiki (page does not exist)\">tednmiki</a>"
+    },
+    {
+      "slug": "sandwiches-hot-pastrami",
+      "source": "commons",
+      "title": "File:Pastrami sandwich.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pastrami_sandwich.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/haynes/\">Charles Haynes</a>"
+    },
+    {
+      "slug": "sandwiches-tuna-melt",
+      "source": "commons",
+      "title": "File:Tuna sandwich.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Tuna_sandwich.jpg",
+      "artist": "Le living and co"
+    },
+    {
+      "slug": "sandwiches-turkey-club",
+      "source": "commons",
+      "title": "File:Club sandwich.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Club_sandwich.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/97844767@N00\">Jessica</a> from Hove, United Kingdom"
+    },
+    {
+      "slug": "panini-chipotle-chicken",
+      "source": "commons",
+      "title": "File:My chicken avocado panini.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:My_chicken_avocado_panini.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/23283328@N00\">Angell Tsang</a> from Austin, USA"
+    },
+    {
+      "slug": "panini-chicken",
+      "source": "local",
+      "title": "panini.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "panini-veggie",
+      "source": "commons",
+      "title": "File:Vegetable panini.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Vegetable_panini.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kulmalukko\" title=\"User:Kulmalukko\">Tiia Monto</a>"
+    },
+    {
+      "slug": "panini-turkey",
+      "source": "commons",
+      "title": "File:Cajun Turkey & Brie Panini.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Cajun_Turkey_%26_Brie_Panini.jpg",
+      "artist": "Kitchen Life of a Navy Wife"
+    },
+    {
+      "slug": "pizza-classic",
+      "source": "local",
+      "title": "pizza.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "pizza-margherita",
+      "source": "commons",
+      "title": "File:Margherita Originale.JPG",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Margherita_Originale.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Mario56&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Mario56 (page does not exist)\">Mario56</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "pizza-meat-lovers",
+      "source": "commons",
+      "title": "File:Pizza (meat deluxe).jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pizza_(meat_deluxe).jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Flixtey\" title=\"User:Flixtey\">Flixtey</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "pizza-white-pie",
+      "source": "commons",
+      "title": "File:White Pizza (No Sauce) - Large 8 slices. Mozzarella, ricotta, grated pecorino Romano cheese, garlic infused oil, oregano, black pepper & basil.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:White_Pizza_(No_Sauce)_-_Large_8_slices._Mozzarella,_ricotta,_grated_pecorino_Romano_cheese,_garlic_infused_oil,_oregano,_black_pepper_%26_basil.jpg",
+      "artist": "City Foodsters"
+    },
+    {
+      "slug": "pizza-chicken-parm",
+      "source": "commons",
+      "title": "File:\"Marry Me\" Chicken - PizzaExpress, Stanford Cottage, Worthing 2026-06-16.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:%22Marry_Me%22_Chicken_-_PizzaExpress,_Stanford_Cottage,_Worthing_2026-06-16.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>",
+      "note": "Chicken, tomato, mozzarella \u2014 closest Commons match to Chicken Parmesan pizza"
+    },
+    {
+      "slug": "pizza-bbq-buffalo",
+      "source": "commons",
+      "title": "File:BBQ CHICKEN PIZZA.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:BBQ_CHICKEN_PIZZA.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Zeeshan93&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Zeeshan93 (page does not exist)\">Zeeshan93</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "pizza-veggie",
+      "source": "commons",
+      "title": "File:Vegetarian pizza platter.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Vegetarian_pizza_platter.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Gwasheya\" title=\"User:Gwasheya\">Gwasheya</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "pizza-philly",
+      "source": "commons",
+      "title": "File:Papa John's Philly Cheesesteak Pizza Slice (15891055528).jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Papa_John%27s_Philly_Cheesesteak_Pizza_Slice_(15891055528).jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/27410581@N07\">theimpulsivebuy</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "pizza-bville-special",
+      "source": "commons",
+      "title": "File:Round Table chicken & garlic pizza.JPG",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Round_Table_chicken_%26_garlic_pizza.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:BrokenSphere\" title=\"User:BrokenSphere\">BrokenSphere</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "pizza-thai-chili",
+      "source": "commons",
+      "title": "File:Kotipizza Pollo Americana.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Kotipizza_Pollo_Americana.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JIP&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JIP (page does not exist)\">JIP</a>",
+      "note": "Orange chili-style chicken pizza \u2014 closest match to Sesame Thai Chili"
+    },
+    {
+      "slug": "pizza-don-pomodoro",
+      "source": "commons",
+      "title": "File:Pizza with tomatoes.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pizza_with_tomatoes.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7927684@N03\">jeffreyw</a>"
+    },
+    {
+      "slug": "pizza-combination",
+      "source": "commons",
+      "title": "File:Pizza with sausage, onion, pepperoni, olives and cheeses.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pizza_with_sausage,_onion,_pepperoni,_olives_and_cheeses.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7927684@N03\">jeffreyw</a>",
+      "note": "Retitled to match the printed pizza name"
+    },
+    {
+      "slug": "platters-shrimp-kababs",
+      "source": "commons",
+      "title": "File:Grilled Shrimp Kebab and Basmati Rice, Saba New Orleans April 2025.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Grilled_Shrimp_Kebab_and_Basmati_Rice,_Saba_New_Orleans_April_2025.jpg",
+      "artist": "Paul Lowry"
+    },
+    {
+      "slug": "platters-salmon",
+      "source": "commons",
+      "title": "File:Grilled salmon.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Grilled_salmon.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:PetarM\" title=\"User:PetarM\">Petar Milo\u0161evi\u0107</a>"
+    },
+    {
+      "slug": "platters-gyro",
+      "source": "commons",
+      "title": "File:Plate with Gyros Vegetables.jpg",
+      "license": "CC BY 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Plate_with_Gyros_Vegetables.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tamorlan\" title=\"User:Tamorlan\">Tamorlan</a>"
+    },
+    {
+      "slug": "platters-falafel",
+      "source": "commons",
+      "title": "File:Falafel platter.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Falafel_platter.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Shreya13jain&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Shreya13jain (page does not exist)\">Shreya13jain</a>"
+    },
+    {
+      "slug": "platters-chicken-kabab",
+      "source": "local",
+      "title": "handhelds.jpg",
+      "license": "Restaurant photo",
+      "page_url": "",
+      "artist": "Bville Pizza & Grill"
+    },
+    {
+      "slug": "platters-chicken-gyro",
+      "source": "commons",
+      "title": "File:20240511 Chicken Gyros Restaurant Elia anagoria.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:20240511_Chicken_Gyros_Restaurant_Elia_anagoria.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Anagoria\" title=\"User:Anagoria\">Anagoria</a>"
+    },
+    {
+      "slug": "platters-shawarma",
+      "source": "commons",
+      "title": "File:Plate Shawarma - variant.jpg",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Plate_Shawarma_-_variant.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Vis_M\" title=\"User:Vis M\">Vis M</a>"
+    },
+    {
+      "slug": "platters-chicken-parm",
+      "source": "commons",
+      "title": "File:Chicken parmesan.jpg",
+      "license": "CC BY-SA 2.5",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_parmesan.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Raul654\" title=\"User:Raul654\">Raul654</a>"
+    },
+    {
+      "slug": "platters-quesadilla",
+      "source": "commons",
+      "title": "File:Chicken quesadilla.jpg",
+      "license": "Public domain",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_quesadilla.jpg",
+      "artist": "Jon Sullivan"
+    },
+    {
+      "slug": "platters-sausage-peppers",
+      "source": "commons",
+      "title": "File:Sausage and peppers.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Sausage_and_peppers.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/15450567@N04\">Chuck Falzone</a>"
+    },
+    {
+      "slug": "platters-eggplant-parm",
+      "source": "commons",
+      "title": "File:Melanzane alla parmigiana.jpg",
+      "license": "Public domain",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Melanzane_alla_parmigiana.jpg",
+      "artist": "<a href=\"https://en.wikipedia.org/wiki/it:User:Sugarfree\" class=\"extiw\" title=\"w:it:User:Sugarfree\">Sugarfree</a> at <a href=\"https://en.wikipedia.org/wiki/it:\" class=\"extiw\" title=\"w:it:\">Italian Wikipedia</a>"
+    },
+    {
+      "slug": "kids-grilled-cheese",
+      "source": "commons",
+      "title": "File:Grilled cheese.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Grilled_cheese.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Snapdragon66\" title=\"User:Snapdragon66\">Snapdragon66</a>"
+    },
+    {
+      "slug": "kids-tenders",
+      "source": "commons",
+      "title": "File:Crispy Chicken Strips - FotoosVanRobin.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Crispy_Chicken_Strips_-_FotoosVanRobin.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/63637139@N00\">FotoosVanRobin</a> from Netherlands"
+    },
+    {
+      "slug": "kids-hot-dog",
+      "source": "commons",
+      "title": "File:Hotdog - Evan Swigart.jpg",
+      "license": "CC BY 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Hotdog_-_Evan_Swigart.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/72949902@N00\">Evan Swigart</a> from Chicago, USA"
+    },
+    {
+      "slug": "kids-mac-cheese",
+      "source": "commons",
+      "title": "File:Flickr stuart spivack 173603796--Macaroni and cheese.jpg",
+      "license": "CC BY-SA 2.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg",
+      "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/stuart_spivack/\">Stuart Spivack</a> from Cleveland, Ohio, USA"
+    },
+    {
+      "slug": "wraps-falafel",
+      "source": "commons",
+      "title": "File:Falafel & Hummus Wrap - Lavash 2024-08-19.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Falafel_%26_Hummus_Wrap_-_Lavash_2024-08-19.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>"
+    },
+    {
+      "slug": "pasta-cajun-alfredo",
+      "source": "commons",
+      "title": "File:Chicken fettuccine alfredo.JPG",
+      "license": "CC BY-SA 4.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_fettuccine_alfredo.JPG",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Dllu\" title=\"User:Dllu\">Dllu</a>"
+    },
+    {
+      "slug": "panini-milano",
+      "source": "commons",
+      "title": "File:Panini (Mozzarella, Pesto & Tomato) - Dyke Road Park Cafe.jpg",
+      "license": "CC0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Panini_(Mozzarella,_Pesto_%26_Tomato)_-_Dyke_Road_Park_Cafe.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>"
+    },
+    {
+      "slug": "kids-pasta",
+      "source": "commons",
+      "title": "File:Primer plano de tallarines argentinos a la manteca con queso rallado.jpg",
+      "license": "CC BY-SA 3.0",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Primer_plano_de_tallarines_argentinos_a_la_manteca_con_queso_rallado.jpg",
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tubby3\" title=\"User:Tubby3\">Horacio Cambeiro</a>"
+    }
+  ],
+  "missing": [],
+  "desserts": {
+    "desserts-yogurt-berries": "gelato-yogurt-berries.png",
+    "desserts-creme-brulee": "gelato-creme-brulee.png",
+    "desserts-mascarpone": "gelato-mascarpone.png",
+    "desserts-limoncello": "gelato-limoncello.png",
+    "desserts-hazelnut": "gelato-hazelnut.png",
+    "desserts-spagnola": "gelato-spagnola.png",
+    "desserts-stracciatella": "gelato-stracciatella.png",
+    "desserts-pistachio": "gelato-pistachio.png",
+    "desserts-guava": "gelato-guava.png",
+    "desserts-cafe": "gelato-cafe.png",
+    "desserts-catalana": "gelato-espresso.png"
+  }
+}

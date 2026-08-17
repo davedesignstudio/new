@@ -1,0 +1,357 @@
+/*
+Theme Name: Bville
+Theme URI: https://bvillepizzagrill.com
+Author: Bville Pizza & Grill
+Description: Clean modern-line theme for Bville Pizza & Grill with WooCommerce shop and checkout.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+Text Domain: bville
+Tags: food-and-drink, e-commerce, custom-logo, wide-blocks
+*/
+
+:root {
+  --bville-orange: #e45c24;
+  --bville-orange-deep: #c44a16;
+  --bville-ink: #1f3d32;
+  --bville-ink-dark: #142820;
+  --bville-cream: #faf3e3;
+  --bville-muted: #6b3a22;
+  --bville-line: rgba(20, 40, 32, 0.16);
+  --bville-max: 1100px;
+  --font-ui: "DM Sans", system-ui, sans-serif;
+  --font-display: "Oswald", "Trebuchet MS", sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--bville-ink-dark);
+  background: var(--bville-cream);
+  line-height: 1.5;
+}
+
+a { color: var(--bville-orange-deep); text-decoration: none; }
+a:hover { color: var(--bville-orange); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.site-header {
+  background: var(--bville-ink-dark);
+  border-bottom: 4px solid var(--bville-orange);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header-inner,
+.site-footer-inner,
+.site-main,
+.hero-inner {
+  width: min(100% - 2rem, var(--bville-max));
+  margin-inline: auto;
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-text strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--bville-orange);
+}
+
+.brand-text em {
+  font-style: normal;
+  font-size: 0.75rem;
+  color: #e8dcc0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-primary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.1rem;
+}
+
+.nav-primary a {
+  color: #f4e6c4;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-primary a:hover,
+.nav-primary .current-menu-item > a {
+  color: #fff;
+  border-bottom: 1px solid var(--bville-orange);
+}
+
+.hero {
+  padding: 2.75rem 0 1.75rem;
+  border-bottom: 1px solid var(--bville-line);
+}
+
+.hero-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bville-orange-deep);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-lede {
+  margin: 0.6rem 0 1.25rem;
+  max-width: 34rem;
+  color: var(--bville-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.1rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--bville-ink-dark);
+  background: transparent;
+  color: var(--bville-ink-dark);
+}
+
+.btn-primary {
+  background: var(--bville-orange);
+  border-color: var(--bville-orange-deep);
+  color: #fff;
+}
+
+.btn-primary:hover { filter: brightness(1.05); color: #fff; }
+
+.site-main { padding: 2rem 0 3rem; }
+
+.line-title {
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(20, 40, 32, 0.28);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  letter-spacing: 0.02em;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.feature-card {
+  border-bottom: 1px solid var(--bville-line);
+  padding-bottom: 0.85rem;
+}
+
+.feature-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--bville-line);
+  margin-bottom: 0.65rem;
+}
+
+.feature-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  margin: 0.35rem 0 0;
+  color: var(--bville-muted);
+  font-size: 0.88rem;
+}
+
+/* Menu page — clean lines */
+.menu-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-line {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--bville-line);
+  color: inherit;
+}
+
+.menu-line-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border: 1px solid var(--bville-line);
+  grid-row: 1 / span 1;
+}
+
+.menu-line-name {
+  font-weight: 600;
+  color: var(--bville-ink-dark);
+}
+
+.menu-line-dots {
+  display: none;
+}
+
+.menu-line-price {
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--bville-ink-dark);
+}
+
+@media (min-width: 640px) {
+  .menu-line {
+    grid-template-columns: 72px minmax(0, max-content) 1fr auto;
+  }
+  .menu-line-dots {
+    display: block;
+    height: 0;
+    border-bottom: 1px dotted rgba(20, 40, 32, 0.35);
+    min-width: 2rem;
+  }
+}
+
+/* WooCommerce — clean lines */
+.woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.woocommerce ul.products li.product {
+  width: auto !important;
+  margin: 0 !important;
+  float: none !important;
+  border-bottom: 1px solid var(--bville-line);
+  padding: 0.85rem 0;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.woocommerce ul.products li.product a img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  margin: 0;
+  border: 1px solid var(--bville-line);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-size: 0.98rem;
+  padding: 0;
+  margin: 0;
+  color: var(--bville-ink-dark);
+}
+
+.woocommerce ul.products li.product .price {
+  display: block;
+  margin: 0.25rem 0 0.45rem;
+  color: var(--bville-ink-dark);
+  font-weight: 600;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce #respond input#submit,
+.woocommerce span.onsale {
+  border-radius: 0 !important;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce #respond input#submit {
+  background: var(--bville-orange) !important;
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.woocommerce-info,
+.woocommerce-message {
+  border-top-color: var(--bville-orange);
+}
+
+.site-footer {
+  background: var(--bville-ink-dark);
+  color: #cfc4b0;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 4px solid var(--bville-orange);
+}
+
+.site-footer a { color: #f4e6c4; }
+.site-footer .footer-logo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .feature-grid,
+  .woocommerce ul.products {
+    grid-template-columns: 1fr;
+  }
+  .nav-primary { display: none; }
+}
