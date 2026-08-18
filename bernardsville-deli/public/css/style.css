@@ -850,7 +850,12 @@ address { font-style: normal; }
   color: var(--ink-dark);
 }
 
-/* Main title — Parkside */
+.line-title .print-title--img {
+  width: min(100%, 280px);
+  height: auto;
+  display: block;
+}
+
 .line-title--hero {
   font-family: var(--font-script);
   font-weight: 700;
@@ -862,6 +867,11 @@ address { font-style: normal; }
   color: var(--orange);
   -webkit-text-stroke: 2.8px var(--ink);
   paint-order: stroke fill;
+}
+
+.line-title--hero.print-title--img,
+.line-title.line-title--hero .print-title--img {
+  width: min(100%, 420px);
 }
 
 .menu-lede {

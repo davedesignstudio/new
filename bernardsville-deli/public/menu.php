@@ -20,7 +20,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="container">
     <p class="menu-kicker">Bville Pizza &amp; Grill</p>
     <h1 class="line-title line-title--hero">The Menu</h1>
-    <p class="lede menu-lede">Clean modern lines. Every plate, photographed.</p>
+    <p class="lede menu-lede">Clean modern lines. Titles from the printed boards.</p>
   </div>
 </section>
 
@@ -37,7 +37,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <?php foreach (menu_sections() as $section): ?>
       <article class="menu-block" id="<?= e($section['id']) ?>">
         <header class="menu-block-head">
-          <h2 class="line-title"><?= e($section['title']) ?></h2>
+          <h2 class="line-title"><?= print_title($section['title'], 'print-title', $section['wordmark'] ?? null) ?></h2>
           <?php if (!empty($section['note'])): ?>
             <p class="menu-block-note"><?= e($section['note']) ?></p>
           <?php endif; ?>
