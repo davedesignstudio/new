@@ -30,7 +30,7 @@ add_action('after_setup_theme', static function (): void {
 add_action('wp_enqueue_scripts', static function (): void {
     wp_enqueue_style(
         'bville-fonts',
-        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Oswald:wght@500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&display=swap',
         [],
         null
     );

@@ -39,13 +39,8 @@ get_header();
     <section class="menu-section" style="margin:0 0 2.5rem">
       <h2 class="line-title"><?php echo esc_html($cat); ?></h2>
       <div class="menu-lines">
-        <?php foreach ($items as $product) :
-          $img = $product->get_image_id() ? wp_get_attachment_image_url($product->get_image_id(), 'thumbnail') : '';
-        ?>
+        <?php foreach ($items as $product) : ?>
           <a class="menu-line" href="<?php echo esc_url($product->get_permalink()); ?>">
-            <?php if ($img) : ?>
-              <img class="menu-line-thumb" src="<?php echo esc_url($img); ?>" alt="" width="72" height="72">
-            <?php endif; ?>
             <span class="menu-line-name"><?php echo esc_html($product->get_name()); ?></span>
             <span class="menu-line-dots" aria-hidden="true"></span>
             <span class="menu-line-price"><?php echo wp_kses_post($product->get_price_html()); ?></span>

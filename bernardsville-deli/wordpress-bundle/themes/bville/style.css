@@ -22,6 +22,19 @@ Tags: food-and-drink, e-commerce, custom-logo, wide-blocks
   --bville-max: 1100px;
   --font-ui: "DM Sans", system-ui, sans-serif;
   --font-display: "Oswald", "Trebuchet MS", sans-serif;
+  --font-script: "Parkside", "Oleo Script Swash Caps", "Palatino Linotype", cursive;
+  --font-garamond: "EB Garamond", Garamond, "Adobe Garamond Pro", "Palatino Linotype", Georgia, serif;
+}
+
+@font-face {
+  font-family: "Parkside";
+  src:
+    url("assets/fonts/Parkside-Black.woff2") format("woff2"),
+    url("assets/fonts/Parkside-Black.woff") format("woff");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+  font-kerning: normal;
 }
 
 *,
@@ -130,17 +143,26 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--bville-orange-deep);
 }
 
+/* Main title — Parkside */
 .hero h1 {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 6vw, 3.4rem);
-  letter-spacing: -0.02em;
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7.5vw, 4.4rem);
+  letter-spacing: 0;
   line-height: 1.1;
+  font-kerning: normal;
+  color: var(--bville-orange);
+  -webkit-text-stroke: 2.6px var(--bville-ink);
+  paint-order: stroke fill;
 }
 
 .hero-lede {
   margin: 0.6rem 0 1.25rem;
   max-width: 34rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.25rem;
   color: var(--bville-muted);
 }
 
@@ -174,13 +196,15 @@ img { max-width: 100%; height: auto; display: block; }
 
 .site-main { padding: 2rem 0 3rem; }
 
+/* Subtitles (section headings) — Garamond */
 .line-title {
   margin: 0 0 0.85rem;
   padding-bottom: 0.7rem;
   border-bottom: 1px solid rgba(20, 40, 32, 0.28);
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-  letter-spacing: 0.02em;
+  font-family: var(--font-garamond);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 2.9vw, 2.15rem);
+  letter-spacing: 0.01em;
 }
 
 .feature-grid {
@@ -222,20 +246,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 .menu-line {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.75rem 1rem;
-  padding: 0.85rem 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  padding: 0.7rem 0;
   border-bottom: 1px solid var(--bville-line);
   color: inherit;
-}
-
-.menu-line-thumb {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  border: 1px solid var(--bville-line);
-  grid-row: 1 / span 1;
 }
 
 .menu-line-name {
@@ -255,7 +271,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (min-width: 640px) {
   .menu-line {
-    grid-template-columns: 72px minmax(0, max-content) 1fr auto;
+    grid-template-columns: minmax(0, max-content) 1fr auto;
   }
   .menu-line-dots {
     display: block;
@@ -280,23 +296,17 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 0 !important;
   float: none !important;
   border-bottom: 1px solid var(--bville-line);
-  padding: 0.85rem 0;
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 0.85rem;
-  align-items: start;
+  padding: 0.75rem 0;
 }
 
+/* Menu listing stays text-only; photos belong to titles and product pages. */
 .woocommerce ul.products li.product a img {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  margin: 0;
-  border: 1px solid var(--bville-line);
+  display: none;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
-  font-size: 0.98rem;
+  font-size: 1rem;
+  font-weight: 600;
   padding: 0;
   margin: 0;
   color: var(--bville-ink-dark);
