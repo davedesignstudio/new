@@ -13,8 +13,8 @@ return [
     'email' => 'info@bvillepizzagrill.com',
     'hours' => 'Open daily — call for hours',
     'social' => [
-        'instagram' => '#',
-        'facebook' => '#',
+        'instagram' => 'https://www.instagram.com/bvillepizzagrill/',
+        'facebook' => '',
     ],
     'about' => 'The Grill is now Bville Pizza and Grill! Although our name has changed, the high-quality Mediterranean and American cuisine we serve our customers in the Bernardsville area remains the same. From chicken wings to paninis to kabobs, our food will be sure to please. Check out our creative selection of pizzas, the latest addition to our menu. Whether you are a returning customer or thinking about trying us for the first time, you\'ll find something on our diverse menu to satisfy your appetite. But don\'t take our word for it, check out our 4-star ratings on Google, Yelp, and Trip Advisor!',
     'heritage' => [

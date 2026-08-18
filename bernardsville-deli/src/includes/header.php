@@ -19,7 +19,7 @@ $title = $pageTitle ?? $site['name'];
   <title><?= e($title) ?></title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>" />
   <link rel="icon" href="<?= e(asset_url('favicon.png')) ?>" type="image/png" />
 </head>
@@ -61,10 +61,17 @@ $title = $pageTitle ?? $site['name'];
           <button type="button" class="lang-btn active" data-lang="en">EN</button>
           <button type="button" class="lang-btn" data-lang="blend">EN·RU</button>
         </div>
-        <div class="header-social" aria-label="Social media">
-          <a href="<?= e($site['social']['instagram']) ?>" aria-label="Instagram">IG</a>
-          <a href="<?= e($site['social']['facebook']) ?>" aria-label="Facebook">FB</a>
-        </div>
+        <?php $social = array_filter($site['social'], static fn ($url) => $url !== '' && $url !== '#'); ?>
+        <?php if ($social): ?>
+          <div class="header-social" aria-label="Social media">
+            <?php if (!empty($social['instagram'])): ?>
+              <a href="<?= e($social['instagram']) ?>" aria-label="Instagram on <?= e($site['name']) ?>" target="_blank" rel="noopener me">IG</a>
+            <?php endif; ?>
+            <?php if (!empty($social['facebook'])): ?>
+              <a href="<?= e($social['facebook']) ?>" aria-label="Facebook" target="_blank" rel="noopener me">FB</a>
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </header>

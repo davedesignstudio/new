@@ -47,17 +47,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
         </header>
         <ul class="menu-line-list">
           <?php foreach ($section['items'] as $item): ?>
-            <?php
-              $photo = item_photo_url($item);
-              $orderId = (string) ($item['photo'] ?? item_slug((string) $item['name']));
-            ?>
+            <?php $orderId = (string) ($item['photo'] ?? item_slug((string) $item['name'])); ?>
             <li class="menu-line">
               <a class="menu-line-hit" href="<?= e(asset_url('order/?item=' . rawurlencode($orderId))) ?>">
-                <?php if ($photo): ?>
-                  <div class="menu-line-photo<?= item_photo_contain($item) ? ' menu-line-photo--contain' : '' ?>">
-                    <img src="<?= e($photo) ?>" alt="" width="120" height="120" loading="lazy" decoding="async" />
-                  </div>
-                <?php endif; ?>
                 <div class="menu-line-body">
                   <div class="menu-line-row">
                     <h3>
@@ -85,11 +77,6 @@ require dirname(__DIR__) . '/src/includes/header.php';
         </ul>
       </article>
     <?php endforeach; ?>
-    <p class="menu-photo-credit">
-      Dish photos include restaurant photography and
-      <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> images.
-      <a href="<?= e(asset_url('assets/photos/menu/CREDITS.json')) ?>">Photo credits</a>.
-    </p>
   </div>
 </section>
 
