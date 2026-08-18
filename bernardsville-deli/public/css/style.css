@@ -655,11 +655,12 @@ address { font-style: normal; }
 }
 
 .origin-title {
-  font-family: var(--font-garamond);
-  font-weight: 600;
-  font-size: clamp(1.7rem, 3.1vw, 2.2rem);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.15;
   margin: 0 0 0.75rem;
-  color: var(--ink-dark);
+  color: var(--orange);
+  -webkit-text-stroke: 1.6px var(--ink);
+  paint-order: stroke fill;
 }
 
 .origin-quote {
@@ -773,8 +774,7 @@ address { font-style: normal; }
 
 .cafe-banner-inner h2 {
   margin: 0;
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--cafe-gold);
 }
 
@@ -839,29 +839,38 @@ address { font-style: normal; }
   color: var(--orange-deep);
 }
 
-/* Subtitles (section headings) — Garamond */
-.line-title {
-  margin: 0;
-  font-family: var(--font-garamond);
-  font-weight: 600;
-  font-size: clamp(1.7rem, 2.9vw, 2.25rem);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  color: var(--ink-dark);
-}
-
-/* Main title — Parkside */
-.line-title--hero {
+/* All titles — Parkside */
+h1, h2,
+.line-title,
+.origin-title,
+.print-title--text,
+.page-gold-title,
+.cafe-menu-title,
+.newsletter-title,
+.cafe-banner-inner h2,
+.story-modal-content h2,
+.boards-heading {
   font-family: var(--font-script);
   font-weight: 700;
-  font-size: clamp(3rem, 7.5vw, 4.6rem);
+  font-style: normal;
   letter-spacing: 0;
-  line-height: 1.1;
   font-kerning: normal;
   font-feature-settings: "kern" 1;
+}
+
+.line-title {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
   color: var(--orange);
-  -webkit-text-stroke: 2.8px var(--ink);
+  -webkit-text-stroke: 1.6px var(--ink);
   paint-order: stroke fill;
+}
+
+.line-title--hero {
+  font-size: clamp(3rem, 7.5vw, 4.6rem);
+  line-height: 1.1;
+  -webkit-text-stroke-width: 2.8px;
 }
 
 .menu-lede {
@@ -1058,12 +1067,11 @@ address { font-style: normal; }
 
 .boards-heading {
   margin: 0;
-  font-family: var(--font-ui);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dark);
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  line-height: 1.15;
+  color: var(--orange);
+  -webkit-text-stroke: 1.4px var(--ink);
+  paint-order: stroke fill;
 }
 
 .dish-grid {
@@ -1766,13 +1774,18 @@ address { font-style: normal; }
 }
 
 .story-modal-content h2 {
-  font-family: var(--font-serif);
   margin: 0 0 0.35rem;
-  color: var(--ink-dark);
+  font-size: 1.9rem;
+  line-height: 1.15;
+  color: var(--orange);
+  -webkit-text-stroke: 1.4px var(--ink);
+  paint-order: stroke fill;
 }
 
 .story-modal-subtitle {
   margin: 0 0 0.75rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
   color: var(--muted);
 }
 
