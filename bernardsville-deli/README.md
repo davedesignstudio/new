@@ -4,14 +4,27 @@ Website for **Bernardsville Deli & Food Store**, 75 Morristown Rd, Bernardsville
 
 Built with PHP and designed to showcase the **front menu graphic** from your Illustrator/InDesign files.
 
-## Quick start
+## Quick start (this computer only)
 
 ```bash
 cd bernardsville-deli
-php -S localhost:8080 -t public
+php -S 127.0.0.1:8080 -t public
 ```
 
-Open http://localhost:8080
+Open http://127.0.0.1:8080
+
+## Local network (phones and other computers on the same Wi-Fi)
+
+`localhost` is only this machine. Bind to every interface:
+
+```bash
+cd bernardsville-deli
+./start-lan.sh
+```
+
+Then on a phone or another computer on the same Wi-Fi, open the **phones / LAN** URL the script prints, for example `http://192.168.1.23:8080`.
+
+Windows/macOS firewalls must allow inbound TCP 8080.
 
 ## Composer (optional)
 
