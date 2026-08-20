@@ -6,7 +6,7 @@ $audiences = audience_config();
 $family = $audiences['family'];
 $phone = $audiences['phone'];
 ?>
-<section class="audience-lanes" aria-label="Two ways to order">
+<section class="audience-lanes" aria-label="The table and the phone">
   <div class="container audience-lanes-grid">
     <article class="audience-lane audience-lane--family">
       <p class="kicker" data-caption-en="<?= e((string) $family['kicker']) ?>" data-caption-blend="<?= e((string) $family['kicker_blend']) ?>"><?= e((string) $family['kicker']) ?></p>

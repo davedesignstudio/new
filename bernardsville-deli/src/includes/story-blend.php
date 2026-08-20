@@ -7,8 +7,8 @@ return [
         'tag' => 'Origin / Истоки',
         'title' => 'The Grill Becomes Bville / Гриль становится Bville',
         'subtitle' => 'Same kitchen · New flame / Та же кухня · Новый огонь',
-        'excerpt' => 'When The Grill reopened as Bville Pizza & Grill, the promise was simple — keep every recipe neighbors trusted, add stone-oven pizza worth the drive. / Когда The Grill стал Bville Pizza & Grill, обещание было простым: сохранить любимые рецепты и добавить пиццу из каменной печи.',
-        'quote' => 'We didn\'t change the heart — we gave it a louder welcome. / Сердце не меняли — просто встречаем громче.',
+        'excerpt' => 'When The Grill reopened as Bville Pizza & Grill, the promise was a family one: keep every recipe neighbors trusted, add a stone oven for Friday, meet you at the counter with the bag still warm. / Когда The Grill стал Bville, обещание было семейным: те же рецепты, печь на пятницу, тёплая сумка на стойке.',
+        'quote' => 'We didn\'t change the heart — we gave the table a louder welcome. / Сердце не меняли — стол встречаем громче.',
         'body' => [
             'For years, Bernardsville knew this address as The Grill — wings, paninis, kabobs. / Годами Бернардsville знал этот адрес как The Grill — крылышки, panini, kebab.',
             'The rename wasn\'t a reset — Mediterranean and American plates you loved, plus stone-oven pies. / Переименование не сброс — те же блюда плюс пицца из печи.',

@@ -20,6 +20,15 @@ function audience_config(): array
     return $audiences;
 }
 
+function brand_config(): array
+{
+    static $brand = null;
+    if ($brand === null) {
+        $brand = require dirname(__DIR__) . '/includes/brand.php';
+    }
+    return $brand;
+}
+
 function menu_sections(): array
 {
     static $menu = null;

@@ -14,10 +14,10 @@ return [
     'city' => 'Москва · Bernardsville',
     'title_en' => 'Oven Origins',
     'title_ru' => 'Истоки Печи',
-    'kicker_en' => 'If a Moscow comics house told the Bville story',
-    'kicker_ru' => 'Если бы московское издательство рассказало историю Bville',
-    'disclaimer_en' => 'Original heroes. Original publisher. The kitchen at 159 Morristown Rd is real.',
-    'disclaimer_ru' => 'Герои и издательство вымышлены. Кухня на 159 Morristown Rd — настоящая.',
+    'kicker_en' => 'If a Moscow comics house told our kitchen story',
+    'kicker_ru' => 'Если бы московское издательство рассказало историю нашей кухни',
+    'disclaimer_en' => 'Original heroes. A real kitchen. Read it with the table — 159 Morristown Rd is still here.',
+    'disclaimer_ru' => 'Герои вымышлены. Кухня настоящая. Читайте за столом — 159 Morristown Rd никуда не делся.',
     'pages' => [
         [
             'file' => 'chudo-cover.webp',

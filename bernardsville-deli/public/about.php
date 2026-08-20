@@ -18,9 +18,30 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <p class="kicker">159 Morristown Rd</p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-sub">Pizza &amp; Grill</p>
+      <p class="lede">The kitchen that already knows the table.</p>
       <p class="about-text"><?= e($site['about']) ?></p>
       <a class="btn btn-red" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
+      <a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">House voice</a>
     </div>
+  </div>
+</section>
+
+<?php $brand = brand_config(); ?>
+<section class="content-section brand-story-inline">
+  <div class="container">
+    <p class="kicker">House story</p>
+    <h2><?= e((string) $brand['story']['logline']) ?></h2>
+    <p class="lede"><?= e((string) $brand['story']['origin']) ?></p>
+    <div class="brand-feelings-grid brand-feelings-grid--inline">
+      <?php foreach ($brand['feelings'] as $feeling): ?>
+        <article class="brand-feeling brand-feeling--compact">
+          <p class="kicker"><?= e((string) $feeling['word']) ?></p>
+          <h3><?= e((string) $feeling['say']) ?></h3>
+        </article>
+      <?php endforeach; ?>
+    </div>
+    <p class="brand-ritual"><?= e((string) $brand['story']['ritual']) ?></p>
+    <a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">Read the house guidelines</a>
   </div>
 </section>
 

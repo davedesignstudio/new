@@ -26,7 +26,7 @@ return [
         'kicker' => 'Family table',
         'kicker_blend' => 'Family table / Семейный стол',
         'title' => 'After practice. After the train.',
-        'lede' => 'Pickup at 159 Morristown Rd — 16" pies, kids plates, name at the counter. No unbuckling for a marketplace app.',
+        'lede' => 'Pickup at 159 Morristown Rd. 16" for the table, kids plates, your name on the bag.',
         'cta' => 'Order pickup',
         'cta_href' => 'order/',
         'secondary' => 'Kids menu',
@@ -43,8 +43,8 @@ return [
         'id' => 'phone-order',
         'kicker' => 'On your phone',
         'kicker_blend' => 'On your phone / На телефоне',
-        'title' => 'Customize the pie. Skip the app tax.',
-        'lede' => 'Direct order on this site — sauce, toppings, pickup or delivery. Read Чудо №1 while it bakes.',
+        'title' => 'Read with the kids. Build the pie.',
+        'lede' => 'Order from this kitchen on your phone — sauce, toppings, pickup or delivery. Чудо №1 is the origin story you can open while it bakes.',
         'cta' => 'Build a pie',
         'cta_href' => 'order/',
         'secondary' => 'Read Чудо №1',
@@ -58,7 +58,7 @@ return [
             'Comics reach the same age band: 52% of readers are under 35; 35% of fans buy for kids; millennials are ~40% of fans (industry compilations). Kids’ comics were ~38% of 2023 BookScan graphic-novel units.',
         ],
     ],
-    'overlap' => 'Millennial parents in the Somerset Hills — family pickup ticket plus a comic they can read with the kids.',
+    'overlap' => 'Millennial parents in the Somerset Hills — the table that picks up after practice, and the issue they can read with the kids.',
     'sources' => [
         [
             'title' => 'U.S. Census Bureau QuickFacts: Bernardsville borough, New Jersey (ACS 2020–2024)',

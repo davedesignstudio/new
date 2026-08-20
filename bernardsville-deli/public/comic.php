@@ -81,7 +81,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <header class="house-board-head">
       <p class="kicker">Ростер / Roster</p>
       <h2>House heroes</h2>
-      <p class="section-lead">Tap a name to order that plate — the issue is fiction, the food is the menu.</p>
+      <p class="section-lead">Tap a name for that plate — fiction for the kids, food for the table.</p>
     </header>
     <div class="house-checks">
       <a class="guest-check" href="<?= e(order_item_url('pizza-bville-special')) ?>">

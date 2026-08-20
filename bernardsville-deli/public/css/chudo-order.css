@@ -33,7 +33,7 @@ body {
 }
 
 .header-ornament::after {
-  content: "ЧУДО КОМИКС · PICKUP FIRST · NO MARKETPLACE";
+  content: "ЧУДО КОМИКС · FOR THE TABLE · THIS KITCHEN";
   visibility: visible;
   font-size: 0.62rem;
 }

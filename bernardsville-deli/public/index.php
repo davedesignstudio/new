@@ -20,13 +20,13 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="hero issue-hero">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="comic-pub">Чудо Комикс · Chudo Comics · Bernardsville</p>
+      <p class="comic-pub">Чудо Комикс · Chudo Comics · The house issue</p>
       <p class="kicker">Home of the B'Ville Special · <?= e($site['address']) ?></p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-sub">Pizza &amp; Grill</p>
-      <p class="lede">Stone oven pizza, Angus burgers, and gelato — pickup after the commute, or delivery on this site. Not a marketplace.</p>
+      <p class="lede">The kitchen that already knows the table. Stone oven pizza, Angus burgers, gelato — pickup after practice, or delivery from this house.</p>
       <div class="hero-actions">
-        <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order pickup</a>
+        <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order for the table</a>
         <a class="btn btn-ghost btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
       </div>
     </div>
@@ -74,7 +74,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="container">
     <header class="section-header">
       <h2><?= print_title('From the boards') ?></h2>
-      <p class="section-lead">Pizza, burgers, wraps, platters, salads, and gelato.</p>
+      <p class="section-lead">The boards from the wall — pizza, burgers, wraps, platters, salads, gelato.</p>
     </header>
     <div class="menu-grid">
       <?php foreach ($site['menu_categories'] as $cat): ?>
@@ -94,7 +94,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <div>
       <p class="kicker">Чудо Комикс №1</p>
       <h2>Oven Origins / Истоки Печи</h2>
-      <p>The Bville story as a Moscow comics house would print it — original heroes, real kitchen.</p>
+      <p>A kitchen origin you can read with the kids — original heroes, real oven, same table.</p>
     </div>
     <a class="btn btn-red btn-lg" href="<?= e(asset_url('comic.php')) ?>">Read the issue</a>
   </div>
@@ -114,8 +114,8 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>Customize your pie — then pickup on Morristown Rd</p>
-    <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order on this site</a>
+    <p>Build the pie. We’ll have it warm at the counter.</p>
+    <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order for the table</a>
   </div>
 </section>
 

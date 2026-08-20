@@ -7,7 +7,7 @@ $audiences = audience_config();
 <section class="issue-notes" aria-labelledby="issue-notes-title">
   <div class="container issue-notes-inner">
     <p class="comic-pub">Issue notes · Two tables</p>
-    <h2 id="issue-notes-title">Who this board is drawn for</h2>
+    <h2 id="issue-notes-title">Who this house is drawn for</h2>
     <p class="issue-notes-overlap"><?= e((string) $audiences['overlap']) ?></p>
     <div class="issue-notes-grid">
       <div>

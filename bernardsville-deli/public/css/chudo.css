@@ -446,6 +446,188 @@ body.chudo-world .order-dock {
   border-top-width: 4px;
 }
 
+/* House voice / brand guidelines */
+.brand-promise {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-burst);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  color: var(--ink-dark);
+}
+
+.brand-feelings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.brand-feelings {
+  padding: 0 0 2.4rem;
+}
+
+.brand-feeling {
+  padding: 1.15rem 1.2rem 1.3rem;
+  background: var(--paper);
+  border: 4px solid var(--ink-dark);
+  box-shadow: 6px 6px 0 rgba(228, 92, 36, 0.28);
+}
+
+.brand-feeling h2,
+.brand-feeling h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-burst);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.brand-feeling-research,
+.brand-feeling-story {
+  font-family: var(--font-garamond);
+  font-style: italic;
+}
+
+.brand-feeling-dont {
+  margin: 0.85rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.brand-feeling-dont span {
+  font-family: var(--font-comic);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  font-size: 0.68rem;
+}
+
+.brand-feeling--compact {
+  box-shadow: 3px 3px 0 rgba(20, 40, 32, 0.12);
+  padding: 0.85rem 1rem;
+}
+
+.brand-feelings-grid--inline {
+  margin: 1.25rem 0;
+}
+
+.brand-conclusion-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.brand-conclusion-list li {
+  padding: 1rem 1.1rem;
+  background: var(--paper);
+  border-left: 6px solid var(--orange);
+  border: 3px solid var(--ink-dark);
+}
+
+.brand-finding {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-garamond);
+  font-size: 1.15rem;
+}
+
+.brand-so {
+  margin: 0;
+  font-family: var(--font-comic);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--maroon);
+}
+
+.brand-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.brand-tone {
+  font-family: var(--font-comic);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--orange);
+}
+
+.brand-always-never {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.brand-always-never h3,
+.brand-visual-list,
+.brand-heroes {
+  font-family: var(--font-garamond);
+}
+
+.brand-always-never h3 {
+  font-family: var(--font-comic);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--maroon);
+}
+
+.brand-heroes,
+.brand-visual-list {
+  line-height: 1.55;
+}
+
+.brand-ritual {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.brand-sample-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.brand-sample {
+  border: 3px solid var(--ink-dark);
+  background: var(--paper);
+}
+
+.brand-sample-cold,
+.brand-sample-warm {
+  margin: 0;
+  padding: 0.85rem 1rem;
+}
+
+.brand-sample-cold {
+  background: rgba(20, 40, 32, 0.06);
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.brand-sample-warm {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-dark);
+}
+
+.footer-copy a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .brand-feelings-grid,
+  .brand-sample-grid,
+  .brand-split {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-spread,
   .audience-lanes-grid,

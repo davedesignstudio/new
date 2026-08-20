@@ -24,10 +24,10 @@ if (!str_contains($bodyClass, 'chudo-world')) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Bangers&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>?v=chudo1" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/order-board.css')) ?>?v=chudo1" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/comic.css')) ?>?v=chudo1" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/chudo.css')) ?>?v=chudo1" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>?v=chudo2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/order-board.css')) ?>?v=chudo2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/comic.css')) ?>?v=chudo2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/chudo.css')) ?>?v=chudo2" />
   <link rel="icon" href="<?= e(asset_url('favicon.png')) ?>" type="image/png" />
   <?php order_board_schema(); ?>
 </head>

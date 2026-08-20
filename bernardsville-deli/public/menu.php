@@ -18,10 +18,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="hero menu-hero-lines">
   <div class="container">
-    <p class="comic-pub">Чудо Комикс · МЕНЮ · Issue index</p>
-    <p class="menu-kicker">Tap a line to order · Pickup first, delivery on this site</p>
+    <p class="comic-pub">Чудо Комикс · The boards</p>
+    <p class="menu-kicker">Tap a line for the table · Pickup at the counter, or delivery from this kitchen</p>
     <h1 class="line-title line-title--hero">The Menu</h1>
-    <p class="lede menu-lede">Printed-board titles. Pictures on titles only. Family table shortcuts sit under the masthead.</p>
+    <p class="lede menu-lede">Printed-board titles — the names you already say. Pictures only on those titles.</p>
     <nav class="family-jump" aria-label="Family table shortcuts">
       <a href="#pizza">16" pies</a>
       <a href="#kids">Kids</a>
@@ -106,9 +106,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>Order pickup — or call <?= e($site['phone']) ?></p>
+    <p>We’ll have it warm at the counter — or call <?= e($site['phone']) ?></p>
     <div class="hero-actions">
-      <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order on this site</a>
+      <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order for the table</a>
       <a class="btn btn-ghost" href="tel:<?= e($site['phone_raw']) ?>">Call</a>
     </div>
   </div>
