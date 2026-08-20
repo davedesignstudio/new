@@ -1,8 +1,9 @@
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
+    font-family: "Cormorant Garamond", "Noto Serif JP", serif;
     text-transform: capitalize;
-    margin: 0 0 64px 0;
+    margin: 0 0 2.6rem 0;
+    letter-spacing: .05em;
   }
 
   h2 em, h3 {
@@ -10,8 +11,8 @@
   }
 
   h2 em:after {
-    content: '. ';
-    color: #ff7660;
+    content: " · ";
+    color: var(--theme-saffron);
   }
 
   ul {
@@ -22,7 +23,9 @@
 
     li {
       display: flex;
-      align-items: top;
+      align-items: flex-start;
+      border-bottom: 1px dashed rgba(36, 70, 82, 0.25);
+      padding: .35rem 0 .6rem;
     }
 
     p {
@@ -32,6 +35,8 @@
       &:last-child {
         padding-left: 16px;
         text-align: right;
+        font-weight: 600;
+        color: var(--theme-indigo);
       }
     }
   }
@@ -64,13 +69,13 @@
 
   button {
     color: white;
-    background: #ff7660;
+    background: linear-gradient(140deg, var(--theme-saffron), var(--theme-saffron-deep));
     border: none;
     cursor: pointer;
     transition: background .2s ease;
 
     &:hover {
-      background: #d35b48;
+      background: linear-gradient(140deg, var(--theme-saffron-deep), var(--theme-saffron));
     }
 
     &.half-button {
