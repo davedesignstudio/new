@@ -1,16 +1,16 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-20T12:00:00-04:00"
 title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Reserve a table
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us when you would like to join us and we will reply within the hour to confirm, or to suggest a quieter one.
 
 <form name="reservation">
   <input type="text" placeholder="Your Name" name="name">
   <input type="email" placeholder="Your Email" name="email">
   <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <button>Send with intention</button>
 </form>

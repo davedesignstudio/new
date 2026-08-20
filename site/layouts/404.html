@@ -1,8 +1,11 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main class="page-main">
+  <header class="page-hero">
+    <p class="section-kicker">borta &middot; 迷子 &middot; अलभ्य</p>
+    <h1 class="page-title">404 &mdash; Not found</h1>
+    <p class="page-lead">This path leads nowhere, like a raked line in the sand. <a href="{{ .Site.BaseURL }}">Return to stillness</a>.</p>
+  </header>
+</main>
 
 {{ partial "footer" . }}

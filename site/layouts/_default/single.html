@@ -1,7 +1,30 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main class="page-main">
+  <header class="page-hero">
+    {{ if eq .Title "About" }}
+      <p class="section-kicker">om oss &middot; 私たちについて &middot; परिचय</p>
+    {{ else if eq .Title "Contact" }}
+      <p class="section-kicker">kontakt &middot; 連絡 &middot; संपर्क</p>
+    {{ end }}
+    <h1 class="page-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="lotus-divider" aria-hidden="true">
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+      <path d="M60 6c3 6 3 12 0 18-3-6-3-12 0-18z"/>
+      <path d="M46 12c6 3 10 8 12 14-7-1-11-6-12-14z"/>
+      <path d="M74 12c-1 8-5 13-12 14 2-6 6-11 12-14z"/>
+      <path d="M32 22c7 0 13 3 17 8-7 2-13 0-17-8z"/>
+      <path d="M88 22c-4 8-10 10-17 8 4-5 10-8 17-8z"/>
+      <circle cx="18" cy="30" r="1.6"/>
+      <circle cx="102" cy="30" r="1.6"/>
+    </svg>
+  </div>
+
+  <div class="page-body prose">
+    {{ .Content }}
+  </div>
+</main>
 
 {{ partial "footer" . }}

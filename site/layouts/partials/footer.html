@@ -1,3 +1,20 @@
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-brand">
+      <span class="footer-om" aria-hidden="true">ॐ</span>
+      <p class="footer-name">{{ .Site.Title }}</p>
+      <p class="footer-tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/">Home</a>
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <p class="footer-mantra">annam brahma &mdash; अन्नं ब्रह्म &mdash; food is sacred</p>
+  </div>
+</footer>
+
 <script src="/js/siema.min.js"></script>
 <script src="/app.js"></script>
 </body>

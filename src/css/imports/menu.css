@@ -1,85 +1,443 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
+/* ---------- Home ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 7rem 1.5rem 6rem;
+  border-bottom: 1px solid #E3DAC6;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 46rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.hero-kicker {
+  font-family: "Noto Serif Devanagari", "Cormorant Garamond", serif;
+  font-size: .95rem;
+  letter-spacing: .18em;
+  color: #756C5D;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4.6rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+
+  @media (max-width: 30em) {
+    font-size: 3rem;
   }
+}
 
-  h2 em, h3 {
-    text-transform: capitalize;
+.hero-lead {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #565045;
+  max-width: 34rem;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .button {
+    margin: 0 .4rem;
   }
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.hero-enso {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+  color: #E9E0CD;
+  z-index: 0;
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-
-    li {
-      display: flex;
-      align-items: top;
-    }
-
-    p {
-      flex-grow: 1;
-      display: inline-block;
-
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
-
-  input,
-  textarea,
-  button {
+  svg {
+    width: 34rem;
+    height: 34rem;
     display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
+  }
+}
+
+/* ---------- Pillars ---------- */
+
+.pillars {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.pillars-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.pillar {
+  flex: 1 1 16rem;
+  max-width: 20rem;
+  background: #FBF8F1;
+  border: 1px solid #E3DAC6;
+  padding: 2.5rem 1.75rem 2rem;
+
+  h3 {
+    margin-bottom: .75rem;
+  }
+
+  p:last-child {
+    color: #756C5D;
+    font-size: .92rem;
+    margin-bottom: 0;
+  }
+}
+
+.pillar-glyph {
+  font-family: "Noto Serif Devanagari", "Cormorant Garamond", serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: #C97B2D;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Highlights ---------- */
+
+.highlights {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.highlight-list {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  text-align: left;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #E3DAC6;
+
+    &:first-child {
+      border-top: 1px solid #E3DAC6;
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: .2rem;
+    text-transform: capitalize;
+  }
+
+  p {
+    color: #756C5D;
+    font-size: .88rem;
+    margin: 0;
+  }
+}
+
+.highlight-price {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  color: #C97B2D;
+  white-space: nowrap;
+}
+
+.highlights-more {
+  margin: 0;
+}
+
+/* ---------- Visit ---------- */
+
+.visit {
+  background: #FBF8F1;
+  border-top: 1px solid #E3DAC6;
+  padding: 4rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.visit-grid {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+.visit-block {
+  flex: 1 1 14rem;
+
+  h3 {
+    font-size: .8rem;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: #C97B2D;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: .5rem;
+  }
+}
+
+.visit-note {
+  color: #756C5D;
+  font-size: .88rem;
+}
+
+.visit-mark {
+  .om {
+    font-size: 3rem;
+    color: #C97B2D;
+    display: block;
+    line-height: 1;
+    margin-bottom: .75rem;
+  }
+}
+
+.visit-mantra {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  color: #756C5D;
+}
+
+/* ---------- Inner pages ---------- */
+
+.page-main {
+  min-height: 55vh;
+}
+
+.page-hero {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 0;
+}
+
+.page-title {
+  font-size: 3rem;
+  letter-spacing: .08em;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.page-lead {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #565045;
+}
+
+.page-body {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2rem;
+}
+
+/* ---------- Menu pages ---------- */
+
+.menu-section {
+  margin-bottom: 3rem;
+}
+
+.menu-category {
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+  text-transform: capitalize;
+  margin: 2.5rem 0 .5rem;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 3rem;
+    margin: .9rem auto 0;
+    border-top: 1px solid #C97B2D;
+  }
+}
+
+.menu-type {
+  font-family: "Karla", sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: #C97B2D;
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #E3DAC6;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.menu-item-text {
+  display: block;
+}
+
+.menu-item-name {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.menu-item-desc {
+  display: block;
+  color: #756C5D;
+  font-size: .88rem;
+}
+
+.menu-item-price {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  color: #C97B2D;
+  white-space: nowrap;
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+  .page-body {
+    max-width: 56rem;
+  }
+}
+
+.gallery-carousel {
+  border: 1px solid #E3DAC6;
+  background: #FBF8F1;
+  padding: .75rem;
+}
+
+.gallery-slide {
+  img {
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
+    height: 60vh;
+    min-height: 320px;
+    object-fit: cover;
+    margin: 0;
+  }
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.half-button {
+  display: inline-block;
+  font-family: "Karla", sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #2A2620;
+  background: transparent;
+  border: 1px solid #B3A588;
+  padding: .8rem 1.8rem;
+  margin: 0 .4rem;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease;
+
+  &:hover, &:focus {
+    color: #A96218;
+    border-color: #C97B2D;
+  }
+}
+
+/* ---------- Prose & forms ---------- */
+
+.prose {
+  h1, h2 {
+    text-align: center;
+  }
+
+  h2 {
+    font-style: italic;
+    margin-top: 2rem;
   }
 
   input,
   textarea {
+    display: block;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #D8CDB4;
+    background: #FBF8F1;
+    color: #2A2620;
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color .2s ease;
+
     &:focus {
-      border: 1px solid #444;
+      border-color: #C97B2D;
     }
   }
 
-  .buttons {
-    text-align: center;
+  textarea {
+    min-height: 8rem;
   }
 
   button {
-    color: white;
-    background: #ff7660;
-    border: none;
+    display: block;
+    width: 100%;
+    font-family: "Karla", sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #F6F1E7;
+    background: #2A2620;
+    border: 1px solid #2A2620;
+    padding: 1rem;
     cursor: pointer;
-    transition: background .2s ease;
+    transition: background .2s ease, border-color .2s ease;
 
-    &:hover {
-      background: #d35b48;
-    }
-
-    &.half-button {
-      display: inline-block;
-      width: 30%;
-
-      &:last-child {
-        margin-left: 2%;
-      }
+    &:hover, &:focus {
+      background: #C97B2D;
+      border-color: #C97B2D;
     }
   }
 }

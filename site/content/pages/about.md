@@ -1,14 +1,26 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-20T12:00:00-04:00"
 title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Three traditions, one table
+
+**Sattva** began with a simple observation: the Swedish idea of *lagom*, the Japanese spirit of *wabi-sabi*, and the Vedic principle of *sattva* are three names for the same quiet truth — that enough, made with care, is abundance.
+
+Our dining room is built from pale birch and washi paper. Our kitchen keeps a Japanese discipline: sharp knives, short menus, and respect for the season. And our pantry is Vedic — turmeric and ghee, cardamom and curry leaf, food prepared as *prasada*, an offering first and a meal second.
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+> annaṁ brahma — food is Brahman.
+> What nourishes the body should also still the mind.
+
+---
+
+We cook mostly with plants, grains, and cultured dairy, in the sattvic tradition, with fish from cold northern waters when the season allows. Everything is made in-house, in fair measure, without hurry.
+
+Välkommen. ようこそ. स्वागतम्.
 
 Sincerely,
-# Mr. Bojangles
+
+# The Sattva kitchen

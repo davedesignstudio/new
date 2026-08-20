@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="{{ .Site.BaseURL }}">
+      <span class="brand-enso" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40.5 27.5C39 35 32.5 41 24 41 14.6 41 7 33.4 7 24S14.6 7 24 7c6.8 0 12.6 4 15.4 9.7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="3" fill="#C97B2D"/>
+        </svg>
+      </span>
+      <span class="brand-name">{{ .Site.Title }}</span>
+      <span class="brand-sub">सत्त्व &middot; 静 &middot; stillhet</span>
+    </a>
+
+    <nav class="site-nav">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+      <a class="nav-cta" href="/contact">Reserve</a>
+    </nav>
+  </div>
+</header>

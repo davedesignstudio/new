@@ -1,65 +1,102 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
+<main class="page-main {{ .Section | urlize }}">
+  <header class="page-hero">
+    {{ if eq .Section "food" }}
+      <p class="section-kicker">meny &middot; 献立 &middot; भोजन</p>
+      <h1 class="page-title">The Menu</h1>
+      <p class="page-lead">Seasonal, sattvic, and quietly precise. Dishes change with the market and the moon.</p>
+    {{ else if eq .Section "drinks" }}
+      <p class="section-kicker">dryck &middot; 飲み物 &middot; पेय</p>
+      <h1 class="page-title">Drinks</h1>
+      <p class="page-lead">Teas, tonics, and gentle pours to keep the mind clear.</p>
+    {{ else if eq .Section "gallery" }}
+      <p class="section-kicker">galleri &middot; 写真 &middot; चित्र</p>
+      <h1 class="page-title">The Room</h1>
+      <p class="page-lead">Pale wood, paper light, and a kitchen at work.</p>
+    {{ else }}
+      <h1 class="page-title">{{ .Section }}</h1>
+    {{ end }}
+  </header>
+
+  <div class="lotus-divider" aria-hidden="true">
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+      <path d="M60 6c3 6 3 12 0 18-3-6-3-12 0-18z"/>
+      <path d="M46 12c6 3 10 8 12 14-7-1-11-6-12-14z"/>
+      <path d="M74 12c-1 8-5 13-12 14 2-6 6-11 12-14z"/>
+      <path d="M32 22c7 0 13 3 17 8-7 2-13 0-17-8z"/>
+      <path d="M88 22c-4 8-10 10-17 8 4-5 10-8 17-8z"/>
+      <circle cx="18" cy="30" r="1.6"/>
+      <circle cx="102" cy="30" r="1.6"/>
+    </svg>
+  </div>
+
+  <div class="page-body">
   {{ if eq .Section "food" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
+      {{ if eq "categories" $taxonomyname }}
+        {{ range $key, $value := $taxonomy }}
+          {{ if ne $key "drinks"}}
+            <section class="menu-section">
+              <h2 class="menu-category">{{ $key }}</h2>
               {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
+                <h3 class="menu-type">{{ .Key }}</h3>
+                <ul class="menu-list">
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                    <div class="menu-item-text">
+                      <span class="menu-item-name">{{ .Title }}</span>
+                      <span class="menu-item-desc">{{ .Params.description }}</span>
+                    </div>
+                    <span class="menu-item-price">{{ .Params.price }}</span>
                   </li>
                 {{ end }}
                 </ul>
               {{ end }}
-            {{ end }}
+            </section>
           {{ end }}
         {{ end }}
-      </section>
+      {{ end }}
     {{ end }}
   {{ else if eq .Section "drinks" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if eq $key "drinks"}}
+      {{ if eq "categories" $taxonomyname }}
+        {{ range $key, $value := $taxonomy }}
+          {{ if eq $key "drinks"}}
+            <section class="menu-section">
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
+                <h3 class="menu-type">{{ .Key }}</h3>
+                <ul class="menu-list">
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                    <div class="menu-item-text">
+                      <span class="menu-item-name">{{ .Title }}</span>
+                      <span class="menu-item-desc">{{ .Params.description }}</span>
+                    </div>
+                    <span class="menu-item-price">{{ .Params.price }}</span>
                   </li>
                 {{ end }}
                 </ul>
               {{ end }}
-            {{ end }}
+            </section>
           {{ end }}
         {{ end }}
-      </section>
+      {{ end }}
     {{ end }}
   {{ else if eq .Section "gallery" }}
     <div class="gallery-carousel">
       {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        <div class="gallery-slide">
+          <img src="{{ .Params.image }}" alt="{{ .Title }}"/>
+        </div>
       {{ end }}
     </div>
     <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
+      <button class="prev half-button" aria-label="Previous photo">&larr; Prev</button>
+      <button class="next half-button" aria-label="Next photo">Next &rarr;</button>
     </div>
   {{ end }}
-</div>
+  </div>
+</main>
 
 {{ partial "footer" . }}
