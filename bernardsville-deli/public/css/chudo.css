@@ -265,7 +265,7 @@ body.chudo-world .newsletter-title {
 }
 
 body.chudo-world .house-board > .container {
-  width: 80%;
+  width: min(90%, calc(100% - 50px));
 }
 
 body.chudo-world .house-checks {
@@ -275,7 +275,7 @@ body.chudo-world .house-checks {
 body.chudo-world .guest-check {
   border: 3px solid var(--ink-dark);
   box-shadow: 4px 4px 0 rgba(20, 40, 32, 0.12);
-  padding: 1.15rem 1.35rem 1.25rem;
+  padding: 1.2rem 1.55rem 1.3rem;
   overflow: visible;
 }
 
@@ -505,6 +505,11 @@ body.chudo-world .order-dock {
   width: 88px;
   height: 88px;
   object-fit: contain;
+}
+
+.place-setting .kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
 }
 
 .place-setting h3 {
