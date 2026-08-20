@@ -134,10 +134,13 @@ body.nav-open .nav-toggle span:last-child {
   .site-nav {
     position: fixed;
     inset: 0;
+    z-index: 1;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
-    background: rgba(30, 45, 61, 0.97);
+    align-items: center;
+    gap: 1.35rem;
+    padding: 5rem 1.5rem 2rem;
+    background: var(--indigo);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.35s var(--ease), visibility 0.35s var(--ease);
@@ -149,9 +152,18 @@ body.nav-open .nav-toggle span:last-child {
   }
 
   .site-nav a,
-  body.is-home .site-nav a {
+  body.is-home .site-nav a,
+  body:not(.is-home) .site-nav a {
     color: var(--paper);
-    font-size: 1rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+  }
+
+  .site-nav a:hover,
+  .site-nav a.is-active,
+  body.is-home .site-nav a:hover,
+  body.is-home .site-nav a.is-active {
+    color: var(--saffron);
   }
 }
 
