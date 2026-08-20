@@ -74,6 +74,7 @@ return [
         'angus' => 'assets/photos/burger.jpg',
         'bacon_burger' => 'assets/photos/panini.jpg',
         'restaurant' => 'assets/photos/hero-restaurant.jpg',
+        'sweet' => 'assets/photos/gelato-mascarpone.png',
         'categories' => [
             'pizza' => 'assets/photos/pizza.jpg',
             'platters' => 'assets/photos/handhelds.jpg',
@@ -114,6 +115,7 @@ return [
             'angus' => 'Angus burgers on a wood board with avocado and greens',
             'bacon_burger' => 'Bacon cheeseburger stacked on a sesame bun',
             'restaurant' => 'Dining room tables set for service',
+            'sweet' => 'Mascarpone gelato with a caramelized top',
         ],
         'gallery' => [
             ['key' => 'pizza', 'caption' => 'Stone oven pizza'],

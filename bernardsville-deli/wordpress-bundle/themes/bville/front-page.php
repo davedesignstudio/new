@@ -55,7 +55,7 @@ $menu_url = $menu ? get_permalink($menu) : $shop;
   <div class="feature-grid">
     <a class="feature-card" href="<?php echo esc_url($shop); ?>">
       <img src="<?php echo esc_url(bville_asset('pizza.jpg')); ?>" alt="Stone oven pizza">
-      <h3>Stone Oven</h3>
+      <h3>Stone Oven Baked</h3>
       <p>Pies from the printed boards, paid in WooCommerce checkout.</p>
     </a>
     <a class="feature-card" href="<?php echo esc_url($shop); ?>">
@@ -64,9 +64,9 @@ $menu_url = $menu ? get_permalink($menu) : $shop;
       <p>Angus classics, wraps, and grill platters.</p>
     </a>
     <a class="feature-card" href="<?php echo esc_url($shop); ?>">
-      <img src="<?php echo esc_url(bville_asset('salad.jpg')); ?>" alt="Garden salads">
-      <h3>From the Garden</h3>
-      <p>Clean-line menu. Pictures on titles only.</p>
+      <img src="<?php echo esc_url(bville_asset('gelato-mascarpone.png')); ?>" alt="Mascarpone gelato">
+      <h3>Sweet Endings</h3>
+      <p>Italian gelato after the pie.</p>
     </a>
   </div>
 </section>

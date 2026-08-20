@@ -11,7 +11,7 @@ $homeCats = ['pizza', 'burgers', 'wraps', 'platters', 'garden', 'desserts'];
 $features = [
     ['id' => 'pizza', 'title' => 'Stone Oven Baked', 'photo' => 'pizza'],
     ['id' => 'burgers', 'title' => 'Burgers', 'photo' => 'angus'],
-    ['id' => 'desserts', 'title' => 'Sweet Endings', 'photo' => 'desserts'],
+    ['id' => 'desserts', 'title' => 'Sweet Endings', 'photo' => 'sweet'],
 ];
 
 require dirname(__DIR__) . '/src/includes/header.php';
@@ -49,7 +49,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <?php foreach ($features as $feature): ?>
     <a class="feature-tile" href="<?= e(asset_url('menu.php#' . $feature['id'])) ?>">
       <?= photo_img($feature['photo'], ['width' => 720, 'height' => 480]) ?>
-      <?= print_title($feature['title'], 'print-title print-title--poster') ?>
+      <span class="feature-title"><?= e($feature['title']) ?></span>
     </a>
   <?php endforeach; ?>
 </section>

@@ -620,6 +620,27 @@ address { font-style: normal; }
   object-fit: cover;
 }
 
+/* Print-menu italic — Alegreya, featured tiles only */
+.feature-title {
+  position: absolute;
+  left: 0.7rem;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0.4rem 0.75rem 0.5rem;
+  background: var(--paper);
+  border: 2px solid var(--ink-dark);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--maroon);
+  text-align: center;
+}
+
 .poster-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

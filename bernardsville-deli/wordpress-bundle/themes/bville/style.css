@@ -24,6 +24,7 @@ Tags: food-and-drink, e-commerce, custom-logo, wide-blocks
   --font-ui: "DM Sans", system-ui, sans-serif;
   --font-display: "Oswald", "Trebuchet MS", sans-serif;
   --font-script: "Parkside", "Oleo Script Swash Caps", "Palatino Linotype", cursive;
+  --font-serif: "Alegreya", Georgia, serif;
   --font-garamond: "EB Garamond", Garamond, "Adobe Garamond Pro", "Palatino Linotype", Georgia, serif;
   --font-sans: "Oswald", "Trebuchet MS", sans-serif;
   --radius: 4px;
@@ -345,7 +346,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 .feature-card h3 {
   margin: 0;
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--maroon);
 }
 
 .feature-card p {
