@@ -1,15 +1,13 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
-    </ul>
-  </div>
-</div>
+<header class="site-header">
+  <a class="brand" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }} home">
+    <span class="brand-mark" aria-hidden="true">ॐ</span>
+    <span class="brand-name"><span>tasty</span> licks</span>
+  </a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="{{ if .IsHome }}active{{ end }}" href="/">Home</a>
+    {{ range .Site.Menus.main }}
+      <a class="{{ if eq $.RelPermalink .URL }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+  <a class="header-cta" href="/contact">Reserve a table <span aria-hidden="true">↗</span></a>
+</header>
