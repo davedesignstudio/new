@@ -1,10 +1,122 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main class="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>Stockholm</span><i></i><span>Kyoto</span><i></i><span>Varanasi</span></p>
+      <h1 id="hero-title">Stillness,<br><em>served.</em></h1>
+      <p class="hero-intro">A plant-forward dining ritual where Nordic seasons meet Japanese precision and the warmth of Vedic hospitality.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/contact">Reserve a table <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="/food">Explore the menu <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <p class="hero-kanji">静</p>
+      <svg class="mandala" viewBox="0 0 600 600" role="presentation">
+        <defs>
+          <path id="petal" d="M300 296C252 249 251 171 300 112C349 171 348 249 300 296Z"/>
+        </defs>
+        <circle cx="300" cy="300" r="249" class="mandala-ring"/>
+        <circle cx="300" cy="300" r="205" class="mandala-ring mandala-ring-dashed"/>
+        <g class="petals petals-outer">
+          <use href="#petal"/><use href="#petal" transform="rotate(45 300 300)"/>
+          <use href="#petal" transform="rotate(90 300 300)"/><use href="#petal" transform="rotate(135 300 300)"/>
+          <use href="#petal" transform="rotate(180 300 300)"/><use href="#petal" transform="rotate(225 300 300)"/>
+          <use href="#petal" transform="rotate(270 300 300)"/><use href="#petal" transform="rotate(315 300 300)"/>
+        </g>
+        <g class="petals petals-inner" transform="translate(300 300) scale(.6) translate(-300 -300) rotate(22.5 300 300)">
+          <use href="#petal"/><use href="#petal" transform="rotate(45 300 300)"/>
+          <use href="#petal" transform="rotate(90 300 300)"/><use href="#petal" transform="rotate(135 300 300)"/>
+          <use href="#petal" transform="rotate(180 300 300)"/><use href="#petal" transform="rotate(225 300 300)"/>
+          <use href="#petal" transform="rotate(270 300 300)"/><use href="#petal" transform="rotate(315 300 300)"/>
+        </g>
+        <circle cx="300" cy="300" r="38" class="mandala-core"/>
+      </svg>
+      <div class="art-caption">
+        <span>季節の料理</span>
+        <span>Seasonal kitchen</span>
+      </div>
+    </div>
+
+    <div class="hero-note">
+      <span class="note-mark">ॐ</span>
+      <p><strong>Annam Brahma</strong><br>Food is sacred</p>
+    </div>
+  </section>
+
+  <section class="philosophy" aria-labelledby="philosophy-title">
+    <div class="section-number">01</div>
+    <div class="section-heading">
+      <p class="eyebrow">Our philosophy</p>
+      <h2 id="philosophy-title">Three traditions.<br>One quiet table.</h2>
+    </div>
+    <div class="philosophy-copy">
+      <p>Lagom teaches us enough. <em>Shun</em> asks us to cook at the height of the season. Ayurveda reminds us that every meal can restore balance.</p>
+      <a class="text-link" href="/about">Our story <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="pillars" aria-label="Our approach">
+    <article class="pillar">
+      <span class="pillar-icon">Ⅰ</span>
+      <p class="eyebrow">Sweden</p>
+      <h3>Seasonal clarity</h3>
+      <p>Forest herbs, preserved berries and vegetables grown beneath the long northern light.</p>
+    </article>
+    <article class="pillar pillar-dark">
+      <span class="pillar-icon">二</span>
+      <p class="eyebrow">Japan</p>
+      <h3>Precise simplicity</h3>
+      <p>Clean flavours, patient ferments and the beauty of space left intentionally untouched.</p>
+    </article>
+    <article class="pillar pillar-saffron">
+      <span class="pillar-icon">३</span>
+      <p class="eyebrow">India</p>
+      <h3>Elemental balance</h3>
+      <p>Ancient spices and nourishing combinations guided by the six tastes of Ayurveda.</p>
+    </article>
+  </section>
+
+  <section class="menu-preview" aria-labelledby="menu-title">
+    <div class="menu-intro">
+      <div class="section-number">02</div>
+      <p class="eyebrow">The evening ritual</p>
+      <h2 id="menu-title">A tasting menu<br>in six movements.</h2>
+      <p>Our menu changes with the market, the weather and the intuition of the kitchen.</p>
+      <a class="button button-outline" href="/food">View the full menu</a>
+    </div>
+    <div class="menu-courses">
+      <article>
+        <span>01</span>
+        <div><h3>First light</h3><p>White asparagus · yuzu kosho · spruce</p></div>
+        <strong>目覚め</strong>
+      </article>
+      <article>
+        <span>02</span>
+        <div><h3>Forest floor</h3><p>Morel · smoked dashi · black garlic</p></div>
+        <strong>森</strong>
+      </article>
+      <article>
+        <span>03</span>
+        <div><h3>Golden hour</h3><p>Saffron rice · spring pea · shiso</p></div>
+        <strong>夕暮れ</strong>
+      </article>
+      <article>
+        <span>04</span>
+        <div><h3>Quiet fire</h3><p>Koji aubergine · tamarind · sesame</p></div>
+        <strong>火</strong>
+      </article>
+    </div>
+  </section>
+
+  <section class="reservation">
+    <p class="reservation-symbol" aria-hidden="true">✦</p>
+    <p class="eyebrow">Stockholm · Tuesday—Saturday</p>
+    <h2>Come as you are.<br>Leave a little lighter.</h2>
+    <a class="button button-primary" href="/contact">Reserve your table <span aria-hidden="true">↗</span></a>
+  </section>
+</main>
 
 {{ partial "footer" . }}
