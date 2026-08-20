@@ -1,85 +1,191 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
-  }
+.menu-section {
+  margin: 0 0 3rem;
+}
 
-  h2 em, h3 {
-    text-transform: capitalize;
-  }
+.menu-section h2 {
+  margin: 0 0 1.4rem;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: capitalize;
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.menu-section h2 em {
+  font-style: italic;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+.menu-section h2:after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 1px;
+  margin-top: 0.7rem;
+  background: linear-gradient(90deg, var(--saffron), var(--gold), transparent);
+}
 
-    li {
-      display: flex;
-      align-items: top;
-    }
+.menu-section h3 {
+  margin: 1.6rem 0 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
 
-    p {
-      flex-grow: 1;
-      display: inline-block;
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
+.menu-item {
+  margin: 0 0 1.15rem;
+  padding: 0 0 1.05rem;
+  border-bottom: 1px solid var(--line);
+}
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+.menu-item-row {
+  display: flex;
+  align-items: baseline;
+}
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
+.menu-name {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+  font-weight: 500;
+}
 
-  .buttons {
-    text-align: center;
-  }
+.menu-name:hover,
+.menu-name:focus {
+  color: var(--saffron);
+}
 
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
+.menu-leaders {
+  flex: 1 1 auto;
+  margin: 0 0.7rem;
+  min-width: 1.5rem;
+  height: 1px;
+  background-image: radial-gradient(circle, var(--gold) 1px, transparent 1.2px);
+  background-size: 6px 3px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  transform: translateY(-0.35em);
+}
 
-    &:hover {
-      background: #d35b48;
-    }
+.menu-price {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--saffron);
+}
 
-    &.half-button {
-      display: inline-block;
-      width: 30%;
+.menu-desc {
+  margin: 0.25rem 0 0;
+  max-width: 28rem;
+  font-size: 0.92rem;
+  color: var(--mist);
+}
 
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
+.dish-price {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--saffron);
+}
+
+.dish-back {
+  margin-top: 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.content input,
+.content textarea,
+.content button {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.85rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--washi);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+  box-shadow: none;
+}
+
+.content input:focus,
+.content textarea:focus {
+  border-color: var(--saffron);
+}
+
+.content textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.content button {
+  width: auto;
+  min-width: 10rem;
+}
+
+.page h2,
+.dish h2 {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.page em {
+  font-family: var(--font-serif);
+}
+
+.gallery-slide {
+  margin: 0;
+}
+
+.gallery-slide img,
+.gallery-single img {
+  width: 100%;
+  min-height: 16rem;
+  max-height: 28rem;
+  object-fit: cover;
+  border-radius: 0;
+  filter: saturate(0.72) sepia(0.12);
+}
+
+.gallery-slide figcaption,
+.gallery-count {
+  margin: 0.8rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+.gallery-controls .button {
+  min-width: 7.5rem;
+  text-align: center;
+}
+
+.gallery-count {
+  margin: 0;
+}
+
+@media (min-width: 30em) {
+  .gallery-slide img,
+  .gallery-single img {
+    min-height: 22rem;
+    max-height: 34rem;
   }
 }

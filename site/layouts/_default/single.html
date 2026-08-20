@@ -1,7 +1,39 @@
 {{ partial "header" . }}
+{{ partial "sidebar" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main class="content container">
+  {{ if eq .Section "gallery" }}
+    <article class="gallery-single">
+      <header class="page-head">
+        <p class="kicker">Gallery</p>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <figure>
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      </figure>
+    </article>
+
+  {{ else if or (eq .Section "food") (eq .Section "drinks") }}
+    <article class="dish">
+      <header class="page-head">
+        <p class="kicker">{{ .Params.type }}</p>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <p class="page-lead">{{ .Params.description }}</p>
+      <p class="dish-price">{{ .Params.price }}</p>
+      {{ .Content }}
+      <p class="dish-back"><a href="{{ if eq .Section "drinks" }}/drinks{{ else }}/food{{ end }}">Return to the {{ if eq .Section "drinks" }}drinks{{ else }}menu{{ end }}</a></p>
+    </article>
+
+  {{ else }}
+    <article class="page">
+      <header class="page-head">
+        <p class="kicker">{{ .Site.Title }}</p>
+        <h1>{{ .Title }}</h1>
+      </header>
+      {{ .Content }}
+    </article>
+  {{ end }}
+</main>
 
 {{ partial "footer" . }}

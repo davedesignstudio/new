@@ -1,65 +1,95 @@
 {{ partial "header" . }}
+{{ partial "sidebar" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
+<main class="content container">
   {{ if eq .Section "food" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
+    <header class="page-head">
+      <p class="kicker"> भोजन · 献立 · meny</p>
+      <h1>Menu</h1>
+      <p class="page-lead">Kaiseki calm, Nordic light, and the spices of a Vedic kitchen — offered in their season.</p>
+    </header>
+
+    {{ $cats := .Site.Taxonomies.categories }}
+    {{ range (slice "dinner" "lunch") }}
+      {{ $name := . }}
+      {{ with index $cats $name }}
+        <section class="menu-section">
+          <h2><em>{{ $name }}</em></h2>
+          {{ range .Pages.GroupByParam "type" }}
+            <h3>{{ .Key }}</h3>
+            <ul class="menu-list">
+              {{ range .Pages }}
+                <li class="menu-item">
+                  <div class="menu-item-row">
+                    <a class="menu-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <span class="menu-leaders" aria-hidden="true"></span>
+                    <span class="menu-price">{{ .Params.price }}</span>
+                  </div>
+                  <p class="menu-desc">{{ .Params.description }}</p>
+                </li>
               {{ end }}
-            {{ end }}
+            </ul>
           {{ end }}
-        {{ end }}
-      </section>
-    {{ end }}
-  {{ else if eq .Section "drinks" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if eq $key "drinks"}}
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </section>
-    {{ end }}
-  {{ else if eq .Section "gallery" }}
-    <div class="gallery-carousel">
-      {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        </section>
       {{ end }}
+    {{ end }}
+
+  {{ else if eq .Section "drinks" }}
+    <header class="page-head">
+      <p class="kicker"> पेय · 飲み物 · dryck</p>
+      <h1>Drinks</h1>
+      <p class="page-lead">Sake, aquavit, and saffron — poured slowly, like a blessing.</p>
+    </header>
+
+    {{ with index .Site.Taxonomies.categories "drinks" }}
+      <section class="menu-section">
+        {{ range .Pages.GroupByParam "type" }}
+          <h2><em>{{ .Key }}</em></h2>
+          <ul class="menu-list">
+            {{ range .Pages }}
+              <li class="menu-item">
+                <div class="menu-item-row">
+                  <a class="menu-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <span class="menu-leaders" aria-hidden="true"></span>
+                  <span class="menu-price">{{ .Params.price }}</span>
+                </div>
+                <p class="menu-desc">{{ .Params.description }}</p>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </section>
+    {{ end }}
+
+  {{ else if eq .Section "gallery" }}
+    <header class="page-head">
+      <p class="kicker"> दर्शन · 光景 · blick</p>
+      <h1>Gallery</h1>
+      <p class="page-lead">Light on wood, steam, and the still life of a table at rest.</p>
+    </header>
+
+    <div class="gallery">
+      <div class="gallery-carousel">
+        {{ range .Pages }}
+          <figure class="gallery-slide">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            <figcaption>{{ .Title }}</figcaption>
+          </figure>
+        {{ end }}
+      </div>
+      <div class="gallery-controls">
+        <button class="button button-ghost gallery-prev" type="button">Previous</button>
+        <p class="gallery-count" aria-live="polite"></p>
+        <button class="button button-ghost gallery-next" type="button">Next</button>
+      </div>
     </div>
-    <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
-    </div>
+
+  {{ else }}
+    <header class="page-head">
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{ .Content }}
   {{ end }}
-</div>
+</main>
 
 {{ partial "footer" . }}

@@ -1,15 +1,32 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+  <span class="nav-toggle-lines" aria-hidden="true"></span>
+  <span class="nav-toggle-label">Menu</span>
+</button>
+
+<div class="sidebar" id="site-nav">
+  <div class="sidebar-sticky">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
+      <a class="brand" href="{{ .Site.BaseURL }}">
+        {{ partial "lotus.html" . }}
+        <span class="brand-kicker">{{ .Site.Params.kicker }}</span>
+        <h1>{{ .Site.Title }}</h1>
+        <span class="brand-jp">{{ .Site.Params.japanese }}</span>
+      </a>
+      <p class="lead">{{ .Site.Params.description }}</p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li>
+        <a class="sidebar-nav-item{{ if .IsHome }} is-active{{ end }}" href="/">Home</a>
+      </li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li>
+          <a class="sidebar-nav-item{{ if or (eq $.RelPermalink .URL) (eq $.URL .URL) (in $.RelPermalink .URL) }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+      {{ end }}
     </ul>
+
+    <p class="sidebar-mantra">ॐ शान्तिः</p>
+    <p class="sidebar-foot">Stockholm · Kyoto · Varanasi</p>
   </div>
 </div>

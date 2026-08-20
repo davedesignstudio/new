@@ -4,11 +4,20 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+<p class="page-lead">Sattva is a house of three inheritances: Swedish light, Japanese space, and Vedic fire. We cook as if the table were an altar and the evening a shared rite of attention.</p>
 
----
+## The house
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+We take *lagom* from the north — enough, and no more. From Japan we keep *ma*, the charged interval that lets flavor arrive. From the Vedic kitchen we keep *sattva*: clarity, warmth, and food offered without agitation.
+
+The dining room is linen, birch, and ink. A saffron thread runs through the menu the way a tilak marks the brow — quietly, as a reminder of the hearth.
+
+## Kitchen
+
+Kaiseki pacing. Nordic fish and grain. Ghee, miso, yuzu, lingon, turmeric, and shiso. Nothing piled. Nothing rushed. Courses move like a mantra: return, refine, rest.
+
+> अतिथि देवो भव — the guest is god.
 
 Sincerely,
-# Mr. Bojangles
+
+**The house of Sattva**

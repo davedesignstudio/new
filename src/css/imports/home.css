@@ -1,0 +1,162 @@
+.home-stage {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.home-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: saturate(0.45) sepia(0.28) contrast(0.92);
+  opacity: 0.32;
+}
+
+.home-veil {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(184, 106, 31, 0.16), transparent 28%),
+    linear-gradient(90deg, rgba(243, 238, 228, 0.22) 0, rgba(243, 238, 228, 0.55) 42%, rgba(243, 238, 228, 0.9) 100%),
+    repeating-radial-gradient(circle at 12% 80%, rgba(184, 150, 62, 0.09) 0, rgba(184, 150, 62, 0.09) 1px, transparent 1px, transparent 18px);
+}
+
+.is-home .content {
+  padding: 0;
+}
+
+.home-hero {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  padding: 4.5rem 1.4rem 4rem;
+}
+
+.home-mantra {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-deva);
+  font-size: 1.05rem;
+  color: var(--saffron);
+}
+
+.home-kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+.home-title {
+  margin: 0.4rem 0 0.1rem;
+  font-size: 4.4rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-kana {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  letter-spacing: 0.48em;
+  color: var(--mist);
+}
+
+.home-tag {
+  margin: 0 0 2.4rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.home-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 2.2rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.home-pillars li {
+  flex: 1 1 12rem;
+  padding: 1.25rem 1.2rem 0.2rem 0;
+}
+
+.home-pillars li + li {
+  border-left: 0;
+}
+
+.pillar-script {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-jp);
+  font-size: 1.05rem;
+  color: var(--saffron);
+}
+
+.home-pillars h2 {
+  margin: 0 0 0.45rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-pillars p {
+  max-width: 16rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.home-actions .button {
+  margin: 0 0.7rem 0.7rem 0;
+}
+
+.home-tanzaku {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .is-home .content {
+    margin-left: var(--sidebar);
+    min-height: 100vh;
+  }
+
+  .home-hero {
+    padding: 5.5rem 3.5rem 4rem;
+  }
+
+  .home-title {
+    font-size: 6rem;
+  }
+
+  .home-pillars li + li {
+    padding-left: 1.3rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .home-tanzaku {
+    display: block;
+    position: fixed;
+    top: 4.5rem;
+    right: 1.6rem;
+    z-index: 2;
+    margin: 0;
+    font-family: var(--font-jp);
+    font-size: 0.78rem;
+    letter-spacing: 0.38em;
+    color: var(--mist);
+    writing-mode: vertical-rl;
+  }
+}

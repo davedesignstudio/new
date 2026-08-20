@@ -1,11 +1,34 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Sattva"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A Swedish–Japanese house of hospitality guided by Vedic rhythm."
+  kicker = "सत्त्व"
+  japanese = "サットヴァ"
+  tagline = "Swedish light · Japanese space · Vedic fire"
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food"
+    weight = 1
+
+[[menu.main]]
+    name = "Drinks"
+    url  = "/drinks"
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 3
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery"
+    weight = 4
+
+[[menu.main]]
+    name = "Reserve"
+    url  = "/contact"
+    weight = 5

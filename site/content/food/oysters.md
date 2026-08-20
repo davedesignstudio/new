@@ -3,12 +3,9 @@ categories:
   - lunch
   - dinner
 date: 2017-05-17T17:03:58.000Z
-title: half oyster
+title: Kusshi oysters
 description: >-
-  kusshi (bc), marin miyagi (ca), beausoleil (nb), island creek (ma), pacific
-  gold (ca)
-type: raw bar
+  Yuzu-saffron mignonette, cucumber ice, and a drop of cold-pressed rapeseed
+type: cold
 price: 24
 ---
-
-
