@@ -107,14 +107,14 @@ body {
 .house-checks {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .guest-check {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  padding: 1rem 1.05rem 1.1rem;
+  padding: 1.2rem 1.5rem 1.3rem;
   background-color: var(--paper);
   background-image: repeating-linear-gradient(
     transparent 0,

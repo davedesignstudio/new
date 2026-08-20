@@ -264,14 +264,24 @@ body.chudo-world .newsletter-title {
   -webkit-text-stroke: 0;
 }
 
+body.chudo-world .house-board > .container {
+  width: min(94%, calc(100% - 50px));
+}
+
 body.chudo-world .guest-check {
   border: 3px solid var(--ink-dark);
   box-shadow: 4px 4px 0 rgba(20, 40, 32, 0.12);
+  padding: 1.2rem 1.5rem 1.3rem;
+  overflow: visible;
 }
 
 body.chudo-world .guest-check h3 {
-  font-family: var(--font-burst);
-  letter-spacing: 0.03em;
+  font-family: var(--font-garamond);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-size: clamp(1.45rem, 1.8vw, 1.75rem);
+  line-height: 1.2;
 }
 
 body.chudo-world .comic-band {
@@ -319,7 +329,7 @@ body.chudo-world .call-bar-inner p {
 .family-jump a {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.7rem;
+  padding: 0.45rem 1.05rem;
   background: var(--paper);
   border: 2px solid var(--ink-dark);
   text-decoration: none;
@@ -327,6 +337,7 @@ body.chudo-world .call-bar-inner p {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-dark);
+  white-space: nowrap;
 }
 
 .family-jump a:hover {

@@ -611,7 +611,7 @@ address { font-style: normal; }
 .poster-card {
   position: relative;
   display: block;
-  overflow: hidden;
+  overflow: visible;
   min-height: 280px;
 }
 
@@ -635,16 +635,19 @@ address { font-style: normal; }
 
 .feature-title {
   position: absolute;
-  left: 0.7rem;
-  right: 0.7rem;
-  bottom: 0.7rem;
+  left: 0.55rem;
+  right: auto;
+  bottom: 0.55rem;
   z-index: 1;
+  width: max-content;
+  max-width: calc(100% - 1.1rem);
   margin: 0;
-  padding: 0.4rem 0.75rem 0.5rem;
+  padding: 0.5rem 1.2rem 0.55rem;
   background: var(--paper);
   border: 2px solid var(--ink-dark);
-  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
-  text-align: center;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  text-align: left;
+  box-sizing: border-box;
 }
 
 .poster-row {
@@ -1007,7 +1010,7 @@ address { font-style: normal; }
 .menu-line-row h3 {
   margin: 0;
   flex: 0 1 auto;
-  max-width: 70%;
+  max-width: calc(100% - 4.5rem);
   font-family: var(--font-garamond);
   font-style: normal;
   font-size: 1.28rem;
@@ -1693,7 +1696,16 @@ address { font-style: normal; }
   gap: 1rem;
 }
 
-.cafe-menu-item h3 { margin: 0; color: var(--cafe); }
+.cafe-menu-item h3 {
+  margin: 0;
+  color: var(--cafe);
+  font-family: var(--font-garamond);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.28rem;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
 .cafe-menu-item-head span { font-weight: 800; color: var(--cafe); }
 .cafe-menu-item p { margin: 0.15rem 0 0; font-style: italic; color: var(--muted); }
 
