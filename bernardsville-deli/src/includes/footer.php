@@ -21,9 +21,9 @@
       </a>
     </div>
   </footer>
-  <script src="<?= e(asset_url('js/app.js')) ?>" defer></script>
+  <script src="<?= e(asset_url('js/app.js')) ?>?v=chudo1" defer></script>
   <?php if (($page ?? current_page()) === 'comic'): ?>
-    <script src="<?= e(asset_url('js/comic.js')) ?>" defer></script>
+    <script src="<?= e(asset_url('js/comic.js')) ?>?v=chudo1" defer></script>
   <?php endif; ?>
   <?php order_board_dock(); ?>
 </body>
