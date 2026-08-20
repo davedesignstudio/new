@@ -1,37 +1,28 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# D Philhower Studio — dphilhower.com
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+WordPress theme and all-in-one WordPress package for **D Philhower Studio**, a graphic design studio in the Morristown, NJ area.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+## Get the site
 
-To install and run the example site locally, here’s what you’ll need:
+The installable files live in `dphilhower-studio-wp/releases/` after you run the build (they are also committed when built):
 
-## System Requirements
+1. **`dphilhower-studio-theme.zip`** — upload this in WordPress: Appearance → Themes → Add New → Upload Theme.
+2. **`dphilhower-studio-wordpress-all-in-one.zip`** — WordPress + the theme in one folder. Unzip, upload `wordpress/` to `public_html` for dphilhower.com, create a database, run the installer.
 
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
-
-## Usage
-
-Clone this repository and run:
+Full steps: [`dphilhower-studio-wp/INSTALL.md`](dphilhower-studio-wp/INSTALL.md)
 
 ```bash
-npm install
-npm run start
+bash dphilhower-studio-wp/scripts/build-packages.sh
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
-
-To build your static output to the `/dist` folder, use:
+## Preview the design without WordPress
 
 ```bash
-npm run build
+python3 -m http.server 3000 --directory dphilhower-studio-wp/preview
 ```
 
-## License
+Then open http://localhost:3000
 
-[MIT](LICENSE)
+## Theme source
+
+`dphilhower-studio-wp/theme/dphilhower-studio/`
