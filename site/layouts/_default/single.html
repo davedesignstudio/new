@@ -1,6 +1,9 @@
 {{ partial "header" . }}
 
 <div class="content container">
+  <span class="kicker">{{ .Site.Title }}</span>
+  <h1>{{ .Title }}</h1>
+  <div class="page-ornament"><span class="bindu"></span></div>
   {{ .Content }}
 </div>
 

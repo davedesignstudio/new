@@ -1,14 +1,18 @@
 // JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+// The Siema carousel only exists on the gallery page.
+if (document.querySelector('.gallery-carousel')) {
+  const mySiema = new Siema({
+    selector: '.gallery-carousel',
+    duration: 200,
+    easing: 'ease',
+    perPage: 1,
+    startIndex: 0,
+    draggable: true,
+    threshold: 20,
+    loop: true
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+  document.querySelector('.next').addEventListener('click', () => mySiema.next());
+}

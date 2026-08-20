@@ -1,7 +1,13 @@
 {{ partial "header" . }}
 
 <div class="content container {{ .Title }} {{ .Section | urlize }}">
+  <span class="kicker">
+    {{ if eq .Section "food" }}Sattvic &middot; Seasonal &middot; Spare
+    {{ else if eq .Section "gallery" }}Light &middot; Grain &middot; Stone
+    {{ else }}{{ .Site.Title }}{{ end }}
+  </span>
   <h1>{{ .Section }}</h1>
+  <div class="page-ornament"><span class="bindu"></span></div>
   {{ if eq .Section "food" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
       <section>
@@ -15,7 +21,7 @@
                 <ul>
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
+                    <p><strong>{{ .Title }}</strong> {{ .Params.description }}</p>
                     <p>{{ .Params.price }}</p>
                   </li>
                 {{ end }}
@@ -33,12 +39,12 @@
           {{ range $key, $value := $taxonomy }}
             {{ if eq $key "drinks"}}
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
+                <h2><em>{{ .Key }}</em></h2>
                 <hr>
                 <ul>
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
+                    <p><strong>{{ .Title }}</strong> {{ .Params.description }}</p>
                     <p>{{ .Params.price }}</p>
                   </li>
                 {{ end }}
@@ -52,7 +58,7 @@
   {{ else if eq .Section "gallery" }}
     <div class="gallery-carousel">
       {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        <div><img src="{{ .Params.image }}" alt="{{ .Title }}"/></div>
       {{ end }}
     </div>
     <div class="buttons">

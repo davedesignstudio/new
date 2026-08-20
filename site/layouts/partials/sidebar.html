@@ -1,7 +1,11 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <a class="brand" href="{{ .Site.BaseURL }}">
+        <span class="brand-mark">{{ partial "lotus" . }}</span>
+        <h1>{{ .Site.Title }}</h1>
+      </a>
+      <p class="sanskrit brand-mantra">अन्नं ब्रह्म</p>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
@@ -11,5 +15,10 @@
         <li><a href="{{.URL}}"> {{ .Name }} </a></li>
       {{end}}
     </ul>
+
+    <div class="sidebar-foot">
+      <span class="shanti sanskrit">ॐ शान्तिः शान्तिः शान्तिः</span>
+      <span class="foot-note">Lagom &middot; Wabi-sabi &middot; &#7770;ta</span>
+    </div>
   </div>
 </div>
