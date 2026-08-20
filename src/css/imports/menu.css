@@ -1,8 +1,10 @@
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
+    font-family: "Cormorant Garamond", Georgia, serif;
     text-transform: capitalize;
-    margin: 0 0 64px 0;
+    margin: 0 0 48px 0;
+    font-size: clamp(2.5rem, 8vw, 4.8rem);
+    line-height: .92;
   }
 
   h2 em, h3 {
@@ -10,8 +12,32 @@
   }
 
   h2 em:after {
-    content: '. ';
-    color: #ff7660;
+    content: ' / ';
+    color: var(--saffron);
+  }
+
+  h2 {
+    margin-top: 2rem;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2rem;
+  }
+
+  h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 1.5rem;
+    color: var(--pine);
+    font-size: .8rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  h3:before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: var(--saffron);
   }
 
   ul {
@@ -22,16 +48,23 @@
 
     li {
       display: flex;
-      align-items: top;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(22, 32, 39, .1);
     }
 
     p {
       flex-grow: 1;
       display: inline-block;
+      margin: 0;
+      color: var(--pine);
 
       &:last-child {
         padding-left: 16px;
         text-align: right;
+        color: var(--saffron);
+        font-weight: 700;
       }
     }
   }
@@ -44,17 +77,22 @@
     box-sizing: border-box;
     box-shadow: none;
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    border-radius: 18px;
+    border: 1px solid rgba(22, 32, 39, .16);
     font-size: 16px;
     padding: 16px;
     margin-bottom: 16px;
+    font-family: inherit;
   }
 
   input,
   textarea {
+    color: var(--ink);
+    background: rgba(255, 250, 240, .78);
+
     &:focus {
-      border: 1px solid #444;
+      border: 1px solid var(--saffron);
+      box-shadow: 0 0 0 4px rgba(213, 139, 36, .14);
     }
   }
 
@@ -63,14 +101,20 @@
   }
 
   button {
-    color: white;
-    background: #ff7660;
+    color: var(--snow);
+    background: var(--ink);
     border: none;
     cursor: pointer;
-    transition: background .2s ease;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
 
-    &:hover {
-      background: #d35b48;
+    &:hover,
+    &:focus {
+      color: var(--ink);
+      background: var(--marigold);
+      transform: translateY(-2px);
     }
 
     &.half-button {
@@ -81,5 +125,15 @@
         margin-left: 2%;
       }
     }
+  }
+
+  .gallery-carousel {
+    margin-bottom: 1rem;
+  }
+
+  .gallery-carousel img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
 }

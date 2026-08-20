@@ -4,13 +4,14 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Reserve your place
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us when you would like to join us. We will reply within 30 minutes to
+confirm your table or suggest the closest available time.
 
 <form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <input type="text" placeholder="Your name" name="name">
+  <input type="email" placeholder="Your email" name="email">
+  <textarea name="message" placeholder="Date, time, party size, and any notes"></textarea>
+  <button>Request reservation</button>
 </form>
