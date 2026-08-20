@@ -1,10 +1,8 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# Sattva — a restaurant site built with Victor Hugo
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+Sattva is a fictional Nordic–Japanese restaurant with a Vedic soul. The design blends Swedish *lagom* and Japanese *ma* (Japandi minimalism: rice-paper neutrals, soft ink, hairline shoji grids, generous negative space) with Vedic Hindu touches (marigold-ochre accents, lotus and mandala line ornaments, Sanskrit and Japanese typographic details).
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+Built on the [Victor Hugo](https://github.com/netlify/victor-hugo) boilerplate, from the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
 
 To install and run the example site locally, here’s what you’ll need:
 

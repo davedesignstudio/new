@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }} — home">
+      <svg class="brand-mark" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+        <circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="2.4"
+          stroke-linecap="round" stroke-dasharray="112 14" transform="rotate(-64 24 24)"/>
+        <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">{{ .Site.Title }}</span>
+        <span class="brand-sub" lang="sa">सत्त्व</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

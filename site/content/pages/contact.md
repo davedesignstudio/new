@@ -4,13 +4,13 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Reserve a table
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us when you would like to join us and we will confirm within the hour. For parties of more than six, or for the chef's counter, a little notice goes a long way.
 
 <form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <input type="text" placeholder="Your name" name="name">
+  <input type="email" placeholder="Your email" name="email">
+  <textarea name="message" placeholder="When would you like to dine with us?"></textarea>
+  <button>Send request</button>
 </form>

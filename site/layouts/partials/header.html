@@ -9,10 +9,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   {{ if .IsHome }}
-  <title>{{ .Site.Title }}</title>
+  <title>{{ .Site.Title }} — Nordic–Japanese kitchen with a Vedic soul</title>
   {{ else }}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{ end }}
+
+  <!-- Fonts: Fraunces (display serif), Karla (sans), Tiro Devanagari (Sanskrit accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css">
@@ -24,6 +29,6 @@
   <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ .Section | urlize }}{{ if .IsHome }} home{{ end }}">
 
-{{ partial "sidebar" . }}
+{{ partial "site-header" . }}

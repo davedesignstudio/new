@@ -1,7 +1,27 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
+<main class="site-main">
+<div class="page container single-page">
+  <header class="page-head">
+    <p class="kicker">{{ .Site.Title }}</p>
+    <h1>{{ .Title }}</h1>
+    <div class="lotus-divider" aria-hidden="true">
+      <span class="rule"></span>
+      <svg viewBox="0 0 120 40" width="72" height="24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M60 6 C 66 16, 66 26, 60 34 C 54 26, 54 16, 60 6 Z"/>
+          <path d="M34 14 C 46 18, 54 26, 56 36 C 44 34, 36 26, 34 14 Z"/>
+          <path d="M86 14 C 74 18, 66 26, 64 36 C 76 34, 84 26, 86 14 Z"/>
+        </g>
+      </svg>
+      <span class="rule"></span>
+    </div>
+  </header>
+
+  <article class="page-body">
+    {{ .Content }}
+  </article>
 </div>
+</main>
 
 {{ partial "footer" . }}

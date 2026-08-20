@@ -1,11 +1,34 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Sattva"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A Nordic–Japanese kitchen with a Vedic soul. Lagom, ma, and sattva — balance in every bowl."
+  address = "14 Stillwater Lane, Stockholm"
+  hours = "Tue – Sun · 17:00 – 23:00"
+  phone = "+46 8 14 24 36"
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food"
+    weight = 1
+
+[[menu.main]]
+    name = "Drinks"
+    url  = "/drinks"
+    weight = 2
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery"
+    weight = 3
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 4
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact"
+    weight = 5

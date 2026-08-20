@@ -4,11 +4,20 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Three traditions, one table
 
----
+Sattva began with a simple question: what do a Stockholm pantry, a Kyoto tea room, and a Vedic kitchen have in common? The answer is *balance*.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+From Sweden we took **lagom** — the quiet confidence of "just enough". Cured fish, dark rye, cultured butter, and whatever the season honestly offers.
 
-Sincerely,
-# Mr. Bojangles
+From Japan we took **ma** — the space between things. Dashi, fermentation, and the discipline to leave a plate half empty so the eye can rest.
+
+From the Vedic tradition we took **sattva** — the guna of clarity. Warm spice, ghee, whole grains, and food that leaves you steadier than it found you.
+
+Every evening the kitchen moves between these three compass points: a smørrebrød that behaves like a chaat, a turbot poached in dashi and brown butter, a rice pudding perfumed with saffron and cloudberry.
+
+We keep the room low-lit, the wood pale, and the welcome warm. The rest is silence, steam, and ceremony.
+
+*With balance,*
+
+# The Sattva family

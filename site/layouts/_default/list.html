@@ -1,65 +1,93 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
+<main class="site-main">
+<div class="page container {{ .Section | urlize }}">
+
+  <header class="page-head">
+    <p class="kicker">{{ if eq .Section "food" }}Seasonal tasting{{ else if eq .Section "drinks" }}Poured slowly{{ else }}Moments{{ end }}</p>
+    <h1>{{ .Section }}</h1>
+    <div class="lotus-divider" aria-hidden="true">
+      <span class="rule"></span>
+      <svg viewBox="0 0 120 40" width="72" height="24">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M60 6 C 66 16, 66 26, 60 34 C 54 26, 54 16, 60 6 Z"/>
+          <path d="M34 14 C 46 18, 54 26, 56 36 C 44 34, 36 26, 34 14 Z"/>
+          <path d="M86 14 C 74 18, 66 26, 64 36 C 76 34, 84 26, 86 14 Z"/>
+        </g>
+      </svg>
+      <span class="rule"></span>
+    </div>
+  </header>
+
   {{ if eq .Section "food" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
+      {{ if eq "categories" $taxonomyname }}
+        {{ range $key, $value := $taxonomy }}
+          {{ if ne $key "drinks"}}
+            <section class="menu-course">
               <h2><em>{{ $key }}</em></h2>
-              <hr>
               {{ range $value.Pages.GroupByParam "type" }}
                 <h3>{{ .Key }}</h3>
-                <ul>
+                <ul class="menu-list">
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                    <div class="menu-line">
+                      <span class="dish">{{ .Title }}</span>
+                      <span class="dots" aria-hidden="true"></span>
+                      <span class="price">{{ .Params.price }}</span>
+                    </div>
+                    <p class="dish-note">{{ .Params.description }}</p>
                   </li>
                 {{ end }}
                 </ul>
               {{ end }}
-            {{ end }}
+            </section>
           {{ end }}
         {{ end }}
-      </section>
+      {{ end }}
     {{ end }}
   {{ else if eq .Section "drinks" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if eq $key "drinks"}}
+      {{ if eq "categories" $taxonomyname }}
+        {{ range $key, $value := $taxonomy }}
+          {{ if eq $key "drinks"}}
+            <section class="menu-course">
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
+                <h2><em>{{ .Key }}</em></h2>
+                <ul class="menu-list">
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                    <div class="menu-line">
+                      <span class="dish">{{ .Title }}</span>
+                      <span class="dots" aria-hidden="true"></span>
+                      <span class="price">{{ .Params.price }}</span>
+                    </div>
+                    <p class="dish-note">{{ .Params.description }}</p>
                   </li>
                 {{ end }}
                 </ul>
               {{ end }}
-            {{ end }}
+            </section>
           {{ end }}
         {{ end }}
-      </section>
+      {{ end }}
     {{ end }}
   {{ else if eq .Section "gallery" }}
     <div class="gallery-carousel">
       {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        <div class="gallery-slide">
+          <img src="{{ .Params.image }}" alt="{{ .Title }}"/>
+          <p class="gallery-caption">{{ .Title }}</p>
+        </div>
       {{ end }}
     </div>
     <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
+      <button class="prev half-button">← Prev</button>
+      <button class="next half-button">Next →</button>
     </div>
   {{ end }}
+
 </div>
+</main>
 
 {{ partial "footer" . }}
