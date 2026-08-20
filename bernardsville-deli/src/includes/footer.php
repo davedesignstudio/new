@@ -1,9 +1,9 @@
   </main>
   <section class="newsletter">
     <div class="container newsletter-inner">
-      <h2 class="newsletter-title">NewsLetter</h2>
+      <h2 class="newsletter-title">Subscribe</h2>
       <div class="newsletter-bar">
-        <p>Get 15% off your first purchase when you sign up!</p>
+        <p>House specials and issue drops — 15% off the first order.</p>
         <button type="button" class="btn btn-signup">Sign Up</button>
       </div>
     </div>

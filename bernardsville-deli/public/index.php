@@ -17,23 +17,32 @@ $features = [
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="hero">
+<section class="hero issue-hero">
   <div class="container hero-grid">
     <div class="hero-copy">
+      <p class="comic-pub">Чудо Комикс · Chudo Comics · Bernardsville</p>
       <p class="kicker">Home of the B'Ville Special · <?= e($site['address']) ?></p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-sub">Pizza &amp; Grill</p>
-      <p class="lede"><?= e($site['tagline']) ?> Stone oven pizza, Angus burgers, and gelato — order pickup or delivery from this site.</p>
+      <p class="lede">Stone oven pizza, Angus burgers, and gelato — pickup after the commute, or delivery on this site. Not a marketplace.</p>
       <div class="hero-actions">
-        <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order Online</a>
-        <a class="btn btn-gold btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
-        <a class="btn btn-gold btn-lg" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
+        <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order pickup</a>
+        <a class="btn btn-ghost btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
       </div>
     </div>
-    <?= photo_img('pizza', ['class' => 'hero-photo frame-photo', 'width' => 640, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+    <div class="hero-spread">
+      <figure class="comic-frame">
+        <?= photo_img('pizza', ['class' => 'hero-photo', 'width' => 640, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+      </figure>
+      <a class="comic-frame comic-cover-hit" href="<?= e(asset_url('comic.php')) ?>">
+        <img src="<?= e(asset_url('assets/comic/chudo-cover.webp')) ?>" alt="Чудо Комикс №1 — Oven Origins" width="480" height="720" />
+        <span>Read №1</span>
+      </a>
+    </div>
   </div>
 </section>
 
+<?php order_board_audience_lanes(); ?>
 <?php order_board_house_checks(); ?>
 
 <section class="container feature-tiles" aria-label="Featured menu">
@@ -105,10 +114,11 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>Customize your pie — size, crust, sauce, toppings</p>
-    <a class="btn btn-gold" href="<?= e(asset_url('order/')) ?>">Order Online</a>
+    <p>Customize your pie — then pickup on Morristown Rd</p>
+    <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order on this site</a>
   </div>
 </section>
 
+<?php order_board_issue_notes(); ?>
 <?php require dirname(__DIR__) . '/src/includes/story-modal.php'; ?>
 <?php require dirname(__DIR__) . '/src/includes/footer.php'; ?>

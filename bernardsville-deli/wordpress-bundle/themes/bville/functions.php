@@ -30,13 +30,14 @@ add_action('after_setup_theme', static function (): void {
 add_action('wp_enqueue_scripts', static function (): void {
     wp_enqueue_style(
         'bville-fonts',
-        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Bangers&family=DM+Sans:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=Russo+One&display=swap',
         [],
         null
     );
-    wp_enqueue_style('bville-style', get_stylesheet_uri(), ['bville-fonts'], '1.2.0');
-    wp_enqueue_style('bville-order-board', bville_asset('order-board.css'), ['bville-style'], '1.2.0');
-    wp_enqueue_script('bville-nav', bville_asset('nav.js'), [], '1.2.0', true);
+    wp_enqueue_style('bville-style', get_stylesheet_uri(), ['bville-fonts'], '1.3.0');
+    wp_enqueue_style('bville-order-board', bville_asset('order-board.css'), ['bville-style'], '1.3.0');
+    wp_enqueue_style('bville-chudo', bville_asset('chudo.css'), ['bville-order-board'], '1.3.0');
+    wp_enqueue_script('bville-nav', bville_asset('nav.js'), [], '1.3.0', true);
 });
 
 function bville_asset(string $file): string
@@ -141,6 +142,11 @@ function bville_menu_category_order(): array
     ];
 }
 
+add_filter('body_class', static function (array $classes): array {
+    $classes[] = 'chudo-world';
+    $classes[] = 'bville-brand';
+    return $classes;
+});
 add_filter('loop_shop_per_page', static fn (): int => 24);
 add_filter('loop_shop_columns', static fn (): int => 2);
 

@@ -16,6 +16,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="cafe-hero-photo" style="background-image: url('<?= e(photo_meta('cafe')['src']) ?>')" aria-hidden="true"></div>
   <div class="container cafe-robust-hero-grid">
     <div class="cafe-robust-copy">
+      <p class="comic-pub">Чудо Комикс · Robust</p>
       <img class="cafe-logo-arch" src="<?= e(asset_url($cafe['logos']['arch'])) ?>" alt="Cafe Robust" width="240" height="86" />
       <p class="cafe-tagline"><?= e($cafe['tagline']) ?></p>
       <?php if ($cafeStory): ?>

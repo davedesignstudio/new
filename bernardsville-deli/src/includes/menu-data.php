@@ -58,11 +58,11 @@ return [
         'watermark' => 'Angus · Beefy',
         'note' => 'Angus · Beefy',
         'items' => [
+            ['name' => 'Chetzel', 'photo' => 'burgers-chetzel', 'slug' => 'prime-rib-burger', 'desc' => 'Bacon, melted cheddar & jack cheese served on toasted pretzel bun', 'price' => '12.95'],
             ['name' => 'Classic', 'photo' => 'burgers-classic', 'desc' => 'With lettuce, tomato & onion', 'price' => '9.95'],
             ['name' => 'Cheese Deluxe', 'photo' => 'burgers-cheese-deluxe', 'desc' => 'With lettuce, tomato, onion & American cheese', 'price' => '10.95'],
             ['name' => 'The Fry', 'photo' => 'burgers-the-fry', 'desc' => 'Breaded chicken cutlet, coleslaw & pickles with fry sauce', 'price' => '10.95'],
             ['name' => 'Boom Boom', 'photo' => 'burgers-boom-boom', 'desc' => 'Naked (no bun) lettuce, tomato, avocado, bacon & boom-boom sauce', 'price' => '11.95'],
-            ['name' => 'Chetzel', 'photo' => 'burgers-chetzel', 'slug' => 'prime-rib-burger', 'desc' => 'Bacon, melted cheddar & jack cheese served on toasted pretzel bun', 'price' => '12.95'],
             ['name' => 'Shroom', 'photo' => 'burgers-shroom', 'desc' => 'Sautéed mushrooms & onions with swiss', 'price' => '10.95'],
             ['name' => 'Falafel Burger', 'photo' => 'burgers-falafel', 'veg' => true, 'desc' => 'Lettuce, tomato, & pickle with tahini sauce', 'price' => '9.95'],
         ],
@@ -103,8 +103,8 @@ return [
         'wordmark' => 'cheesesteak',
         'watermark' => 'Straight Outta Bville',
         'items' => [
-            ['name' => 'Philly Cheesesteak', 'photo' => 'cheesesteak-philly', 'slug' => 'italian-sub', 'desc' => 'Shredded steak, onions, peppers with American cheese', 'price' => '9.95'],
             ['name' => 'Jersey Cheesesteak', 'photo' => 'cheesesteak-jersey', 'desc' => 'With brown gravy potatoes & mozzarella cheese', 'price' => '10.95'],
+            ['name' => 'Philly Cheesesteak', 'photo' => 'cheesesteak-philly', 'slug' => 'italian-sub', 'desc' => 'Shredded steak, onions, peppers with American cheese', 'price' => '9.95'],
             ['name' => 'California Cheesesteak', 'photo' => 'cheesesteak-california', 'desc' => 'With lettuce, tomato, mayonnaise & American cheese', 'price' => '10.95'],
             ['name' => 'Chicken Cheesesteak', 'photo' => 'cheesesteak-chicken', 'desc' => 'Thinly sliced chicken breast, sautéed mushrooms, peppers, onions & American cheese', 'price' => '9.95'],
         ],
@@ -147,6 +147,7 @@ return [
         'note' => 'Customize your pizza sauce: Fra Diavolo (spicy) +1 · B-ville pink vodka sauce +2 extra',
         'sizes' => ['12"', '16"'],
         'items' => [
+            ['name' => 'B\'Ville Special', 'photo' => 'pizza-bville-special', 'slug' => 'bville-special', 'desc' => 'Shawarma chicken, lettuce, tomato, onion & parsley with garlic sauce drizzle', 'price_12' => '14.95', 'price_16' => '20.95'],
             ['name' => 'Regular Classic Pizza', 'photo' => 'pizza-classic', 'price_12' => '9.95', 'price_16' => '14.95'],
             ['name' => 'Margherita', 'photo' => 'pizza-margherita', 'slug' => 'margherita', 'veg' => true, 'desc' => 'Fresh mozzarella, fresh basil & pizza sauce', 'price_12' => '13.95', 'price_16' => '18.95'],
             ['name' => 'Meat Lover\'s', 'photo' => 'pizza-meat-lovers', 'desc' => 'Pepperoni, sausage, bacon & meatballs', 'price_12' => '14.95', 'price_16' => '22.95'],
@@ -155,7 +156,6 @@ return [
             ['name' => 'BBQ or Buffalo Chicken', 'photo' => 'pizza-bbq-buffalo', 'price_12' => '15.95', 'price_16' => '21.95'],
             ['name' => 'Vegetarian Lover\'s', 'photo' => 'pizza-veggie', 'veg' => true, 'desc' => 'Peppers, onions, mushrooms & olives', 'price_12' => '12.95', 'price_16' => '19.95'],
             ['name' => 'Philly Cheesesteak', 'photo' => 'pizza-philly', 'desc' => 'Sautéed beef, onions, peppers, mushrooms & mozzarella cheese topped with American cheese', 'price_12' => '15.95', 'price_16' => '23.95'],
-            ['name' => 'B\'Ville Special', 'photo' => 'pizza-bville-special', 'slug' => 'bville-special', 'desc' => 'Shawarma chicken, lettuce, tomato, onion & parsley with garlic sauce drizzle', 'price_12' => '14.95', 'price_16' => '20.95'],
             ['name' => 'Sesame Thai Chili', 'photo' => 'pizza-thai-chili', 'spicy' => true, 'desc' => 'Thai chili spread topped with sesame chicken, mozzarella and garnished with ranch dressing', 'price_12' => '14.95', 'price_16' => '22.95'],
             ['name' => 'Don Pomodoro', 'photo' => 'pizza-don-pomodoro', 'veg' => true, 'desc' => 'Mozzarella, fresh plum tomatoes, fresh basil garnished with grated pecorino cheese', 'price_12' => '13.95', 'price_16' => '17.95'],
             ['name' => 'Combination', 'photo' => 'pizza-combination', 'desc' => 'Pepperoni, sausage, mushroom, onion & peppers', 'price_12' => '14.95', 'price_16' => '22.95'],

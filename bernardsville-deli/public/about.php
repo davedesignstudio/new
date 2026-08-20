@@ -14,6 +14,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="container about-pack-grid">
     <?= photo_img('table', ['class' => 'about-hero-photo', 'width' => 560, 'height' => 420, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
     <div>
+      <p class="comic-pub">Чудо Комикс · Origins</p>
       <p class="kicker">159 Morristown Rd</p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-sub">Pizza &amp; Grill</p>

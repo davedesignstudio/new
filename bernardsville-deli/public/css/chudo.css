@@ -1,0 +1,463 @@
+/* Site-wide Чудо Комикс overlay. Parkside wordmarks stay in style.css. */
+
+:root {
+  --font-comic: "Russo One", var(--font-sans);
+  --font-burst: "Bangers", var(--font-sans);
+  --paper: #fffaf0;
+  --halftone: rgba(20, 40, 32, 0.055);
+}
+
+.comic-pub {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-comic);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--maroon);
+}
+
+body.chudo-world {
+  background-color: var(--cream);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 47px,
+      rgba(228, 92, 36, 0.07) 47px,
+      rgba(228, 92, 36, 0.07) 48px
+    ),
+    radial-gradient(var(--halftone) 0.7px, transparent 0.8px);
+  background-size: 48px 100%, 3px 3px;
+}
+
+body.chudo-world .food-parallax {
+  display: none !important;
+}
+
+body.chudo-world .kicker,
+body.chudo-world .comic-pub,
+body.chudo-world .menu-kicker,
+body.chudo-world .guest-check-meta,
+body.chudo-world .guest-check-cta,
+body.chudo-world .menu-jump a,
+body.chudo-world .family-jump a {
+  font-family: var(--font-comic);
+}
+
+/* Header as issue chrome */
+body.chudo-world .site-header {
+  border-width: 0;
+  border-bottom: 6px solid var(--orange);
+  box-shadow: 0 6px 0 var(--ink-dark);
+}
+
+body.chudo-world .brand-text strong {
+  font-family: var(--font-script);
+}
+
+body.chudo-world .brand-text em {
+  font-family: var(--font-burst);
+  font-style: normal;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+body.chudo-world .site-nav a {
+  font-family: var(--font-comic);
+  letter-spacing: 0.1em;
+}
+
+body.chudo-world .site-nav a.nav-order {
+  border: 2px solid var(--ink-dark);
+  box-shadow: 2px 2px 0 var(--ink-dark);
+}
+
+/* One primary orange CTA; gold becomes a ghost so it does not cluster */
+body.chudo-world .btn {
+  font-family: var(--font-comic);
+  border-radius: 2px;
+  border-width: 2px;
+  box-shadow: 3px 3px 0 var(--ink-dark);
+}
+
+body.chudo-world .btn-ghost,
+body.chudo-world .hero-actions .btn-gold,
+body.chudo-world .order-bar .btn-gold {
+  background: var(--paper);
+  color: var(--ink-dark);
+  border-color: var(--ink-dark);
+  box-shadow: 3px 3px 0 rgba(20, 40, 32, 0.18);
+}
+
+body.chudo-world .btn-red,
+body.chudo-world .btn-primary {
+  box-shadow: 3px 3px 0 var(--ink-dark);
+}
+
+/* Ticket stays a guest check */
+body.chudo-world .order-ticket {
+  background:
+    repeating-linear-gradient(
+      transparent 0,
+      transparent 22px,
+      rgba(228, 92, 36, 0.16) 22px,
+      rgba(228, 92, 36, 0.16) 23px
+    ),
+    var(--paper);
+}
+
+body.chudo-world .order-ticket-cell,
+body.chudo-world .order-ticket-cta {
+  font-family: var(--font-comic);
+}
+
+/* Comic panels */
+body.chudo-world .comic-frame,
+body.chudo-world .frame-photo,
+body.chudo-world .about-hero-photo,
+body.chudo-world .feature-tile,
+body.chudo-world .menu-grid-item,
+body.chudo-world .origin-media img,
+body.chudo-world .about-photo-trio img,
+body.chudo-world .catering-photo-grid img,
+body.chudo-world .print-board-card,
+body.chudo-world .content-card,
+body.chudo-world .map-card iframe,
+body.chudo-world .cafe-hero-cup-photo,
+body.chudo-world .cafe-lifestyle-photo {
+  border: 5px solid var(--ink-dark);
+  border-radius: 0;
+  box-shadow: 7px 8px 0 rgba(20, 40, 32, 0.16);
+}
+
+body.chudo-world .feature-tile {
+  outline: 3px solid var(--orange);
+  outline-offset: -8px;
+}
+
+body.chudo-world .print-title--text {
+  font-family: var(--font-script);
+}
+
+/* Home splash */
+.issue-hero {
+  padding-top: 2.2rem;
+}
+
+.issue-hero .comic-pub {
+  color: var(--orange);
+  -webkit-text-stroke: 0;
+}
+
+.hero-spread {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+.hero-spread .comic-frame {
+  margin: 0;
+}
+
+.hero-spread .comic-frame img,
+.hero-spread .hero-photo,
+.comic-cover-hit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.comic-cover-hit {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  min-height: 100%;
+}
+
+.comic-cover-hit span {
+  position: absolute;
+  left: 0.7rem;
+  bottom: 0.7rem;
+  background: var(--orange);
+  color: #fff;
+  border: 2px solid var(--ink-dark);
+  font-family: var(--font-comic);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.55rem;
+}
+
+/* Audience lanes — two demographics, two panels */
+.audience-lanes {
+  padding: 0 0 2.4rem;
+}
+
+.audience-lanes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.audience-lane {
+  padding: 1.15rem 1.2rem 1.25rem;
+  background: var(--paper);
+  border: 4px solid var(--ink-dark);
+  box-shadow: 6px 6px 0 rgba(228, 92, 36, 0.35);
+}
+
+.audience-lane h2 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-burst);
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  color: var(--ink-dark);
+}
+
+.audience-lane p {
+  margin: 0 0 1rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.12rem;
+}
+
+.audience-lane-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.audience-lane--phone {
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      transparent 0,
+      transparent 10px,
+      rgba(228, 92, 36, 0.08) 10px,
+      rgba(228, 92, 36, 0.08) 11px
+    ),
+    var(--cream-light);
+}
+
+/* T-pattern: house pie sits center on desktop, first in HTML for mobile F-scan */
+@media (min-width: 901px) {
+  .house-checks .guest-check:nth-child(1) { order: 2; }
+  .house-checks .guest-check:nth-child(2) { order: 1; }
+  .house-checks .guest-check:nth-child(3) { order: 3; }
+}
+
+body.chudo-world .house-board-head h2,
+body.chudo-world .comic-band h2,
+body.chudo-world .origin-title,
+body.chudo-world .cafe-banner-inner h2,
+body.chudo-world .newsletter-title {
+  font-family: var(--font-burst);
+  font-style: normal;
+  letter-spacing: 0.04em;
+  -webkit-text-stroke: 0;
+}
+
+body.chudo-world .guest-check {
+  border: 3px solid var(--ink-dark);
+  box-shadow: 4px 4px 0 rgba(20, 40, 32, 0.12);
+}
+
+body.chudo-world .guest-check h3 {
+  font-family: var(--font-burst);
+  letter-spacing: 0.03em;
+}
+
+body.chudo-world .comic-band {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--ink-dark) 0,
+      var(--ink-dark) 18px,
+      #1b3328 18px,
+      #1b3328 19px
+    );
+}
+
+body.chudo-world .feature-tiles {
+  gap: 0.75rem;
+}
+
+body.chudo-world .menu-grid-banner {
+  font-family: var(--font-comic);
+  border-width: 2px;
+}
+
+body.chudo-world .call-bar,
+body.chudo-world .order-bar {
+  background: var(--ink-dark);
+  color: var(--cream-light);
+  border-block: 4px solid var(--orange);
+}
+
+body.chudo-world .order-bar-inner p,
+body.chudo-world .call-bar-inner p {
+  font-family: var(--font-burst);
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+/* Menu as issue index */
+.family-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.85rem 0 0;
+}
+
+.family-jump a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  background: var(--paper);
+  border: 2px solid var(--ink-dark);
+  text-decoration: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dark);
+}
+
+.family-jump a:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+body.chudo-world .menu-jump {
+  background: var(--paper);
+  border-block: 3px solid var(--ink-dark);
+}
+
+body.chudo-world .menu-line-hit:hover {
+  background: rgba(228, 92, 36, 0.06);
+}
+
+body.chudo-world .menu-line-row h3 {
+  font-family: var(--font-ui);
+}
+
+body.chudo-world .line-title--hero {
+  font-family: var(--font-burst);
+  letter-spacing: 0.04em;
+}
+
+/* Newsletter = subscribe strip / footer = credits */
+body.chudo-world .newsletter {
+  background: var(--orange);
+  border-top: 6px solid var(--ink-dark);
+}
+
+body.chudo-world .newsletter-title {
+  font-family: var(--font-burst);
+  color: #fff;
+  -webkit-text-stroke: 2px var(--ink-dark);
+}
+
+body.chudo-world .newsletter-bar {
+  background: var(--paper);
+  border: 3px solid var(--ink-dark);
+  box-shadow: 4px 4px 0 var(--ink-dark);
+}
+
+body.chudo-world .site-footer {
+  background: var(--ink-dark);
+  border-top: 8px solid var(--orange);
+}
+
+body.chudo-world .footer-copy::before {
+  content: "Чудо Комикс · Bernardsville · ";
+  font-family: var(--font-comic);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+
+.issue-notes {
+  padding: 2rem 0 2.4rem;
+  background: var(--cream-light);
+  border-top: 4px solid var(--ink-dark);
+}
+
+.issue-notes h2 {
+  margin: 0.15rem 0 0.5rem;
+  font-family: var(--font-burst);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.issue-notes-overlap {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  margin: 0 0 1.1rem;
+}
+
+.issue-notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.issue-notes h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-comic);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--maroon);
+}
+
+.issue-notes ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  font-family: var(--font-garamond);
+  color: var(--ink-dark);
+}
+
+.issue-notes li + li { margin-top: 0.35rem; }
+
+.issue-notes-sources {
+  margin: 1.25rem 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.issue-notes-sources a {
+  color: var(--maroon);
+}
+
+body.chudo-world .story-modal-panel {
+  border-radius: 0;
+  box-shadow: 8px 10px 0 rgba(20, 40, 32, 0.2);
+}
+
+body.chudo-world .order-dock {
+  border-top-width: 4px;
+}
+
+@media (max-width: 900px) {
+  .hero-spread,
+  .audience-lanes-grid,
+  .issue-notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-spread .comic-cover-hit {
+    min-height: 280px;
+  }
+
+  .hero-spread .comic-cover-hit img {
+    height: 280px;
+  }
+}

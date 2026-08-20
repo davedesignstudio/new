@@ -8,7 +8,7 @@ const CartContext = createContext();
 let nextId = 1;
 
 export function CartProvider(props) {
-  const [orderType, setOrderType] = createSignal('delivery');
+  const [orderType, setOrderType] = createSignal('carryout');
   const [address, setAddress] = createSignal('');
   const [cartOpen, setCartOpen] = createSignal(false);
   const [builderItem, setBuilderItemRaw] = createSignal(null);

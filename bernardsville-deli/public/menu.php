@@ -18,9 +18,17 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="hero menu-hero-lines">
   <div class="container">
-    <p class="menu-kicker">Tap a line to order · Pickup or delivery</p>
+    <p class="comic-pub">Чудо Комикс · МЕНЮ · Issue index</p>
+    <p class="menu-kicker">Tap a line to order · Pickup first, delivery on this site</p>
     <h1 class="line-title line-title--hero">The Menu</h1>
-    <p class="lede menu-lede">Printed-board titles. Prices on the line. Order stays on this site.</p>
+    <p class="lede menu-lede">Printed-board titles. Pictures on titles only. Family table shortcuts sit under the masthead.</p>
+    <nav class="family-jump" aria-label="Family table shortcuts">
+      <a href="#pizza">16" pies</a>
+      <a href="#kids">Kids</a>
+      <a href="#burgers">Burgers</a>
+      <a href="<?= e(asset_url('catering.php')) ?>">Catering</a>
+      <a href="<?= e(asset_url('order/')) ?>">Customize a pie</a>
+    </nav>
   </div>
 </section>
 
@@ -98,10 +106,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="call-bar order-bar">
   <div class="container order-bar-inner">
-    <p>Order online — or call ahead</p>
+    <p>Order pickup — or call <?= e($site['phone']) ?></p>
     <div class="hero-actions">
-      <a class="btn btn-gold" href="<?= e(asset_url('order/')) ?>">Order Online</a>
-      <a class="btn btn-gold" href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a>
+      <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order on this site</a>
+      <a class="btn btn-ghost" href="tel:<?= e($site['phone_raw']) ?>">Call</a>
     </div>
   </div>
 </section>

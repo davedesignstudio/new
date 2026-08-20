@@ -97,9 +97,9 @@ function bville_order_board_ticket(): void
         <a class="order-ticket-cell" href="<?php echo esc_url(home_url('/contact/')); ?>"><?php echo esc_html(bville_address()); ?></a>
         <a class="order-ticket-cell" href="tel:<?php echo esc_attr(bville_phone_raw()); ?>"><?php echo esc_html(bville_phone()); ?></a>
         <span class="order-ticket-cell"><?php echo esc_html(bville_hours()); ?></span>
-        <span class="order-ticket-cell"><?php esc_html_e('Pickup', 'bville'); ?></span>
+        <span class="order-ticket-cell"><?php esc_html_e('Pickup first', 'bville'); ?></span>
         <span class="order-ticket-cell"><?php esc_html_e('Delivery', 'bville'); ?></span>
-        <a class="order-ticket-cta" href="<?php echo esc_url($shop); ?>"><?php esc_html_e('Order Online', 'bville'); ?></a>
+        <a class="order-ticket-cta" href="<?php echo esc_url($shop); ?>"><?php esc_html_e('Order pickup', 'bville'); ?></a>
       </div>
     </div>
     <?php
@@ -111,9 +111,9 @@ function bville_order_board_house_checks(): void
     <section class="house-board" aria-label="<?php esc_attr_e('Order the house favorites', 'bville'); ?>">
       <div class="feature-wrap">
         <header class="house-board-head">
-          <p class="hero-kicker">Guest checks</p>
+          <p class="hero-kicker">Guest checks · Family table</p>
           <h2>Order the house names</h2>
-          <p class="hero-lede">Tap a check to start pickup or delivery on this store — not a marketplace.</p>
+          <p class="hero-lede">Tap a check for pickup or delivery on this store — 16" for the table, no marketplace freeze.</p>
         </header>
         <div class="house-checks">
           <?php foreach (bville_house_checks() as $check) : ?>
@@ -142,7 +142,7 @@ function bville_order_board_dock(): void
     ?>
     <div class="order-dock" aria-label="<?php esc_attr_e('Place an order', 'bville'); ?>">
       <a class="order-dock-call" href="tel:<?php echo esc_attr(bville_phone_raw()); ?>"><?php echo esc_html(bville_phone()); ?></a>
-      <a class="btn btn-primary" href="<?php echo esc_url(bville_shop_url()); ?>"><?php esc_html_e('Order pickup or delivery', 'bville'); ?></a>
+      <a class="btn btn-primary" href="<?php echo esc_url(bville_shop_url()); ?>"><?php esc_html_e('Order pickup', 'bville'); ?></a>
     </div>
     <?php
 }

@@ -7,7 +7,7 @@ require_once dirname(__DIR__) . '/src/includes/helpers.php';
 $site = site_config();
 $issue = require dirname(__DIR__) . '/src/includes/chudo-comic.php';
 $pageTitle = $issue['publisher'] . ' №' . $issue['no'] . ' — ' . $site['name'];
-$bodyClass = 'bville-brand comic-issue';
+$bodyClass = 'bville-brand chudo-world comic-issue';
 
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>

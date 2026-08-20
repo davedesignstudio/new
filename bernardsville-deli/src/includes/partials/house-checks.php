@@ -8,9 +8,9 @@ $checks = $site['house_checks'];
 <section class="house-board" aria-label="Order the house favorites">
   <div class="container">
     <header class="house-board-head">
-      <p class="kicker">Guest checks</p>
+      <p class="kicker">Guest checks · Family table</p>
       <h2>Order the house names</h2>
-      <p class="section-lead">Tap a check to start pickup or delivery on our site — not a marketplace.</p>
+      <p class="section-lead">Tap a check for pickup or delivery on this site — 16" for the table, no marketplace freeze.</p>
     </header>
     <div class="house-checks">
       <?php foreach ($checks as $check): ?>

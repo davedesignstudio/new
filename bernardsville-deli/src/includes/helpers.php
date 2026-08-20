@@ -11,6 +11,15 @@ function site_config(): array
     return $config;
 }
 
+function audience_config(): array
+{
+    static $audiences = null;
+    if ($audiences === null) {
+        $audiences = require dirname(__DIR__) . '/includes/audiences.php';
+    }
+    return $audiences;
+}
+
 function menu_sections(): array
 {
     static $menu = null;

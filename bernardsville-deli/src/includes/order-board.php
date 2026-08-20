@@ -65,6 +65,16 @@ function order_board_house_checks(): void
     require __DIR__ . '/partials/house-checks.php';
 }
 
+function order_board_audience_lanes(): void
+{
+    require __DIR__ . '/partials/audience-lanes.php';
+}
+
+function order_board_issue_notes(): void
+{
+    require __DIR__ . '/partials/issue-notes.php';
+}
+
 function order_board_dock(): void
 {
     require __DIR__ . '/partials/order-dock.php';

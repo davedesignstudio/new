@@ -9,14 +9,31 @@ $menu_url = $menu ? get_permalink($menu) : $shop;
 ?>
 <section class="hero">
   <div class="hero-inner">
+    <p class="comic-pub">Чудо Комикс · Chudo Comics · Bernardsville</p>
     <p class="hero-kicker">Home of the B'Ville Special</p>
     <h1>Bville Pizza &amp; Grill</h1>
-    <p class="hero-lede">Stone oven pizza, Angus burgers, and Italian gelato — order pickup or delivery on this site.</p>
+    <p class="hero-lede">Stone oven pizza, Angus burgers, and gelato — pickup after the commute, or delivery on this site. Not a marketplace.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order menu</a>
+      <a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order pickup</a>
       <a class="btn" href="<?php echo esc_url($menu_url); ?>">See the menu</a>
-      <a class="btn" href="tel:<?php echo esc_attr(bville_phone_raw()); ?>"><?php echo esc_html(bville_phone()); ?></a>
     </div>
+  </div>
+</section>
+
+<section class="audience-lanes" aria-label="Two ways to order">
+  <div class="feature-wrap audience-lanes-grid">
+    <article class="audience-lane audience-lane--family">
+      <p class="hero-kicker">Family table</p>
+      <h2>After practice. After the train.</h2>
+      <p>Pickup at 159 Morristown Rd — 16" pies, kids plates, name at the counter. No unbuckling for a marketplace app.</p>
+      <p><a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order pickup</a></p>
+    </article>
+    <article class="audience-lane audience-lane--phone">
+      <p class="hero-kicker">On your phone</p>
+      <h2>Customize the pie. Skip the app tax.</h2>
+      <p>Direct WooCommerce checkout on this site. Same kitchen. No marketplace freeze.</p>
+      <p><a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Build a pie</a></p>
+    </article>
   </div>
 </section>
 

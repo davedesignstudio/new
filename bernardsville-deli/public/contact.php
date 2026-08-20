@@ -13,13 +13,14 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="kicker">Visit · Call ahead</p>
+      <p class="comic-pub">Чудо Комикс · Morristown Rd</p>
+      <p class="kicker">Visit · Call ahead · Pickup</p>
       <h1><?= print_title('Contact', 'print-title print-title--hero') ?></h1>
       <p class="lede"><?= e($site['address']) ?> · <?= e($site['city']) ?></p>
       <p><a href="tel:<?= e($site['phone_raw']) ?>"><?= e($site['phone']) ?></a></p>
       <div class="hero-actions">
-        <a class="btn btn-red" href="tel:<?= e($site['phone_raw']) ?>">Call Us</a>
-        <a class="btn btn-gold" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
+        <a class="btn btn-red" href="<?= e(asset_url('order/')) ?>">Order pickup</a>
+        <a class="btn btn-ghost" href="tel:<?= e($site['phone_raw']) ?>">Call</a>
       </div>
     </div>
     <?= photo_img('dining', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>

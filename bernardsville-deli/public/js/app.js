@@ -227,3 +227,27 @@ if (storiesDataEl && storyModal) {
   paint();
 })();
 
+(function initChudoCaptions() {
+  const langKey = 'bville-story-lang';
+  const buttons = document.querySelectorAll('.lang-btn');
+
+  function applyCaptions(lang) {
+    const blend = lang === 'blend';
+    document.body.classList.toggle('story-blend-text', blend);
+    document.querySelectorAll('[data-caption-en]').forEach((el) => {
+      const en = el.getAttribute('data-caption-en') || '';
+      el.textContent = blend ? (el.getAttribute('data-caption-blend') || en) : en;
+    });
+    buttons.forEach((btn) => btn.classList.toggle('active', btn.dataset.lang === lang));
+  }
+
+  applyCaptions(localStorage.getItem(langKey) || 'en');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang || 'en';
+      localStorage.setItem(langKey, lang);
+      applyCaptions(lang);
+    });
+  });
+})();
+

@@ -19,9 +19,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
+      <p class="comic-pub">Чудо Комикс · Family table</p>
       <p class="kicker">Parties · Office lunch · Trays</p>
       <h1><?= print_title('Catering', 'print-title print-title--hero') ?></h1>
-      <p class="lede">Pizza trays, party platters, and grill favorites for your next event in Bernardsville.</p>
+      <p class="lede">Pizza trays, party platters, and grill favorites for the Somerset Hills table — Little League, office lunch, the whole house.</p>
       <a class="btn btn-red btn-lg" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
     </div>
     <?= photo_img('platters', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>

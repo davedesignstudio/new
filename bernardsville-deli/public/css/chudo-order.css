@@ -1,0 +1,88 @@
+/* Chudo overlay for the Solid order SPA. Survives Vite rebuilds of /order/. */
+
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Russo+One&display=swap");
+
+:root {
+  --terracotta: #e45c24;
+  --terracotta-dark: #c44a16;
+  --fresco-cream: #f4e6c4;
+  --marble: #fffaf0;
+  --umber: #142820;
+  --gold: #e8b84a;
+  --pompeii-red: #e45c24;
+}
+
+body {
+  background:
+    radial-gradient(rgba(20, 40, 32, 0.05) 0.7px, transparent 0.8px),
+    var(--fresco-cream) !important;
+  background-size: 3px 3px, auto !important;
+}
+
+.header-ornament {
+  background: #142820 !important;
+  color: #e45c24 !important;
+  letter-spacing: 0.28em !important;
+  font-family: "Russo One", Oswald, sans-serif !important;
+}
+
+.header-ornament .ornament-left,
+.header-ornament .ornament-right,
+.header-ornament .ornament-center {
+  visibility: hidden;
+}
+
+.header-ornament::after {
+  content: "ЧУДО КОМИКС · PICKUP FIRST · NO MARKETPLACE";
+  visibility: visible;
+  font-size: 0.62rem;
+}
+
+.header-top {
+  background: #142820 !important;
+  border-bottom: 4px solid #e45c24 !important;
+}
+
+.logo-name,
+.hero-title,
+.deals-title {
+  font-family: "Bangers", "Oswald", sans-serif !important;
+  letter-spacing: 0.04em !important;
+}
+
+.nav-link,
+.btn-cart,
+.order-type-btn,
+.hero-story-link {
+  font-family: "Russo One", Oswald, sans-serif !important;
+  text-transform: uppercase !important;
+}
+
+.hero-banner {
+  border-bottom: 6px solid #142820;
+}
+
+.hero-arch-frame,
+.fresco-frame {
+  border-radius: 0 !important;
+  border: 5px solid #142820 !important;
+  box-shadow: 7px 8px 0 rgba(20, 40, 32, 0.16) !important;
+}
+
+.order-bar {
+  background: #fffaf0 !important;
+  border-bottom: 3px solid #142820;
+}
+
+.btn-cart,
+.hero-story-link:not(.hero-story-link--secondary) {
+  background: #e45c24 !important;
+  color: #fff !important;
+  border: 2px solid #142820 !important;
+}
+
+@media (max-width: 768px) {
+  .header-actions .btn-cart {
+    min-height: 44px;
+  }
+}
