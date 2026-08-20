@@ -1,10 +1,16 @@
 {{ partial "header" . }}
 
-<div class="content container">
+<div class="content container home-hero">
   <video loop muted autoplay playsinline id="home_video" class="video">
     <source src="/videos/SDVid.mp4" type="video/mp4">
     <source src="/videos/SDVid.ogg" type="video/ogg">
   </video>
+  <section class="hero-card" aria-label="Restaurant introduction">
+    <p class="hero-kicker">Nordic calm / Kyoto craft / Vedic warmth</p>
+    <h1>{{ .Site.Title }}</h1>
+    <p>Seasonal plates presented with Swedish restraint, Japanese balance, and saffron-toned Hindu geometry.</p>
+    <a href="/food">Explore the menu</a>
+  </section>
 </div>
 
 {{ partial "footer" . }}
