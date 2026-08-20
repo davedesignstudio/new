@@ -1,8 +1,12 @@
 {{ partial "header" . }}
 
 <div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
+  <div class="not-found">
+    <span class="om-mark"><span>ॐ</span></span>
+    <h1>404</h1>
+    <div class="rule-lotus">{{ partial "lotus" . }}</div>
+    <p class="lead">This page has wandered off the path. <a href="{{ .Site.BaseURL }}">Return home</a> and begin again.</p>
+  </div>
 </div>
 
 {{ partial "footer" . }}

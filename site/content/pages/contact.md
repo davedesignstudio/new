@@ -4,9 +4,9 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Reserve a table
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us when you would like to join us and we will confirm within 30 minutes, or offer another quiet hour.
 
 <form name="reservation">
   <input type="text" placeholder="Your Name" name="name">

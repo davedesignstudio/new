@@ -14,6 +14,12 @@
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{ end }}
 
+  <meta name="description" content="{{ .Site.Params.description }}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css">
 
@@ -24,6 +30,6 @@
   <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}">
 
 {{ partial "sidebar" . }}

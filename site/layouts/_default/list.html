@@ -1,26 +1,41 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
+<div class="content container {{ .Section | urlize }}">
+  <header class="page-head">
+    {{ if eq .Section "food" }}
+      <span class="devanagari page-devanagari">आहार</span>
+      <h1>Menu</h1>
+    {{ else if eq .Section "gallery" }}
+      <span class="devanagari page-devanagari">दृश्य</span>
+      <h1>Gallery</h1>
+    {{ else }}
+      <h1>{{ .Section }}</h1>
+    {{ end }}
+    <div class="rule-lotus">{{ partial "lotus" . }}</div>
+  </header>
+
   {{ if eq .Section "food" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
       <section>
         {{ if eq "categories" $taxonomyname }}
           {{ range $key, $value := $taxonomy }}
             {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
+              <div class="menu-category">
+                <span class="menu-devanagari">{{ if eq $key "lunch" }}मध्याह्न{{ else if eq $key "dinner" }}सायम्{{ end }}</span>
+                <h2>{{ $key }}</h2>
+                <hr>
+                {{ range $value.Pages.GroupByParam "type" }}
+                  <h3 class="menu-type">{{ .Key }}</h3>
+                  <ul class="menu-items">
+                  {{ range .Pages }}
+                    <li>
+                      <p class="dish"><strong>{{ .Title }}</strong> &mdash; {{ .Params.description }}</p>
+                      <p class="price">{{ .Params.price }}</p>
+                    </li>
+                  {{ end }}
+                  </ul>
                 {{ end }}
-                </ul>
-              {{ end }}
+              </div>
             {{ end }}
           {{ end }}
         {{ end }}
@@ -33,16 +48,18 @@
           {{ range $key, $value := $taxonomy }}
             {{ if eq $key "drinks"}}
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
+                <div class="menu-category">
+                  <h2>{{ .Key }}</h2>
+                  <hr>
+                  <ul class="menu-items">
+                  {{ range .Pages }}
+                    <li>
+                      <p class="dish"><strong>{{ .Title }}</strong> &mdash; {{ .Params.description }}</p>
+                      <p class="price">{{ .Params.price }}</p>
+                    </li>
+                  {{ end }}
+                  </ul>
+                </div>
               {{ end }}
             {{ end }}
           {{ end }}

@@ -4,11 +4,18 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## A quiet table between North and East
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Tasty Licks began with a simple question: what happens when a Swedish pantry meets a Japanese kitchen, and both sit down to listen to the Vedas?
 
-Sincerely,
-# Mr. Bojangles
+From **Sweden** we take *lagom* — the art of enough. Root vegetables, preserved berries, cold-water fish, and a respect for the northern seasons that borders on devotion.
+
+From **Japan** we take *ma* — the space between things. Knives sharpened daily, broths clarified to stillness, and plates composed so that emptiness does half the talking.
+
+From the **Vedic tradition** we take *sattva* — purity and harmony. Every meal is prepared as a small offering, with the intention that food should calm the mind as much as it feeds the body.
+
+We keep the room quiet, the light low, and the menu short. We hope you leave a little slower than you arrived.
+
+*— The Kitchen*

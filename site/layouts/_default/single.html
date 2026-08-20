@@ -1,6 +1,10 @@
 {{ partial "header" . }}
 
 <div class="content container">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    <div class="rule-lotus">{{ partial "lotus" . }}</div>
+  </header>
   {{ .Content }}
 </div>
 
