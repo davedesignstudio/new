@@ -1,85 +1,36 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
-  }
+.food.content > h1,
+.drinks.content > h1,
+.gallery.content > h1 {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
 
-  h2 em, h3 {
-    text-transform: capitalize;
-  }
+.food.content > h1::after,
+.drinks.content > h1::after,
+.gallery.content > h1::after {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  content: "";
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.food.content section > h2,
+.drinks.content section > h2 {
+  color: var(--saffron-dark);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+.food.content section > h2 em,
+.drinks.content section > h2 em {
+  font-style: normal;
+}
 
-    li {
-      display: flex;
-      align-items: top;
-    }
-
-    p {
-      flex-grow: 1;
-      display: inline-block;
-
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
-
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
-
-  .buttons {
-    text-align: center;
-  }
-
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
-
-    &:hover {
-      background: #d35b48;
-    }
-
-    &.half-button {
-      display: inline-block;
-      width: 30%;
-
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
-  }
+.food.content section > h3,
+.drinks.content section > h3 {
+  margin-top: 55px;
 }

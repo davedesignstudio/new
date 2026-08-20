@@ -1,15 +1,17 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
+<header class="site-header">
+  <a class="site-mark" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }} home">
+    <span class="mark-symbol" aria-hidden="true">सो</span>
+    <span class="mark-word">{{ .Site.Title }}</span>
+  </a>
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="/food">Menu</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
     </ul>
-  </div>
-</div>
+  </nav>
+
+  <a class="header-reserve" href="/contact">Reservations <span aria-hidden="true">↗</span></a>
+</header>

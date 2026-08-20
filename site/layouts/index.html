@@ -1,10 +1,96 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main class="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Stockholm · Kyoto · Varanasi</p>
+      <h1 id="hero-title">Quiet food.<br><em>Deep roots.</em></h1>
+      <p class="hero-intro">A seasonal dining room where Nordic clarity meets Japanese craft and the warmth of India’s Vedic kitchen.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/contact">Reserve a table</a>
+        <a class="text-link" href="/food">Explore the menu <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun-disc">
+        <span class="orbit orbit-one"></span>
+        <span class="orbit orbit-two"></span>
+        <span class="lotus lotus-one"></span>
+        <span class="lotus lotus-two"></span>
+      </div>
+      <p class="hero-kanji">和</p>
+      <p class="hero-art-caption">harmony<br>in every element</p>
+    </div>
+
+    <div class="hero-note">
+      <span>01</span>
+      <p>Vegetable-led<br>Fire-kissed<br>Seasonally guided</p>
+    </div>
+  </section>
+
+  <section class="philosophy" aria-labelledby="philosophy-title">
+    <div class="section-number">02</div>
+    <div class="philosophy-heading">
+      <p class="eyebrow">Our philosophy</p>
+      <h2 id="philosophy-title">Three traditions.<br>One considered table.</h2>
+    </div>
+    <p class="philosophy-copy">We cook with the Swedish respect for season, the Japanese devotion to detail, and the Vedic understanding of food as balance. The result is honest, expressive, and quietly unexpected.</p>
+  </section>
+
+  <section class="pillars" aria-label="Our culinary foundations">
+    <article>
+      <span class="pillar-glyph">北</span>
+      <p class="pillar-label">Nordic</p>
+      <h3>Season</h3>
+      <p>Preserved roots, forest herbs, cultured grains and the clean generosity of the north.</p>
+    </article>
+    <article>
+      <span class="pillar-glyph">間</span>
+      <p class="pillar-label">Japanese</p>
+      <h3>Craft</h3>
+      <p>Precision, restraint and the beauty of space—each ingredient given room to speak.</p>
+    </article>
+    <article>
+      <span class="pillar-glyph devanagari">अ</span>
+      <p class="pillar-label">Vedic</p>
+      <h3>Balance</h3>
+      <p>Fragrant spice, elemental cooking and a thoughtful harmony of taste, energy and nourishment.</p>
+    </article>
+  </section>
+
+  <section class="menu-feature" aria-labelledby="menu-title">
+    <div class="menu-visual" aria-hidden="true">
+      <div class="plate">
+        <span class="plate-leaf plate-leaf-one"></span>
+        <span class="plate-leaf plate-leaf-two"></span>
+        <span class="plate-dot plate-dot-one"></span>
+        <span class="plate-dot plate-dot-two"></span>
+        <span class="plate-sauce"></span>
+      </div>
+      <p>旬 · Ritu · Säsong</p>
+    </div>
+    <div class="menu-copy">
+      <p class="eyebrow">The seasonal menu · Late summer</p>
+      <h2 id="menu-title">A tasting journey<br>in six movements.</h2>
+      <ul class="menu-preview">
+        <li><span>01</span><p><strong>Garden</strong> Cucumber · shiso · coriander seed</p></li>
+        <li><span>02</span><p><strong>Ember</strong> Charred cabbage · miso · browned ghee</p></li>
+        <li><span>03</span><p><strong>Forest</strong> Chanterelle · koji barley · juniper</p></li>
+      </ul>
+      <a class="text-link" href="/food">View the full menu <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="reservation-callout" aria-labelledby="reservation-title">
+    <p class="eyebrow">An evening at Soma</p>
+    <h2 id="reservation-title">Come as you are.<br>Leave a little changed.</h2>
+    <a class="button button-light" href="/contact">Reserve your table</a>
+    <div class="reservation-details">
+      <p>Tuesday—Saturday<br>17:30—23:00</p>
+      <p>Södermalm<br>Stockholm, Sweden</p>
+    </div>
+  </section>
+</main>
 
 {{ partial "footer" . }}
