@@ -15,8 +15,12 @@
                 <ul>
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                    <div class="dish-row">
+                      <span class="dish-name">{{ .Title }}</span>
+                      <span class="leader"></span>
+                      <span class="dish-price">{{ .Params.price }}</span>
+                    </div>
+                    {{ with .Params.description }}<p class="dish-desc">{{ . }}</p>{{ end }}
                   </li>
                 {{ end }}
                 </ul>
@@ -38,8 +42,12 @@
                 <ul>
                 {{ range .Pages }}
                   <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                    <div class="dish-row">
+                      <span class="dish-name">{{ .Title }}</span>
+                      <span class="leader"></span>
+                      <span class="dish-price">{{ .Params.price }}</span>
+                    </div>
+                    {{ with .Params.description }}<p class="dish-desc">{{ . }}</p>{{ end }}
                   </li>
                 {{ end }}
                 </ul>

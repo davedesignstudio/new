@@ -1,7 +1,12 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <a href="{{ .Site.BaseURL }}">
+        <span class="sidebar-om" aria-hidden="true">ॐ</span>
+        <h1>{{ .Site.Title }}</h1>
+      </a>
+      <span class="sidebar-kicker">Wabi &middot; Lagom &middot; Ananda</span>
+      <div class="sidebar-divider" aria-hidden="true"></div>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
