@@ -3,7 +3,7 @@ Contributors: bville
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 
 Imports the Bville Pizza & Grill printed menu as WooCommerce products (SKU, prices, photos, variations).
@@ -24,6 +24,9 @@ Imports the Bville Pizza & Grill printed menu as WooCommerce products (SKU, pric
 
 == Changelog ==
 
+= 1.2.0 =
+* Delivery address on checkout when Delivery is selected
+* Fulfillment shown on orders and emails
 = 1.1.0 =
 * Bundle product photos and attach on import
 * GoDaddy / Managed WordPress install notes

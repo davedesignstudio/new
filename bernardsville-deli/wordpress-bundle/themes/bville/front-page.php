@@ -1,9 +1,11 @@
 <?php
 /**
- * Front page — clean modern lines hero + shop link.
+ * Front page — clean modern lines hero + WooCommerce order.
  */
 get_header();
-$shop = function_exists('wc_get_page_id') ? get_permalink(wc_get_page_id('shop')) : home_url('/shop/');
+$shop = bville_shop_url();
+$menu = get_page_by_path('menu');
+$menu_url = $menu ? get_permalink($menu) : $shop;
 ?>
 <section class="hero">
   <div class="hero-inner">
@@ -12,27 +14,28 @@ $shop = function_exists('wc_get_page_id') ? get_permalink(wc_get_page_id('shop')
     <p class="hero-lede">Stone oven pizza, Angus burgers, and Italian gelato — order online for pickup or delivery.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order menu</a>
+      <a class="btn" href="<?php echo esc_url($menu_url); ?>">See the menu</a>
       <a class="btn" href="tel:<?php echo esc_attr(bville_phone_raw()); ?>"><?php echo esc_html(bville_phone()); ?></a>
     </div>
   </div>
 </section>
 
-<section class="site-main" style="padding-top:0">
+<section class="feature-wrap">
   <div class="feature-grid">
     <a class="feature-card" href="<?php echo esc_url($shop); ?>">
       <img src="<?php echo esc_url(bville_asset('pizza.jpg')); ?>" alt="Stone oven pizza">
       <h3>Stone Oven</h3>
-      <p>Customize pies in WooCommerce checkout.</p>
+      <p>Pies from the printed boards, paid in WooCommerce checkout.</p>
     </a>
     <a class="feature-card" href="<?php echo esc_url($shop); ?>">
       <img src="<?php echo esc_url(bville_asset('burger.jpg')); ?>" alt="Angus burgers">
       <h3>Burgers</h3>
-      <p>Angus classics from the printed boards.</p>
+      <p>Angus classics, wraps, and grill platters.</p>
     </a>
     <a class="feature-card" href="<?php echo esc_url($shop); ?>">
       <img src="<?php echo esc_url(bville_asset('salad.jpg')); ?>" alt="Garden salads">
       <h3>From the Garden</h3>
-      <p>Clean-line menu, every plate photographed.</p>
+      <p>Clean-line menu. Pictures on titles only.</p>
     </a>
   </div>
 </section>

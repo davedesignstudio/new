@@ -34,7 +34,8 @@ add_action('wp_enqueue_scripts', static function (): void {
         [],
         null
     );
-    wp_enqueue_style('bville-style', get_stylesheet_uri(), ['bville-fonts'], '1.0.0');
+    wp_enqueue_style('bville-style', get_stylesheet_uri(), ['bville-fonts'], '1.1.0');
+    wp_enqueue_script('bville-nav', bville_asset('nav.js'), [], '1.1.0', true);
 });
 
 function bville_asset(string $file): string
@@ -57,9 +58,116 @@ function bville_address(): string
     return '159 Morristown Rd · Bernardsville, NJ 07924';
 }
 
-/** Keep shop loops compact for the line layout. */
+function bville_instagram(): string
+{
+    return 'https://www.instagram.com/bvillepizzagrill/';
+}
+
+function bville_shop_url(): string
+{
+    if (function_exists('wc_get_page_id')) {
+        $id = wc_get_page_id('shop');
+        if ($id > 0) {
+            return (string) get_permalink($id);
+        }
+    }
+
+    return home_url('/shop/');
+}
+
+function bville_wordmark_slug(string $title): string
+{
+    $map = [
+        'From The Garden' => 'garden',
+        'Starters' => 'starters',
+        'Shakes' => 'shakes',
+        'Burgers' => 'burgers',
+        'Wraps' => 'wraps',
+        'Wrap & Roll' => 'wraps',
+        'Pasta' => 'pasta',
+        'Pastabilities' => 'pasta',
+        'Philly Cheese Steak' => 'cheesesteak',
+        'Cheesesteak' => 'cheesesteak',
+        'Sandwiches' => 'sandwiches',
+        'Panini' => 'panini',
+        'Stone Oven Baked' => 'pizza',
+        'Headlines' => 'platters',
+        "Kids' Menu" => 'kids',
+        'Kids Menu' => 'kids',
+        'Sweet Endings' => 'desserts',
+    ];
+
+    return $map[$title] ?? sanitize_title($title);
+}
+
+function bville_print_title(string $title, string $class = 'print-title'): string
+{
+    $slug = bville_wordmark_slug($title);
+    $file = get_template_directory() . '/assets/wordmarks/' . $slug . '.png';
+    if (is_file($file)) {
+        return sprintf(
+            '<img class="%s print-title--img" src="%s" alt="%s" width="640" height="180" decoding="async" />',
+            esc_attr($class),
+            esc_url(bville_asset('wordmarks/' . $slug . '.png')),
+            esc_attr($title)
+        );
+    }
+
+    return sprintf(
+        '<span class="%s print-title--text">%s</span>',
+        esc_attr($class),
+        esc_html($title)
+    );
+}
+
+function bville_menu_category_order(): array
+{
+    return [
+        'From The Garden',
+        'Starters',
+        'Shakes',
+        'Burgers',
+        'Wrap & Roll',
+        'Pastabilities',
+        'Cheesesteak',
+        'Sandwiches',
+        'Panini',
+        'Stone Oven Baked',
+        'Headlines',
+        'Kids Menu',
+        'Sweet Endings',
+        'Cafe Robust',
+    ];
+}
+
 add_filter('loop_shop_per_page', static fn (): int => 24);
 add_filter('loop_shop_columns', static fn (): int => 2);
+
+add_action('after_switch_theme', static function (): void {
+    if (get_option('bville_pages_seeded')) {
+        return;
+    }
+    $pages = [
+        'menu' => ['title' => 'Menu', 'template' => 'page-menu.php'],
+        'contact' => ['title' => 'Contact', 'template' => 'page-contact.php'],
+    ];
+    foreach ($pages as $slug => $row) {
+        if (get_page_by_path($slug)) {
+            continue;
+        }
+        $id = wp_insert_post([
+            'post_title' => $row['title'],
+            'post_name' => $slug,
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_content' => '',
+        ]);
+        if ($id && !is_wp_error($id)) {
+            update_post_meta((int) $id, '_wp_page_template', $row['template']);
+        }
+    }
+    update_option('bville_pages_seeded', 1);
+});
 
 add_action('after_setup_theme', static function (): void {
     if (get_option('bville_menu_seeded') || !function_exists('wc_get_page_id')) {
@@ -69,10 +177,13 @@ add_action('after_setup_theme', static function (): void {
     if (is_wp_error($menu_id)) {
         return;
     }
-    $shop = get_permalink(wc_get_page_id('shop')) ?: home_url('/shop/');
+    $contact = get_page_by_path('contact');
+    $menu_page = get_page_by_path('menu');
     $links = [
         'Home' => home_url('/'),
-        'Menu' => $shop,
+        'Menu' => $menu_page ? get_permalink($menu_page) : bville_shop_url(),
+        'Order' => bville_shop_url(),
+        'Contact' => $contact ? get_permalink($contact) : home_url('/contact/'),
         'Cart' => function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/'),
         'Checkout' => function_exists('wc_get_checkout_url') ? wc_get_checkout_url() : home_url('/checkout/'),
     ];
@@ -88,4 +199,4 @@ add_action('after_setup_theme', static function (): void {
     $locations['primary'] = (int) $menu_id;
     set_theme_mod('nav_menu_locations', $locations);
     update_option('bville_menu_seeded', 1);
-}, 30);
+}, 40);

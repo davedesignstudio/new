@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Bville Menu for WooCommerce
  * Description: Imports every Bville Pizza & Grill menu item as WooCommerce products (SKU, prices, photos, variations) for GoDaddy / WordPress.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Bville Pizza & Grill
  * Requires at least: 6.0
  * Requires PHP: 8.0
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('BVILLE_MENU_VERSION', '1.1.0');
+define('BVILLE_MENU_VERSION', '1.2.0');
 define('BVILLE_MENU_PATH', plugin_dir_path(__FILE__));
 define('BVILLE_MENU_URL', plugin_dir_url(__FILE__));
 
@@ -31,25 +31,85 @@ add_action('admin_menu', static function (): void {
     );
 });
 
+add_action('wp_enqueue_scripts', static function (): void {
+    if (!function_exists('is_checkout') || !is_checkout()) {
+        return;
+    }
+    wp_enqueue_script(
+        'bville-checkout',
+        BVILLE_MENU_URL . 'assets/checkout.js',
+        [],
+        BVILLE_MENU_VERSION,
+        true
+    );
+});
+
 add_action('woocommerce_after_order_notes', static function (): void {
+    echo '<div class="bville-fulfillment">';
     echo '<p class="form-row form-row-wide"><label for="bville_fulfillment">' . esc_html__('Pickup or delivery', 'bville-menu') . '</label>';
     echo '<select name="bville_fulfillment" id="bville_fulfillment">';
     echo '<option value="pickup">' . esc_html__('Pickup at 159 Morristown Rd', 'bville-menu') . '</option>';
     echo '<option value="delivery">' . esc_html__('Delivery', 'bville-menu') . '</option>';
     echo '</select></p>';
+    echo '<p class="form-row form-row-wide" id="bville_delivery_address_field" style="display:none">';
+    echo '<label for="bville_delivery_address">' . esc_html__('Delivery address', 'bville-menu') . '</label>';
+    echo '<input type="text" class="input-text" name="bville_delivery_address" id="bville_delivery_address" placeholder="';
+    echo esc_attr__('Street, Bernardsville NJ', 'bville-menu') . '"></p>';
+    echo '</div>';
+});
+
+add_action('woocommerce_checkout_process', static function (): void {
+    $mode = sanitize_text_field(wp_unslash((string) ($_POST['bville_fulfillment'] ?? 'pickup')));
+    if (!in_array($mode, ['pickup', 'delivery'], true)) {
+        wc_add_notice(__('Choose pickup or delivery.', 'bville-menu'), 'error');
+        return;
+    }
+    if ($mode === 'delivery') {
+        $address = sanitize_text_field(wp_unslash((string) ($_POST['bville_delivery_address'] ?? '')));
+        if ($address === '') {
+            wc_add_notice(__('Enter a delivery address.', 'bville-menu'), 'error');
+        }
+    }
 });
 
 add_action('woocommerce_checkout_update_order_meta', static function ($order_id): void {
-    if (!empty($_POST['bville_fulfillment'])) {
-        $value = sanitize_text_field(wp_unslash((string) $_POST['bville_fulfillment']));
-        if (in_array($value, ['pickup', 'delivery'], true)) {
-            $order = wc_get_order($order_id);
-            if ($order) {
-                $order->update_meta_data('fulfillment', $value);
-                $order->save();
-            }
-        }
+    $mode = sanitize_text_field(wp_unslash((string) ($_POST['bville_fulfillment'] ?? 'pickup')));
+    if (!in_array($mode, ['pickup', 'delivery'], true)) {
+        $mode = 'pickup';
     }
+    $order = wc_get_order($order_id);
+    if (!$order) {
+        return;
+    }
+    $order->update_meta_data('fulfillment', $mode);
+    if ($mode === 'delivery') {
+        $address = sanitize_text_field(wp_unslash((string) ($_POST['bville_delivery_address'] ?? '')));
+        $order->update_meta_data('delivery_address', $address);
+    }
+    $order->save();
+});
+
+add_action('woocommerce_admin_order_data_after_billing_address', static function ($order): void {
+    if (!$order) {
+        return;
+    }
+    $mode = (string) $order->get_meta('fulfillment');
+    $label = $mode === 'delivery' ? 'Delivery' : 'Pickup at 159 Morristown Rd';
+    echo '<p><strong>Fulfillment:</strong> ' . esc_html($label) . '</p>';
+    if ($mode === 'delivery') {
+        echo '<p><strong>Delivery address:</strong> ' . esc_html((string) $order->get_meta('delivery_address')) . '</p>';
+    }
+});
+
+add_action('woocommerce_email_after_order_table', static function ($order): void {
+    if (!$order) {
+        return;
+    }
+    $mode = (string) $order->get_meta('fulfillment');
+    $label = $mode === 'delivery'
+        ? 'Delivery: ' . (string) $order->get_meta('delivery_address')
+        : 'Pickup at 159 Morristown Rd';
+    echo '<p><strong>Pickup / delivery:</strong> ' . esc_html($label) . '</p>';
 });
 
 function bville_menu_catalog(): array

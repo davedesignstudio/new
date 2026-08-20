@@ -7,7 +7,8 @@
 5. [ ] Upload & activate `bville` theme
 6. [ ] Payments gateway enabled (Stripe/Square/PayPal)
 7. [ ] NJ tax rate 6.625% (WooCommerce → Settings → Tax)
-8. [ ] Shipping / local pickup configured (or virtual products only for pickup)
+8. [ ] Test pickup vs delivery (delivery requires an address)
 9. [ ] Test order with a real/test card
 10. [ ] DNS A/CNAME to GoDaddy, www redirect, SSL force
-11. [ ] (Optional) Point old PHP site `WC_*` keys at the new store for hybrid checkout
+11. [ ] Confirm Instagram header link → instagram.com/bvillepizzagrill
+12. [ ] (Optional) Point old PHP site `WC_*` keys at the new store for hybrid checkout
