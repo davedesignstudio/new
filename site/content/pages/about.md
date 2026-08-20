@@ -4,11 +4,12 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## A quiet house for modern ritual dining
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Soma Nord is imagined as a dining house of stillness. The interior language starts with Swedish restraint: pale oak, tactile stone, open breathing room, and daylight used as a material. That framework is then softened by Japanese balance and the deliberate pacing of a tea room.
 
-Sincerely,
-# Mr. Bojangles
+The final layer comes from Vedic symbolism. Rather than leaning into spectacle, we use sacred geometry, lotus-inspired curves, brass glints, and warm saffron notes as discreet points of focus. These gestures make the space feel devotional, grounded, and welcoming without losing its modern clarity.
+
+Our service mirrors the room. Plates arrive with precision, conversation is encouraged to slow down, and every encounter is designed to feel calm, generous, and deeply considered.

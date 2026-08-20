@@ -4,9 +4,9 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Reserve a calm table for your next gathering
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Share your preferred date, party size, and any special notes. We will respond quickly to confirm a seating that matches the pace and atmosphere you want.
 
 <form name="reservation">
   <input type="text" placeholder="Your Name" name="name">
