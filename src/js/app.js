@@ -1,14 +1,20 @@
 // JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
+const galleryCarousel = document.querySelector('.gallery-carousel');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+if (galleryCarousel && prevButton && nextButton) {
+  const mySiema = new Siema({
+    selector: '.gallery-carousel',
+    duration: 200,
+    easing: 'ease',
+    perPage: 1,
+    startIndex: 0,
+    draggable: true,
+    threshold: 20,
+    loop: true
+  });
+
+  prevButton.addEventListener('click', () => mySiema.prev());
+  nextButton.addEventListener('click', () => mySiema.next());
+}

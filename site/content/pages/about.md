@@ -4,11 +4,12 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## A dining room built around stillness, craft, and layered warmth
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Tasty Licks is imagined as a modern restaurant where Swedish clarity, Japanese restraint, and Vedic-inspired warmth sit in quiet balance. The atmosphere favors pale natural tones, generous breathing room, and details that feel ceremonial without becoming ornate.
 
-Sincerely,
-# Mr. Bojangles
+The result is a room that feels precise and grounded: light falls softly across oak surfaces, typography is treated with editorial care, and saffron-indigo accents add energy in measured moments. Every page on the site now follows that same rhythm.
+
+We believe memorable hospitality comes from composition rather than excess. Calm spacing, thoughtful contrast, and tactile materials set the tone before the first plate reaches the table.

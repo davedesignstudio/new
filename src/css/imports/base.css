@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Rock+Salt);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -632,6 +632,564 @@ a.pagination-item:hover {
   }
   .nt + .nt {
     color: #999;
+  }
+}
+
+:root {
+  --bg: #f6f0e7;
+  --bg-soft: #fbf7f1;
+  --paper: rgba(255, 252, 247, 0.76);
+  --paper-strong: #fffdf8;
+  --ink: #1f2430;
+  --muted: #5f635f;
+  --line: rgba(53, 43, 35, 0.12);
+  --line-strong: rgba(53, 43, 35, 0.2);
+  --saffron: #d88c3a;
+  --saffron-deep: #b56826;
+  --indigo: #2f4468;
+  --forest: #6f826a;
+  --shadow: 0 20px 60px rgba(38, 28, 19, 0.12);
+  --radius-lg: 32px;
+  --radius-md: 22px;
+  --radius-sm: 16px;
+}
+
+html {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(216, 140, 58, 0.16), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(47, 68, 104, 0.14), transparent 30%),
+    var(--bg);
+}
+
+body {
+  color: var(--ink);
+  background: transparent;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 24px;
+  border: 1px solid rgba(47, 68, 104, 0.08);
+  border-radius: 36px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  border: 1px solid rgba(216, 140, 58, 0.2);
+  box-shadow:
+    0 0 0 1.25rem rgba(216, 140, 58, 0.07),
+    0 0 0 2.5rem rgba(47, 68, 104, 0.05);
+  pointer-events: none;
+  z-index: -2;
+}
+
+a {
+  color: var(--indigo);
+}
+
+a:hover,
+a:focus {
+  color: var(--saffron-deep);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+p,
+li,
+dd {
+  color: var(--muted);
+}
+
+strong {
+  color: var(--ink);
+}
+
+img {
+  min-height: 0;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+hr {
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+}
+
+blockquote {
+  color: var(--ink);
+  border-left: .25rem solid rgba(216, 140, 58, 0.5);
+  background: rgba(255, 252, 247, 0.55);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.lead {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 72rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.sidebar {
+  padding: 2.5rem 1.25rem;
+  color: rgba(31, 36, 48, 0.88);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 244, 0.92), rgba(245, 236, 225, 0.9)),
+    rgba(255, 252, 247, 0.72);
+  backdrop-filter: blur(18px);
+  border-right: 1px solid var(--line);
+  box-shadow: none;
+  text-align: left;
+}
+
+.sidebar a {
+  color: var(--ink);
+}
+
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:hover h1,
+.sidebar a:focus h1 {
+  color: var(--saffron-deep);
+}
+
+.sidebar-about .sidebar-mark {
+  margin: 0 0 1rem;
+  color: var(--saffron-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.sidebar-about h1 {
+  color: var(--ink);
+  margin: 0;
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 3.3rem);
+  line-height: 0.95;
+}
+
+.sidebar-about .sidebar-kicker {
+  margin: 1rem 0 0.75rem;
+  color: var(--indigo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sidebar-about .lead {
+  max-width: 18rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.sidebar-nav-label {
+  margin: 0 0 0.85rem;
+  color: var(--saffron-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.sidebar-nav li + li {
+  margin-top: 0.4rem;
+}
+
+.sidebar-nav a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 48em) {
+  .sidebar {
+    width: 21rem;
+  }
+}
+
+.content {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.content.container {
+  width: auto;
+}
+
+@media (min-width: 48em) {
+  .content {
+    margin-left: 23rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content {
+    margin-left: 25rem;
+    margin-right: 3rem;
+  }
+}
+
+.page,
+.post {
+  margin-bottom: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.page-title,
+.post-title {
+  margin-bottom: 1rem;
+}
+
+.home-shell {
+  display: grid;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.hero-panel,
+.home-section,
+.page,
+.post {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.95), rgba(247, 240, 231, 0.88)),
+    var(--paper);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius-lg) + 4px);
+  box-shadow: var(--shadow);
+}
+
+.hero-panel::after,
+.home-section::after,
+.page::after,
+.post::after {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(47, 68, 104, 0.08);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.02;
+  max-width: 10ch;
+}
+
+.eyebrow {
+  margin-bottom: 0.85rem;
+  color: var(--saffron-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.hero-lead {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12rem;
+  padding: 0.95rem 1.4rem;
+  background: var(--indigo);
+  color: #fffdf8;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button-link:hover,
+.button-link:focus {
+  color: #fffdf8;
+  background: var(--saffron-deep);
+  transform: translateY(-1px);
+}
+
+.button-link-secondary {
+  background: transparent;
+  color: var(--indigo);
+  border-color: rgba(47, 68, 104, 0.2);
+}
+
+.button-link-secondary:hover,
+.button-link-secondary:focus {
+  color: #fffdf8;
+  border-color: transparent;
+}
+
+.hero-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.ritual-card,
+.philosophy-card,
+.tasting-card,
+.gallery-preview-card,
+.reservation-banner {
+  background: rgba(255, 253, 248, 0.82);
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 35px rgba(45, 34, 23, 0.08);
+}
+
+.ritual-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+}
+
+.ritual-card-label,
+.tasting-type {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  color: var(--saffron-deep);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.ritual-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ritual-grid div {
+  padding: 1rem 1.1rem;
+  background: rgba(255, 251, 246, 0.88);
+  border: 1px solid rgba(53, 43, 35, 0.09);
+  border-radius: var(--radius-sm);
+}
+
+.ritual-grid span {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: var(--indigo);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.ritual-grid strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.home-section {
+  padding: clamp(1.4rem, 3.5vw, 2.5rem);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+.philosophy-grid,
+.tasting-grid,
+.gallery-preview-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.philosophy-card,
+.tasting-card,
+.gallery-preview-card {
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+}
+
+.philosophy-card h3,
+.tasting-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.45rem;
+}
+
+.tasting-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tasting-card p {
+  margin: 0;
+}
+
+.tasting-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(53, 43, 35, 0.09);
+  font-size: 0.92rem;
+}
+
+.tasting-meta strong {
+  color: var(--indigo);
+  font-size: 1.1rem;
+}
+
+.gallery-preview-grid {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.gallery-preview-card {
+  margin: 0;
+}
+
+.gallery-preview-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  margin-bottom: 0.9rem;
+}
+
+.gallery-preview-card figcaption {
+  color: var(--ink);
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 1rem;
+}
+
+.reservation-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--radius-md);
+}
+
+.reservation-banner h2 {
+  margin: 0;
+  max-width: 16ch;
+}
+
+video {
+  display: none;
+}
+
+@media (min-width: 52em) {
+  .hero-panel {
+    grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.9fr);
+    align-items: stretch;
+  }
+
+  .philosophy-grid,
+  .tasting-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .reservation-banner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 47.99em) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sidebar-sticky {
+    position: static;
+  }
+
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.25rem;
+  }
+
+  .hero-copy h1,
+  .section-heading h2,
+  .reservation-banner h2 {
+    max-width: none;
   }
 }
 

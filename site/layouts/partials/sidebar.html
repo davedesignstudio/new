@@ -1,10 +1,13 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
+      <p class="sidebar-mark">S J V</p>
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <p class="sidebar-kicker">Modern house of quiet contrast</p>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
+    <p class="sidebar-nav-label">Navigate</p>
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       {{ range .Site.Menus.main }}
