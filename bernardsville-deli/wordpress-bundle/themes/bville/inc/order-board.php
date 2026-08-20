@@ -68,6 +68,8 @@ function bville_order_board_schema(): void
         'image' => bville_asset('logo.png'),
         'telephone' => '+1' . bville_phone_raw(),
         'url' => home_url('/'),
+        'slogan' => 'For the table.',
+        'description' => 'The kitchen that already knows the table. Stone oven pizza, burgers, and gelato in Bernardsville, NJ.',
         'servesCuisine' => ['Pizza', 'Italian', 'American', 'Mediterranean'],
         'address' => [
             '@type' => 'PostalAddress',
@@ -113,7 +115,7 @@ function bville_order_board_house_checks(): void
         <header class="house-board-head">
           <p class="hero-kicker">Guest checks · Family table</p>
           <h2>Order the house names</h2>
-          <p class="hero-lede">Tap a check for pickup or delivery on this store — 16" for the table, no marketplace freeze.</p>
+          <p class="hero-lede">Tap a check — B’Ville Special, Jersey Cheesesteak, Chetzel. Pickup first. We’ll have it warm at the counter.</p>
         </header>
         <div class="house-checks">
           <?php foreach (bville_house_checks() as $check) : ?>

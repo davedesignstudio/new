@@ -35,6 +35,8 @@ function order_board_schema(): void
         'telephone' => '+1' . $site['phone_raw'],
         'email' => $site['email'],
         'url' => $origin . asset_url('index.php'),
+        'slogan' => 'For the table.',
+        'description' => 'The kitchen that already knows the table. Stone oven pizza, burgers, and gelato in Bernardsville, NJ.',
         'servesCuisine' => ['Pizza', 'Italian', 'American', 'Mediterranean'],
         'address' => [
             '@type' => 'PostalAddress',
@@ -63,6 +65,11 @@ function order_board_ticket(): void
 function order_board_house_checks(): void
 {
     require __DIR__ . '/partials/house-checks.php';
+}
+
+function order_board_place_settings(): void
+{
+    require __DIR__ . '/partials/place-settings.php';
 }
 
 function order_board_audience_lanes(): void

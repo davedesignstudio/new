@@ -11,19 +11,23 @@
   <?php $cfg = site_config(); $designer = $cfg['designer']; ?>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <img class="footer-logo" src="<?= e(asset_url('assets/logo.png')) ?>" alt="<?= e($cfg['name']) ?>" width="100" height="100" />
+      <div class="footer-marks">
+        <img class="footer-logo" src="<?= e(asset_url('assets/logo.png')) ?>" alt="<?= e($cfg['name']) ?>" width="100" height="100" />
+        <img class="footer-stamp" src="<?= e(asset_url('assets/brand/house-stamp.svg')) ?>" alt="For the table" width="88" height="88" />
+      </div>
+      <p class="footer-tag">For the table.</p>
       <p><?= e($cfg['address']) ?> · <?= e($cfg['city']) ?></p>
       <p><a href="tel:<?= e($cfg['phone_raw']) ?>"><?= e($cfg['phone']) ?></a></p>
-      <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e($cfg['name']) ?>. All rights reserved. <a href="<?= e(asset_url('brand.php')) ?>">House voice</a></p>
+      <p class="footer-copy">Copyright © <?= date('Y') ?> <?= e($cfg['name']) ?>. All rights reserved. <a href="<?= e(asset_url('brand.php')) ?>">House book</a></p>
       <a class="footer-designer" href="<?= e($designer['url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Designed by <?= e($designer['name']) ?>">
         <span class="footer-designer-label">Designed by</span>
         <img src="<?= e(asset_url($designer['logo'])) ?>" alt="<?= e($designer['name']) ?>" width="180" height="48" />
       </a>
     </div>
   </footer>
-  <script src="<?= e(asset_url('js/app.js')) ?>?v=chudo2" defer></script>
+  <script src="<?= e(asset_url('js/app.js')) ?>?v=house2" defer></script>
   <?php if (($page ?? current_page()) === 'comic'): ?>
-    <script src="<?= e(asset_url('js/comic.js')) ?>?v=chudo2" defer></script>
+    <script src="<?= e(asset_url('js/comic.js')) ?>?v=house2" defer></script>
   <?php endif; ?>
   <?php order_board_dock(); ?>
 </body>

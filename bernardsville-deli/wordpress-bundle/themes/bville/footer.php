@@ -2,6 +2,8 @@
 <footer class="site-footer">
   <div class="site-footer-inner">
     <img class="footer-logo" src="<?php echo esc_url(bville_asset('logo.png')); ?>" alt="<?php bloginfo('name'); ?>" width="96" height="96">
+    <img class="footer-stamp" src="<?php echo esc_url(bville_asset('brand/house-stamp.svg')); ?>" alt="For the table" width="88" height="88">
+    <p class="footer-tag">For the table.</p>
     <p><?php echo esc_html(bville_address()); ?></p>
     <p><a href="tel:<?php echo esc_attr(bville_phone_raw()); ?>"><?php echo esc_html(bville_phone()); ?></a></p>
     <p><a href="<?php echo esc_url(bville_instagram()); ?>" target="_blank" rel="noopener me">Instagram</a></p>

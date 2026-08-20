@@ -12,28 +12,40 @@ $menu_url = $menu ? get_permalink($menu) : $shop;
     <p class="comic-pub">Чудо Комикс · Chudo Comics · Bernardsville</p>
     <p class="hero-kicker">Home of the B'Ville Special</p>
     <h1>Bville Pizza &amp; Grill</h1>
-    <p class="hero-lede">Stone oven pizza, Angus burgers, and gelato — pickup after the commute, or delivery on this site. Not a marketplace.</p>
+    <p class="hero-lede">The kitchen that already knows the table. Stone oven pizza, Angus burgers, and gelato — pickup after practice, or delivery from this house.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order pickup</a>
+      <a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order for the table</a>
       <a class="btn" href="<?php echo esc_url($menu_url); ?>">See the menu</a>
     </div>
   </div>
 </section>
 
-<section class="audience-lanes" aria-label="Two ways to order">
-  <div class="feature-wrap audience-lanes-grid">
-    <article class="audience-lane audience-lane--family">
-      <p class="hero-kicker">Family table</p>
-      <h2>After practice. After the train.</h2>
-      <p>Pickup at 159 Morristown Rd — 16" pies, kids plates, name at the counter. No unbuckling for a marketplace app.</p>
-      <p><a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order pickup</a></p>
-    </article>
-    <article class="audience-lane audience-lane--phone">
-      <p class="hero-kicker">On your phone</p>
-      <h2>Customize the pie. Skip the app tax.</h2>
-      <p>Direct WooCommerce checkout on this site. Same kitchen. No marketplace freeze.</p>
-      <p><a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Build a pie</a></p>
-    </article>
+<section class="place-settings" aria-label="Four places at the table">
+  <div class="feature-wrap">
+    <p class="hero-kicker">The table</p>
+    <h2>For the table.</h2>
+    <div class="place-settings-grid">
+      <article class="place-setting">
+        <img src="<?php echo esc_url(bville_asset('brand/oven-heat.svg')); ?>" alt="" width="88" height="88">
+        <p class="hero-kicker">Warmth</p>
+        <h3>We’ll have it warm at the counter.</h3>
+      </article>
+      <article class="place-setting">
+        <img src="<?php echo esc_url(bville_asset('brand/house-stamp.svg')); ?>" alt="" width="88" height="88">
+        <p class="hero-kicker">Closeness</p>
+        <h3>Name on the bag. We know the kids’ pasta.</h3>
+      </article>
+      <article class="place-setting">
+        <img src="<?php echo esc_url(bville_asset('logo.png')); ?>" alt="" width="88" height="88">
+        <p class="hero-kicker">Familiarity</p>
+        <h3>The names this table already knows.</h3>
+      </article>
+      <article class="place-setting">
+        <img src="<?php echo esc_url(bville_asset('brand/table-mark.svg')); ?>" alt="" width="88" height="88">
+        <p class="hero-kicker">Family</p>
+        <h3>After practice. After the train.</h3>
+      </article>
+    </div>
   </div>
 </section>
 

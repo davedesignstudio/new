@@ -367,6 +367,17 @@ address { font-style: normal; }
   letter-spacing: 0.04em;
 }
 
+.brand-line {
+  margin-top: 0.22rem;
+  font-family: var(--font-sans);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-light);
+  white-space: nowrap;
+}
+
 .site-nav {
   display: flex;
   gap: 1.15rem;
@@ -1686,10 +1697,32 @@ address { font-style: normal; }
   text-align: center;
 }
 
+.footer-marks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 0.85rem;
+}
+
 .footer-logo {
-  margin: 0 auto 1rem;
+  margin: 0;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.footer-stamp {
+  width: 88px;
+  height: 88px;
+  filter: drop-shadow(2px 3px 0 rgba(0, 0, 0, 0.28));
+}
+
+.footer-tag {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.45rem;
+  color: #fff;
 }
 
 .footer-copy {

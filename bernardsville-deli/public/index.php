@@ -42,7 +42,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<?php order_board_audience_lanes(); ?>
+<?php order_board_place_settings(); ?>
 <?php order_board_house_checks(); ?>
 
 <section class="container feature-tiles" aria-label="Featured menu">
@@ -119,6 +119,5 @@ require dirname(__DIR__) . '/src/includes/header.php';
   </div>
 </section>
 
-<?php order_board_issue_notes(); ?>
 <?php require dirname(__DIR__) . '/src/includes/story-modal.php'; ?>
 <?php require dirname(__DIR__) . '/src/includes/footer.php'; ?>

@@ -140,6 +140,17 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: none;
 }
 
+.brand-line {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-sans, Oswald, sans-serif);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #faf3e3;
+}
+
 .nav-list {
   display: flex;
   flex-wrap: wrap;
@@ -461,6 +472,18 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 0 auto 0.85rem;
   border-radius: 50%;
   object-fit: cover;
+}
+.site-footer .footer-stamp {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 0.65rem;
+}
+.site-footer .footer-tag {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: #fff;
 }
 
 .footer-designer {

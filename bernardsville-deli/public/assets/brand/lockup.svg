@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-labelledby="lockupTitle">
+  <title id="lockupTitle">Bville Pizza & Grill — For the table</title>
+  <rect width="640" height="160" fill="none"/>
+  <circle cx="80" cy="80" r="62" fill="#142820"/>
+  <ellipse cx="80" cy="92" rx="36" ry="18" fill="none" stroke="#e45c24" stroke-width="4"/>
+  <circle cx="62" cy="88" r="6" fill="#f4e6c4"/>
+  <circle cx="98" cy="88" r="6" fill="#f4e6c4"/>
+  <circle cx="72" cy="100" r="6" fill="#f4e6c4"/>
+  <circle cx="88" cy="100" r="6" fill="#f4e6c4"/>
+  <ellipse cx="80" cy="92" rx="8" ry="5" fill="#e45c24"/>
+  <text x="162" y="78" font-family="Georgia, 'Palatino Linotype', serif" font-size="58" font-style="italic" font-weight="700" fill="#e45c24">Bville</text>
+  <text x="166" y="108" font-family="Georgia, serif" font-size="20" font-style="italic" fill="#142820">Pizza &amp; Grill</text>
+  <text x="166" y="136" font-family="Oswald, Trebuchet MS, sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="#8b2e12">FOR THE TABLE</text>
+</svg>

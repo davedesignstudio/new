@@ -446,172 +446,384 @@ body.chudo-world .order-dock {
   border-top-width: 4px;
 }
 
-/* House voice / brand guidelines */
-.brand-promise {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-burst);
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  letter-spacing: 0.03em;
-  line-height: 1.05;
-  color: var(--ink-dark);
+/* House identity — book, places, marks */
+.place-settings {
+  padding: 0 0 2.6rem;
 }
 
-.brand-feelings-grid {
+.place-settings-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
-.brand-feelings {
-  padding: 0 0 2.4rem;
-}
-
-.brand-feeling {
-  padding: 1.15rem 1.2rem 1.3rem;
+.place-setting {
+  padding: 1.05rem 1rem 1.2rem;
   background: var(--paper);
   border: 4px solid var(--ink-dark);
-  box-shadow: 6px 6px 0 rgba(228, 92, 36, 0.28);
+  box-shadow: 5px 5px 0 rgba(228, 92, 36, 0.32);
+  text-align: center;
 }
 
-.brand-feeling h2,
-.brand-feeling h3 {
-  margin: 0 0 0.5rem;
+.place-setting img {
+  margin: 0 auto 0.45rem;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.place-setting h3 {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.18rem;
+  line-height: 1.25;
+  color: var(--ink-dark);
+}
+
+.place-setting p {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+}
+
+.place-setting--compact {
+  box-shadow: 3px 3px 0 rgba(20, 40, 32, 0.12);
+  padding: 0.85rem 0.75rem 1rem;
+}
+
+.place-setting--compact img {
+  width: 72px;
+  height: 72px;
+}
+
+.place-settings--book {
+  padding: 0 0 2.8rem;
+}
+
+.house-cover {
+  padding: 2.2rem 0 2.6rem;
+  background: var(--paper);
+  border-bottom: 8px solid var(--orange);
+}
+
+.house-cover-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.house-cover-stamp {
+  width: 220px;
+  height: 220px;
+}
+
+.house-cover-tag {
+  margin: 0.15rem 0 0.35rem;
   font-family: var(--font-burst);
-  letter-spacing: 0.03em;
-  line-height: 1.1;
+  font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  color: var(--orange);
+  -webkit-text-stroke: 1.6px var(--ink-dark);
+  paint-order: stroke fill;
 }
 
-.brand-feeling-research,
-.brand-feeling-story {
+.house-manifesto {
+  padding: 2.2rem 0;
+}
+
+.house-manifesto-inner {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.house-manifesto-inner p {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.28rem;
+  line-height: 1.5;
+}
+
+.house-manifesto-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.house-marks {
+  padding: 0 0 2.6rem;
+}
+
+.house-live-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin: 0 0 1.35rem;
+  padding: 1.1rem 1.35rem;
+  background: var(--ink-dark);
+  border: 5px solid var(--orange);
+  box-shadow: 7px 8px 0 rgba(20, 40, 32, 0.18);
+}
+
+.house-live-lockup img {
+  width: 92px;
+  height: 92px;
+  background: var(--paper);
+  border-radius: 50%;
+  padding: 0.35rem;
+}
+
+.house-live-lockup-type .print-title {
+  margin: 0;
+}
+
+.house-live-lockup-type .print-title--text {
+  font-size: clamp(2rem, 4.2vw, 2.85rem);
+  -webkit-text-stroke-width: 1.4px;
+}
+
+.house-live-lockup-type .hero-sub {
+  color: var(--gold);
+  margin: 0.1rem 0 0;
+}
+
+.house-live-lockup-line {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-comic);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--cream-light);
+}
+
+.house-marks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.house-mark-card {
+  margin: 0;
+  padding: 1rem 0.85rem 0.9rem;
+  background: var(--paper);
+  border: 3px solid var(--ink-dark);
+  text-align: center;
+}
+
+.house-mark-card img {
+  margin: 0 auto;
+  max-height: 160px;
+  width: auto;
+}
+
+.house-mark-card figcaption {
+  margin-top: 0.55rem;
+  font-family: var(--font-comic);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: var(--maroon);
+}
+
+.house-mark-card--wide {
+  grid-column: span 2;
+}
+
+.house-mark-card--wide img {
+  max-height: 110px;
+  width: 100%;
+}
+
+.house-palette,
+.house-type,
+.house-story-beats,
+.house-voice-check,
+.house-why {
+  padding: 0 0 2.6rem;
+}
+
+.house-swatches {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.house-swatch {
+  margin: 0;
+  background: var(--paper);
+  border: 3px solid var(--ink-dark);
+}
+
+.house-swatch span {
+  display: block;
+  height: 72px;
+}
+
+.house-swatch figcaption {
+  padding: 0.55rem 0.6rem 0.7rem;
+}
+
+.house-swatch strong {
+  display: block;
+  font-family: var(--font-comic);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.house-swatch em,
+.house-swatch small {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.house-type-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.house-type-row {
+  padding: 0.95rem 1.1rem;
+  background: var(--paper);
+  border: 3px solid var(--ink-dark);
+}
+
+.house-type-row .kicker {
+  margin-bottom: 0.15rem;
+}
+
+.house-type-sample {
+  margin: 0;
+  line-height: 1.05;
+}
+
+.house-type-sample--sign {
+  font-family: var(--font-script);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--orange);
+  -webkit-text-stroke: 1.2px var(--ink-dark);
+  paint-order: stroke fill;
+}
+
+.house-type-sample--story {
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.45rem;
+}
+
+.house-type-sample--issue {
+  font-family: var(--font-burst);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.04em;
+}
+
+.house-type-sample--ticket {
+  font-family: var(--font-sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+.house-type-row > p:last-child {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.house-beats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.house-beat {
+  margin: 0;
+  background: var(--paper);
+  border: 4px solid var(--ink-dark);
+  box-shadow: 5px 6px 0 rgba(20, 40, 32, 0.12);
+}
+
+.house-beat img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 0;
+  box-shadow: none;
+}
+
+.house-beat figcaption {
+  padding: 0.75rem 0.85rem 0.95rem;
+}
+
+.house-beat figcaption p {
+  margin: 0.2rem 0 0;
   font-family: var(--font-garamond);
   font-style: italic;
 }
 
-.brand-feeling-dont {
-  margin: 0.85rem 0 0;
-  font-size: 0.92rem;
-  color: var(--muted);
+.house-voice-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.4rem;
+  align-items: start;
 }
 
-.brand-feeling-dont span {
-  font-family: var(--font-comic);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--maroon);
-  font-size: 0.68rem;
+.house-voice-pad ul {
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1.15rem;
 }
 
-.brand-feeling--compact {
-  box-shadow: 3px 3px 0 rgba(20, 40, 32, 0.12);
-  padding: 0.85rem 1rem;
-}
-
-.brand-feelings-grid--inline {
-  margin: 1.25rem 0;
-}
-
-.brand-conclusion-list {
-  margin: 0;
+.house-voice-rules {
+  margin: 0 0 1.1rem;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: 1rem;
 }
 
-.brand-conclusion-list li {
-  padding: 1rem 1.1rem;
-  background: var(--paper);
-  border-left: 6px solid var(--orange);
-  border: 3px solid var(--ink-dark);
-}
-
-.brand-finding {
-  margin: 0 0 0.35rem;
+.house-voice-rules li {
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed rgba(20, 40, 32, 0.2);
   font-family: var(--font-garamond);
-  font-size: 1.15rem;
 }
 
-.brand-so {
-  margin: 0;
-  font-family: var(--font-comic);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
+.house-voice-rules--never li {
   color: var(--maroon);
-}
-
-.brand-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.brand-tone {
-  font-family: var(--font-comic);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  color: var(--orange);
-}
-
-.brand-always-never {
-  display: grid;
-  gap: 1.1rem;
-}
-
-.brand-always-never h3,
-.brand-visual-list,
-.brand-heroes {
-  font-family: var(--font-garamond);
-}
-
-.brand-always-never h3 {
-  font-family: var(--font-comic);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  color: var(--maroon);
-}
-
-.brand-heroes,
-.brand-visual-list {
-  line-height: 1.55;
-}
-
-.brand-ritual {
-  font-family: var(--font-garamond);
-  font-style: italic;
-  font-size: 1.2rem;
-}
-
-.brand-sample-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.brand-sample {
-  border: 3px solid var(--ink-dark);
-  background: var(--paper);
-}
-
-.brand-sample-cold,
-.brand-sample-warm {
-  margin: 0;
-  padding: 0.85rem 1rem;
-}
-
-.brand-sample-cold {
-  background: rgba(20, 40, 32, 0.06);
-  color: var(--muted);
   text-decoration: line-through;
+  text-decoration-thickness: 1px;
 }
 
-.brand-sample-warm {
-  font-family: var(--font-garamond);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--ink-dark);
+.house-why-inner {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.35rem 1.4rem;
+  background: var(--paper);
+  border: 4px solid var(--ink-dark);
+}
+
+.house-why-inner .lede {
+  margin-top: 0.2rem;
+}
+
+.house-why-inner .btn {
+  margin-top: 0.35rem;
+  margin-right: 0.45rem;
+}
+
+.house-about-story h2 {
+  font-family: var(--font-burst);
+  letter-spacing: 0.03em;
+}
+
+.house-about-story .place-settings-grid {
+  margin: 1.25rem 0;
 }
 
 .footer-copy a {
@@ -620,19 +832,38 @@ body.chudo-world .order-dock {
   text-underline-offset: 2px;
 }
 
-@media (max-width: 900px) {
-  .brand-feelings-grid,
-  .brand-sample-grid,
-  .brand-split {
-    grid-template-columns: 1fr;
+@media (max-width: 1100px) {
+  .place-settings-grid,
+  .house-beats,
+  .house-swatches,
+  .house-marks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 900px) {
   .hero-spread,
   .audience-lanes-grid,
-  .issue-notes-grid {
+  .issue-notes-grid,
+  .place-settings-grid,
+  .house-marks-grid,
+  .house-swatches,
+  .house-beats,
+  .house-cover-inner,
+  .house-manifesto-inner,
+  .house-voice-grid,
+  .house-why-inner {
     grid-template-columns: 1fr;
+  }
+
+  .house-mark-card--wide {
+    grid-column: auto;
+  }
+
+  .house-cover-stamp {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
   }
 
   .hero-spread .comic-cover-hit {

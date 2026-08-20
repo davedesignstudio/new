@@ -17,17 +17,17 @@ if (!str_contains($bodyClass, 'chudo-world')) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="<?= e($site['tagline']) ?> Stone oven pizza, burgers, wraps, salads, and gelato in Bernardsville, NJ." />
-  <meta property="og:title" content="<?= e($site['tagline']) ?>" />
-  <meta property="og:description" content="<?= e($site['tagline']) ?> Stone oven pizza, burgers, wraps, salads, and gelato in Bernardsville, NJ." />
+  <meta name="description" content="Bville Pizza &amp; Grill — the kitchen that already knows the table. Stone oven pizza, burgers, and gelato in Bernardsville, NJ." />
+  <meta property="og:title" content="<?= e($site['name']) ?> — <?= e($site['tagline']) ?>" />
+  <meta property="og:description" content="The kitchen that already knows the table. Pickup at 159 Morristown Rd." />
   <title><?= e($title) ?></title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Bangers&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>?v=chudo2" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/order-board.css')) ?>?v=chudo2" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/comic.css')) ?>?v=chudo2" />
-  <link rel="stylesheet" href="<?= e(asset_url('css/chudo.css')) ?>?v=chudo2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>?v=house2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/order-board.css')) ?>?v=house2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/comic.css')) ?>?v=house2" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/chudo.css')) ?>?v=house2" />
   <link rel="icon" href="<?= e(asset_url('favicon.png')) ?>" type="image/png" />
   <?php order_board_schema(); ?>
 </head>
@@ -50,6 +50,7 @@ if (!str_contains($bodyClass, 'chudo-world')) {
         <span class="brand-text">
           <strong>Bville</strong>
           <em>Pizza &amp; Grill</em>
+          <span class="brand-line">For the table</span>
         </span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">

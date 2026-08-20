@@ -21,27 +21,29 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <p class="lede">The kitchen that already knows the table.</p>
       <p class="about-text"><?= e($site['about']) ?></p>
       <a class="btn btn-red" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
-      <a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">House voice</a>
+      <a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">House book</a>
     </div>
   </div>
 </section>
 
 <?php $brand = brand_config(); ?>
-<section class="content-section brand-story-inline">
+<section class="content-section house-about-story">
   <div class="container">
-    <p class="kicker">House story</p>
-    <h2><?= e((string) $brand['story']['logline']) ?></h2>
-    <p class="lede"><?= e((string) $brand['story']['origin']) ?></p>
-    <div class="brand-feelings-grid brand-feelings-grid--inline">
-      <?php foreach ($brand['feelings'] as $feeling): ?>
-        <article class="brand-feeling brand-feeling--compact">
-          <p class="kicker"><?= e((string) $feeling['word']) ?></p>
-          <h3><?= e((string) $feeling['say']) ?></h3>
+    <p class="comic-pub">House book</p>
+    <h2><?= e((string) $brand['story']['title']) ?></h2>
+    <?php foreach (array_slice($brand['manifesto'], 0, 2) as $para): ?>
+      <p class="lede"><?= e((string) $para) ?></p>
+    <?php endforeach; ?>
+    <div class="place-settings-grid place-settings-grid--about">
+      <?php foreach ($brand['places'] as $place): ?>
+        <article class="place-setting place-setting--compact">
+          <img src="<?= e(asset_url((string) $place['mark'])) ?>" alt="" width="72" height="72" />
+          <p class="kicker"><?= e((string) $place['word']) ?></p>
+          <h3><?= e((string) $place['line']) ?></h3>
         </article>
       <?php endforeach; ?>
     </div>
-    <p class="brand-ritual"><?= e((string) $brand['story']['ritual']) ?></p>
-    <a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">Read the house guidelines</a>
+    <p><a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">Open the house book</a></p>
   </div>
 </section>
 

@@ -27,6 +27,7 @@
       <span class="brand-text">
         <strong>Bville</strong>
         <em>Pizza &amp; Grill</em>
+        <span class="brand-line">For the table</span>
       </span>
     </a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="<?php esc_attr_e('Open menu', 'bville'); ?>">
