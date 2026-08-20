@@ -1,17 +1,52 @@
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
+    font-family: var(--font-display);
+    font-weight: 400;
     text-transform: capitalize;
-    margin: 0 0 64px 0;
+    letter-spacing: .02em;
+    margin: 0 0 3rem 0;
+    position: relative;
+    padding-bottom: 1.25rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 3rem;
+      height: 2px;
+      background: linear-gradient(to right, var(--color-vermillion), var(--color-gold));
+    }
   }
 
   h2 em, h3 {
+    font-style: normal;
     text-transform: capitalize;
   }
 
+  h2 em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    color: var(--color-vermillion);
+  }
+
   h2 em:after {
-    content: '. ';
-    color: #ff7660;
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: .5rem;
+    background: var(--color-gold);
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  h3 {
+    color: var(--color-ink-soft);
+    font-size: .95rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 
   ul {
@@ -23,15 +58,25 @@
     li {
       display: flex;
       align-items: top;
+      padding: .65rem 0;
+      border-bottom: 1px dashed var(--color-border);
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
     p {
       flex-grow: 1;
       display: inline-block;
+      margin-bottom: 0;
 
       &:last-child {
         padding-left: 16px;
         text-align: right;
+        color: var(--color-saffron);
+        font-weight: 600;
+        font-family: var(--font-accent);
       }
     }
   }
@@ -45,7 +90,10 @@
     box-shadow: none;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+    color: var(--color-ink);
+    font-family: var(--font-body);
     font-size: 16px;
     padding: 16px;
     margin-bottom: 16px;
@@ -54,7 +102,7 @@
   input,
   textarea {
     &:focus {
-      border: 1px solid #444;
+      border-color: var(--color-gold);
     }
   }
 
@@ -63,14 +111,21 @@
   }
 
   button {
-    color: white;
-    background: #ff7660;
+    color: #fbf7ef;
+    background: linear-gradient(135deg, var(--color-saffron), var(--color-vermillion));
     border: none;
+    border-radius: 999px;
     cursor: pointer;
-    transition: background .2s ease;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .85rem 1.5rem;
+    transition: box-shadow .25s ease, transform .25s ease;
 
     &:hover {
-      background: #d35b48;
+      box-shadow: 0 6px 18px rgba(156, 58, 40, 0.35);
+      transform: translateY(-1px);
     }
 
     &.half-button {

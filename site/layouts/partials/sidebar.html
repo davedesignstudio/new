@@ -1,14 +1,16 @@
 <div class="sidebar">
+  <div class="sidebar-sigil" aria-hidden="true"><img src="/img/sigil.svg" alt=""></div>
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
+      <div class="sidebar-mark" aria-hidden="true"><img src="/img/sigil.svg" alt=""></div>
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a class="sidebar-nav-item" href="/">Home</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+        <li><a class="sidebar-nav-item" href="{{.URL}}">{{ .Name }}</a></li>
       {{end}}
     </ul>
   </div>
