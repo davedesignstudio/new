@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Rock+Salt);
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -771,4 +771,193 @@ video {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+:root {
+  --nordic-paper: #f6f4ee;
+  --nordic-linen: #efebe3;
+  --pine-ink: #1f2a2f;
+  --charcoal-ink: #2b2521;
+  --mist-gray: #7f817d;
+  --sandalwood: #d6c1a8;
+  --vermilion: #c86752;
+  --sage-accent: #6f8876;
+  --line-soft: rgba(31, 42, 47, 0.12);
+  --line-strong: rgba(31, 42, 47, 0.22);
+}
+
+html {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  color: var(--pine-ink);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(111, 136, 118, 0.08), transparent 26%),
+    radial-gradient(circle at 92% 14%, rgba(200, 103, 82, 0.08), transparent 24%),
+    linear-gradient(130deg, var(--nordic-paper) 0%, #f3efe7 54%, var(--nordic-linen) 100%);
+}
+
+a {
+  color: var(--sage-accent);
+}
+
+a:hover,
+a:focus {
+  color: var(--vermilion);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--charcoal-ink);
+  letter-spacing: 0.02em;
+}
+
+h1,
+.sidebar-about h1 {
+  font-family: "Shippori Mincho", Georgia, serif;
+}
+
+img {
+  min-height: 0;
+  border-radius: 14px;
+  border: 1px solid var(--line-soft);
+}
+
+.sidebar {
+  color: rgba(246, 244, 238, 0.82);
+  background:
+    linear-gradient(170deg, rgba(18, 27, 31, 0.96) 0%, rgba(28, 36, 40, 0.97) 70%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 30px,
+      rgba(255, 255, 255, 0.035) 30px,
+      rgba(255, 255, 255, 0.035) 31px
+    );
+  border-right: 1px solid rgba(214, 193, 168, 0.25);
+}
+
+.sidebar:before {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 193, 168, 0.45);
+  background:
+    radial-gradient(circle at center, transparent 38%, rgba(214, 193, 168, 0.28) 39%, transparent 41%),
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(214, 193, 168, 0.22) 0deg 6deg,
+      transparent 6deg 18deg
+    );
+  pointer-events: none;
+}
+
+.sidebar a {
+  color: #f6f4ee;
+}
+
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:hover h1,
+.sidebar a:focus h1 {
+  color: #f3cab3;
+}
+
+.sidebar-about h1 {
+  margin-bottom: 0.4em;
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sidebar-about .lead {
+  max-width: 18ch;
+  color: rgba(246, 244, 238, 0.72);
+}
+
+.sidebar-nav {
+  margin-top: 1.8rem;
+}
+
+.sidebar-nav li {
+  margin: 0.6rem 0;
+  padding-left: 0.35rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-nav li:hover {
+  border-left-color: var(--sandalwood);
+  transform: translateX(4px);
+}
+
+.content {
+  position: relative;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.content.container:not(.home) {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  box-shadow: 0 26px 45px rgba(20, 26, 30, 0.11);
+  backdrop-filter: blur(4px);
+}
+
+.content.container:not(.home):before {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 1px dashed rgba(111, 136, 118, 0.45);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.content hr {
+  border: 0;
+  height: 1px;
+  margin: 1rem 0 1.2rem;
+  background: linear-gradient(90deg, rgba(200, 103, 82, 0.24), rgba(31, 42, 47, 0.08));
+}
+
+.content small {
+  text-align: center;
+  color: var(--mist-gray);
+}
+
+@media (min-width: 48em) {
+  .content {
+    max-width: 40rem;
+    margin-left: 21.5rem;
+    margin-right: 2.2rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .sidebar:before {
+    width: 54px;
+    height: 54px;
+  }
+
+  .sidebar-about h1 {
+    font-size: 2.2rem;
+  }
+
+  .content.container:not(.home) {
+    border-radius: 14px;
+  }
 }

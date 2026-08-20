@@ -1,17 +1,34 @@
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
+    font-family: "Shippori Mincho", Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 2.4rem 0;
+    font-size: 2.15rem;
   }
 
   h2 em, h3 {
     text-transform: capitalize;
   }
 
+  h2 {
+    margin-top: 1.7rem;
+    font-family: "Shippori Mincho", Georgia, serif;
+    letter-spacing: 0.03em;
+    color: #2d373c;
+  }
+
+  h3 {
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5d6a67;
+  }
+
   h2 em:after {
-    content: '. ';
-    color: #ff7660;
+    content: " .";
+    color: #c86752;
   }
 
   ul {
@@ -23,15 +40,23 @@
     li {
       display: flex;
       align-items: top;
+      gap: 0.9rem;
+      border-bottom: 1px solid rgba(31, 42, 47, 0.09);
+      padding: 0.8rem 0;
     }
 
     p {
       flex-grow: 1;
       display: inline-block;
+      margin-bottom: 0;
+      color: #344046;
 
       &:last-child {
         padding-left: 16px;
         text-align: right;
+        min-width: 5rem;
+        font-weight: 600;
+        color: #c86752;
       }
     }
   }
@@ -44,17 +69,18 @@
     box-sizing: border-box;
     box-shadow: none;
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 1px solid rgba(31, 42, 47, 0.16);
     font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 0.95rem;
+    margin-bottom: 0.95rem;
+    background: rgba(255, 255, 255, 0.85);
   }
 
   input,
   textarea {
     &:focus {
-      border: 1px solid #444;
+      border: 1px solid #6f8876;
     }
   }
 
@@ -64,13 +90,18 @@
 
   button {
     color: white;
-    background: #ff7660;
+    background: linear-gradient(120deg, #6f8876, #507364);
     border: none;
     cursor: pointer;
-    transition: background .2s ease;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
 
     &:hover {
-      background: #d35b48;
+      background: linear-gradient(120deg, #637d6a, #3e5f53);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(31, 42, 47, 0.14);
     }
 
     &.half-button {
