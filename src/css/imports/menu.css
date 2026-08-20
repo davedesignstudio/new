@@ -1,85 +1,151 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
-  }
+.menu-block {
+  margin-bottom: 3rem;
+}
 
-  h2 em, h3 {
-    text-transform: capitalize;
-  }
+.menu-block__period {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.menu-block__period em {
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.35rem;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+.menu-block__period em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--saffron);
+}
 
-    li {
-      display: flex;
-      align-items: top;
-    }
+.menu-block__course {
+  margin: 1.75rem 0 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wasabi);
+}
 
-    p {
-      flex-grow: 1;
-      display: inline-block;
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
+.menu-list__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+.menu-list__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
+.menu-list__copy strong {
+  font-family: var(--font-brand);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-transform: none;
+}
 
-  .buttons {
-    text-align: center;
-  }
+.menu-list__copy span {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
 
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
+.menu-list__price {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--indigo);
+  white-space: nowrap;
+  padding-top: 0.15rem;
+}
 
-    &:hover {
-      background: #d35b48;
-    }
+.gallery-carousel {
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
 
-    &.half-button {
-      display: inline-block;
-      width: 30%;
+.gallery-carousel img {
+  width: 100%;
+  max-height: min(70vh, 34rem);
+  object-fit: cover;
+  min-height: 0;
+  filter: saturate(0.85) contrast(1.02);
+}
 
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
-  }
+.gallery-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.content input,
+.content textarea,
+.content button:not(.btn) {
+  display: block;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: none;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.95rem 1rem;
+  margin-bottom: 0.85rem;
+  color: var(--ink);
+}
+
+.content input:focus,
+.content textarea:focus {
+  border-color: var(--saffron);
+}
+
+.content button:not(.btn),
+.content form button {
+  color: #fff8f0;
+  background: var(--saffron);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.25s var(--ease);
+}
+
+.content button:not(.btn):hover,
+.content form button:hover {
+  background: var(--saffron-deep);
+}
+
+.content form {
+  max-width: 28rem;
+  margin-top: 1.5rem;
 }

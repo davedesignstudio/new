@@ -1,16 +1,16 @@
 +++
 date = "2017-05-17T13:03:58-04:00"
-title = "Contact"
+title = "Reserve"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Book a seat at Rasa
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Share a preferred evening and we will confirm within thirty minutes—or offer another quiet hour.
 
 <form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <input type="text" placeholder="Your name" name="name">
+  <input type="email" placeholder="Your email" name="email">
+  <textarea name="message" placeholder="When would you like to dine?"></textarea>
+  <button type="submit">Send request</button>
 </form>

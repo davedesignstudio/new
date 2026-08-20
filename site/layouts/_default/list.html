@@ -1,22 +1,34 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
+<main class="page">
+  <div class="page__intro">
+    <p class="eyebrow" lang="sa">{{ .Site.Params.sanskrit }}</p>
+    <h1 class="page__title">{{ if eq .Section "food" }}Menu{{ else if eq .Section "gallery" }}Gallery{{ else }}{{ .Section | title }}{{ end }}</h1>
+    {{ if eq .Section "food" }}
+      <p class="page__lede">Seasonal plates shaped by Swedish calm, Japanese restraint, and Vedic rasa.</p>
+    {{ else if eq .Section "gallery" }}
+      <p class="page__lede">Light, stone, steam, and quiet tables.</p>
+    {{ end }}
+  </div>
+
+  <div class="page__body content">
   {{ if eq .Section "food" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
+      <section class="menu-block">
         {{ if eq "categories" $taxonomyname }}
           {{ range $key, $value := $taxonomy }}
             {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
+              <h2 class="menu-block__period"><em>{{ $key }}</em></h2>
               {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
+                <h3 class="menu-block__course">{{ .Key }}</h3>
+                <ul class="menu-list">
                 {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                  <li class="menu-list__item">
+                    <div class="menu-list__copy">
+                      <strong>{{ .Title }}</strong>
+                      <span>{{ .Params.description }}</span>
+                    </div>
+                    <span class="menu-list__price">{{ .Params.price }}</span>
                   </li>
                 {{ end }}
                 </ul>
@@ -28,18 +40,20 @@
     {{ end }}
   {{ else if eq .Section "drinks" }}
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
+      <section class="menu-block">
         {{ if eq "categories" $taxonomyname }}
           {{ range $key, $value := $taxonomy }}
             {{ if eq $key "drinks"}}
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
+                <h2 class="menu-block__period"><em>{{ .Key }}</em></h2>
+                <ul class="menu-list">
                 {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
+                  <li class="menu-list__item">
+                    <div class="menu-list__copy">
+                      <strong>{{ .Title }}</strong>
+                      <span>{{ .Params.description }}</span>
+                    </div>
+                    <span class="menu-list__price">{{ .Params.price }}</span>
                   </li>
                 {{ end }}
                 </ul>
@@ -52,14 +66,15 @@
   {{ else if eq .Section "gallery" }}
     <div class="gallery-carousel">
       {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        <div><img src="{{ .Params.image }}" alt="{{ .Title }}"/></div>
       {{ end }}
     </div>
-    <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
+    <div class="gallery-controls">
+      <button class="btn btn--ghost prev" type="button">Prev</button>
+      <button class="btn btn--ghost next" type="button">Next</button>
     </div>
   {{ end }}
-</div>
+  </div>
+</main>
 
 {{ partial "footer" . }}

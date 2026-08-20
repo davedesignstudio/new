@@ -5,25 +5,47 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   {{ .Hugo.Generator }}
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
   {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }} · {{ .Site.Title }}</title>
   {{ end }}
 
-  <!-- CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Sans+Devanagari:wght@400;600&family=Shippori+Mincho:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
 
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/img/favicon.png">
 
-  <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}is-home{{ end }} {{ .Section | urlize }}">
 
-{{ partial "sidebar" . }}
+<div class="atmosphere" aria-hidden="true">
+  <div class="atmosphere__wash"></div>
+  <div class="atmosphere__yantra"></div>
+  <div class="atmosphere__wave"></div>
+</div>
+
+<header class="site-header">
+  <a class="brand" href="{{ .Site.BaseURL }}">
+    <span class="brand__sanskrit" lang="sa">{{ .Site.Params.sanskrit }}</span>
+    <span class="brand__name">{{ .Site.Title }}</span>
+  </a>
+
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span></span><span></span>
+  </button>
+
+  <nav id="site-nav" class="site-nav" aria-label="Primary">
+    <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>
