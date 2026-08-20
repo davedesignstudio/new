@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" width="300" height="300">
+  <title>Gilded crown molding frame: egg-and-dart, dentils, corner rosettes</title>
+
+  <!-- molding profile, outside to inside -->
+  <rect x="2" y="2" width="296" height="296" fill="none" stroke="#6f5312" stroke-width="4" />
+  <rect x="7" y="7" width="286" height="286" fill="none" stroke="#f6d98a" stroke-width="6" />
+  <rect x="12" y="12" width="276" height="276" fill="none" stroke="#a4791b" stroke-width="4" />
+  <rect x="30" y="30" width="240" height="240" fill="none" stroke="#d9a72e" stroke-width="32" />
+  <rect x="48" y="48" width="204" height="204" fill="none" stroke="#8a6a1c" stroke-width="4" />
+  <rect x="57" y="57" width="186" height="186" fill="none" stroke="#b98f1f" stroke-width="14" />
+  <rect x="67" y="67" width="166" height="166" fill="none" stroke="#f6d98a" stroke-width="6" />
+  <rect x="72" y="72" width="156" height="156" fill="none" stroke="#8b2e12" stroke-width="2" opacity="0.5" />
+  <rect x="79" y="79" width="142" height="142" fill="none" stroke="#6f5312" stroke-width="2" />
+
+  <!-- egg-and-dart run, top edge middle -->
+  <g id="eggrun">
+    <ellipse cx="97.5" cy="30" rx="10" ry="13" fill="#f3d27a" stroke="#8a6a1c" stroke-width="2" />
+    <ellipse cx="97.5" cy="30" rx="5.5" ry="8.5" fill="#e8b84a" />
+    <ellipse cx="132.5" cy="30" rx="10" ry="13" fill="#f3d27a" stroke="#8a6a1c" stroke-width="2" />
+    <ellipse cx="132.5" cy="30" rx="5.5" ry="8.5" fill="#e8b84a" />
+    <ellipse cx="167.5" cy="30" rx="10" ry="13" fill="#f3d27a" stroke="#8a6a1c" stroke-width="2" />
+    <ellipse cx="167.5" cy="30" rx="5.5" ry="8.5" fill="#e8b84a" />
+    <ellipse cx="202.5" cy="30" rx="10" ry="13" fill="#f3d27a" stroke="#8a6a1c" stroke-width="2" />
+    <ellipse cx="202.5" cy="30" rx="5.5" ry="8.5" fill="#e8b84a" />
+    <path d="M 80 17 L 83 30 L 80 43 L 77 30 Z" fill="#a4791b" stroke="#6f5312" stroke-width="1" />
+    <path d="M 115 17 L 118 30 L 115 43 L 112 30 Z" fill="#a4791b" stroke="#6f5312" stroke-width="1" />
+    <path d="M 150 17 L 153 30 L 150 43 L 147 30 Z" fill="#a4791b" stroke="#6f5312" stroke-width="1" />
+    <path d="M 185 17 L 188 30 L 185 43 L 182 30 Z" fill="#a4791b" stroke="#6f5312" stroke-width="1" />
+    <path d="M 220 17 L 223 30 L 220 43 L 217 30 Z" fill="#a4791b" stroke="#6f5312" stroke-width="1" />
+  </g>
+  <use xlink:href="#eggrun" href="#eggrun" transform="rotate(90 150 150)" />
+  <use xlink:href="#eggrun" href="#eggrun" transform="rotate(180 150 150)" />
+  <use xlink:href="#eggrun" href="#eggrun" transform="rotate(270 150 150)" />
+
+  <!-- dentil row, top edge middle -->
+  <g id="dentils">
+    <rect x="84.5" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="102" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="119.5" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="137" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="154.5" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="172" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="189.5" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+    <rect x="207" y="52" width="9" height="10" fill="#f3d27a" stroke="#8a6a1c" stroke-width="1" />
+  </g>
+  <use xlink:href="#dentils" href="#dentils" transform="rotate(90 150 150)" />
+  <use xlink:href="#dentils" href="#dentils" transform="rotate(180 150 150)" />
+  <use xlink:href="#dentils" href="#dentils" transform="rotate(270 150 150)" />
+
+  <!-- carved corner rosette -->
+  <g id="rosette">
+    <circle cx="40" cy="40" r="34" fill="#b98f1f" stroke="#6f5312" stroke-width="2.5" />
+    <circle cx="40" cy="40" r="29" fill="none" stroke="#f6d98a" stroke-width="2" />
+    <g fill="#f3d27a" stroke="#8a6a1c" stroke-width="1.6">
+      <ellipse cx="40" cy="19" rx="6.5" ry="11" />
+      <ellipse cx="40" cy="61" rx="6.5" ry="11" />
+      <ellipse cx="19" cy="40" rx="11" ry="6.5" />
+      <ellipse cx="61" cy="40" rx="11" ry="6.5" />
+      <ellipse cx="25.2" cy="25.2" rx="6.5" ry="11" transform="rotate(-45 25.2 25.2)" />
+      <ellipse cx="54.8" cy="54.8" rx="6.5" ry="11" transform="rotate(-45 54.8 54.8)" />
+      <ellipse cx="54.8" cy="25.2" rx="6.5" ry="11" transform="rotate(45 54.8 25.2)" />
+      <ellipse cx="25.2" cy="54.8" rx="6.5" ry="11" transform="rotate(45 25.2 54.8)" />
+    </g>
+    <circle cx="40" cy="40" r="11" fill="#e8b84a" stroke="#c99622" stroke-width="2" />
+    <circle cx="40" cy="40" r="4" fill="#8b2e12" />
+  </g>
+  <use xlink:href="#rosette" href="#rosette" transform="translate(300,0) scale(-1,1)" />
+  <use xlink:href="#rosette" href="#rosette" transform="translate(0,300) scale(1,-1)" />
+  <use xlink:href="#rosette" href="#rosette" transform="translate(300,300) scale(-1,-1)" />
+</svg>

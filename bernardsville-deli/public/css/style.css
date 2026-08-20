@@ -747,7 +747,7 @@ address { font-style: normal; }
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.35rem;
 }
 
 .menu-grid-item {
@@ -761,7 +761,7 @@ address { font-style: normal; }
 
 .menu-grid-item img {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -771,17 +771,21 @@ address { font-style: normal; }
 .menu-grid-banner {
   position: absolute;
   left: 50%;
-  bottom: 0.7rem;
+  bottom: 0.8rem;
   transform: translateX(-50%);
   background: var(--cream-light);
   color: var(--maroon);
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.35rem 0.7rem;
+  text-align: center;
+  padding: 0.45rem 0.95rem;
   border: 2px solid var(--ink);
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: calc(100% - 1.6rem);
+  box-sizing: border-box;
 }
 
 .home-menu-cta { text-align: center; margin: 1.5rem 0 0; }
@@ -1982,5 +1986,7 @@ address { font-style: normal; }
 
   .dish-grid { grid-template-columns: 1fr 1fr; }
 
-  .menu-grid { grid-template-columns: 1fr 1fr; }
+  .menu-grid { grid-template-columns: 1fr; }
+
+  .menu-grid-item img { height: 250px; }
 }

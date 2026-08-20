@@ -303,6 +303,15 @@ body.chudo-world .feature-tiles {
   gap: 0.75rem;
 }
 
+/* Hermitage molding — gilded crown frame on the home category boxes */
+body.chudo-world .menu-grid-item {
+  border: 30px solid transparent;
+  border-image: url("/assets/brand/czar-frame.svg") 80 / 30px round;
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: 7px 8px 0 rgba(20, 40, 32, 0.16);
+}
+
 body.chudo-world .menu-grid-banner {
   font-family: var(--font-comic);
   border-width: 2px;
