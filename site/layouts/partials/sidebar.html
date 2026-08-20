@@ -1,15 +1,28 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
+<header class="sidebar">
+  <div class="nav-shell">
+    <a class="brand" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }} home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <circle cx="24" cy="24" r="19"></circle>
+          <path d="M24 7c4 8 4 26 0 34M7 24c8-4 26-4 34 0M12 12c9 3 21 15 24 24M36 12c-3 9-15 21-24 24"></path>
+          <circle cx="24" cy="24" r="5"></circle>
+        </svg>
+      </span>
+      <span>
+        <strong>{{ .Site.Title }}</strong>
+        <small>Est. Stockholm · 2026</small>
+      </span>
+    </a>
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
-    </ul>
+    <nav aria-label="Main navigation">
+      <ul class="sidebar-nav">
+        <li><a href="/">Home</a></li>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <a class="nav-book" href="/contact">Book a table <span aria-hidden="true">↗</span></a>
   </div>
-</div>
+</header>

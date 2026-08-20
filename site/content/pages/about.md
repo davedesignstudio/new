@@ -4,11 +4,16 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Three traditions. One quiet table.
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Sattva House began with a simple question: what does a meal feel like when nothing is rushed and nothing is wasted?
 
-Sincerely,
-# Mr. Bojangles
+Our kitchen follows the Nordic harvest, the Japanese respect for season and restraint, and the Vedic understanding of food as nourishment for the whole person. These are living traditions, not a theme. We approach each with curiosity, gratitude and care.
+
+Vegetables, grains and ferments lead the menu. We source close to Stockholm, preserve what the short summer gives us, and build each service around what is at its best that day.
+
+Come as you are. Leave a little lighter.
+
+# The Sattva House team
