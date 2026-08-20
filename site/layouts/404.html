@@ -1,8 +1,15 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main class="page-main">
+  <div class="container container--narrow">
+    <div class="notfound">
+      <div class="enso-large">{{ partial "svg/enso" . }}</div>
+      <h1>404</h1>
+      <p class="lead">This page has dissolved into empty space &mdash; <span class="nippon">間</span> holds nothing here.</p>
+      <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      <a class="btn btn--gold" href="{{ .Site.BaseURL }}">Return home</a>
+    </div>
+  </div>
+</main>
 
 {{ partial "footer" . }}

@@ -1,65 +1,94 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
-  {{ if eq .Section "food" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
+<main class="page-main">
+  <div class="container container--narrow">
+
+    {{ if eq .Section "food" }}
+      <div class="page-head">
+        <p class="eyebrow">Sattva</p>
+        <h1>Menu</h1>
+        <p class="page-head-sub devanagari">भोजनम् &mdash; the offering</p>
+        <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      </div>
+
+      {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
         {{ if eq "categories" $taxonomyname }}
           {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
+            {{ if ne $key "drinks" }}
+              <section class="menu-category">
+                <div class="menu-category-head">
+                  <h2><em>{{ $key }}</em></h2>
+                  <span class="devanagari">{{ if eq $key "lunch" }}मध्याह्न &mdash; midday{{ else if eq $key "dinner" }}सायम् &mdash; evening{{ end }}</span>
+                </div>
+                {{ range $value.Pages.GroupByParam "type" }}
+                  <div class="menu-group">
+                    <h3 class="menu-group-title">{{ .Key }}</h3>
+                    <ul class="menu-list">
+                      {{ range .Pages }}
+                        <li>
+                          <div class="menu-row">
+                            <span class="menu-dish">{{ .Title }}</span>
+                            <span class="menu-leader"></span>
+                            <span class="menu-price">{{ .Params.price }}</span>
+                          </div>
+                          <p class="menu-desc">{{ .Params.description }}</p>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </div>
                 {{ end }}
-                </ul>
-              {{ end }}
+              </section>
             {{ end }}
           {{ end }}
         {{ end }}
-      </section>
-    {{ end }}
-  {{ else if eq .Section "drinks" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if eq $key "drinks"}}
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </section>
-    {{ end }}
-  {{ else if eq .Section "gallery" }}
-    <div class="gallery-carousel">
-      {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
       {{ end }}
-    </div>
-    <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
-    </div>
-  {{ end }}
-</div>
+
+      <div class="section-cta">
+        <a class="btn btn--gold" href="/contact">Book a table</a>
+      </div>
+
+    {{ else if eq .Section "gallery" }}
+      <div class="page-head">
+        <p class="eyebrow">Sattva</p>
+        <h1>Gallery</h1>
+        <p class="page-head-sub devanagari">दर्शनम् &mdash; the seeing</p>
+        <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      </div>
+
+      <div class="gallery-stage">
+        <div class="gallery-carousel">
+          {{ range where .Pages "Section" "gallery" }}
+            <div><img src="{{ .Params.image }}" alt="{{ .Title }}"/></div>
+          {{ end }}
+        </div>
+        <p class="gallery-caption gallery-caption-current"></p>
+        <div class="gallery-controls">
+          <button class="prev" type="button">&lsaquo; Prev</button>
+          <button class="next" type="button">Next &rsaquo;</button>
+        </div>
+      </div>
+
+    {{ else }}
+      <div class="page-head">
+        <p class="eyebrow">Sattva</p>
+        <h1>{{ .Title }}</h1>
+        <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      </div>
+      <div class="page-body">
+        {{ .Content }}
+        <ul class="menu-list">
+          {{ range .Pages }}
+            <li>
+              <div class="menu-row">
+                <span class="menu-dish"><a href="{{ .URL }}">{{ .Title }}</a></span>
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+
+  </div>
+</main>
 
 {{ partial "footer" . }}

@@ -1,0 +1,445 @@
+/* ------------------------------------------------------------------
+   Home — hero, philosophy, preview sections, mantra band
+------------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* warm paper veil — shoji light over the moving image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(rgba(244, 239, 228, 0.82), rgba(244, 239, 228, 0.78)),
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(244, 239, 228, 0.35), rgba(244, 239, 228, 0.88));
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9rem;
+  z-index: 2;
+  background: linear-gradient(transparent, var(--paper));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  padding: 7rem 1.5rem 5rem;
+  animation: hero-rise 1.6s ease both;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-om {
+  font-family: var(--devanagari);
+  font-size: 1.9rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 1.4rem;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: 4.2rem;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+}
+
+@media (min-width: 48em) {
+  .hero-title {
+    font-size: 6rem;
+  }
+}
+
+.hero-tagline {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1.8rem;
+}
+
+.hero-mantra {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+.hero-mantra .devanagari {
+  font-style: normal;
+  font-size: 1.35rem;
+}
+
+.hero-mantra-latin {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* vertical Japanese accents — the space at the edges (ma) */
+.hero-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  writing-mode: vertical-rl;
+  font-family: var(--nippon);
+  font-size: 1rem;
+  letter-spacing: 0.55em;
+  color: var(--ink-soft);
+  opacity: 0.75;
+}
+
+.hero-side small {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 1rem;
+}
+
+.hero-side--left { left: 2.2rem; }
+.hero-side--right { right: 2.2rem; }
+
+@media (max-width: 64em) {
+  .hero-side { display: none; }
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.scroll-cue::after {
+  content: "";
+  width: 1px;
+  height: 3.2rem;
+  background: linear-gradient(var(--gold), transparent);
+  animation: cue-fall 2.4s ease-in-out infinite;
+}
+
+@keyframes cue-fall {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ------------------------------------------------------------------
+   Sections
+------------------------------------------------------------------ */
+
+.section {
+  padding: 7rem 0;
+  position: relative;
+}
+
+.section--shoji {
+  background-color: var(--paper-soft);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 4rem;
+}
+
+.section-head h2 {
+  font-size: 2.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+/* three pillars — lagom · ma · sattva */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 48em) {
+  .pillars {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 26rem;
+  }
+}
+
+.pillar {
+  text-align: center;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line-strong);
+  position: relative;
+}
+
+.pillar::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.pillar-glyph {
+  width: 3.4rem;
+  height: 3.4rem;
+  margin: 0 auto 1.4rem;
+  color: var(--gold);
+}
+
+.pillar-glyph svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pillar h3 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.pillar-script {
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  min-height: 1.6rem;
+}
+
+.pillar-script.devanagari {
+  font-size: 1.2rem;
+}
+
+.pillar p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+/* featured menu preview */
+.tasting {
+  max-width: 44rem;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.tasting li {
+  margin-bottom: 1.9rem;
+}
+
+.tasting-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.tasting-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.tasting-leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--line-strong);
+  transform: translateY(-0.3rem);
+}
+
+.tasting-price {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--gold);
+}
+
+.tasting-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0.25rem 0 0;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* gallery strip */
+.strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 48em) {
+  .strip {
+    grid-template-columns: 1fr;
+    max-width: 26rem;
+  }
+}
+
+.strip figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.strip img {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  margin: 0;
+  filter: saturate(0.82) sepia(0.08);
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.strip figure:hover img {
+  transform: scale(1.04);
+  filter: saturate(0.95) sepia(0.04);
+}
+
+.strip figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem 1rem 0.9rem;
+  background: linear-gradient(transparent, rgba(43, 53, 64, 0.72));
+  color: var(--paper-soft);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* mantra band — the Vedic heart, deep indigo and saffron */
+.mantra-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--indigo-deep);
+  color: var(--paper-soft);
+  text-align: center;
+  padding: 6.5rem 1.5rem;
+}
+
+.mantra-band::before,
+.mantra-band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(209, 138, 46, 0.6), transparent);
+}
+
+.mantra-band::before { top: 0; }
+.mantra-band::after { bottom: 0; }
+
+.mantra-band .mantra-sanskrit {
+  font-family: var(--devanagari);
+  font-size: 2.6rem;
+  color: var(--saffron);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.mantra-band .mantra-latin {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: rgba(244, 239, 228, 0.85);
+  margin-bottom: 0.5rem;
+}
+
+.mantra-band .mantra-gloss {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.5);
+}
+
+/* reservation invitation */
+.invite {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.invite h2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}

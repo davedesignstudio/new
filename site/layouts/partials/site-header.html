@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="{{ .Site.BaseURL }}">
+      <span class="brand-mark">{{ partial "svg/enso" . }}</span>
+      <span class="brand-words">
+        <span class="brand-name">{{ .Site.Title }}</span>
+        <span class="brand-sub">सत्त्व &middot; nordic vedic table</span>
+      </span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        {{ $current := . }}
+        <li><a href="/"{{ if .IsHome }} class="active"{{ end }}>Home</a></li>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}"{{ if eq $current.URL .URL }} class="active"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

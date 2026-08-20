@@ -1,3 +1,37 @@
+<footer class="site-footer">
+  <div class="footer-mandala">{{ partial "svg/mandala" . }}</div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">{{ .Site.Title }}</span>
+      <p class="footer-mantra">अतिथि देवो भव</p>
+      <p class="footer-mantra-latin">Atithi Devo Bhava &mdash; the guest is divine</p>
+      <p class="footer-note">{{ .Site.Params.description }}</p>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-nav">
+        <li><a href="/">Home</a></li>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Visit</div>
+      <p class="footer-note">
+        Birger Jarlsgatan 12<br>
+        Stockholm &middot; Kyoto &middot; Varanasi<br><br>
+        Thursday &ndash; Sunday<br>
+        17:00 &ndash; 23:00
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</span>
+    <span class="trinity">lagom &middot; 間 &middot; सत्त्व</span>
+  </div>
+</footer>
+
 <script src="/js/siema.min.js"></script>
 <script src="/app.js"></script>
 </body>

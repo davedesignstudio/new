@@ -1,7 +1,16 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main class="page-main">
+  <div class="container container--narrow">
+    <div class="page-head">
+      <p class="eyebrow">Sattva</p>
+      <h1>{{ .Title }}</h1>
+      <div class="ornament">{{ partial "svg/lotus" . }}</div>
+    </div>
+    <div class="page-body">
+      {{ .Content }}
+    </div>
+  </div>
+</main>
 
 {{ partial "footer" . }}

@@ -4,13 +4,15 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Request a <em>reservation</em>
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us when you would like to join us and we will write back within the hour to confirm, or to offer another evening.
 
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+<form name="reservation" class="vedic-form">
+  <input type="text" placeholder="Your name" name="name">
+  <input type="email" placeholder="Your email" name="email">
+  <textarea name="message" placeholder="When would you like to join us?"></textarea>
+  <div class="buttons">
+    <button type="submit">Send</button>
+  </div>
 </form>

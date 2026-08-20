@@ -1,10 +1,128 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main>
+  <section class="hero">
+    <video loop muted autoplay playsinline id="home_video">
+      <source src="/videos/SDVid.mp4" type="video/mp4">
+      <source src="/videos/SDVid.ogg" type="video/ogg">
+    </video>
+
+    <div class="hero-side hero-side--left">間<small>ma &mdash; the space between</small></div>
+    <div class="hero-side hero-side--right">禅<small>zen &mdash; stillness</small></div>
+
+    <div class="hero-inner">
+      <div class="hero-om">ॐ</div>
+      <h1 class="hero-title">{{ .Site.Title }}</h1>
+      <p class="hero-tagline">Nordic &middot; Japanese &middot; Vedic table</p>
+      <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      <p class="hero-mantra"><span class="devanagari">अतिथि देवो भव</span></p>
+      <p class="hero-mantra-latin">atithi devo bhava &mdash; the guest is divine</p>
+    </div>
+
+    <div class="scroll-cue">Scroll</div>
+  </section>
+
+  <section class="section section--shoji">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Our philosophy</p>
+        <h2>Three quiet virtues</h2>
+        <div class="ornament">{{ partial "svg/lotus" . }}</div>
+        <p class="lead">A Swedish sense of measure, a Japanese love of emptiness, and a Vedic devotion to the pure essence of things &mdash; three traditions, one table.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-glyph">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="32" cy="32" r="22"/>
+              <line x1="8" y1="32" x2="56" y2="32"/>
+            </svg>
+          </div>
+          <h3>Lagom</h3>
+          <p class="pillar-script">lagom &mdash; just enough</p>
+          <p>The Swedish measure of sufficiency. Nothing excess, nothing wanting &mdash; portions, seasoning and light all held in quiet proportion.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-glyph">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="120 18" transform="rotate(40 32 32)"/>
+            </svg>
+          </div>
+          <h3>Ma</h3>
+          <p class="pillar-script nippon">間 &mdash; the space between</p>
+          <p>The Japanese reverence for negative space. What is left unsaid on the plate lets each ingredient speak in its own voice.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-glyph">{{ partial "svg/lotus" . }}</div>
+          <h3>Sattva</h3>
+          <p class="pillar-script devanagari">सत्त्व &mdash; pure essence</p>
+          <p>The Vedic quality of clarity and balance. Food as offering &mdash; sattvic in spirit, luminous, and cooked with intention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">From the kitchen</p>
+        <h2>A taste of the season</h2>
+        <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      </div>
+      <ul class="tasting">
+        {{ range first 4 (where .Site.Pages "Section" "food") }}
+        <li>
+          <div class="tasting-row">
+            <span class="tasting-name">{{ .Title }}</span>
+            <span class="tasting-leader"></span>
+            <span class="tasting-price">{{ .Params.price }}</span>
+          </div>
+          <p class="tasting-desc">{{ .Params.description }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      <div class="section-cta">
+        <a class="btn btn--gold" href="/food/">Full menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--shoji">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">The room</p>
+        <h2>Light, wood &amp; smoke</h2>
+        <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      </div>
+      <div class="strip">
+        {{ range first 3 (where .Site.Pages "Section" "gallery") }}
+        <figure>
+          <img src="{{ .Params.image }}" alt="{{ .Title }}">
+          <figcaption>{{ .Title }}</figcaption>
+        </figure>
+        {{ end }}
+      </div>
+      <div class="section-cta">
+        <a class="btn" href="/gallery/">View gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mantra-band">
+    <div class="mantra-sanskrit">अन्नं ब्रह्मेति व्यजानात्</div>
+    <p class="mantra-latin">Annam Brahmeti Vyajanat</p>
+    <p class="mantra-gloss">Know food as the divine &mdash; Taittirīya Upaniṣad</p>
+  </section>
+
+  <section class="section">
+    <div class="invite">
+      <p class="eyebrow">Reservations</p>
+      <h2>Join us at the table</h2>
+      <div class="ornament">{{ partial "svg/lotus" . }}</div>
+      <p class="lead">Twelve seats, one long oak counter, and an evening paced like a breath. Write to us and we will hold a place for you.</p>
+      <a class="btn btn--gold" href="/contact">Book a table</a>
+    </div>
+  </section>
+</main>
 
 {{ partial "footer" . }}
