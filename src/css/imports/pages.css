@@ -1,5 +1,5 @@
 .page-shell {
-  padding: calc(var(--header-h) + 2.5rem) clamp(1rem, 4vw, 2.5rem) var(--space-2xl);
+  padding: calc(var(--header-h) + 3.25rem) clamp(1rem, 4vw, 2.5rem) var(--space-2xl);
   min-height: 70vh;
 }
 
@@ -164,9 +164,23 @@
   box-shadow: 0 0 0 3px rgba(200, 151, 46, 0.2);
 }
 
-.reserve-form .btn {
+.reserve-form .btn,
+.reserve-form .btn-primary,
+.prose .btn-primary {
   justify-self: start;
   margin-top: 0.35rem;
+  background: var(--vermilion);
+  color: var(--white);
+  border-color: var(--vermilion);
+}
+
+.reserve-form .btn-primary:hover,
+.reserve-form .btn-primary:focus,
+.prose .btn-primary:hover,
+.prose .btn-primary:focus {
+  background: var(--saffron-deep);
+  border-color: var(--saffron-deep);
+  color: var(--white);
 }
 
 body.food .page-shell,
