@@ -1,15 +1,19 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
+      <a href="{{ .Site.BaseURL }}">{{ partial "mark.html" "sidebar-mark" }}</a>
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <span class="sidebar-tag">{{ with .Site.Params.tagline }}{{ . }}{{ else }}balance · ma · sattva{{ end }}</span>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a class="sidebar-nav-item" href="/">Home</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li><a class="sidebar-nav-item" href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
     </ul>
+
+    <div class="sidebar-footer">Öppet · 営業中 · Svāgatam</div>
   </div>
 </div>

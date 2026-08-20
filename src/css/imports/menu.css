@@ -1,17 +1,64 @@
+/*
+ * Menu, gallery and form styling — Japandi restraint, Vedic accents.
+ */
+
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
+    font-family: var(--serif);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 2.6rem;
+    margin: 0 0 0.35em 0;
+  }
+
+  /* Small saffron eyebrow under the page title */
+  h1:after {
+    content: "";
+    display: block;
+    width: 2.75rem;
+    height: 1px;
+    margin-top: 0.75rem;
+    background: var(--saffron);
+  }
+
+  h2 {
+    font-family: var(--serif);
     text-transform: capitalize;
-    margin: 0 0 64px 0;
+    letter-spacing: 0.02em;
   }
 
   h2 em, h3 {
+    font-style: normal;
     text-transform: capitalize;
   }
 
+  h2 em {
+    color: var(--terracotta);
+    font-family: var(--serif);
+  }
+
+  /* Replace the old coral period accent with a Vedic diamond */
   h2 em:after {
-    content: '. ';
-    color: #ff7660;
+    content: " \25C8";
+    color: var(--saffron);
+    font-size: 0.7em;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+  }
+
+  h3 {
+    color: var(--stone);
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
   }
 
   ul {
@@ -22,63 +69,138 @@
 
     li {
       display: flex;
-      align-items: top;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--hairline);
     }
 
     p {
+      margin: 0;
       flex-grow: 1;
       display: inline-block;
 
+      strong {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 1.15rem;
+        color: var(--sumi);
+        letter-spacing: 0.01em;
+      }
+
       &:last-child {
-        padding-left: 16px;
+        flex-grow: 0;
+        white-space: nowrap;
+        padding-left: 1rem;
         text-align: right;
+        font-family: var(--serif);
+        font-size: 1.2rem;
+        color: var(--gold);
+      }
+
+      /* price prefix — subtle */
+      &:last-child:before {
+        content: "\00B7 ";
+        color: var(--hairline);
       }
     }
   }
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+  /* ---------- Gallery ---------- */
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
+  .gallery-carousel {
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--paper-soft);
+
+    img {
+      margin: 0;
+      border-radius: 0;
+      width: 100%;
+      height: 60vh;
+      max-height: 32rem;
+      min-height: 18rem;
+      object-fit: cover;
     }
   }
 
   .buttons {
     text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  /* ---------- Forms ---------- */
+
+  form {
+    margin-top: 1.5rem;
+  }
+
+  input,
+  textarea {
+    display: block;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: none;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--hairline);
+    border-radius: 0;
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--sumi);
+    font-size: 1rem;
+    padding: 0.85rem 0.25rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.25s var(--ease);
+
+    &::placeholder {
+      color: var(--stone);
+      opacity: 0.7;
+    }
+
+    &:focus {
+      border-bottom: 1px solid var(--saffron);
+    }
+  }
+
+  textarea {
+    min-height: 8rem;
+    resize: vertical;
   }
 
   button {
-    color: white;
-    background: #ff7660;
-    border: none;
+    display: inline-block;
+    outline: none;
     cursor: pointer;
-    transition: background .2s ease;
+    color: var(--paper);
+    background: var(--terracotta);
+    border: none;
+    border-radius: 2px;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 0.95rem 2.25rem;
+    transition: background 0.25s var(--ease), transform 0.25s var(--ease);
 
-    &:hover {
-      background: #d35b48;
+    &:hover, &:focus {
+      background: var(--saffron);
     }
 
     &.half-button {
-      display: inline-block;
-      width: 30%;
+      background: transparent;
+      color: var(--sumi);
+      border: 1px solid var(--hairline);
+      padding: 0.7rem 1.5rem;
+      margin: 0 0.35rem;
 
-      &:last-child {
-        margin-left: 2%;
+      &:hover, &:focus {
+        border-color: var(--saffron);
+        color: var(--terracotta);
+        background: transparent;
       }
     }
   }
