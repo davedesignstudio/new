@@ -3,9 +3,24 @@ languageCode = "en-us"
 title = "Tasty Licks"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A seasonal kitchen where Nordic restraint meets Japanese craft."
 
 [[menu.main]]
     name = "About"
     url  = "/about"
     weight = 1
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food/"
+    weight = 2
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery/"
+    weight = 3
+
+[[menu.main]]
+    name = "Reservations"
+    url  = "/contact/"
+    weight = 4

@@ -1,15 +1,24 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <a class="brand" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }} home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">{{ .Site.Title }}</span>
+      </a>
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 
+    <p class="nav-label">Explore</p>
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a href="/"{{ if .IsHome }} class="is-active"{{ end }}>Home</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+        <li><a href="{{.URL}}"{{ if eq $.RelPermalink .URL }} class="is-active"{{ end }}>{{ .Name }}</a></li>
       {{end}}
     </ul>
+
+    <div class="sidebar-footer">
+      <span class="sun-line" aria-hidden="true"></span>
+      <span>Seasonal cooking · Est. 2017</span>
+    </div>
   </div>
 </div>

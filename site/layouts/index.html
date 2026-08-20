@@ -1,10 +1,39 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main class="content home-content">
+  <section class="hero">
+    <div class="hero-kicker"><span class="kicker-dot"></span> Stockholm · Tokyo · Chennai</div>
+    <div class="hero-sun" aria-hidden="true">
+      <span class="sun-core"></span>
+      <span class="sun-ray ray-one"></span><span class="sun-ray ray-two"></span>
+      <span class="sun-ray ray-three"></span><span class="sun-ray ray-four"></span>
+    </div>
+    <p class="hero-script">A table for the curious</p>
+    <h1>Bright food.<br><em>Quietly bold.</em></h1>
+    <p class="hero-intro">A small, seasonal kitchen where Nordic restraint meets Japanese craft and the generous spirit of the Indian table.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="/food/">See the menu <span>↗</span></a>
+      <a class="text-link" href="/about/">Our point of view <span>→</span></a>
+    </div>
+  </section>
+
+  <section class="home-details" aria-label="Restaurant details">
+    <article>
+      <span class="detail-index">01</span>
+      <h2>In season</h2>
+      <p>Produce-led plates, bright pickles, warm spices, and a little something unexpected.</p>
+    </article>
+    <article>
+      <span class="detail-index">02</span>
+      <h2>At the table</h2>
+      <p>Come for a long lunch or settle in for dinner. We keep the room intimate and easy.</p>
+    </article>
+    <article>
+      <span class="detail-index">03</span>
+      <h2>Find us</h2>
+      <p>18 Willow Street<br>Tue–Sat · 12–22</p>
+    </article>
+  </section>
+</main>
 
 {{ partial "footer" . }}
