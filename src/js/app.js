@@ -1,4 +1,5 @@
 // JS Goes here - ES6 supported
+import Siema from './siema.min.js';
 
 // The carousel only exists on the gallery page
 if (document.querySelector('.gallery-carousel')) {
