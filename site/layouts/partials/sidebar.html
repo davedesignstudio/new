@@ -1,15 +1,33 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
+  <div class="container">
+    <a class="brand" href="{{ .Site.BaseURL }}">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 96 52" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M48 6 C40 18 40 32 48 44 C56 32 56 18 48 6 Z"/>
+          <path d="M28 16 C30 28 38 38 48 44 C46 32 40 22 28 16 Z"/>
+          <path d="M68 16 C66 28 58 38 48 44 C50 32 56 22 68 16 Z"/>
+          <path d="M10 32 C20 43 33 48 48 44"/>
+          <path d="M86 32 C76 43 63 48 48 44"/>
+        </svg>
+      </span>
+      <h1 class="brand-name">{{ .Site.Title }}</h1>
+      <p class="brand-kicker" aria-hidden="true">和 &middot; 蓮 &middot; ॐ</p>
+    </a>
+    <p class="lead">{{ .Site.Params.description | markdownify }}</p>
+  </div>
 
+  <div class="container">
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a class="sidebar-nav-item" href="/">Home</a></li>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li><a class="sidebar-nav-item" href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
     </ul>
+  </div>
+
+  <div class="container sidebar-foot">
+    <p class="motto-sanskrit">अतिथिदेवो भव</p>
+    <p class="motto-note">The guest is divine</p>
+    <p class="motto-note">V&auml;lkommen &middot; ようこそ</p>
   </div>
 </div>

@@ -4,11 +4,15 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Lagom meets wabi-sabi, warmed by Vedic fire
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+We cook at the meeting point of three old ideas. From Sweden, *lagom* — not too much, not too little, exactly enough. From Japan, *wabi-sabi* — beauty in the imperfect, the seasonal, the quiet. And from the Vedas, *atithi devo bhava* — the guest is divine.
+
+That means a short menu that changes with the market, plates left spare so the ingredients can speak, and spice used the way a temple uses incense: deliberately, and never to excess. Birch and washi in the room; turmeric, ghee, and fire in the kitchen.
+
+Come hungry, leave calm.
 
 Sincerely,
 # Mr. Bojangles

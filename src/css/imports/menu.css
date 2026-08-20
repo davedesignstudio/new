@@ -1,17 +1,57 @@
+/* Inner-page content: menu lists, gallery, forms */
+
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
+    margin: 0 0 3rem 0;
     text-transform: capitalize;
-    margin: 0 0 64px 0;
+
+    /* saffron rule with a bindu dot — Vedic ornament */
+    &:after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 2px;
+      margin-top: 1rem;
+      background: #C97B29;
+    }
   }
 
   h2 em, h3 {
     text-transform: capitalize;
   }
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
+  h2 {
+    font-size: 1.4rem;
+
+    em {
+      font-style: normal;
+      font-weight: 500;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: .5em;
+        height: .5em;
+        margin-right: .6em;
+        background: #9E3B22;
+        border-radius: 50%;
+        vertical-align: baseline;
+      }
+    }
+  }
+
+  h3 {
+    font-family: "Karla", sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: #9E3B22;
+    margin-top: 2.25rem;
+  }
+
+  section hr {
+    margin: .75rem 0 1.5rem;
   }
 
   ul {
@@ -23,15 +63,55 @@
     li {
       display: flex;
       align-items: top;
+      padding: .6rem 0;
+      border-bottom: 1px solid #D9CDB8;
+
+      &:last-child {
+        border-bottom: 0;
+      }
     }
 
     p {
       flex-grow: 1;
       display: inline-block;
+      margin-bottom: 0;
+      color: #6B6254;
+
+      strong {
+        display: block;
+        text-transform: capitalize;
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 500;
+        font-size: 1.05rem;
+        color: #29241C;
+      }
 
       &:last-child {
+        flex-grow: 0;
         padding-left: 16px;
         text-align: right;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.05rem;
+        color: #C97B29;
+      }
+    }
+  }
+
+  /* Gallery — mounted-print frames, calm and spare */
+  .gallery-carousel {
+    border: 1px solid #D9CDB8;
+    background: #FBF8F1;
+    padding: 12px;
+    margin-bottom: 1.25rem;
+
+    img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      margin: 0;
+
+      @media (max-width: 30em) {
+        height: 240px;
       }
     }
   }
@@ -44,18 +124,34 @@
     box-sizing: border-box;
     box-shadow: none;
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    border-radius: 0;
+    font-family: "Karla", sans-serif;
     font-size: 16px;
-    padding: 16px;
+    padding: 14px 16px;
     margin-bottom: 16px;
   }
 
   input,
   textarea {
+    color: #29241C;
+    background: #FBF8F1;
+    border: 1px solid #D9CDB8;
+    border-bottom: 2px solid #6B6254;
+    transition: border-color .2s ease;
+
     &:focus {
-      border: 1px solid #444;
+      border-color: #C97B29;
     }
+  }
+
+  textarea {
+    min-height: 8rem;
+    resize: vertical;
+  }
+
+  ::placeholder {
+    color: #6B6254;
+    opacity: .7;
   }
 
   .buttons {
@@ -63,19 +159,33 @@
   }
 
   button {
-    color: white;
-    background: #ff7660;
-    border: none;
+    color: #FBF8F1;
+    background: #C97B29;
+    border: 1px solid #C97B29;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-indent: .22em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background .2s ease;
+    transition: all .2s ease;
 
     &:hover {
-      background: #d35b48;
+      background: #9E3B22;
+      border-color: #9E3B22;
     }
 
     &.half-button {
       display: inline-block;
       width: 30%;
+      color: #29241C;
+      background: transparent;
+      border: 1px solid #29241C;
+
+      &:hover {
+        color: #9E3B22;
+        background: transparent;
+        border-color: #9E3B22;
+      }
 
       &:last-child {
         margin-left: 2%;
