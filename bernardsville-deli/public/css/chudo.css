@@ -344,7 +344,8 @@ body.chudo-world .menu-line-hit:hover {
 }
 
 body.chudo-world .menu-line-row h3 {
-  font-family: var(--font-menu);
+  font-family: var(--font-garamond);
+  font-style: normal;
 }
 
 body.chudo-world .line-title:not(.line-title--hero) {
@@ -716,9 +717,9 @@ body.chudo-world .order-dock {
 }
 
 .house-type-sample--line {
-  font-family: var(--font-menu, var(--font-sans));
+  font-family: var(--font-garamond);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   color: var(--maroon);
 }
 

@@ -379,10 +379,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .menu-line-name {
-  font-family: var(--font-menu);
+  font-family: var(--font-garamond);
+  font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  font-size: 1.12rem;
+  letter-spacing: 0;
+  font-size: 1.28rem;
   color: var(--maroon);
 }
 
@@ -435,10 +436,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
-  font-family: var(--font-menu);
-  font-size: 1.05rem;
+  font-family: var(--font-garamond);
+  font-style: normal;
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   padding: 0;
   margin: 0;
   color: var(--maroon);
