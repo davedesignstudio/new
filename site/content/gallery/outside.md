@@ -1,5 +1,4 @@
 ---
-title: outside
-image: /img/gallery/asdf.jpg
+title: Street calm
+image: /img/gallery/photo3.jpg
 ---
-

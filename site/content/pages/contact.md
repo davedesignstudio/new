@@ -1,16 +1,25 @@
 +++
 date = "2017-05-17T13:03:58-04:00"
-title = "Contact"
+title = "Reserve"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Request a table
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us when you would like to join us. We reply within thirty minutes to confirm or suggest another time.
 
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+<form name="reservation" class="reserve-form">
+  <label>
+    <span>Name</span>
+    <input type="text" name="name" placeholder="Your name" required>
+  </label>
+  <label>
+    <span>Email</span>
+    <input type="email" name="email" placeholder="you@example.com" required>
+  </label>
+  <label>
+    <span>Message</span>
+    <textarea name="message" placeholder="Date, time, and party size" required></textarea>
+  </label>
+  <button type="submit" class="btn btn-primary">Send request</button>
 </form>

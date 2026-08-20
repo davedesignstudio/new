@@ -1,5 +1,4 @@
 ---
-title: bar
-image: /img/gallery/photo5.jpg
+title: The counter
+image: /img/gallery/photo6.jpg
 ---
-

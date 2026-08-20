@@ -4,26 +4,41 @@
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   {{ .Hugo.Generator }}
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ .Site.Params.description }}">
 
   {{ if .IsHome }}
-  <title>{{ .Site.Title }}</title>
+  <title>{{ .Site.Title }} — {{ .Site.Params.tagline }}</title>
   {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }} · {{ .Site.Title }}</title>
   {{ end }}
 
-  <!-- CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
-
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/img/favicon.png">
-
-  <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}is-home{{ end }} {{ .Section | urlize }}">
 
-{{ partial "sidebar" . }}
+<div class="yantra-field" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a class="brand" href="{{ .Site.BaseURL }}">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">{{ .Site.Title }}</span>
+  </a>
+
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+    <span></span><span></span>
+  </button>
+
+  <nav class="site-nav" data-nav>
+    <a href="/">Home</a>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="is-active"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

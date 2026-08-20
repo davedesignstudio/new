@@ -1,5 +1,4 @@
 ---
-title: rice
-image: /img/gallery/photo2.jpg
+title: Prepared rice
+image: /img/gallery/photo1.jpg
 ---
-

@@ -1,5 +1,4 @@
 ---
-title: meat
-image: /img/gallery/photo3.jpg
+title: The pass
+image: /img/gallery/photo2.jpg
 ---
-

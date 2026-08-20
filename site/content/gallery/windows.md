@@ -1,5 +1,4 @@
 ---
-title: windows
-image: /img/gallery/photo1.jpg
+title: Evening light
+image: /img/gallery/photo0.jpg
 ---
-

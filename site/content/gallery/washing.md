@@ -1,5 +1,4 @@
 ---
-title: washing
-image: /img/gallery/photo0.jpg
+title: Hands at work
+image: /img/gallery/photo5.jpg
 ---
-

@@ -4,11 +4,16 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## A house of three climates
+
+Soma began as a question: what happens when Swedish restraint, Japanese emptiness, and Vedic reverence cook together?
+
+We answer it each evening with birch-smoked fish, saffron broths, yuzu, and greens chosen for sattva — clarity in the body, stillness in the room.
+
+The dining room is ash and linen. One flame on the table. Service moves like a ritual without ceremony: present, unhurried, enough.
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Come hungry. Leave quieter than you arrived.
 
-Sincerely,
-# Mr. Bojangles
+**The Soma kitchen**

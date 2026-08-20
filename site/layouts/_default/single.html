@@ -1,7 +1,13 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main class="page-shell">
+  <header class="page-hero">
+    <p class="eyebrow">{{ if eq .Section "pages" }}Soma{{ else }}{{ .Section }}{{ end }}</p>
+    <h1 class="page-title">{{ .Title }}</h1>
+  </header>
+  <div class="page-body prose reveal">
+    {{ .Content }}
+  </div>
+</main>
 
 {{ partial "footer" . }}
