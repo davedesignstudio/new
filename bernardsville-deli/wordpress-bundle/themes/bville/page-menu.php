@@ -8,9 +8,9 @@ $order = bville_menu_category_order();
 ?>
 <header class="hero" style="padding-bottom:1rem">
   <div class="hero-inner">
-    <p class="hero-kicker">Bville Pizza &amp; Grill</p>
+    <p class="hero-kicker">Tap a line to order · Pickup or delivery</p>
     <h1>The Menu</h1>
-    <p class="hero-lede">Clean lines. Real food. Order online for pickup or delivery.</p>
+    <p class="hero-lede">Printed-board titles. Prices on the line. Checkout stays on this store.</p>
   </div>
 </header>
 

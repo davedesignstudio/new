@@ -310,3 +310,5 @@ function print_title_wordmark_slug(string $title): string
 
     return item_slug($title);
 }
+
+require_once __DIR__ . '/order-board.php';

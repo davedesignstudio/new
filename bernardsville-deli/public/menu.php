@@ -18,9 +18,9 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="hero menu-hero-lines">
   <div class="container">
-    <p class="menu-kicker">Bville Pizza &amp; Grill</p>
+    <p class="menu-kicker">Tap a line to order · Pickup or delivery</p>
     <h1 class="line-title line-title--hero">The Menu</h1>
-    <p class="lede menu-lede">Clean modern lines. Titles from the printed boards.</p>
+    <p class="lede menu-lede">Printed-board titles. Prices on the line. Order stays on this site.</p>
   </div>
 </section>
 

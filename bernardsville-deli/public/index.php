@@ -20,10 +20,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="kicker"><?= e($site['address']) ?> · Bernardsville</p>
+      <p class="kicker">Home of the B'Ville Special · <?= e($site['address']) ?></p>
       <h1><?= print_title('Bville', 'print-title print-title--hero') ?></h1>
       <p class="hero-sub">Pizza &amp; Grill</p>
-      <p class="lede"><?= e($site['tagline']) ?> Stone oven pizza, Angus burgers, and Italian gelato — the same boards, the same kitchen.</p>
+      <p class="lede"><?= e($site['tagline']) ?> Stone oven pizza, Angus burgers, and gelato — order pickup or delivery from this site.</p>
       <div class="hero-actions">
         <a class="btn btn-red btn-lg" href="<?= e(asset_url('order/')) ?>">Order Online</a>
         <a class="btn btn-gold btn-lg" href="<?= e(asset_url('menu.php')) ?>">Full Menu</a>
@@ -33,6 +33,8 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <?= photo_img('pizza', ['class' => 'hero-photo frame-photo', 'width' => 640, 'height' => 520, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
+
+<?php order_board_house_checks(); ?>
 
 <section class="container feature-tiles" aria-label="Featured menu">
   <?php foreach ($features as $feature): ?>
@@ -75,6 +77,17 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <?php endforeach; ?>
     </div>
     <p class="home-menu-cta"><a class="btn btn-red btn-lg" href="<?= e(asset_url('menu.php')) ?>">See full menu</a></p>
+  </div>
+</section>
+
+<section class="comic-band">
+  <div class="container comic-band-inner">
+    <div>
+      <p class="kicker">Чудо Комикс №1</p>
+      <h2>Oven Origins / Истоки Печи</h2>
+      <p>The Bville story as a Moscow comics house would print it — original heroes, real kitchen.</p>
+    </div>
+    <a class="btn btn-red btn-lg" href="<?= e(asset_url('comic.php')) ?>">Read the issue</a>
   </div>
 </section>
 

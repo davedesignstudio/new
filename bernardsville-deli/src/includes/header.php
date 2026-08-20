@@ -7,6 +7,7 @@ require_once dirname(__DIR__) . '/includes/helpers.php';
 $site = site_config();
 $page = current_page();
 $title = $pageTitle ?? $site['name'];
+$bodyClass = $bodyClass ?? 'bville-brand';
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -21,9 +22,14 @@ $title = $pageTitle ?? $site['name'];
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oleo+Script+Swash+Caps:wght@700&family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="<?= e(asset_url('css/style.css')) ?>" />
+  <link rel="stylesheet" href="<?= e(asset_url('css/order-board.css')) ?>" />
+  <?php if ($page === 'comic'): ?>
+    <link rel="stylesheet" href="<?= e(asset_url('css/comic.css')) ?>" />
+  <?php endif; ?>
   <link rel="icon" href="<?= e(asset_url('favicon.png')) ?>" type="image/png" />
+  <?php order_board_schema(); ?>
 </head>
-<body class="bville-brand">
+<body class="<?= e($bodyClass) ?>">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="food-parallax" aria-hidden="true">
     <div class="food-parallax-sauce">
@@ -49,10 +55,11 @@ $title = $pageTitle ?? $site['name'];
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="<?= e(asset_url('index.php')) ?>" class="<?= $page === 'home' ? 'active' : '' ?>">Home</a>
-        <a href="<?= e(asset_url('order/')) ?>" class="<?= $page === 'order' ? 'active' : '' ?>">Order Online</a>
+        <a class="nav-order<?= $page === 'order' ? ' active' : '' ?>" href="<?= e(asset_url('order/')) ?>">Order Online</a>
         <a href="<?= e(asset_url('menu.php')) ?>" class="<?= $page === 'menu' ? 'active' : '' ?>">Menu</a>
         <a href="<?= e(asset_url('cafe.php')) ?>" class="<?= $page === 'cafe' ? 'active' : '' ?>">Cafe Robust</a>
         <a href="<?= e(asset_url('about.php')) ?>" class="<?= $page === 'about' ? 'active' : '' ?>">About Us</a>
+        <a href="<?= e(asset_url('comic.php')) ?>" class="<?= $page === 'comic' ? 'active' : '' ?>">Чудо №1</a>
         <a href="<?= e(asset_url('catering.php')) ?>" class="<?= $page === 'catering' ? 'active' : '' ?>">Catering</a>
         <a href="<?= e(asset_url('contact.php')) ?>" class="<?= $page === 'contact' ? 'active' : '' ?>">Contact</a>
       </nav>
@@ -74,5 +81,6 @@ $title = $pageTitle ?? $site['name'];
         <?php endif; ?>
       </div>
     </div>
+    <?php order_board_ticket(); ?>
   </header>
   <main id="main">

@@ -9,9 +9,9 @@ $menu_url = $menu ? get_permalink($menu) : $shop;
 ?>
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-kicker"><?php echo esc_html(bville_address()); ?></p>
+    <p class="hero-kicker">Home of the B'Ville Special</p>
     <h1>Bville Pizza &amp; Grill</h1>
-    <p class="hero-lede">Stone oven pizza, Angus burgers, and Italian gelato — order online for pickup or delivery.</p>
+    <p class="hero-lede">Stone oven pizza, Angus burgers, and Italian gelato — order pickup or delivery on this site.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="<?php echo esc_url($shop); ?>">Order menu</a>
       <a class="btn" href="<?php echo esc_url($menu_url); ?>">See the menu</a>
@@ -19,6 +19,8 @@ $menu_url = $menu ? get_permalink($menu) : $shop;
     </div>
   </div>
 </section>
+
+<?php bville_order_board_house_checks(); ?>
 
 <section class="feature-wrap">
   <div class="feature-grid">

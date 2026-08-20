@@ -3,7 +3,7 @@ Theme Name: Bville
 Theme URI: https://bvillepizzagrill.com
 Author: Bville Pizza & Grill
 Description: Clean modern-line theme for Bville Pizza & Grill with WooCommerce shop and checkout.
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -25,6 +25,17 @@ Tags: food-and-drink, e-commerce, custom-logo, wide-blocks
   --font-display: "Oswald", "Trebuchet MS", sans-serif;
   --font-script: "Parkside", "Oleo Script Swash Caps", "Palatino Linotype", cursive;
   --font-garamond: "EB Garamond", Garamond, "Adobe Garamond Pro", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Oswald", "Trebuchet MS", sans-serif;
+  --radius: 4px;
+  --orange: var(--bville-orange);
+  --orange-deep: var(--bville-orange-deep);
+  --ink: var(--bville-ink);
+  --ink-dark: var(--bville-ink-dark);
+  --cream: var(--bville-cream);
+  --cream-light: var(--bville-cream);
+  --maroon: #8b2e12;
+  --muted: var(--bville-muted);
+  --white: #fff;
 }
 
 @font-face {

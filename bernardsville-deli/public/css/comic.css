@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Russo+One&display=swap");
+
+body.comic-issue .food-parallax {
+  display: none;
+}
+
+.comic-masthead {
+  padding: 1.75rem 0 1.1rem;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 11px,
+      rgba(228, 92, 36, 0.08) 11px,
+      rgba(228, 92, 36, 0.08) 12px
+    ),
+    var(--cream-light);
+  border-bottom: 4px solid var(--ink-dark);
+}
+
+.comic-pub {
+  margin: 0 0 0.2rem;
+  font-family: "Russo One", var(--font-sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--maroon);
+}
+
+.comic-title {
+  margin: 0;
+  line-height: 0.9;
+}
+
+.comic-title-ru {
+  display: block;
+  font-family: "Russo One", var(--font-sans);
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  color: var(--orange);
+  -webkit-text-stroke: 2px var(--ink-dark);
+  paint-order: stroke fill;
+}
+
+.comic-title-en {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: "Bangers", var(--font-sans);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  letter-spacing: 0.04em;
+  color: var(--ink-dark);
+}
+
+.comic-lede {
+  max-width: 36rem;
+}
+
+.comic-reader {
+  padding: 1.5rem 0 2rem;
+}
+
+.comic-frame {
+  margin: 0;
+  background: #111;
+  border: 6px solid var(--ink-dark);
+  box-shadow: 8px 10px 0 rgba(20, 40, 32, 0.18);
+}
+
+.comic-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #1a1a1a;
+}
+
+.comic-meta {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem 1.05rem;
+  background: var(--paper, #fffaf0);
+  border: 1px solid rgba(20, 40, 32, 0.18);
+  box-shadow: 3px 3px 0 rgba(20, 40, 32, 0.08);
+}
+
+.comic-page-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 0.4rem;
+  font-family: "Russo One", var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--maroon);
+}
+
+.comic-caption {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-garamond);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink-dark);
+}
+
+.comic-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+
+.comic-nav-btn,
+.comic-dot {
+  font-family: "Russo One", var(--font-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink-dark);
+  background: var(--cream-light);
+  color: var(--ink-dark);
+  cursor: pointer;
+}
+
+.comic-nav-btn {
+  padding: 0.55rem 0.85rem;
+}
+
+.comic-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comic-dot {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+.comic-dot.is-active,
+.comic-nav-btn:hover,
+.comic-dot:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.comic-roster {
+  padding: 0 0 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .comic-reader-inner {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  .comic-page.is-active .comic-frame {
+    max-height: none;
+  }
+}
+
+.comic-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

@@ -1,0 +1,254 @@
+/* Guest-check board — order conversion chrome. Parkside/wordmarks stay in style.css. */
+
+:root {
+  --site-header-offset: 7.9rem;
+  --paper: #fffaf0;
+  --ticket-rule: rgba(20, 40, 32, 0.18);
+  --check-rule: rgba(228, 92, 36, 0.22);
+}
+
+body {
+  background-color: var(--cream);
+  background-image: radial-gradient(rgba(20, 40, 32, 0.04) 0.7px, transparent 0.8px);
+  background-size: 3px 3px;
+}
+
+.site-nav a.nav-order,
+.header-order {
+  background: var(--orange);
+  color: var(--white);
+  padding: 0.38rem 0.72rem;
+  border-radius: var(--radius);
+  letter-spacing: 0.08em;
+}
+
+.site-nav a.nav-order:hover,
+.site-nav a.nav-order.active,
+.header-order:hover {
+  color: var(--white);
+  filter: brightness(1.06);
+}
+
+.order-ticket {
+  background: var(--cream-light);
+  color: var(--ink-dark);
+  border-top: 1px dashed var(--ticket-rule);
+  position: relative;
+}
+
+.order-ticket::before,
+.order-ticket::after {
+  content: "";
+  display: block;
+  height: 6px;
+  background-image: radial-gradient(circle, var(--ink-dark) 1.15px, transparent 1.25px);
+  background-size: 10px 6px;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.28;
+}
+
+.order-ticket-inner {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.order-ticket-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.order-ticket-cell,
+.order-ticket-cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-dark);
+  border-right: 1px dashed var(--ticket-rule);
+  white-space: nowrap;
+}
+
+.order-ticket-cta {
+  background: var(--orange);
+  color: var(--white);
+  border-right: none;
+  margin-left: auto;
+}
+
+.order-ticket-cta:hover {
+  color: var(--white);
+  filter: brightness(1.05);
+}
+
+.house-board {
+  padding: 0 0 2.4rem;
+}
+
+.house-board-head {
+  margin-bottom: 1.1rem;
+}
+
+.house-board-head h2 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-garamond);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.house-checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.guest-check {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.05rem 1.1rem;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    transparent 0,
+    transparent 27px,
+    var(--check-rule) 27px,
+    var(--check-rule) 28px
+  );
+  border: 1px solid var(--ticket-rule);
+  box-shadow: 3px 3px 0 rgba(20, 40, 32, 0.08);
+  text-decoration: none;
+  color: inherit;
+}
+
+.guest-check:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0 rgba(20, 40, 32, 0.1);
+}
+
+.guest-check-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--maroon);
+}
+
+.guest-check h3 {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-garamond);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.guest-check p {
+  margin: 0;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.guest-check-price {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.guest-check-cta {
+  margin-top: auto;
+  padding-top: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+}
+
+.comic-band {
+  padding: 1.4rem 0;
+  background: var(--ink-dark);
+  color: var(--cream-light);
+  border-block: 4px solid var(--orange);
+}
+
+.comic-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.comic-band .kicker {
+  color: var(--orange);
+}
+
+.comic-band h2 {
+  margin: 0.15rem 0 0.35rem;
+  font-family: var(--font-garamond);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: #fff;
+}
+
+.comic-band p {
+  margin: 0;
+  font-family: var(--font-garamond);
+  font-style: italic;
+  color: #e8dcc0;
+}
+
+@media (max-width: 900px) {
+  .house-checks {
+    grid-template-columns: 1fr;
+  }
+
+  :root {
+    --site-header-offset: 8.6rem;
+  }
+
+  .order-dock {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 120;
+    gap: 0.55rem;
+    align-items: center;
+    padding: 0.65rem var(--side-pad) calc(0.65rem + env(safe-area-inset-bottom));
+    background: var(--ink-dark);
+    border-top: 3px solid var(--orange);
+  }
+
+  .order-dock .btn {
+    flex: 1 1 auto;
+  }
+
+  .order-dock-call {
+    flex: 0 0 auto;
+    color: var(--cream-light);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  body {
+    padding-bottom: 5.25rem;
+  }
+}

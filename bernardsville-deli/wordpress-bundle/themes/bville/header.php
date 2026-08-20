@@ -51,6 +51,7 @@
       ?>
     </nav>
     <div class="header-social">
+      <a class="header-order" href="<?php echo esc_url(bville_shop_url()); ?>">Order</a>
       <a href="<?php echo esc_url(bville_instagram()); ?>" target="_blank" rel="noopener me" aria-label="Instagram">IG</a>
       <?php if (function_exists('wc_get_cart_url')) : ?>
         <a class="header-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>">Cart<?php
@@ -64,5 +65,6 @@
       <?php endif; ?>
     </div>
   </div>
+  <?php bville_order_board_ticket(); ?>
 </header>
 <main id="main" class="site-main">

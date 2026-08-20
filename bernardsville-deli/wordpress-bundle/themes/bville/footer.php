@@ -13,5 +13,6 @@
   </div>
 </footer>
 <?php wp_footer(); ?>
+<?php bville_order_board_dock(); ?>
 </body>
 </html>
