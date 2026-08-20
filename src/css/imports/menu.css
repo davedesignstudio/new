@@ -1,85 +1,195 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
-  }
+/* ================================================================
+   MENU / CONTENT INTERIOR STYLES
+   Swedish minimalism · Japanese precision · Vedic warmth
+   ================================================================ */
 
-  h2 em, h3 {
-    text-transform: capitalize;
-  }
+/* ---- Section title with Vedic-inspired underline ---- */
+.content h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 2.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 2.2rem 0;
+  color: var(--bark);
+  position: relative;
+  padding-bottom: 0.8rem;
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.content h1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.4rem;
+  height: 2px;
+  background: linear-gradient(to right, var(--saffron), var(--vermillion));
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+/* ---- Subcategory labels ---- */
+.content h2 em,
+.content h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 300;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--slate);
+}
 
-    li {
-      display: flex;
-      align-items: top;
-    }
+.content h2 em::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--saffron);
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
 
-    p {
-      flex-grow: 1;
-      display: inline-block;
+/* ---- Menu list — Japanese kaiseki-inspired rows ---- */
+.content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
+.content ul li {
+  display: flex;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(200, 145, 26, 0.13);
+  transition: background 0.2s ease;
+}
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+.content ul li:last-child { border-bottom: none; }
+.content ul li:hover { background-color: rgba(200, 145, 26, 0.04); }
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
+.content ul p {
+  flex-grow: 1;
+  display: inline-block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+}
 
-  .buttons {
-    text-align: center;
-  }
+/* Price — saffron accent, right-aligned */
+.content ul p:last-child {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-left: 1.5rem;
+  text-align: right;
+  color: var(--saffron);
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  min-width: 3.5rem;
+}
 
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
+/* ---- Forms — Nordic restraint + saffron focus ---- */
+.content input,
+.content textarea,
+.content button {
+  display: block;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: none;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--slate);
+  font-size: 0.88rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 0.08em;
+  padding: 14px 0;
+  margin-bottom: 1.4rem;
+  background: transparent;
+  color: var(--bark);
+  transition: border-color 0.25s ease;
+}
 
-    &:hover {
-      background: #d35b48;
-    }
+.content input:focus,
+.content textarea:focus {
+  border-bottom: 1px solid var(--saffron);
+}
 
-    &.half-button {
-      display: inline-block;
-      width: 30%;
+.content textarea {
+  border: 1px solid var(--linen);
+  border-bottom: 1px solid var(--slate);
+  padding: 14px;
+  min-height: 120px;
+  resize: vertical;
+}
+.content textarea:focus {
+  border: 1px solid var(--saffron);
+}
 
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
-  }
+.content input::placeholder,
+.content textarea::placeholder {
+  color: var(--slate);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.content .buttons { text-align: center; margin-top: 0.5rem; }
+
+/* Submit button — Vedic cosmos gradient with saffron border */
+.content button {
+  color: var(--saffron-light);
+  background: linear-gradient(135deg, var(--cosmos) 0%, var(--indigo-mid) 100%);
+  border: 1px solid rgba(200, 145, 26, 0.45);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 14px 28px;
+  transition: all 0.28s ease;
+}
+
+.content button:hover {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--vermillion) 100%);
+  border-color: transparent;
+  color: var(--birch);
+  letter-spacing: 0.28em;
+}
+
+.content button.half-button {
+  display: inline-block;
+  width: 30%;
+  margin-bottom: 0;
+}
+.content button.half-button:last-child { margin-left: 2%; }
+
+/* ---- Gallery carousel ---- */
+.gallery-carousel {
+  overflow: hidden;
+  border-radius: 1px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.gallery-carousel img {
+  min-height: 320px;
+  max-height: 480px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+  filter: saturate(0.88) brightness(0.96);
+  transition: filter 0.4s ease;
+}
+.gallery-carousel img:hover {
+  filter: saturate(1.05) brightness(1.0);
+}
+
+/* Gallery nav buttons — Japanese refinement */
+.buttons .half-button {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
 }

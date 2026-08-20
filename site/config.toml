@@ -1,9 +1,9 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Nordisk Dharma"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Where Nordic stillness meets Japanese refinement &amp; the sacred warmth of the Vedas."
 
 [[menu.main]]
     name = "About"
