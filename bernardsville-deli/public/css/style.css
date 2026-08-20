@@ -622,7 +622,17 @@ address { font-style: normal; }
   object-fit: cover;
 }
 
-/* Print-menu italic — Alegreya, featured tiles only */
+/* Print-menu italic — Alegreya, featured tiles and menu section titles */
+.feature-title,
+.line-title:not(.line-title--hero) {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+  color: var(--maroon);
+}
+
 .feature-title {
   position: absolute;
   left: 0.7rem;
@@ -633,13 +643,7 @@ address { font-style: normal; }
   padding: 0.4rem 0.75rem 0.5rem;
   background: var(--paper);
   border: 2px solid var(--ink-dark);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 700;
   font-size: clamp(1.45rem, 2.5vw, 2.05rem);
-  line-height: 1.15;
-  letter-spacing: 0;
-  color: var(--maroon);
   text-align: center;
 }
 
@@ -873,15 +877,16 @@ address { font-style: normal; }
   color: var(--orange-deep);
 }
 
-/* Subtitles (section headings) — Garamond */
+/* Menu section titles — same Alegreya italic as featured captions */
 .line-title {
   margin: 0;
-  font-family: var(--font-garamond);
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
   font-size: clamp(1.7rem, 2.9vw, 2.25rem);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  color: var(--ink-dark);
+  letter-spacing: 0;
+  line-height: 1.15;
+  color: var(--maroon);
 }
 
 .line-title .print-title--img {

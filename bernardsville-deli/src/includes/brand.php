@@ -60,7 +60,7 @@ return [
     'type' => [
         ['role' => 'The sign', 'family' => 'Parkside', 'sample' => 'Bville', 'note' => 'The word on Morristown Rd. Printed-board titles. Never replace with comic type.'],
         ['role' => 'The line', 'family' => 'Oswald', 'sample' => "B’Ville Special", 'note' => 'Item names. Condensed wood gothic — the CBS cafeteria wall, readable on a phone.'],
-        ['role' => 'The note', 'family' => 'Alegreya italic', 'sample' => 'Shawarma chicken, garlic drizzle', 'note' => 'Printed-board descriptions. The quiet type next to the loud names.'],
+        ['role' => 'The note', 'family' => 'Alegreya italic', 'sample' => 'Stone Oven Baked', 'note' => 'Featured captions, menu section titles, and dish descriptions.'],
         ['role' => 'The story', 'family' => 'EB Garamond italic', 'sample' => 'The kitchen that already knows the table.', 'note' => 'Ledes, captions, the voice of the counter.'],
         ['role' => 'The issue', 'family' => 'Russo One / Bangers', 'sample' => 'FOR THE TABLE', 'note' => 'Issue chrome and house-name bursts. Sparingly.'],
     ],

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Menu
- * Printed-board menu with Parkside wordmark titles and WooCommerce products.
+ * Menu with Alegreya italic section titles and WooCommerce products.
  */
 get_header();
 $order = bville_menu_category_order();
@@ -38,7 +38,7 @@ $order = bville_menu_category_order();
     ?>
     <?php foreach ($by_cat as $cat => $items) : ?>
       <section class="menu-section">
-        <h2 class="line-title"><?php echo bville_print_title($cat); ?></h2>
+        <h2 class="line-title"><?php echo esc_html($cat); ?></h2>
         <div class="menu-lines">
           <?php foreach ($items as $product) : ?>
             <a class="menu-line" href="<?php echo esc_url($product->get_permalink()); ?>">

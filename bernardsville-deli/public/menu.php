@@ -21,7 +21,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <p class="comic-pub">Чудо Комикс · The boards</p>
     <p class="menu-kicker">Tap a line for the table · Pickup at the counter, or delivery from this kitchen</p>
     <h1 class="line-title line-title--hero">The Menu</h1>
-    <p class="lede menu-lede">Printed-board titles — the names you already say. Pictures only on those titles.</p>
+    <p class="lede menu-lede">The names you already say. Tap a line for the table.</p>
     <nav class="family-jump" aria-label="Family table shortcuts">
       <a href="#pizza">16" pies</a>
       <a href="#kids">Kids</a>
@@ -45,7 +45,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <?php foreach (menu_sections() as $section): ?>
       <article class="menu-block" id="<?= e($section['id']) ?>">
         <header class="menu-block-head">
-          <h2 class="line-title"><?= print_title($section['title'], 'print-title', $section['wordmark'] ?? null) ?></h2>
+          <h2 class="line-title"><?= e($section['title']) ?></h2>
           <?php if (!empty($section['note'])): ?>
             <p class="menu-block-note"><?= e($section['note']) ?></p>
           <?php endif; ?>

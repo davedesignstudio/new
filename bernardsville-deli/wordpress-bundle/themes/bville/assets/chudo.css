@@ -347,6 +347,12 @@ body.chudo-world .menu-line-row h3 {
   font-family: var(--font-menu);
 }
 
+body.chudo-world .line-title:not(.line-title--hero) {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+}
+
 body.chudo-world .menu-hero-lines .line-title--hero {
   font-family: var(--font-script);
   letter-spacing: 0;
