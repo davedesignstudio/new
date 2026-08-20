@@ -10,8 +10,8 @@ Tell us when you would like to join us. We will respond within 30 minutes to
 confirm your table or suggest another time.
 
 <form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
+  <input type="text" placeholder="Your Name" name="name" autocomplete="name">
+  <input type="email" placeholder="Your Email" name="email" autocomplete="email">
   <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
   <button>Request reservation</button>
 </form>
