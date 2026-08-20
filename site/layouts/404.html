@@ -1,8 +1,17 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main class="page-shell">
+  <div class="page-atmosphere" aria-hidden="true"></div>
+  <div class="page-panel">
+    <header class="page-header">
+      <p class="page-kicker">{{ .Site.Title }}</p>
+      <h1 class="page-title">Page not found</h1>
+    </header>
+    <div class="page-body">
+      <p>This path has gone quiet. Return home and begin again.</p>
+      <p><a class="btn btn-primary" href="/">Back to Soma</a></p>
+    </div>
+  </div>
+</main>
 
 {{ partial "footer" . }}

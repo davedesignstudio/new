@@ -4,13 +4,13 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Reserve your seat
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Share a preferred evening and we will reply within thirty minutes to confirm, or offer another quiet hour at the table.
 
 <form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <input type="text" placeholder="Your name" name="name" required>
+  <input type="email" placeholder="Your email" name="email" required>
+  <textarea name="message" placeholder="When would you like to join us?" required></textarea>
+  <button type="submit">Send request</button>
 </form>

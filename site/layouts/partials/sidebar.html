@@ -1,15 +1,21 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
+<header class="site-header">
+  <a class="brand" href="{{ .Site.BaseURL }}">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">{{ .Site.Title }}</span>
+  </a>
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="site-nav" data-nav>
+    <ul class="site-nav-list">
+      <li><a href="/"{{ if .IsHome }} aria-current="page"{{ end }}>Home</a></li>
+      {{ $current := . }}
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
+        <li><a href="{{ .URL }}"{{ if or (eq $current.RelPermalink .URL) (eq $current.URL .URL) (hasPrefix $current.RelPermalink .URL) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
     </ul>
-  </div>
-</div>
+  </nav>
+</header>

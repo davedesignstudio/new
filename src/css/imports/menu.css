@@ -1,85 +1,178 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
-  }
+/* Menu, gallery, forms */
 
-  h2 em, h3 {
-    text-transform: capitalize;
-  }
+.menu-section {
+  margin-bottom: 2.5rem;
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.menu-heading {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--ink);
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+.menu-heading em {
+  font-style: italic;
+  font-weight: 400;
+}
 
-    li {
-      display: flex;
-      align-items: top;
-    }
+.menu-heading em::after {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+  background: var(--saffron);
+}
 
-    p {
-      flex-grow: 1;
-      display: inline-block;
+.menu-subheading {
+  margin: 1.75rem 0 0.85rem;
+  font-family: var(--font-jp);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: capitalize;
+  color: var(--pine);
+}
 
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+.menu-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
+.menu-item-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
 
-  .buttons {
-    text-align: center;
-  }
+.menu-item-copy strong {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--ink);
+}
 
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
+.menu-item-copy span {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
 
-    &:hover {
-      background: #d35b48;
-    }
+.menu-price {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--saffron);
+}
 
-    &.half-button {
-      display: inline-block;
-      width: 30%;
+.gallery-carousel {
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+}
 
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
-  }
+.gallery-carousel img {
+  width: 100%;
+  max-height: 28rem;
+  min-height: 14rem;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.gallery-controls .btn {
+  min-width: 8rem;
+  color: var(--ink);
+}
+
+.gallery-controls .btn-ghost {
+  border-color: var(--line);
+  color: var(--pine);
+}
+
+.gallery-controls .btn-ghost:hover,
+.gallery-controls .btn-ghost:focus {
+  border-color: var(--pine);
+  color: var(--ink);
+}
+
+.page-body form {
+  margin-top: 1.5rem;
+}
+
+.page-body input,
+.page-body textarea,
+.page-body button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.85rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.25s var(--ease-out), background 0.25s var(--ease-out);
+}
+
+.page-body textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.page-body input:focus,
+.page-body textarea:focus {
+  border-color: var(--pine);
+  background: #fbfbf8;
+}
+
+.page-body button {
+  width: auto;
+  min-width: 12rem;
+  margin-top: 0.5rem;
+  background: var(--ember);
+  border-color: var(--ember);
+  color: var(--paper);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.page-body button:hover,
+.page-body button:focus {
+  background: #8f3226;
+  border-color: #8f3226;
+}
+
+.page-body h1 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--pine);
 }

@@ -1,10 +1,24 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <video loop muted autoplay playsinline class="hero-video">
+      <source src="/videos/SDVid.mp4" type="video/mp4">
+      <source src="/videos/SDVid.ogg" type="video/ogg">
+    </video>
+    <div class="hero-veil"></div>
+    <div class="hero-pattern"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-brand">{{ .Site.Title }}</p>
+    <h1 class="hero-title">{{ .Site.Params.tagline }}</h1>
+    <p class="hero-lead">{{ .Site.Params.description }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/contact">{{ .Site.Params.cta_primary }}</a>
+      <a class="btn btn-ghost" href="/food">{{ .Site.Params.cta_secondary }}</a>
+    </div>
+  </div>
+</main>
 
 {{ partial "footer" . }}

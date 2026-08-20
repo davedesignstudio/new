@@ -1,7 +1,16 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main class="page-shell">
+  <div class="page-atmosphere" aria-hidden="true"></div>
+  <article class="page-panel">
+    <header class="page-header">
+      <p class="page-kicker">{{ .Site.Title }}</p>
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+    <div class="page-body">
+      {{ .Content }}
+    </div>
+  </article>
+</main>
 
 {{ partial "footer" . }}
