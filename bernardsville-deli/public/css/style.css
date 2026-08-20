@@ -22,6 +22,8 @@
   --font-serif: "Alegreya", Georgia, serif;
   --font-sans: "Oswald", "Trebuchet MS", sans-serif;
   --font-ui: "DM Sans", system-ui, sans-serif;
+  --font-menu: "Oswald", "Trebuchet MS", sans-serif;
+  --font-serif: "Alegreya", Georgia, serif;
 }
 
 @font-face {
@@ -838,10 +840,10 @@ address { font-style: normal; }
 .menu-jump a {
   color: var(--ink-dark);
   text-decoration: none;
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-family: var(--font-menu);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
   padding: 0.2rem 0;
@@ -863,7 +865,7 @@ address { font-style: normal; }
 
 .menu-kicker {
   margin: 0 0 0.45rem;
-  font-family: var(--font-ui);
+  font-family: var(--font-menu);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -937,9 +939,9 @@ address { font-style: normal; }
 
 .menu-block-note {
   margin: 0.55rem 0 0;
-  font-family: var(--font-garamond);
+  font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.45;
   color: var(--muted);
 }
@@ -949,10 +951,10 @@ address { font-style: normal; }
   gap: 1.25rem;
   justify-content: flex-end;
   margin: 0.45rem 0 0;
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-family: var(--font-menu);
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--ink-dark);
 }
 
@@ -996,15 +998,17 @@ address { font-style: normal; }
   width: 100%;
 }
 
+/* Item names: condensed wood gothic (Lou’s Wall). Notes: Alegreya italic like the printed boards. */
 .menu-line-row h3 {
   margin: 0;
   flex: 0 1 auto;
   max-width: 70%;
-  font-family: var(--font-ui);
-  font-size: 0.98rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--ink-dark);
+  font-family: var(--font-menu);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  color: var(--maroon);
 }
 
 .menu-leader {
@@ -1017,11 +1021,13 @@ address { font-style: normal; }
 .menu-line-price,
 .menu-line-prices {
   flex: 0 0 auto;
-  font-family: var(--font-ui);
-  font-size: 0.95rem;
+  font-family: var(--font-menu);
+  font-size: 1.02rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--ink-dark);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .menu-line-prices {
@@ -1035,9 +1041,11 @@ address { font-style: normal; }
 }
 
 .menu-line-desc {
-  margin: 0.3rem 0 0;
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
+  margin: 0.28rem 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
   line-height: 1.4;
   color: var(--muted);
 }

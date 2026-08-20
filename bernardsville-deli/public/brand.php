@@ -130,9 +130,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <?php
         $typeClass = [
             'The sign' => 'sign',
+            'The line' => 'line',
+            'The note' => 'note',
             'The story' => 'story',
             'The issue' => 'issue',
-            'The ticket' => 'ticket',
         ];
       ?>
       <?php foreach ($brand['type'] as $face): ?>

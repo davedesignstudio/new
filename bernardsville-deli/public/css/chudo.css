@@ -344,12 +344,12 @@ body.chudo-world .menu-line-hit:hover {
 }
 
 body.chudo-world .menu-line-row h3 {
-  font-family: var(--font-ui);
+  font-family: var(--font-menu);
 }
 
-body.chudo-world .line-title--hero {
-  font-family: var(--font-burst);
-  letter-spacing: 0.04em;
+body.chudo-world .menu-hero-lines .line-title--hero {
+  font-family: var(--font-script);
+  letter-spacing: 0;
 }
 
 /* Newsletter = subscribe strip / footer = credits */
@@ -707,6 +707,19 @@ body.chudo-world .order-dock {
   color: var(--orange);
   -webkit-text-stroke: 1.2px var(--ink-dark);
   paint-order: stroke fill;
+}
+
+.house-type-sample--line {
+  font-family: var(--font-menu, var(--font-sans));
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: 0.04em;
+  color: var(--maroon);
+}
+
+.house-type-sample--note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
 }
 
 .house-type-sample--story {

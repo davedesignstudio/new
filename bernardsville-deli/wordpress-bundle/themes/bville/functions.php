@@ -34,10 +34,10 @@ add_action('wp_enqueue_scripts', static function (): void {
         [],
         null
     );
-    wp_enqueue_style('bville-style', get_stylesheet_uri(), ['bville-fonts'], '1.4.1');
-    wp_enqueue_style('bville-order-board', bville_asset('order-board.css'), ['bville-style'], '1.4.1');
-    wp_enqueue_style('bville-chudo', bville_asset('chudo.css'), ['bville-order-board'], '1.4.1');
-    wp_enqueue_script('bville-nav', bville_asset('nav.js'), [], '1.4.1', true);
+    wp_enqueue_style('bville-style', get_stylesheet_uri(), ['bville-fonts'], '1.4.2');
+    wp_enqueue_style('bville-order-board', bville_asset('order-board.css'), ['bville-style'], '1.4.2');
+    wp_enqueue_style('bville-chudo', bville_asset('chudo.css'), ['bville-order-board'], '1.4.2');
+    wp_enqueue_script('bville-nav', bville_asset('nav.js'), [], '1.4.2', true);
 });
 
 function bville_asset(string $file): string
