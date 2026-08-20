@@ -1,7 +1,8 @@
-import webpack from "webpack";
-import path from "path";
+const webpack = require("webpack");
+const path = require("path");
 
-export default {
+module.exports = {
+  mode: "none",
   module: {
     rules: [
       {
@@ -32,7 +33,8 @@ export default {
   output: {
     path: path.join(__dirname, "dist"),
     publicPath: "/",
-    filename: "[name].js"
+    filename: "[name].js",
+    hashFunction: "sha256"
   },
   externals: [/^vendor\/.+\.js$/]
 };
