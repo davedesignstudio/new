@@ -30,8 +30,9 @@
     "eslint-plugin-import": "^2.11.0",
     "exports-loader": "^0.7.0",
     "file-loader": "^1.1.11",
-    "gulp": "^3.9.1",
+    "gulp": "^5.0.1",
     "gulp-babel": "^7.0.1",
+    "gulp-cli": "^3.1.0",
     "gulp-flatten": "^0.4.0",
     "gulp-postcss": "^7.0.1",
     "gulp-util": "^3.0.7",
@@ -42,7 +43,7 @@
     "postcss-import": "^11.1.0",
     "postcss-nested": "^3.0.0",
     "url-loader": "^1.0.1",
-    "webpack": "4.6.0",
+    "webpack": "^5.109.2",
     "whatwg-fetch": "^2.0.4"
   }
 }
