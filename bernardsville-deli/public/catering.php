@@ -7,10 +7,10 @@ require_once dirname(__DIR__) . '/src/includes/helpers.php';
 $site = site_config();
 $pageTitle = 'Catering — ' . $site['name'];
 $cateringShots = [
-    ['key' => 'pizza', 'caption' => 'Pizza trays'],
-    ['key' => 'platters', 'caption' => 'Grill platters'],
-    ['key' => 'wraps', 'caption' => 'Wraps'],
-    ['key' => 'pasta', 'caption' => 'Party tables'],
+    ['key' => 'board-bbq-pie', 'caption' => 'Pizza trays'],
+    ['key' => 'board-shawarma', 'caption' => 'Grill platters'],
+    ['key' => 'board-buffalo-wrap', 'caption' => 'Wraps'],
+    ['key' => 'board-quesadilla', 'caption' => 'Party plates'],
 ];
 
 require dirname(__DIR__) . '/src/includes/header.php';
@@ -25,7 +25,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <p class="lede">Pizza trays, party platters, and grill favorites for the Somerset Hills table — Little League, office lunch, the whole house at once.</p>
       <a class="btn btn-red btn-lg" href="tel:<?= e($site['phone_raw']) ?>">Call <?= e($site['phone']) ?></a>
     </div>
-    <?= photo_img('platters', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+    <?= photo_img('catering-trays', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
 

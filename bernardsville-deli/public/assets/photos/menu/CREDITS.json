@@ -42,11 +42,12 @@
     },
     {
       "slug": "garden-cobb",
-      "source": "commons",
-      "title": "File:Cobb salad.jpg",
-      "license": "Public domain",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Cobb_salad,_9_May_2006.jpg",
-      "artist": "<a href=\"https://en.wikipedia.org/wiki/User:Novellina\" class=\"extiw\" title=\"wikipedia:User:Novellina\">Novellina</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>"
+      "source": "restaurant",
+      "title": "garden-cobb.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "garden-mixed-greens",
@@ -98,11 +99,12 @@
     },
     {
       "slug": "starters-falafel",
-      "source": "commons",
-      "title": "File:Falafel.jpg",
-      "license": "CC BY-SA 3.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Falafel.jpg",
-      "artist": "NB"
+      "source": "restaurant",
+      "title": "starters-falafel.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "starters-dumplings",
@@ -258,11 +260,12 @@
     },
     {
       "slug": "wraps-buffalo-chicken",
-      "source": "commons",
-      "title": "File:Buffalo chicken wrap - Dunedin, New Zealand.jpg",
-      "license": "CC0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Buffalo_chicken_wrap_-_Dunedin,_New_Zealand.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>"
+      "source": "restaurant",
+      "title": "wraps-buffalo-chicken.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "wraps-gyro",
@@ -370,11 +373,12 @@
     },
     {
       "slug": "sandwiches-chicken-parm",
-      "source": "commons",
-      "title": "File:Chicken parmigiana.jpg",
-      "license": "CC BY 2.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_parmigiana.jpg",
-      "artist": "Tristan Kenney"
+      "source": "restaurant",
+      "title": "sandwiches-chicken-parm.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "sandwiches-meatball-parm",
@@ -434,11 +438,12 @@
     },
     {
       "slug": "sandwiches-tuna-melt",
-      "source": "commons",
-      "title": "File:Tuna sandwich.jpg",
-      "license": "CC BY 2.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Tuna_sandwich.jpg",
-      "artist": "Le living and co"
+      "source": "restaurant",
+      "title": "sandwiches-tuna-melt.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "sandwiches-turkey-club",
@@ -482,11 +487,12 @@
     },
     {
       "slug": "pizza-classic",
-      "source": "local",
-      "title": "pizza.jpg",
+      "source": "restaurant",
+      "title": "pizza-classic.jpg",
       "license": "Restaurant photo",
-      "page_url": "",
-      "artist": "Bville Pizza & Grill"
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "pizza-margherita",
@@ -521,16 +527,16 @@
       "license": "CC0",
       "page_url": "https://commons.wikimedia.org/wiki/File:%22Marry_Me%22_Chicken_-_PizzaExpress,_Stanford_Cottage,_Worthing_2026-06-16.jpg",
       "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>",
-      "note": "Chicken, tomato, mozzarella \u2014 closest Commons match to Chicken Parmesan pizza"
+      "note": "Chicken, tomato, mozzarella — closest Commons match to Chicken Parmesan pizza"
     },
     {
       "slug": "pizza-bbq-buffalo",
-      "source": "commons",
-      "title": "File:BBQ CHICKEN PIZZA.jpg",
-      "license": "CC BY-SA 4.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:BBQ_CHICKEN_PIZZA.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Zeeshan93&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Zeeshan93 (page does not exist)\">Zeeshan93</a>",
-      "note": "Retitled to match the printed pizza name"
+      "source": "restaurant",
+      "title": "pizza-bbq-buffalo.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "pizza-veggie",
@@ -566,7 +572,7 @@
       "license": "CC BY-SA 4.0",
       "page_url": "https://commons.wikimedia.org/wiki/File:Kotipizza_Pollo_Americana.jpg",
       "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JIP&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JIP (page does not exist)\">JIP</a>",
-      "note": "Orange chili-style chicken pizza \u2014 closest match to Sesame Thai Chili"
+      "note": "Orange chili-style chicken pizza — closest match to Sesame Thai Chili"
     },
     {
       "slug": "pizza-don-pomodoro",
@@ -599,7 +605,7 @@
       "title": "File:Grilled salmon.jpg",
       "license": "CC BY-SA 4.0",
       "page_url": "https://commons.wikimedia.org/wiki/File:Grilled_salmon.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:PetarM\" title=\"User:PetarM\">Petar Milo\u0161evi\u0107</a>"
+      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:PetarM\" title=\"User:PetarM\">Petar Milošević</a>"
     },
     {
       "slug": "platters-gyro",
@@ -635,11 +641,12 @@
     },
     {
       "slug": "platters-shawarma",
-      "source": "commons",
-      "title": "File:Plate Shawarma - variant.jpg",
-      "license": "CC BY-SA 4.0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Plate_Shawarma_-_variant.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Vis_M\" title=\"User:Vis M\">Vis M</a>"
+      "source": "restaurant",
+      "title": "platters-shawarma.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "platters-chicken-parm",
@@ -651,11 +658,12 @@
     },
     {
       "slug": "platters-quesadilla",
-      "source": "commons",
-      "title": "File:Chicken quesadilla.jpg",
-      "license": "Public domain",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Chicken_quesadilla.jpg",
-      "artist": "Jon Sullivan"
+      "source": "restaurant",
+      "title": "platters-quesadilla.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "platters-sausage-peppers",
@@ -723,11 +731,12 @@
     },
     {
       "slug": "panini-milano",
-      "source": "commons",
-      "title": "File:Panini (Mozzarella, Pesto & Tomato) - Dyke Road Park Cafe.jpg",
-      "license": "CC0",
-      "page_url": "https://commons.wikimedia.org/wiki/File:Panini_(Mozzarella,_Pesto_%26_Tomato)_-_Dyke_Road_Park_Cafe.jpg",
-      "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>"
+      "source": "restaurant",
+      "title": "panini-milano.jpg",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "Real dish photo from the Google Business listing. Resized for the site."
     },
     {
       "slug": "kids-pasta",
@@ -737,19 +746,5 @@
       "page_url": "https://commons.wikimedia.org/wiki/File:Primer_plano_de_tallarines_argentinos_a_la_manteca_con_queso_rallado.jpg",
       "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tubby3\" title=\"User:Tubby3\">Horacio Cambeiro</a>"
     }
-  ],
-  "missing": [],
-  "desserts": {
-    "desserts-yogurt-berries": "gelato-yogurt-berries.png",
-    "desserts-creme-brulee": "gelato-creme-brulee.png",
-    "desserts-mascarpone": "gelato-mascarpone.png",
-    "desserts-limoncello": "gelato-limoncello.png",
-    "desserts-hazelnut": "gelato-hazelnut.png",
-    "desserts-spagnola": "gelato-spagnola.png",
-    "desserts-stracciatella": "gelato-stracciatella.png",
-    "desserts-pistachio": "gelato-pistachio.png",
-    "desserts-guava": "gelato-guava.png",
-    "desserts-cafe": "gelato-cafe.png",
-    "desserts-catalana": "gelato-espresso.png"
-  }
+  ]
 }

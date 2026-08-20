@@ -9,6 +9,56 @@
       "page_url": "https://commons.wikimedia.org/wiki/File:Forno_a_legna_per_pizza.JPG",
       "artist": "Rollopack",
       "note": "Cropped and resized for the order checkout background."
+    },
+    {
+      "slug": "house-dining-room",
+      "file": "house-dining-room.jpg",
+      "source": "restaurant",
+      "title": "Dining Room",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "From the Google Business listing photo gallery. Resized for the site."
+    },
+    {
+      "slug": "house-stone-oven",
+      "file": "house-stone-oven.jpg",
+      "source": "restaurant",
+      "title": "Stone Oven",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "From the Google Business listing photo gallery. Resized for the site."
+    },
+    {
+      "slug": "house-grill-fire",
+      "file": "house-grill-fire.jpg",
+      "source": "restaurant",
+      "title": "Grill Fire",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "From the Google Business listing photo gallery. Resized for the site."
+    },
+    {
+      "slug": "house-catering-trays",
+      "file": "house-catering-trays.jpg",
+      "source": "restaurant",
+      "title": "Catering Trays",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "From the Google Business listing photo gallery. Resized for the site."
+    },
+    {
+      "slug": "house-cobb-counter",
+      "file": "house-cobb-counter.jpg",
+      "source": "restaurant",
+      "title": "Cobb Counter",
+      "license": "Restaurant photo",
+      "page_url": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdOd01YaGliamd3GAo",
+      "artist": "B'Ville Pizza & Grill",
+      "note": "From the Google Business listing photo gallery. Resized for the site."
     }
   ]
 }
