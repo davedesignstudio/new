@@ -4,13 +4,13 @@ title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+## Join us at the table
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Dinner is served Tuesday through Saturday from 17:30. Tell us your preferred date, party size, and any dietary needs. We will reply with a confirmation.
 
 <form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+  <input type="text" placeholder="Your name" name="name" aria-label="Your name" required>
+  <input type="email" placeholder="Email address" name="email" aria-label="Email address" required>
+  <textarea name="message" placeholder="Preferred date, time, party size, and dietary needs" aria-label="Reservation details" required></textarea>
+  <button type="submit">Request a table</button>
 </form>

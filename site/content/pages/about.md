@@ -4,11 +4,16 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## A meeting of restraint, craft, and nourishment
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Soma began with one question: how can a meal make the world feel quieter?
 
-Sincerely,
-# Mr. Bojangles
+Our answer brings together three complementary traditions. From Sweden, we borrow respect for season, simplicity, and the pleasure of just enough. From Japan, precision, preservation, and an appreciation of the imperfect. From Vedic food philosophy, we learn to cook for balance—with plants, whole grains, warming spices, and care.
+
+The result belongs to no single place. It is a generous, contemporary table grounded in local harvests and guided by old wisdom.
+
+## Our kitchen
+
+We work directly with nearby growers, ferment throughout the year, and compose every menu around what is at its best. The kitchen is vegetable-led, with thoughtful options for every guest.

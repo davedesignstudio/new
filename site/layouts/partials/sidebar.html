@@ -1,15 +1,20 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
+<header class="site-header">
+  <a class="wordmark" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }} home">
+    <span class="wordmark-symbol" aria-hidden="true">ॐ</span>
+    <span>{{ .Site.Title }}</span>
+  </a>
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
-    </ul>
-  </div>
-</div>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    <span>Menu</span>
+    <i aria-hidden="true"></i>
+  </button>
+
+  <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+    <a href="/">Home</a>
+    {{ range .Site.Menus.main }}
+      <a href="{{.URL}}">{{ .Name }}</a>
+    {{end}}
+  </nav>
+
+  <a class="header-reserve" href="/contact">Reservations</a>
+</header>
