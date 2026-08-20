@@ -81,7 +81,7 @@
       <h2>Signature dishes in a lighter, more editorial presentation.</h2>
     </div>
     <div class="tasting-grid">
-      {{ range first 4 (where .Site.Pages "Section" "food") }}
+      {{ range first 4 (where (where .Site.Pages "Section" "food") "Params.price" "!=" nil) }}
         <article class="tasting-card">
           <p class="tasting-type">{{ .Params.type }}</p>
           <h3>{{ .Title }}</h3>
@@ -101,7 +101,7 @@
       <h2>Texture, ritual, and light.</h2>
     </div>
     <div class="gallery-preview-grid">
-      {{ range first 3 (where .Site.Pages "Section" "gallery") }}
+      {{ range first 3 (where (where .Site.Pages "Section" "gallery") "Params.image" "!=" nil) }}
         <figure class="gallery-preview-card">
           <img src="{{ .Params.image }}" alt="{{ .Title }}">
           <figcaption>{{ .Title }}</figcaption>
