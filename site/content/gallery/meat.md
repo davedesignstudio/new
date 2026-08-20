@@ -1,5 +1,4 @@
 ---
-title: meat
-image: /img/gallery/photo3.jpg
+title: Rice, ghee, and ume
+image: /img/dishes/rice.jpg
 ---
-

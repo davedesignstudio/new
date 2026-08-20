@@ -1,11 +1,32 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Rasa"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Swedish stillness, Japanese craft, and Vedic fire — a dining house in Bernardsville."
+  lede = "A dining house of Swedish stillness, Japanese craft, and Vedic fire."
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food"
+    weight = 1
+
+[[menu.main]]
+    name = "Drinks"
+    url  = "/drinks"
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 3
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery"
+    weight = 4
+
+[[menu.main]]
+    name = "Reserve"
+    url  = "/contact"
+    weight = 5

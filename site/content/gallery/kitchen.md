@@ -1,5 +1,4 @@
 ---
-title: kitchen
-image: /img/gallery/Z.jpg
+title: The kitchen
+image: /img/gallery/kitchen.jpg
 ---
-

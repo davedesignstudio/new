@@ -1,65 +1,89 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
-  {{ if eq .Section "food" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
+<main id="main" class="page-main">
+  <div class="wrap">
+    {{ if eq .Section "gallery" }}
+      <header class="page-head">
+        <p class="eyebrow">The house</p>
+        <h1>{{ if .Title }}{{ .Title }}{{ else }}Gallery{{ end }}</h1>
+      </header>
+      <div class="gallery-grid">
+        {{ range where .Pages "Section" "gallery" }}
+          <figure class="gallery-item">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            <figcaption>{{ .Title }}</figcaption>
+          </figure>
+        {{ end }}
+      </div>
+    {{ else if or (eq .Section "food") (eq .Section "drinks") }}
+      <header class="page-head">
+        <p class="eyebrow">{{ if eq .Section "drinks" }}From the cup{{ else }}From the fire{{ end }}</p>
+        <h1>{{ if .Title }}{{ .Title }}{{ else }}{{ .Section }}{{ end }}</h1>
+      </header>
+      <p class="menu-intro">{{ if eq .Section "drinks" }}Aquavit from the north, sake from the islands, spice from the fire.{{ else }}A board of cold sea, grain, and rolls — Swedish season, Japanese craft, Vedic spice.{{ end }}</p>
+      <div class="menu-board">
+        {{ if eq .Section "food" }}
+          {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+            {{ if eq "categories" $taxonomyname }}
+              {{ range $key, $value := $taxonomy }}
+                {{ if ne $key "drinks" }}
+                  <section class="menu-session">
+                    <h2>{{ $key }}</h2>
+                    {{ range $value.Pages.GroupByParam "course" }}
+                      <div class="menu-course">
+                        <h3>{{ .Key }}</h3>
+                        <ul class="menu-list">
+                          {{ range .Pages }}
+                            <li>
+                              <span class="item">
+                                <strong>{{ .Title }}</strong>
+                                <span class="desc">{{ .Params.description }}</span>
+                              </span>
+                              <span class="price">{{ .Params.price }}</span>
+                            </li>
+                          {{ end }}
+                        </ul>
+                      </div>
+                    {{ end }}
+                  </section>
                 {{ end }}
-                </ul>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+            {{ if eq "categories" $taxonomyname }}
+              {{ range $key, $value := $taxonomy }}
+                {{ if eq $key "drinks" }}
+                  {{ range $value.Pages.GroupByParam "course" }}
+                    <section class="menu-session">
+                      <h2>{{ .Key }}</h2>
+                      <ul class="menu-list">
+                        {{ range .Pages }}
+                          <li>
+                            <span class="item">
+                              <strong>{{ .Title }}</strong>
+                              <span class="desc">{{ .Params.description }}</span>
+                            </span>
+                            <span class="price">{{ .Params.price }}</span>
+                          </li>
+                        {{ end }}
+                      </ul>
+                    </section>
+                  {{ end }}
+                {{ end }}
               {{ end }}
             {{ end }}
           {{ end }}
         {{ end }}
-      </section>
+      </div>
+    {{ else }}
+      <div class="wrap-narrow" style="margin: 0 auto;">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
     {{ end }}
-  {{ else if eq .Section "drinks" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if eq $key "drinks"}}
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </section>
-    {{ end }}
-  {{ else if eq .Section "gallery" }}
-    <div class="gallery-carousel">
-      {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
-      {{ end }}
-    </div>
-    <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
-    </div>
-  {{ end }}
-</div>
+  </div>
+</main>
 
 {{ partial "footer" . }}

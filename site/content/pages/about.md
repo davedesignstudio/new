@@ -1,14 +1,26 @@
 +++
 date = "2017-05-17T13:03:58-04:00"
-title = "About"
+title = "The house"
 url = "/about"
+eyebrow = "About"
+image = "/img/gallery/hearth.jpg"
+image_alt = "Hearth with birch logs and a brass oil lamp"
+caption = "Fire in the north room."
 +++
 
-## Something about the restaurant goes here
+Rasa is a small dining house in Bernardsville. The name is Sanskrit: juice, essence, the flavor that remains after the cooking is done.
 
----
+We keep three lineages at the same table. From Sweden, stillness and lagom — birch, salt, rye, and a respect for what the season actually gives. From Japan, *ma* and *shun* — the space around a plate, the peak of an ingredient, knife and charcoal and rice. From the Vedic kitchen, *atithi devo bhava*: the guest is god. Spice as medicine. Ghee as light. Agni, the fire that turns offering into a meal.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+The room is pale oak and paper screens. A diya burns by the hearth. We do not rush the service. We do not crowd the plate.
 
-Sincerely,
-# Mr. Bojangles
+## The cooking
+
+Raw bar from cold water. Rolls folded by hand. Cabbage over charcoal. Rice with ghee and plum. Drinks from aquavit, sake, and the spice box. The menu is short on purpose.
+
+## The room
+
+Reservations from dusk, Wednesday through Sunday. If a chair is empty, sit by the fire.
+
+Sincerely,  
+**The house of Rasa**

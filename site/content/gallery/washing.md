@@ -1,5 +1,4 @@
 ---
-title: washing
-image: /img/gallery/photo0.jpg
+title: Hearth and diya
+image: /img/gallery/hearth.jpg
 ---
-

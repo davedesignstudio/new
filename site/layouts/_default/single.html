@@ -1,7 +1,28 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main id="main" class="page-main">
+  <article class="wrap wrap-narrow page-prose">
+    {{ if .Params.image }}
+      <figure class="page-figure">
+        <img src="{{ .Params.image }}" alt="{{ .Params.image_alt }}">
+        {{ if .Params.caption }}<figcaption>{{ .Params.caption }}</figcaption>{{ end }}
+      </figure>
+    {{ end }}
+    <header class="page-head">
+      {{ if .Params.eyebrow }}<p class="eyebrow">{{ .Params.eyebrow }}</p>{{ end }}
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{ .Content }}
+    {{ if .Params.reservation_form }}
+      <form class="reserve-form" name="reservation">
+        <input type="text" placeholder="Your name" name="name" required>
+        <input type="email" placeholder="Your email" name="email" required>
+        <textarea name="message" placeholder="When would you like to sit, and for how many?" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p class="form-note">We have your note. The house will write back.</p>
+    {{ end }}
+  </article>
+</main>
 
 {{ partial "footer" . }}

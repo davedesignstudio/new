@@ -1,5 +1,4 @@
 ---
-title: bar
-image: /img/gallery/photo5.jpg
+title: Chai, aquavit, and sake
+image: /img/gallery/bar-drinks.jpg
 ---
-

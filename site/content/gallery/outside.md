@@ -1,5 +1,4 @@
 ---
-title: outside
-image: /img/gallery/asdf.jpg
+title: The pavilion at dusk
+image: /img/gallery/exterior.jpg
 ---
-

@@ -1,5 +1,4 @@
 ---
-title: windows
-image: /img/gallery/photo1.jpg
+title: Moss garden and lotus
+image: /img/gallery/garden-court.jpg
 ---
-

@@ -1,8 +1,12 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main id="main" class="page-main">
+  <div class="wrap wrap-narrow not-found">
+    <p class="whisper">४०४</p>
+    <h1>This path is empty.</h1>
+    <p class="lead">The URL has wandered. Return to the hearth and begin again.</p>
+    <p><a class="btn" href="{{ .Site.BaseURL }}">Back to Rasa</a></p>
+  </div>
+</main>
 
 {{ partial "footer" . }}

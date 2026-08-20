@@ -1,16 +1,16 @@
 +++
 date = "2017-05-17T13:03:58-04:00"
-title = "Contact"
+title = "A table"
 url = "/contact"
+eyebrow = "Reservations"
+image = "/img/gallery/tablescape.jpg"
+image_alt = "Oak table with linen, lotus, and brass"
+caption = "We keep a small room. Write to us."
+reservation_form = true
 +++
 
-## Please fill out the form below
+## Request a reservation
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Tell us your name, a way to reach you, and when you would like to sit. We will answer within the hour during service days.
 
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
-</form>
+The guest is god — *atithi devo bhava*. We cook for the people in the room, not for a crowd.

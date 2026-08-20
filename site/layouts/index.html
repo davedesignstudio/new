@@ -1,10 +1,115 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main id="main" class="page-main">
+  <section class="hero" style="background-image: url('/img/hero-dining.jpg');">
+    <div class="hero-media" aria-hidden="true">
+      <img src="/img/hero-dining.jpg" alt="">
+    </div>
+    <div class="hero-shade"></div>
+    <svg class="hero-yantra" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="96" stroke="#C4A15A" stroke-width="0.6"/>
+      <circle cx="100" cy="100" r="78" stroke="#C4A15A" stroke-width="0.4"/>
+      <circle cx="100" cy="100" r="52" stroke="#C4A15A" stroke-width="0.4"/>
+      <path d="M100 28 L148 148 H52 Z" stroke="#C4A15A" stroke-width="0.5"/>
+      <path d="M100 172 L52 52 H148 Z" stroke="#C4A15A" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="5" fill="#C4A15A"/>
+    </svg>
+    <div class="hero-inner">
+      <p class="whisper">रस · 間 · stillhet</p>
+      <h1>Rasa</h1>
+      <p class="lede">{{ .Site.Params.lede }}</p>
+      <p class="hero-meta">
+        <span>Swedish stillness</span>
+        <span>Japanese craft</span>
+        <span>Vedic fire</span>
+      </p>
+      <a class="btn btn-gold" href="/contact">Request a table</a>
+    </div>
+    <p class="hero-vert">omotenashi · lagom · atithi</p>
+  </section>
+
+  <section class="lineages">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Three lineages, one table</p>
+        <h2>A house of taste</h2>
+        <p>Rasa is the Sanskrit word for juice, essence, and the flavor of an experience. We cook where northern light, Japanese restraint, and Vedic hospitality meet.</p>
+      </header>
+      <div class="lineage-grid">
+        <article class="lineage">
+          <p class="lineage-num">१</p>
+          <h3>Stillhet</h3>
+          <p class="place">Sweden</p>
+          <p>Lagom: not too little, not too much. Birch, salt, rye, and the long light. A hearth, a linen cloth, and what the forest and the cold sea offer in season.</p>
+        </article>
+        <article class="lineage">
+          <p class="lineage-num">२</p>
+          <h3>間</h3>
+          <p class="place">Japan</p>
+          <p>Ma: the space that makes the form. Shun, the peak of a thing. Knife, charcoal, rice, and the empty bowl. Craft as quiet devotion.</p>
+        </article>
+        <article class="lineage">
+          <p class="lineage-num">३</p>
+          <h3>रस</h3>
+          <p class="place">Vedic</p>
+          <p>The guest is god. Spice as medicine, ghee as light, the six flavors held in balance. Agni — the fire that transforms grain, milk, and offering into a meal.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">From the board</p>
+        <h2>Plates of the season</h2>
+      </header>
+
+      <article class="feature">
+        <div class="feature-media">
+          <img src="/img/dishes/oysters.jpg" alt="Oysters on ice with saffron, shiso, and yuzu">
+        </div>
+        <div class="feature-copy">
+          <p class="feature-kicker">Raw bar</p>
+          <h3>Oysters, saffron, shiso</h3>
+          <p>Kusshi, Marin Miyagi, Beausoleil. A saffron-yuzu mignonette, shiso ice, and birch salt. Cold sea, golden fire, a green leaf.</p>
+          <a class="btn" href="/food">See the menu</a>
+        </div>
+      </article>
+
+      <div class="feature-row">
+        <article class="feature-card">
+          <img src="/img/dishes/scallop.jpg" alt="Scallop crudo with lime leaf and ghee">
+          <p class="feature-kicker">Crudo</p>
+          <h3>Scallop, lime leaf, ghee</h3>
+          <p>Live Atlantic scallop, sea salt, browned ghee, and lime leaf oil.</p>
+        </article>
+        <article class="feature-card">
+          <img src="/img/dishes/rice.jpg" alt="Rice bowl with ghee, nori, and pickled plum">
+          <p class="feature-kicker">Grain</p>
+          <h3>Rice, ghee, ume</h3>
+          <p>Short-grain rice, a sheen of ghee, pickled plum, toasted nori, and mustard seed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <p class="eyebrow">अतिथि देवो भव</p>
+        <h2>Come to the fire.</h2>
+        <p>We keep a small room. Reservations from dusk, Wednesday through Sunday. Walk-ins at the hearth if a chair is empty.</p>
+        <a class="btn btn-gold" href="/contact">Make a reservation</a>
+      </div>
+      <aside class="visit-aside">
+        <h3>Find us</h3>
+        <p>108 Hinoki Lane<br>Bernardsville, New Jersey</p>
+        <h3>Hours</h3>
+        <p>Wed–Sun, from dusk</p>
+      </aside>
+    </div>
+  </section>
+</main>
 
 {{ partial "footer" . }}
