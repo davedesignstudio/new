@@ -635,19 +635,20 @@ address { font-style: normal; }
 
 .feature-title {
   position: absolute;
-  left: 0.55rem;
+  left: 0.65rem;
   right: auto;
-  bottom: 0.55rem;
+  bottom: 0.65rem;
   z-index: 1;
   width: max-content;
-  max-width: calc(100% - 1.1rem);
+  max-width: none;
   margin: 0;
-  padding: 0.5rem 1.2rem 0.55rem;
+  padding: 0.55rem 1.75rem 0.62rem;
   background: var(--paper);
   border: 2px solid var(--ink-dark);
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
   text-align: left;
-  box-sizing: border-box;
+  white-space: nowrap;
+  box-sizing: content-box;
 }
 
 .poster-row {
