@@ -33,7 +33,7 @@
           {{ range $key, $value := $taxonomy }}
             {{ if eq $key "drinks"}}
               {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
+                <h2><em>{{ .Key }}</em></h2>
                 <hr>
                 <ul>
                 {{ range .Pages }}
@@ -52,7 +52,9 @@
   {{ else if eq .Section "gallery" }}
     <div class="gallery-carousel">
       {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
+        <div class="gallery-frame" style="background-image: url('{{ .Params.image }}')">
+          <span>{{ .Title }}</span>
+        </div>
       {{ end }}
     </div>
     <div class="buttons">
