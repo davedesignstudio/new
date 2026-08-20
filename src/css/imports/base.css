@@ -349,8 +349,8 @@ body:not(.is-home) .nav-toggle {
   position: relative;
   min-height: 100vh;
   display: grid;
-  align-items: end;
-  padding: 6.5rem var(--space) 4rem;
+  align-items: center;
+  padding: 5.5rem var(--space) 3.5rem;
 }
 
 .hero__media {
@@ -396,15 +396,17 @@ body:not(.is-home) .nav-toggle {
 }
 
 .hero__brand {
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
   font-family: var(--font-brand);
-  font-size: clamp(3.4rem, 12vw, 7.5rem);
+  font-size: clamp(3.6rem, 11vw, 6.5rem);
   font-weight: 600;
   color: #f7f4ee;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  line-height: 0.92;
-  animation: brand-breathe 5.5s ease-in-out infinite alternate;
+  line-height: 0.95;
+  animation:
+    reveal-up 1s var(--ease) 0.15s both,
+    brand-breathe 5.5s ease-in-out 1.2s infinite alternate;
 }
 
 .hero__headline {
@@ -432,10 +434,10 @@ body:not(.is-home) .nav-toggle {
 }
 
 .hero__support {
-  margin: 0 0 1.75rem;
-  max-width: 28rem;
+  margin: 0 0 1.5rem;
+  max-width: 24rem;
   color: rgba(244, 241, 234, 0.78);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 300;
 }
 
