@@ -1315,11 +1315,44 @@ body.is-road {
   margin-bottom: 0.9rem;
 }
 
-.pb-sheet p {
+.pb-after,
+.page-body.prose .pb-after {
+  font-style: italic;
+  color: #4a3c2e;
+}
+
+.pb-ending,
+.page-body.prose .pb-ending {
+  color: #241d16;
+}
+
+.pb-sheet p,
+.page-body.prose .pb-sheet p,
+.section-pages .page-body.prose .pb-sheet p {
   font-size: 1.02rem;
   line-height: 1.6;
   color: #33291f;
   max-width: 40ch;
+}
+
+.pb-sheet h2,
+.page-body.prose .pb-sheet h2 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  color: #241d16;
+  margin: 0 0 0.9rem;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.page-body.prose .pb-turns {
+  padding-left: 0;
+}
+
+.page-body.prose .pb-turns li {
+  color: #241d16;
+  margin-bottom: 0;
 }
 
 .pb-sheet p:first-of-type::first-letter {
