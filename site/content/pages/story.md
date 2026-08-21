@@ -42,4 +42,6 @@ After enough miles she stops selling you a future. You thought you wanted a fort
 
 The path that eats its own dust is still a path. Walk it kindly. Earth does not end.
 
+Because it does not end, nothing is lost — only hidden. Those parts are listed in [The Hidden Parts](/hidden).
+
 The seats at the table — wants, needs, voices — are mapped in [Character Development](/crew/development).
