@@ -1,15 +1,15 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
-    </ul>
-  </div>
-</div>
+<header class="site-nav" role="banner">
+  <a class="brand" href="{{ .Site.BaseURL }}">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">{{ .Site.Title }}</span>
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>
+    <span class="nav-toggle-label">Menu</span>
+  </button>
+  <nav id="site-menu" class="site-menu" aria-label="Primary">
+    <a href="/">Home</a>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

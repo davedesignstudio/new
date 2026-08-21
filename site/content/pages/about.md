@@ -1,14 +1,20 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-21"
 title = "About"
 url = "/about"
+kicker = "Project"
+summary = "WIDER is a graphic novel in development: a space road trip into the wider universe."
 +++
 
-## Something about the restaurant goes here
+This site is the living pitch board for **WIDER** — a comic-book novel about a crew that drives past the last buoy.
 
----
+It collects the **route**, **crew**, **craft research**, and a **sample page** so the story stays visual from day one.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+### What comes next
 
-Sincerely,
-# Mr. Bojangles
+1. Lock tone (wonder / chase / quiet found-family)  
+2. Thumbnail Departure → Wider Dark  
+3. Choose full-script vs plot-first collaboration  
+4. Expand the sample into a 10-page prologue  
+
+Built on the Victor Hugo / Netlify starter — remade for a comic novel instead of a restaurant menu.

@@ -1,7 +1,15 @@
 {{ partial "header" . }}
+{{ partial "sidebar" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main class="page">
+  <header class="page-head">
+    <p class="page-kicker">{{ with .Params.kicker }}{{ . }}{{ else }}{{ .Section | title }}{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="page-summary">{{ . }}</p>{{ end }}
+  </header>
+  <article class="page-body prose">
+    {{ .Content }}
+  </article>
+</main>
 
 {{ partial "footer" . }}

@@ -1,11 +1,36 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "WIDER"
+
+[markup.goldmark.renderer]
+  unsafe = true
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A space road-trip comic novel into the wider universe."
+  tagline = "Leave the known map. Keep driving."
+  kicker = "A graphic novel in progress"
+
+[[menu.main]]
+    name = "Route"
+    url  = "/route"
+    weight = 1
+
+[[menu.main]]
+    name = "Crew"
+    url  = "/crew"
+    weight = 2
+
+[[menu.main]]
+    name = "Craft"
+    url  = "/craft"
+    weight = 3
+
+[[menu.main]]
+    name = "Sample"
+    url  = "/sample"
+    weight = 4
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 5

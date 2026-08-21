@@ -1,16 +1,11 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-21"
 title = "Contact"
 url = "/contact"
+kicker = "Signal"
+summary = "Want to draw a chapter, letter a sample, or ride along as a reader?"
 +++
 
-## Please fill out the form below
+For collaboration notes, art tests, or feedback on the route map, open an issue on the project repo or leave a message with the studio.
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
-
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
-</form>
+This contact page is a placeholder beacon — swap in your real channel when ready.
