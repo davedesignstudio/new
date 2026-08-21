@@ -45,7 +45,7 @@
     var v = T.view(state);
     var html = "";
     html += '<div class="tb-stage">';
-    html += '<div class="tb-plate"><img src="' + esc(v.art) + '" alt=""></div>';
+    html += '<div class="tb-plate bind-live" data-bind-art="' + esc(v.art) + '"></div>';
     html += '<p class="tb-where">' + esc(v.title || "The tent") + "</p>";
     html += '<div class="tb-log" id="tb-log">';
     v.log.forEach(function (entry) {
@@ -129,6 +129,7 @@
       });
     }
     if (input) input.focus();
+    if (window.BIND) window.BIND.adopt(root.querySelector(".bind-live"), v.art);
   }
 
   function say(text) {

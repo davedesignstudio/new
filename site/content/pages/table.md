@@ -3,7 +3,7 @@ date = "2026-08-21"
 title = "The Table"
 url = "/table"
 kicker = "You sit. She deals."
-summary = "Kitchen-table dungeon. Zorya is the DM. You type what you do. Every night is rolled on the fly — new kitchens, new cooks, new hunger."
+summary = "Kitchen-table dungeon. Zorya is the DM. You type what you do. Every night is rolled on the fly. The Bind mark paints a new image every five seconds."
 table = true
 +++
 

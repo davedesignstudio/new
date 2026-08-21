@@ -15,7 +15,11 @@
     var html = "";
 
     html += '<div class="pb-sheet">';
-    html += '<div class="pb-plate"><img src="' + esc(sc.art) + '" alt=""></div>';
+    if (window.BIND && window.BIND.isBindArt(sc.art)) {
+      html += '<div class="pb-plate bind-live" data-bind-art="' + esc(sc.art) + '"></div>';
+    } else {
+      html += '<div class="pb-plate"><img src="' + esc(sc.art) + '" alt=""></div>';
+    }
     html += '<p class="pb-num">&sect;&thinsp;' + sc.n + "</p>";
     html += "<h2>" + esc(sc.title) + "</h2>";
 
@@ -110,6 +114,10 @@
         state = P.go(state, 1);
         render();
       });
+    }
+    if (window.BIND) {
+      var live = root.querySelector(".bind-live");
+      if (live) window.BIND.adopt(live, live.getAttribute("data-bind-art"));
     }
   }
 
