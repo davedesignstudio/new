@@ -36,6 +36,8 @@ Every haunting on their route is a person protecting food: a night clerk and the
 
 Unmask. Sit. The slider stand at the edge of the map is the Star-table with a bun on it. **Prophet Gary** announced Chosen Ones. Zorya stole his lines. The hound was not in the prophecy. The hound was in the booth.
 
+The six kitchens of those miles are mapped on [the route](/route). How food is researched lives in [the kitchen notes](/kitchen). The seats — wants, needs, voices — are in [Character Development](/crew/development).
+
 ## What you were looking for
 
 After enough miles she stops selling you a future. You thought you wanted a fortune. You wanted permission to sit.
@@ -45,5 +47,3 @@ The path that eats its own dust is still a path. Walk it kindly. Earth does not 
 Because it does not end, nothing is lost — only hidden. Those parts are listed in [The Hidden Parts](/hidden).
 
 To drive it yourself, [The Paperback](/adventure) is the whole road as a choose-your-own-adventure: fifty-one numbered sections, nine ways to finish, and at the end she names which part you hid on the way.
-
-The seats at the table — wants, needs, voices — are mapped in [Character Development](/crew/development).

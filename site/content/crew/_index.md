@@ -7,4 +7,4 @@ WIDER’s cast is an ensemble, not a hero plus props. The research bible — wan
 
 **[Character Development](/crew/development)**
 
-Then the seats themselves.
+They think they are chasing a slider. They are driving toward a table. Every ghost on the route is a person protecting a recipe. Then the seats themselves.

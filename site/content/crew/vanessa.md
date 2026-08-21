@@ -8,7 +8,7 @@ summary = "Vehicle as mother. Sarcasm is a seatbelt. Needs to be family."
 
 ## Seat
 
-VANESSA — Vehicular Autonomous Navigator, Extremely Sarcastic, Also-the-van. Two hundred years of snack-grease no airlock can purge. Starts on the third try. No face: dashboard lights do the acting.
+VANESSA — Vehicular Autonomous Navigator, Extremely Sarcastic, Also-the-van. Years of snack-grease no rest stop can purge. Starts on the third try. No face: dashboard lights do the acting.
 
 ## Want / Need
 
@@ -17,13 +17,13 @@ VANESSA — Vehicular Autonomous Navigator, Extremely Sarcastic, Also-the-van. T
 
 ## Wound / Lie / Mask
 
-- **Wound:** centuries of passengers who left when the trip ended.
+- **Wound:** years of passengers who left when the trip ended.
 - **Lie:** “Sarcasm is the only safe warmth.”
 - **Mask:** delayed start, maternal threats, glyph complaints.
 
 ## Arc
 
-She stalls when they hoard. She purrs when they share. Her need beat is being thanked without a punchline — lights soft, no joke from Bodie. She has driven into a black hole for them before. Twice. She would again. That is not comedy; that is loyalty with mileage.
+She stalls when they hoard. She purrs when they share. Her need beat is being thanked without a punchline — lights soft, no joke from Bodie. She has driven through a storm for them before. Twice. She would again. That is not comedy; that is loyalty with mileage.
 
 ## Craft job
 

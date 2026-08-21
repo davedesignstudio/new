@@ -3,14 +3,14 @@ title = "Departure Lane"
 date = "2026-08-21"
 weight = 1
 stop = "01"
-summary = "A last fuel stop at the edge of charted space. Someone sells a false map. Someone else believes it."
+summary = "Munchies hit. A last bag of crisps in a mini-mart that blinks like a haunted chapel."
 +++
 
 ## Visual hook
-Sodium-orange docking lights; a cracked holo-map that flickers between two routes.
+Sodium-orange pumps; a cracked cooler light; one bag of chili-lime crisps left on the rack.
 
 ## Conflict
-The crew must leave before a debt collector locks the berth — but the only open lane is unlicensed.
+The “ghost” is the night clerk, hiding the last bag from franchise drones. Share, or the van will not start kindly.
 
 ## Character beat
-The pilot admits they have never flown past the Outer Buoy.
+Bodie wants to hoard. Klax wants a receipt. Grub already has crumbs on his nose. The first rule of the road: pass what is scarce.

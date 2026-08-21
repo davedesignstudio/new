@@ -8,7 +8,7 @@ summary = "False structure. Wants a clean exit. Needs to accept he is not the au
 
 ## Seat
 
-Time-traveling herald in a shimmering booth of light. Sent to guide the Chosen Two. Nobody told him the Chosen Two would argue about nacho protocol.
+Herald in a shimmering booth of light. Sent to guide the Chosen Two. Nobody told him the Chosen Two would argue about nacho protocol.
 
 ## Want / Need
 

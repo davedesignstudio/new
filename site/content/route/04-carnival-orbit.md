@@ -1,16 +1,16 @@
 +++
-title = "Carnival Orbit"
+title = "Carnival Food Court"
 date = "2026-08-21"
 weight = 4
 stop = "04"
-summary = "A ring-station fair selling miracles that almost work."
+summary = "Miracle sauces that almost work. A mascot who will not take the head off."
 +++
 
 ## Visual hook
-Neon stalls, paper lanterns drifting in zero-g, a prize wheel of stolen star charts.
+Neon stalls, paper lanterns, a prize wheel of coupons that look like star charts.
 
 ## Conflict
-A “shortcut” ticket is a trap that strands half the crew.
+The “shortcut” ticket is a franchise. Unmask: a scout in a rubber head, trying to steal a street’s name.
 
 ## Character beat
-The youngest traveler learns the price of wonder.
+Grub chews the mask. Bodie learns wonder has a price. The cook keeps the stall.

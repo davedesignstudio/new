@@ -6,15 +6,15 @@ kicker = "Research writing"
 summary = "Food-and-culture notes that season every comic stop: one meal, one street, one table."
 +++
 
-WIDER uses food the way a mystery uses clues. Each planet is researched as a **foodscape** — production, street, table — then compressed into panels.
+WIDER uses food the way a mystery uses clues. Each stop is researched as a **foodscape** — production, street, table — then compressed into panels. The planet is Earth. Always.
 
 ## Methods we steal (then fictionalize)
 
-**The one-meal story.** Do not tour a planet. Sit for one dish. Who plated it? What histories hide in the chili? What is said, and what is chewed instead of said?
+**The one-meal story.** Do not tour a country. Sit for one dish. Who plated it? What histories hide in the chili? What is said, and what is chewed instead of said?
 
-**Food as archive.** Recipes remember migrations the way maps remember wars. A space night market is a collage of old homeworlds that refused to die.
+**Food as archive.** Recipes remember migrations the way maps remember wars. A night market is a collage of old kitchens that refused to die.
 
-**Commensality.** Eating together makes a crew. Refusing to share makes a villain. Street food is where mixed means and mixed species stand in the same grease-halo.
+**Commensality.** Eating together makes a crew. Refusing to share makes a villain. Street food is where mixed means stand in the same grease-halo.
 
 **Travel with care.** Do not flatten a culture into a flavor. Let vendors speak back. Let the “ghost” be a person protecting a recipe from a franchise.
 

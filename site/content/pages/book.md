@@ -34,11 +34,11 @@ The comic rule still holds: **show the steam, don’t caption the soul.**
 
 **Bodie** drives like the universe owes him a favor. He is Shaggy’s appetite with Bill’s confidence. Catchphrase: *Dude. We are SO destined.*
 
-**Klax** is four-eyed, laminated-itinerary, Kumar-anxious, Velma-adjacent. He has read every travel advisory. He will still get in the van.
+**Klax** is laminated-itinerary, anxious, Velma-adjacent. He has read every travel advisory. He will still get in the van.
 
 **Grub** is a slobbering snack-hound who only speaks in food puns. Scooby snacks here are **Grub Gems** — fried dough coins that briefly make him brave.
 
-**VANESSA** is the Mystery Machine if it were a 200-year-old camper AI that smells like oregano forever.
+**VANESSA** is the talking camper if it smelled like oregano forever. Dashboard lights, no face.
 
 **Zorya of the Three Roads** sits in the rear booth. Russian stove, Roma tent. She deals destinies. She is the book’s generative intellect: every playthrough shuffles omens, cards, and forks.
 
@@ -51,7 +51,7 @@ The comic rule still holds: **show the steam, don’t caption the soul.**
 1. **The Couch / Departure Lane** — Munchies hit. A “ghost” in the mini-mart is the night clerk protecting the last bag of chili-lime crisps.
 2. **Dustport Night Market** — Wind, kites, and vada-pav energy: a street bun that only exists because the street exists. Someone is haunting the stall. It is the auntie. She is right.
 3. **Silent Corridor Diner** — No beacons, one shared basket of rings. If they split it, they stay friends. If they don’t, the van won’t start.
-4. **Carnival Orbit Food Court** — Miracle sauces that almost work. A mascot villain. Unmask: the franchise scout.
+4. **Carnival Food Court** — Miracle sauces that almost work. A mascot villain. Unmask: the franchise scout.
 5. **Widow’s Spur Canteen** — Radio hymns, emergency amber, a “cursed” stew that is just grief and good stock.
 6. **Castle Nova / The Wider Dark** — The slider stand at the end of the map. The prophecy was never a war. It was a table with enough seats.
 

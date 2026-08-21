@@ -1,37 +1,35 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# WIDER
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+A playable comic about Earth: a roadside teller, a kitchen that tried to be a fortress, hungry guests in a van, and a table that does not end.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+**The game is Earth. Earth does not end.**
 
-To install and run the example site locally, here’s what you’ll need:
+Live doors:
 
-## System Requirements
+- `/story` — the one plot
+- `/play/?b1=1` — Path B1, the storm (Tower → Star)
+- `/play` — name the guests, then walk
+- `/road` — Road-Wisdom, the tiny Game Boy loop
 
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
+## Run locally
 
-## Usage
-
-Clone this repository and run:
+Node **8.11.1** (Gulp 3 will not run on modern Node):
 
 ```bash
+nvm use 8.11.1
 npm install
+npm test
 npm run start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+Then open http://localhost:3000/
 
-To build your static output to the `/dist` folder, use:
+To rebuild without the watcher:
 
 ```bash
-npm run build
+npx gulp css js hugo images
 ```
 
-## License
+## Tests
 
-[MIT](LICENSE)
+`npm test` checks product copy for leftover space-tour language and walks a full Road-Wisdom cycle in Node (title → fortune → walk again, mill memory, princess easter egg, persistence).

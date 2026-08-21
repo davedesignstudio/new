@@ -8,7 +8,7 @@ summary = "Chaos foil. Wants destiny. Needs to say Klax was right."
 
 ## Seat
 
-Bodie drives. Grin, air-guitar, the wrong button at the wrong time. Failed orbital community college twice and still believes the universe owes him a favor.
+Bodie drives. Grin, air-guitar, the wrong button at the wrong time. Failed community college twice and still believes the universe owes him a favor.
 
 ## Want / Need
 

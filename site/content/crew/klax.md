@@ -8,7 +8,7 @@ summary = "Control foil. Wants home. Needs to love the detour."
 
 ## Seat
 
-Klax navigates. Four eyes, laminated itinerary, pre-med dropout who has read every travel advisory and obeyed all of them until Bodie.
+Klax navigates. Laminated itinerary, the careful one who has read every travel advisory and obeyed all of them until Bodie. Four-eyed only in the comic sense: he sees every risk and still gets in the van.
 
 ## Want / Need
 

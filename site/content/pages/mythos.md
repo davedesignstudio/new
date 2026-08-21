@@ -12,6 +12,16 @@ Read [the story](/story). That is the whole map.
 
 Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. What remains is a table. Earth continues.
 
+## Same house
+
+- **[The Paperback](/adventure)** — fifty-one numbered sections; you drive.
+- **[The Hidden Parts](/hidden)** — what an endless Earth stores instead of burying.
+- **[The route](/route)** — six kitchens from the last bag to the Star-table.
+- **`/play/?b1=1`** — the storm, told straight: Tower becomes Star.
+- **`/road`** — you walk a tiny Earth. She reads what you do.
+
+Mars is not a sequel. It is Earth imagining an exit and still having to set supper.
+
 ## Brand lines
 
 - The citadel was a kitchen. The Star is dinner.
