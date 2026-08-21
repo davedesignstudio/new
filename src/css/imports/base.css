@@ -743,8 +743,26 @@ p {
   margin: 1rem 0 0.5rem;
 }
 
-.snes-roll {
-  color: #5ec8d8;
+.scene-art {
+  margin: 0;
+  border-bottom: 4px solid #6b4a1e;
+  background: #070b12;
+}
+
+.scene-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 42vh;
+  object-fit: cover;
+}
+
+.scene-art figcaption {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.45rem;
+  letter-spacing: 0.08em;
+  color: #f0d78c;
+  padding: 0.55rem 0.75rem 0.65rem;
 }
 
 @media (max-width: 720px) {

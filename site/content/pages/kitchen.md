@@ -32,3 +32,7 @@ WIDER uses food the way a mystery uses clues. Each planet is researched as a **f
 | Castle Nova | White Castle / slider longing | Destination that was always a table |
 
 Write smell first. Then steam. Then who gets a seat.
+
+## Dinner mythos (The Tower → The Star)
+
+The citadel in Path B1 is the kitchen under weather. Wards are recipes you refuse to franchise. Lightning is Hunger. Phantom knights are guests who will not share. When the tower becomes dust, the sanctuary of white stone is **service**: plates, glass, a beam like a candle. Brand line: *every night The Tower may fall; every night dinner rebuilds The Star.*

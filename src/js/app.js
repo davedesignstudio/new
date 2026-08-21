@@ -38,8 +38,10 @@
     hunger: 16,
     wit: 9,
     luck: 7,
+    ward: 12,
     inv: ["Laminated Map"],
-    lastRoll: null
+    lastRoll: null,
+    voice: "dinner"
   };
 
   function pick(list) {
@@ -78,6 +80,7 @@
     return (
       '<div class="snes-hud" aria-label="Party status">' +
       '<div class="snes-stat"><b>HUNGER</b> ' + bars(state.hunger, 16) + " " + state.hunger + "</div>" +
+      '<div class="snes-stat"><b>WARD</b> ' + bars(state.ward, 16) + " " + state.ward + "</div>" +
       '<div class="snes-stat"><b>WIT</b> ' + bars(state.wit, 12) + " " + state.wit + "</div>" +
       '<div class="snes-stat"><b>LUCK</b> ' + bars(state.luck, 12) + " " + state.luck + "</div>" +
       '<div class="snes-inv"><b>PACK</b> ' + state.inv.join(" · ") + "</div>" +
@@ -93,18 +96,171 @@
     return '<span class="snes-bar">' + s + "</span>";
   }
 
-  function wrap(inner) {
+  function wrap(inner, node) {
+    var art = "";
+    if (node && node.art) {
+      art =
+        '<figure class="scene-art"><img src="' +
+        node.art +
+        '" alt="' +
+        fill(node.alt || "scene") +
+        '">' +
+        (node.caption ? "<figcaption>" + fill(node.caption) + "</figcaption>" : "") +
+        "</figure>";
+    }
     return (
       '<div class="snes-shell">' +
-      '<p class="snes-title">WIDER QUEST  ·  ZORYA DM</p>' +
+      '<p class="snes-title">WIDER DINNER  ·  THE TOWER → THE STAR</p>' +
       hud() +
-      '<div class="snes-window">' + inner + "</div>" +
-      "</div>"
+      art +
+      '<div class="snes-window">' +
+      inner +
+      "</div></div>"
     );
   }
 
   var nodes = {
     madlib: { form: true },
+    t1: {
+      art: "/img/tower/ch1.jpg",
+      alt: "Citadel on a sea-cliff under violet lightning",
+      caption: "COURSE I  ·  THE TOWER  ·  Fortifying the kitchen",
+      card: "TAROT — THE TOWER",
+      title: "Fortifying the mind (the hearth)",
+      bodies: [
+        "The card glimmers, {{seeker}}. Crimson mist on your arms. Zorya: the citadel is not a castle — it is the kitchen you refuse to abandon when chaos comes. Iron beams, runic wards, rain like knives on a prep table. Dinner begins by holding the house."
+      ],
+      choices: [
+        { label: "BIND soul-energy to the keystone (hearth / structural immunity)", next: "t1-bind" },
+        { label: "KEEP mobility — cook and run if the roof goes", next: "t1-mobile" }
+      ]
+    },
+    "t1-bind": {
+      card: "KEYSTONE = HEARTH",
+      title: "You are the dinner’s foundation",
+      bodies: [
+        "You pour yourself into the keep’s heart. Wards blaze. You cannot flee easily — but gravy, glass, and guests will have a place to stand. Pack: Keystone Hearth. Ward +4."
+      ],
+      grant: "Keystone Hearth",
+      ward: 4,
+      choices: [{ label: "The sky fractures. Stand the storm.", next: "t2" }]
+    },
+    "t1-mobile": {
+      card: "THE OPEN GATE",
+      title: "A kitchen that can pack into a van",
+      bodies: [
+        "You refuse the tomb of stone. Luck +2. The citadel is a little weaker. {{van}} somewhere in the mythos honks — later, this choice is how dinner travels."
+      ],
+      grant: "Travel Salt",
+      luck: 2,
+      choices: [{ label: "The sky fractures anyway.", next: "t2" }]
+    },
+    t2: {
+      type: "riddle",
+      art: "/img/tower/ch2.jpg",
+      alt: "Great Hall, tentacles at stained glass, blue altar flame",
+      caption: "COURSE II  ·  THE STORM  ·  Hunger tests the wards",
+      card: "LIGHTNING vs WARD",
+      title: "The onset of the storm",
+      prompt:
+        "White-hot bolt on the spire. Tentacles of raw want lash the glass. A blue flame on the altar does not go out. Zorya asks, as all dungeon doors ask: what holds when the sky breaks?",
+      hint: "Not hiding. The brand-myth: the flame is supper.",
+      answers: [
+        { label: "THE BLUE FLAME  (the meal that must not go out)", correct: true, next: "t2-parapet" },
+        { label: "THE INNER SANCTUM  (hide in the pantry)", correct: false, trap: 2, next: "t2-hide" },
+        { label: "LET THE TOWER BURN", correct: false, trap: 4, next: "t2" }
+      ]
+    },
+    "t2-parapet": {
+      card: "PARAPET CHANNEL",
+      title: "You step into the rain",
+      bodies: [
+        "Rather than hide, you feed the fading wards with your own heat — like tasting the soup and salting it in the storm. The barrier holds. For now. Hunger gnaws. The gate below is the next course."
+      ],
+      trap: 1,
+      choices: [{ label: "The courtyard gate screams.", next: "t3" }]
+    },
+    "t2-hide": {
+      card: "PANTRY",
+      title: "Safe, and the glass still breaks",
+      bodies: [
+        "You hid. The wards flickered without you. Ward -2. The phantoms learned the pantry door. Even leftovers must be guarded."
+      ],
+      trap: 2,
+      wardDown: 2,
+      choices: [{ label: "Forced out. The gate is already gone.", next: "t3" }]
+    },
+    t3: {
+      type: "item",
+      art: "/img/tower/ch3.jpg",
+      alt: "Phantom knights in the courtyard, staff on the stairs",
+      caption: "COURSE III  ·  THE BREACH  ·  Guests who will not share",
+      card: "PHANTOM KNIGHTS",
+      title: "The broken threshold",
+      prompt:
+        "Smoke-knights of static — upheaval from the cards, also franchise scouts, also hunger-without-table. They want the recipe, not the meal. The oak doors wait. The staff burns. ITEM: Keystone Hearth, or blast with holy force.",
+      need: "Keystone Hearth",
+      success: "t3-blast",
+      fail: "t3-blast",
+      look: "No keystone? The wave still comes — it costs more Hunger. Dinner is a fight either way."
+    },
+    "t3-blast": {
+      card: "HOLY FORCE = SERVICE BELL",
+      title: "The courtyard clears",
+      bodies: [
+        "You do not retreat. The wave is a tablecloth snapped over a mess. Phantoms go into the storm. The keep groans. Zorya smiles with all her gold teeth: every dinner worth eating collapses the fortress-ego. Next card is ruin. Then bread."
+      ],
+      choices: [{ label: "Let the tower fall.", next: "t4" }]
+    },
+    t4: {
+      art: "/img/tower/ch4.jpg",
+      alt: "Dawn sanctuary of white stone and glass, The Star",
+      caption: "COURSE IV  ·  THE STAR  ·  The citadel was always a table",
+      card: "THE TOWER → THE STAR",
+      title: "Rebirth in the ashes (automatic blend)",
+      bodies: [
+        "Shockwave. The main tower becomes crystalline dust. A golden beam parts the storm. Where the dark keep stood: a sanctuary of white stone and glass — plates, windows, steam. Zorya’s face in the clearing sky. The card is no longer ruin. It is The Star. Listen, {{seeker}}: this is the brand. WIDER does not sell a fortress. WIDER sets dinner after the collapse. The Star is a seat. The mythos is the meal."
+      ],
+      grant: "The Star (table)",
+      heal: 6,
+      choices: [{ label: "Sit. Service begins.", next: "service" }]
+    },
+    service: {
+      art: "/img/tower/ch4.jpg",
+      caption: "SERVICE  ·  Mythos for dinner",
+      card: "WIDER  —  FIRST SUPPER",
+      title: "The sanctuary plates the {{dish}}",
+      bodies: [
+        "{{driver}}, {{navigator}}, and {{hound}} pull up in {{van}} as if they had always been driving toward this cliff. The road-trip was the pilgrimage; the Tower was the kitchen catching fire and living. {{snack}} on the side. {{dish}} in the center. You, {{seeker}}, are the guest who bound the hearth. Pack: {{pack}}. The storm has passed because someone set a table in the rubble."
+      ],
+      choices: [
+        { label: "NEW CHAPTER — the first guest after dawn", next: "ch5" },
+        { label: "OTHER PATH — 16-bit road (Scooby van)", next: "couch" },
+        { label: "ADJUST STYLE — teller / SNES / dinner voice", next: "style" },
+        { label: "SHUFFLE — deal The Tower again", next: "madlib" }
+      ]
+    },
+    ch5: {
+      card: "CHAPTER 5 — THE STAR’S GUEST",
+      title: "Appetite lies down by the glass",
+      bodies: [
+        "{{hound}} is the first pilgrim of the new house: a snack-hound at a white-stone table, which is all religion. {{driver}} calls it destiny. {{navigator}} laminates the menu. Zorya pours tea that tastes like rain that finally learned to be soup. The mythos holds: every night, The Tower may fall. Every night, dinner rebuilds The Star."
+      ],
+      choices: [
+        { label: "Return to service (the brand loop)", next: "service" },
+        { label: "Drive the van into the wider dark", next: "couch" }
+      ]
+    },
+    style: {
+      card: "NARRATIVE TRIM",
+      title: "How should Zorya plate the tale?",
+      bodies: ["Three spoons. Same stew."],
+      choices: [
+        { label: "Old roadside teller (skazka)", next: "service" },
+        { label: "SNES dungeon master", next: "service" },
+        { label: "Dinner mythos (brand voice)", next: "service" }
+      ]
+    },
     couch: {
       card: "FLOOR 1 — THE COUCH",
       title: "Zhivili-byli, in 16-bit",
@@ -266,7 +422,10 @@
       bodies: [
         "The {{dish}} at the edge. {{driver}} and {{navigator}} split the last slider. {{hound}} ‘allergies.’ You, {{seeker}}, sat the whole crawl. Pack: {{pack}}. Hunger remains. The wider universe was a dungeon whose treasure was a seat."
       ],
-      choices: [{ label: "PRESS START — new game+", next: "madlib" }]
+      choices: [
+        { label: "The table was the dungeon loot", next: "service" },
+        { label: "PRESS START — new game+", next: "madlib" }
+      ]
     },
     faint: {
       card: "GAME OVER",
@@ -280,6 +439,9 @@
     if (node.grant) give(node.grant);
     if (node.heal) heal(node.heal);
     if (node.wit) state.wit = Math.min(12, state.wit + node.wit);
+    if (node.luck) state.luck = Math.min(12, state.luck + node.luck);
+    if (node.ward) state.ward = Math.min(16, state.ward + node.ward);
+    if (node.wardDown) state.ward = Math.max(0, state.ward - node.wardDown);
     if (node.trap) hurt(node.trap);
   }
 
@@ -315,15 +477,16 @@
 
     if (id === "madlib" || node.form) {
       state.turn = 0;
+      state.ward = 12;
       state.hunger = 16;
       state.wit = 9;
       state.luck = 7;
       state.inv = ["Laminated Map"];
       state.lastRoll = null;
       root.innerHTML = wrap(
-        '<p class="teller-mark">Zorya DM · character create</p>' +
-          "<h2>Name the party</h2>" +
-          "<p>Old teller. Russian stove, Roma tent, 16-bit dungeon in the cards. Speak names. I generate rooms, riddles, and traps. Wrong answers bite Hunger — like SNES D&amp;D doors that lied.</p>" +
+        '<p class="teller-mark">Zorya · dinner service · character create</p>' +
+          "<h2>Name who sits when The Tower falls</h2>" +
+          "<p>I deal one mythos: the citadel is a kitchen, the storm is hunger, the Star is dinner. Speak names. Then the card of ruin becomes a table — automatically, like gravy finding the plate.</p>" +
           '<p class="omen">' +
           pick(omens) +
           "</p>" +
@@ -333,9 +496,9 @@
           field("navigator", "Navigator", blanks.navigator) +
           field("hound", "Hound", blanks.hound) +
           field("snack", "Starting MacGuffin", blanks.snack) +
-          field("dish", "Legendary dish", blanks.dish) +
+          field("dish", "The dish at the Star-table", blanks.dish) +
           field("van", "Talking van", blanks.van) +
-          '<button class="btn btn-primary" type="submit">PRESS START</button>' +
+          '<button class="btn btn-primary" type="submit">DEAL THE TOWER</button>' +
           "</form>"
       );
       document.getElementById("madlib-form").addEventListener("submit", function (e) {
@@ -344,7 +507,7 @@
           var el = document.getElementById("blank-" + k);
           if (el && el.value) blanks[k] = el.value;
         });
-        render("couch");
+        render("t1");
       });
       return;
     }
@@ -372,7 +535,7 @@
           "</button>";
       });
       html += "</div>";
-      root.innerHTML = wrap(html);
+      root.innerHTML = wrap(html, node);
       var ansBtns = root.querySelectorAll("[data-idx]");
       for (var j = 0; j < ansBtns.length; j++) {
         ansBtns[j].addEventListener("click", function () {
@@ -427,7 +590,7 @@
         });
         html2 +=
           '<button type="button" class="btn btn-primary" data-act="commit">PULL LEVER</button></div>';
-        root.innerHTML = wrap(html2);
+        root.innerHTML = wrap(html2, node);
         var rbtns = root.querySelectorAll("[data-rune]");
         for (var r = 0; r < rbtns.length; r++) {
           rbtns[r].addEventListener("click", function () {
@@ -473,7 +636,7 @@
         "</button>" +
         '<button type="button" class="btn btn-ghost" data-act="skip">TALK: Refuse / don’t have it</button>' +
         "</div>";
-      root.innerHTML = wrap(html3);
+      root.innerHTML = wrap(html3, node);
       root.querySelector("[data-act='use']").addEventListener("click", function () {
         d20();
         if (hasItem(node.need) || state.lastRoll >= 18) render(node.success);
@@ -516,7 +679,7 @@
         "</button>";
     });
     html4 += "</div>";
-    root.innerHTML = wrap(html4);
+    root.innerHTML = wrap(html4, node);
     bindNext();
   }
 

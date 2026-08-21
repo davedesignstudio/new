@@ -6,9 +6,9 @@ title = "WIDER"
   unsafe = true
 
 [params]
-  description = "A grand stoner space road-trip comic, told by Zorya of the Three Roads — old roadside fortune-teller, choose-your-own-adventure intellect."
-  tagline = "Sit. She deals the universe like cards."
-  kicker = "A 16-bit skazka you can play"
+  description = "WIDER dinner mythos: The Tower falls, The Star is a table. A playable tarot kitchen, road-trip comic, and 16-bit riddle crawl."
+  tagline = "The citadel was a kitchen. The Star is dinner."
+  kicker = "A branding mythos you can eat"
   sunoId = "e627ef77-af0e-4dfc-808d-163a94300261"
   sunoTitle = "Orbital theme — swap in your Suno track ID"
 
@@ -33,16 +33,21 @@ title = "WIDER"
     weight = 4
 
 [[menu.main]]
+    name = "Mythos"
+    url  = "/mythos"
+    weight = 5
+
+[[menu.main]]
     name = "Kitchen"
     url  = "/kitchen"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     name = "Soundtrack"
     url  = "/soundtrack"
-    weight = 6
+    weight = 7
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 7
+    weight = 8
