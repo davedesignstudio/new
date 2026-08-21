@@ -40,7 +40,7 @@ Build only what the camera can hold:
 1. **One visual hook per stop** — cooler light, steam, amber, dawn glass  
 2. **Politics of recipes** — who owns the bun, the name, the last bag  
 3. **Travel rules** — the van starts if they share; Hunger is the meter  
-4. **Deep history** — palace, prairie, stall, spoken as one supper (see [History](/history)), not three stacked captions  
+4. **Deep history** — palace, prairie, stall, spoken as one supper (see [History](/history)); the load-bearing stone from tales told down the table ([Keystone](/keystone))  
 
 Scale rises from booth → stall → cliff kitchen → unfinished planet. The kitchen thread, the friendship thread, and the mystery thread collide at the Star-table.
 
@@ -54,6 +54,7 @@ The long conversation — Le Guin, Morrison, McCloud, Propp used lightly, CYOA b
 - Intimate stakes against weather and appetite  
 - Travel / road craft — episodic stops with a throughline  
 - Carrier-bag fiction (Le Guin) — the table holds; the spear (Chosen One, THOK) does not  
+- Oral keystone — stone soup, the mother's doll, the extra place; the stone is not the soup ([Keystone](/keystone))  
 
 ---
 

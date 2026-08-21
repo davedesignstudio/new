@@ -31,8 +31,8 @@ Mentor / Sage. She embodies the thematic truth (**the fortress was never the poi
 
 ## Voice
 
-Short parable. One kitchen image. No boy-slang. No caricature accent. When she is wrong, she is wrong about timing, not about hunger.
+Short parable. One kitchen image. No boy-slang. No caricature accent. When she is wrong, she is wrong about timing, not about hunger. The stone she deals is not the soup. [Keystone](/keystone).
 
 ## Links
 
-[Character bible](/crew/development) · [The story](/story)
+[Character bible](/crew/development) · [The story](/story) · [Keystone](/keystone)

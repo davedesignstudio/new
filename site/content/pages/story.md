@@ -18,7 +18,7 @@ Who gets a seat. That is the plot.
 
 There is a citadel on a sea-cliff. Tarot calls it **The Tower**. Zorya calls it a kitchen that armored itself — recipes locked, wards up, pride in the beams.
 
-You bind yourself to the hearth-stone. Hunger arrives as lightning. The glass breaks. Ghosts of people who ate without seating the village pour into the courtyard. The keep cannot survive being honest. It falls.
+You bind yourself to the hearth-stone. That is the stone the old stories passed down: you do not eat it; it exists so other people will put their pieces in. Hunger arrives as lightning. The glass breaks. Ghosts of people who ate without seating the village pour into the courtyard. The keep cannot survive being honest. It falls.
 
 From the dust: white stone, glass, a beam of light. The card turns. **The Tower becomes The Star.** The table was the point. Every night dinner rebuilds it.
 
@@ -36,7 +36,7 @@ Unmask. Sit. The slider stand at the edge of the map is the Star-table with a bu
 
 A palace forgot crust. A prairie kitchen split a loaf. A stall would not sell its name. Same supper. She is not stacking countries. She is remembering a table.
 
-The long memory is [History](/history).
+The long memory is [History](/history). The load-bearing stone, told down the table, is [Keystone](/keystone).
 
 ## What you were looking for
 

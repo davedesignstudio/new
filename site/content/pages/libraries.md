@@ -127,4 +127,4 @@ Old host law (the Greek *xenia* of the roadside house, and every culture that sa
 | Gaiman / Zipes | Compost the tale. Contaminate it for this kitchen. |
 | Guest-friendship | Feed first. Ask names later. |
 
-If you are building a table of your own, start with [the story](/story). The pieces of history, told as one supper, are on [History](/history). Then drive [the paperback](/adventure). The six kitchens are on [the route](/route). Panels live on [craft](/craft). Food research lives on [kitchen](/kitchen).
+If you are building a table of your own, start with [the story](/story). The pieces of history, told as one supper, are on [History](/history). The load-bearing stone, found in tales told down the table, is [Keystone](/keystone). Then drive [the paperback](/adventure). The six kitchens are on [the route](/route). Panels live on [craft](/craft). Food research lives on [kitchen](/kitchen).

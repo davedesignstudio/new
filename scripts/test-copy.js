@@ -84,4 +84,19 @@ if (histMissing.length) {
   process.exit(1);
 }
 
+var keyPath = path.join(__dirname, "..", "site", "content", "pages", "keystone.md");
+if (!fs.existsSync(keyPath)) {
+  console.log("copy lint failed: missing site/content/pages/keystone.md");
+  process.exit(1);
+}
+var key = fs.readFileSync(keyPath, "utf8");
+var keyNeed = ["stone is not the soup", "Stone soup", "extra place", "hearth-stone"];
+var keyMissing = keyNeed.filter(function (w) {
+  return key.indexOf(w) === -1;
+});
+if (keyMissing.length) {
+  console.log("copy lint failed: keystone.md missing: " + keyMissing.join(", "));
+  process.exit(1);
+}
+
 console.log("copy lint passed (" + files.length + " files)");

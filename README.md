@@ -14,6 +14,7 @@ Live doors:
 - `/play/?b1=1` — Path B1, the storm (Tower → Star)
 - `/libraries` — other tellers on story, read not interviewed, applied to this kitchen
 - `/history` — palace, prairie, stall: pieces of history told as one supper
+- `/keystone` — the stone is not the soup; the old stories agree
 
 ## Run locally
 

@@ -112,6 +112,11 @@ check("the old part stories history together", function () {
   assert.ok(fromTent && fromBooth, "old part should be reachable from tent and diner booth");
 });
 
+check("the old part names the keystone", function () {
+  var blob = (P.BOOK[11].text || []).concat(P.BOOK[31].text || []).join(" ");
+  assert.ok(/stone is not the soup|You do not eat this/i.test(blob), blob);
+});
+
 check("diner feeds before it asks names", function () {
   var blob = (P.BOOK[52].text || []).join(" ");
   assert.ok(/waters/.test(blob), blob);

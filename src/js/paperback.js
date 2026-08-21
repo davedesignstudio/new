@@ -40,6 +40,7 @@
       text: [
         "She does not turn the card. She looks at your hands, which are empty, which she does not treat as a failure.",
         "“A palace locked its kitchen and called the bread a crown. A prairie table ended an argument by feeding it. A stall would not sell its name. I am not stacking countries. I am remembering a table.”",
+        "She sets a stone on the napkin. It is just a stone. “You do not eat this. The old stories agree. You put it in the pot so other people remember they have carrots. Then you take it out. Supper remains.”",
         "“Tonight you are the same story. You are still hungry. That part was never in question.”"
       ],
       choices: [{ label: "Get in the van", to: 14 }]
@@ -51,7 +52,7 @@
       gain: "Zorya's warning",
       text: [
         "“I could turn it,” she says. “Then you would spend the night obeying it. No. You take the road, I keep the card, we compare notes.”",
-        "She writes something on a napkin and folds it into your hand. It says: THE MONSTER IS HOLDING A PAN.",
+        "She writes something on a napkin and folds it into your hand. It says: THE MONSTER IS HOLDING A PAN. Under that, smaller: THE STONE IS NOT THE SOUP.",
         "You are still hungry. That part was never in question."
       ],
       choices: [{ label: "Get in the van", to: 14 }]

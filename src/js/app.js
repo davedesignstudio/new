@@ -94,7 +94,7 @@
     "A palace forgot crust. A prairie kitchen split a loaf. A stall would not sell its name. I am not stacking countries. I am remembering a table.",
     "They argued about a hog until supper arrived. They locked a kitchen until the stove left. They renamed a bun until nobody cooked it. Child, that is one story.",
     "Black bread walked into a house that had forgotten crust. A woman set a table and an argument sat down. A lantern stayed on over people who were working. Same supper.",
-    "I have told this as a loaf, as a hog, as a bun that kept its name. The hint is still supper."
+    "They boiled a stone until the village remembered it had carrots. Then they took the stone out. You do not eat the keystone. You eat what people put in."
   ];
 
   var closers = [
@@ -355,9 +355,9 @@
       title: "Fortifying the Mind",
       chapter: 1,
       bodies: [
-        "The Tower glimmers under her lamp. You choose to stay. That citadel on the cliff is a kitchen putting up walls — recipes locked, pride in the beams. She binds you to the hearth-stone. You will not run. You will cook through the weather."
+        "The Tower glimmers under her lamp. You choose to stay. That citadel on the cliff is a kitchen putting up walls — recipes locked, pride in the beams. She binds you to the hearth-stone. It is the stone in the pot, not the soup. You will not run. You will cook through the weather."
       ],
-      decision: "She binds you to the stove. The keep will have to stand on that.",
+      decision: "She binds you to the stove. The stone is not the soup. The keep will have to stand on that.",
       grant: "Keystone Hearth",
       ward: 4,
       choices: [{ label: "Continue", next: "b1-2" }]
@@ -400,7 +400,7 @@
       title: "Rebirth in the Ashes",
       chapter: 4,
       bodies: [
-        "The keep becomes dust. Morning on the ocean. White stone, glass, a beam like a candle. She is already smiling. The card turns: Tower to Star. Sit. Dinner is the sanctuary."
+        "The keep becomes dust. Morning on the ocean. White stone, glass, a beam like a candle. She is already smiling. The card turns: Tower to Star. The stone can come out of the pot. Sit. Dinner is the sanctuary."
       ],
       decision: "She closes the book — then leaves it open. What now?",
       grant: "The Star (table)",
@@ -448,7 +448,7 @@
       card: "KEYSTONE = HEARTH",
       title: "You are the dinner’s foundation",
       bodies: [
-        "You pour yourself into the keep’s heart. Wards blaze. You cannot flee easily — but gravy, glass, and guests will have a place to stand. Pack: Keystone Hearth. Ward +4."
+        "You pour yourself into the keep’s heart. Wards blaze. You cannot flee easily — but gravy, glass, and guests will have a place to stand. Pack: Keystone Hearth. The old stories call it the stone you do not eat. Ward +4."
       ],
       grant: "Keystone Hearth",
       ward: 4,
@@ -531,7 +531,7 @@
       card: "THE TOWER → THE STAR",
       title: "Rebirth in the ashes (automatic blend)",
       bodies: [
-        "The keep becomes dust. Golden beam. White stone. Glass. I have told this ending as a loaf walking into a locked house, as a table ending an argument, as a roast that used to be a bird. Same supper. The Star is a place-setting."
+        "The keep becomes dust. Golden beam. White stone, glass. The stone comes out of the pot, because it was never food. I have told this ending as a loaf walking into a locked house, as a table ending an argument, as a roast that used to be a bird. Same supper. The Star is a place-setting."
       ],
       grant: "The Star (table)",
       heal: 6,

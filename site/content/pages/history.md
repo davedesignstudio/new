@@ -36,6 +36,6 @@ A roast still remembers a bird that was never a costume. Cards remember a tower 
 
 Three hungry fools in a van. A clerk with a pan. Water before names. Coffee before questions. The slider stand at the edge of the map has exactly enough seats. That was the prophecy. Gary just read it in a font that made it sound like war.
 
-Prairie table. Road kettle. Winter stove. Same stew. She tells it as **one** story, then she shuts up.
+Prairie table. Road kettle. Winter stove. Same stew. She tells it as **one** story, then she shuts up. The load-bearing stone, told down the table, is [Keystone](/keystone).
 
 The long plot is [the story](/story). Drive it in [the paperback](/adventure). If you make stories of your own, the talk with other tellers is [Libraries](/libraries).

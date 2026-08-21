@@ -21,6 +21,7 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 - **`/road`** — you walk a tiny Earth. She reads what you do.
 - **[Libraries](/libraries)** — other tellers, read not interviewed; methods applied to this kitchen.
 - **[History](/history)** — palace, prairie, stall: one supper, not three captions.
+- **[Keystone](/keystone)** — the stone is not the soup; told down the table.
 
 Mars is not a sequel. It is Earth imagining an exit and still having to set supper.
 
@@ -29,7 +30,7 @@ Mars is not a sequel. It is Earth imagining an exit and still having to set supp
 - The citadel was a kitchen. The Star is dinner.
 - Every night The Tower may fall. Every night dinner rebuilds The Star.
 - We do not sell a fortress. We set a seat in the wreckage.
-- The path that eats its own dust is still a path. Walk it kindly.
+- The stone is not the soup. Dinner stands on that.
 
 ## Her three tongues
 

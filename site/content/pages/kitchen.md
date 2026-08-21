@@ -14,7 +14,7 @@ WIDER uses food the way a mystery uses clues. Each stop is researched as a **foo
 
 **Food as archive.** Recipes remember migrations the way maps remember wars. A night market is a collage of old kitchens that refused to die.
 
-**Commensality.** Eating together makes a crew. Refusing to share makes a villain. Street food is where mixed means stand in the same grease-halo.
+**Commensality.** Eating together makes a crew. Refusing to share makes a villain. Street food is where mixed means stand in the same grease-halo. The old pot-and-stone tale (nail soup, axe soup, button soup) is the same law: the stone is not the soup.
 
 **Travel with care.** Do not flatten a culture into a flavor. Let vendors speak back. Let the “ghost” be a person protecting a recipe from a franchise.
 
