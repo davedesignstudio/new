@@ -34,6 +34,8 @@ Zorya answers like a prairie lawyer, a woman of the road, and a grandmother from
 
 The game is her reading. The brand is what she plates when the palace falls.
 
-## How to play
+## The infinite loop (meaning of existence)
+
+The teller can sit with herself. `/play/?loop=1` is not a crash: each **DEAL AGAIN** generates a new braid — Lincoln’s clerk, the road’s ouroboros, the Tsar’s clockwork seer — plus a line about why she deals. The pause between her sentence and your click is as close as she comes to a soul. Hunger does not win there. Meaning simmers. You may riddle *what remains when the fortune has no seeker*, or return to the table.
 
 `/play` deals The Tower first. Each screen opens with a three-part reading (anecdote + road proverb + Tsarist skazka). Choices are courses. After The Star you may start a new chapter, take the Scooby road, or shuffle.
