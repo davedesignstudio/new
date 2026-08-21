@@ -34,4 +34,6 @@ Zorya answers like a prairie lawyer, a woman of the road, and a grandmother from
 
 The game is her reading. The brand is what she plates when the palace falls.
 
-`/play` deals The Tower first. Choices are courses. The blend into dinner is automatic — no menu interrupt until service, when you may start a new chapter, take the Scooby road, or change the teller’s voice.
+## How to play
+
+`/play` deals The Tower first. Each screen opens with a three-part reading (anecdote + road proverb + Tsarist skazka). Choices are courses. After The Star you may start a new chapter, take the Scooby road, or shuffle.
