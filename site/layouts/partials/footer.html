@@ -1,4 +1,16 @@
 <footer class="site-footer">
+  <div class="tape" aria-label="Soundtrack">
+    <p class="tape-kicker">Suno dashboard mix</p>
+    <p class="tape-title">{{ .Site.Params.sunoTitle }}</p>
+    <iframe
+      class="suno-frame"
+      src="https://suno.com/embed/{{ .Site.Params.sunoId }}"
+      title="Suno player"
+      loading="lazy"
+      allow="autoplay; encrypted-media; fullscreen"
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <p class="tape-note">Drop your own song UUID into <code>site/config.toml</code> → <code>sunoId</code>. Prompts live on <a href="/soundtrack">Soundtrack</a>.</p>
+  </div>
   <p class="footer-brand">{{ .Site.Title }}</p>
   <p class="footer-note">{{ .Site.Params.description }}</p>
 </footer>

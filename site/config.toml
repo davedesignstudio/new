@@ -6,31 +6,43 @@ title = "WIDER"
   unsafe = true
 
 [params]
-  description = "A space road-trip comic novel into the wider universe."
-  tagline = "Leave the known map. Keep driving."
-  kicker = "A graphic novel in progress"
+  description = "A grand stoner space road-trip comic: Scooby-mystery van, Bill-and-Ted destiny, Harold-and-Kumar munchies, told through food and culture."
+  tagline = "Meddling kids. Mystery van. Munchies across the universe."
+  kicker = "A most excellent graphic novel you can play"
+  sunoId = "e627ef77-af0e-4dfc-808d-163a94300261"
+  sunoTitle = "Orbital theme — swap in your Suno track ID"
+
+[[menu.main]]
+    name = "Play"
+    url  = "/play"
+    weight = 1
+
+[[menu.main]]
+    name = "Book"
+    url  = "/book"
+    weight = 2
 
 [[menu.main]]
     name = "Route"
     url  = "/route"
-    weight = 1
+    weight = 3
 
 [[menu.main]]
     name = "Crew"
     url  = "/crew"
-    weight = 2
-
-[[menu.main]]
-    name = "Craft"
-    url  = "/craft"
-    weight = 3
-
-[[menu.main]]
-    name = "Sample"
-    url  = "/sample"
     weight = 4
+
+[[menu.main]]
+    name = "Kitchen"
+    url  = "/kitchen"
+    weight = 5
+
+[[menu.main]]
+    name = "Soundtrack"
+    url  = "/soundtrack"
+    weight = 6
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 5
+    weight = 7

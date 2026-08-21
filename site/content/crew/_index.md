@@ -1,6 +1,6 @@
 +++
 title = "The Crew"
-summary = "A found family forced into proximity by a ship that only runs when they argue in rhythm."
+summary = "Two hungry meddling kids, a snack-hound, a talking mystery van, and a prophet who did not sign up for this."
 +++
 
-Road-trip comics live or die on who shares the cabin.
+Shaggy appetite, Velma itinerary, Scooby munchies, Mystery Machine with opinions.

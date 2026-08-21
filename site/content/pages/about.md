@@ -3,18 +3,19 @@ date = "2026-08-21"
 title = "About"
 url = "/about"
 kicker = "Project"
-summary = "WIDER is a graphic novel in development: a space road trip into the wider universe."
+summary = "WIDER is a playable comic novel: grand stoner space road trip, Scooby mysteries, food-culture research."
 +++
 
-This site is the living pitch board for **WIDER** — a comic-book novel about a crew that drives past the last buoy.
+This site is the pitch, the research kitchen, and the game for **WIDER**.
 
-It collects the **route**, **crew**, **craft research**, and a **sample page** so the story stays visual from day one.
+It mashes:
 
-### What comes next
+- a **space road-trip graphic novel**
+- **Scooby-Doo** mystery-van unmaskings (original gang — no licensed characters)
+- **Bill & Ted** destiny
+- **Harold & Kumar** munchies pilgrimage
+- **choose-your-own-adventure + Mad Libs**
+- a **Suno** dashboard soundtrack
+- **food-and-culture research writing** as the actual plot engine
 
-1. Lock tone (wonder / chase / quiet found-family)  
-2. Thumbnail Departure → Wider Dark  
-3. Choose full-script vs plot-first collaboration  
-4. Expand the sample into a 10-page prologue  
-
-Built on the Victor Hugo / Netlify starter — remade for a comic novel instead of a restaurant menu.
+Play it on `/play`. Read the combined language on `/book`. Season it from `/kitchen`.

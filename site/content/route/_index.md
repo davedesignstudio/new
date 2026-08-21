@@ -1,6 +1,6 @@
 +++
 title = "The Route"
-summary = "An episodic map for the space road trip. Each stop is a comic chapter with one conflict and one character beat."
+summary = "Six dumb, escalating stops between a suburban launch pad and the burger stand at the edge of everything."
 +++
 
-The trip is the setting. The plot is what the crew becomes while moving.
+Every stop is a bit with a beginning, a middle, and a fire alarm. The trip is the setting; the friendship is the plot.
