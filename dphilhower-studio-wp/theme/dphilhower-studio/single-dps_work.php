@@ -46,6 +46,11 @@ get_header();
 			<div class="entry-content">
 				<?php the_content(); ?>
 			</div>
+			<?php
+			if ( 'ember-pie-co' === get_post_field( 'post_name', get_the_ID() ) ) {
+				get_template_part( 'template-parts/brand-kit-ember' );
+			}
+			?>
 			<p><a class="btn btn-outline" href="<?php echo esc_url( get_post_type_archive_link( 'dps_work' ) ); ?>"><?php esc_html_e( 'All work', 'dphilhower-studio' ); ?></a></p>
 		</article>
 	<?php endwhile; ?>

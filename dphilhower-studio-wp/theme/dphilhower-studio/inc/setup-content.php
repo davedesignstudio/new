@@ -119,7 +119,8 @@ function dps_seed_demo_content( $force = false ) {
 		'work-web.jpg'   => dps_sideload_theme_image( 'work-web.jpg', 'Website design' ),
 		'work-print.jpg' => dps_sideload_theme_image( 'work-print.jpg', 'Print design' ),
 		'work-menu.jpg'  => dps_sideload_theme_image( 'work-menu.jpg', 'Hospitality' ),
-		'work-pack.jpg'  => dps_sideload_theme_image( 'work-pack.jpg', 'Packaging' ),
+		'work-pack.jpg'   => dps_sideload_theme_image( 'work-pack.jpg', 'Packaging' ),
+		'ember-kit.jpg'   => dps_sideload_theme_image( 'ember-kit.jpg', 'Ember Pie Co. kit' ),
 	);
 
 	if ( $hero_id ) {
@@ -160,6 +161,18 @@ function dps_seed_demo_content( $force = false ) {
 	update_option( 'timezone_string', 'America/New_York' );
 
 	$projects = array(
+		array(
+			'slug'     => 'ember-pie-co',
+			'title'    => 'Ember Pie Co.',
+			'image'    => 'ember-kit.jpg',
+			'excerpt'  => 'Live brand kit — window, menu, bag, phone',
+			'subtitle' => 'Live brand kit — window, menu, bag, phone',
+			'client'   => 'Studio sample, Morris County pie shop',
+			'services' => 'Identity · menu · packaging · web',
+			'year'     => '2026',
+			'location' => 'Morristown / Bernardsville area',
+			'content'  => '<p>Guests meet this brand in the street, in their hands, and on a screen before the first slice. The kit is the proof: one type family, one red, one cream, used everywhere it has to survive a printer and a rainy sidewalk.</p><p>This is a studio sample of how D Philhower Studio would build a local pizzeria system — not a template with a new logo dropped in.</p>',
+		),
 		array(
 			'slug'     => 'restaurant-brand-systems',
 			'title'    => 'Restaurant brand systems',
@@ -222,7 +235,9 @@ function dps_seed_demo_content( $force = false ) {
 		),
 	);
 
+	$menu_order = 0;
 	foreach ( $projects as $project ) {
+		$menu_order    += 10;
 		$existing = get_page_by_path( $project['slug'], OBJECT, 'dps_work' );
 		$postarr  = array(
 			'post_type'    => 'dps_work',
@@ -231,6 +246,7 @@ function dps_seed_demo_content( $force = false ) {
 			'post_name'    => $project['slug'],
 			'post_content' => $project['content'],
 			'post_excerpt' => $project['excerpt'],
+			'menu_order'   => $menu_order,
 		);
 		if ( $existing ) {
 			$postarr['ID'] = $existing->ID;
