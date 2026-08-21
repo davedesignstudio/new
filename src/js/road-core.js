@@ -28,8 +28,10 @@
     "HORSE",
     "KEY",
     "WHEEL",
-    "ANGEL"
+    "ANGEL",
+    "TABLE"
   ];
+  var STORE = "wider.roadwisdom.v1";
   var ARTS = [
     "/img/road/bville.jpg",
     "/img/road/bville-2.jpg",
@@ -40,6 +42,7 @@
     "/img/road/kong.jpg",
     "/img/road/princess.jpg",
     "/img/road/paper-stamp.jpg",
+    "/img/road/paper.jpg",
     "/img/road/scan-a.png",
     "/img/road/scan-b.png",
     "/img/tower/ch1.jpg",
@@ -155,6 +158,54 @@
         { id: "pay-tune", label: "Leave a coin", t: { mercy: 1, loyalty: 1 } },
         { id: "walk-music", label: "Keep walking", t: { wander: 1 } }
       ]
+    },
+    {
+      q: "The night clerk hides the last bag behind the counter, like a relic. Will you share it?",
+      a: [
+        { id: "share-bag", label: "Share it", t: { mercy: 1, loyalty: 1 }, flag: "sharedBag" },
+        { id: "hoard-bag", label: "Keep it", t: { suspicion: 1 }, flag: "hoardedBag" },
+        { id: "ask-clerk", label: "Ask why", t: { curiosity: 1 } }
+      ]
+    },
+    {
+      q: "An auntie says a scout wants her bun renamed WRAP. She is not smiling.",
+      a: [
+        { id: "sit-auntie", label: "Sit with her", t: { mercy: 1, trust: 1 }, flag: "satAuntie" },
+        { id: "side-scout", label: "Side with the scout", t: { suspicion: 1, wander: 1 } },
+        { id: "ask-bun", label: "Ask about the recipe", t: { curiosity: 1 } }
+      ]
+    },
+    {
+      q: "One basket of rings between two hungry people. Pass the red bottle?",
+      a: [
+        { id: "pass-ketchup", label: "Pass it", t: { loyalty: 1, mercy: 1 }, flag: "passedKetchup" },
+        { id: "keep-ketchup", label: "Keep it", t: { suspicion: 1 } },
+        { id: "order-two", label: "Order two", t: { wander: 1, mercy: 1 } }
+      ]
+    },
+    {
+      q: "A rubber head asks what a franchise cannot buy — only steal.",
+      a: [
+        { id: "say-cook", label: "The cook", t: { loyalty: 1, courage: 1 }, flag: "unmaskedScout" },
+        { id: "say-coupon", label: "A coupon", t: { wander: 1 } },
+        { id: "chew-mask", label: "Chew the mask", t: { courage: 1, curiosity: 1 }, flag: "unmaskedScout" }
+      ]
+    },
+    {
+      q: "Widow's canteen. The stew is grief and good stock. She waits to see if you eat.",
+      a: [
+        { id: "eat-stew", label: "Eat", t: { mercy: 1, return: 1 }, flag: "ateStew" },
+        { id: "refuse-stew", label: "Refuse", t: { suspicion: 1 } },
+        { id: "ask-radio", label: "Ask the radio", t: { curiosity: 1, fate: 1 } }
+      ]
+    },
+    {
+      q: "Castle Nova. The slider stand at the edge of the map. Sit?",
+      a: [
+        { id: "sit-star", label: "Sit", t: { mercy: 1, loyalty: 1, return: 1 }, flag: "satStar", card: "TABLE" },
+        { id: "walk-star", label: "Keep walking", t: { wander: 1 } },
+        { id: "split-slider", label: "Split it", t: { loyalty: 1, mercy: 1 }, flag: "satStar", card: "HEART" }
+      ]
     }
   ];
 
@@ -171,10 +222,14 @@
     { id: "beggar", name: "a beggar", art: "village" },
     { id: "red", name: "a woman in red", art: "oracle" },
     { id: "cafe", name: "Cafe Robust", art: "creamery" },
-    { id: "princess", name: "the princess", art: "princess" }
+    { id: "princess", name: "the princess", art: "princess" },
+    { id: "clerk", name: "a night clerk", art: "village" },
+    { id: "auntie", name: "an auntie", art: "bville" },
+    { id: "diner", name: "a diner cook", art: "creamery" },
+    { id: "mascot", name: "a rubber head", art: "road" },
+    { id: "canteen", name: "a widow cook", art: "chapel" },
+    { id: "star", name: "the Star-table", art: "oracle" }
   ];
-
-  var STORE = "wider.roadwisdom.v1";
 
   function blankTraits() {
     return {
@@ -276,7 +331,10 @@
       enc.push(beat);
     }
     var stranger = pick(STRANGERS, mem);
-    var qn = questionForStranger(stranger, mem);
+    if (mem.flags.ignoredChild && mem.cycles >= 1 && mem.cycles < 10 && !mem.flags.helpedChild && !mem.flags.helpedMother) {
+      stranger = { id: "child", name: "a child", art: "village" };
+    }
+    var qn = cloneBeat(questionForStranger(stranger, mem));
     qn.artUrl = artForStranger(stranger, nextArt, mem);
     enc.push(qn);
     var dirs = shuffle(["FOREST", "VILLAGE", "RIVER"], mem);
@@ -320,6 +378,17 @@
     return lines;
   }
 
+  function cloneBeat(q) {
+    if (!q) return { q: "The road goes quiet.", a: [{ id: "walk-on", label: "WALK ON", t: { wander: 1 } }] };
+    return {
+      q: q.q,
+      card: q.card,
+      spawned: q.spawned,
+      a: q.a,
+      artUrl: q.artUrl
+    };
+  }
+
   function questionForStranger(stranger, mem) {
     var who = {
       child: "help-child",
@@ -334,7 +403,13 @@
       cafe: "sit-cafe",
       red: "take-ring",
       beggar: "return-it",
-      traveler: "return-it"
+      traveler: "return-it",
+      clerk: "share-bag",
+      auntie: "sit-auntie",
+      diner: "pass-ketchup",
+      mascot: "say-cook",
+      canteen: "eat-stew",
+      star: "sit-star"
     };
     var want = who[stranger.id] || "return-it";
     var q = QUESTIONS[0];
@@ -354,9 +429,13 @@
     if (stranger.id === "princess") return pick(["/img/road/kong.jpg", "/img/road/princess.jpg"], mem);
     if (stranger.id === "bville") return pick(["/img/road/bville.jpg", "/img/road/bville-2.jpg"], mem);
     if (stranger.id === "philhower") return "/img/road/philhower.jpg";
-    if (stranger.id === "merchant" || stranger.id === "cafe") {
+    if (stranger.id === "merchant" || stranger.id === "cafe" || stranger.id === "diner" || stranger.id === "clerk") {
       return pick(["/img/road/coffee.jpg", "/img/road/coffee-cup.jpg", "/img/road/cafe.jpg"], mem);
     }
+    if (stranger.id === "auntie") return pick(["/img/road/bville.jpg", "/img/road/bville-2.jpg"], mem);
+    if (stranger.id === "mascot") return pick(["/img/road/kong.jpg", "/img/road/scan-a.png"], mem);
+    if (stranger.id === "canteen") return pick(["/img/road/paper.jpg", "/img/road/scan-b.png"], mem);
+    if (stranger.id === "star") return "/img/tower/ch4.jpg";
     return nextArt();
   }
 
@@ -431,16 +510,50 @@
       "ROAD+BRIDGE": "Soon you will have to trust a crossing.",
       "ROAD+DOG": "Something loyal is keeping pace, whether you asked or not.",
       "ROAD+HEART": "You are not hunting a map. You want a table that will hold.",
+      "ROAD+HOUSE": "You keep building walls around a stove. The stove did not ask.",
+      "ROAD+WHEEL": "You keep calling this failure. The road calls it practice.",
       "BRIDGE+HEART": "The crossing only works if you let someone meet you halfway.",
       "BRIDGE+MOON": "This bridge prefers night. Day makes it shy.",
+      "BRIDGE+DOG": "Someone will wait on the far bank. They already set a plate.",
       "DOG+DAGGER": "Loyalty can bite. That does not make it less loyal.",
+      "DOG+HOUSE": "A seat is being kept — for an animal first. That is not an insult.",
       "LANTERN+FOREST": "The light was trying to warn you, not guide you.",
+      "LANTERN+MOON": "You were already seen. The lantern is only catching up.",
       "HOUSE+RING": "Someone is keeping a seat warm.",
+      "HOUSE+FIRE": "Even what you fortify can fall. That is not the end of cooking.",
+      "HOUSE+KEY": "There is a door you have never chosen — not yet.",
       "CROW+MOON": "A watcher has been counting how often you come back.",
+      "CROW+TABLE": "The birds know who did not pass the plate.",
+      "TABLE+ROAD": "You were looking for a map. It was a place-setting.",
+      "TABLE+HOUSE": "The fortress was never the point. The table was.",
+      "TABLE+FIRE": "Every night the Tower may fall. Every night dinner rebuilds the Star.",
+      "TABLE+HEART": "Permission was always a seat.",
+      "TABLE+RING": "The vow was supper.",
+      "TABLE+DOG": "The hound was not in the prophecy. The hound was in the booth.",
+      "TABLE+MOON": "Night service. Same table.",
+      "TABLE+WHEEL": "Sitting is still a kind of walking.",
+      "TABLE+SNAKE": "The loop is a place-setting that remembers you.",
+      "TABLE+ANGEL": "The blessing is whoever still passes a plate.",
+      "TABLE+BELL": "Service is about to begin.",
+      "TABLE+KEY": "The door was a kitchen the whole time.",
+      "TABLE+SHIP": "Leaving still needs a table.",
+      "TABLE+LANTERN": "You were already seated. You just had not sat.",
       "KEY+HOUSE": "There is a door you have never chosen — not yet.",
+      "KEY+BRIDGE": "The lock is a crossing in disguise.",
       "WHEEL+ROAD": "You keep calling this failure. The road calls it practice.",
       "FIRE+HOUSE": "Even what you fortify can fall. That is not the end of cooking.",
-      "SHIP+RIVER": "Leaving can still be a way of sitting still."
+      "FIRE+HEART": "Hunger will not be warded. It will be fed.",
+      "SHIP+RIVER": "Leaving can still be a way of sitting still.",
+      "SHIP+MOON": "You packed a future and called it a map.",
+      "HEART+RING": "The vow was supper.",
+      "HEART+BELL": "Someone is calling you to sit.",
+      "BELL+HOUSE": "Service is about to begin.",
+      "ANGEL+ROAD": "Permission was always a seat.",
+      "ANGEL+HEART": "You were looking for a blessing. It was a plate.",
+      "SNAKE+ROAD": "The path that eats its own dust is still a path. Walk it kindly.",
+      "SNAKE+WHEEL": "The loop is not a punishment.",
+      "HORSE+ROAD": "You can keep going. That is not the same as arriving.",
+      "DAGGER+HEART": "What you will not share will cut you first."
     };
     if (table[key]) return table[key];
     if (table[b + "+" + a]) return table[b + "+" + a];
@@ -465,7 +578,20 @@
     if (c.abandoned) history.push("You walked away from " + c.abandoned + " crossing" + (c.abandoned === 1 ? "" : "s") + ". The water still knows.");
     if (c.east >= 3) history.push("East again — " + c.east + " times. You call it wandering. The road calls it a preference.");
     if (c.sits) history.push("More than once, you sat when walking would have been easier.");
+    if (mem.flags.ate) history.push("Bville still has your plate.");
+    if (mem.flags.calledPhilhower) history.push("You called the yellow sun. Someone is still building.");
+    if (mem.flags.readLedger) history.push("Bind's book remembers your hands.");
     if (mem.flags.ignoredChild && mem.cycles >= 2) history.push("The child has not forgotten that you left.");
+    if (mem.flags.helpedChild || mem.flags.helpedMother) history.push("You returned to the mill.");
+    if (mem.flags.askedPrincess) history.push("She told you her name. You still have to sit or walk.");
+    if (mem.flags.satThrone) history.push("You climbed. The keep remembers.");
+    if (mem.flags.sharedBag) history.push("You passed the last bag.");
+    if (mem.flags.hoardedBag) history.push("You kept the last bag. The engine still talks about it.");
+    if (mem.flags.satAuntie) history.push("You sat for the bun the scout wanted to rename.");
+    if (mem.flags.passedKetchup) history.push("You passed the red bottle. The van started.");
+    if (mem.flags.unmaskedScout) history.push("The rubber head came off. It was a scout.");
+    if (mem.flags.ateStew) history.push("You ate grief and good stock.");
+    if (mem.flags.satStar) history.push("You sat at the slider stand. It was the Star.");
     if (mem.cycles >= 7) history.push("You always find a road. That is not an insult.");
     if (mem.cycles >= 12 && c.helps) history.push("You keep trying to save people. Has anyone asked why?");
     if (mem.cycles >= 31 && !mem.flags.askedDoor) history.push("All these walks, and you have never once chosen the door.");
@@ -477,6 +603,7 @@
       before: cards[3],
       become: cards[4],
       pair: pairLine(cards[0], cards[1]),
+      pair2: pairLine(cards[2], cards[3]),
       soul: soul,
       history: history,
       looking: inferWant(mem),
@@ -640,8 +767,11 @@
     }
     if (sc === "fortune") {
       var f = s.spread;
-      var lines = ["THE READING"].concat(wrapText(f.pair)).concat(["", "If I had to name", "you: " + f.soul + "."]);
+      var lines = ["THE READING"].concat(wrapText(f.pair));
+      if (f.pair2 && f.pair2 !== f.pair) lines = lines.concat([""]).concat(wrapText(f.pair2));
+      lines = lines.concat(["", "If I had to name", "you: " + f.soul + "."]);
       if (f.history[0]) lines = lines.concat([""]).concat(wrapText(f.history[0]));
+      if (f.history[1]) lines = lines.concat([""]).concat(wrapText(f.history[1]));
       if (mem.cycles >= 5) lines = lines.concat([""]).concat(wrapText("Between us — you were looking for " + f.looking + "."));
       if (f.hiding) lines = lines.concat(["", "You are hiding", f.hiding.title + "."]);
       lines = lines.concat(["", "The road is still", "open."]);
@@ -750,6 +880,13 @@
     tallyHiding(s.mem.counts, opt.id);
     if (opt.flag === "askedPrincess") addNote(s.mem, "She smiled: Vasilisa.");
     if (opt.flag === "satThrone") addNote(s.mem, "You climbed the high girder for her.");
+    if (opt.flag === "sharedBag") addNote(s.mem, "You passed the last bag.");
+    if (opt.flag === "hoardedBag") addNote(s.mem, "You hoarded the last bag.");
+    if (opt.flag === "satAuntie") addNote(s.mem, "You sat with the auntie.");
+    if (opt.flag === "passedKetchup") addNote(s.mem, "You passed the red bottle.");
+    if (opt.flag === "unmaskedScout") addNote(s.mem, "You unmasked the scout.");
+    if (opt.flag === "ateStew") addNote(s.mem, "You ate the widow's stew.");
+    if (opt.flag === "satStar") addNote(s.mem, "You sat at the Star-table.");
     addNote(s.mem, opt.label);
   }
 
@@ -844,6 +981,9 @@
       nxt.cards.push(nxt.symbol);
       return nxt;
     }
+    if (id === "reset") {
+      return resetAll();
+    }
     return s;
   }
 
@@ -854,7 +994,7 @@
     state.road = "Old Imperial Road";
     state.weather = "a red sunset";
     state.stranger = { id: "princess", name: "the princess", art: "princess" };
-    state.encounters = [princessBeat()];
+    state.encounters = [cloneBeat(princessBeat())];
     state.encounters[0].artUrl = pick(["/img/road/kong.jpg", "/img/road/princess.jpg"], state.mem);
     state.runArt = state.encounters[0].artUrl;
     state.symbol = "LANTERN";
@@ -906,6 +1046,7 @@
 
   g.ROADCORE = {
     newState: newState,
+    newRun: newRun,
     act: act,
     scene: scene,
     soulOf: soulOf,
@@ -915,6 +1056,15 @@
     meetPrincess: meetPrincess,
     inferHidden: inferHidden,
     HIDDEN: HIDDEN,
-    CARDS: CARDS
+    cloneBeat: cloneBeat,
+    questionForStranger: questionForStranger,
+    pairLine: pairLine,
+    childMemoryBeat: childMemoryBeat,
+    makeSymbolBeat: makeSymbolBeat,
+    CARDS: CARDS,
+    ARTS: ARTS,
+    QUESTIONS: QUESTIONS,
+    STRANGERS: STRANGERS,
+    STORE: STORE
   };
 })(typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : this);

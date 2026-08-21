@@ -109,6 +109,9 @@
   }
 
   var q = window.location.search || "";
+  if (/\breset=1\b/.test(q) && R.resetAll) {
+    state = R.resetAll();
+  }
   if (/\bmeet=princess\b/.test(q) && R.meetPrincess) {
     state = R.meetPrincess(state);
   } else if (/\bwalk=/.test(q)) {
@@ -123,4 +126,36 @@
     }
   }
   paint();
+
+  function typingTarget(el) {
+    if (!el || el === document.body) return false;
+    var tag = (el.tagName || "").toUpperCase();
+    if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return true;
+    if (el.isContentEditable) return true;
+    return false;
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (typingTarget(document.activeElement)) return;
+    if (document.body && document.body.classList && !document.body.classList.contains("is-road")) return;
+    var sc = R.scene(state);
+    var k = e.key;
+    if (k === "Escape" || k === "Backspace") {
+      e.preventDefault();
+      pick(state.screen === "memory" ? "mem-back" : "mem");
+      return;
+    }
+    if (k === "Enter" || k === " " || k === "ArrowRight") {
+      if (sc.choices[0]) {
+        e.preventDefault();
+        pick(sc.choices[0].id);
+      }
+      return;
+    }
+    var idx = { a: 0, A: 0, 1: 0, b: 1, B: 1, 2: 1, c: 2, C: 2, 3: 2, ArrowUp: 0, ArrowLeft: 1, ArrowDown: 2 }[k];
+    if (idx != null && sc.choices[idx]) {
+      e.preventDefault();
+      pick(sc.choices[idx].id);
+    }
+  });
 })();

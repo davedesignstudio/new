@@ -23,6 +23,7 @@ road = true
       <button type="button" class="gb-key" data-gb-mem>SELECT</button>
       <button type="button" class="gb-key" data-gb-mute>SOUND</button>
     </div>
+    <p class="gb-hint">A B C · ENTER · ESC</p>
   </div>
   <audio id="road-ambience" src="/audio/creamery.mp3" preload="metadata" loop></audio>
 </div>
