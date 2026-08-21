@@ -80,6 +80,11 @@
       window.location.href = "/play/";
       return;
     }
+    if (id === "read-hidden") {
+      var h = R.scene(state).hidden;
+      window.location.href = (h && h.slug) || "/hidden/";
+      return;
+    }
     state = R.act(state, id);
     paint();
   }

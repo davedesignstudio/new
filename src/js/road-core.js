@@ -198,7 +198,21 @@
     return {
       cycles: 0,
       traits: blankTraits(),
-      counts: { east: 0, north: 0, bridges: 0, abandoned: 0, sits: 0, helps: 0, doors: 0 },
+      counts: {
+        east: 0,
+        north: 0,
+        bridges: 0,
+        abandoned: 0,
+        sits: 0,
+        helps: 0,
+        doors: 0,
+        took: 0,
+        asked: 0,
+        passed: 0,
+        stayed: 0,
+        priced: 0,
+        refusedReading: 0
+      },
       lastCards: [],
       flags: {},
       notes: [],
@@ -465,11 +479,93 @@
       pair: pairLine(cards[0], cards[1]),
       soul: soul,
       history: history,
-      looking: inferWant(mem)
+      looking: inferWant(mem),
+      hiding: inferHidden(mem)
     };
     s.spread = spread;
     mem.lastCards = cards.slice(0, 3);
     return spread;
+  }
+
+  var HIDDEN = [
+    {
+      key: "CREDIT",
+      title: "THE NAMES",
+      slug: "/hidden/credit",
+      line: "You have good hands. You have never once asked whose recipe you are holding.",
+      score: function (c) {
+        return (c.took || 0) * 2 - (c.asked || 0);
+      }
+    },
+    {
+      key: "THE LIST",
+      title: "THE LIST",
+      slug: "/hidden/the-list",
+      line: "You have places to be. Every one of them was somewhere else.",
+      score: function (c) {
+        return (c.passed || 0) * 2 - (c.stayed || 0);
+      }
+    },
+    {
+      key: "THE LOCK",
+      title: "THE LOCK",
+      slug: "/hidden/the-lock",
+      line: "All these miles, and you have never once asked a door a question.",
+      score: function (c, mem) {
+        return mem.cycles >= 3 && !(c.doors || 0) ? mem.cycles : -1;
+      }
+    },
+    {
+      key: "THE DEBT",
+      title: "THE DEBT",
+      slug: "/hidden/the-debt",
+      line: "You always ask what it costs. Nobody has ever been able to give you anything.",
+      score: function (c) {
+        return (c.priced || 0) * 3;
+      }
+    },
+    {
+      key: "THE OTHER YOU",
+      title: "THE OTHER YOU",
+      slug: "/hidden/the-other-you",
+      line: "I keep the ones you left standing in the forks. Somebody has to.",
+      score: function (c, mem) {
+        return !(c.sits || 0) && mem.cycles >= 2 ? mem.traits.wander + mem.cycles : mem.traits.wander - (c.sits || 0);
+      }
+    },
+    {
+      key: "THE EXIT",
+      title: "THE EXIT",
+      slug: "/hidden/the-exit",
+      line: "You are very good at going. Tell me one thing you have arrived at.",
+      score: function (c) {
+        return (c.abandoned || 0) * 3 - (c.bridges || 0);
+      }
+    },
+    {
+      key: "THE QUESTION",
+      title: "THE QUESTION",
+      slug: "/hidden/the-question",
+      line: "You keep asking about the future. The future is a polite way of asking permission.",
+      score: function (c, mem) {
+        return (c.refusedReading || 0) * 3 + (mem.cycles >= 5 && !mem.flags.askedHidden ? 2 : 0);
+      }
+    }
+  ];
+
+  function inferHidden(mem) {
+    var c = mem.counts || {};
+    var best = HIDDEN[0];
+    var bestScore = -Infinity;
+    var i;
+    for (i = 0; i < HIDDEN.length; i++) {
+      var v = HIDDEN[i].score(c, mem);
+      if (v > bestScore) {
+        bestScore = v;
+        best = HIDDEN[i];
+      }
+    }
+    return { key: best.key, title: best.title, line: best.line, slug: best.slug, score: bestScore };
   }
 
   function inferWant(mem) {
@@ -547,8 +643,16 @@
       var lines = ["THE READING"].concat(wrapText(f.pair)).concat(["", "If I had to name", "you: " + f.soul + "."]);
       if (f.history[0]) lines = lines.concat([""]).concat(wrapText(f.history[0]));
       if (mem.cycles >= 5) lines = lines.concat([""]).concat(wrapText("Between us — you were looking for " + f.looking + "."));
+      if (mem.cycles >= 3 && f.hiding) lines = lines.concat(["", "You are hiding", f.hiding.title + "."]);
       lines = lines.concat(["", "The road is still", "open."]);
       return lines;
+    }
+    if (sc === "hiding") {
+      var h = (s.spread && s.spread.hiding) || inferHidden(mem);
+      return ["WHAT YOU HIDE", "", h.title]
+        .concat([""])
+        .concat(wrapText('"' + h.line + '"'))
+        .concat(["", "Nothing is buried.", "Earth does not end.", "It is only stored."]);
     }
     if (sc === "hidden") {
       return [
@@ -596,17 +700,23 @@
     if (sc === "spread") return [{ id: "read", label: "Read them" }];
     if (sc === "fortune") {
       var opts = [{ id: "again", label: "Walk again" }];
+      if (s.mem.cycles >= 3) opts.push({ id: "what-hide", label: "What am I hiding?" });
       if (s.mem.cycles >= 8 && !s.mem.flags.askedHidden) opts.push({ id: "what-q", label: "What was I asking?" });
-      else opts.push({ id: "wider", label: "Back to WIDER" });
+      if (opts.length < 2) opts.push({ id: "wider", label: "Back to WIDER" });
       return opts;
     }
     if (sc === "hidden") return [{ id: "again", label: "Walk again" }];
+    if (sc === "hiding")
+      return [
+        { id: "again", label: "Walk again" },
+        { id: "read-hidden", label: "Read the whole part" }
+      ];
     if (sc === "memory") return [{ id: "mem-back", label: "Back" }];
     return [{ id: "begin", label: "Start walking" }];
   }
 
   function artFor(s) {
-    if (s.screen === "reader" || s.screen === "spread" || s.screen === "fortune" || s.screen === "hidden" || s.screen === "discover") return "oracle";
+    if (s.screen === "reader" || s.screen === "spread" || s.screen === "fortune" || s.screen === "hidden" || s.screen === "hiding" || s.screen === "discover") return "oracle";
     if (s.screen === "title") return "oracle";
     if (s.screen === "meet") {
       var e = s.encounters[s.beat];
@@ -637,9 +747,22 @@
     if (opt.flag === "abandonedBridge") s.mem.counts.abandoned += 1;
     if (opt.flag === "sat" || opt.flag === "satThrone") s.mem.counts.sits += 1;
     if (opt.flag === "askedDoor") s.mem.counts.doors += 1;
+    tallyHiding(s.mem.counts, opt.id);
     if (opt.flag === "askedPrincess") addNote(s.mem, "She smiled: Vasilisa.");
     if (opt.flag === "satThrone") addNote(s.mem, "You climbed the high girder for her.");
     addNote(s.mem, opt.label);
+  }
+
+  function tallyHiding(c, id) {
+    if (!c || !id) return;
+    function bumpCount(k) {
+      c[k] = (c[k] || 0) + 1;
+    }
+    if (/^(take|keep|approach)/.test(id)) bumpCount("took");
+    if (/^(ask|read|watch|listen)/.test(id)) bumpCount("asked");
+    if (/^(pass|leave|walk|ignore|turn-away|avoid)/.test(id)) bumpCount("passed");
+    if (/^(sit|eat|help|tell-true|cross|call|listen|return-it)/.test(id)) bumpCount("stayed");
+    if (/^(pay-first|read-ledger|read-cup|read-phil)/.test(id)) bumpCount("priced");
   }
 
   function act(s, id) {
@@ -691,8 +814,18 @@
       s.screen = "hidden";
       return s;
     }
+    if (id === "what-hide") {
+      s.mem.flags.sawHidden = true;
+      addNote(s.mem, "She named what you hide.");
+      saveMem(s.mem);
+      s.screen = "hiding";
+      return s;
+    }
     if (id === "draw" || id === "refuse-draw") {
-      if (id === "refuse-draw") bump(s.mem.traits, { suspicion: 1, return: 1 });
+      if (id === "refuse-draw") {
+        bump(s.mem.traits, { suspicion: 1, return: 1 });
+        s.mem.counts.refusedReading = (s.mem.counts.refusedReading || 0) + 1;
+      }
       drawSpread(s);
       s.screen = "spread";
       return s;
@@ -734,7 +867,7 @@
     if (s.screen === "travel" || s.screen === "title") return s.runArt || "/img/road/paper-stamp.jpg";
     if (s.screen === "discover") return s.runArt || "/img/road/scan-a.png";
     var i = Math.abs((s.mem.seed || 1) + (s.mem.cycles || 0) * 17) % ARTS.length;
-    if (s.screen === "reader" || s.screen === "spread" || s.screen === "fortune" || s.screen === "hidden") return ARTS[i];
+    if (s.screen === "reader" || s.screen === "spread" || s.screen === "fortune" || s.screen === "hidden" || s.screen === "hiding") return ARTS[i];
     return s.runArt || "/img/road/paper-stamp.jpg";
   }
 
@@ -750,7 +883,8 @@
       ambience: artFor(s) === "creamery" || artFor(s) === "village" || artFor(s) === "bville",
       memory: s.mem.notes.slice(),
       road: s.road,
-      weather: s.weather
+      weather: s.weather,
+      hidden: inferHidden(s.mem)
     };
     return scn;
   }
@@ -779,6 +913,8 @@
     resetAll: resetAll,
     loadMem: loadMem,
     meetPrincess: meetPrincess,
+    inferHidden: inferHidden,
+    HIDDEN: HIDDEN,
     CARDS: CARDS
   };
 })(typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : this);

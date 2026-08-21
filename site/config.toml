@@ -18,11 +18,16 @@ title = "WIDER"
     weight = 1
 
 [[menu.main]]
+    name = "Hidden"
+    url  = "/hidden"
+    weight = 2
+
+[[menu.main]]
     name = "Crew"
     url  = "/crew"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 3
+    weight = 4

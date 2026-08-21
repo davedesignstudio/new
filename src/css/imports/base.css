@@ -1222,6 +1222,40 @@ body.is-road {
   color: #cfb5ac;
 }
 
+.section-hidden .entry-meta {
+  color: var(--cyan);
+  letter-spacing: 0.16em;
+}
+
+.section-hidden .page-head h1 {
+  max-width: 14ch;
+}
+
+.section-hidden .page-body.prose blockquote,
+.section-hidden .page-intro.prose blockquote {
+  margin: 1.4rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 2px solid var(--copper);
+  color: var(--paper);
+  font-size: 1.08rem;
+}
+
+.section-hidden .page-body.prose h2 {
+  color: var(--paper);
+  border-top: 1px solid var(--line);
+  padding-top: 1.4rem;
+}
+
+.section-hidden .page-body.prose p,
+.section-hidden .page-intro.prose p {
+  color: rgba(242, 239, 232, 0.88);
+  max-width: 40ch;
+}
+
+.section-hidden .card-grid {
+  gap: 0;
+}
+
 .is-road .site-footer {
   display: none;
 }
