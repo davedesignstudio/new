@@ -44,6 +44,11 @@
       art.setAttribute("data-show", sc.art);
       art.style.backgroundImage = sc.artUrl ? "url('" + sc.artUrl + "')" : "none";
     }
+    var paper = root.querySelector(".gb-paper");
+    if (paper) {
+      paper.style.backgroundImage = sc.bgUrl ? "url('" + sc.bgUrl + "')" : "";
+    }
+    document.body.style.backgroundImage = sc.bgUrl ? "url('" + sc.bgUrl + "')" : "";
     var text = root.querySelector("[data-gb-text]");
     if (text) {
       text.innerHTML = sc.lines

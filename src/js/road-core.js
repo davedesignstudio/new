@@ -738,6 +738,7 @@
       day: s.mem.cycles + 1,
       art: artFor(s),
       artUrl: artUrlFor(s),
+      bgUrl: artUrlFor(s),
       lines: linesFor(s),
       choices: choicesFor(s),
       ambience: artFor(s) === "creamery" || artFor(s) === "village" || artFor(s) === "bville",

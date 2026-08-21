@@ -995,7 +995,11 @@ p {
 
 /* Road-Wisdom: parchment + metallic Game Boy */
 body.is-road {
-  background: #1a1614;
+  background-color: #0c0a08;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  image-rendering: pixelated;
 }
 
 .road-page {
@@ -1007,15 +1011,25 @@ body.is-road {
   position: relative;
   min-height: calc(100vh - 3.4rem);
   overflow: hidden;
-  background: #1a1614;
+  background: transparent;
 }
 
 .gb-paper {
   position: absolute;
   inset: 0;
-  background: #cfb5ac url("/img/road/paper.jpg") center / cover;
-  opacity: 0.28;
-  filter: saturate(0.7) contrast(1.05);
+  background: #1a1614 center / cover no-repeat;
+  opacity: 0.72;
+  filter: saturate(0.8) contrast(1.15) brightness(0.42);
+  image-rendering: pixelated;
+}
+
+.gb-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(12, 10, 8, 0.72) 100%),
+    repeating-linear-gradient(180deg, transparent 0 2px, rgba(12, 10, 8, 0.18) 2px 3px);
 }
 
 .gb-scan {
