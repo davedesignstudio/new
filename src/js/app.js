@@ -273,7 +273,8 @@
     lastRoll: null,
     voice: "dinner",
     loop: 0,
-    sol: 0
+    sol: 0,
+    b1: 0
   };
 
   function pick(list) {
@@ -310,6 +311,7 @@
 
   function hud() {
     var bits = ["H " + state.hunger, "W " + state.ward];
+    if (state.b1) bits.push("B1 " + state.b1 + "/4");
     if (state.loop) bits.push("Earth " + state.loop);
     if (state.sol) bits.push("Sol " + state.sol);
     if (state.lastRoll) bits.push("d20 " + state.lastRoll);
@@ -343,6 +345,90 @@
 
   var nodes = {
     madlib: { form: true },
+    "b1-1": {
+      quiet: true,
+      art: "/img/tower/ch1.jpg",
+      alt: "A stone citadel on a jagged sea-cliff under violet lightning, iron beams and runic wards in the courtyard",
+      caption: "Path B1  ·  Chapter 1  ·  Fortifying the Mind",
+      card: "THE TOWER",
+      title: "Fortifying the Mind",
+      chapter: 1,
+      bodies: [
+        "The Tarot card of The Tower glimmers under the Fortune Teller’s lamp, its crimson mists wrapping around your arms. Choosing resilience, you refuse to be swept away by incoming chaos—you will construct a stronghold."
+      ],
+      decision:
+        "Automated Decision: The Seer binds your soul-energy to the citadel’s keystone, prioritizing structural immunity over mobility.",
+      grant: "Keystone Hearth",
+      ward: 4,
+      choices: [{ label: "Continue", next: "b1-2" }]
+    },
+    "b1-2": {
+      quiet: true,
+      art: "/img/tower/ch2.jpg",
+      alt: "Great Hall: golden barriers, tentacles at stained glass, a blue flame on a stone altar",
+      caption: "Path B1  ·  Chapter 2  ·  The Onset of the Storm",
+      card: "THE STORM",
+      title: "The Onset of the Storm",
+      chapter: 2,
+      bodies: [
+        "The sky fractures. A brilliant streak of white-hot lightning strikes the highest spire, testing the freshly raised wards. The force reverberates through the ground beneath your feet, shaking the very foundation of the keep, but the runic barriers hold firm—for now."
+      ],
+      decision:
+        "Automated Decision: Rather than hiding in the inner sanctum, the protagonist steps onto the parapet and channels energy into the fading wards.",
+      trap: 1,
+      choices: [{ label: "Continue", next: "b1-3" }]
+    },
+    "b1-3": {
+      quiet: true,
+      art: "/img/tower/ch3.jpg",
+      alt: "Phantom knights of smoke in the courtyard, a blazing staff on the keep stairs",
+      caption: "Path B1  ·  Chapter 3  ·  The Broken Threshold",
+      card: "THE BREACH",
+      title: "The Broken Threshold",
+      chapter: 3,
+      bodies: [
+        "A second lightning strike hits, shattering the central courtyard gate. Shadowy apparitions—manifestations of the upheaval predicted by the cards—surge into the outer courtyard. The barrier holds overhead, but the breach at ground level threatens to overrun the fortress from within."
+      ],
+      decision:
+        "Automated Decision: Instead of retreating behind the oak doors, the protagonist unleashes a wave of holy force, blasting the spectral army back into the storm.",
+      choices: [{ label: "Continue", next: "b1-4" }]
+    },
+    "b1-4": {
+      quiet: true,
+      art: "/img/tower/ch4.jpg",
+      alt: "Dawn sanctuary of white stone and glass; The Tower becomes The Star",
+      caption: "Path B1  ·  Chapter 4  ·  Rebirth in the Ashes",
+      card: "THE TOWER → THE STAR",
+      title: "Rebirth in the Ashes",
+      chapter: 4,
+      bodies: [
+        "The shockwave clears the courtyard, but the immense strain causes the main tower to collapse into glowing crystalline dust. From the rubble a brilliant beam of golden light shoots skyward, parting the storm and revealing a clear night sky. Morning sun on the ocean. Where the dark citadel stood, a sanctuary of white stone and glass takes root. The Fortune Teller’s face appears faintly in the sky, smiling, as the card transforms from The Tower into The Star. The storm has passed. By enduring the collapse of the old foundation, you have forged an unshakable new sanctuary."
+      ],
+      decision: "The Seer closes the book—then leaves it open. What now?",
+      grant: "The Star (table)",
+      heal: 6,
+      choices: [
+        { label: "New chapter", next: "ch5" },
+        { label: "Another path", next: "paths" },
+        { label: "Adjust style", next: "style" }
+      ]
+    },
+    paths: {
+      art: "/img/tower/ch4.jpg",
+      caption: "Branch",
+      card: "CROSSROADS",
+      title: "Another story path",
+      bodies: [
+        "The sanctuary holds. From here the road splits: infinite Earth, a complete Mars, the talking van, or you can play the Tower yourself instead of letting the Seer choose."
+      ],
+      choices: [
+        { label: "Infinite Earth", next: "earth" },
+        { label: "Mars", next: "mars" },
+        { label: "Mystery van", next: "couch" },
+        { label: "Play the Tower", next: "t1" },
+        { label: "Watch Path B1 again", next: "b1-1" }
+      ]
+    },
     t1: {
       art: "/img/tower/ch1.jpg",
       alt: "Citadel on a sea-cliff under violet lightning",
@@ -358,6 +444,7 @@
       ]
     },
     "t1-bind": {
+      art: "/img/tower/ch1.jpg",
       card: "KEYSTONE = HEARTH",
       title: "You are the dinner’s foundation",
       bodies: [
@@ -368,6 +455,7 @@
       choices: [{ label: "The sky fractures. Stand the storm.", next: "t2" }]
     },
     "t1-mobile": {
+      art: "/img/tower/ch1.jpg",
       card: "THE OPEN GATE",
       title: "A kitchen that can pack into a van",
       bodies: [
@@ -394,6 +482,7 @@
       ]
     },
     "t2-parapet": {
+      art: "/img/tower/ch2.jpg",
       card: "PARAPET CHANNEL",
       title: "You step into the rain",
       bodies: [
@@ -427,6 +516,7 @@
       look: "No keystone? Then you are the muzhik with only bread. The wave still comes. Hunger is the tax."
     },
     "t3-blast": {
+      art: "/img/tower/ch3.jpg",
       card: "HOLY FORCE = SERVICE BELL",
       title: "The courtyard clears",
       bodies: [
@@ -457,6 +547,7 @@
       ],
       choices: [
         { label: "Walk on", next: "earth" },
+        { label: "Path B1", next: "b1-1" },
         { label: "Ask", next: "loop" },
         { label: "Guest", next: "ch5" },
         { label: "Van", next: "couch" },
@@ -465,6 +556,7 @@
       ]
     },
     ch5: {
+      art: "/img/tower/ch4.jpg",
       card: "CHAPTER 5 — THE STAR’S GUEST",
       title: "Appetite lies down by the glass",
       bodies: [
@@ -481,9 +573,9 @@
       title: "How should Zorya plate the tale?",
       bodies: ["Three spoons. Same stew."],
       choices: [
-        { label: "Old roadside teller (skazka)", next: "service" },
-        { label: "SNES dungeon master", next: "service" },
-        { label: "Dinner mythos (brand voice)", next: "service" }
+        { label: "Watch Path B1", next: "b1-1" },
+        { label: "Dinner mythos", next: "service" },
+        { label: "SNES van", next: "couch" }
       ]
     },
     couch: {
@@ -698,11 +790,14 @@
   };
 
   function maybeGrant(node) {
+    var had = node.grant && hasItem(node.grant);
     if (node.grant) give(node.grant);
-    if (node.heal) heal(node.heal);
-    if (node.wit) state.wit = Math.min(12, state.wit + node.wit);
-    if (node.luck) state.luck = Math.min(12, state.luck + node.luck);
-    if (node.ward) state.ward = Math.min(16, state.ward + node.ward);
+    if (!had) {
+      if (node.heal) heal(node.heal);
+      if (node.wit) state.wit = Math.min(12, state.wit + node.wit);
+      if (node.luck) state.luck = Math.min(12, state.luck + node.luck);
+      if (node.ward) state.ward = Math.min(16, state.ward + node.ward);
+    }
     if (node.wardDown) state.ward = Math.max(0, state.ward - node.wardDown);
     if (node.trap) hurt(node.trap);
   }
@@ -758,15 +853,23 @@
           field("dish", "The dish at the Star-table", blanks.dish) +
           field("van", "Talking van", blanks.van) +
           '<button class="btn btn-primary" type="submit">Begin</button>' +
+          '<button class="btn btn-ghost" type="button" id="watch-b1">Watch Path B1</button>' +
           "</form>"
       );
-      document.getElementById("madlib-form").addEventListener("submit", function (e) {
-        e.preventDefault();
+      function harvestBlanks() {
         ["seeker", "driver", "navigator", "hound", "snack", "dish", "van"].forEach(function (k) {
           var el = document.getElementById("blank-" + k);
           if (el && el.value) blanks[k] = el.value;
         });
+      }
+      document.getElementById("madlib-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        harvestBlanks();
         render("earth");
+      });
+      document.getElementById("watch-b1").addEventListener("click", function () {
+        harvestBlanks();
+        render("b1-1");
       });
       return;
     }
@@ -794,7 +897,7 @@
         '<div class="adv-choices">' +
         '<button type="button" class="btn btn-primary" data-next="earth">Walk on</button>' +
         '<button type="button" class="btn btn-ghost" data-next="mars">Mars</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="t1">Tower</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="b1-1">Tower</button>' +
         '<button type="button" class="btn btn-ghost" data-next="being">Ask</button>' +
         '<button type="button" class="btn btn-ghost" data-next="service">Sit</button>' +
         "</div>";
@@ -827,7 +930,7 @@
         "</p></details>" +
         '<div class="adv-choices">' +
         '<button type="button" class="btn btn-primary" data-next="mars">Next sol</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="t1">Dust Tower</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="b1-1">Dust Tower</button>' +
         '<button type="button" class="btn btn-ghost" data-next="earth">Earth</button>' +
         '<button type="button" class="btn btn-ghost" data-next="service">Table</button>' +
         "</div>";
@@ -977,11 +1080,13 @@
     }
 
     state.turn += 1;
+    if (node.chapter) state.b1 = node.chapter;
     maybeGrant(node);
     if (id !== "faint" && checkFaint()) return;
 
     var body = node.bodies && node.bodies.length ? pick(node.bodies) : node.body || "";
     body = fill(body).replace("{{pack}}", state.inv.join(", "));
+    var omen = node.decision ? fill(node.decision) : pick(closers);
     var html4 =
       '<p class="teller-mark">' +
       fill(node.card || "") +
@@ -989,16 +1094,20 @@
       "<h2>" +
       fill(node.title) +
       "</h2>" +
-      yarn() +
+      (node.quiet ? "" : yarn()) +
       '<p class="teller-body">' +
       body +
       "</p>" +
-      '<p class="omen">' +
-      pick(closers) +
-      '</p><p class="snes-cmd-label">SELECT COMMAND</p><div class="adv-choices">';
-    (node.choices || []).forEach(function (c) {
+      '<p class="omen' +
+      (node.decision ? " omen-auto" : "") +
+      '">' +
+      omen +
+      '</p><div class="adv-choices">';
+    (node.choices || []).forEach(function (c, idx) {
       html4 +=
-        '<button type="button" class="btn btn-ghost adv-choice" data-next="' +
+        '<button type="button" class="' +
+        (idx === 0 ? "btn btn-primary" : "btn btn-ghost") +
+        ' adv-choice" data-next="' +
         c.next +
         '">' +
         fill(c.label) +
@@ -1022,5 +1131,7 @@
   }
 
   var q = window.location.search;
-  render(q.indexOf("mars") !== -1 ? "mars" : q.indexOf("loop") !== -1 ? "earth" : "madlib");
+  render(
+    q.indexOf("b1") !== -1 ? "b1-1" : q.indexOf("mars") !== -1 ? "mars" : q.indexOf("loop") !== -1 ? "earth" : "madlib"
+  );
 })();

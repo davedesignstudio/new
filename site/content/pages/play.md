@@ -3,7 +3,7 @@ date = "2026-08-21"
 title = "Play"
 url = "/play"
 kicker = "Play"
-summary = "Infinite Earth. Simulated Mars. Pictures first."
+summary = "Automated Path B1. Infinite Earth. Simulated Mars."
 fullbleed = true
 +++
 

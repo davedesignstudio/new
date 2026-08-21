@@ -677,6 +677,12 @@ p {
   padding-left: 0.75rem;
 }
 
+.omen-auto {
+  color: var(--paper);
+  font-style: normal;
+  border-left-color: var(--cyan);
+}
+
 .play-frame {
   max-width: 52rem;
   margin: 0 auto;
