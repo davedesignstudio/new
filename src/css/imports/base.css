@@ -746,26 +746,15 @@ p {
   line-height: 1.25;
   min-height: 2.6em;
   max-width: 22ch;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 .anthem-lyrics {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-width: 36rem;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.anthem-lyrics li {
-  margin: 0.15rem 0;
-  opacity: 0.45;
-}
-
-.anthem-lyrics li.is-on {
-  color: var(--paper);
-  opacity: 1;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 
 .anthem-score {
