@@ -7,8 +7,8 @@
       art: "/img/tower/ch1.jpg",
       text: [
         "It is 11:40 at night and the three of you have achieved a state of hunger normally reserved for sieges.",
-        "Bodie is already holding the keys. Klax is already holding a laminated sheet that says DO NOT DRIVE AT NIGHT. Grub is already in the van, which is cheating.",
-        "VANESSA turns over on the third try, the way she always does, and says nothing about it."
+        "Bodie is already holding the keys. Klax is already holding a laminated sheet that says DO NOT DRIVE AT NIGHT. He has highlighted a subsection called IF YOU ARE ALREADY HUNGRY, which is, Bodie points out, every subsection.",
+        "Grub is already in the van, arranged like a person who paid for a ticket. VANESSA turns over on the third try, the way she always does, and says nothing about it."
       ],
       choices: [
         { label: "Drive to the mini-mart", to: 14 },
@@ -99,7 +99,7 @@
       art: "/img/road/bville.jpg",
       text: [
         "“I'm not haunting anything,” she says. “A guy came by Tuesday and offered to buy the recipe for the crisps. Not the crisps. The recipe. He said he'd 'scale the flavor profile.'”",
-        "“So I started moaning at customers. It's been extremely effective and I hate it.”",
+        "“So I started moaning at customers. It's been extremely effective and I hate it.” She has to whisper. The moan used up her voice.",
         "She is still holding the pan. The napkin in your pocket suddenly has weight."
       ],
       choices: [
@@ -115,7 +115,7 @@
       gain: "Grub Gem",
       text: [
         "Marisol. Her grandmother's chili, her cousin's lime, her own bad idea to add smoked salt at 2 a.m. during a slow shift.",
-        "She writes it on the receipt like it costs her nothing, which it does not, which is the entire point.",
+        "She writes it on the receipt like it costs her nothing, which it does not, which is the entire point. She underlines it twice, the way you practice a signature that has to last.",
         "She also gives Grub a coin of fried dough from a box under the counter. He becomes, briefly, brave."
       ],
       choices: [
@@ -182,7 +182,7 @@
       gain: "Gary, quieter",
       text: [
         "He does not know what to do with a plate. Heralds are given tribute, not dinner.",
-        "He eats standing up, then sits down, which for Gary is a conversion experience.",
+        "He eats standing up, then sits down, which for Gary is a conversion experience. He almost says BEHOLD. He says, very small, “This is good.”",
         "“I may have been given the wrong document,” he says, to nobody."
       ],
       choices: [{ label: "The haunted stall", to: 38 }]
@@ -362,7 +362,7 @@
       text: [
         "The keep comes down and becomes, in about six hours, a very good open-air restaurant.",
         "The recipe turns out to be four lines on an index card and the head cook reads it aloud to everyone present, twice, so that it cannot be locked up again.",
-        "The owner stands in his own courtyard eating his own food off a plate someone handed him and cannot stop crying, which everyone has the grace to ignore."
+        "The owner stands in his own courtyard eating his own food off a plate someone handed him and cannot stop crying, which everyone has the grace to ignore. A cook, without looking at him, butters him more bread."
       ],
       choices: [
         { label: "Back to the road — the diner", to: 52 },
@@ -462,8 +462,8 @@
       gain: "Ketchup",
       text: [
         "Bodie says, “Your route was right, man. Both times.” He says it fast, to the table, like ripping off a bandage.",
-        "Klax says, “I know,” and then, worse, “thank you,” and then they both look at the rings very hard.",
-        "The waitress raises one eyebrow. The check turns out to be less than the number on it. VANESSA starts on the first try, which she has never once done."
+        "Klax says, “I know,” and then, worse, “thank you,” and then they both look at the rings very hard. Grub comes out from under the booth with one ring in his mouth, like a ring bearer who has misunderstood the assignment.",
+        "The waitress raises one eyebrow. The check turns out to be less than the number on it. VANESSA starts on the first try, which she has never once done, and nobody makes a joke about it, which is how you can tell they heard her."
       ],
       choices: [
         { label: "Carnival food court", to: 30 },
@@ -663,8 +663,8 @@
       gain: "Rubber mask",
       text: [
         "Grub gets there first, because of course he does — one dough coin's worth of courage, spent well.",
-        "The children cheer. The scout, mid-sentence, becomes a man in a nice coat holding a folder in a food court at one in the morning.",
-        "“You would have gotten away with it,” Bodie says, and then can't remember the rest, and Klax finishes it for him."
+        "The children cheer. The scout, mid-sentence, becomes a man in a nice coat holding a folder in a food court at one in the morning. He holds the rubber head under his arm like a hat he no longer needs.",
+        "“You would have gotten away with it,” Bodie says, and then can't remember the rest. Klax starts, “If it weren't for us meddling—” and cannot finish either, because the scout is just tired."
       ],
       choices: [
         { label: "Widow's Spur", to: 22 },
@@ -677,7 +677,7 @@
       art: "/img/road/paper.jpg",
       text: [
         "Radio hymns. Emergency amber lighting. One woman, one pot, a stew everyone in three counties calls cursed.",
-        "It is not cursed. It is grief and very good stock, which taste similar from a distance.",
+        "It is not cursed. It is grief and very good stock, which taste similar from a distance. She stirs on the downbeat of the hymn. The pot answers. She does not.",
         "She has a key on the counter and she will not use it. Behind her there is a door."
       ],
       choices: [
@@ -692,7 +692,7 @@
       art: "/img/road/philhower.jpg",
       gain: "The door's answer",
       text: [
-        "“It's the dining room,” she says. “Twelve chairs. I haven't opened it since he died because twelve is the wrong number now.”",
+        "“It's the dining room,” she says. “Twelve chairs. I haven't opened it since he died because twelve is the wrong number now.” She says it like a recipe: no heat, no garnish, just the fact.",
         "You ask if she wants help setting eleven. She says no. Then she says yes. Then she opens the door herself, which was always going to be the only way it opened.",
         "It smells like dust and lemon oil. It is a good room. It has been a good room this whole time."
       ],
@@ -707,7 +707,7 @@
       art: "/img/road/philhower.jpg",
       text: [
         "You set eleven. Then Bodie, who has never had a tactful thought in his life, sets the twelfth anyway and says, “For the stock.”",
-        "She looks at it for a while. Then she puts a bowl in front of it, and serves everyone else, and sits down.",
+        "She laughs once, surprised, the way you laugh when someone names the thing you were going to take to the grave. Then she puts a bowl there. Her hand stays on the rim a second too long.",
         "The stew is not cursed. It never was. It is the most cared-for thing in four counties and it has been waiting for a room."
       ],
       ending: "THE ELEVENTH CHAIR",
@@ -771,7 +771,7 @@
       art: "/img/mars/storm.jpg",
       text: [
         "Nobody says stop. That is the thing about a van at four in the morning — the decision gets made by whoever doesn't speak.",
-        "The light gets small in the mirror. Bodie says there'll be another one. There will be. There are thousands.",
+        "The light gets small in the mirror. Bodie says there'll be another one. There will be. There are thousands. He does not air-guitar. That is how you know it is bad.",
         "Klax opens the advisory again, for something to hold."
       ],
       ending: "THE LONG WAY",
@@ -792,8 +792,8 @@
       art: "/img/tower/ch4.jpg",
       text: [
         "You sit. That is the whole ending. You sit, and somebody who has been cooking all night slides a plate across, and nobody asks what you did to deserve it.",
-        "Bodie is crying about a slider and pretending it's the onions. Klax has folded the itinerary into a coaster. Grub is asleep on Gary, who has stopped narrating.",
-        "Zorya takes the last stool. She turns the face-down card. It is not a prophecy. It is a receipt with a name on it."
+        "Bodie is crying about a slider and pretending it's the onions. Klax does not point out that sliders do not have onions like that. He is busy folding the itinerary into a coaster so it has a job.",
+        "Grub is asleep on Gary, who has stopped narrating, and who is, for the first time, being useful as furniture. Zorya takes the last stool. She turns the face-down card. It is not a prophecy. It is a receipt with a name on it."
       ],
       ending: "THE SEAT",
       text2: [
