@@ -18,21 +18,26 @@ title = "WIDER"
     weight = 1
 
 [[menu.main]]
+    name = "Road"
+    url  = "/road"
+    weight = 2
+
+[[menu.main]]
     name = "Anthem"
     url  = "/anthem"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "Mythos"
     url  = "/mythos"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Crew"
     url  = "/crew"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 5
+    weight = 6

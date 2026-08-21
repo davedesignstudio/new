@@ -2,7 +2,7 @@
 {{ partial "sidebar" . }}
 
 {{ if .Params.fullbleed }}
-<main class="play-frame{{ if .Params.anthem }} anthem-page{{ end }}">
+<main class="play-frame{{ if .Params.anthem }} anthem-page{{ end }}{{ if .Params.road }} road-page{{ end }}">
   {{ .Content }}
 </main>
 {{ else }}

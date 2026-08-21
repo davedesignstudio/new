@@ -424,6 +424,8 @@
       choices: [
         { label: "Infinite Earth", next: "earth" },
         { label: "Mars", next: "mars" },
+        { label: "Road-Wisdom", href: "/road/" },
+        { label: "Meet the princess", href: "/road/?meet=princess" },
         { label: "Mystery van", next: "couch" },
         { label: "Play the Tower", next: "t1" },
         { label: "Watch Path B1 again", next: "b1-1" }
@@ -897,6 +899,7 @@
         '<div class="adv-choices">' +
         '<button type="button" class="btn btn-primary" data-next="earth">Walk on</button>' +
         '<button type="button" class="btn btn-ghost" data-next="mars">Mars</button>' +
+        '<a class="btn btn-ghost" href="/road/">Road</a>' +
         '<button type="button" class="btn btn-ghost" data-next="b1-1">Tower</button>' +
         '<button type="button" class="btn btn-ghost" data-next="being">Ask</button>' +
         '<button type="button" class="btn btn-ghost" data-next="service">Sit</button>' +
@@ -1104,10 +1107,15 @@
       omen +
       '</p><div class="adv-choices">';
     (node.choices || []).forEach(function (c, idx) {
+      var klass = (idx === 0 ? "btn btn-primary" : "btn btn-ghost") + " adv-choice";
+      if (c.href) {
+        html4 += '<a class="' + klass + '" href="' + c.href + '">' + fill(c.label) + "</a>";
+        return;
+      }
       html4 +=
         '<button type="button" class="' +
-        (idx === 0 ? "btn btn-primary" : "btn btn-ghost") +
-        ' adv-choice" data-next="' +
+        klass +
+        '" data-next="' +
         c.next +
         '">' +
         fill(c.label) +

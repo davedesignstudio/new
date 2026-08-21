@@ -992,3 +992,184 @@ p {
     height: 42vh;
   }
 }
+
+/* Road-Wisdom: parchment + metallic Game Boy */
+body.is-road {
+  background: #1a1614;
+}
+
+.road-page {
+  max-width: none;
+  padding: 0;
+}
+
+.gb {
+  position: relative;
+  min-height: calc(100vh - 3.4rem);
+  overflow: hidden;
+  background: #1a1614;
+}
+
+.gb-paper {
+  position: absolute;
+  inset: 0;
+  background: #cfb5ac url("/img/road/paper.jpg") center / cover;
+  opacity: 0.28;
+  filter: saturate(0.7) contrast(1.05);
+}
+
+.gb-scan {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    url("/img/road/scan-a.png") center / 220px repeat,
+    repeating-linear-gradient(180deg, transparent 0 2px, rgba(26, 22, 20, 0.18) 2px 3px);
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+}
+
+.gb-body {
+  position: relative;
+  z-index: 3;
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 1.1rem 0.9rem 1.6rem;
+}
+
+.gb-brand,
+.gb-status {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 0.42rem;
+  letter-spacing: 0.14em;
+  color: #ad994f;
+  margin: 0 0 0.45rem;
+}
+
+.gb-status {
+  color: #cfb5ac;
+}
+
+.gb-lcd {
+  position: relative;
+  min-height: 14rem;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  background: #b8b390;
+  color: #40342e;
+  border: 4px solid #40342e;
+  box-shadow:
+    inset 0 0 0 2px #ad994f,
+    0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.gb-art {
+  position: absolute;
+  inset: 0;
+  background: #b8b390 center 20% / cover no-repeat;
+  image-rendering: auto;
+}
+
+.gb[data-art="oracle"] .gb-art { background-color: #40342e; background-image: url("/img/road/paper.jpg"); }
+.gb[data-art="forest"] .gb-art { background-color: #7a6d63; background-image: url("/img/road/paper.jpg"); }
+.gb[data-art="bridge"] .gb-art { background-color: #7a3b42; }
+.gb[data-art="village"] .gb-art,
+.gb[data-art="creamery"] .gb-art,
+.gb[data-art="bville"] .gb-art { background-color: #cc9678; }
+.gb[data-art="chapel"] .gb-art { background-color: #654e4c; }
+.gb[data-art="road"] .gb-art { background-color: #bb9e7c; }
+.gb[data-art="princess"] .gb-lcd {
+  min-height: 22rem;
+  color: #cfb5ac;
+  background: #000;
+  box-shadow:
+    inset 0 0 0 2px #a15666,
+    0 12px 28px rgba(0, 0, 0, 0.45);
+}
+.gb[data-art="princess"] .gb-art {
+  background-image: url("/img/road/kong.jpg");
+  background-position: center 0;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+.gb[data-art="princess"] .gb-lcd::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(26, 22, 20, 0.08) 28%, rgba(26, 22, 20, 0.82) 100%);
+}
+
+.gb-text {
+  position: relative;
+  z-index: 2;
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.7rem 0.65rem 0.75rem;
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 0.52rem;
+  line-height: 1.7;
+  text-shadow: 0 1px 0 rgba(26, 22, 20, 0.35);
+}
+
+.gb[data-art="princess"] .gb-text {
+  min-height: 22rem;
+  text-shadow: 0 1px 0 #1a1614, 0 0 10px #1a1614;
+}
+
+.gb-choices {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.gb-btn,
+.gb-key {
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 0.42rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  border: 0;
+  cursor: pointer;
+}
+
+.gb-btn {
+  text-align: left;
+  padding: 0.7rem 0.75rem;
+  border-radius: 0.35rem;
+  background: #a15666;
+  color: #cfb5ac;
+  box-shadow: inset 0 2px 0 rgba(218, 177, 163, 0.35), 0 3px 0 #40342e;
+}
+
+.gb-btn.is-a {
+  background: #ad994f;
+  color: #1a1614;
+}
+
+.gb-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.gb-keys {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.gb-key {
+  flex: 1;
+  padding: 0.55rem 0.4rem;
+  border-radius: 999px;
+  background: #654e4c;
+  color: #cfb5ac;
+}
+
+.is-road .site-footer {
+  display: none;
+}
