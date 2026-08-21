@@ -28,7 +28,7 @@ Some tables keep a cup no one claims. Some keep a chair that is wrong by one. Th
 
 ## On this road
 
-Path B1 binds you to the hearth-stone. That is the stone in the pot. The Tower tried to lock it in a safe and call it the soup. When the keep falls, the stone can come out. Supper remains. That is The Star.
+Path B1 binds you to the hearth-stone — the pack calls it **Keystone Hearth**. That is the stone in the pot. The Tower tried to lock it in a safe and call it the soup. When the keep falls, the stone can come out. Supper remains. That is The Star.
 
 Gary wanted a spear. The old stories wanted a pot.
 
