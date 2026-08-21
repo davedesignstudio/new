@@ -58,7 +58,7 @@
 
     14: {
       title: "The mini-mart is haunted",
-      art: "/img/tower/ch2.jpg",
+      art: "/img/road/cafe.jpg",
       text: [
         "The lights buzz in a pattern that feels like breathing. Somewhere in aisle three, something moans.",
         "On the counter: one bag of chili-lime crisps. The last one. It is glowing, but that is just the cooler.",
@@ -136,7 +136,7 @@
 
     42: {
       title: "Dustport night market",
-      art: "/img/road/cafe.jpg",
+      art: "/img/road/bville.jpg",
       text: [
         "Steam everywhere. Kites over the stalls. Forty griddles going at once and every one of them louder than the prophecy.",
         "One stall has no line and a sign that says CLOSED — HAUNTED. Behind it, someone is very much cooking.",
@@ -520,8 +520,8 @@
     },
 
     30: {
-      title: "Carnival orbit food court",
-      art: "/img/tower/ch3.jpg",
+      title: "Carnival food court",
+      art: "/img/road/kong.jpg",
       text: [
         "Twelve stalls, all miracle sauces, all almost working. A mascot the size of a refrigerator waves at children with visible contempt.",
         "The mascot's head is a rubber head. The mascot's coat is very nice.",
@@ -658,7 +658,7 @@
 
     22: {
       title: "Widow's Spur canteen",
-      art: "/img/road/princess.jpg",
+      art: "/img/road/paper.jpg",
       text: [
         "Radio hymns. Emergency amber lighting. One woman, one pot, a stew everyone in three counties calls cursed.",
         "It is not cursed. It is grief and very good stock, which taste similar from a distance.",

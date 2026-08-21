@@ -6,10 +6,12 @@ A playable comic about Earth: a roadside teller, a kitchen that tried to be a fo
 
 Live doors:
 
-- `/story` — the one plot
-- `/play/?b1=1` — Path B1, the storm (Tower → Star)
-- `/play` — name the guests, then walk
+- `/` and `/story` — the one plot
+- `/adventure` — The Paperback (fifty-one numbered sections)
+- `/hidden` — what an endless Earth stores instead of burying
+- `/route` — six kitchens from the last bag to the Star-table
 - `/road` — Road-Wisdom, the tiny Game Boy loop
+- `/play/?b1=1` — Path B1, the storm (Tower → Star)
 
 ## Run locally
 
@@ -32,4 +34,4 @@ npx gulp css js hugo images
 
 ## Tests
 
-`npm test` checks product copy for leftover space-tour language and walks a full Road-Wisdom cycle in Node (title → fortune → walk again, mill memory, princess easter egg, persistence).
+`npm test` checks product copy for leftover space-tour language, walks a full Road-Wisdom cycle, and checks that every Paperback turn lands on a real section.

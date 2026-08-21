@@ -12,4 +12,4 @@ The plot is simple on purpose. A kitchen tries to be a fortress. Hunger knocks t
 
 Food is the clue, not the garnish: who cooked, who was left out, who tried to franchise the bun.
 
-Start with [the story](/story). Then [watch the storm](/play/?b1=1), [play](/play), or [walk](/road).
+Start with [the story](/story). Drive it in [The Paperback](/adventure). The six kitchens are on [the route](/route). What Earth stores instead of burying is in [The Hidden Parts](/hidden).
