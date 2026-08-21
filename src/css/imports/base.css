@@ -641,6 +641,112 @@ p {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.teller {
+  position: relative;
+  padding: 1.25rem 1.2rem 1.5rem;
+  border: 1px solid rgba(196, 92, 38, 0.35);
+  background:
+    radial-gradient(800px 200px at 10% 0%, rgba(196, 92, 38, 0.12), transparent 50%),
+    rgba(12, 18, 28, 0.55);
+}
+
+.teller-mark {
+  color: var(--copper-hot);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.card-name {
+  font-family: var(--font-display);
+  color: var(--cyan);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.teller-body {
+  font-size: 1.05rem;
+  max-width: 42rem;
+}
+
+.omen {
+  color: var(--muted);
+  font-style: italic;
+  border-left: 2px solid var(--copper);
+  padding-left: 0.75rem;
+}
+
+.snes-stage {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.snes-shell {
+  font-family: "Press Start 2P", monospace;
+  image-rendering: pixelated;
+  border: 4px solid #e8d5a3;
+  box-shadow:
+    inset 0 0 0 4px #6b4a1e,
+    0 0 0 2px #1a1208;
+  background: #10182a;
+}
+
+.snes-title {
+  margin: 0;
+  padding: 0.7rem 0.75rem 0.5rem;
+  background: #3a2314;
+  color: #f0d78c;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+}
+
+.snes-hud {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  background: #0a1020;
+  color: #9ec27a;
+  font-size: 0.48rem;
+  line-height: 1.6;
+  border-bottom: 4px solid #6b4a1e;
+}
+
+.snes-bar {
+  letter-spacing: -0.12em;
+  color: #c45c26;
+}
+
+.snes-window {
+  padding: 1rem 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.015) 0 2px,
+      transparent 2px 4px
+    ),
+    #141c2c;
+}
+
+.snes-window h2 {
+  font-size: 1.35rem;
+}
+
+.snes-cmd-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
+  color: #f0d78c;
+  letter-spacing: 0.12em;
+  margin: 1rem 0 0.5rem;
+}
+
+.snes-roll {
+  color: #5ec8d8;
+}
+
 @media (max-width: 720px) {
   .nav-toggle {
     display: inline-flex;

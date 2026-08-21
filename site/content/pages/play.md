@@ -2,12 +2,12 @@
 date = "2026-08-21"
 title = "Play"
 url = "/play"
-kicker = "Choose your own munchies"
-summary = "Mad-lib the gang, then drive a Scooby-style food mystery across the wider dark."
+kicker = "Press START. The kettle is on."
+summary = "Zorya dungeon-masters a SNES-style riddle crawl: door inscriptions, item puzzles, and choose-your-own cards."
 +++
 
-Fill the blanks. Unmask the dinner. Do not split the last slider.
+Zorya deals like a 16-bit Dungeon Master. Talk. Look. Use items. Answer the door. Wrong riddles bite your Hunger.
 
-<div id="adventure" class="adventure">
-  <p class="adv-loading">Firing up the mystery van…</p>
+<div id="adventure" class="adventure teller snes-stage">
+  <p class="adv-loading">Loading dungeon of roads…</p>
 </div>

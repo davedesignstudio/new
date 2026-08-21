@@ -10,7 +10,7 @@ summary = "The combined comic novel: research, route, crew, kitchen, and the gra
 
 When **Bodie**, **Klax**, and their snack-hound **Grub** get the munchies hard enough to rattle a suburban moon, they steal (borrow) the talking camper **VANESSA** and chase one legendary **Castle Nova slider** to the edge of the chart. A time-lost herald named **Prophet Gary** insists they are destined to save culture itself. They are mostly trying not to share the last fry. Every stop is a kitchen. Every ghost is a person in a mask protecting a recipe. Like, zoinks.
 
-This is *Harold & Kumar* hunger, *Bill & Ted* destiny, and *Scooby-Doo* unmasking, told as a space road-trip comic.
+This is *Harold & Kumar* hunger, *Bill & Ted* destiny, and *Scooby-Doo* unmasking, told as a space road-trip comic — and spoken by **Zorya of the Three Roads**, an old roadside fortune-teller who generates the tale like a bus-station paperback: *if you take the left road, turn the card.*
 
 ---
 
@@ -38,7 +38,9 @@ The comic rule still holds: **show the steam, don’t caption the soul.**
 
 **VANESSA** is the Mystery Machine if it were a 200-year-old camper AI that smells like oregano forever.
 
-**Prophet Gary** arrived in a booth of light to announce the Chosen Two. Nobody told him about the hound, the munchies, or the rubber masks.
+**Zorya of the Three Roads** sits in the rear booth. Russian stove, Roma tent. She deals destinies. She is the book’s generative intellect: every playthrough shuffles omens, cards, and forks.
+
+**Prophet Gary** arrived in a booth of light to announce the Chosen Two. Zorya keeps stealing his lines. Nobody told him about the hound, the munchies, or the rubber masks.
 
 ---
 
