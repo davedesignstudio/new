@@ -10,7 +10,7 @@ title = "WIDER"
   tagline = "The game is Earth. Earth does not end."
   kicker = "An infinite story about the only planet"
   sunoId = "e627ef77-af0e-4dfc-808d-163a94300261"
-  sunoTitle = "Orbital theme — swap in your Suno track ID"
+  sunoTitle = "The Game Is Earth — WIDER anthem"
 
 [[menu.main]]
     name = "Play"
@@ -18,13 +18,13 @@ title = "WIDER"
     weight = 1
 
 [[menu.main]]
-    name = "Book"
-    url  = "/book"
+    name = "Anthem"
+    url  = "/anthem"
     weight = 2
 
 [[menu.main]]
-    name = "Route"
-    url  = "/route"
+    name = "Mythos"
+    url  = "/mythos"
     weight = 3
 
 [[menu.main]]
@@ -33,21 +33,6 @@ title = "WIDER"
     weight = 4
 
 [[menu.main]]
-    name = "Mythos"
-    url  = "/mythos"
-    weight = 5
-
-[[menu.main]]
-    name = "Kitchen"
-    url  = "/kitchen"
-    weight = 6
-
-[[menu.main]]
-    name = "Soundtrack"
-    url  = "/soundtrack"
-    weight = 7
-
-[[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 8
+    weight = 5

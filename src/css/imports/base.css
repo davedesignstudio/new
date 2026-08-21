@@ -594,8 +594,7 @@ p {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  padding: 2rem 1.25rem 2.5rem;
-  text-align: left;
+  padding: 1.1rem 1.25rem;
 }
 
 .footer-brand {
@@ -678,100 +677,276 @@ p {
   padding-left: 0.75rem;
 }
 
+.play-frame {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0.75rem 0.75rem 3rem;
+}
+
+.play-frame .page-head {
+  display: none;
+}
+
+.play-frame .prose > p,
+.play-frame .prose > a {
+  display: none;
+}
+
+.anthem-page {
+  max-width: none;
+  padding: 0;
+}
+
+.anthem-stage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #02060c;
+}
+
+.anthem-still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: saturate(1.08) contrast(1.06);
+}
+
+.anthem-ui {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5.5rem 1.35rem 2rem;
+  background: linear-gradient(to top, rgba(5, 10, 16, 0.96) 0%, rgba(5, 10, 16, 0.55) 42%, rgba(5, 10, 16, 0.12) 70%);
+}
+
+.anthem-ui h1 {
+  font-size: clamp(2.2rem, 8vw, 4.2rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 1rem;
+  max-width: 12ch;
+}
+
+.anthem-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1.25rem;
+}
+
+.anthem-now {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.25;
+  min-height: 2.6em;
+  max-width: 22ch;
+  margin: 0 0 1rem;
+}
+
+.anthem-lyrics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.anthem-lyrics li {
+  margin: 0.15rem 0;
+  opacity: 0.45;
+}
+
+.anthem-lyrics li.is-on {
+  color: var(--paper);
+  opacity: 1;
+}
+
+.anthem-score {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+  color: var(--muted);
+}
+
+.anthem-score summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.anthem-score p,
+.anthem-score li {
+  color: var(--muted);
+}
+
+#anthem-audio {
+  display: none;
+}
+
+.stage {
+  overflow: hidden;
+  border-radius: 1.1rem;
+  background: #070b12;
+  border: 1px solid var(--line);
+}
+
+.stage-visual {
+  position: relative;
+}
+
+.stage-visual img {
+  display: block;
+  width: 100%;
+  height: min(58vh, 28rem);
+  object-fit: cover;
+}
+
+.stage-cap,
+.stage-pills {
+  position: absolute;
+  left: 0.85rem;
+  margin: 0;
+  padding: 0.35rem 0.55rem;
+  background: rgba(7, 16, 24, 0.72);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.stage-cap {
+  top: 0.85rem;
+  color: var(--paper);
+  text-transform: uppercase;
+}
+
+.stage-pills {
+  bottom: 0.85rem;
+  color: var(--cyan);
+}
+
+.stage-panel {
+  padding: 1.15rem 1.15rem 1.35rem;
+}
+
+.stage-panel h2 {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  max-width: 18ch;
+}
+
+.teller-mark {
+  color: var(--copper-hot);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.teller-body {
+  color: var(--paper);
+  max-width: 40rem;
+}
+
+.snes-cmd-label {
+  display: none;
+}
+
+.adv-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+
+.adv-choices .btn {
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+}
+
+.yarn {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.yarn summary {
+  cursor: pointer;
+  color: var(--cyan);
+  list-style: none;
+}
+
+.yarn p {
+  margin: 0.5rem 0 0;
+}
+
+.frames {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+  padding: 0.75rem;
+}
+
+.frames a {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  height: 7.5rem;
+}
+
+.frames img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.frames a:hover img {
+  transform: scale(1.05);
+}
+
+.hero-photo .hero-sky {
+  background: #02060c;
+}
+
+.hero-still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.hero-photo .hero-copy {
+  background: linear-gradient(to top, rgba(5, 10, 16, 0.92), rgba(5, 10, 16, 0.2) 70%);
+  width: 100%;
+  max-width: none;
+}
+
+.site-footer .tape-note,
+.site-footer .tape-kicker {
+  display: none;
+}
+
+.suno-frame {
+  height: 120px;
+}
+
 .snes-stage {
   padding: 0;
   border: 0;
   background: transparent;
-}
-
-.snes-shell {
-  font-family: "Press Start 2P", monospace;
-  image-rendering: pixelated;
-  border: 4px solid #e8d5a3;
-  box-shadow:
-    inset 0 0 0 4px #6b4a1e,
-    0 0 0 2px #1a1208;
-  background: #10182a;
-}
-
-.snes-title {
-  margin: 0;
-  padding: 0.7rem 0.75rem 0.5rem;
-  background: #3a2314;
-  color: #f0d78c;
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
-}
-
-.snes-hud {
-  display: grid;
-  gap: 0.35rem;
-  padding: 0.65rem 0.75rem;
-  background: #0a1020;
-  color: #9ec27a;
-  font-size: 0.48rem;
-  line-height: 1.6;
-  border-bottom: 4px solid #6b4a1e;
-}
-
-.snes-bar {
-  letter-spacing: -0.12em;
-  color: #c45c26;
-}
-
-.snes-window {
-  padding: 1rem 0.85rem 1.1rem;
-  font-family: var(--font-body);
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.015) 0 2px,
-      transparent 2px 4px
-    ),
-    #141c2c;
-}
-
-.snes-window h2 {
-  font-size: 1.35rem;
-}
-
-.snes-cmd-label {
-  font-family: "Press Start 2P", monospace;
-  font-size: 0.5rem;
-  color: #f0d78c;
-  letter-spacing: 0.12em;
-  margin: 1rem 0 0.5rem;
-}
-
-.scene-art {
-  margin: 0;
-  border-bottom: 4px solid #6b4a1e;
-  background: #070b12;
-}
-
-.scene-art img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 42vh;
-  object-fit: cover;
-}
-
-.yarn {
-  margin: 0 0 1rem;
-  padding: 0.75rem 0.85rem;
-  border-left: 3px solid #f0d78c;
-  background: rgba(240, 215, 140, 0.06);
-  color: #d7c8a4;
-  font-size: 0.92rem;
-}
-
-.yarn p {
-  margin: 0 0 0.55rem;
-}
-
-.yarn p:last-child {
-  margin-bottom: 0;
 }
 
 @media (max-width: 720px) {
@@ -807,5 +982,18 @@ p {
 
   .hero-copy {
     padding-bottom: 3rem;
+  }
+
+  .frames {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+
+  .frames a {
+    height: 5.5rem;
+  }
+
+  .stage-visual img {
+    height: 42vh;
   }
 }

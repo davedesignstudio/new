@@ -2,38 +2,27 @@
 {{ partial "sidebar" . }}
 
 <main class="home">
-  <section class="hero" aria-label="WIDER opening">
-    <div class="hero-sky" aria-hidden="true">
-      <div class="hero-stars"></div>
-      <div class="hero-nebula"></div>
-      <div class="hero-road"></div>
-      <div class="hero-ship"></div>
-    </div>
-
+  <section class="hero hero-photo" aria-label="WIDER opening">
+    <img class="hero-still" src="/img/tower/ch1.jpg" alt="The Tower kitchen in a storm">
     <div class="hero-copy">
-      <p class="hero-kicker">{{ .Site.Params.kicker }}</p>
       <h1 class="hero-brand">{{ .Site.Title }}</h1>
       <p class="hero-line">{{ .Site.Params.tagline }}</p>
-      <p class="hero-support">Not space opera as escape. An infinite story about Earth: tables in Illinois and Petersburg, tents and palaces, storms that are hunger, a Tower that is a kitchen. Walk on. The planet is unfinished.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/play">Begin Earth</a>
-        <a class="btn btn-ghost" href="/play/?loop=1">Walk on now</a>
+        <a class="btn btn-primary" href="/play">Play</a>
+        <a class="btn btn-ghost" href="/anthem">Anthem</a>
+        <a class="btn btn-ghost" href="/play/?mars=1">Mars</a>
       </div>
     </div>
   </section>
 
-  <section class="band band-story">
-    <div class="band-inner">
-      <h2>Walk on. Knock the Tower. Sit.</h2>
-      <p>WIDER is an infinite Earth story. Each chapter is a place and a meal. The fortune-teller braids Lincoln, the road, and the Tsar’s winter. The comic, the dungeon, and dinner are rooms in the same house: this planet.</p>
-      <div class="story-links">
-        <a href="/route">The route</a>
-        <a href="/crew">The gang</a>
-        <a href="/kitchen">Food research</a>
-        <a href="/soundtrack">Suno tape</a>
-      </div>
-    </div>
-  </section>
+  <nav class="frames" aria-label="Chapters">
+    <a href="/play/"><img src="/img/tower/ch1.jpg" alt="Tower"></a>
+    <a href="/play/"><img src="/img/tower/ch2.jpg" alt="Storm"></a>
+    <a href="/play/"><img src="/img/tower/ch3.jpg" alt="Breach"></a>
+    <a href="/anthem/"><img src="/img/tower/ch4.jpg" alt="Anthem"></a>
+    <a href="/play/?mars=1"><img src="/img/mars/habitat.jpg" alt="Mars habitat"></a>
+    <a href="/play/?mars=1"><img src="/img/mars/table.jpg" alt="Mars table"></a>
+  </nav>
 </main>
 
 {{ partial "footer" . }}

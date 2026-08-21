@@ -10,7 +10,7 @@ summary = "WIDER is an infinite story about Earth. The Tower is a kitchen. The S
 
 The game is not a trip away from the world. It is **an infinite story about Earth**. Every **WALK ON** is another chapter of the only planet: Illinois prairie, Russian izba, palace stair, night market, diner sign. Lincoln, the road, and the Tsar’s winter are three ways Earth talks to itself. The Tower crawl is one storm in Earth’s kitchen. The ouroboros is Earth refusing to be finished.
 
-`/play` begins Earth. `/play/?loop=1` skips names and walks.
+`/play` begins Earth. `/play/?loop=1` skips names and walks. `/anthem` plays **The Game Is Earth**.
 
 ## The blend (automatic)
 

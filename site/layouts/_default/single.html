@@ -1,6 +1,11 @@
 {{ partial "header" . }}
 {{ partial "sidebar" . }}
 
+{{ if .Params.fullbleed }}
+<main class="play-frame{{ if .Params.anthem }} anthem-page{{ end }}">
+  {{ .Content }}
+</main>
+{{ else }}
 <main class="page">
   <header class="page-head">
     <p class="page-kicker">{{ with .Params.kicker }}{{ . }}{{ else }}{{ .Section | title }}{{ end }}</p>
@@ -11,5 +16,6 @@
     {{ .Content }}
   </article>
 </main>
+{{ end }}
 
 {{ partial "footer" . }}

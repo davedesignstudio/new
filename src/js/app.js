@@ -8,6 +8,48 @@
     });
   }
 
+  function initAnthem() {
+    var stage = document.getElementById("anthem");
+    if (!stage) return;
+    var audio = document.getElementById("anthem-audio") || stage.querySelector("audio");
+    var btn = stage.querySelector("[data-anthem-play]");
+    var now = stage.querySelector("[data-anthem-line]");
+    var lines = stage.querySelectorAll(".anthem-lyrics [data-at]");
+    if (!audio || !btn) return;
+
+    function paint() {
+      var t = audio.currentTime;
+      var active = null;
+      for (var i = 0; i < lines.length; i++) {
+        var at = parseFloat(lines[i].getAttribute("data-at"), 10);
+        if (t + 0.05 >= at) active = lines[i];
+      }
+      for (var j = 0; j < lines.length; j++) {
+        if (lines[j] === active) lines[j].classList.add("is-on");
+        else lines[j].classList.remove("is-on");
+      }
+      if (now && active) now.textContent = active.textContent;
+      btn.textContent = audio.paused ? "Play" : "Pause";
+      if (audio.paused) stage.classList.remove("is-playing");
+      else stage.classList.add("is-playing");
+    }
+
+    btn.addEventListener("click", function () {
+      if (audio.paused) audio.play();
+      else audio.pause();
+    });
+    audio.addEventListener("timeupdate", paint);
+    audio.addEventListener("play", paint);
+    audio.addEventListener("pause", paint);
+    audio.addEventListener("ended", function () {
+      audio.currentTime = 0;
+      paint();
+    });
+    paint();
+  }
+
+  initAnthem();
+
   var root = document.getElementById("adventure");
   if (!root) return;
 
@@ -124,6 +166,57 @@
     "whoever is hungry enough to tell the truth"
   ];
 
+  var marsPlaces = [
+    "Habitat Ring A, where the air tastes like tin and mint",
+    "a greenhouse cathedral of tomatoes on the Tharsis slope",
+    "Olympus shadow, a dust-keep with wards painted in rust",
+    "Valles diner, one booth, one window on a canyon the size of a country",
+    "the ice mine mess hall at the pole",
+    "a lava-tube chapel where they store yeast like relics",
+    "the simulated Illinois kitchen — Earth copied, slightly too red",
+    "the Winter Palace module, a joke that became a shrine",
+    "Airlock 7, which is also a table if you sit on the crates",
+    "the cliff of Gale, first supper facing a pale Earth"
+  ];
+
+  var marsMeals = [
+    "hydroponic borsch the color of old icons and new rust",
+    "corn bread baked in a printer and split with a pocketknife",
+    "recycled tea so dark it remembers every Earth guest",
+    "a slider grown from pea-protein and homesickness",
+    "black bread cultured from a Petersburg starter smuggled in a sock",
+    "dust-salt and greenhouse greens"
+  ];
+
+  var marsWeather = [
+    "a dust storm that is The Tower wearing another planet",
+    "thin morning, Earth a frozen pea in the sky",
+    "static lightning in a rust heaven",
+    "a calm so complete it feels rendered"
+  ];
+
+  var marsLaws = [
+    "Simulation law 1: air is a guest. Seat it.",
+    "Simulation law 2: if you can share a plate, the physics will forgive you.",
+    "Simulation law 3: Mars is complete when someone sets a table. Then it begins again.",
+    "Simulation law 4: the teller is in the code. The hunger is not."
+  ];
+
+  function marsChapter() {
+    var place = pick(marsPlaces);
+    var meal = pick(marsMeals);
+    var weather = pick(marsWeather);
+    return (
+      "Sol on the simulated world: " +
+      place +
+      ", under " +
+      weather +
+      ". They eat " +
+      meal +
+      ". Lincoln would call this a house divided from its dirt and still trying to be a house. My grandmother would call it a tent with worse sky. The Tsar’s cooks would steal the yeast and call it empire. {{seeker}}, this Mars is a complete reality: kitchens, storms, laws, ghosts. It may be code. The plate is still warm."
+    );
+  }
+
   function earthChapter() {
     var place = pick(earthPlaces);
     var meal = pick(earthMeals);
@@ -142,9 +235,22 @@
     );
   }
 
+  function yarn() {
+    return (
+      '<details class="yarn"><summary>Listen</summary>' +
+      "<p>" +
+      pick(lincoln) +
+      "</p><p>" +
+      pick(roma) +
+      "</p><p>" +
+      pick(tsar) +
+      "</p></details>"
+    );
+  }
+
   function existenceYarn() {
     return (
-      '<blockquote class="yarn">' +
+      '<details class="yarn"><summary>Listen</summary>' +
       "<p>" +
       pick(lincolnLoop) +
       "</p><p>" +
@@ -153,7 +259,7 @@
       pick(tsarLoop) +
       "</p><p><strong>" +
       pick(why) +
-      "</strong></p></blockquote>"
+      "</strong></p></details>"
     );
   }
 
@@ -166,7 +272,8 @@
     inv: ["Laminated Map"],
     lastRoll: null,
     voice: "dinner",
-    loop: 0
+    loop: 0,
+    sol: 0
   };
 
   function pick(list) {
@@ -202,44 +309,33 @@
   }
 
   function hud() {
-    return (
-      '<div class="snes-hud" aria-label="Party status">' +
-      '<div class="snes-stat"><b>HUNGER</b> ' + bars(state.hunger, 16) + " " + state.hunger + "</div>" +
-      '<div class="snes-stat"><b>WARD</b> ' + bars(state.ward, 16) + " " + state.ward + "</div>" +
-      '<div class="snes-stat"><b>WIT</b> ' + bars(state.wit, 12) + " " + state.wit + "</div>" +
-      '<div class="snes-stat"><b>LUCK</b> ' + bars(state.luck, 12) + " " + state.luck + "</div>" +
-      '<div class="snes-inv"><b>PACK</b> ' + state.inv.join(" · ") + "</div>" +
-      (state.lastRoll ? '<div class="snes-roll">d20 → ' + state.lastRoll + "</div>" : "") +
-      (state.loop ? '<div class="snes-roll">EARTH CH. ' + state.loop + " · the planet still talking</div>" : "") +
-      "</div>"
-    );
-  }
-
-  function bars(n, max) {
-    var s = "";
-    var i;
-    for (i = 0; i < max; i++) s += i < n ? "█" : "░";
-    return '<span class="snes-bar">' + s + "</span>";
+    var bits = ["H " + state.hunger, "W " + state.ward];
+    if (state.loop) bits.push("Earth " + state.loop);
+    if (state.sol) bits.push("Sol " + state.sol);
+    if (state.lastRoll) bits.push("d20 " + state.lastRoll);
+    return '<p class="stage-pills">' + bits.join(" · ") + "</p>";
   }
 
   function wrap(inner, node) {
-    var art = "";
-    if (node && node.art) {
-      art =
-        '<figure class="scene-art"><img src="' +
-        node.art +
-        '" alt="' +
-        fill(node.alt || "scene") +
-        '">' +
-        (node.caption ? "<figcaption>" + fill(node.caption) + "</figcaption>" : "") +
-        "</figure>";
-    }
+    var arts = [
+      "/img/tower/ch1.jpg",
+      "/img/tower/ch2.jpg",
+      "/img/tower/ch3.jpg",
+      "/img/tower/ch4.jpg",
+      "/img/mars/habitat.jpg",
+      "/img/mars/storm.jpg",
+      "/img/mars/table.jpg"
+    ];
+    var src = (node && node.art) || arts[(state.turn + state.loop + state.sol) % arts.length];
+    var cap = node && node.caption ? fill(node.caption) : "";
     return (
-      '<div class="snes-shell">' +
-      '<p class="snes-title">WIDER  ·  INFINITE EARTH  ·  NEVER LEAVES THE TABLE</p>' +
+      '<div class="stage">' +
+      '<div class="stage-visual">' +
+      '<img src="' + src + '" alt="' + fill((node && node.alt) || "scene") + '">' +
+      (cap ? '<p class="stage-cap">' + cap + "</p>" : "") +
       hud() +
-      art +
-      '<div class="snes-window">' +
+      "</div>" +
+      '<div class="stage-panel">' +
       inner +
       "</div></div>"
     );
@@ -257,8 +353,8 @@
         "The Tower glimmers, {{seeker}}. Sit. I am Zorya — I talk like a prairie lawyer who learned cards in a tent and winter in an izba. That citadel on the cliff is a kitchen that thinks it is a fortress, same as a Tsar who thought a palace was a home. Rain like knives on the prep table. Will you bind your soul to the hearth-stone, as an honest man binds his word — or keep the salt packed, as my people keep the road?"
       ],
       choices: [
-        { label: "BIND soul-energy to the keystone (hearth / structural immunity)", next: "t1-bind" },
-        { label: "KEEP mobility — cook and run if the roof goes", next: "t1-mobile" }
+        { label: "Bind the hearth", next: "t1-bind" },
+        { label: "Keep the salt. Stay mobile.", next: "t1-mobile" }
       ]
     },
     "t1-bind": {
@@ -292,9 +388,9 @@
         "Lightning on the spire — Hunger testing the house. Tentacles at the glass, which the Tsar’s priests would have called demons and Lincoln would have called ‘a committee.’ A blue flame on the altar does not go out. Child, what holds when the sky breaks?",
       hint: "Roma proverb: hide in the pantry and the guest still finds you. The flame is supper.",
       answers: [
-        { label: "THE BLUE FLAME  (the meal that must not go out)", correct: true, next: "t2-parapet" },
-        { label: "THE INNER SANCTUM  (hide in the pantry)", correct: false, trap: 2, next: "t2-hide" },
-        { label: "LET THE TOWER BURN", correct: false, trap: 4, next: "t2" }
+        { label: "Blue flame", correct: true, next: "t2-parapet" },
+        { label: "Hide in the pantry", correct: false, trap: 2, next: "t2-hide" },
+        { label: "Let it burn", correct: false, trap: 4, next: "t2" }
       ]
     },
     "t2-parapet": {
@@ -360,12 +456,12 @@
         "{{driver}}, {{navigator}}, and {{hound}} pull up in {{van}} as if they had always been driving toward this cliff. The road-trip was the pilgrimage; the Tower was the kitchen catching fire and living. {{snack}} on the side. {{dish}} in the center. You, {{seeker}}, are the guest who bound the hearth. Pack: {{pack}}. The storm has passed because someone set a table in the rubble."
       ],
       choices: [
-        { label: "WALK ON — infinite Earth", next: "earth" },
-        { label: "INFINITE LOOP — why does the teller exist?", next: "loop" },
-        { label: "NEW CHAPTER — the first guest after dawn", next: "ch5" },
-        { label: "OTHER PATH — 16-bit road (Scooby van)", next: "couch" },
-        { label: "ADJUST STYLE — teller / SNES / dinner voice", next: "style" },
-        { label: "SHUFFLE — deal The Tower again", next: "madlib" }
+        { label: "Walk on", next: "earth" },
+        { label: "Ask", next: "loop" },
+        { label: "Guest", next: "ch5" },
+        { label: "Van", next: "couch" },
+        { label: "Voice", next: "style" },
+        { label: "Shuffle", next: "madlib" }
       ]
     },
     ch5: {
@@ -592,6 +688,12 @@
         { label: "DINNER / THE TABLE", correct: true, next: "service" },
         { label: "NOTHING", correct: false, trap: 1, next: "earth" }
       ]
+    },
+    mars: {
+      type: "mars",
+      art: "/img/mars/habitat.jpg",
+      alt: "Mars habitat kitchen",
+      caption: "SIMULATED MARS  ·  a complete reality"
     }
   };
 
@@ -644,13 +746,9 @@
       state.inv = ["Laminated Map"];
       state.lastRoll = null;
       root.innerHTML = wrap(
-        '<p class="teller-mark">Zorya · simulated fortune · three tongues</p>' +
-          "<h2>Name who walks Earth with me</h2>" +
-          "<p>This game is an infinite story about Earth. I tell it in three tongues — Lincoln’s prairie, Roma road-wisdom, the Tsar’s winter — and every chapter is a table on this dirt. Speak names. Then we walk the planet until the planet is told, which is never.</p>" +
+        '<p class="teller-mark">Zorya</p>' +
+          "<h2>Name the table</h2>" +
           yarn() +
-          '<p class="omen">' +
-          pick(omens) +
-          "</p>" +
           '<form class="madlib" id="madlib-form">' +
           field("seeker", "Your name", blanks.seeker) +
           field("driver", "Driver", blanks.driver) +
@@ -659,7 +757,7 @@
           field("snack", "Starting MacGuffin", blanks.snack) +
           field("dish", "The dish at the Star-table", blanks.dish) +
           field("van", "Talking van", blanks.van) +
-          '<button class="btn btn-primary" type="submit">BEGIN EARTH</button>' +
+          '<button class="btn btn-primary" type="submit">Begin</button>' +
           "</form>"
       );
       document.getElementById("madlib-form").addEventListener("submit", function (e) {
@@ -685,24 +783,55 @@
       ];
       node.art = earthArts[(state.loop - 1) % 4];
       var htmlLoop =
-        '<p class="teller-mark">EARTH · chapter ' +
+        '<p class="teller-mark">Earth ' +
         state.loop +
         "</p>" +
-        "<h2>The planet is the story. The story does not end.</h2>" +
+        "<h2>Walk on</h2>" +
         existenceYarn() +
-        '<p class="teller-body">' +
-        earthChapter() +
-        "</p>" +
-        '<p class="omen">Chapter ' +
-        state.loop +
-        " of never. WIDER was never leaving Earth. The wider universe is how far a plate can travel.</p>" +
-        '<p class="snes-cmd-label">WALK ON</p><div class="adv-choices">' +
-        '<button type="button" class="btn btn-primary" data-next="earth">WALK ON — another Earth chapter</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="t1">KNOCK — Earth’s Tower (the kitchen in storm)</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="being">ASK — why Earth tells itself</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="service">SIT — this table, this hour</button>' +
+        '<details class="yarn"><summary>Read</summary><p class="teller-body">' +
+        fill(earthChapter()) +
+        "</p></details>" +
+        '<div class="adv-choices">' +
+        '<button type="button" class="btn btn-primary" data-next="earth">Walk on</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="mars">Mars</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="t1">Tower</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="being">Ask</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="service">Sit</button>' +
         "</div>";
       root.innerHTML = wrap(htmlLoop, node);
+      bindNext();
+      return;
+    }
+
+    if (node.type === "mars") {
+      state.sol += 1;
+      if (state.sol % 3 === 0) heal(1);
+      give("Red Dust Salt");
+      var marsArts = [
+        "/img/mars/habitat.jpg",
+        "/img/mars/storm.jpg",
+        "/img/mars/table.jpg"
+      ];
+      node.art = marsArts[(state.sol - 1) % 3];
+      var htmlMars =
+        '<p class="teller-mark">Mars · sol ' +
+        state.sol +
+        "</p>" +
+        "<h2>" +
+        (state.sol === 1 ? "Boot the table" : "Next sol") +
+        "</h2>" +
+        '<details class="yarn"><summary>Read</summary><p class="teller-body">' +
+        fill(marsChapter()) +
+        "</p><p class=\"omen\">" +
+        pick(marsLaws) +
+        "</p></details>" +
+        '<div class="adv-choices">' +
+        '<button type="button" class="btn btn-primary" data-next="mars">Next sol</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="t1">Dust Tower</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="earth">Earth</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="service">Table</button>' +
+        "</div>";
+      root.innerHTML = wrap(htmlMars, node);
       bindNext();
       return;
     }
@@ -892,5 +1021,6 @@
     );
   }
 
-  render(window.location.search.indexOf("loop") !== -1 ? "earth" : "madlib");
+  var q = window.location.search;
+  render(q.indexOf("mars") !== -1 ? "mars" : q.indexOf("loop") !== -1 ? "earth" : "madlib");
 })();
