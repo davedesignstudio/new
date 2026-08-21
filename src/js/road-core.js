@@ -708,7 +708,8 @@
     if (sc === "hiding")
       return [
         { id: "again", label: "Walk again" },
-        { id: "read-hidden", label: "Read the whole part" }
+        { id: "read-hidden", label: "Read the whole part" },
+        { id: "paperback", label: "Drive it instead" }
       ];
     if (sc === "memory") return [{ id: "mem-back", label: "Back" }];
     return [{ id: "begin", label: "Start walking" }];

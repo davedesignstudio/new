@@ -13,4 +13,4 @@ A story that ends can bury things. An endless one can only store them. Every clo
 
 Seven parts. Each one is a thing a fortress hides, a way it surfaces, and — on the road — a way she catches you doing it.
 
-She will name yours. Walk enough and ask: [what am I hiding?](/road)
+She will name yours. Walk enough and ask: [what am I hiding?](/road) — or drive the whole road in [The Paperback](/adventure), where every ending tells you which of these seven you carried past.

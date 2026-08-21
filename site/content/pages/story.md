@@ -44,4 +44,6 @@ The path that eats its own dust is still a path. Walk it kindly. Earth does not 
 
 Because it does not end, nothing is lost — only hidden. Those parts are listed in [The Hidden Parts](/hidden).
 
+To drive it yourself, [The Paperback](/adventure) is the whole road as a choose-your-own-adventure: fifty-one numbered sections, nine ways to finish, and at the end she names which part you hid on the way.
+
 The seats at the table — wants, needs, voices — are mapped in [Character Development](/crew/development).
