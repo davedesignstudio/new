@@ -3,7 +3,7 @@ date = "2026-08-21"
 title = "Road-Wisdom"
 url = "/road"
 kicker = "An endless fortune-telling adventure"
-summary = "A tiny Game Boy world. The road rearranges. You choose. The Reader interprets what you already revealed. Never GAME OVER."
+summary = "A tiny Earth. You walk. She reads. The cards become the next mile."
 fullbleed = true
 road = true
 +++

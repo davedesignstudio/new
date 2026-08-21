@@ -419,7 +419,7 @@
       card: "CROSSROADS",
       title: "Another story path",
       bodies: [
-        "The sanctuary holds. From here the road splits: infinite Earth, a complete Mars, the talking van, or you can play the Tower yourself instead of letting the Seer choose."
+        "Same Earth. The storm you just watched is the kitchen falling. The van is the guests arriving. The tiny road is you, walking while she reads."
       ],
       choices: [
         { label: "Infinite Earth", next: "earth" },

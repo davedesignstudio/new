@@ -8,9 +8,11 @@ summary = "The combined comic novel: research, route, crew, kitchen, and the gra
 
 ## Logline
 
-When **Bodie**, **Klax**, and their snack-hound **Grub** get the munchies hard enough to rattle a suburban moon, they steal (borrow) the talking camper **VANESSA** and chase one legendary **Castle Nova slider** to the edge of the chart. A time-lost herald named **Prophet Gary** insists they are destined to save culture itself. They are mostly trying not to share the last fry. Every stop is a kitchen. Every ghost is a person in a mask protecting a recipe. Like, zoinks.
+A roadside teller named **Zorya** reads Earth. A kitchen that tried to be a fortress falls in a storm and becomes a table. **Bodie**, **Klax**, and the snack-hound **Grub** think they are chasing a legendary **Castle Nova slider** in the talking camper **VANESSA**. They are guests. Every ghost is a person protecting a recipe. The fortune is not the future. It is permission to sit.
 
-This is *Harold & Kumar* hunger, *Bill & Ted* destiny, and *Scooby-Doo* unmasking, told as a space road-trip comic — and spoken by **Zorya of the Three Roads**, an old roadside fortune-teller who generates the tale like a bus-station paperback: *if you take the left road, turn the card.*
+This is hunger-comedy and unmasking mystery, spoken like a bus-station paperback: *if you take the left road, turn the card.*
+
+The long version is [the story](/story). The playable doors are [the storm](/play/?b1=1), [play](/play), and [walk](/road).
 
 ---
 

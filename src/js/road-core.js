@@ -493,7 +493,7 @@
     var sc = s.screen;
     var mem = s.mem;
     if (sc === "title") {
-      return ["ROAD-WISDOM", "", "Endless reading.", "The world", "rearranges.", "", "You remember."];
+      return ["ROAD-WISDOM", "", "Earth.", "You walk.", "She reads."];
     }
     if (sc === "travel") {
       return [

@@ -6,9 +6,9 @@ title = "WIDER"
   unsafe = true
 
 [params]
-  description = "An infinite story about Earth, told by a fortune-teller: Lincoln anecdotes, Roma road-wisdom, Tsar-era myth, and dinner after the Tower falls."
+  description = "One Earth story: a roadside teller, a kitchen that tried to be a fortress, hungry guests, a table that does not end."
   tagline = "The game is Earth. Earth does not end."
-  kicker = "An infinite story about the only planet"
+  kicker = "A teller, a storm, a table"
   sunoId = "e627ef77-af0e-4dfc-808d-163a94300261"
   sunoTitle = "The Game Is Earth — WIDER anthem"
 
@@ -18,26 +18,31 @@ title = "WIDER"
     weight = 1
 
 [[menu.main]]
+    name = "Story"
+    url  = "/story"
+    weight = 2
+
+[[menu.main]]
     name = "Road"
     url  = "/road"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "Anthem"
     url  = "/anthem"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Mythos"
     url  = "/mythos"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "Crew"
     url  = "/crew"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 6
+    weight = 7
