@@ -242,7 +242,117 @@
       ],
       choices: [
         { label: "Drive on to the diner", to: 52 },
+        { label: "Take the cliff road instead", to: 3 },
         { label: "Ask about the man in the coat", to: 71 }
+      ]
+    },
+
+    3: {
+      title: "The cliff road",
+      art: "/img/tower/ch1.jpg",
+      text: [
+        "There is a citadel out on the sea-cliff and it has no business being there. Tarot people call it The Tower. Locals call it the restaurant.",
+        "Every window is lit and every door is barred. Somewhere inside, forty people are cooking for nobody, because the owner has decided the recipes are too valuable to serve.",
+        "The sky over it is the wrong colour. Klax says that is just weather. Klax is about to be extremely wrong."
+      ],
+      choices: [
+        { label: "Knock", to: 16 },
+        { label: "Go around to the kitchen door", to: 29 },
+        { label: "Leave. This is not your storm.", to: 52 }
+      ]
+    },
+
+    16: {
+      title: "You knock at the front",
+      art: "/img/tower/ch2.jpg",
+      text: [
+        "A panel slides open. One eye. “Are you buying or are you eating?”",
+        "It is a real question and there is a wrong answer and you do not know which is which.",
+        "Behind the eye you can hear a kitchen at full tilt — the good roar, the one that means people are working well together and would rather be nowhere else."
+      ],
+      choices: [
+        { label: "“Eating.”", to: 29 },
+        { label: "“Buying.”", to: 41 },
+        { label: "“Neither. It's about to be struck by lightning.”", to: 53 }
+      ]
+    },
+
+    41: {
+      title: "You say buying",
+      art: "/img/tower/ch2.jpg",
+      text: [
+        "The door opens instantly, which tells you everything about how this house is run.",
+        "You are given a tour, not a meal. The owner shows you locks. He shows you a safe with a recipe in it. He shows you a wall of awards and not one cook.",
+        "Outside, the first strike hits the spire. The wards hold. He does not even look up. He has stopped noticing weather; that is the whole disease."
+      ],
+      choices: [
+        { label: "Ask to meet the cooks", to: 29 },
+        { label: "Help him reinforce the wards", to: 53 }
+      ]
+    },
+
+    53: {
+      title: "The wards hold",
+      art: "/img/tower/ch2.jpg",
+      text: [
+        "You spend the night doing it properly — bracing, sealing, hauling. You are good at this. It works.",
+        "By dawn the keep is intact and the storm has gone off to be somewhere else's problem. The owner shakes your hand.",
+        "Nobody has eaten. The kitchen is still roaring behind a locked door. The recipe is still in the safe, safer than ever, and now you helped."
+      ],
+      ending: "THE WARDS HELD",
+      hides: "THE LOCK",
+      text2: [
+        "“You did the work,” Zorya says. “Do not let anyone tell you the work was not real.”",
+        "“But a wall does not know what it is protecting. It only knows in from out. That is why you have to keep asking it.”",
+        "The Tower stands. The Star waits. Earth does not end, so the storm is rescheduled, not cancelled."
+      ],
+      choices: [
+        { label: "Go around to the kitchen door", to: 29 },
+        { label: "Open the book again", to: 1 }
+      ]
+    },
+
+    29: {
+      title: "The kitchen door",
+      art: "/img/tower/ch3.jpg",
+      gain: "A cook's apron",
+      text: [
+        "It is propped open with a crate, the way kitchen doors always are, because a sealed kitchen kills its own staff.",
+        "Inside: forty people, immense heat, and a head cook who looks at three strangers and a hound and says, “Hands or out.”",
+        "You say hands. Somebody puts an apron on you before you can revise the decision."
+      ],
+      choices: [
+        { label: "Work the line", to: 45 },
+        { label: "Ask why the front door is barred", to: 45 }
+      ]
+    },
+
+    45: {
+      title: "The line",
+      art: "/img/tower/ch3.jpg",
+      text: [
+        "Four hours. You are terrible at it and then, briefly, around hour three, you are not.",
+        "The lightning gets in at 2 a.m. It takes the east wall and most of the roof and every single ward the owner paid for.",
+        "The head cook does not evacuate. She moves the whole service out into the courtyard, in the rain, and keeps going. Somebody props the safe open for the light."
+      ],
+      choices: [
+        { label: "Serve in the rubble", to: 89 },
+        { label: "Save the recipe from the safe", to: 89 }
+      ]
+    },
+
+    89: {
+      title: "Service in the rubble",
+      art: "/img/tower/ch4.jpg",
+      gain: "The Star (a set table)",
+      text: [
+        "The keep comes down and becomes, in about six hours, a very good open-air restaurant.",
+        "The recipe turns out to be four lines on an index card and the head cook reads it aloud to everyone present, twice, so that it cannot be locked up again.",
+        "The owner stands in his own courtyard eating his own food off a plate someone handed him and cannot stop crying, which everyone has the grace to ignore."
+      ],
+      choices: [
+        { label: "Back to the road — the diner", to: 52 },
+        { label: "Straight on to Castle Nova", to: 99 }
       ]
     },
 
@@ -257,8 +367,53 @@
       choices: [
         { label: "Pass the jar", to: 61, need: "Auntie's blessing", fail: 49 },
         { label: "Split the basket three ways", to: 61 },
-        { label: "Ask the price first", to: 49 }
+        { label: "Ask the price first", to: 49 },
+        { label: "Zorya is in the last booth", to: 9 }
       ]
+    },
+
+    9: {
+      title: "The last booth",
+      art: "/img/road/paper.jpg",
+      text: [
+        "She is in the last booth with a cup of tea she did not order and the deck face-down in front of her.",
+        "“Sit. You have been walking since eleven-forty and you have not once looked behind you.”"
+      ],
+      dynamic: function (s) {
+        var out = [
+          "She is in the last booth with a cup of tea she did not order and the deck face-down in front of her.",
+          "“Sit. You have been walking since eleven-forty and you have not once looked behind you.”"
+        ];
+        var carried = s.inv.length;
+        if (carried) {
+          out.push("She looks at what you are carrying: " + s.inv.join(", ") + ".");
+        } else {
+          out.push("She looks at your hands, which are empty, which she does not treat as a failure.");
+        }
+        var top = topHidden(s);
+        if (top) {
+          out.push("“And the thing you are not carrying,” she says. “" + top.line + "”");
+        } else {
+          out.push("“Nothing to name yet,” she says. “You have been decent so far. The night is young and the food court is worse.”");
+        }
+        return out;
+      },
+      choices: [
+        { label: "Back to the basket", to: 52 },
+        { label: "Ask her what she means", to: 21 }
+      ]
+    },
+
+    21: {
+      title: "She explains, briefly, once",
+      art: "/img/road/paper.jpg",
+      gain: "Zorya's warning",
+      text: [
+        "“I am not counting sins. I am counting habits. A sin is an event and a habit is a road.”",
+        "“You will do the same thing at the food court that you did at the mini-mart, and again at the canteen, and I will still be here, and I will still not stop you.”",
+        "She turns the tea around so the handle faces you, which is the closest thing to a blessing available in a diner."
+      ],
+      choices: [{ label: "Back to the basket", to: 52 }]
     },
 
     49: {
@@ -294,7 +449,74 @@
         "Klax says, “I know,” and then, worse, “thank you,” and then they both look at the rings very hard.",
         "The waitress raises one eyebrow. The check turns out to be less than the number on it. VANESSA starts on the first try, which she has never once done."
       ],
-      choices: [{ label: "Carnival orbit food court", to: 30 }]
+      choices: [
+        { label: "Carnival orbit food court", to: 30 },
+        { label: "Sleep in the van first", to: 5 }
+      ]
+    },
+
+    5: {
+      title: "Klax dreams of Mars",
+      art: "/img/mars/habitat.jpg",
+      text: [
+        "He is in a habitat ring where the air tastes like tin and mint. Everything is clean. Nothing has a grandmother.",
+        "There is a greenhouse cathedral of tomatoes and a printer that makes corn bread and a table with a window onto a canyon the size of a country.",
+        "It is the most beautiful place he has ever been and he cannot work out why he wants to leave."
+      ],
+      choices: [
+        { label: "Sit at the window table", to: 18 },
+        { label: "Look for the kitchen", to: 26 },
+        { label: "Wake up", to: 30 }
+      ]
+    },
+
+    26: {
+      title: "Looking for the kitchen",
+      art: "/img/mars/habitat.jpg",
+      text: [
+        "There isn't one. There is a dispensary. There is a nutrition schedule. There is a very kind machine that asks him to rate his meal.",
+        "He walks the whole ring twice and finds no room where anyone stands over anything at four in the morning learning the difference between hot and ready.",
+        "In the dream he starts crying about a bun, which he will deny in the morning."
+      ],
+      choices: [
+        { label: "Sit at the window table anyway", to: 18 },
+        { label: "Wake up", to: 30 }
+      ]
+    },
+
+    18: {
+      title: "The window table",
+      art: "/img/mars/table.jpg",
+      text: [
+        "Earth is a frozen pea in the sky and somebody, somewhere in this spotless ring, has left a plate out and it is still warm.",
+        "So there is a cook. There is always a cook. They are just not on the schedule.",
+        "Klax puts his hand flat on the table, which in the dream is the most decisive thing he has ever done."
+      ],
+      choices: [
+        { label: "Stay for the meal", to: 72 },
+        { label: "Wake up hungry", to: 30 }
+      ]
+    },
+
+    72: {
+      title: "The clean start",
+      art: "/img/mars/storm.jpg",
+      text: [
+        "He stays. Days pass the way they pass in dreams, which is to say they don't, they just accumulate.",
+        "It is genuinely better here. Nobody is hungry. Nobody is owed anything. Nobody has to forgive anybody at a diner over onion rings.",
+        "A dust storm comes and it is only weather, because the walls are excellent. He sits inside them and thinks about a griddle at a night market and a woman who would not rename her own food."
+      ],
+      ending: "THE CLEAN START",
+      hides: "THE EXIT",
+      text2: [
+        "“It is a good dream,” Zorya allows. “I have had it. Everyone on the road has had it.”",
+        "“But you did not want a better planet. You wanted the same one with the door open. Those are different wishes and only one of them has a kitchen.”",
+        "VANESSA hits a pothole. Klax wakes up in New Jersey. Earth does not end; it just keeps being where the food is."
+      ],
+      choices: [
+        { label: "Wake up. Food court.", to: 30 },
+        { label: "Open the book again", to: 1 }
+      ]
     },
 
     30: {
@@ -308,7 +530,58 @@
       choices: [
         { label: "Confront the mascot", to: 44 },
         { label: "Let Grub chew the head off", to: 44, need: "Grub Gem", fail: 36 },
-        { label: "Take the meeting", to: 36 }
+        { label: "Take the meeting", to: 36 },
+        { label: "Climb the scaffold above the stalls", to: 64 }
+      ]
+    },
+
+    64: {
+      title: "The high girder",
+      art: "/img/road/kong.jpg",
+      text: [
+        "Above the food court there is old carnival scaffolding, and on the top platform there is a woman in a gold headdress holding a lantern.",
+        "She is not in distress. She is the ride operator and she has been up here since the ride closed in 1998, because somebody has to be, and the lantern is a work light.",
+        "Below, something large and unhappy is throwing barrels off the second tier. “Ignore him,” she says. “He does that when the music stops.”"
+      ],
+      choices: [
+        { label: "Climb to her", to: 76 },
+        { label: "Ask her name", to: 76 },
+        { label: "Dodge the barrels and go back down", to: 44 }
+      ]
+    },
+
+    76: {
+      title: "Vasilisa, ride operator",
+      art: "/img/road/princess.jpg",
+      gain: "Her name: Vasilisa",
+      text: [
+        "Vasilisa. Twenty-eight years on a platform above a food court, keeping a light on over stalls that close at two.",
+        "“They offered to automate me,” she says. “I said the light isn't the job. Somebody being up here is the job.”",
+        "She points the lantern down at the aisles. Every cook glances up without knowing why, and keeps cooking."
+      ],
+      choices: [
+        { label: "Go down and unmask the mascot", to: 44 },
+        { label: "Stay up here a while", to: 81 }
+      ]
+    },
+
+    81: {
+      title: "You stay up on the platform",
+      art: "/img/road/kong.jpg",
+      text: [
+        "You sit with your legs through the railing and watch twelve kitchens run at once from above, which is the only angle from which a food court looks like a village.",
+        "The barrels stop. The large unhappy thing sits down on the second tier and eats something out of a paper tray.",
+        "“He's fine,” says Vasilisa. “He's just been the monster so long nobody's offered him a seat.”"
+      ],
+      ending: "THE LIGHT STAYS ON",
+      text2: [
+        "“That is my whole trade in one sentence,” Zorya says, delighted. “Somebody being up here is the job.”",
+        "“I do not predict. I keep a light on over people who are working, so that when they look up there is something there.”",
+        "Earth does not end. Somebody is always on the platform. Tonight it was you."
+      ],
+      choices: [
+        { label: "Climb down, unmask the mascot", to: 44 },
+        { label: "Open the book again", to: 1 }
       ]
     },
 
@@ -518,6 +791,54 @@
     }
   };
 
+  var HIDES = {
+    CREDIT: {
+      slug: "/hidden/credit",
+      title: "The Names of the Cooks",
+      line: "You have good hands. You have never once asked whose recipe you are holding."
+    },
+    "THE LIST": {
+      slug: "/hidden/the-list",
+      title: "The Guest List That Was Edited",
+      line: "You have places to be. Every one of them was somewhere else."
+    },
+    "THE LOCK": {
+      slug: "/hidden/the-lock",
+      title: "The Real Reason the Door Was Locked",
+      line: "You are very good at holding keys. You have never once asked a door a question."
+    },
+    "THE DEBT": {
+      slug: "/hidden/the-debt",
+      title: "The Debt Nobody Wrote Down",
+      line: "You always ask what it costs. Nobody has ever been able to give you anything."
+    },
+    "THE EXIT": {
+      slug: "/hidden/the-exit",
+      title: "The Exit That Is Not an Exit",
+      line: "You are very good at going. Tell me one thing you have arrived at."
+    }
+  };
+
+  function topHidden(s) {
+    var best = null;
+    var bestN = 0;
+    var k;
+    for (k in s.hides) {
+      if (s.hides.hasOwnProperty(k) && s.hides[k] > bestN && HIDES[k]) {
+        bestN = s.hides[k];
+        best = k;
+      }
+    }
+    if (!best) return null;
+    return {
+      key: best,
+      count: bestN,
+      slug: HIDES[best].slug,
+      title: HIDES[best].title,
+      line: HIDES[best].line
+    };
+  }
+
   function loadMem() {
     try {
       var raw = g.localStorage && g.localStorage.getItem(STORE);
@@ -588,6 +909,7 @@
 
   function scene(s) {
     var node = BOOK[s.at] || BOOK[1];
+    var body = node.dynamic ? node.dynamic(s) : node.text || [];
     var choices = (node.choices || []).map(function (c, i) {
       var locked = !!(c.need && !has(s, c.need));
       return {
@@ -604,12 +926,16 @@
       n: s.at,
       title: node.title,
       art: node.art || "/img/road/paper.jpg",
-      text: node.text || [],
+      text: body,
       after: node.ending ? node.text2 || [] : [],
       ending: node.ending || null,
+      hidden: node.ending ? topHidden(s) : null,
       choices: choices,
       inv: s.inv.slice(),
       dogEars: s.mem.dogEars.length,
+      dogEarList: s.mem.dogEars.slice().sort(function (a, b) {
+        return a - b;
+      }),
       sections: Object.keys(BOOK).length,
       endingsFound: s.mem.endings.slice(),
       endingsTotal: endingCount()
@@ -636,6 +962,8 @@
     restart: restart,
     resetAll: resetAll,
     loadMem: loadMem,
-    BOOK: BOOK
+    topHidden: topHidden,
+    BOOK: BOOK,
+    HIDES: HIDES
   };
 })(typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : this);
