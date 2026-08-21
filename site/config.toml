@@ -6,9 +6,9 @@ title = "WIDER"
   unsafe = true
 
 [params]
-  description = "WIDER dinner mythos: The Tower falls, The Star is a table. A playable tarot kitchen, road-trip comic, and 16-bit riddle crawl."
-  tagline = "Sit. She will remind you of a story — then feed you."
-  kicker = "Fortune told in three kitchens"
+  description = "An infinite story about Earth, told by a fortune-teller: Lincoln anecdotes, Roma road-wisdom, Tsar-era myth, and dinner after the Tower falls."
+  tagline = "The game is Earth. Earth does not end."
+  kicker = "An infinite story about the only planet"
   sunoId = "e627ef77-af0e-4dfc-808d-163a94300261"
   sunoTitle = "Orbital theme — swap in your Suno track ID"
 

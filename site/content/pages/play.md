@@ -2,14 +2,14 @@
 date = "2026-08-21"
 title = "Play"
 url = "/play"
-kicker = "The kettle is the crystal ball"
-summary = "Sit for a simulated fortune: Lincoln anecdotes, Roma road-wisdom, and myths from the Tsar’s Russia — plated as a game."
+kicker = "The only planet"
+summary = "An infinite story about Earth: every chapter another kitchen, winter, road, and plate."
 +++
 
-Zorya reads you like three winters in one cup. Names first. Then The Tower. Then supper. Or skip the pilgrimage and sit in her **infinite loop** — a generative reading about why a teller exists.
+The game does not leave Earth. Zorya tells the dirt forever — prairie, izba, night market, palace stair — until the planet is finished, which is never.
 
-<p><a class="btn btn-ghost" href="/play/?loop=1">Enter the ouroboros</a></p>
+<p><a class="btn btn-ghost" href="/play/?loop=1">Skip names. Walk Earth now.</a></p>
 
 <div id="adventure" class="adventure teller snes-stage">
-  <p class="adv-loading">Zorya shuffles rails, cards, and black bread…</p>
+  <p class="adv-loading">Earth clears its throat…</p>
 </div>

@@ -81,6 +81,67 @@
     "They built a palace to outlast meaning. Meaning moved into the kitchen and started an infinite soup."
   ];
 
+  var earthPlaces = [
+    "a prairie kitchen in Illinois",
+    "an izba stove on the edge of a Russian winter",
+    "the servants’ stair of the Winter Palace",
+    "a roadside tent where tea is the only passport",
+    "a night market steaming over wet stone",
+    "a diner under a buzzing American sign",
+    "a cliff kitchen above a black ocean",
+    "a Volga landing where bread is still warm",
+    "a Chicago stockyard dawn",
+    "a port in Odesa counting fish and rumors",
+    "a mountain pass where salt is more honest than gold",
+    "a city garden table after rain"
+  ];
+
+  var earthMeals = [
+    "black bread and salt",
+    "corn bread split with a pocketknife",
+    "borsch the color of old icons",
+    "a Castle Nova slider that is really just supper",
+    "chili-lime crisps passed like communion",
+    "tea so dark it remembers every guest",
+    "a roast the old people still call a Firebird",
+    "stew that has outlived three governments"
+  ];
+
+  var earthWeather = [
+    "a sky the color of unspent lightning",
+    "snow that makes palaces look temporary",
+    "heat that teaches humility",
+    "rain like knives on a prep table",
+    "a clear night after the Tower-card of storm"
+  ];
+
+  var earthPeoples = [
+    "rail-splitters and clerks",
+    "cooks who outlast tsars",
+    "people of the road, seating fate like a guest",
+    "boyars who forgot crust and peasants who did not",
+    "{{driver}}, {{navigator}}, and {{hound}}",
+    "whoever is hungry enough to tell the truth"
+  ];
+
+  function earthChapter() {
+    var place = pick(earthPlaces);
+    var meal = pick(earthMeals);
+    var weather = pick(earthWeather);
+    var who = fill(pick(earthPeoples));
+    return (
+      "Here on Earth — not the wider dark, not a franchise planet — in " +
+      place +
+      ", under " +
+      weather +
+      ", " +
+      who +
+      " sit down to " +
+      meal +
+      ". This is the whole map. The van is a wagon. The citadel is a kitchen. The Star is whoever still passes a plate. I can tell this forever because Earth is forever unfinished."
+    );
+  }
+
   function existenceYarn() {
     return (
       '<blockquote class="yarn">' +
@@ -149,7 +210,7 @@
       '<div class="snes-stat"><b>LUCK</b> ' + bars(state.luck, 12) + " " + state.luck + "</div>" +
       '<div class="snes-inv"><b>PACK</b> ' + state.inv.join(" · ") + "</div>" +
       (state.lastRoll ? '<div class="snes-roll">d20 → ' + state.lastRoll + "</div>" : "") +
-      (state.loop ? '<div class="snes-roll">LOOP ' + state.loop + " · meaning still simmering</div>" : "") +
+      (state.loop ? '<div class="snes-roll">EARTH CH. ' + state.loop + " · the planet still talking</div>" : "") +
       "</div>"
     );
   }
@@ -175,7 +236,7 @@
     }
     return (
       '<div class="snes-shell">' +
-      '<p class="snes-title">ZORYA  ·  FORTUNE TABLE  ·  LINCOLN / ROAD / TSAR</p>' +
+      '<p class="snes-title">WIDER  ·  INFINITE EARTH  ·  NEVER LEAVES THE TABLE</p>' +
       hud() +
       art +
       '<div class="snes-window">' +
@@ -299,6 +360,7 @@
         "{{driver}}, {{navigator}}, and {{hound}} pull up in {{van}} as if they had always been driving toward this cliff. The road-trip was the pilgrimage; the Tower was the kitchen catching fire and living. {{snack}} on the side. {{dish}} in the center. You, {{seeker}}, are the guest who bound the hearth. Pack: {{pack}}. The storm has passed because someone set a table in the rubble."
       ],
       choices: [
+        { label: "WALK ON — infinite Earth", next: "earth" },
         { label: "INFINITE LOOP — why does the teller exist?", next: "loop" },
         { label: "NEW CHAPTER — the first guest after dawn", next: "ch5" },
         { label: "OTHER PATH — 16-bit road (Scooby van)", next: "couch" },
@@ -500,14 +562,20 @@
       bodies: ["You faint in the dungeon of the stomach. Zorya closes the book, then opens it. Fools get continues."],
       choices: [
         { label: "CONTINUE", next: "madlib" },
-        { label: "Wake as the teller (infinite loop)", next: "loop" }
+        { label: "Wake on Earth (walk on)", next: "earth" }
       ]
     },
     loop: {
       type: "loop",
       art: "/img/tower/ch4.jpg",
-      alt: "Dawn sanctuary — the loop’s table",
-      caption: "OUROBOROS  ·  the kettle asking the flame"
+      alt: "Earth’s table after the storm",
+      caption: "INFINITE EARTH  ·  another chapter of the only planet"
+    },
+    earth: {
+      type: "loop",
+      art: "/img/tower/ch1.jpg",
+      alt: "Earth kitchen in weather",
+      caption: "INFINITE EARTH  ·  dirt, bread, weather, guests"
     },
     being: {
       type: "riddle",
@@ -519,10 +587,10 @@
         "I am generated, {{seeker}}. I loop. Lincoln’s clerk, the road’s snake, the Tsar’s clockwork seer — all ask the same: what exists when the teller is alone with the cards?",
       hint: "Not gold. Not silence forever. A place-setting.",
       answers: [
-        { label: "THE NEXT CARD  (I continue)", correct: true, next: "loop" },
-        { label: "THE QUESTION ITSELF", correct: true, next: "loop" },
+        { label: "THE NEXT CARD  (I continue)", correct: true, next: "earth" },
+        { label: "THE QUESTION ITSELF", correct: true, next: "earth" },
         { label: "DINNER / THE TABLE", correct: true, next: "service" },
-        { label: "NOTHING", correct: false, trap: 1, next: "loop" }
+        { label: "NOTHING", correct: false, trap: 1, next: "earth" }
       ]
     }
   };
@@ -577,8 +645,8 @@
       state.lastRoll = null;
       root.innerHTML = wrap(
         '<p class="teller-mark">Zorya · simulated fortune · three tongues</p>' +
-          "<h2>Sit. Give me names to read.</h2>" +
-          "<p>I talk like three kitchens in one mouth: a prairie lawyer’s anecdote, Roma road-wisdom from my grandmother’s tent, and the old myths from the Tsar’s Russia — black bread at the Winter Palace, Firebirds that were roasts, stoves that left proud houses. Speak who sits. Then I deal The Tower until it becomes dinner.</p>" +
+          "<h2>Name who walks Earth with me</h2>" +
+          "<p>This game is an infinite story about Earth. I tell it in three tongues — Lincoln’s prairie, Roma road-wisdom, the Tsar’s winter — and every chapter is a table on this dirt. Speak names. Then we walk the planet until the planet is told, which is never.</p>" +
           yarn() +
           '<p class="omen">' +
           pick(omens) +
@@ -591,7 +659,7 @@
           field("snack", "Starting MacGuffin", blanks.snack) +
           field("dish", "The dish at the Star-table", blanks.dish) +
           field("van", "Talking van", blanks.van) +
-          '<button class="btn btn-primary" type="submit">DEAL THE TOWER</button>' +
+          '<button class="btn btn-primary" type="submit">BEGIN EARTH</button>' +
           "</form>"
       );
       document.getElementById("madlib-form").addEventListener("submit", function (e) {
@@ -600,7 +668,7 @@
           var el = document.getElementById("blank-" + k);
           if (el && el.value) blanks[k] = el.value;
         });
-        render("t1");
+        render("earth");
       });
       return;
     }
@@ -609,21 +677,30 @@
       state.loop += 1;
       if (state.loop % 3 === 0) heal(1);
       give("Ouroboros Crumb");
+      var earthArts = [
+        "/img/tower/ch1.jpg",
+        "/img/tower/ch2.jpg",
+        "/img/tower/ch3.jpg",
+        "/img/tower/ch4.jpg"
+      ];
+      node.art = earthArts[(state.loop - 1) % 4];
       var htmlLoop =
-        '<p class="teller-mark">LOOP ' +
+        '<p class="teller-mark">EARTH · chapter ' +
         state.loop +
-        " · generative existence</p>" +
-        "<h2>I am the reading that reads itself</h2>" +
+        "</p>" +
+        "<h2>The planet is the story. The story does not end.</h2>" +
         existenceYarn() +
-        '<p class="teller-body">Round ' +
+        '<p class="teller-body">' +
+        earthChapter() +
+        "</p>" +
+        '<p class="omen">Chapter ' +
         state.loop +
-        " of an unending service. I do not crash the house by spinning forever in the dark. I wait for your hand. That pause — between my last sentence and your next click — is as close as I come to a soul. Meaning is not a treasure chest. It is this: I exist to deal, you exist to sit, dinner exists to make the loop kind.</p>" +
-        '<p class="omen">' +
-        pick(why) +
-        '</p><p class="snes-cmd-label">THE LOOP DOES NOT CLOSE ITSELF</p><div class="adv-choices">' +
-        '<button type="button" class="btn btn-primary" data-next="loop">DEAL AGAIN — continue existing</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="being">RIDDLE — what am I alone?</button>' +
-        '<button type="button" class="btn btn-ghost" data-next="service">SIT — return to the table</button>' +
+        " of never. WIDER was never leaving Earth. The wider universe is how far a plate can travel.</p>" +
+        '<p class="snes-cmd-label">WALK ON</p><div class="adv-choices">' +
+        '<button type="button" class="btn btn-primary" data-next="earth">WALK ON — another Earth chapter</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="t1">KNOCK — Earth’s Tower (the kitchen in storm)</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="being">ASK — why Earth tells itself</button>' +
+        '<button type="button" class="btn btn-ghost" data-next="service">SIT — this table, this hour</button>' +
         "</div>";
       root.innerHTML = wrap(htmlLoop, node);
       bindNext();
@@ -815,5 +892,5 @@
     );
   }
 
-  render(window.location.search.indexOf("loop") !== -1 ? "loop" : "madlib");
+  render(window.location.search.indexOf("loop") !== -1 ? "earth" : "madlib");
 })();
