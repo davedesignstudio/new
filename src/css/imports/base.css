@@ -944,7 +944,7 @@ p {
 }
 
 .story-home .prose p {
-  color: var(--muted);
+  color: rgba(242, 239, 232, 0.88);
   font-size: 1.05rem;
   max-width: 38ch;
 }
@@ -957,6 +957,11 @@ p {
   margin-top: 2.4rem;
   font-size: 1.35rem;
   color: var(--paper);
+}
+
+.section-pages .page-body.prose p,
+.section-pages .page-body.prose li {
+  color: rgba(242, 239, 232, 0.88);
 }
 
 .site-footer .tape-note,
