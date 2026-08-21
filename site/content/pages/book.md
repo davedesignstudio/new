@@ -12,7 +12,7 @@ A roadside teller named **Zorya** reads Earth. A kitchen that tried to be a fort
 
 This is hunger-comedy and unmasking mystery, spoken like a bus-station paperback: *if you take the left road, turn the card.*
 
-The long version is [the story](/story). The playable doors are [the storm](/play/?b1=1), [play](/play), and [walk](/road).
+The long version is [the story](/story). The playable doors are [the paperback](/adventure), [the storm](/play/?b1=1), [play](/play), and [walk](/road).
 
 ---
 
