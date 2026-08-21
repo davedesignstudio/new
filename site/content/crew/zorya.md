@@ -8,7 +8,7 @@ summary = "Mentor who embodies the table. Deals. Does not finish your arc for yo
 
 ## Seat
 
-Zorya is the Reader: a fictional old roadside woman with one candle, one deck, three tongues braided into one mouth — prairie anecdote, traveling-kitchen proverb, Tsar-winter skazka. She is not a carnival curse. She is hospitality with cards.
+Zorya is the Reader: a fictional old roadside woman with one candle, one deck, three tongues braided into **one mouth** — prairie anecdote, traveling-kitchen proverb, Tsar-winter skazka, told as one supper. She is not a carnival curse. She is hospitality with cards. The long memory she deals is [History](/history).
 
 ## Want / Need
 

@@ -40,7 +40,7 @@ The comic rule still holds: **show the steam, don’t caption the soul.**
 
 **VANESSA** is the talking camper if it smelled like oregano forever. Dashboard lights, no face.
 
-**Zorya of the Three Roads** sits in the rear booth. Russian stove, Roma tent. She deals destinies. She is the book’s generative intellect: every playthrough shuffles omens, cards, and forks.
+**Zorya of the Three Roads** sits in the rear booth. One candle, one deck. She stories together a prairie table, a road kettle, and a winter stove as one supper. She deals. She does not curse.
 
 **Prophet Gary** arrived in a booth of light to announce the Chosen Two. Zorya keeps stealing his lines. Nobody told him about the hound, the munchies, or the rubber masks.
 

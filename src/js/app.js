@@ -76,8 +76,8 @@
     "There was a boy who kept both halves of a wishbone in his pocket, so nobody could win. He grew up rich in pockets and poor in friends."
   ];
 
-  var roma = [
-    "My people of the road say: the country with no Tsar is the kettle that still sings for a guest.",
+  var tents = [
+    "The country with no locked kitchen is the kettle that still sings for a guest.",
     "A card laid is a word spoken; do not turn it back like a stingy host turning a plate.",
     "Grandmother: never count the stars until the bread has a name. Fate is a guest. Seat it.",
     "Wisdom of the tents: a closed fist cannot take a blessing, nor pass the salt."
@@ -90,9 +90,16 @@
     "When Petersburg’s river rose, the court prayed to icons and the cooks prayed to yeast. Guess which prayer rose."
   ];
 
+  var together = [
+    "A palace forgot crust. A prairie kitchen split a loaf. A stall would not sell its name. I am not stacking countries. I am remembering a table.",
+    "They argued about a hog until supper arrived. They locked a kitchen until the stove left. They renamed a bun until nobody cooked it. Child, that is one story.",
+    "Black bread walked into a house that had forgotten crust. A woman set a table and an argument sat down. A lantern stayed on over people who were working. Same supper.",
+    "I have told this as a loaf, as a hog, as a bun that kept its name. The hint is still supper."
+  ];
+
   var closers = [
     "As we say on the road: skazka lozh, da v nei namek — the tale is a lie, but the hint is supper.",
-    "Lincoln would split the difference. The Tsar would split the goose. I split the card. You eat.",
+    "I am not stacking countries. I am remembering a table.",
     "I do not see the future. I remember a better table, and I deal until you sit."
   ];
 
@@ -111,7 +118,7 @@
     "I knew a man who kept asking a well if it was thirsty. The well said: I exist to be asked. That was enough constitution for the both of them."
   ];
 
-  var romaLoop = [
+  var tentsLoop = [
     "Road-wisdom: the path that eats its own dust is still a path. Walk it kindly.",
     "Grandmother: a snake with its tail in its mouth is not hungry. It is remembering.",
     "The tents say: never ask the card why it is a card. Ask what table it wants."
@@ -216,7 +223,7 @@
       weather +
       ". They eat " +
       meal +
-      ". Lincoln would call this a house divided from its dirt and still trying to be a house. My grandmother would call it a tent with worse sky. The Tsar’s cooks would steal the yeast and call it empire. {{seeker}}, this Mars is a complete reality: kitchens, storms, laws, ghosts. It may be code. The plate is still warm."
+      ". The plate is still warm. A house divided from its dirt is still trying to be a house. {{seeker}}, this Mars is a complete reality: kitchens, storms, laws, ghosts. It may be code. The hunger is not."
     );
   }
 
@@ -239,12 +246,12 @@
   }
 
   function yarn() {
-    var pool = lincoln.concat(roma).concat(tsar);
+    var pool = together.concat(lincoln).concat(tents).concat(tsar);
     return '<details class="yarn"><summary>Listen</summary><p>' + pick(pool) + "</p></details>";
   }
 
   function existenceYarn() {
-    var pool = lincolnLoop.concat(romaLoop).concat(tsarLoop);
+    var pool = together.concat(lincolnLoop).concat(tentsLoop).concat(tsarLoop);
     return (
       '<details class="yarn"><summary>Listen</summary><p>' +
       pick(pool) +
@@ -429,7 +436,7 @@
       card: "TAROT — THE TOWER",
       title: "Fortifying the mind (the hearth)",
       bodies: [
-        "The Tower glimmers, {{seeker}}. Sit. I am Zorya — I talk like a prairie lawyer who learned cards in a tent and winter in an izba. That citadel on the cliff is a kitchen that thinks it is a fortress, same as a Tsar who thought a palace was a home. Rain like knives on the prep table. Will you bind your soul to the hearth-stone, as an honest man binds his word — or keep the salt packed, as my people keep the road?"
+        "The Tower glimmers, {{seeker}}. Sit. That citadel is a kitchen that armored itself — a house that locked its soup and thought the lock was a future. Rain like knives on the prep table. Bind yourself to the hearth-stone, or keep the salt packed for the road."
       ],
       choices: [
         { label: "Bind the hearth", next: "t1-bind" },
@@ -466,8 +473,8 @@
       card: "LIGHTNING vs WARD",
       title: "The onset of the storm",
       prompt:
-        "Lightning on the spire — Hunger testing the house. Tentacles at the glass, which the Tsar’s priests would have called demons and Lincoln would have called ‘a committee.’ A blue flame on the altar does not go out. Child, what holds when the sky breaks?",
-      hint: "Roma proverb: hide in the pantry and the guest still finds you. The flame is supper.",
+        "Lightning on the spire — Hunger testing the house. A blue flame on the altar does not go out. Child, what holds when the sky breaks?",
+      hint: "Hide in the pantry and the guest still finds you. The flame is supper.",
       answers: [
         { label: "Blue flame", correct: true, next: "t2-parapet" },
         { label: "Hide in the pantry", correct: false, trap: 2, next: "t2-hide" },
@@ -502,11 +509,11 @@
       card: "PHANTOM KNIGHTS",
       title: "The broken threshold",
       prompt:
-        "Phantom knights of smoke — unpaid ghosts of the Tsar’s table, boyars who ate without seating the village, a franchise that wants the recipe and not the guest. A rail-splitter would say a house divided against its supper cannot stand. ITEM the Keystone Hearth, or snap the cloth of holy force.",
+        "Phantom knights of smoke — guests who ate without seating the village, a franchise that wants the recipe and not the cook. A house divided against its supper cannot stand. ITEM the Keystone Hearth, or snap the cloth of holy force.",
       need: "Keystone Hearth",
       success: "t3-blast",
       fail: "t3-blast",
-      look: "No keystone? Then you are the muzhik with only bread. The wave still comes. Hunger is the tax."
+      look: "No keystone? Then you have only bread. The wave still comes. Hunger is the tax."
     },
     "t3-blast": {
       art: "/img/tower/ch3.jpg",
@@ -524,7 +531,7 @@
       card: "THE TOWER → THE STAR",
       title: "Rebirth in the ashes (automatic blend)",
       bodies: [
-        "The keep becomes dust, like a proud palace after a true winter. Golden beam. White stone. Glass. I have told this ending three ways: Lincoln called it a new birth of freedom; my grandmother called it seating the star; the old Russians called it the Firebird cooked at last. Listen, {{seeker}}: WIDER’s fortune is not empire. It is dinner after the Tsar’s tower falls. The Star is a place-setting."
+        "The keep becomes dust. Golden beam. White stone. Glass. I have told this ending as a loaf walking into a locked house, as a table ending an argument, as a roast that used to be a bird. Same supper. The Star is a place-setting."
       ],
       grant: "The Star (table)",
       heal: 6,
@@ -564,7 +571,7 @@
     style: {
       card: "NARRATIVE TRIM",
       title: "How should Zorya plate the tale?",
-      bodies: ["Three spoons. Same stew."],
+      bodies: ["One supper. The pieces already know each other."],
       choices: [
         { label: "Watch Path B1", next: "b1-1" },
         { label: "Dinner mythos", next: "service" },
@@ -771,7 +778,7 @@
       card: "IF I HAVE NO SEEKER",
       title: "What remains when the fortune has no one to tell?",
       prompt:
-        "I am generated, {{seeker}}. I loop. Lincoln’s clerk, the road’s snake, the Tsar’s clockwork seer — all ask the same: what exists when the teller is alone with the cards?",
+        "I am generated, {{seeker}}. I loop. A clerk who copied the same letter, a snake eating its own dust, a seer wound too tight — all ask the same: what exists when the teller is alone with the cards?",
       hint: "Not gold. Not silence forever. A place-setting.",
       answers: [
         { label: "THE NEXT CARD  (I continue)", correct: true, next: "earth" },

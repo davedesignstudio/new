@@ -28,8 +28,21 @@
       choices: [
         { label: "Ask what the card is", to: 31 },
         { label: "Ask for directions to food", to: 14 },
+        { label: "Ask her to tell the old part", to: 11 },
         { label: "Apologize and back out of the tent", to: 23 }
       ]
+    },
+
+    11: {
+      title: "The old part",
+      art: "/img/road/paper.jpg",
+      gain: "The old part",
+      text: [
+        "She does not turn the card. She looks at your hands, which are empty, which she does not treat as a failure.",
+        "“A palace locked its kitchen and called the bread a crown. A prairie table ended an argument by feeding it. A stall would not sell its name. I am not stacking countries. I am remembering a table.”",
+        "“Tonight you are the same story. You are still hungry. That part was never in question.”"
+      ],
+      choices: [{ label: "Get in the van", to: 14 }]
     },
 
     31: {
@@ -401,7 +414,8 @@
       },
       choices: [
         { label: "Back to the basket", to: 52 },
-        { label: "Ask her what she means", to: 21 }
+        { label: "Ask her what she means", to: 21 },
+        { label: "Ask her to tell the old part", to: 11 }
       ]
     },
 
@@ -784,6 +798,7 @@
       text2: [
         "“You thought you came for the slider,” she says. “You came to find out whether there was a stool.”",
         "“There was. There always was. The trick was walking far enough to sit down.”",
+        "She taps the receipt. “Palace. Prairie. Stall. Same supper. You sat down in it.”",
         "The Tower falls somewhere behind you, on schedule, and becomes a table. Earth does not end. Neither does the book."
       ],
       choices: [

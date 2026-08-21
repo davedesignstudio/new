@@ -11,6 +11,6 @@ Zorya deals a card face-down and leaves it there a moment.
 
 A story that ends can bury things. An endless one can only store them. Every closed kitchen becomes a rumor. Every uncounted guest becomes a ghost at the courtyard gate. Every unpaid debt comes back wearing a rubber head and asking for your street.
 
-Seven parts. Each one is a thing a fortress hides, a way it surfaces, and — on the road — a way she catches you doing it.
+Seven parts. Each one is a thing a fortress hides, a way it surfaces, and — on the road — a way she catches you doing it. They are not seven plots. They are pieces of [one history](/history).
 
 She will name yours. Walk enough and ask: [what am I hiding?](/road) — or drive the whole road in [The Paperback](/adventure), where every ending tells you which of these seven you carried past.

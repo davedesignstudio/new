@@ -58,7 +58,7 @@ Morrison talked about storytelling as communal entertainment *and* education: th
 
 CYOA and IF craft (the old branch-and-bottleneck advice; delayed branching in later design talk) agrees on this: write the spine, then open doors that **reconverge** with state. Choices reveal values. Flags remember what you would not do. A first-choice walk should still reach an ending. None of the endings should say GAME OVER.
 
-**What we took.** The Paperback: fifty-one numbered sections, nine endings, `need` / `fail`, Hidden Parts named when you refuse a seat. Road-Wisdom traits and kitchen flags are delayed branching — the Reader’s greeting changes because you passed the ketchup yesterday. You can walk again.
+**What we took.** The Paperback: fifty-two numbered sections, nine endings, `need` / `fail`, Hidden Parts named when you refuse a seat. Road-Wisdom traits and kitchen flags are delayed branching — the Reader’s greeting changes because you passed the ketchup yesterday. You can walk again.
 
 **What we refused.** A maze with no kitchen. A fail state that dumps you out of Earth.
 
@@ -127,4 +127,4 @@ Old host law (the Greek *xenia* of the roadside house, and every culture that sa
 | Gaiman / Zipes | Compost the tale. Contaminate it for this kitchen. |
 | Guest-friendship | Feed first. Ask names later. |
 
-If you are building a table of your own, start with [the story](/story), then drive [the paperback](/adventure). The six kitchens are on [the route](/route). Panels live on [craft](/craft). Food research lives on [kitchen](/kitchen).
+If you are building a table of your own, start with [the story](/story). The pieces of history, told as one supper, are on [History](/history). Then drive [the paperback](/adventure). The six kitchens are on [the route](/route). Panels live on [craft](/craft). Food research lives on [kitchen](/kitchen).

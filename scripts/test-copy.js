@@ -69,4 +69,19 @@ if (missing.length) {
   process.exit(1);
 }
 
+var histPath = path.join(__dirname, "..", "site", "content", "pages", "history.md");
+if (!fs.existsSync(histPath)) {
+  console.log("copy lint failed: missing site/content/pages/history.md");
+  process.exit(1);
+}
+var hist = fs.readFileSync(histPath, "utf8");
+var histNeed = ["remembering a table", "not stacking", "loaf that walked", "bun that kept"];
+var histMissing = histNeed.filter(function (w) {
+  return hist.indexOf(w) === -1;
+});
+if (histMissing.length) {
+  console.log("copy lint failed: history.md missing: " + histMissing.join(", "));
+  process.exit(1);
+}
+
 console.log("copy lint passed (" + files.length + " files)");

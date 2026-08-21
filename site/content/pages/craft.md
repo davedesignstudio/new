@@ -40,7 +40,7 @@ Build only what the camera can hold:
 1. **One visual hook per stop** — cooler light, steam, amber, dawn glass  
 2. **Politics of recipes** — who owns the bun, the name, the last bag  
 3. **Travel rules** — the van starts if they share; Hunger is the meter  
-4. **Deep history** — Lincoln anecdote, road proverb, Tsar-winter skazka, spoken casually  
+4. **Deep history** — palace, prairie, stall, spoken as one supper (see [History](/history)), not three stacked captions  
 
 Scale rises from booth → stall → cliff kitchen → unfinished planet. The kitchen thread, the friendship thread, and the mystery thread collide at the Star-table.
 

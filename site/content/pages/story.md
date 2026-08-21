@@ -32,6 +32,12 @@ Every haunting is a person protecting food: a night clerk and the last bag of cr
 
 Unmask. Sit. The slider stand at the edge of the map is the Star-table with a bun on it. **Prophet Gary** announced Chosen Ones. Zorya stole his lines. The hound was not in the prophecy. The hound was in the booth.
 
+## What she remembers
+
+A palace forgot crust. A prairie kitchen split a loaf. A stall would not sell its name. Same supper. She is not stacking countries. She is remembering a table.
+
+The long memory is [History](/history).
+
 ## What you were looking for
 
 After enough miles she stops selling you a future. You thought you wanted a fortune. You wanted permission to sit.

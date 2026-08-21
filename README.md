@@ -7,12 +7,13 @@ A playable comic about Earth: a roadside teller, a kitchen that tried to be a fo
 Live doors:
 
 - `/` and `/story` — the one plot
-- `/adventure` — The Paperback (fifty-one numbered sections)
+- `/adventure` — The Paperback (fifty-two numbered sections)
 - `/hidden` — what an endless Earth stores instead of burying
 - `/route` — six kitchens from the last bag to the Star-table
 - `/road` — Road-Wisdom, the tiny Game Boy loop
 - `/play/?b1=1` — Path B1, the storm (Tower → Star)
 - `/libraries` — other tellers on story, read not interviewed, applied to this kitchen
+- `/history` — palace, prairie, stall: pieces of history told as one supper
 
 ## Run locally
 

@@ -40,9 +40,9 @@ vm.runInNewContext(fs.readFileSync(path.join(__dirname, "..", "src", "js", "pape
 var P = sandbox.PAPERBACK;
 assert.ok(P, "PAPERBACK missing");
 
-check("fifty-one numbered sections", function () {
+check("fifty-two numbered sections", function () {
   var keys = Object.keys(P.BOOK);
-  assert.equal(keys.length, 51, "got " + keys.length);
+  assert.equal(keys.length, 52, "got " + keys.length);
 });
 
 check("every turn lands on a real section", function () {
@@ -97,6 +97,19 @@ check("STORE key", function () {
   s = P.go(s, 1);
   s = P.choose(s, P.BOOK[1].choices[0]);
   assert.ok(store.getItem("wider.paperback.v1"));
+});
+
+check("the old part stories history together", function () {
+  var blob = (P.BOOK[11].text || []).join(" ");
+  assert.ok(/remembering a table/.test(blob), blob);
+  assert.ok(/not stacking countries/.test(blob), blob);
+  var fromTent = (P.BOOK[7].choices || []).some(function (c) {
+    return c.to === 11;
+  });
+  var fromBooth = (P.BOOK[9].choices || []).some(function (c) {
+    return c.to === 11;
+  });
+  assert.ok(fromTent && fromBooth, "old part should be reachable from tent and diner booth");
 });
 
 check("diner feeds before it asks names", function () {
