@@ -1326,6 +1326,14 @@ body.is-road {
   color: #241d16;
 }
 
+.pb-ending strong,
+.page-body.prose .pb-ending strong,
+.section-pages .page-body.prose .pb-ending strong {
+  color: #7a3b42;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
+
 .pb-sheet p,
 .page-body.prose .pb-sheet p,
 .section-pages .page-body.prose .pb-sheet p {
@@ -1356,6 +1364,15 @@ body.is-road {
 }
 
 .pb-sheet p:first-of-type::first-letter {
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  color: inherit;
+}
+
+.pb-sheet h2 + p::first-letter,
+.page-body.prose .pb-sheet h2 + p::first-letter {
   float: left;
   font-size: 3.1rem;
   line-height: 0.82;
