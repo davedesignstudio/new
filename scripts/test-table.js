@@ -182,6 +182,16 @@ check("putting the stone in the pot is the keystone", function () {
   assert.ok(/stone is not the soup/i.test(blob(r.lines)), blob(r.lines));
 });
 
+check("pass what is red is a real move", function () {
+  var s = T.newGame(5);
+  s = T.act(s, "Jun the driver").state;
+  s = T.act(s, "go east").state;
+  var r = T.act(s, "pass what is red");
+  var t = blob(r.lines);
+  assert.ok(!/Use it how/i.test(t), t);
+  assert.ok(r.state.flags.shared || /does not split/i.test(t), t);
+});
+
 check("go to the pantry rolls a kitchen on the fly", function () {
   var s = T.newGame(12);
   s = T.act(s, "Kit").state;
@@ -192,6 +202,10 @@ check("go to the pantry rolls a kitchen on the fly", function () {
   assert.ok(s.improvised >= 1, "did not improvise");
   assert.ok(Object.keys(s.rooms).length > before, "no new room");
   assert.ok(/on the fly|Pantry|pantry/i.test(blob(r.lines) + " " + s.rooms[s.room].title), blob(r.lines));
+  var onward = (s.rooms[s.room].exits || []).some(function (e) {
+    return e.dir !== "back";
+  });
+  assert.ok(onward, "improvised room should still lead onward");
 });
 
 check("two command walks on one seed stay in lockstep", function () {

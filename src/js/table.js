@@ -1133,7 +1133,9 @@
       matchName(rest, "crisp") ||
       matchName(rest, "bun") ||
       matchName(rest, "pass") ||
-      matchName(rest, "rings");
+      matchName(rest, "rings") ||
+      matchName(rest, "red") ||
+      matchName(rest, "what is");
     if (sharing || (rest && hasItem(st, rest))) {
       var share = rollCheck(st, rng, "heart", 10, lines);
       if (share.ok) {
@@ -1319,6 +1321,11 @@
       st.rooms[nid] = fresh;
       r.exits.push({ to: nid, label: fresh.title, dir: "aside" });
       fresh.exits.push({ to: r.id, label: r.title, dir: "back" });
+      r.exits.forEach(function (e) {
+        if (e.dir !== "back" && e.dir !== "aside" && e.to !== nid) {
+          fresh.exits.push({ to: e.to, label: e.label, dir: e.dir });
+        }
+      });
       st.improvised += 1;
       line(lines, "she", "You said " + rest + ". Fine. I will roll a kitchen there. That is what on the fly means.");
       ex = r.exits[r.exits.length - 1];
@@ -1457,7 +1464,7 @@
         line(lines, "she", "You would not name yourself, so I did. " + st.name + ".");
         startJob(st, rng, p.rest, lines);
       } else if (p.verb === "namejob") {
-        setName(st, rng, p.rest, lines);
+        st.name = titleCase(p.rest);
         startJob(st, rng, p.job, lines);
       } else if (p.verb === "rollname" || p.verb === "roll") {
         st.name = rng.pick(PC_NAMES);
