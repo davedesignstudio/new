@@ -111,7 +111,7 @@ function dps_seed_demo_content( $force = false ) {
 		return false;
 	}
 
-	$hero_id   = dps_sideload_theme_image( 'hero-studio.jpg', 'Studio hero' );
+	$hero_id   = dps_sideload_theme_image( 'hero-editorial.jpg', 'Studio hero' );
 	$about_id  = dps_sideload_theme_image( 'about-desk.jpg', 'Studio desk' );
 	$street_id = dps_sideload_theme_image( 'street.jpg', 'Downtown street' );
 	$images    = array(

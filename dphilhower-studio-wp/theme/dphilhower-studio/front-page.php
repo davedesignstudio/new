@@ -8,7 +8,7 @@
 get_header();
 
 $hero_id  = absint( get_theme_mod( 'dps_hero_image' ) );
-$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'dps-hero' ) : dps_image_url( 'hero-studio.jpg' );
+$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'dps-hero' ) : dps_image_url( 'hero-editorial.jpg' );
 $work_url = get_post_type_archive_link( 'dps_work' );
 if ( ! $work_url ) {
 	$work_url = home_url( '/work/' );

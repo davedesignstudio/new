@@ -7,8 +7,8 @@
       "palette": [
         { "slug": "ink", "color": "#10140f", "name": "Ink" },
         { "slug": "paper", "color": "#f2f4ef", "name": "Paper" },
-        { "slug": "verdigris", "color": "#2f6b66", "name": "Verdigris" },
-        { "slug": "brass", "color": "#9a7b45", "name": "Brass" }
+        { "slug": "verdigris", "color": "#1d4ed8", "name": "Cobalt" },
+        { "slug": "brass", "color": "#d97706", "name": "Ember" }
       ]
     },
     "layout": {
@@ -18,14 +18,14 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "Syne, sans-serif",
+          "fontFamily": "Space Grotesk, sans-serif",
           "slug": "display",
-          "name": "Syne"
+          "name": "Space Grotesk"
         },
         {
-          "fontFamily": "Karla, sans-serif",
+          "fontFamily": "Inter, sans-serif",
           "slug": "body",
-          "name": "Karla"
+          "name": "Inter"
         }
       ]
     }

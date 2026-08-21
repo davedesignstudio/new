@@ -69,11 +69,12 @@ add_action( 'after_setup_theme', 'dps_setup' );
 function dps_assets() {
 	wp_enqueue_style(
 		'dps-fonts',
-		'https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap',
 		array(),
 		null
 	);
 	wp_enqueue_style( 'dps-main', DPS_URI . '/assets/css/main.css', array( 'dps-fonts' ), DPS_VERSION );
+	wp_enqueue_style( 'dps-editorial', DPS_URI . '/assets/css/editorial.css', array( 'dps-main' ), DPS_VERSION );
 	wp_enqueue_script( 'dps-main', DPS_URI . '/assets/js/main.js', array(), DPS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'dps_assets' );
