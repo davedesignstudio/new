@@ -8,6 +8,7 @@ Live doors:
 
 - `/` and `/story` — the one plot
 - `/adventure` — The Paperback (fifty-two numbered sections)
+- `/table` — kitchen-table dungeon: Zorya is the DM, you type what you do, each night is rolled on the fly
 - `/hidden` — what an endless Earth stores instead of burying
 - `/route` — six kitchens from the last bag to the Star-table
 - `/road` — Road-Wisdom, the tiny Game Boy loop
@@ -37,4 +38,4 @@ npx gulp css js hugo images
 
 ## Tests
 
-`npm test` checks product copy for leftover space-tour language, walks a full Road-Wisdom cycle, and checks that every Paperback turn lands on a real section.
+`npm test` checks product copy for leftover space-tour language, walks a full Road-Wisdom cycle, checks that every Paperback turn lands on a real section, and deals two on-the-fly Table nights.

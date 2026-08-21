@@ -15,6 +15,7 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 ## Same house
 
 - **[The Paperback](/adventure)** — fifty-two numbered sections; you drive.
+- **[The Table](/table)** — she is the dungeon master; you type what you do; each playthrough is rolled on the fly.
 - **[The Hidden Parts](/hidden)** — what an endless Earth stores instead of burying.
 - **[The route](/route)** — six kitchens from the last bag to the Star-table.
 - **`/play/?b1=1`** — the storm, told straight: Tower becomes Star.
