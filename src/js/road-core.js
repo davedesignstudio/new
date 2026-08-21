@@ -643,7 +643,7 @@
       var lines = ["THE READING"].concat(wrapText(f.pair)).concat(["", "If I had to name", "you: " + f.soul + "."]);
       if (f.history[0]) lines = lines.concat([""]).concat(wrapText(f.history[0]));
       if (mem.cycles >= 5) lines = lines.concat([""]).concat(wrapText("Between us — you were looking for " + f.looking + "."));
-      if (mem.cycles >= 3 && f.hiding) lines = lines.concat(["", "You are hiding", f.hiding.title + "."]);
+      if (f.hiding) lines = lines.concat(["", "You are hiding", f.hiding.title + "."]);
       lines = lines.concat(["", "The road is still", "open."]);
       return lines;
     }
@@ -700,9 +700,8 @@
     if (sc === "spread") return [{ id: "read", label: "Read them" }];
     if (sc === "fortune") {
       var opts = [{ id: "again", label: "Walk again" }];
-      if (s.mem.cycles >= 3) opts.push({ id: "what-hide", label: "What am I hiding?" });
+      opts.push({ id: "what-hide", label: "What am I hiding?" });
       if (s.mem.cycles >= 8 && !s.mem.flags.askedHidden) opts.push({ id: "what-q", label: "What was I asking?" });
-      if (opts.length < 2) opts.push({ id: "wider", label: "Back to WIDER" });
       return opts;
     }
     if (sc === "hidden") return [{ id: "again", label: "Walk again" }];
