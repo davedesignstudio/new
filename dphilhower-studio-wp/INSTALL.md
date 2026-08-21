@@ -1,8 +1,18 @@
 # Install D Philhower Studio on dphilhower.com
 
-You have two zip files. Pick one path.
+You have three zip files. Pick one path.
 
-## A. Theme only (`dphilhower-studio-theme.zip`)
+## A. HTML / CSS / JS only (`dphilhower-studio-html-css-js.zip`)
+
+Use this if you want the studio site as plain files — no WordPress, no database.
+
+1. Unzip `dphilhower-studio-html-css-js.zip`.
+2. Open `START-HERE.html` or `index.html`.
+3. To go live on dphilhower.com, upload the unzipped files into `public_html`.
+
+All `.html`, `.css`, and `.js` files are listed in `files.html` and `FILE-LIST.txt`.
+
+## B. Theme only (`dphilhower-studio-theme.zip`)
 
 Use this if WordPress is already installed.
 
@@ -15,7 +25,7 @@ Use this if WordPress is already installed.
 
 The theme creates pages and sample work on first activation.
 
-## B. All-in-one (`dphilhower-studio-wordpress-all-in-one.zip`)
+## C. All-in-one (`dphilhower-studio-wordpress-all-in-one.zip`)
 
 Use this for a new site. It includes WordPress core plus the studio theme.
 

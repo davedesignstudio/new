@@ -23,6 +23,29 @@ echo "→ Theme zip"
     -x "*.DS_Store" -x "*/.git/*"
 )
 
+echo "→ HTML / CSS / JS zip"
+HTML_SRC="$ROOT/preview"
+if [[ ! -f "$HTML_SRC/index.html" ]]; then
+  echo "HTML preview not found at $HTML_SRC" >&2
+  exit 1
+fi
+HTML_STAGE="$BUILD/dphilhower-studio-html"
+rm -rf "$HTML_STAGE"
+mkdir -p "$HTML_STAGE"
+cp -a "$HTML_SRC"/. "$HTML_STAGE"/
+(
+  cd "$BUILD"
+  zip -qr -9 "$RELEASES/dphilhower-studio-html-css-js.zip" dphilhower-studio-html \
+    -x "*.DS_Store"
+)
+
+if [[ "${SKIP_WORDPRESS:-0}" == "1" ]]; then
+  echo
+  echo "Built (SKIP_WORDPRESS=1):"
+  ls -lh "$RELEASES"
+  exit 0
+fi
+
 echo "→ Download WordPress"
 WP_ZIP="$BUILD/wordpress-latest.zip"
 for attempt in 1 2 3 4; do
