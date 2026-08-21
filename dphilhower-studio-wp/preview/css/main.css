@@ -82,8 +82,10 @@ select {
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem var(--space);
-  mix-blend-mode: difference;
-  color: #f4f6f1;
+  color: var(--ink);
+  background: rgba(242, 244, 239, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
 }
 
 .admin-bar .site-header {
@@ -199,9 +201,7 @@ select {
   line-height: 0.92;
   letter-spacing: -0.03em;
   max-width: 11ch;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: riseIn 0.9s var(--ease) 0.15s forwards;
+  opacity: 1;
 }
 
 .hero-line {
@@ -210,27 +210,21 @@ select {
   font-weight: 600;
   font-size: clamp(1.15rem, 2.4vw, 1.7rem);
   max-width: 22ch;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: riseIn 0.85s var(--ease) 0.35s forwards;
+  opacity: 1;
 }
 
 .hero-support {
   margin: 0 0 1.6rem;
   max-width: 36ch;
   color: rgba(244, 246, 241, 0.86);
-  opacity: 0;
-  transform: translateY(18px);
-  animation: riseIn 0.85s var(--ease) 0.5s forwards;
+  opacity: 1;
 }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: riseIn 0.85s var(--ease) 0.65s forwards;
+  opacity: 1;
 }
 
 .btn {
@@ -334,9 +328,7 @@ select {
   min-height: 260px;
   background: var(--ink-soft);
   color: #f4f6f1;
-  opacity: 0;
-  transform: translateY(28px);
-  transition: transform 0.45s var(--ease);
+  opacity: 1;
 }
 
 .work-item.is-visible {
@@ -760,10 +752,8 @@ select {
 
 @media (max-width: 720px) {
   .site-header {
-    mix-blend-mode: normal;
     color: var(--ink);
-    background: rgba(236, 239, 232, 0.88);
-    backdrop-filter: blur(10px);
+    background: rgba(236, 239, 232, 0.96);
   }
 
   .menu-toggle {

@@ -16,13 +16,19 @@ Full steps: [`dphilhower-studio-wp/INSTALL.md`](dphilhower-studio-wp/INSTALL.md)
 bash dphilhower-studio-wp/scripts/build-packages.sh
 ```
 
-## Preview the design without WordPress
+## Preview
+
+Open `dphilhower-studio-wp/preview/index.html` in a browser, or:
 
 ```bash
-python3 -m http.server 3000 --directory dphilhower-studio-wp/preview
+npm start
 ```
 
 Then open http://localhost:3000
+
+Netlify publish is the static studio site in `dphilhower-studio-wp/preview` (copied to `dist/`).
+
+To preview without installing anything, unzip `dphilhower-studio-wp/releases/dphilhower-studio-html-css-js.zip` and open `dphilhower-studio-html/index.html`.
 
 ## Theme source
 

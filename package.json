@@ -5,12 +5,10 @@
   "repository": "netlify/victor-hugo",
   "main": "index.js",
   "scripts": {
-    "hugo": "gulp hugo",
-    "build": "gulp build",
-    "build-preview": "gulp build-preview",
-    "start": "gulp server",
-    "start-preview": "gulp server-preview",
-    "lint": "eslint src"
+    "build": "mkdir -p dist && cp -a dphilhower-studio-wp/preview/. dist/",
+    "build-preview": "mkdir -p dist && cp -a dphilhower-studio-wp/preview/. dist/",
+    "start": "python3 -m http.server 3000 --directory dphilhower-studio-wp/preview",
+    "start-preview": "python3 -m http.server 3000 --directory dphilhower-studio-wp/preview"
   },
   "author": "",
   "license": "MIT",

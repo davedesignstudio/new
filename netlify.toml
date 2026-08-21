@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build"
+  command = "mkdir -p dist && cp -a dphilhower-studio-wp/preview/. dist/"
   publish = "dist"
 
 [build.environment]
-  HUGO_VERSION = "0.29"
+  NODE_VERSION = "18"
 
 [context.deploy-preview]
-  command = "npm run build-preview"
+  command = "mkdir -p dist && cp -a dphilhower-studio-wp/preview/. dist/"
