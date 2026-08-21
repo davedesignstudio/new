@@ -30,7 +30,26 @@
     "WHEEL",
     "ANGEL"
   ];
-  var STORE = "wider.roadwisdom.v1";
+  var ARTS = [
+    "/img/road/bville.jpg",
+    "/img/road/bville-2.jpg",
+    "/img/road/philhower.jpg",
+    "/img/road/coffee.jpg",
+    "/img/road/coffee-cup.jpg",
+    "/img/road/cafe.jpg",
+    "/img/road/kong.jpg",
+    "/img/road/princess.jpg",
+    "/img/road/paper-stamp.jpg",
+    "/img/road/scan-a.png",
+    "/img/road/scan-b.png",
+    "/img/tower/ch1.jpg",
+    "/img/tower/ch2.jpg",
+    "/img/tower/ch3.jpg",
+    "/img/tower/ch4.jpg",
+    "/img/mars/habitat.jpg",
+    "/img/mars/storm.jpg",
+    "/img/mars/table.jpg"
+  ];
 
   var QUESTIONS = [
     {
@@ -74,11 +93,19 @@
       ]
     },
     {
-      q: "Bville still serves. A plate, unsplit.",
+      q: "Bville still serves. Straight Outta Bville. Boom Boom or Chetzel, unsplit.",
       a: [
         { id: "eat-bville", label: "EAT", t: { trust: 1, mercy: 1 }, flag: "ate" },
         { id: "pay-first", label: "ASK THE PRICE", t: { suspicion: 1 } },
         { id: "leave-bville", label: "LEAVE HUNGRY", t: { wander: 1 } }
+      ]
+    },
+    {
+      q: "Philhower's yellow sun is nailed to a post. The card says Design. Call?",
+      a: [
+        { id: "call-phil", label: "CALL", t: { trust: 1, curiosity: 1 }, flag: "calledPhilhower" },
+        { id: "read-phil", label: "READ THE CARD", t: { curiosity: 1 }, flag: "readPhilhower" },
+        { id: "pass-phil", label: "WALK ON", t: { wander: 1 } }
       ]
     },
     {
@@ -114,6 +141,14 @@
       ]
     },
     {
+      q: "Cafe Robust. Grow your own. Expresso or grounds?",
+      a: [
+        { id: "sit-cafe", label: "SIT", t: { mercy: 1, trust: 1 }, flag: "sat" },
+        { id: "read-cup", label: "READ THE CUP", t: { fate: 1, curiosity: 1 } },
+        { id: "pass-cafe", label: "WALK ON", t: { wander: 1 } }
+      ]
+    },
+    {
       q: "A musician plays a song you almost remember.",
       a: [
         { id: "listen", label: "LISTEN", t: { fate: 1, return: 1 } },
@@ -128,11 +163,14 @@
     { id: "soldier", name: "a soldier", art: "road" },
     { id: "widow", name: "a widow", art: "chapel" },
     { id: "merchant", name: "Bind", art: "creamery" },
+    { id: "philhower", name: "Philhower", art: "philhower" },
+    { id: "bville", name: "Bville", art: "bville" },
     { id: "traveler", name: "a traveler", art: "road" },
     { id: "ferryman", name: "a ferryman", art: "bridge" },
     { id: "musician", name: "a musician", art: "village" },
     { id: "beggar", name: "a beggar", art: "village" },
     { id: "red", name: "a woman in red", art: "oracle" },
+    { id: "cafe", name: "Cafe Robust", art: "creamery" },
     { id: "princess", name: "the princess", art: "princess" }
   ];
 
@@ -211,11 +249,20 @@
     var forced = (mem.lastCards || []).slice(0, 3);
     var enc = [];
     var i;
+    var artDeck = shuffle(ARTS, mem);
+    function nextArt() {
+      if (!artDeck.length) artDeck = shuffle(ARTS, mem);
+      return artDeck.pop();
+    }
     for (i = 0; i < forced.length && enc.length < 2; i++) {
-      enc.push(makeSymbolBeat(forced[i], mem));
+      var beat = makeSymbolBeat(forced[i], mem);
+      beat.artUrl = nextArt();
+      enc.push(beat);
     }
     var stranger = pick(STRANGERS, mem);
-    enc.push(questionForStranger(stranger, mem));
+    var qn = questionForStranger(stranger, mem);
+    qn.artUrl = artForStranger(stranger, nextArt, mem);
+    enc.push(qn);
     var dirs = shuffle(["FOREST", "VILLAGE", "RIVER"], mem);
     return {
       screen: "title",
@@ -232,6 +279,8 @@
       refused: [],
       cards: [],
       spread: null,
+      runArt: nextArt(),
+      artDeck: artDeck,
       mem: mem
     };
   }
@@ -256,22 +305,43 @@
   }
 
   function questionForStranger(stranger, mem) {
-    var map = {
-      child: 2,
-      soldier: 7,
-      widow: 8,
-      merchant: 4,
-      ferryman: 3,
-      musician: 10,
-      princess: 9,
-      red: 1,
-      beggar: 0,
-      traveler: 0
+    var who = {
+      child: "help-child",
+      soldier: "tell-true",
+      widow: "take-key",
+      merchant: "sit-lick",
+      bville: "eat-bville",
+      philhower: "call-phil",
+      ferryman: "cross-now",
+      musician: "listen",
+      princess: "sit-throne",
+      cafe: "sit-cafe",
+      red: "take-ring",
+      beggar: "return-it",
+      traveler: "return-it"
     };
-    var q = QUESTIONS[map[stranger.id] != null ? map[stranger.id] : 0];
+    var want = who[stranger.id] || "return-it";
+    var q = QUESTIONS[0];
+    var i;
+    for (i = 0; i < QUESTIONS.length; i++) {
+      if (QUESTIONS[i].a && QUESTIONS[i].a[0] && QUESTIONS[i].a[0].id === want) {
+        q = QUESTIONS[i];
+        break;
+      }
+    }
     if (stranger.id === "child") return childMemoryBeat(mem, q);
     if (stranger.id === "princess") return princessBeat();
     return q;
+  }
+
+  function artForStranger(stranger, nextArt, mem) {
+    if (stranger.id === "princess") return pick(["/img/road/kong.jpg", "/img/road/princess.jpg"], mem);
+    if (stranger.id === "bville") return pick(["/img/road/bville.jpg", "/img/road/bville-2.jpg"], mem);
+    if (stranger.id === "philhower") return "/img/road/philhower.jpg";
+    if (stranger.id === "merchant" || stranger.id === "cafe") {
+      return pick(["/img/road/coffee.jpg", "/img/road/coffee-cup.jpg", "/img/road/cafe.jpg"], mem);
+    }
+    return nextArt();
   }
 
   function childMemoryBeat(mem, fallback) {
@@ -646,9 +716,20 @@
     state.weather = "a red sunset";
     state.stranger = { id: "princess", name: "the princess", art: "princess" };
     state.encounters = [princessBeat()];
+    state.encounters[0].artUrl = pick(["/img/road/kong.jpg", "/img/road/princess.jpg"], state.mem);
+    state.runArt = state.encounters[0].artUrl;
     state.symbol = "LANTERN";
     if (state.cards.indexOf("LANTERN") === -1) state.cards.push("LANTERN");
     return state;
+  }
+
+  function artUrlFor(s) {
+    if (s.screen === "meet" && s.encounters[s.beat] && s.encounters[s.beat].artUrl) return s.encounters[s.beat].artUrl;
+    if (s.screen === "travel" || s.screen === "title") return s.runArt || "/img/road/paper-stamp.jpg";
+    if (s.screen === "discover") return s.runArt || "/img/road/scan-a.png";
+    var i = Math.abs((s.mem.seed || 1) + (s.mem.cycles || 0) * 17) % ARTS.length;
+    if (s.screen === "reader" || s.screen === "spread" || s.screen === "fortune" || s.screen === "hidden") return ARTS[i];
+    return s.runArt || "/img/road/paper-stamp.jpg";
   }
 
   function scene(s) {
@@ -656,6 +737,7 @@
       screen: s.screen,
       day: s.mem.cycles + 1,
       art: artFor(s),
+      artUrl: artUrlFor(s),
       lines: linesFor(s),
       choices: choicesFor(s),
       ambience: artFor(s) === "creamery" || artFor(s) === "village" || artFor(s) === "bville",

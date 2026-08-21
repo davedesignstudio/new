@@ -40,7 +40,10 @@
     var day = root.querySelector("[data-gb-day]");
     if (day) day.textContent = sc.screen === "title" ? "ROAD-WISDOM" : "DAY " + sc.day;
     var art = root.querySelector("[data-gb-art]");
-    if (art) art.setAttribute("data-show", sc.art);
+    if (art) {
+      art.setAttribute("data-show", sc.art);
+      art.style.backgroundImage = sc.artUrl ? "url('" + sc.artUrl + "')" : "none";
+    }
     var text = root.querySelector("[data-gb-text]");
     if (text) {
       text.innerHTML = sc.lines

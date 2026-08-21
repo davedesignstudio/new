@@ -1033,9 +1033,77 @@ body.is-road {
 .gb-body {
   position: relative;
   z-index: 3;
-  max-width: 24rem;
+  max-width: 20rem;
   margin: 0 auto;
   padding: 1.1rem 0.9rem 1.6rem;
+}
+
+.gb-lcd {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 10 / 9;
+  min-height: 0;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  background: #b8b390;
+  color: #40342e;
+  border: 6px solid #40342e;
+  box-shadow:
+    inset 0 0 0 3px #8a9a62,
+    0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.gb-art {
+  position: absolute;
+  top: 0.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5.4rem;
+  height: 4.2rem;
+  background: #8a9a62 center / cover no-repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 2px solid #40342e;
+  box-shadow: inset 0 0 0 1px #c6d4a0;
+}
+
+.gb[data-art="oracle"] .gb-lcd,
+.gb[data-art="forest"] .gb-lcd,
+.gb[data-art="bridge"] .gb-lcd,
+.gb[data-art="village"] .gb-lcd,
+.gb[data-art="creamery"] .gb-lcd,
+.gb[data-art="bville"] .gb-lcd,
+.gb[data-art="chapel"] .gb-lcd,
+.gb[data-art="road"] .gb-lcd,
+.gb[data-art="philhower"] .gb-lcd,
+.gb[data-art="princess"] .gb-lcd {
+  background: #b8b390;
+  color: #40342e;
+  min-height: 0;
+}
+
+.gb[data-art="princess"] .gb-art {
+  width: 6.2rem;
+  height: 5.2rem;
+}
+
+.gb-text {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5.1rem 0.55rem 0.55rem;
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 0.48rem;
+  line-height: 1.65;
+  text-shadow: none;
+}
+
+.gb[data-art="princess"] .gb-text {
+  min-height: 0;
+  text-shadow: none;
 }
 
 .gb-brand,
@@ -1049,75 +1117,6 @@ body.is-road {
 
 .gb-status {
   color: #cfb5ac;
-}
-
-.gb-lcd {
-  position: relative;
-  min-height: 14rem;
-  border-radius: 0.35rem;
-  overflow: hidden;
-  background: #b8b390;
-  color: #40342e;
-  border: 4px solid #40342e;
-  box-shadow:
-    inset 0 0 0 2px #ad994f,
-    0 12px 28px rgba(0, 0, 0, 0.45);
-}
-
-.gb-art {
-  position: absolute;
-  inset: 0;
-  background: #b8b390 center 20% / cover no-repeat;
-  image-rendering: auto;
-}
-
-.gb[data-art="oracle"] .gb-art { background-color: #40342e; background-image: url("/img/road/paper.jpg"); }
-.gb[data-art="forest"] .gb-art { background-color: #7a6d63; background-image: url("/img/road/paper.jpg"); }
-.gb[data-art="bridge"] .gb-art { background-color: #7a3b42; }
-.gb[data-art="village"] .gb-art,
-.gb[data-art="creamery"] .gb-art,
-.gb[data-art="bville"] .gb-art { background-color: #cc9678; }
-.gb[data-art="chapel"] .gb-art { background-color: #654e4c; }
-.gb[data-art="road"] .gb-art { background-color: #bb9e7c; }
-.gb[data-art="princess"] .gb-lcd {
-  min-height: 22rem;
-  color: #cfb5ac;
-  background: #000;
-  box-shadow:
-    inset 0 0 0 2px #a15666,
-    0 12px 28px rgba(0, 0, 0, 0.45);
-}
-.gb[data-art="princess"] .gb-art {
-  background-image: url("/img/road/kong.jpg");
-  background-position: center 0;
-  background-size: cover;
-  image-rendering: pixelated;
-}
-.gb[data-art="princess"] .gb-lcd::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(26, 22, 20, 0.08) 28%, rgba(26, 22, 20, 0.82) 100%);
-}
-
-.gb-text {
-  position: relative;
-  z-index: 2;
-  min-height: 14rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.7rem 0.65rem 0.75rem;
-  font-family: "Press Start 2P", ui-monospace, monospace;
-  font-size: 0.52rem;
-  line-height: 1.7;
-  text-shadow: 0 1px 0 rgba(26, 22, 20, 0.35);
-}
-
-.gb[data-art="princess"] .gb-text {
-  min-height: 22rem;
-  text-shadow: 0 1px 0 #1a1614, 0 0 10px #1a1614;
 }
 
 .gb-choices {
