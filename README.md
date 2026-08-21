@@ -12,6 +12,7 @@ Live doors:
 - `/route` — six kitchens from the last bag to the Star-table
 - `/road` — Road-Wisdom, the tiny Game Boy loop
 - `/play/?b1=1` — Path B1, the storm (Tower → Star)
+- `/libraries` — other tellers on story, read not interviewed, applied to this kitchen
 
 ## Run locally
 

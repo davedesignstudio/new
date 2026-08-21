@@ -361,6 +361,7 @@
       art: "/img/road/coffee.jpg",
       text: [
         "No music. No beacons. Six booths and one waitress who communicates entirely through eyebrow.",
+        "She sets three waters before anyone has a name. That is the whole religion of this place.",
         "There is one basket of onion rings. There are three of you. The check has already been placed face-down, which is somehow menacing.",
         "Etched into the table, old and deep, someone has written: PASS WHAT IS RED."
       ],
@@ -450,7 +451,7 @@
         "The waitress raises one eyebrow. The check turns out to be less than the number on it. VANESSA starts on the first try, which she has never once done."
       ],
       choices: [
-        { label: "Carnival orbit food court", to: 30 },
+        { label: "Carnival food court", to: 30 },
         { label: "Sleep in the van first", to: 5 }
       ]
     },
@@ -740,6 +741,7 @@
       text: [
         "At the edge of the map, where the road stops pretending it goes anywhere else, there is a slider stand with a light on.",
         "It is not a castle. It is a counter, eight stools, and a man who has been waiting up.",
+        "He pours coffee before he asks who you are.",
         "There are exactly enough seats. There have always been exactly enough seats. That was the prophecy; Gary just read it in a font that made it sound like war."
       ],
       choices: [

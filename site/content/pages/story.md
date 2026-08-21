@@ -37,3 +37,5 @@ Unmask. Sit. The slider stand at the edge of the map is the Star-table with a bu
 After enough miles she stops selling you a future. You thought you wanted a fortune. You wanted permission to sit.
 
 [Drive it](/adventure). [What you hid](/hidden). [The six kitchens](/route).
+
+If you make stories of your own: [Libraries](/libraries).

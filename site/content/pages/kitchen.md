@@ -31,7 +31,7 @@ WIDER uses food the way a mystery uses clues. Each stop is researched as a **foo
 | Widow’s canteen | Grief meals, funeral stews, radio kitchens | Stock as memory |
 | Castle Nova | White Castle / slider longing | Destination that was always a table |
 
-Write smell first. Then steam. Then who gets a seat.
+Write smell first. Then steam. Then who gets a seat. Other tellers on why the table is the plot: [Libraries](/libraries).
 
 ## Dinner mythos (The Tower → The Star)
 

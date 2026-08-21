@@ -99,6 +99,26 @@ check("STORE key", function () {
   assert.ok(store.getItem("wider.paperback.v1"));
 });
 
+check("diner feeds before it asks names", function () {
+  var blob = (P.BOOK[52].text || []).join(" ");
+  assert.ok(/waters/.test(blob), blob);
+});
+
+check("Castle Nova pours before it asks", function () {
+  var blob = (P.BOOK[99].text || []).join(" ");
+  assert.ok(/pours coffee/.test(blob), blob);
+});
+
+check("no leftover orbit diction in choices", function () {
+  var orbit = [];
+  Object.keys(P.BOOK).forEach(function (k) {
+    (P.BOOK[k].choices || []).forEach(function (c) {
+      if (/orbit/i.test(c.label || "")) orbit.push(c.label);
+    });
+  });
+  assert.deepEqual(orbit, []);
+});
+
 check("six kitchens are in the book", function () {
   var titles = Object.keys(P.BOOK)
     .map(function (k) {

@@ -63,6 +63,8 @@ Pages, not chapters. 3–6 panels. Balloons under 25 words. Splash pages for won
 
 Script mode: **full script** for mystery setups; **plot-first** for kitchen chaos so the artist can crowd the stalls.
 
+The talk with other tellers — bag not spear, gutter, feed first — is [Libraries](/libraries).
+
 ---
 
 ## Play it

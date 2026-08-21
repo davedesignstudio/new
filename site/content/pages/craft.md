@@ -48,9 +48,12 @@ Scale rises from booth → stall → cliff kitchen → unfinished planet. The ki
 
 ## Study list (methods, not plots)
 
-- *Understanding Comics* (McCloud) — gutters, time, transitions  
+The long conversation — Le Guin, Morrison, McCloud, Propp used lightly, CYOA bottlenecks, Lincoln anecdote, Miyazaki kitchens, Gaiman/Zipes compost, guest-friendship — is on [Libraries](/libraries). That page is research into practice. This page is the panel rules.
+
+- *Understanding Comics* (McCloud) — gutters, time, transitions; the unmask lives between panels  
 - Intimate stakes against weather and appetite  
 - Travel / road craft — episodic stops with a throughline  
+- Carrier-bag fiction (Le Guin) — the table holds; the spear (Chosen One, THOK) does not  
 
 ---
 

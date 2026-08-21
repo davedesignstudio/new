@@ -53,4 +53,20 @@ if (hits.length) {
   console.log("copy lint failed:\n" + hits.join("\n"));
   process.exit(1);
 }
+
+var libPath = path.join(__dirname, "..", "site", "content", "pages", "libraries.md");
+if (!fs.existsSync(libPath)) {
+  console.log("copy lint failed: missing site/content/pages/libraries.md");
+  process.exit(1);
+}
+var lib = fs.readFileSync(libPath, "utf8");
+var needed = ["Le Guin", "Morrison", "McCloud", "carrier bag", "gutter", "feed first"];
+var missing = needed.filter(function (w) {
+  return lib.indexOf(w) === -1;
+});
+if (missing.length) {
+  console.log("copy lint failed: libraries.md missing: " + missing.join(", "));
+  process.exit(1);
+}
+
 console.log("copy lint passed (" + files.length + " files)");

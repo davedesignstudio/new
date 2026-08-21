@@ -110,4 +110,4 @@ Road-Wisdom loop is Zorya’s infinite B-plot: the seeker’s traits accumulate;
 
 Want/need and external vs internal arcs (screen craft consensus). Ensemble tracking and staggered Story Circles (Harmon-style mapping; ensemble balance writing). Buddy comedy foil chemistry and road-as-crucible. Mentor/Sage craft: embody theme, restrain answers, allow flaw. Comic relief must alter plot.
 
-The long story that these seats serve: [The Story](/story).
+The long story that these seats serve: [The Story](/story). The talk with other makers about *how* a story holds: [Libraries](/libraries).

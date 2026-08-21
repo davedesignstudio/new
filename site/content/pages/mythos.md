@@ -19,6 +19,7 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 - **[The route](/route)** — six kitchens from the last bag to the Star-table.
 - **`/play/?b1=1`** — the storm, told straight: Tower becomes Star.
 - **`/road`** — you walk a tiny Earth. She reads what you do.
+- **[Libraries](/libraries)** — other tellers, read not interviewed; methods applied to this kitchen.
 
 Mars is not a sequel. It is Earth imagining an exit and still having to set supper.
 
