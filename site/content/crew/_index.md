@@ -1,6 +1,10 @@
 +++
 title = "The Crew"
-summary = "Two hungry meddling kids, a snack-hound, a talking mystery van, and a prophet who did not sign up for this."
+summary = "Six seats at one Earth table — researched wants, needs, and voices."
 +++
 
-Shaggy appetite, Velma itinerary, Scooby munchies — and Zorya in the back booth, dealing the next page.
+WIDER’s cast is an ensemble, not a hero plus props. The research bible — want vs need, foils, mentor craft, staggered arcs — lives here:
+
+**[Character Development](/crew/development)**
+
+Then the seats themselves.

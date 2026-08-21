@@ -3,9 +3,36 @@ title = "Zorya of the Three Roads"
 date = "2026-08-21"
 weight = 0
 role = "Fortune / teller"
-summary = "A simulated seer who braids Lincoln’s anecdotes, Roma road-wisdom, and Tsar-era Russian myth into one dinner reading."
+summary = "Mentor who embodies the table. Deals. Does not finish your arc for you."
 +++
 
-Zorya is the teller of WIDER: a fictional old roadside reader, not a carnival act. Prairie anecdote, traveling-kitchen proverb, Tsar-winter skazka — one mouth.
+## Seat
 
-She does not curse for coins. She deals. The Tower falls. Dinner is the fortune. The long version is [the story](/story).
+Zorya is the Reader: a fictional old roadside woman with one candle, one deck, three tongues braided into one mouth — prairie anecdote, traveling-kitchen proverb, Tsar-winter skazka. She is not a carnival curse. She is hospitality with cards.
+
+## Want / Need
+
+- **Want:** to keep dealing — to remain a voice at the crossroads.
+- **Need:** to admit she needs a seeker as much as they need her. A teller alone is a stove with no house.
+
+## Wound / Lie / Mask
+
+- **Wound:** tables that closed when she was young; kitchens that locked the recipe.
+- **Lie:** “If I stop talking, I end.”
+- **Mask:** calm omniscience. She already knows. (She does not.)
+
+## Arc
+
+She begins as function — exposition in a tent. She becomes person when the boys sit and she stops selling futures. Her quiet climax is not a prophecy: it is someone staying for tea. In Road-Wisdom she greets by cycle count; memory is how she loves.
+
+## Craft job
+
+Mentor / Sage. She embodies the thematic truth (**the fortress was never the point; the table was**). She teaches by dealing and by refusing to solve the storm for you. If she could raise the wards alone, there would be no dinner story.
+
+## Voice
+
+Short parable. One kitchen image. No boy-slang. No caricature accent. When she is wrong, she is wrong about timing, not about hunger.
+
+## Links
+
+[Character bible](/crew/development) · [The story](/story)

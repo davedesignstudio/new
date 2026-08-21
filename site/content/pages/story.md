@@ -41,3 +41,5 @@ Unmask. Sit. The slider stand at the edge of the map is the Star-table with a bu
 After enough miles she stops selling you a future. You thought you wanted a fortune. You wanted permission to sit.
 
 The path that eats its own dust is still a path. Walk it kindly. Earth does not end.
+
+The seats at the table — wants, needs, voices — are mapped in [Character Development](/crew/development).
