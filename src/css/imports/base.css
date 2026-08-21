@@ -226,11 +226,13 @@ p {
 }
 
 .hero-brand {
-  font-size: clamp(4.2rem, 16vw, 8.5rem);
+  font-size: clamp(3.2rem, 12vw, 8rem);
   font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 0.9;
+  letter-spacing: 0.06em;
+  line-height: 0.92;
   margin-bottom: 0.75rem;
+  padding-left: 0.08em;
+  overflow: visible;
   text-shadow: 0 0 40px rgba(94, 200, 216, 0.25);
 }
 
@@ -962,6 +964,7 @@ p {
   background: linear-gradient(to top, rgba(5, 10, 16, 0.92), rgba(5, 10, 16, 0.2) 70%);
   width: 100%;
   max-width: none;
+  box-sizing: border-box;
 }
 
 .home-story .hero {
