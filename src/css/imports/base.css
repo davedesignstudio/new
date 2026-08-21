@@ -385,10 +385,31 @@ p {
   color: var(--paper);
 }
 
-.prose hr {
-  border: 0;
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0 2rem;
+}
+
+.prose th,
+.prose td {
+  text-align: left;
+  padding: 0.55rem 0.65rem;
   border-top: 1px solid var(--line);
-  margin: 2rem 0;
+  color: var(--muted);
+  vertical-align: top;
+}
+
+.prose th {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prose td a {
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 .card-grid {
@@ -604,6 +625,13 @@ p {
   margin-bottom: 0.35rem;
 }
 
+.footer-line {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.9rem;
+  max-width: 46ch;
+}
+
 .footer-note {
   color: var(--muted);
   margin: 0;
@@ -681,6 +709,13 @@ p {
   color: var(--paper);
   font-style: normal;
   border-left-color: var(--cyan);
+}
+
+.omen-kitchen {
+  color: var(--cyan);
+  font-style: italic;
+  border-left-color: var(--copper);
+  margin-top: 0.7rem;
 }
 
 .play-frame {
@@ -1554,6 +1589,15 @@ body.is-road {
 .pb-reset:hover {
   color: var(--paper);
   border-color: var(--copper);
+}
+
+.gb-hint {
+  margin: 0.55rem 0 0;
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: 0.36rem;
+  letter-spacing: 0.08em;
+  color: #8a7a62;
+  text-align: center;
 }
 
 .is-road .site-footer {

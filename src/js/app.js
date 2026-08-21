@@ -130,6 +130,9 @@
     "a roadside tent where tea is the only passport",
     "a night market steaming over wet stone",
     "a diner under a buzzing American sign",
+    "Bville, still serving, a plate unsplit",
+    "Cow Lick, Bind's ledger on the bar",
+    "Cafe Robust, grounds or a cup you can read",
     "a cliff kitchen above a black ocean",
     "a Volga landing where bread is still warm",
     "a Chicago stockyard dawn",
@@ -175,7 +178,7 @@
     "a lava-tube chapel where they store yeast like relics",
     "the simulated Illinois kitchen — Earth copied, slightly too red",
     "the Winter Palace module, a joke that became a shrine",
-    "Airlock 7, which is also a table if you sit on the crates",
+    "Habitat lock 7, which is also a table if you sit on the crates",
     "the cliff of Gale, first supper facing a pale Earth"
   ];
 
@@ -326,7 +329,10 @@
       "/img/tower/ch4.jpg",
       "/img/mars/habitat.jpg",
       "/img/mars/storm.jpg",
-      "/img/mars/table.jpg"
+      "/img/mars/table.jpg",
+      "/img/road/bville.jpg",
+      "/img/road/cafe.jpg",
+      "/img/road/coffee.jpg"
     ];
     var src = (node && node.art) || arts[(state.turn + state.loop + state.sol) % arts.length];
     var cap = node && node.caption ? fill(node.caption) : "";
@@ -356,6 +362,7 @@
       bodies: [
         "The Tarot card of The Tower glimmers under the Fortune Teller’s lamp, its crimson mists wrapping around your arms. Choosing resilience, you refuse to be swept away by incoming chaos—you will construct a stronghold."
       ],
+      kitchen: "The citadel is a kitchen putting up walls. You are binding yourself to a stove.",
       decision:
         "Automated Decision: The Seer binds your soul-energy to the citadel’s keystone, prioritizing structural immunity over mobility.",
       grant: "Keystone Hearth",
@@ -373,6 +380,7 @@
       bodies: [
         "The sky fractures. A brilliant streak of white-hot lightning strikes the highest spire, testing the freshly raised wards. The force reverberates through the ground beneath your feet, shaking the very foundation of the keep, but the runic barriers hold firm—for now."
       ],
+      kitchen: "Lightning is Hunger. The wards are recipes you refuse to franchise.",
       decision:
         "Automated Decision: Rather than hiding in the inner sanctum, the protagonist steps onto the parapet and channels energy into the fading wards.",
       trap: 1,
@@ -389,6 +397,7 @@
       bodies: [
         "A second lightning strike hits, shattering the central courtyard gate. Shadowy apparitions—manifestations of the upheaval predicted by the cards—surge into the outer courtyard. The barrier holds overhead, but the breach at ground level threatens to overrun the fortress from within."
       ],
+      kitchen: "Phantom knights are guests who ate without seating the village.",
       decision:
         "Automated Decision: Instead of retreating behind the oak doors, the protagonist unleashes a wave of holy force, blasting the spectral army back into the storm.",
       choices: [{ label: "Continue", next: "b1-4" }]
@@ -404,6 +413,7 @@
       bodies: [
         "The shockwave clears the courtyard, but the immense strain causes the main tower to collapse into glowing crystalline dust. From the rubble a brilliant beam of golden light shoots skyward, parting the storm and revealing a clear night sky. Morning sun on the ocean. Where the dark citadel stood, a sanctuary of white stone and glass takes root. The Fortune Teller’s face appears faintly in the sky, smiling, as the card transforms from The Tower into The Star. The storm has passed. By enduring the collapse of the old foundation, you have forged an unshakable new sanctuary."
       ],
+      kitchen: "The fortress was never the point. The table was. Every night dinner rebuilds The Star.",
       decision: "The Seer closes the book—then leaves it open. What now?",
       grant: "The Star (table)",
       heal: 6,
@@ -581,6 +591,7 @@
       ]
     },
     couch: {
+      art: "/img/road/cafe.jpg",
       card: "FLOOR 1 — THE COUCH",
       title: "Zhivili-byli, in 16-bit",
       bodies: [
@@ -603,6 +614,7 @@
       ]
     },
     mart: {
+      art: "/img/road/coffee.jpg",
       card: "FLOOR 1 — PAPER MASK",
       title: "Unmask check",
       bodies: [
@@ -650,6 +662,7 @@
       choices: [{ label: "Climb out. Reset runes.", next: "runes" }]
     },
     market: {
+      art: "/img/road/bville.jpg",
       card: "FLOOR 2 — NIGHT MARKET",
       title: "Steam is scripture",
       bodies: [
@@ -671,6 +684,7 @@
       choices: [{ label: "COMMAND: Silent diner", next: "diner" }]
     },
     diner: {
+      art: "/img/road/cafe.jpg",
       type: "item",
       card: "FLOOR 3 — SHARED BASKET",
       title: "Use item on the rings",
@@ -698,6 +712,7 @@
       choices: [{ label: "ITEM: Second basket. Make peace.", next: "carnival" }]
     },
     carnival: {
+      art: "/img/road/kong.jpg",
       type: "riddle",
       card: "BOSS — MASCOT SPHINX",
       title: "The scout in the rubber head asks",
@@ -736,6 +751,7 @@
       ]
     },
     castle: {
+      art: "/img/tower/ch4.jpg",
       card: "FLOOR ∞ — DAWN TABLE",
       title: "Destiny was dinner",
       bodies: [
@@ -845,7 +861,9 @@
       root.innerHTML = wrap(
         '<p class="teller-mark">Zorya</p>' +
           "<h2>Name the table</h2>" +
+          '<p class="teller-body">Hunger wants a seat it will not share. A kitchen put up walls. The walls fall. What remains is supper. You are a guest.</p>' +
           yarn() +
+          '<p class="story-links"><a href="/story/">Read the story</a><a href="/road/">Walk the tiny road</a></p>' +
           '<form class="madlib" id="madlib-form">' +
           field("seeker", "Your name", blanks.seeker) +
           field("driver", "Driver", blanks.driver) +
@@ -855,7 +873,7 @@
           field("dish", "The dish at the Star-table", blanks.dish) +
           field("van", "Talking van", blanks.van) +
           '<button class="btn btn-primary" type="submit">Begin</button>' +
-          '<button class="btn btn-ghost" type="button" id="watch-b1">Watch Path B1</button>' +
+          '<button class="btn btn-ghost" type="button" id="watch-b1">Watch the storm</button>' +
           "</form>"
       );
       function harvestBlanks() {
@@ -884,9 +902,13 @@
         "/img/tower/ch1.jpg",
         "/img/tower/ch2.jpg",
         "/img/tower/ch3.jpg",
-        "/img/tower/ch4.jpg"
+        "/img/tower/ch4.jpg",
+        "/img/road/bville.jpg",
+        "/img/road/cafe.jpg",
+        "/img/road/coffee.jpg",
+        "/img/road/philhower.jpg"
       ];
-      node.art = earthArts[(state.loop - 1) % 4];
+      node.art = earthArts[(state.loop - 1) % earthArts.length];
       var htmlLoop =
         '<p class="teller-mark">Earth ' +
         state.loop +
@@ -1105,7 +1127,9 @@
       (node.decision ? " omen-auto" : "") +
       '">' +
       omen +
-      '</p><div class="adv-choices">';
+      "</p>" +
+      (node.kitchen ? '<p class="omen omen-kitchen">' + fill(node.kitchen) + "</p>" : "") +
+      '<div class="adv-choices">';
     (node.choices || []).forEach(function (c, idx) {
       var klass = (idx === 0 ? "btn btn-primary" : "btn btn-ghost") + " adv-choice";
       if (c.href) {
