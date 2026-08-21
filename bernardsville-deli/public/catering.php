@@ -6,12 +6,6 @@ require_once dirname(__DIR__) . '/src/includes/helpers.php';
 
 $site = site_config();
 $pageTitle = 'Catering — ' . $site['name'];
-$cateringShots = [
-    ['key' => 'board-bbq-pie', 'caption' => 'Pizza trays'],
-    ['key' => 'board-shawarma', 'caption' => 'Grill platters'],
-    ['key' => 'board-buffalo-wrap', 'caption' => 'Wraps'],
-    ['key' => 'board-quesadilla', 'caption' => 'Party plates'],
-];
 
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
@@ -32,19 +26,6 @@ require dirname(__DIR__) . '/src/includes/header.php';
 <section class="content-section">
   <div class="container content-card">
     <p>From stone oven pizza to wraps and kabobs, Bville Pizza &amp; Grill caters gatherings of all sizes. Call us to build a custom menu for your party or office lunch.</p>
-  </div>
-</section>
-
-<section class="content-section">
-  <div class="container">
-    <div class="catering-photo-grid">
-      <?php foreach ($cateringShots as $shot): ?>
-        <figure>
-          <?= photo_img($shot['key'], ['width' => 640, 'height' => 420]) ?>
-          <figcaption><?= e($shot['caption']) ?></figcaption>
-        </figure>
-      <?php endforeach; ?>
-    </div>
   </div>
 </section>
 

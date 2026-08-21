@@ -54,19 +54,14 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <?php endforeach; ?>
 </section>
 
-<section class="split origin-section" id="our-story">
-  <div class="container split-grid origin-grid">
-    <div class="split-media origin-media">
-      <?= photo_img('table', ['width' => 720, 'height' => 480]) ?>
-      <span class="origin-badge"><?= e($origin['tag']) ?> · <?= e($origin['year']) ?></span>
-    </div>
-    <div class="origin-copy">
-      <p class="kicker"><?= e($origin['subtitle']) ?></p>
-      <h2 class="origin-title story-text" data-story-id="<?= e($origin['id']) ?>"><?= e($origin['title']) ?></h2>
-      <blockquote class="origin-quote story-text" data-story-id="<?= e($origin['id']) ?>" data-field="quote">“<?= e($origin['quote']) ?>”</blockquote>
-      <p class="origin-lead story-text" data-story-id="<?= e($origin['id']) ?>" data-field="excerpt"><?= e($origin['excerpt']) ?></p>
-      <a class="btn btn-gold" href="<?= e(asset_url('about.php')) ?>">About Bville</a>
-    </div>
+<section class="origin-section origin-section--type" id="our-story">
+  <div class="container origin-copy">
+    <img class="origin-mark" src="<?= e(asset_url('assets/brand/table-mark.svg')) ?>" alt="" width="88" height="88" />
+    <p class="kicker"><?= e($origin['subtitle']) ?> · <?= e($origin['tag']) ?> <?= e($origin['year']) ?></p>
+    <h2 class="origin-title story-text" data-story-id="<?= e($origin['id']) ?>"><?= e($origin['title']) ?></h2>
+    <blockquote class="origin-quote story-text" data-story-id="<?= e($origin['id']) ?>" data-field="quote">“<?= e($origin['quote']) ?>”</blockquote>
+    <p class="origin-lead story-text" data-story-id="<?= e($origin['id']) ?>" data-field="excerpt"><?= e($origin['excerpt']) ?></p>
+    <a class="btn btn-gold" href="<?= e(asset_url('about.php')) ?>">About Bville</a>
   </div>
 </section>
 
@@ -79,8 +74,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
     <div class="menu-grid">
       <?php foreach ($site['menu_categories'] as $cat): ?>
         <?php if (!in_array($cat['id'], $homeCats, true)) continue; ?>
-        <a class="menu-grid-item" href="<?= e(asset_url('menu.php#' . $cat['id'])) ?>">
-          <?= photo_img($cat['id'], ['width' => 480, 'height' => 320]) ?>
+        <a class="menu-grid-item menu-grid-item--type" href="<?= e(asset_url('menu.php#' . $cat['id'])) ?>">
           <span class="menu-grid-banner"><?= e($cat['label']) ?></span>
         </a>
       <?php endforeach; ?>
@@ -101,7 +95,6 @@ require dirname(__DIR__) . '/src/includes/header.php';
 </section>
 
 <section class="cafe-band cafe-robust-banner">
-  <div class="cafe-banner-photo" style="background-image: url('<?= e(photo_meta('cafe')['src']) ?>')" aria-hidden="true"></div>
   <div class="container cafe-banner-inner">
     <img src="<?= e(asset_url($site['cafe_robust']['logos']['bean'])) ?>" alt="" width="72" height="96" aria-hidden="true" />
     <div>

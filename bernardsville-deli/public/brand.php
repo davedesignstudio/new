@@ -155,13 +155,10 @@ require dirname(__DIR__) . '/src/includes/header.php';
     </header>
     <div class="house-beats">
       <?php foreach ($brand['story']['beats'] as $beat): ?>
-        <figure class="house-beat">
-          <?= photo_img((string) $beat['photo'], ['width' => 640, 'height' => 420]) ?>
-          <figcaption>
-            <p class="kicker"><?= e((string) $beat['title']) ?></p>
-            <p><?= e((string) $beat['text']) ?></p>
-          </figcaption>
-        </figure>
+        <article class="house-beat house-beat--type">
+          <p class="kicker"><?= e((string) $beat['title']) ?></p>
+          <p><?= e((string) $beat['text']) ?></p>
+        </article>
       <?php endforeach; ?>
     </div>
   </div>

@@ -12,8 +12,7 @@ $pageTitle = $cafe['name'] . ' — ' . $site['name'];
 require dirname(__DIR__) . '/src/includes/header.php';
 ?>
 
-<section class="cafe-robust-hero cafe-robust-hero--photo">
-  <div class="cafe-hero-photo" style="background-image: url('<?= e(photo_meta('cafe')['src']) ?>')" aria-hidden="true"></div>
+<section class="cafe-robust-hero">
   <div class="container cafe-robust-hero-grid">
     <div class="cafe-robust-copy">
       <p class="comic-pub">Чудо Комикс · Robust</p>
@@ -31,14 +30,11 @@ require dirname(__DIR__) . '/src/includes/header.php';
 </section>
 
 <section class="cafe-lifestyle">
-  <div class="container cafe-lifestyle-grid">
-    <?= photo_img('dining', ['class' => 'cafe-lifestyle-photo', 'width' => 720, 'height' => 480]) ?>
-    <div class="cafe-logo-showcase cafe-logo-showcase--inline">
-      <img src="<?= e(asset_url($cafe['logos']['bean'])) ?>" alt="Cafe Robust bean emblem" width="100" height="133" />
-      <img src="<?= e(asset_url($cafe['logos']['wordmark'])) ?>" alt="Cafe Robust" width="260" height="65" />
-      <img src="<?= e(asset_url($cafe['logos']['cr'])) ?>" alt="CR mark" width="120" height="90" />
-      <img class="cafe-logo-cup" src="<?= e(asset_url($cafe['logos']['cup'])) ?>" alt="Cafe Robust coffee cup" width="160" height="144" />
-    </div>
+  <div class="container cafe-logo-showcase cafe-logo-showcase--inline">
+    <img src="<?= e(asset_url($cafe['logos']['bean'])) ?>" alt="Cafe Robust bean emblem" width="100" height="133" />
+    <img src="<?= e(asset_url($cafe['logos']['wordmark'])) ?>" alt="Cafe Robust" width="260" height="65" />
+    <img src="<?= e(asset_url($cafe['logos']['cr'])) ?>" alt="CR mark" width="120" height="90" />
+    <img class="cafe-logo-cup" src="<?= e(asset_url($cafe['logos']['cup'])) ?>" alt="Cafe Robust coffee cup" width="160" height="144" />
   </div>
 </section>
 

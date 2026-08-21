@@ -310,11 +310,14 @@ body.chudo-world .menu-grid-item {
   border-radius: 0;
   background: var(--paper);
   box-shadow: 7px 8px 0 rgba(20, 40, 32, 0.16);
+  overflow: visible;
 }
 
 body.chudo-world .menu-grid-banner {
-  font-family: var(--font-comic);
-  border-width: 2px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  border: 0;
 }
 
 body.chudo-world .call-bar,
@@ -821,10 +824,15 @@ body.chudo-world .order-dock {
   padding: 0.75rem 0.85rem 0.95rem;
 }
 
-.house-beat figcaption p {
+.house-beat figcaption p,
+.house-beat--type p {
   margin: 0.2rem 0 0;
   font-family: var(--font-garamond);
   font-style: italic;
+}
+
+.house-beat--type {
+  padding: 1rem 1.05rem 1.15rem;
 }
 
 .house-voice-grid {

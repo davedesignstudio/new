@@ -23,14 +23,13 @@ require dirname(__DIR__) . '/src/includes/header.php';
         <a class="btn btn-ghost" href="tel:<?= e($site['phone_raw']) ?>">Call</a>
       </div>
     </div>
-    <?= photo_img('dining', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+    <?= photo_img('dining-room', ['class' => 'hero-photo frame-photo', 'width' => 720, 'height' => 480, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
   </div>
 </section>
 
 <section class="content-section">
   <div class="container contact-grid">
     <div class="content-card">
-      <?= photo_img('pass', ['class' => 'contact-card-photo', 'width' => 640, 'height' => 360]) ?>
       <h2><?= print_title('Visit') ?></h2>
       <address>
         <?= e($site['address']) ?><br />

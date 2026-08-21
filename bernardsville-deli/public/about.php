@@ -12,7 +12,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="hero">
   <div class="container about-pack-grid">
-    <?= photo_img('table', ['class' => 'about-hero-photo', 'width' => 560, 'height' => 420, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
+    <?= photo_img('dining-room', ['class' => 'about-hero-photo', 'width' => 560, 'height' => 420, 'loading' => 'eager', 'fetchpriority' => 'high']) ?>
     <div>
       <p class="comic-pub">Чудо Комикс · Origins</p>
       <p class="kicker">159 Morristown Rd</p>
@@ -44,24 +44,6 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <?php endforeach; ?>
     </div>
     <p><a class="btn btn-ghost" href="<?= e(asset_url('brand.php')) ?>">Open the house book</a></p>
-  </div>
-</section>
-
-<section class="content-section photo-board-section" id="photo-board">
-  <div class="container">
-    <header class="house-board-head">
-      <p class="kicker">The photo board · From this kitchen</p>
-      <h2>Plates that left this pass</h2>
-      <p class="section-lead">Shot at 159 Morristown Rd — the pies, platters, and the room they come out of.</p>
-    </header>
-    <div class="photo-board">
-      <?php foreach ($site['photos']['gallery'] as $shot): ?>
-        <figure class="photo-board-item">
-          <?= photo_img($shot['key'], ['width' => 640, 'height' => 480]) ?>
-          <figcaption><?= e($shot['caption']) ?></figcaption>
-        </figure>
-      <?php endforeach; ?>
-    </div>
   </div>
 </section>
 
