@@ -24,6 +24,14 @@ Then the van arrives. Bodie, Klax, Grub. The road trip was always the pilgrimage
 - We do not sell a fortress. We set a seat in the wreckage.
 - Bind to the hearth, or carry Travel Salt. Either way, pass the dish.
 
-## How to play it
+## The teller’s three tongues
+
+Zorya answers like a prairie lawyer, a woman of the road, and a grandmother from the Tsar’s winter — always in the same breath.
+
+- **Lincoln-like anecdote:** a hog, an axe, a senate that needed supper. The moral is the meal.
+- **Roma road-wisdom:** the kettle is a country; a card laid is a word spoken; seat fate like a guest.
+- **Myth of imperial Russia:** the muzhik’s black bread in the Winter Palace; the stove that left the boyar; the Firebird that was a roast meant to be shared.
+
+The game is her reading. The brand is what she plates when the palace falls.
 
 `/play` deals The Tower first. Choices are courses. The blend into dinner is automatic — no menu interrupt until service, when you may start a new chapter, take the Scooby road, or change the teller’s voice.

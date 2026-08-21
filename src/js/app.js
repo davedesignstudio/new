@@ -22,16 +22,50 @@
   };
 
   var omens = [
-    "The tea shows a road that eats its own map.",
-    "A moth lands on the Queen of Bowls. Hunger is the plot.",
-    "Three roads. One honest stomach. Do not lie to either."
+    "The leaves say: a house that will not feed a stranger is already a ruin.",
+    "I see a tall man in a stove-pipe hat, splitting a log of pride down the middle.",
+    "In the Tsar’s winter, three brothers stood at a fork. Only the one who packed bread lived."
+  ];
+
+  var lincoln = [
+    "That reminds me of a feller who would not lend his axe, and so spent all day chopping with a dull one — honesty is a sharp edge, child, but sharing is the whetstone.",
+    "I knew a lawyer who argued a whole afternoon about whose hog it was, until a woman set supper and both men forgot the hog. The case was dinner.",
+    "A rail-splitter told me: if I had four hours to save the Union, I’d spend three of ’em setting the table. A hungry senate is a cruel senate.",
+    "There was a boy who kept both halves of a wishbone in his pocket, so nobody could win. He grew up rich in pockets and poor in friends."
+  ];
+
+  var roma = [
+    "My people of the road say: the country with no Tsar is the kettle that still sings for a guest.",
+    "A card laid is a word spoken; do not turn it back like a stingy host turning a plate.",
+    "Grandmother: never count the stars until the bread has a name. Fate is a guest. Seat it.",
+    "Wisdom of the tents: a closed fist cannot take a blessing, nor pass the salt."
+  ];
+
+  var tsar = [
+    "In the days of the Tsar, a muzhik walked to the Winter Palace with black bread. The boyars laughed. The Tsar, who had forgotten the taste of crust, wept into the loaf and called it a crown.",
+    "They tell of three sisters under the old eagle: one hoarded grain, one fled, one baked for the storm. Only the third found the Firebird — and it was a roast, golden, meant to be cut.",
+    "A boyar locked his kitchen so peasants could not smell the soup. That night the palace froze. The stove, insulted, went to live in an izba, and the Tsar dined on silver and hunger.",
+    "When Petersburg’s river rose, the court prayed to icons and the cooks prayed to yeast. Guess which prayer rose."
   ];
 
   var closers = [
-    "The tale is a lie, but a hint lives in it.",
-    "Skazka lozh, da v nei namek.",
-    "I do not see the future. I deal it."
+    "As we say on the road: skazka lozh, da v nei namek — the tale is a lie, but the hint is supper.",
+    "Lincoln would split the difference. The Tsar would split the goose. I split the card. You eat.",
+    "I do not see the future. I remember a better table, and I deal until you sit."
   ];
+
+  function yarn() {
+    return (
+      '<blockquote class="yarn">' +
+      "<p>" +
+      pick(lincoln) +
+      "</p><p>" +
+      pick(roma) +
+      "</p><p>" +
+      pick(tsar) +
+      "</p></blockquote>"
+    );
+  }
 
   var state = {
     turn: 0,
@@ -110,7 +144,7 @@
     }
     return (
       '<div class="snes-shell">' +
-      '<p class="snes-title">WIDER DINNER  ·  THE TOWER → THE STAR</p>' +
+      '<p class="snes-title">ZORYA  ·  FORTUNE TABLE  ·  LINCOLN / ROAD / TSAR</p>' +
       hud() +
       art +
       '<div class="snes-window">' +
@@ -128,7 +162,7 @@
       card: "TAROT — THE TOWER",
       title: "Fortifying the mind (the hearth)",
       bodies: [
-        "The card glimmers, {{seeker}}. Crimson mist on your arms. Zorya: the citadel is not a castle — it is the kitchen you refuse to abandon when chaos comes. Iron beams, runic wards, rain like knives on a prep table. Dinner begins by holding the house."
+        "The Tower glimmers, {{seeker}}. Sit. I am Zorya — I talk like a prairie lawyer who learned cards in a tent and winter in an izba. That citadel on the cliff is a kitchen that thinks it is a fortress, same as a Tsar who thought a palace was a home. Rain like knives on the prep table. Will you bind your soul to the hearth-stone, as an honest man binds his word — or keep the salt packed, as my people keep the road?"
       ],
       choices: [
         { label: "BIND soul-energy to the keystone (hearth / structural immunity)", next: "t1-bind" },
@@ -163,8 +197,8 @@
       card: "LIGHTNING vs WARD",
       title: "The onset of the storm",
       prompt:
-        "White-hot bolt on the spire. Tentacles of raw want lash the glass. A blue flame on the altar does not go out. Zorya asks, as all dungeon doors ask: what holds when the sky breaks?",
-      hint: "Not hiding. The brand-myth: the flame is supper.",
+        "Lightning on the spire — Hunger testing the house. Tentacles at the glass, which the Tsar’s priests would have called demons and Lincoln would have called ‘a committee.’ A blue flame on the altar does not go out. Child, what holds when the sky breaks?",
+      hint: "Roma proverb: hide in the pantry and the guest still finds you. The flame is supper.",
       answers: [
         { label: "THE BLUE FLAME  (the meal that must not go out)", correct: true, next: "t2-parapet" },
         { label: "THE INNER SANCTUM  (hide in the pantry)", correct: false, trap: 2, next: "t2-hide" },
@@ -198,17 +232,17 @@
       card: "PHANTOM KNIGHTS",
       title: "The broken threshold",
       prompt:
-        "Smoke-knights of static — upheaval from the cards, also franchise scouts, also hunger-without-table. They want the recipe, not the meal. The oak doors wait. The staff burns. ITEM: Keystone Hearth, or blast with holy force.",
+        "Phantom knights of smoke — unpaid ghosts of the Tsar’s table, boyars who ate without seating the village, a franchise that wants the recipe and not the guest. A rail-splitter would say a house divided against its supper cannot stand. ITEM the Keystone Hearth, or snap the cloth of holy force.",
       need: "Keystone Hearth",
       success: "t3-blast",
       fail: "t3-blast",
-      look: "No keystone? The wave still comes — it costs more Hunger. Dinner is a fight either way."
+      look: "No keystone? Then you are the muzhik with only bread. The wave still comes. Hunger is the tax."
     },
     "t3-blast": {
       card: "HOLY FORCE = SERVICE BELL",
       title: "The courtyard clears",
       bodies: [
-        "You do not retreat. The wave is a tablecloth snapped over a mess. Phantoms go into the storm. The keep groans. Zorya smiles with all her gold teeth: every dinner worth eating collapses the fortress-ego. Next card is ruin. Then bread."
+        "You do not retreat. The wave is a tablecloth snapped over a mess — as my aunt snapped linen at a stingy inn. Phantoms go into the storm. The keep groans like a palace that forgot black bread. Next card is ruin. Then we eat, as honest men do after a hard case."
       ],
       choices: [{ label: "Let the tower fall.", next: "t4" }]
     },
@@ -219,7 +253,7 @@
       card: "THE TOWER → THE STAR",
       title: "Rebirth in the ashes (automatic blend)",
       bodies: [
-        "Shockwave. The main tower becomes crystalline dust. A golden beam parts the storm. Where the dark keep stood: a sanctuary of white stone and glass — plates, windows, steam. Zorya’s face in the clearing sky. The card is no longer ruin. It is The Star. Listen, {{seeker}}: this is the brand. WIDER does not sell a fortress. WIDER sets dinner after the collapse. The Star is a seat. The mythos is the meal."
+        "The keep becomes dust, like a proud palace after a true winter. Golden beam. White stone. Glass. I have told this ending three ways: Lincoln called it a new birth of freedom; my grandmother called it seating the star; the old Russians called it the Firebird cooked at last. Listen, {{seeker}}: WIDER’s fortune is not empire. It is dinner after the Tsar’s tower falls. The Star is a place-setting."
       ],
       grant: "The Star (table)",
       heal: 6,
@@ -484,9 +518,10 @@
       state.inv = ["Laminated Map"];
       state.lastRoll = null;
       root.innerHTML = wrap(
-        '<p class="teller-mark">Zorya · dinner service · character create</p>' +
-          "<h2>Name who sits when The Tower falls</h2>" +
-          "<p>I deal one mythos: the citadel is a kitchen, the storm is hunger, the Star is dinner. Speak names. Then the card of ruin becomes a table — automatically, like gravy finding the plate.</p>" +
+        '<p class="teller-mark">Zorya · simulated fortune · three tongues</p>' +
+          "<h2>Sit. Give me names to read.</h2>" +
+          "<p>I talk like three kitchens in one mouth: a prairie lawyer’s anecdote, Roma road-wisdom from my grandmother’s tent, and the old myths from the Tsar’s Russia — black bread at the Winter Palace, Firebirds that were roasts, stoves that left proud houses. Speak who sits. Then I deal The Tower until it becomes dinner.</p>" +
+          yarn() +
           '<p class="omen">' +
           pick(omens) +
           "</p>" +
@@ -521,6 +556,7 @@
         "<h2>" +
         fill(node.title) +
         "</h2>" +
+        yarn() +
         '<p class="teller-body">' +
         fill(node.prompt) +
         "</p>" +
@@ -664,6 +700,7 @@
       "<h2>" +
       fill(node.title) +
       "</h2>" +
+      yarn() +
       '<p class="teller-body">' +
       body +
       "</p>" +

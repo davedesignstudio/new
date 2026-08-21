@@ -2,10 +2,16 @@
 title = "Zorya of the Three Roads"
 date = "2026-08-21"
 weight = 0
-role = "Teller / fortune"
-summary = "Old roadside storyteller. Deals destinies like cards. Speaks in proverbs, steam, and second person."
+role = "Fortune / teller"
+summary = "A simulated seer who braids Lincoln’s anecdotes, Roma road-wisdom, and Tsar-era Russian myth into one dinner reading."
 +++
 
-Zorya learned stories in two kitchens: her Russian grandmother’s stove and her Roma grandmother’s tent at the crossroads. She does not predict the future. She **generates** it — a living choose-your-own-adventure, one card, one fork, one meal at a time.
+Zorya is not a carnival cartoon. She is written as an old **Roma-Russian roadside teller** who picked up a third tongue on the prairie: the American habit of answering a hard question with a short, honest story — the Lincoln cadence.
 
-In the comic she sits in the van’s rear booth with a tin of cards painted on scrap wood. When the gang stalls, she says: *The tale is a lie, child, but a hint lives in it. Pick a road.*
+Three kitchens, one mouth:
+
+- **Anecdote** — “That reminds me of a feller…” Moral as short as a split rail.
+- **Road wisdom** — grandmother’s tent: fate is a guest; a closed fist cannot pass the salt.
+- **Tsarist skazka** — black bread at the Winter Palace, stoves that abandon proud houses, Firebirds that were meant to be carved.
+
+She does not curse for coins. She **deals**. The Tower falls. Dinner is the fortune.
