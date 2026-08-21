@@ -929,6 +929,36 @@ p {
   max-width: none;
 }
 
+.home-story .hero {
+  min-height: calc(100vh - 3.4rem);
+}
+
+.story-home {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4.5rem;
+}
+
+.story-home .page-head h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.story-home .prose p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 38ch;
+}
+
+.story-home .prose strong {
+  color: var(--paper);
+}
+
+.story-home .prose h2 {
+  margin-top: 2.4rem;
+  font-size: 1.35rem;
+  color: var(--paper);
+}
+
 .site-footer .tape-note,
 .site-footer .tape-kicker {
   display: none;
