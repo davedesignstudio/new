@@ -239,27 +239,15 @@
   }
 
   function yarn() {
-    return (
-      '<details class="yarn"><summary>Listen</summary>' +
-      "<p>" +
-      pick(lincoln) +
-      "</p><p>" +
-      pick(roma) +
-      "</p><p>" +
-      pick(tsar) +
-      "</p></details>"
-    );
+    var pool = lincoln.concat(roma).concat(tsar);
+    return '<details class="yarn"><summary>Listen</summary><p>' + pick(pool) + "</p></details>";
   }
 
   function existenceYarn() {
+    var pool = lincolnLoop.concat(romaLoop).concat(tsarLoop);
     return (
-      '<details class="yarn"><summary>Listen</summary>' +
-      "<p>" +
-      pick(lincolnLoop) +
-      "</p><p>" +
-      pick(romaLoop) +
-      "</p><p>" +
-      pick(tsarLoop) +
+      '<details class="yarn"><summary>Listen</summary><p>' +
+      pick(pool) +
       "</p><p><strong>" +
       pick(why) +
       "</strong></p></details>"
@@ -360,11 +348,9 @@
       title: "Fortifying the Mind",
       chapter: 1,
       bodies: [
-        "The Tarot card of The Tower glimmers under the Fortune Teller’s lamp, its crimson mists wrapping around your arms. Choosing resilience, you refuse to be swept away by incoming chaos—you will construct a stronghold."
+        "The Tower glimmers under her lamp. You choose to stay. That citadel on the cliff is a kitchen putting up walls — recipes locked, pride in the beams. She binds you to the hearth-stone. You will not run. You will cook through the weather."
       ],
-      kitchen: "The citadel is a kitchen putting up walls. You are binding yourself to a stove.",
-      decision:
-        "Automated Decision: The Seer binds your soul-energy to the citadel’s keystone, prioritizing structural immunity over mobility.",
+      decision: "She binds you to the stove. The keep will have to stand on that.",
       grant: "Keystone Hearth",
       ward: 4,
       choices: [{ label: "Continue", next: "b1-2" }]
@@ -378,11 +364,9 @@
       title: "The Onset of the Storm",
       chapter: 2,
       bodies: [
-        "The sky fractures. A brilliant streak of white-hot lightning strikes the highest spire, testing the freshly raised wards. The force reverberates through the ground beneath your feet, shaking the very foundation of the keep, but the runic barriers hold firm—for now."
+        "The sky fractures. Lightning on the spire — Hunger testing the house. The wards hold: recipes you would not sell. Rain like knives on the prep table. You step into it and salt the soup."
       ],
-      kitchen: "Lightning is Hunger. The wards are recipes you refuse to franchise.",
-      decision:
-        "Automated Decision: Rather than hiding in the inner sanctum, the protagonist steps onto the parapet and channels energy into the fading wards.",
+      decision: "You do not hide in the pantry. You stand in the rain and keep the flame.",
       trap: 1,
       choices: [{ label: "Continue", next: "b1-3" }]
     },
@@ -395,11 +379,9 @@
       title: "The Broken Threshold",
       chapter: 3,
       bodies: [
-        "A second lightning strike hits, shattering the central courtyard gate. Shadowy apparitions—manifestations of the upheaval predicted by the cards—surge into the outer courtyard. The barrier holds overhead, but the breach at ground level threatens to overrun the fortress from within."
+        "A second strike takes the courtyard gate. Smoke-knights pour in — guests who ate without seating the village. The roof still holds. The floor does not. You do not retreat. You snap the cloth. They go back into the weather."
       ],
-      kitchen: "Phantom knights are guests who ate without seating the village.",
-      decision:
-        "Automated Decision: Instead of retreating behind the oak doors, the protagonist unleashes a wave of holy force, blasting the spectral army back into the storm.",
+      decision: "The mess is cleared. The keep is already groaning.",
       choices: [{ label: "Continue", next: "b1-4" }]
     },
     "b1-4": {
@@ -411,10 +393,9 @@
       title: "Rebirth in the Ashes",
       chapter: 4,
       bodies: [
-        "The shockwave clears the courtyard, but the immense strain causes the main tower to collapse into glowing crystalline dust. From the rubble a brilliant beam of golden light shoots skyward, parting the storm and revealing a clear night sky. Morning sun on the ocean. Where the dark citadel stood, a sanctuary of white stone and glass takes root. The Fortune Teller’s face appears faintly in the sky, smiling, as the card transforms from The Tower into The Star. The storm has passed. By enduring the collapse of the old foundation, you have forged an unshakable new sanctuary."
+        "The keep becomes dust. Morning on the ocean. White stone, glass, a beam like a candle. She is already smiling. The card turns: Tower to Star. Sit. Dinner is the sanctuary."
       ],
-      kitchen: "The fortress was never the point. The table was. Every night dinner rebuilds The Star.",
-      decision: "The Seer closes the book—then leaves it open. What now?",
+      decision: "She closes the book — then leaves it open. What now?",
       grant: "The Star (table)",
       heal: 6,
       choices: [
