@@ -168,7 +168,8 @@ function dps_seed_demo_content( $force = false ) {
 	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(
 		'ember-kit.png'          => dps_sideload_theme_image( 'ember-kit.png', 'Ember Pie Co. kit' ),
-		'bville-hero.png'        => dps_sideload_theme_image( 'bville-hero.png', 'Bville Pizza & Grill' ),
+		'bville-hero.png'          => dps_sideload_theme_image( 'bville-hero.png', 'Bville Pizza & Grill' ),
+		'bville-print-window.png'  => dps_sideload_theme_image( 'bville-print-window.png', 'Bville window study' ),
 		'ritual-hero.png'        => dps_sideload_theme_image( 'ritual-hero.png', 'The Ritual Café' ),
 		'magicbuds-hero.png'     => dps_sideload_theme_image( 'magicbuds-hero.png', 'Magic Buds' ),
 		'cowlick-hero.png'       => dps_sideload_theme_image( 'cowlick-hero.png', 'Cow Lick' ),
@@ -214,6 +215,18 @@ function dps_seed_demo_content( $force = false ) {
 	update_option( 'timezone_string', 'America/New_York' );
 
 	$projects = array(
+		array(
+			'slug'     => 'pattern-studies',
+			'title'    => 'Fifteen pattern studies',
+			'image'    => 'bville-print-window.png',
+			'excerpt'  => 'Print pulled from the uploaded marks',
+			'subtitle' => 'Print pulled from the uploaded marks',
+			'client'   => 'Studio studies from six uploaded identities',
+			'services' => 'Identity · print · packaging',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>Each piece takes a rule already in the logo — the color split, the cup from above, the sticker halo, the saw blade, the B flourish, the gold script — and puts it on something a guest actually holds.</p><p>These are studio studies, not live jobs. The marks stay themselves. Print is how they leave the building.</p>',
+		),
 		array(
 			'slug'     => 'ember-pie-co',
 			'title'    => 'Ember Pie Co.',
@@ -407,7 +420,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-1' );
+	update_option( 'dps_images_version', 'brands-print-2' );
 	return true;
 }
 
