@@ -9,3 +9,8 @@ title = "Tasty Licks"
     name = "About"
     url  = "/about"
     weight = 1
+
+[[menu.main]]
+    name = "Three Branches"
+    url  = "/three-branches-of-government"
+    weight = 2

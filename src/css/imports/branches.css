@@ -1,0 +1,78 @@
+.branches {
+  margin: 2rem 0 3rem 0;
+
+  .branch {
+    border: 1px solid #eee;
+    border-left: 4px solid #ff7660;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    background: #fcfcfc;
+  }
+
+  .branch-name {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+  }
+
+  .branch-source {
+    margin: 0 0 .75rem 0;
+    font-size: .75rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+  }
+
+  .branch-role {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #303030;
+    margin-bottom: .75rem;
+  }
+
+  .branch-powers {
+    margin: 0;
+
+    li {
+      display: list-item;
+      list-style: none;
+      padding-left: 1.1rem;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: .6em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ff7660;
+      }
+    }
+  }
+}
+
+.checks {
+  overflow-x: auto;
+
+  table {
+    font-size: .8rem;
+    min-width: 30rem;
+  }
+
+  th {
+    text-align: left;
+    color: #303030;
+  }
+
+  thead th {
+    background: #f4f4f4;
+  }
+
+  .none {
+    text-align: center;
+    color: #bbb;
+  }
+}
