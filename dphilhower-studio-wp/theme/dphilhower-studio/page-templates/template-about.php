@@ -7,7 +7,7 @@
 
 get_header();
 
-$about_src = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'dps-hero' ) : dps_image_url( 'about-desk.jpg' );
+$about_src = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : dps_image_url( 'about-desk.png' );
 ?>
 <main id="main">
 	<header class="page-hero">
@@ -22,7 +22,7 @@ $about_src = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'd
 			<p><a class="btn btn-dark" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Get in touch', 'dphilhower-studio' ); ?></a></p>
 		</div>
 		<div class="about-media">
-			<img src="<?php echo esc_url( $about_src ); ?>" alt="<?php esc_attr_e( 'Collaborative design work session', 'dphilhower-studio' ); ?>" width="1400" height="933">
+			<img src="<?php echo esc_url( $about_src ); ?>" alt="<?php esc_attr_e( 'Collaborative design work session', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 		</div>
 	</section>
 </main>

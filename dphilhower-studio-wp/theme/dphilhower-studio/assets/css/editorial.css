@@ -39,6 +39,11 @@ body {
   color: #f6f1e6;
 }
 
+.hero-media img {
+  transform: none;
+  animation: none;
+}
+
 .hero-media::after {
   background:
     linear-gradient(180deg, rgba(12, 10, 8, 0.42) 0%, rgba(12, 10, 8, 0.18) 38%, rgba(12, 10, 8, 0.84) 100%),
@@ -113,7 +118,12 @@ body {
 }
 
 .work-item img {
-  opacity: 0.82;
+  opacity: 1;
+}
+
+.work-item:hover img {
+  transform: none;
+  opacity: 1;
 }
 
 .work-meta {

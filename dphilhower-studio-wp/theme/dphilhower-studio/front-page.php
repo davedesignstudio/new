@@ -8,7 +8,7 @@
 get_header();
 
 $hero_id  = absint( get_theme_mod( 'dps_hero_image' ) );
-$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'dps-hero' ) : dps_image_url( 'hero-editorial.jpg' );
+$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'full' ) : dps_image_url( 'hero-editorial.png' );
 $work_url = get_post_type_archive_link( 'dps_work' );
 if ( ! $work_url ) {
 	$work_url = home_url( '/work/' );
@@ -19,7 +19,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 <main id="main">
 	<section class="hero">
 		<div class="hero-media" aria-hidden="true">
-			<img src="<?php echo esc_url( $hero_src ); ?>" alt="" width="1800" height="1200">
+			<img src="<?php echo esc_url( $hero_src ); ?>" alt="" width="1536" height="1024">
 		</div>
 		<div class="hero-content">
 			<p class="hero-brand"><?php echo esc_html( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?></p>
@@ -88,7 +88,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			</ul>
 		</div>
 		<div class="locale-media">
-			<img src="<?php echo esc_url( dps_image_url( 'street.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Tree-lined downtown street atmosphere', 'dphilhower-studio' ); ?>" width="1600" height="1067">
+			<img src="<?php echo esc_url( dps_image_url( 'street.png' ) ); ?>" alt="<?php esc_attr_e( 'Tree-lined downtown street atmosphere', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 		</div>
 	</section>
 

@@ -35,19 +35,19 @@
 	<h2 class="section-title"><?php esc_html_e( 'Window and menu', 'dphilhower-studio' ); ?></h2>
 	<div class="compare">
 		<figure>
-			<img src="<?php echo esc_url( dps_image_url( 'ember-window-before.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Cluttered pizza shop window before the brand system', 'dphilhower-studio' ); ?>" width="1600" height="1067">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-window-before.png' ) ); ?>" alt="<?php esc_attr_e( 'Cluttered pizza shop window before the brand system', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 			<figcaption><strong><?php esc_html_e( 'Before — window', 'dphilhower-studio' ); ?></strong><?php esc_html_e( 'Tape, stock photos, and a sign that could belong to any shop on the block.', 'dphilhower-studio' ); ?></figcaption>
 		</figure>
 		<figure>
-			<img src="<?php echo esc_url( dps_image_url( 'ember-window-after.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Ember Pie Co. painted storefront window at dusk', 'dphilhower-studio' ); ?>" width="1600" height="1067">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-window-after.png' ) ); ?>" alt="<?php esc_attr_e( 'Ember Pie Co. painted storefront window at dusk', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 			<figcaption><strong><?php esc_html_e( 'After — window', 'dphilhower-studio' ); ?></strong><?php esc_html_e( 'One mark, warm light, a menu you can read from the sidewalk.', 'dphilhower-studio' ); ?></figcaption>
 		</figure>
 		<figure>
-			<img src="<?php echo esc_url( dps_image_url( 'ember-menu-before.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Crowded photocopy pizza menu before the redesign', 'dphilhower-studio' ); ?>" width="1400" height="933">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-menu-before.png' ) ); ?>" alt="<?php esc_attr_e( 'Crowded photocopy pizza menu before the redesign', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 			<figcaption><strong><?php esc_html_e( 'Before — menu', 'dphilhower-studio' ); ?></strong><?php esc_html_e( 'Clip art and a price list fighting for the same square inch.', 'dphilhower-studio' ); ?></figcaption>
 		</figure>
 		<figure>
-			<img src="<?php echo esc_url( dps_image_url( 'ember-menu-after.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Cream Ember Pie Co. menu on a wood table', 'dphilhower-studio' ); ?>" width="1400" height="933">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-menu-after.png' ) ); ?>" alt="<?php esc_attr_e( 'Cream Ember Pie Co. menu on a wood table', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 			<figcaption><strong><?php esc_html_e( 'After — menu', 'dphilhower-studio' ); ?></strong><?php esc_html_e( 'Hierarchy first. The food can be loud because the type is quiet.', 'dphilhower-studio' ); ?></figcaption>
 		</figure>
 	</div>
@@ -57,13 +57,13 @@
 	<h2 class="section-title"><?php esc_html_e( 'Bag and homepage', 'dphilhower-studio' ); ?></h2>
 	<div class="touch-grid">
 		<figure class="touch-card">
-			<img src="<?php echo esc_url( dps_image_url( 'ember-bag.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Kraft takeout bag and pizza box with Ember Pie Co. stamp', 'dphilhower-studio' ); ?>" width="1400" height="933">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-bag.png' ) ); ?>" alt="<?php esc_attr_e( 'Kraft takeout bag and pizza box with Ember Pie Co. stamp', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 		</figure>
 		<figure class="touch-card touch-phone">
-			<img src="<?php echo esc_url( dps_image_url( 'ember-phone.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Phone showing the Ember Pie Co. homepage', 'dphilhower-studio' ); ?>" width="900" height="1350">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-phone.png' ) ); ?>" alt="<?php esc_attr_e( 'Phone showing the Ember Pie Co. homepage', 'dphilhower-studio' ); ?>" width="1024" height="1536">
 		</figure>
 		<figure class="touch-card">
-			<img src="<?php echo esc_url( dps_image_url( 'ember-window-after.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Storefront at night', 'dphilhower-studio' ); ?>" width="1600" height="1067">
+			<img src="<?php echo esc_url( dps_image_url( 'ember-window-after.png' ) ); ?>" alt="<?php esc_attr_e( 'Storefront at night', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 		</figure>
 	</div>
 	<p class="section-copy" style="margin:1.25rem 0 0"><?php esc_html_e( 'The bag uses the same stamp as the box. The homepage uses the same cream and ember as the menu. Nothing is a one-off layout.', 'dphilhower-studio' ); ?></p>

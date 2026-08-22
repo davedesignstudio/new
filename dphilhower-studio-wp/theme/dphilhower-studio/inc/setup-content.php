@@ -22,18 +22,27 @@ function dps_sideload_theme_image( $filename, $title = '' ) {
 		return 0;
 	}
 
-	$existing = get_posts(
+	$stem       = pathinfo( $filename, PATHINFO_FILENAME );
+	$candidates = array( $filename, $stem . '.jpg', $stem . '.jpeg' );
+	$existing   = get_posts(
 		array(
 			'post_type'      => 'attachment',
 			'post_status'    => 'inherit',
 			'posts_per_page' => 1,
-			'meta_key'       => '_dps_source_file',
-			'meta_value'     => $filename,
 			'fields'         => 'ids',
+			'meta_query'     => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				array(
+					'key'     => '_dps_source_file',
+					'value'   => $candidates,
+					'compare' => 'IN',
+				),
+			),
 		)
 	);
 	if ( $existing ) {
-		return (int) $existing[0];
+		$attach_id = (int) $existing[0];
+		dps_refresh_attachment_from_theme( $attach_id, $filename );
+		return $attach_id;
 	}
 
 	require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -45,7 +54,7 @@ function dps_sideload_theme_image( $filename, $title = '' ) {
 		return 0;
 	}
 
-	$filetype = wp_check_filetype( $filename, null );
+	$filetype  = wp_check_filetype( $filename, null );
 	$attach_id = wp_insert_attachment(
 		array(
 			'post_mime_type' => $filetype['type'],
@@ -65,6 +74,49 @@ function dps_sideload_theme_image( $filename, $title = '' ) {
 	update_post_meta( $attach_id, '_dps_source_file', $filename );
 
 	return (int) $attach_id;
+}
+
+/**
+ * Replace a previously imported JPEG (or stale file) with the theme PNG.
+ *
+ * @param int    $attach_id Attachment ID.
+ * @param string $filename  Theme image file name.
+ */
+function dps_refresh_attachment_from_theme( $attach_id, $filename ) {
+	$source = dps_image_path( $filename );
+	$dest   = get_attached_file( $attach_id );
+	if ( ! $attach_id || ! $source || ! $dest || ! file_exists( $source ) ) {
+		update_post_meta( $attach_id, '_dps_source_file', $filename );
+		return;
+	}
+
+	$new_dest = preg_replace( '/\.(jpe?g|png)$/i', '.png', $dest );
+	if ( ! $new_dest ) {
+		$new_dest = $dest;
+	}
+
+	if ( file_exists( $dest ) && md5_file( $source ) === md5_file( $dest ) && $filename === get_post_meta( $attach_id, '_dps_source_file', true ) ) {
+		return;
+	}
+
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+
+	copy( $source, $new_dest ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_copy
+	if ( $new_dest !== $dest && file_exists( $dest ) ) {
+		unlink( $dest ); // phpcs:ignore WordPress.WP.AlternativeFunctions.unlink_unlink
+	}
+
+	wp_update_post(
+		array(
+			'ID'             => $attach_id,
+			'post_mime_type' => 'image/png',
+		)
+	);
+	update_attached_file( $attach_id, $new_dest );
+	$meta = wp_generate_attachment_metadata( $attach_id, $new_dest );
+	wp_update_attachment_metadata( $attach_id, $meta );
+	update_post_meta( $attach_id, '_dps_source_file', $filename );
 }
 
 /**
@@ -111,16 +163,16 @@ function dps_seed_demo_content( $force = false ) {
 		return false;
 	}
 
-	$hero_id   = dps_sideload_theme_image( 'hero-editorial.jpg', 'Studio hero' );
-	$about_id  = dps_sideload_theme_image( 'about-desk.jpg', 'Studio desk' );
-	$street_id = dps_sideload_theme_image( 'street.jpg', 'Downtown street' );
+	$hero_id   = dps_sideload_theme_image( 'hero-editorial.png', 'Studio hero' );
+	$about_id  = dps_sideload_theme_image( 'about-desk.png', 'Studio desk' );
+	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(
-		'work-brand.jpg' => dps_sideload_theme_image( 'work-brand.jpg', 'Brand identity' ),
-		'work-web.jpg'   => dps_sideload_theme_image( 'work-web.jpg', 'Website design' ),
-		'work-print.jpg' => dps_sideload_theme_image( 'work-print.jpg', 'Print design' ),
-		'work-menu.jpg'  => dps_sideload_theme_image( 'work-menu.jpg', 'Hospitality' ),
-		'work-pack.jpg'   => dps_sideload_theme_image( 'work-pack.jpg', 'Packaging' ),
-		'ember-kit.jpg'   => dps_sideload_theme_image( 'ember-kit.jpg', 'Ember Pie Co. kit' ),
+		'work-brand.png' => dps_sideload_theme_image( 'work-brand.png', 'Brand identity' ),
+		'work-web.png'   => dps_sideload_theme_image( 'work-web.png', 'Website design' ),
+		'work-print.png' => dps_sideload_theme_image( 'work-print.png', 'Print design' ),
+		'work-menu.png'  => dps_sideload_theme_image( 'work-menu.png', 'Hospitality' ),
+		'work-pack.png'   => dps_sideload_theme_image( 'work-pack.png', 'Packaging' ),
+		'ember-kit.png'   => dps_sideload_theme_image( 'ember-kit.png', 'Ember Pie Co. kit' ),
 	);
 
 	if ( $hero_id ) {
@@ -164,7 +216,7 @@ function dps_seed_demo_content( $force = false ) {
 		array(
 			'slug'     => 'ember-pie-co',
 			'title'    => 'Ember Pie Co.',
-			'image'    => 'ember-kit.jpg',
+			'image'    => 'ember-kit.png',
 			'excerpt'  => 'Live brand kit — window, menu, bag, phone',
 			'subtitle' => 'Live brand kit — window, menu, bag, phone',
 			'client'   => 'Studio sample, Morris County pie shop',
@@ -176,7 +228,7 @@ function dps_seed_demo_content( $force = false ) {
 		array(
 			'slug'     => 'restaurant-brand-systems',
 			'title'    => 'Restaurant brand systems',
-			'image'    => 'work-brand.jpg',
+			'image'    => 'work-brand.png',
 			'excerpt'  => 'Identity, menus, and storefront presence',
 			'subtitle' => 'Identity, menus, and storefront presence',
 			'client'   => 'Hospitality groups, Morris County',
@@ -188,7 +240,7 @@ function dps_seed_demo_content( $force = false ) {
 		array(
 			'slug'     => 'custom-website-design',
 			'title'    => 'Custom website design',
-			'image'    => 'work-web.jpg',
+			'image'    => 'work-web.png',
 			'excerpt'  => 'Marketing sites for Morris County businesses',
 			'subtitle' => 'Structure · visuals · responsive build',
 			'client'   => 'Local service and retail brands',
@@ -200,7 +252,7 @@ function dps_seed_demo_content( $force = false ) {
 		array(
 			'slug'     => 'print-and-packaging',
 			'title'    => 'Print & packaging',
-			'image'    => 'work-print.jpg',
+			'image'    => 'work-print.png',
 			'excerpt'  => 'Collateral that matches the digital brand',
 			'subtitle' => 'Collateral · packaging · campaigns',
 			'client'   => 'Retail and food brands',
@@ -212,7 +264,7 @@ function dps_seed_demo_content( $force = false ) {
 		array(
 			'slug'     => 'hospitality-storytelling',
 			'title'    => 'Hospitality storytelling',
-			'image'    => 'work-menu.jpg',
+			'image'    => 'work-menu.png',
 			'excerpt'  => 'Menus, photography direction, guest touchpoints',
 			'subtitle' => 'Menus · photography direction · guest touchpoints',
 			'client'   => 'Independent restaurants',
@@ -224,7 +276,7 @@ function dps_seed_demo_content( $force = false ) {
 		array(
 			'slug'     => 'packaging-systems',
 			'title'    => 'Packaging systems',
-			'image'    => 'work-pack.jpg',
+			'image'    => 'work-pack.png',
 			'excerpt'  => 'Product and package design for small makers',
 			'subtitle' => 'Structure · label · unboxing',
 			'client'   => 'Makers and specialty food',
@@ -335,6 +387,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
+	update_option( 'dps_images_version', 'png-native-1' );
 	return true;
 }
 

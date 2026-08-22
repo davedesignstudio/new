@@ -25,7 +25,7 @@ get_header();
 		</header>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="case-hero">
-				<?php the_post_thumbnail( 'dps-hero' ); ?>
+				<?php the_post_thumbnail( 'full' ); ?>
 			</div>
 		<?php endif; ?>
 		<article class="case-body">

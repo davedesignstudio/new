@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DPS_VERSION', '1.0.0' );
+define( 'DPS_VERSION', '1.0.1' );
 define( 'DPS_DIR', get_template_directory() );
 define( 'DPS_URI', get_template_directory_uri() );
 
@@ -58,8 +58,8 @@ function dps_setup() {
 		)
 	);
 
-	add_image_size( 'dps-hero', 1920, 1280, true );
-	add_image_size( 'dps-work', 1400, 1750, false );
+	add_image_size( 'dps-hero', 2560, 1707, false );
+	add_image_size( 'dps-work', 2048, 2560, false );
 }
 add_action( 'after_setup_theme', 'dps_setup' );
 
@@ -121,8 +121,18 @@ add_filter( 'nav_menu_css_class', 'dps_nav_cta_class', 10, 2 );
  * Default content width.
  */
 function dps_content_width() {
-	$GLOBALS['content_width'] = 720;
+	$GLOBALS['content_width'] = 2560;
 }
+
+/**
+ * Keep uploaded and generated images at full resolution.
+ */
+function dps_full_image_quality( $quality ) {
+	return 100;
+}
+add_filter( 'jpeg_quality', 'dps_full_image_quality' );
+add_filter( 'wp_editor_set_quality', 'dps_full_image_quality' );
+add_filter( 'big_image_size_threshold', '__return_false' );
 add_action( 'after_setup_theme', 'dps_content_width', 0 );
 
 /**
@@ -142,8 +152,40 @@ function dps_maybe_seed_demo() {
 		dps_seed_demo_content();
 		delete_option( 'dps_seed_pending' );
 	}
+	dps_maybe_upgrade_images();
 }
 add_action( 'init', 'dps_maybe_seed_demo', 20 );
+
+/**
+ * Replace compressed demo JPEGs with native PNG files on existing installs.
+ */
+function dps_maybe_upgrade_images() {
+	if ( 'dphilhower-studio' !== get_stylesheet() ) {
+		return;
+	}
+	if ( get_option( 'dps_images_version' ) === 'png-native-1' ) {
+		return;
+	}
+	if ( ! get_option( 'dps_demo_seeded' ) ) {
+		return;
+	}
+
+	$files = array(
+		'hero-editorial.png' => 'Studio hero',
+		'about-desk.png'     => 'Studio desk',
+		'street.png'         => 'Downtown street',
+		'work-brand.png'     => 'Brand identity',
+		'work-web.png'       => 'Website design',
+		'work-print.png'     => 'Print design',
+		'work-menu.png'      => 'Hospitality',
+		'work-pack.png'      => 'Packaging',
+		'ember-kit.png'      => 'Ember Pie Co. kit',
+	);
+	foreach ( $files as $file => $title ) {
+		dps_sideload_theme_image( $file, $title );
+	}
+	update_option( 'dps_images_version', 'png-native-1' );
+}
 
 /**
  * Favicon.
