@@ -1,10 +1,219 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">A Citizen&rsquo;s Guide</p>
+        <h1>The Three Branches of&nbsp;Government</h1>
+        <p class="lead">The U.S. Constitution divides federal power between the <strong>Legislative</strong>, <strong>Executive</strong>, and <strong>Judicial</strong> branches &mdash; so that no single person or group can rule alone.</p>
+        <div class="hero-actions">
+          <a class="button" href="#overview">Explore the Branches</a>
+          <a class="button button-ghost" href="#quiz">Take the Quiz</a>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 300 220" class="capitol-svg">
+          <path d="M150 10 60 58h180L150 10z" class="svg-roof"/>
+          <rect x="70" y="64" width="160" height="10" rx="2" class="svg-beam"/>
+          <rect x="84" y="82" width="26" height="90" rx="3" class="svg-col svg-col-leg"/>
+          <rect x="137" y="82" width="26" height="90" rx="3" class="svg-col svg-col-exe"/>
+          <rect x="190" y="82" width="26" height="90" rx="3" class="svg-col svg-col-jud"/>
+          <rect x="60" y="180" width="180" height="12" rx="2" class="svg-beam"/>
+          <rect x="48" y="198" width="204" height="12" rx="2" class="svg-beam svg-beam-dim"/>
+          <text x="97" y="135" class="svg-label">I</text>
+          <text x="147" y="135" class="svg-label">II</text>
+          <text x="200" y="135" class="svg-label">III</text>
+        </svg>
+        <p class="hero-art-caption">Three pillars, one Constitution &mdash; Articles I, II &amp; III</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="container">
+      <p class="eyebrow reveal">Separation of Powers</p>
+      <h2 class="reveal">Why three branches?</h2>
+      <p class="section-lead reveal">Inspired by the French philosopher Montesquieu, the framers of the Constitution feared concentrated power. In 1787 they split the federal government into three co-equal branches, each defined by its own article of the Constitution and each armed with ways to restrain the other two.</p>
+      <div class="card-row">
+        <a class="branch-card branch-card-leg reveal" href="#legislative">
+          <span class="branch-article">Article I</span>
+          <h3>Legislative</h3>
+          <p class="branch-verb">Makes the laws</p>
+          <p>Congress: the Senate and the House of Representatives</p>
+          <span class="branch-card-link">Learn more &rarr;</span>
+        </a>
+        <a class="branch-card branch-card-exe reveal" href="#executive">
+          <span class="branch-article">Article II</span>
+          <h3>Executive</h3>
+          <p class="branch-verb">Enforces the laws</p>
+          <p>The President, Vice President, and the Cabinet</p>
+          <span class="branch-card-link">Learn more &rarr;</span>
+        </a>
+        <a class="branch-card branch-card-jud reveal" href="#judicial">
+          <span class="branch-article">Article III</span>
+          <h3>Judicial</h3>
+          <p class="branch-verb">Interprets the laws</p>
+          <p>The Supreme Court and the lower federal courts</p>
+          <span class="branch-card-link">Learn more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legislative -->
+  <section class="section branch-section branch-leg" id="legislative">
+    <div class="container">
+      <div class="branch-header reveal">
+        <span class="pill pill-leg">Article I &middot; Legislative Branch</span>
+        <h2>Congress makes the laws</h2>
+        <p class="section-lead">The legislative branch is a <strong>bicameral</strong> Congress that meets at the U.S. Capitol. It writes the nation&rsquo;s laws, controls its money, and speaks for the people who elect it.</p>
+      </div>
+      <div class="fact-grid">
+        <div class="fact reveal"><span class="fact-number">100</span><span class="fact-label">Senators &mdash; 2 per state, serving 6-year terms</span></div>
+        <div class="fact reveal"><span class="fact-number">435</span><span class="fact-label">Representatives &mdash; seats based on state population, 2-year terms</span></div>
+        <div class="fact reveal"><span class="fact-number">25 &amp; 30</span><span class="fact-label">Minimum ages to serve in the House and Senate</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel reveal">
+          <h3>Key powers</h3>
+          <ul class="power-list">
+            <li>Write, debate, and pass federal laws</li>
+            <li>Levy taxes and control government spending (&ldquo;power of the purse&rdquo;)</li>
+            <li>Declare war and fund the armed forces</li>
+            <li>Regulate interstate and foreign commerce</li>
+            <li>Senate confirms judges, ambassadors, and Cabinet officers</li>
+            <li>Impeach (House) and try (Senate) federal officials</li>
+          </ul>
+        </div>
+        <div class="panel panel-note reveal">
+          <h3>How a bill becomes law</h3>
+          <ol class="steps-list">
+            <li>A bill is introduced in the House or Senate</li>
+            <li>Committees study, amend, and vote on it</li>
+            <li>Both chambers must pass the identical text</li>
+            <li>The President signs it &mdash; or vetoes it</li>
+            <li>Congress can override a veto with a two-thirds vote in each chamber</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive -->
+  <section class="section branch-section branch-exe" id="executive">
+    <div class="container">
+      <div class="branch-header reveal">
+        <span class="pill pill-exe">Article II &middot; Executive Branch</span>
+        <h2>The President enforces the laws</h2>
+        <p class="section-lead">Headquartered at the White House, the executive branch carries out and enforces federal law through the President, the Vice President, the Cabinet, and about 15 executive departments plus many agencies.</p>
+      </div>
+      <div class="fact-grid">
+        <div class="fact reveal"><span class="fact-number">4</span><span class="fact-label">Years in a presidential term &mdash; two-term limit under the 22nd Amendment</span></div>
+        <div class="fact reveal"><span class="fact-number">35</span><span class="fact-label">Minimum age; must also be a natural-born citizen</span></div>
+        <div class="fact reveal"><span class="fact-number">~15</span><span class="fact-label">Executive departments, from State and Defense to Education</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel reveal">
+          <h3>Key powers</h3>
+          <ul class="power-list">
+            <li>Enforce and administer federal laws</li>
+            <li>Serve as Commander in Chief of the armed forces</li>
+            <li>Sign bills into law &mdash; or veto them</li>
+            <li>Negotiate treaties (with Senate ratification)</li>
+            <li>Appoint federal judges, ambassadors, and Cabinet members</li>
+            <li>Grant pardons for federal offenses</li>
+          </ul>
+        </div>
+        <div class="panel panel-note reveal">
+          <h3>Did you know?</h3>
+          <p>The President is chosen by the <strong>Electoral College</strong>, not directly by the national popular vote. Each state gets electors equal to its members of Congress; a candidate needs <strong>270 of 538</strong> electoral votes to win.</p>
+          <p>If the President cannot serve, the line of succession begins with the Vice President, then the Speaker of the House.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Judicial -->
+  <section class="section branch-section branch-jud" id="judicial">
+    <div class="container">
+      <div class="branch-header reveal">
+        <span class="pill pill-jud">Article III &middot; Judicial Branch</span>
+        <h2>The courts interpret the laws</h2>
+        <p class="section-lead">The judicial branch decides what the law and the Constitution mean. At its head sits the <strong>Supreme Court</strong>, above the federal courts of appeals and district courts.</p>
+      </div>
+      <div class="fact-grid">
+        <div class="fact reveal"><span class="fact-number">9</span><span class="fact-label">Supreme Court justices &mdash; one Chief Justice and eight Associate Justices</span></div>
+        <div class="fact reveal"><span class="fact-number">Life</span><span class="fact-label">Justices serve during &ldquo;good behavior&rdquo; &mdash; effectively lifetime appointments</span></div>
+        <div class="fact reveal"><span class="fact-number">1803</span><span class="fact-label"><em>Marbury v. Madison</em> established judicial review</span></div>
+      </div>
+      <div class="two-col">
+        <div class="panel reveal">
+          <h3>Key powers</h3>
+          <ul class="power-list">
+            <li>Interpret the meaning of laws and the Constitution</li>
+            <li>Strike down laws or executive actions that are unconstitutional (judicial review)</li>
+            <li>Resolve disputes between states and cases involving federal law</li>
+            <li>Set nationwide precedent through Supreme Court rulings</li>
+          </ul>
+        </div>
+        <div class="panel panel-note reveal">
+          <h3>Independence by design</h3>
+          <p>Federal judges are <strong>appointed, not elected</strong> &mdash; nominated by the President and confirmed by the Senate. Lifetime tenure and protected salaries let them rule on the law without fear of political retaliation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checks and balances -->
+  <section class="section section-dark" id="checks">
+    <div class="container">
+      <p class="eyebrow reveal">The Safety Mechanism</p>
+      <h2 class="reveal">Checks &amp; balances</h2>
+      <p class="section-lead reveal">Separation of powers only works because each branch can push back on the others. Select a branch to see how it checks the other two &mdash; and how it is checked in return.</p>
+
+      <div class="checks-widget reveal">
+        <div class="checks-tabs" role="tablist" aria-label="Choose a branch">
+          <button class="checks-tab checks-tab-leg is-active" data-branch="legislative" role="tab" aria-selected="true">Legislative</button>
+          <button class="checks-tab checks-tab-exe" data-branch="executive" role="tab" aria-selected="false">Executive</button>
+          <button class="checks-tab checks-tab-jud" data-branch="judicial" role="tab" aria-selected="false">Judicial</button>
+        </div>
+        <div class="checks-panels">
+          <div class="checks-panel">
+            <h3 id="checks-out-title">How it checks the others</h3>
+            <ul class="power-list" id="checks-out-list"></ul>
+          </div>
+          <div class="checks-panel">
+            <h3 id="checks-in-title">How it is checked</h3>
+            <ul class="power-list" id="checks-in-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="section" id="quiz">
+    <div class="container container-narrow">
+      <p class="eyebrow reveal">Test Yourself</p>
+      <h2 class="reveal">Quick civics quiz</h2>
+      <p class="section-lead reveal">Five questions. No pressure &mdash; you can retake it as many times as you like.</p>
+
+      <div class="quiz-card reveal" id="quiz-card">
+        <div class="quiz-progress" id="quiz-progress"></div>
+        <h3 class="quiz-question" id="quiz-question"></h3>
+        <div class="quiz-answers" id="quiz-answers"></div>
+        <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+        <div class="quiz-controls">
+          <button class="button" id="quiz-next" disabled>Next question</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 {{ partial "footer" . }}

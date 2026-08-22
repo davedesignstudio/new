@@ -1,8 +1,10 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main class="section">
+  <div class="container container-narrow">
+    <h1>404: Page not found</h1>
+    <p class="lead">Sorry, that page doesn&rsquo;t exist. <a href="{{ .Site.BaseURL }}">Head back home</a>.</p>
+  </div>
+</main>
 
 {{ partial "footer" . }}
