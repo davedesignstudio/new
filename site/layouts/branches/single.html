@@ -1,0 +1,126 @@
+{{ partial "header" . }}
+
+{{ $branches := (where (where .Site.Pages "Section" "branches") "Kind" "page").ByWeight }}
+{{ $checks := .Site.Data.checks.checks }}
+{{ $slug := .Params.slug }}
+{{ $names := dict "legislative" "Congress" "executive" "The President" "judicial" "The Courts" }}
+
+<article class="branch b-{{ $slug }}">
+  <header class="branch-hero">
+    <div class="wrap branch-hero__inner">
+      <p class="eyebrow eyebrow--light">{{ .Params.article }} &middot; {{ .Params.institution }}</p>
+      <h1 class="branch-hero__title">{{ .Title }}</h1>
+      <p class="branch-hero__motto">{{ .Params.motto }}</p>
+      <p class="branch-hero__lead">{{ .Params.blurb }}</p>
+
+      <dl class="branch-hero__meta">
+        <div><dt>Seat</dt><dd>{{ .Params.seat }}</dd></div>
+        <div><dt>Chosen by</dt><dd>{{ .Params.selection }}</dd></div>
+        <div><dt>Term</dt><dd>{{ .Params.term }}</dd></div>
+        <div><dt>Established</dt><dd>{{ .Params.established }}</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section class="fact-strip">
+    <div class="wrap fact-strip__inner">
+      {{ range .Params.facts }}
+      <div class="fact">
+        <span class="fact__value">{{ .value }}</span>
+        <span class="fact__label">{{ .label }}</span>
+        <span class="fact__note">{{ .note }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap branch-body">
+      <div class="prose">
+        {{ .Content }}
+      </div>
+
+      <aside class="powers">
+        <h2 class="powers__title">Constitutional powers</h2>
+        <ul class="powers__list">
+          {{ range .Params.powers }}
+          <li>{{ .text }}</li>
+          {{ end }}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">Inside the branch</p>
+        <h2 class="section__title">Who does the work</h2>
+      </header>
+      <div class="role-grid">
+        {{ range .Params.roles }}
+        <div class="role-card">
+          <h3>{{ .title }}</h3>
+          <p>{{ .detail }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">Checks and balances</p>
+        <h2 class="section__title">Give and take with the other branches</h2>
+      </header>
+
+      <div class="check-columns">
+        <div class="check-column">
+          <h3 class="check-column__title">What {{ index $names $slug | lower }} can do to the others</h3>
+          <ul class="check-list">
+            {{ range where $checks "from" $slug }}
+            <li class="check-list__item b-{{ .to }}">
+              <span class="check-list__target">On {{ index $names .to | lower }}</span>
+              <strong>{{ .title }}</strong>
+              <span class="check-list__detail">{{ .detail }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="check-column">
+          <h3 class="check-column__title">What the others can do back</h3>
+          <ul class="check-list">
+            {{ range where $checks "to" $slug }}
+            <li class="check-list__item b-{{ .from }}">
+              <span class="check-list__target">From {{ index $names .from | lower }}</span>
+              <strong>{{ .title }}</strong>
+              <span class="check-list__detail">{{ .detail }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="branch-next" aria-label="Other branches">
+    <div class="wrap branch-next__inner">
+      <p class="branch-next__label">Keep going</p>
+      <div class="branch-next__links">
+        {{ range $branches }}
+          {{ if ne .Params.slug $slug }}
+          <a class="branch-next__link b-{{ .Params.slug }}" href="{{ .RelPermalink }}">
+            <span class="branch-next__article">{{ .Params.article }}</span>
+            <span class="branch-next__title">{{ .Title }}</span>
+            <span class="branch-next__motto">{{ .Params.motto }}</span>
+          </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </nav>
+</article>
+
+{{ partial "footer" . }}

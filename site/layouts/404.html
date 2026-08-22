@@ -1,8 +1,27 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<section class="page-hero page-hero--center">
+  <div class="wrap">
+    <p class="eyebrow">Error 404</p>
+    <h1 class="page-hero__title">This page has no constitutional authority</h1>
+    <p class="page-hero__lead">
+      The address you asked for does not exist. Try one of the three branches instead.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="branch-next__links">
+      {{ range (where (where .Site.Pages "Section" "branches") "Kind" "page").ByWeight }}
+      <a class="branch-next__link b-{{ .Params.slug }}" href="{{ .RelPermalink }}">
+        <span class="branch-next__article">{{ .Params.article }}</span>
+        <span class="branch-next__title">{{ .Title }}</span>
+        <span class="branch-next__motto">{{ .Params.motto }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
 
 {{ partial "footer" . }}

@@ -1,0 +1,63 @@
+{{ partial "header" . }}
+
+{{ $names := dict "legislative" "Legislative" "executive" "Executive" "judicial" "Judicial" }}
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Article I, Section 7</p>
+    <h1 class="page-hero__title">{{ .Title }}</h1>
+    <p class="page-hero__lead">{{ .Params.blurb }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <ol class="timeline">
+      {{ range $i, $step := .Site.Data.bill.steps }}
+      <li class="timeline__item b-{{ $step.branch }}">
+        <div class="timeline__marker" aria-hidden="true">{{ add $i 1 }}</div>
+        <div class="timeline__content">
+          <p class="timeline__branch">{{ index $names $step.branch }} branch</p>
+          <h2 class="timeline__title">{{ $step.title }}</h2>
+          <p class="timeline__detail">{{ $step.detail }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__text">
+        <p class="eyebrow">Why so few make it</p>
+        <h2 class="section__title">Most bills die quietly</h2>
+        <p>
+          Thousands of bills are introduced in a two-year Congress and only a few hundred become law.
+          Almost all of them are never voted on at all — they are referred to a committee that simply
+          never takes them up.
+        </p>
+        <p>
+          That is the design working as intended. A proposal that cannot hold a majority in two
+          chambers and survive a presidential signature was, in the framers' view, not ready to bind
+          the whole country.
+        </p>
+      </div>
+      <div class="callout">
+        <h3>Three ways a bill becomes law</h3>
+        <ul>
+          <li><strong>Signature.</strong> The President signs it.</li>
+          <li><strong>Inaction.</strong> Ten days pass while Congress is in session and the President has not signed or vetoed it.</li>
+          <li><strong>Override.</strong> Two-thirds of both chambers vote to enact it over a veto.</li>
+        </ul>
+        <p class="callout__note">
+          There is also a fourth outcome: a pocket veto, when Congress adjourns during those ten days
+          and the unsigned bill simply dies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "footer" . }}

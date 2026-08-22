@@ -1,0 +1,50 @@
+{{ partial "header" . }}
+
+{{ $branches := (where (where .Site.Pages "Section" "branches") "Kind" "page").ByWeight }}
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Articles I, II, and III</p>
+    <h1 class="page-hero__title">{{ .Title }}</h1>
+    <p class="page-hero__lead">{{ .Params.blurb }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="branch-grid">
+      {{ range $branches }}
+      <article class="branch-card b-{{ .Params.slug }}">
+        <div class="branch-card__top">
+          <p class="branch-card__article">{{ .Params.article }}</p>
+          <h2 class="branch-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="branch-card__motto">{{ .Params.motto }}</p>
+        </div>
+        <div class="branch-card__body">
+          <p>{{ .Params.blurb }}</p>
+          <dl class="branch-card__meta">
+            <div><dt>Who</dt><dd>{{ .Params.institution }}</dd></div>
+            <div><dt>Seat</dt><dd>{{ .Params.seat }}</dd></div>
+            <div><dt>Term</dt><dd>{{ .Params.term }}</dd></div>
+          </dl>
+          <a class="branch-card__link" href="{{ .RelPermalink }}">
+            Explore {{ .Params.article }} <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="wrap">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Separation of powers</p>
+      <h2 class="section__title">How they hold each other in place</h2>
+    </header>
+    {{ partial "branch-explorer" . }}
+  </div>
+</section>
+
+{{ partial "footer" . }}

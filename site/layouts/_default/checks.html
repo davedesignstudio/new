@@ -1,0 +1,116 @@
+{{ partial "header" . }}
+
+{{ $branches := (where (where .Site.Pages "Section" "branches") "Kind" "page").ByWeight }}
+{{ $checks := .Site.Data.checks.checks }}
+{{ $names := dict "legislative" "Congress" "executive" "The President" "judicial" "The Courts" }}
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Federalist No. 51</p>
+    <h1 class="page-hero__title">{{ .Title }}</h1>
+    <p class="page-hero__lead">{{ .Params.blurb }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="matrix" data-matrix>
+      <div class="matrix__controls">
+        <p class="matrix__label" id="matrix-filter-label">Show the checks held by</p>
+        <div class="matrix__filters" role="group" aria-labelledby="matrix-filter-label">
+          <button class="filter-btn is-active" type="button" data-filter="all">All three branches</button>
+          {{ range $branches }}
+          <button class="filter-btn b-{{ .Params.slug }}" type="button" data-filter="{{ .Params.slug }}">
+            {{ index $names .Params.slug }}
+          </button>
+          {{ end }}
+        </div>
+        <p class="matrix__count" aria-live="polite">
+          Showing <strong data-matrix-count>6</strong> of 6 relationships
+        </p>
+      </div>
+
+      <div class="matrix__grid">
+        {{ range $from := $branches }}
+          {{ range $to := $branches }}
+            {{ if ne $from.Params.slug $to.Params.slug }}
+            <article class="pair-card b-{{ $from.Params.slug }}" data-pair data-from="{{ $from.Params.slug }}">
+              <header class="pair-card__head">
+                <span class="pair-card__from">{{ index $names $from.Params.slug }}</span>
+                <span class="pair-card__arrow" aria-hidden="true">&rarr;</span>
+                <span class="pair-card__to b-{{ $to.Params.slug }}">{{ index $names $to.Params.slug }}</span>
+              </header>
+              <ul class="pair-card__list">
+                {{ range where (where $checks "from" $from.Params.slug) "to" $to.Params.slug }}
+                <li>
+                  <strong>{{ .title }}</strong>
+                  <span>{{ .detail }}</span>
+                </li>
+                {{ end }}
+              </ul>
+            </article>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="wrap">
+    <blockquote class="pull-quote">
+      <p>
+        Ambition must be made to counteract ambition. The interest of the man must be connected
+        with the constitutional rights of the place.
+      </p>
+      <cite>James Madison, Federalist No. 51, 1788</cite>
+    </blockquote>
+
+    <div class="note-grid">
+      <div class="note-card">
+        <h3>Separation is not isolation</h3>
+        <p>
+          The branches were never meant to run in parallel lanes. Madison's design deliberately
+          overlaps them, so that each one needs the cooperation of another to accomplish anything
+          permanent.
+        </p>
+      </div>
+      <div class="note-card">
+        <h3>The checks run both ways</h3>
+        <p>
+          Every branch is checked by the other two. The President can veto a bill, but Congress can
+          override the veto, and the courts can void the resulting law. No arrow in this system points
+          only outward.
+        </p>
+      </div>
+      <div class="note-card">
+        <h3>Elections are a check too</h3>
+        <p>
+          The House stands for reelection every two years, a third of the Senate every two, and the
+          President every four. Voters get the final and most frequent check of all.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <header class="section__head section__head--center">
+      <p class="eyebrow">Explore</p>
+      <h2 class="section__title">Read about each branch</h2>
+    </header>
+    <div class="branch-next__links">
+      {{ range $branches }}
+      <a class="branch-next__link b-{{ .Params.slug }}" href="{{ .RelPermalink }}">
+        <span class="branch-next__article">{{ .Params.article }}</span>
+        <span class="branch-next__title">{{ .Title }}</span>
+        <span class="branch-next__motto">{{ .Params.motto }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "footer" . }}

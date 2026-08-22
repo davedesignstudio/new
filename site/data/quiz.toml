@@ -1,0 +1,29 @@
+[[questions]]
+  prompt = "Which branch has the power to declare war?"
+  answer = "legislative"
+  explanation = "Congress alone can declare war, even though the President commands the armed forces as Commander in Chief."
+
+[[questions]]
+  prompt = "Who nominates federal judges?"
+  answer = "executive"
+  explanation = "The President nominates judges, and the Senate confirms or rejects each nomination."
+
+[[questions]]
+  prompt = "Which branch can declare a law unconstitutional?"
+  answer = "judicial"
+  explanation = "Courts exercise judicial review, a power the Supreme Court established in Marbury v. Madison in 1803."
+
+[[questions]]
+  prompt = "Which branch decides how federal money is spent?"
+  answer = "legislative"
+  explanation = "The power of the purse belongs to Congress. No federal money may be spent without an appropriation."
+
+[[questions]]
+  prompt = "Who can veto a bill passed by Congress?"
+  answer = "executive"
+  explanation = "The President may veto a bill, though Congress can override the veto with a two-thirds vote in both chambers."
+
+[[questions]]
+  prompt = "Which branch's officials are not elected by voters?"
+  answer = "judicial"
+  explanation = "Federal judges are appointed rather than elected, and they serve during good behavior so that rulings do not depend on public opinion."

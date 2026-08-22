@@ -1,0 +1,131 @@
+[[checks]]
+  from = "legislative"
+  to = "executive"
+  title = "Override a veto"
+  detail = "A two-thirds vote in both the House and the Senate turns a vetoed bill into law without the President's signature."
+
+[[checks]]
+  from = "legislative"
+  to = "executive"
+  title = "Control the money"
+  detail = "No federal dollar may be spent unless Congress appropriates it, and appropriations can be cut, conditioned, or withheld entirely."
+
+[[checks]]
+  from = "legislative"
+  to = "executive"
+  title = "Confirm or reject nominees"
+  detail = "The Senate votes on cabinet secretaries, ambassadors, and other senior officials before they can take office."
+
+[[checks]]
+  from = "legislative"
+  to = "executive"
+  title = "Ratify treaties"
+  detail = "A treaty the President negotiates takes effect only if two-thirds of the Senate agrees to it."
+
+[[checks]]
+  from = "legislative"
+  to = "executive"
+  title = "Impeach and remove"
+  detail = "The House votes articles of impeachment and the Senate holds the trial, with a two-thirds vote required to remove the President from office."
+
+[[checks]]
+  from = "legislative"
+  to = "executive"
+  title = "Declare war"
+  detail = "Only Congress can formally declare war, and only Congress can raise and fund the armed forces the President commands."
+
+[[checks]]
+  from = "legislative"
+  to = "judicial"
+  title = "Confirm judges"
+  detail = "Every federal judge, including every Supreme Court justice, must be confirmed by a majority of the Senate."
+
+[[checks]]
+  from = "legislative"
+  to = "judicial"
+  title = "Set the size of the courts"
+  detail = "Congress creates the lower federal courts, decides how many judges sit on them, and even fixes the number of Supreme Court justices."
+
+[[checks]]
+  from = "legislative"
+  to = "judicial"
+  title = "Impeach judges"
+  detail = "Federal judges serve during good behavior, and Congress may impeach and remove one who does not meet that standard."
+
+[[checks]]
+  from = "legislative"
+  to = "judicial"
+  title = "Rewrite the law or amend the Constitution"
+  detail = "When a ruling turns on the wording of a statute, Congress can pass a new one. When it turns on the Constitution, Congress can propose an amendment."
+
+[[checks]]
+  from = "executive"
+  to = "legislative"
+  title = "Veto legislation"
+  detail = "The President may reject a bill outright and send it back to Congress with objections."
+
+[[checks]]
+  from = "executive"
+  to = "legislative"
+  title = "Break tied Senate votes"
+  detail = "The Vice President serves as President of the Senate and casts the deciding vote when the chamber splits evenly."
+
+[[checks]]
+  from = "executive"
+  to = "legislative"
+  title = "Set the agenda"
+  detail = "The State of the Union address and the President's budget request frame what Congress spends the year debating."
+
+[[checks]]
+  from = "executive"
+  to = "legislative"
+  title = "Convene Congress"
+  detail = "On extraordinary occasions the President may call one or both chambers into special session."
+
+[[checks]]
+  from = "executive"
+  to = "judicial"
+  title = "Nominate judges"
+  detail = "Every federal judgeship is filled by presidential nomination, which shapes the courts long after an administration ends."
+
+[[checks]]
+  from = "executive"
+  to = "judicial"
+  title = "Grant pardons"
+  detail = "A pardon or reprieve for a federal offense can undo a conviction the courts have already entered."
+
+[[checks]]
+  from = "executive"
+  to = "judicial"
+  title = "Enforce the rulings"
+  detail = "Courts have no police force of their own, so judgments are carried out by executive agencies such as the U.S. Marshals Service."
+
+[[checks]]
+  from = "judicial"
+  to = "legislative"
+  title = "Strike down unconstitutional laws"
+  detail = "Since Marbury v. Madison in 1803, courts have held that a statute conflicting with the Constitution is void and cannot be enforced."
+
+[[checks]]
+  from = "judicial"
+  to = "legislative"
+  title = "Interpret what a statute means"
+  detail = "A law does nothing until courts decide how its words apply to real disputes, and that reading binds everyone until Congress changes the text."
+
+[[checks]]
+  from = "judicial"
+  to = "executive"
+  title = "Invalidate executive action"
+  detail = "Executive orders, regulations, and agency decisions can all be set aside when a court finds they exceed the authority the law grants."
+
+[[checks]]
+  from = "judicial"
+  to = "executive"
+  title = "Order the government to act"
+  detail = "Injunctions can require an agency to stop enforcing a policy, or to carry out a duty the law obliges it to perform."
+
+[[checks]]
+  from = "judicial"
+  to = "executive"
+  title = "Preside over impeachment trials"
+  detail = "When a President is tried in the Senate, the Chief Justice of the United States presides over the proceeding."

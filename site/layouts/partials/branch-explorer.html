@@ -1,0 +1,76 @@
+{{ $branches := (where (where .Site.Pages "Section" "branches") "Kind" "page").ByWeight }}
+{{ $checks := .Site.Data.checks.checks }}
+{{ $pos := dict "legislative" (slice 300 92) "executive" (slice 492 404) "judicial" (slice 108 404) }}
+{{ $targets := dict "legislative" "Over Congress" "executive" "Over the President" "judicial" "Over the Courts" }}
+
+<div class="explorer" data-explorer>
+  <div class="explorer__diagram">
+    <svg viewBox="0 0 600 500" role="img" aria-labelledby="explorer-svg-title" class="triangle">
+      <title id="explorer-svg-title">A triangle linking the legislative, executive, and judicial branches, with arrows showing the checks each one holds over the other two.</title>
+
+      <defs>
+        {{ range $branches }}
+        <marker id="arrow-{{ .Params.slug }}" viewBox="0 0 12 12" refX="11" refY="6"
+                markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L12,6 L0,12 z" class="arrowhead arrowhead--{{ .Params.slug }}"></path>
+        </marker>
+        {{ end }}
+      </defs>
+
+      <g class="triangle__base">
+        <line x1="332" y1="145" x2="460" y2="351"></line>
+        <line x1="268" y1="145" x2="140" y2="351"></line>
+        <line x1="170" y1="404" x2="430" y2="404"></line>
+      </g>
+
+      <g class="triangle__arrows">
+        <path class="arrow arrow--legislative" data-arrow-from="legislative" d="M332,145 L460,351" marker-end="url(#arrow-legislative)"></path>
+        <path class="arrow arrow--legislative" data-arrow-from="legislative" d="M268,145 L140,351" marker-end="url(#arrow-legislative)"></path>
+        <path class="arrow arrow--executive" data-arrow-from="executive" d="M460,351 L332,145" marker-end="url(#arrow-executive)"></path>
+        <path class="arrow arrow--executive" data-arrow-from="executive" d="M430,404 L170,404" marker-end="url(#arrow-executive)"></path>
+        <path class="arrow arrow--judicial" data-arrow-from="judicial" d="M140,351 L268,145" marker-end="url(#arrow-judicial)"></path>
+        <path class="arrow arrow--judicial" data-arrow-from="judicial" d="M170,404 L430,404" marker-end="url(#arrow-judicial)"></path>
+      </g>
+
+      {{ range $branches }}
+      {{ $p := index $pos .Params.slug }}
+      <g class="node node--{{ .Params.slug }}" data-branch="{{ .Params.slug }}" role="button" tabindex="0"
+         aria-label="Show the checks held by the {{ .Params.shortTitle | lower }} branch"
+         transform="translate({{ index $p 0 }},{{ index $p 1 }})">
+        <circle class="node__halo" r="74"></circle>
+        <circle class="node__disc" r="62"></circle>
+        <text class="node__label" text-anchor="middle">
+          <tspan x="0" y="-6">{{ .Params.shortTitle | upper }}</tspan>
+          <tspan class="node__sub" x="0" y="18">{{ .Params.institution }}</tspan>
+        </text>
+      </g>
+      {{ end }}
+    </svg>
+
+    <p class="explorer__hint">Select a branch to trace the checks it holds over the other two.</p>
+  </div>
+
+  <div class="explorer__panels">
+    {{ range $branches }}
+    {{ $slug := .Params.slug }}
+    <div class="explorer__panel b-{{ $slug }}{{ if eq $slug "legislative" }} is-active{{ end }}" data-panel="{{ $slug }}">
+      <p class="explorer__eyebrow">{{ .Params.article }} &middot; {{ .Params.institution }}</p>
+      <h3 class="explorer__title">{{ .Title }}</h3>
+      <p class="explorer__lead">{{ .Params.blurb }}</p>
+
+      <h4 class="explorer__subhead">Its checks on the other branches</h4>
+      <ul class="check-list">
+        {{ range where $checks "from" $slug }}
+        <li class="check-list__item b-{{ .to }}">
+          <span class="check-list__target">{{ index $targets .to }}</span>
+          <strong>{{ .title }}</strong>
+          <span class="check-list__detail">{{ .detail }}</span>
+        </li>
+        {{ end }}
+      </ul>
+
+      <a class="btn btn--ghost" href="{{ .RelPermalink }}">Read about the {{ .Params.shortTitle | lower }} branch</a>
+    </div>
+    {{ end }}
+  </div>
+</div>

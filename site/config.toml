@@ -1,11 +1,29 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Three Branches of Government"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  tagline = "How the United States divides power between Congress, the President, and the Courts"
+  description = "A plain-language guide to the legislative, executive, and judicial branches of the United States federal government, and the checks and balances that hold them together."
+  founded = "1789"
+
+[[menu.main]]
+    name = "The Branches"
+    url  = "/branches/"
+    weight = 1
+
+[[menu.main]]
+    name = "Checks & Balances"
+    url  = "/checks-and-balances/"
+    weight = 2
+
+[[menu.main]]
+    name = "How a Bill Becomes Law"
+    url  = "/how-a-bill-becomes-law/"
+    weight = 3
 
 [[menu.main]]
     name = "About"
-    url  = "/about"
-    weight = 1
+    url  = "/about/"
+    weight = 4

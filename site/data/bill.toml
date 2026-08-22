@@ -1,0 +1,34 @@
+[[steps]]
+  branch = "legislative"
+  title = "A bill is introduced"
+  detail = "Any member of the House or Senate can introduce a bill. Revenue bills must start in the House. Most bills die here and never go further."
+
+[[steps]]
+  branch = "legislative"
+  title = "Committee review"
+  detail = "The bill goes to the committee that handles its subject. Members hold hearings, take testimony, amend the text line by line, and vote on whether to send it forward."
+
+[[steps]]
+  branch = "legislative"
+  title = "Floor debate and vote"
+  detail = "The full chamber debates the bill, offers further amendments, and votes. A simple majority passes it; in the Senate, ending debate usually takes 60 votes first."
+
+[[steps]]
+  branch = "legislative"
+  title = "The other chamber"
+  detail = "The second chamber repeats the whole process. If it passes a different version, a conference reconciles the two, and both chambers vote again on identical text."
+
+[[steps]]
+  branch = "executive"
+  title = "The President decides"
+  detail = "Sign it and the bill becomes law. Veto it and it returns to Congress. Do nothing for ten days while Congress is in session and it becomes law anyway."
+
+[[steps]]
+  branch = "legislative"
+  title = "Override, or not"
+  detail = "Congress can overturn a veto with a two-thirds vote in both chambers. That threshold is high enough that most vetoes stand."
+
+[[steps]]
+  branch = "judicial"
+  title = "The courts have the last word"
+  detail = "Once the law is enforced against someone, it can be challenged. Courts decide what its words mean, and whether the Constitution permits it at all."

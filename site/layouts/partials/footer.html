@@ -1,4 +1,40 @@
-<script src="/js/siema.min.js"></script>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <h2>{{ .Site.Title }}</h2>
+      <p>{{ .Site.Params.tagline }}</p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <nav class="site-footer__nav" aria-label="The branches">
+      <h3>The Branches</h3>
+      <ul>
+        {{ range where .Site.Pages "Section" "branches" }}
+          {{ if ne .Kind "section" }}
+            <li><a href="{{ .RelPermalink }}">{{ .Params.shortTitle }} &middot; {{ .Params.article }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wrap site-footer__legal">
+    <p>An educational reference to the structure of the United States federal government. Not affiliated with any government agency.</p>
+    <p>Sourced from the Constitution and the Federalist Papers, both in the public domain.</p>
+  </div>
+</footer>
+
 <script src="/app.js"></script>
 </body>
 </html>
