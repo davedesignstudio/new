@@ -17,6 +17,7 @@ rm -rf "$BUILD"
 mkdir -p "$RELEASES" "$BUILD"
 
 echo "→ Theme zip"
+rm -f "$RELEASES/dphilhower-studio-theme.zip"
 (
   cd "$ROOT/theme"
   zip -qr -9 "$RELEASES/dphilhower-studio-theme.zip" dphilhower-studio \
@@ -33,6 +34,7 @@ HTML_STAGE="$BUILD/dphilhower-studio-html"
 rm -rf "$HTML_STAGE"
 mkdir -p "$HTML_STAGE"
 cp -a "$HTML_SRC"/. "$HTML_STAGE"/
+rm -f "$RELEASES/dphilhower-studio-html-css-js.zip"
 (
   cd "$BUILD"
   zip -qr -9 "$RELEASES/dphilhower-studio-html-css-js.zip" dphilhower-studio-html \
@@ -100,6 +102,7 @@ Local preview with Docker:
 TXT
 
 echo "→ All-in-one zip"
+rm -f "$RELEASES/dphilhower-studio-wordpress-all-in-one.zip"
 (
   cd "$BUILD"
   zip -qr -9 "$RELEASES/dphilhower-studio-wordpress-all-in-one.zip" dphilhower-studio-wordpress \
