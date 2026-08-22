@@ -31,6 +31,47 @@
     "ANGEL",
     "TABLE"
   ];
+  var OMENS = [
+    "ROAD",
+    "DOG",
+    "SHIP",
+    "HOUSE",
+    "SNAKE",
+    "FOREST",
+    "BRIDGE",
+    "MOON",
+    "HEART",
+    "RING",
+    "ANGEL",
+    "FIRE",
+    "DAGGER"
+  ];
+  function buildDeck() {
+    var bag = [];
+    var i;
+    var o;
+    var seed = 7919;
+    for (i = 0; i < 8; i++) {
+      for (o = 0; o < OMENS.length; o++) bag.push(OMENS[o]);
+    }
+    bag = bag.slice(0, 100);
+    for (i = bag.length - 1; i > 0; i--) {
+      seed = (seed * 16807) % 2147483647;
+      var j = Math.floor(((seed - 1) / 2147483646) * (i + 1));
+      var t = bag[i];
+      bag[i] = bag[j];
+      bag[j] = t;
+    }
+    var deck = [];
+    for (i = 0; i < 25; i++) {
+      deck.push({
+        id: i,
+        edges: [bag[i * 4], bag[i * 4 + 1], bag[i * 4 + 2], bag[i * 4 + 3]]
+      });
+    }
+    return deck;
+  }
+  var DECK = buildDeck();
   var STORE = "wider.roadwisdom.v1";
   var ARTS = [
     "/img/road/bville.jpg",
@@ -122,7 +163,7 @@
     {
       q: "A soldier asks which way the wagon went. His voice is tired. His eyes are not.",
       a: [
-        { id: "tell-true", label: "Tell the truth", t: { loyalty: 1, trust: 1 } },
+        { id: "tell-true", label: "Tell the truth", t: { loyalty: 1, trust: 1 }, flag: "toldSoldier" },
         { id: "lie-soldier", label: "Lie for them", t: { suspicion: 1, courage: 1 } },
         { id: "say-nothing", label: "Say nothing", t: { return: 1 } }
       ]
@@ -269,6 +310,9 @@
         refusedReading: 0
       },
       lastCards: [],
+      lastMatches: [],
+      lastDir: "",
+      lastRoad: "",
       flags: {},
       notes: [],
       seed: 1 + Math.floor(Math.random() * 2147483645)
@@ -288,6 +332,90 @@
 
   function pick(arr, m) {
     return arr[Math.floor(rng(m) * arr.length)];
+  }
+
+  function rotateEdges(edges, n) {
+    n = ((n % 4) + 4) % 4;
+    if (!n) return edges.slice();
+    return edges.slice(n).concat(edges.slice(0, n));
+  }
+
+  function matchHalves(left, right) {
+    return left && right && left.edges[1] === right.edges[3] ? left.edges[1] : null;
+  }
+
+  function orientTrio(trio) {
+    var best = { score: 0, matches: [], rot: [0, 0, 0], cards: trio };
+    var r0;
+    var r1;
+    var r2;
+    for (r0 = 0; r0 < 4; r0++) {
+      for (r1 = 0; r1 < 4; r1++) {
+        for (r2 = 0; r2 < 4; r2++) {
+          var a = { edges: rotateEdges(trio[0].edges, r0) };
+          var b = { edges: rotateEdges(trio[1].edges, r1) };
+          var c = { edges: rotateEdges(trio[2].edges, r2) };
+          var m = [];
+          var ab = matchHalves(a, b);
+          var bc = matchHalves(b, c);
+          if (ab) m.push(ab);
+          if (bc) m.push(bc);
+          if (m.length > best.score) {
+            best = { score: m.length, matches: m, rot: [r0, r1, r2], cards: trio };
+          }
+        }
+      }
+    }
+    return best;
+  }
+
+  function drawFragments(mem) {
+    var copy = DECK.map(function (c) {
+      return { id: c.id, edges: c.edges.slice() };
+    });
+    var shuffled = shuffle(copy, mem);
+    return orientTrio(shuffled.slice(0, 3));
+  }
+
+  function composeSpawnedBeats(cards, mem, weather) {
+    var out = [];
+    if (!cards || !cards.length) return out;
+    weather = weather || pick(WEATHER, mem);
+    var first = makeSymbolBeat(cards[0], mem);
+    if (cards.indexOf("MOON") !== -1) {
+      first.q = "From last time: the " + cards[0].toLowerCase() + " only appears at night now. The fortune was not describing the world. It was laying it.";
+    } else {
+      first.q = "From last time: the " + cards[0].toLowerCase() + " is waiting in the " + weather + ", like it never left.";
+    }
+    out.push(first);
+    if (cards[1]) {
+      var second = makeSymbolBeat(cards[1], mem);
+      second.q =
+        "Beside the " +
+        cards[0].toLowerCase() +
+        ", a " +
+        cards[1].toLowerCase() +
+        " waits. The reading put it there.";
+      out.push(second);
+    }
+    return out.slice(0, 2);
+  }
+
+  function weatherFromMatches(mem, weather) {
+    var m = mem.lastMatches || [];
+    if (m.indexOf("MOON") !== -1 && rng(mem) < 0.85) return "endless night";
+    if (m.indexOf("FIRE") !== -1 && rng(mem) < 0.6) return "storm";
+    if (m.indexOf("SNAKE") !== -1 && rng(mem) < 0.5) return "fog";
+    return weather;
+  }
+
+  function roadFromMatches(mem, road) {
+    var m = mem.lastMatches || [];
+    if (m.indexOf("FOREST") !== -1 && rng(mem) < 0.75) return "Forest Road";
+    if (m.indexOf("BRIDGE") !== -1 && rng(mem) < 0.75) return "River Road";
+    if (m.indexOf("SHIP") !== -1 && rng(mem) < 0.5) return "River Road";
+    if (m.indexOf("HOUSE") !== -1 && rng(mem) < 0.5) return "Old Imperial Road";
+    return road;
   }
 
   function shuffle(arr, m) {
@@ -315,9 +443,9 @@
   }
 
   function newRun(mem) {
-    var road = pick(ROADS, mem);
-    var weather = pick(WEATHER, mem);
-    var forced = (mem.lastCards || []).slice(0, 3);
+    var road = roadFromMatches(mem, pick(ROADS, mem));
+    var weather = weatherFromMatches(mem, pick(WEATHER, mem));
+    var forced = ((mem.lastMatches && mem.lastMatches.length ? mem.lastMatches : mem.lastCards) || []).slice(0, 3);
     var enc = [];
     var i;
     var artDeck = shuffle(ARTS, mem);
@@ -325,14 +453,16 @@
       if (!artDeck.length) artDeck = shuffle(ARTS, mem);
       return artDeck.pop();
     }
-    for (i = 0; i < forced.length && enc.length < 2; i++) {
-      var beat = makeSymbolBeat(forced[i], mem);
-      beat.artUrl = nextArt();
-      enc.push(beat);
+    var spawned = composeSpawnedBeats(forced, mem, weather);
+    for (i = 0; i < spawned.length && enc.length < 2; i++) {
+      spawned[i].artUrl = nextArt();
+      enc.push(spawned[i]);
     }
     var stranger = pick(STRANGERS, mem);
     if (mem.flags.ignoredChild && mem.cycles >= 1 && mem.cycles < 10 && !mem.flags.helpedChild && !mem.flags.helpedMother) {
       stranger = { id: "child", name: "a child", art: "village" };
+    } else if (mem.flags.toldSoldier && mem.cycles >= 2 && !mem.flags.sawSoldierLie) {
+      stranger = { id: "soldier", name: "a soldier", art: "road" };
     }
     var qn = cloneBeat(questionForStranger(stranger, mem));
     qn.artUrl = artForStranger(stranger, nextArt, mem);
@@ -421,8 +551,29 @@
       }
     }
     if (stranger.id === "child") return childMemoryBeat(mem, q);
+    if (stranger.id === "soldier") return soldierMemoryBeat(mem, q);
     if (stranger.id === "princess") return princessBeat();
     return q;
+  }
+
+  function soldierMemoryBeat(mem, fallback) {
+    var a = (fallback && fallback.a) || [
+      { id: "tell-true", label: "Tell the truth", t: { loyalty: 1, trust: 1 }, flag: "toldSoldier" },
+      { id: "lie-soldier", label: "Lie for them", t: { suspicion: 1, courage: 1 } },
+      { id: "say-nothing", label: "Say nothing", t: { return: 1 } }
+    ];
+    if (mem.flags && mem.flags.toldSoldier && mem.cycles >= 2) {
+      mem.flags.sawSoldierLie = true;
+      return {
+        q: "The soldier is gone. There was never a wagon on this road. Someone close to you knows more than they say.",
+        a: [
+          { id: "ask-wagon", label: "Ask where it went", t: { curiosity: 1, suspicion: 1 } },
+          { id: "walk-soldier", label: "Walk on", t: { wander: 1 } },
+          { id: "wait-soldier", label: "Wait", t: { fate: 1 } }
+        ]
+      };
+    }
+    return fallback || { q: "A soldier asks which way the wagon went. His voice is tired. His eyes are not.", a: a };
   }
 
   function artForStranger(stranger, nextArt, mem) {
@@ -571,6 +722,8 @@
       }
     }
     cards = cards.slice(0, 5);
+    var drawn = drawFragments(mem);
+    var matches = drawn.matches && drawn.matches.length ? drawn.matches.slice() : [];
     var soul = soulOf(mem.traits);
     var c = mem.counts;
     var history = [];
@@ -595,6 +748,10 @@
     if (mem.cycles >= 7) history.push("You always find a road. That is not an insult.");
     if (mem.cycles >= 12 && c.helps) history.push("You keep trying to save people. Has anyone asked why?");
     if (mem.cycles >= 31 && !mem.flags.askedDoor) history.push("All these walks, and you have never once chosen the door.");
+    var pairA = matches.length >= 2 ? matches[0] : cards[0];
+    var pairB = matches.length >= 2 ? matches[1] : cards[1];
+    var pairC = matches.length >= 3 ? matches[1] : cards[2];
+    var pairD = matches.length >= 3 ? matches[2] : cards[3];
     var spread = {
       cards: cards,
       origin: cards[0],
@@ -602,14 +759,23 @@
       refuse: cards[2],
       before: cards[3],
       become: cards[4],
-      pair: pairLine(cards[0], cards[1]),
-      pair2: pairLine(cards[2], cards[3]),
+      matches: matches,
+      fragments: drawn,
+      pair: pairLine(pairA, pairB),
+      pair2: pairLine(pairC, pairD),
+      laid: matches.length
+        ? "The fortune is not describing the world. It is laying the next mile."
+        : "The halves miss. That is a reading.",
       soul: soul,
       history: history,
       looking: inferWant(mem),
       hiding: inferHidden(mem)
     };
+    if (matches.length >= 2) {
+      history.unshift("Halves meet: " + matches.join(" + ") + ".");
+    }
     s.spread = spread;
+    mem.lastMatches = matches.slice();
     mem.lastCards = cards.slice(0, 3);
     return spread;
   }
@@ -705,13 +871,40 @@
 
   function readerGreeting(mem) {
     var n = mem.cycles;
-    if (n <= 0) return ['"Come in.', 'Sit if you like."'];
-    if (n === 1) return ['"Ah.', 'You came back."'];
-    if (n === 2 && mem.lastCards[0]) return ['"Last time you', "chose the " + mem.lastCards[0].toLowerCase() + '.', 'I kept it warm."'];
-    if (n >= 7 && n < 12) return ['"You always take', 'a road.', 'I am not teasing."'];
-    if (n >= 12 && n < 31) return ['"We have been', 'here before,', 'haven\'t we?"'];
-    if (n >= 31) return ['"Thirty-one,', "then " + n + '.', 'Still walking."'];
-    return ['"Again?', 'Good."'];
+    var traits = mem.traits || blankTraits();
+    var flags = mem.flags || {};
+    if (n >= 100) {
+      return ['"You have walked', "this road " + n + " times.\"", '"You still haven\'t', 'asked the question."'];
+    }
+    if (n >= 31 && !flags.askedDoor) {
+      return ['"You have never', "once chosen", 'the door."'];
+    }
+    if (n >= 31) {
+      return ['"Thirty-one,', "then " + n + ".", 'Still walking."'];
+    }
+    if (n >= 20) {
+      return ['"You have asked', "this question", 'before."'];
+    }
+    if (n >= 12 && traits.mercy > 4) {
+      return ['"Why do you keep', "trying to save", 'him?"'];
+    }
+    if (n >= 12) {
+      return ['"We have been', "here before,", 'haven\'t we?"'];
+    }
+    if (n >= 7) {
+      return ['"You always take', "a road.", 'I am not teasing."'];
+    }
+    if (n >= 2 && mem.lastDir) {
+      return ['"You chose the', String(mem.lastDir).toLowerCase() + " last time.\""];
+    }
+    if (n >= 2 && mem.lastRoad) {
+      return ['"You chose the', mem.lastRoad.replace(" Road", "").toLowerCase() + " last time.\""];
+    }
+    if (n >= 2 && mem.lastCards && mem.lastCards[0]) {
+      return ['"Last time you', "chose the " + String(mem.lastCards[0]).toLowerCase() + ".", 'I kept it warm."'];
+    }
+    if (n >= 1) return ['"Ah.', 'You came back."', '"Welcome back."'];
+    return ['"Come in.', 'Sit if you like."'];
   }
 
   function linesFor(s) {
@@ -756,19 +949,25 @@
     }
     if (sc === "spread") {
       var sp = s.spread;
+      var halves =
+        sp.matches && sp.matches.length >= 2
+          ? ["halves meet:", sp.matches.join(" + ")]
+          : ["halves miss.", "That is a reading."];
       return [
         "FIVE CARDS",
         "from " + sp.origin,
         "follows " + sp.follows,
         "you refuse " + sp.refuse,
         "ahead: " + sp.before,
-        "you become " + sp.become
-      ];
+        "you become " + sp.become,
+        ""
+      ].concat(halves);
     }
     if (sc === "fortune") {
       var f = s.spread;
       var lines = ["THE READING"].concat(wrapText(f.pair));
       if (f.pair2 && f.pair2 !== f.pair) lines = lines.concat([""]).concat(wrapText(f.pair2));
+      if (f.laid) lines = lines.concat([""]).concat(wrapText(f.laid));
       lines = lines.concat(["", "If I had to name", "you: " + f.soul + "."]);
       if (f.history[0]) lines = lines.concat([""]).concat(wrapText(f.history[0]));
       if (f.history[1]) lines = lines.concat([""]).concat(wrapText(f.history[1]));
@@ -921,6 +1120,8 @@
       var dir = id.slice(4);
       if (dir === "FOREST" || dir === "EAST") s.mem.counts.east += 1;
       if (dir === "VILLAGE") s.mem.counts.north += 1;
+      s.mem.lastDir = dir.toLowerCase();
+      s.mem.lastRoad = s.road;
       s.chosen.push(id);
       s.screen = "meet";
       s.beat = 0;
@@ -1062,9 +1263,19 @@
     childMemoryBeat: childMemoryBeat,
     makeSymbolBeat: makeSymbolBeat,
     CARDS: CARDS,
+    OMENS: OMENS,
+    DECK: DECK,
     ARTS: ARTS,
     QUESTIONS: QUESTIONS,
     STRANGERS: STRANGERS,
-    STORE: STORE
+    STORE: STORE,
+    rotateEdges: rotateEdges,
+    matchHalves: matchHalves,
+    orientTrio: orientTrio,
+    drawFragments: drawFragments,
+    composeSpawnedBeats: composeSpawnedBeats,
+    readerGreeting: readerGreeting,
+    soldierMemoryBeat: soldierMemoryBeat,
+    drawSpread: drawSpread
   };
 })(typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : this);

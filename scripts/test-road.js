@@ -185,6 +185,82 @@ check("art pool shuffles across runs", function () {
   assert.ok(Object.keys(seen).length >= 4, "only " + Object.keys(seen).join(", "));
 });
 
+check("25-card four-fragment deck uses only omens", function () {
+  assert.equal(R.DECK.length, 25);
+  var i;
+  var e;
+  for (i = 0; i < R.DECK.length; i++) {
+    assert.equal(R.DECK[i].edges.length, 4, "card " + i);
+    for (e = 0; e < 4; e++) {
+      assert.ok(R.OMENS.indexOf(R.DECK[i].edges[e]) !== -1, R.DECK[i].edges[e]);
+    }
+  }
+  assert.equal(R.OMENS.length, 13);
+});
+
+check("orientTrio can complete a half", function () {
+  var best = R.orientTrio([
+    { edges: ["ROAD", "BRIDGE", "DOG", "MOON"] },
+    { edges: ["FIRE", "SNAKE", "HOUSE", "BRIDGE"] },
+    { edges: ["ANGEL", "HEART", "RING", "SNAKE"] }
+  ]);
+  assert.ok(best.score >= 1, "score " + best.score);
+  assert.ok(best.matches.indexOf("BRIDGE") !== -1, String(best.matches));
+});
+
+check("lastMatches stack the next mile beside each other", function () {
+  var mem = R.loadMem();
+  mem.lastMatches = ["BRIDGE", "DOG", "MOON"];
+  var s = R.newRun(mem);
+  assert.equal(s.encounters[0].spawned, true);
+  assert.equal(s.encounters[0].card, "BRIDGE");
+  assert.ok(/night/i.test(s.encounters[0].q), s.encounters[0].q);
+  assert.ok(/beside/i.test(s.encounters[1].q), s.encounters[1].q);
+  assert.equal(s.encounters[1].card, "DOG");
+});
+
+check("cycle 20 reader has asked this question before", function () {
+  var mem = R.loadMem();
+  mem.cycles = 20;
+  mem.flags = {};
+  var lines = R.readerGreeting(mem).join(" ");
+  assert.ok(/asked this question before/i.test(lines), lines);
+});
+
+check("cycle 100 still has not asked the question", function () {
+  var mem = R.loadMem();
+  mem.cycles = 100;
+  var lines = R.readerGreeting(mem).join(" ");
+  assert.ok(/100 times/i.test(lines), lines);
+  assert.ok(/haven't asked the question|haven.t asked the question/i.test(lines), lines);
+});
+
+check("soldier lie after you told the truth", function () {
+  var mem = R.loadMem();
+  mem.cycles = 2;
+  mem.flags.toldSoldier = true;
+  var q = R.questionForStranger({ id: "soldier" }, mem);
+  assert.ok(/never a wagon|never/i.test(q.q), q.q);
+});
+
+check("travel remembers lastDir", function () {
+  var s = R.resetAll();
+  s = R.act(s, "begin");
+  var id = R.scene(s).choices[0].id;
+  s = R.act(s, id);
+  assert.equal(s.mem.lastDir, id.slice(4).toLowerCase());
+  assert.ok(s.mem.lastRoad);
+});
+
+check("a finished reading stores lastMatches and lastCards", function () {
+  var s = walkToFortune(R.resetAll());
+  assert.ok(Array.isArray(s.mem.lastMatches));
+  assert.equal(s.mem.lastCards.length, 3);
+  assert.equal(s.spread.cards.length, 5);
+  var text = R.scene(s).lines.join(" ");
+  assert.ok(/laying the next mile|halves miss/i.test(text), text);
+});
+
 check("six kitchen strangers exist", function () {
   var ids = R.STRANGERS.map(function (x) {
     return x.id;
