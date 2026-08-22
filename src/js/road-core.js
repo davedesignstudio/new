@@ -771,7 +771,7 @@
       looking: inferWant(mem),
       hiding: inferHidden(mem)
     };
-    if (matches.length >= 2) {
+    if (matches.length) {
       history.unshift("Halves meet: " + matches.join(" + ") + ".");
     }
     s.spread = spread;
@@ -950,7 +950,7 @@
     if (sc === "spread") {
       var sp = s.spread;
       var halves =
-        sp.matches && sp.matches.length >= 2
+        sp.matches && sp.matches.length
           ? ["halves meet:", sp.matches.join(" + ")]
           : ["halves miss.", "That is a reading."];
       return [

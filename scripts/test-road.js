@@ -257,8 +257,15 @@ check("a finished reading stores lastMatches and lastCards", function () {
   assert.ok(Array.isArray(s.mem.lastMatches));
   assert.equal(s.mem.lastCards.length, 3);
   assert.equal(s.spread.cards.length, 5);
+  var savedScreen = s.screen;
+  s.screen = "spread";
+  var spreadLines = R.scene(s).lines.join(" ");
+  s.screen = savedScreen;
   var text = R.scene(s).lines.join(" ");
   assert.ok(/laying the next mile|halves miss/i.test(text), text);
+  if (s.spread.matches && s.spread.matches.length) {
+    assert.ok(/halves meet/i.test(spreadLines), spreadLines);
+  }
 });
 
 check("six kitchen strangers exist", function () {
