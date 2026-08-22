@@ -176,6 +176,8 @@ function dps_seed_demo_content( $force = false ) {
 		'sthills-hero.png'       => dps_sideload_theme_image( 'sthills-hero.png', 'Service The Hills' ),
 		'bvdeli-hero.png'        => dps_sideload_theme_image( 'bvdeli-hero.png', 'Bernardsville Deli' ),
 		'pok-hero.png'           => dps_sideload_theme_image( 'pok-hero.png', 'Philhower & O’Krogly' ),
+		'cafe-robust-hero.png'   => dps_sideload_theme_image( 'cafe-robust-hero.png', 'Cafe Robust' ),
+		'expresso-hero.png'      => dps_sideload_theme_image( 'expresso-hero.png', 'EXPresso' ),
 	);
 
 	if ( $hero_id ) {
@@ -250,7 +252,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · menu · packaging',
 			'year'     => '2025',
 			'location' => 'Bernardsville, NJ',
-			'content'  => '<p>Locals already shorten Bernardsville to Bville. The mark has to work as a script on slate and as one ink hit on a burgundy lid.</p><p>The orange B is appetite and oven heat. Two crescent swooshes close into a circle so the lid, the window, and the coaster share one ring. No clipart pizza: the food is inside the box.</p>',
+			'content'  => '<p>Locals already shorten Bernardsville to Bville. This is the uploaded lockup — orange B, green ville, gold edge, two swooshes — used as the logo with no redraw.</p><p>The orange B is appetite and oven heat. Two crescent swooshes close into a circle so the lid, the window, and the coaster share one ring. No clipart pizza: the food is inside the box.</p>',
 		),
 		array(
 			'slug'     => 'ritual-cafe',
@@ -323,6 +325,30 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
 			'content'  => '<p>A contractor who answers at 2am cannot look like a franchise, and cannot look like a country club. The mark had to hold both: craft in daylight, emergency after dark.</p><p>The gothic kp ligature sits in a thin ice-blue diamond. Blue is the night call. Tan-gold is the build. The sun and the moon are the hours written as pictures. Hazard orange would make it a cone. Black keeps it a studio the house can live with on the lawn.</p>',
+		),
+		array(
+			'slug'     => 'cafe-robust',
+			'title'    => 'Cafe Robust',
+			'image'    => 'cafe-robust-hero.png',
+			'excerpt'  => 'The board you read before you order',
+			'subtitle' => 'The board you read before you order',
+			'client'   => 'Studio sample, neighborhood coffee shop',
+			'services' => 'Identity · menu · packaging · window',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>A chalkboard that tries to look handmade usually looks cheap. This one is drawn as a sign: gold filigree, a cup from above, and a list you can read from the door.</p><p>The circular CR mark is the drink seen from above. Cups and the window carry the same seal so the board is not a one-off poster.</p>',
+		),
+		array(
+			'slug'     => 'expresso',
+			'title'    => 'EXPresso',
+			'image'    => 'expresso-hero.png',
+			'excerpt'  => 'The pour is the mark',
+			'subtitle' => 'The pour is the mark',
+			'client'   => 'Studio sample, espresso brand',
+			'services' => 'Identity · packaging · window',
+			'year'     => '2026',
+			'location' => 'Northern New Jersey',
+			'content'  => '<p>The name is a pun you can see. EX sits left of the cup, Presso sits right, and the pour is the hyphen. Yellow on roasted beans is the only loud color.</p><p>The circular badge is the coaster version of the same pour. Window and sleeve keep the yellow so takeaway still reads as EXPresso.</p>',
 		),
 	);
 
@@ -433,7 +459,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-3' );
+	update_option( 'dps_images_version', 'brands-print-4' );
 	return true;
 }
 

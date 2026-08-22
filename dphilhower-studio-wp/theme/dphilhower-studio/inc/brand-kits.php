@@ -335,6 +335,56 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'expresso'                 => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'Beans, yellow, the pour', 'dphilhower-studio' ),
+			'intro'  => __( 'EX sits left of the cup, Presso sits right, and the pour is the hyphen. Yellow on roasted beans is the only loud color.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'expresso-print-circle.png',
+					'alt'     => __( 'Circular Coffee badge with pouring white mug and layered espresso type', 'dphilhower-studio' ),
+					'heading' => __( 'Circle badge', 'dphilhower-studio' ),
+					'story'   => __( 'The uploaded round. Word-cloud espresso type, white mug, black brush Coffee. Coaster scale of the pour.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'expresso-print-pack.png',
+					'alt'     => __( 'EXPresso cup, yellow sleeve, and coffee bag on roasted beans', 'dphilhower-studio' ),
+					'heading' => __( 'Cup and sleeve', 'dphilhower-studio' ),
+					'story'   => __( 'Yellow EXPresso on white porcelain and a black sleeve. The bean field is photography, not clipart.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'expresso-print-window.png',
+					'alt'     => __( 'Night cafe window with yellow EXPresso type and pouring cup', 'dphilhower-studio' ),
+					'heading' => __( 'Window', 'dphilhower-studio' ),
+					'story'   => __( 'The hero, shop scale. Yellow type on dark glass so the pour reads from the sidewalk.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'cafe-robust'              => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'The board, then the cup', 'dphilhower-studio' ),
+			'intro'  => __( 'Gold CR, tan type, chalkboard black. The menu, the sleeve, and the glass are one voice.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'cafe-robust-hero.png',
+					'alt'     => __( 'Cafe Robust chalkboard menu with CR cup mark and drink list', 'dphilhower-studio' ),
+					'heading' => __( 'Chalkboard', 'dphilhower-studio' ),
+					'story'   => __( 'The uploaded board. Stars, filigree, and a cup-from-above seal so it reads as a cafe, not a template with a new name.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'cafe-robust-print-cups.png',
+					'alt'     => __( 'Cafe Robust black and cream cups and kraft bag with gold CR mark', 'dphilhower-studio' ),
+					'heading' => __( 'Cups and bag', 'dphilhower-studio' ),
+					'story'   => __( 'The circular mark survives a sleeve. Black cup, cream cup, kraft bag — one seal, three stocks.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'cafe-robust-print-window.png',
+					'alt'     => __( 'Cafe Robust storefront window with gold CR cup mark', 'dphilhower-studio' ),
+					'heading' => __( 'Window', 'dphilhower-studio' ),
+					'story'   => __( 'The board, shop scale. Gold CR on glass, cream hours.', 'dphilhower-studio' ),
+				),
+			),
+		),
 		'bernardsville-deli'       => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'Warm deli, cool grocery', 'dphilhower-studio' ),

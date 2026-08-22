@@ -6,16 +6,18 @@ html      3637  contact/index.html
 css       3466  css/editorial.css
 css      16578  css/main.css
 html      5171  files.html
-html      7594  index.html
+html      8229  index.html
 js        1167  js/main.js
 html      3610  services/index.html
 html      5297  work/bernardsville-deli/index.html
-html      7173  work/bville-pizza-grill/index.html
+html      7209  work/bville-pizza-grill/index.html
+html      4743  work/cafe-robust/index.html
 html      5399  work/cow-lick/index.html
 html       373  work/custom-website-design/index.html
 html     10595  work/ember-pie-co/index.html
+html      4679  work/expresso/index.html
 html       355  work/hospitality-storytelling/index.html
-html      4836  work/index.html
+html      5413  work/index.html
 html      5258  work/magic-buds/index.html
 html       346  work/packaging-systems/index.html
 html     10296  work/pattern-studies/index.html
@@ -25,4 +27,4 @@ html       376  work/restaurant-brand-systems/index.html
 html      5606  work/ritual-cafe/index.html
 html      5207  work/service-the-hills/index.html
 
-Total: 24 files
+Total: 26 files
