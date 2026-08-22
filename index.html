@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Three Branches of Government</title>
+  <meta name="description" content="An interactive guide to the legislative, executive, and judicial branches of the United States government, and the checks and balances between them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">§</span>
+      <span class="brand-name">Three Branches</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#legislative">Legislative</a>
+      <a href="#executive">Executive</a>
+      <a href="#judicial">Judicial</a>
+      <a href="#checks">Checks &amp; Balances</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-eyebrow">Separation of Powers</p>
+      <h1>The Three Branches of&nbsp;Government</h1>
+      <p class="hero-sub">
+        The United States Constitution divides federal power among three branches —
+        one to <strong>make</strong> the laws, one to <strong>enforce</strong> them,
+        and one to <strong>interpret</strong> them — so that no single branch can
+        dominate the others.
+      </p>
+      <blockquote class="hero-quote">
+        “The accumulation of all powers, legislative, executive, and judiciary,
+        in the same hands&hellip; may justly be pronounced the very definition of tyranny.”
+        <cite>— James Madison, Federalist No.&nbsp;47</cite>
+      </blockquote>
+      <div class="hero-pills">
+        <a class="pill pill-legislative" href="#legislative">Article I · Legislative</a>
+        <a class="pill pill-executive" href="#executive">Article II · Executive</a>
+        <a class="pill pill-judicial" href="#judicial">Article III · Judicial</a>
+      </div>
+    </section>
+
+    <!-- Branches -->
+    <section class="branches" aria-label="The three branches">
+      <article class="branch-card branch-legislative" id="legislative">
+        <p class="branch-article">Article I</p>
+        <h2>Legislative Branch</h2>
+        <p class="branch-tagline">Makes the laws</p>
+        <p class="branch-body">
+          Congress is a bicameral legislature: the <strong>House of Representatives</strong>
+          (435 voting members, apportioned by population, two-year terms) and the
+          <strong>Senate</strong> (100 members, two per state, six-year terms).
+        </p>
+        <h3>Key powers</h3>
+        <ul>
+          <li>Writes and passes federal laws</li>
+          <li>Controls taxing and spending (“power of the purse”)</li>
+          <li>Declares war and regulates commerce</li>
+          <li>Confirms appointments and ratifies treaties (Senate)</li>
+        </ul>
+        <div class="branch-stat">
+          <span class="stat-number">535</span>
+          <span class="stat-label">voting members of Congress</span>
+        </div>
+      </article>
+
+      <article class="branch-card branch-executive" id="executive">
+        <p class="branch-article">Article II</p>
+        <h2>Executive Branch</h2>
+        <p class="branch-tagline">Enforces the laws</p>
+        <p class="branch-body">
+          Headed by the <strong>President</strong>, elected to a four-year term
+          (limited to two terms by the 22nd Amendment), along with the Vice President,
+          the Cabinet, and federal agencies that carry out the law.
+        </p>
+        <h3>Key powers</h3>
+        <ul>
+          <li>Signs or vetoes legislation</li>
+          <li>Commander in Chief of the armed forces</li>
+          <li>Negotiates treaties and conducts foreign policy</li>
+          <li>Appoints judges, ambassadors, and officials</li>
+        </ul>
+        <div class="branch-stat">
+          <span class="stat-number">1</span>
+          <span class="stat-label">President, limited to two elected terms</span>
+        </div>
+      </article>
+
+      <article class="branch-card branch-judicial" id="judicial">
+        <p class="branch-article">Article III</p>
+        <h2>Judicial Branch</h2>
+        <p class="branch-tagline">Interprets the laws</p>
+        <p class="branch-body">
+          The <strong>Supreme Court</strong> and lower federal courts decide what
+          laws mean and whether they follow the Constitution. Justices serve for
+          life during “good behaviour.”
+        </p>
+        <h3>Key powers</h3>
+        <ul>
+          <li>Interprets laws and the Constitution</li>
+          <li>Judicial review — can strike down unconstitutional laws (Marbury v.&nbsp;Madison, 1803)</li>
+          <li>Resolves disputes between states</li>
+          <li>Hears cases involving federal law and treaties</li>
+        </ul>
+        <div class="branch-stat">
+          <span class="stat-number">9</span>
+          <span class="stat-label">justices on the Supreme Court</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Checks and balances -->
+    <section class="checks" id="checks">
+      <h2>Checks &amp; Balances</h2>
+      <p class="checks-intro">
+        Each branch can restrain the other two. Select a branch to see how it
+        keeps the others in check.
+      </p>
+      <div class="checks-tabs" role="tablist" aria-label="Choose a branch">
+        <button class="checks-tab tab-legislative is-active" role="tab" aria-selected="true" data-branch="legislative">
+          Legislative
+        </button>
+        <button class="checks-tab tab-executive" role="tab" aria-selected="false" data-branch="executive">
+          Executive
+        </button>
+        <button class="checks-tab tab-judicial" role="tab" aria-selected="false" data-branch="judicial">
+          Judicial
+        </button>
+      </div>
+      <div class="checks-panel" id="checks-panel" aria-live="polite">
+        <!-- Populated by app.js -->
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="quiz" id="quiz">
+      <h2>Test Your Knowledge</h2>
+      <p class="quiz-intro">Five quick questions. Pick an answer to see instant feedback.</p>
+      <div id="quiz-container"><!-- Populated by app.js --></div>
+      <div class="quiz-footer">
+        <p id="quiz-score" class="quiz-score" aria-live="polite"></p>
+        <button id="quiz-reset" class="quiz-reset" hidden>Try again</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built as a civics primer on the separation of powers in the U.S. Constitution.</p>
+    <p class="footer-fine">Articles I, II &amp; III · U.S. Constitution, 1787</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

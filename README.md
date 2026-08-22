@@ -1,36 +1,30 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# The Three Branches of Government
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+An interactive, single-page civics site explaining the three branches of the
+United States government — legislative, executive, and judicial — and the
+system of checks and balances between them.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+## Features
 
-To install and run the example site locally, here’s what you’ll need:
+- Overview cards for each branch (Articles I, II, and III) with key powers and facts
+- Interactive checks-and-balances explorer: select a branch to see how it restrains the other two
+- Five-question quiz with instant feedback and scoring
 
-## System Requirements
+## Running locally
 
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
-
-## Usage
-
-Clone this repository and run:
+The site is plain HTML, CSS, and JavaScript with no build step. Serve the
+repository root with any static file server, for example:
 
 ```bash
-npm install
-npm run start
+python3 -m http.server 3000
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+Then visit http://localhost:3000/.
 
-To build your static output to the `/dist` folder, use:
+## Deploying
 
-```bash
-npm run build
-```
+`netlify.toml` publishes the repository root as-is, so the site can be
+deployed directly to Netlify (or any static host) without a build command.
 
 ## License
 
