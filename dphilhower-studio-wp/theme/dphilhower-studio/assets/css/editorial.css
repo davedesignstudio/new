@@ -187,7 +187,8 @@ body {
 }
 
 .compare figure,
-.touch-card {
+.touch-card,
+.print-system figure {
   border-radius: 14px;
 }
 
