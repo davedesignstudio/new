@@ -1,11 +1,28 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "The Three Branches"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A civic guide to how the United States Constitution divides federal power among Congress, the President, and the courts."
+  tagline = "Power, divided."
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
+    name = "Legislative"
+    url  = "/legislative/"
     weight = 1
+
+[[menu.main]]
+    name = "Executive"
+    url  = "/executive/"
+    weight = 2
+
+[[menu.main]]
+    name = "Judicial"
+    url  = "/judicial/"
+    weight = 3
+
+[[menu.main]]
+    name = "Checks & Balances"
+    url  = "/checks/"
+    weight = 4

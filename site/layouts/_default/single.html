@@ -1,7 +1,33 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main id="main" class="page">
+  <header class="page-hero page-hero--{{ .Params.theme }}">
+    {{ with .Params.article }}
+      <p class="page-hero__numeral" aria-hidden="true">{{ . }}</p>
+    {{ end }}
+    {{ with .Params.kicker }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.job }}<p class="page-hero__job">{{ . }}</p>{{ end }}
+    {{ with .Params.quote }}
+      <blockquote class="page-hero__quote">
+        <p>{{ . }}</p>
+        {{ with $.Params.quote_source }}<cite>{{ . }}</cite>{{ end }}
+      </blockquote>
+    {{ end }}
+  </header>
+
+  <article class="page-body">
+    {{ .Content }}
+  </article>
+
+  {{ if .Params.theme }}
+  <nav class="page-next" aria-label="Other branches">
+    <a href="/legislative/">I · Legislative</a>
+    <a href="/executive/">II · Executive</a>
+    <a href="/judicial/">III · Judicial</a>
+    <a href="/checks/">Checks &amp; Balances</a>
+  </nav>
+  {{ end }}
+</main>
 
 {{ partial "footer" . }}
