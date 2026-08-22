@@ -42,6 +42,6 @@ The long memory is [History](/history). The load-bearing stone, told down the ta
 
 After enough miles she stops selling you a future. You thought you wanted a fortune. You wanted permission to sit.
 
-[Drive it](/adventure). [Sit. She is the DM](/table). [What you hid](/hidden). [The six kitchens](/route).
+[Drive it](/adventure). [Sit. She is the DM](/table). [What you hid](/hidden). [The six kitchens](/route). [Hike the trail](/world) — meet them on the way.
 
 If you make stories of your own: [Libraries](/libraries).

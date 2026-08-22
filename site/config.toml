@@ -38,11 +38,16 @@ title = "WIDER"
     weight = 5
 
 [[menu.main]]
+    name = "Trail"
+    url  = "/world"
+    weight = 6
+
+[[menu.main]]
     name = "Route"
     url  = "/route"
-    weight = 6
+    weight = 7
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 7
+    weight = 8
