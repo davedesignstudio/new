@@ -21,6 +21,9 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 - **`/play/?b1=1`** — the storm, told straight: Tower becomes Star.
 - **`/road`** — you walk a tiny Earth. She reads what you do.
 - **[Libraries](/libraries)** — other tellers, read not interviewed; methods applied to this kitchen.
+- **[Alexandria](/alexandria)** — the Mouseion; Pinakes; not one fire.
+- **[Stacks](/stacks)** — named storehouses through time; not every library.
+- **[Holdings](/holdings)** — every book on Earth, which nobody has.
 - **[History](/history)** — palace, prairie, stall: one supper, not three captions.
 - **[Keystone](/keystone)** — the stone is not the soup; told down the table.
 
