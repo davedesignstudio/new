@@ -1,14 +1,10 @@
-// JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
+// Highlight the current page in the sidebar navigation
+const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+document.querySelectorAll(".sidebar-nav a").forEach(link => {
+  const linkPath = link.getAttribute("href").replace(/\/+$/, "") || "/";
+  if (linkPath === currentPath) {
+    link.classList.add("active");
+    link.setAttribute("aria-current", "page");
+  }
+});
