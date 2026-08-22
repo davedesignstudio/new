@@ -5,12 +5,13 @@
   "repository": "netlify/victor-hugo",
   "main": "index.js",
   "scripts": {
-    "hugo": "gulp hugo",
-    "build": "gulp build",
-    "build-preview": "gulp build-preview",
-    "start": "gulp server",
-    "start-preview": "gulp server-preview",
-    "lint": "eslint src"
+    "hugo": "hugo -d ../dist -s site -v",
+    "build": "node scripts/build.js",
+    "build-preview": "node scripts/build.js",
+    "start": "node scripts/build.js && python3 -m http.server 3000 --directory dist",
+    "start-preview": "node scripts/build.js && python3 -m http.server 3000 --directory dist",
+    "lint": "eslint src",
+    "test": "node scripts/check-site.js"
   },
   "author": "",
   "license": "MIT",

@@ -1,0 +1,44 @@
+{{ partial "header" . }}
+
+<main id="main" class="page-wrap branch-page">
+  <header class="page-hero branch-hero {{ .Params.branch }}">
+    <p class="eyebrow">{{ .Params.eyebrow }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="hero-lede">{{ .Params.lede }}</p>
+    <ul class="stat-row page-stats">
+      {{ if eq .Params.branch "legislative" }}
+      <li><strong>Art. I</strong> of the Constitution</li>
+      <li><strong>535</strong> voting members</li>
+      <li><strong>2</strong> chambers</li>
+      {{ else if eq .Params.branch "executive" }}
+      <li><strong>Art. II</strong> of the Constitution</li>
+      <li><strong>4</strong> year term</li>
+      <li><strong>22nd</strong> Amendment limit</li>
+      {{ else if eq .Params.branch "judicial" }}
+      <li><strong>Art. III</strong> of the Constitution</li>
+      <li><strong>9</strong> justices by statute</li>
+      <li><strong>Life</strong> tenure</li>
+      {{ else }}
+      <li><strong>Arts. I–III</strong> working together</li>
+      {{ end }}
+    </ul>
+  </header>
+
+  <article class="prose">
+    {{ .Content }}
+  </article>
+
+  <nav class="page-next" aria-label="Continue">
+    {{ if eq .Params.branch "legislative" }}
+    <a href="/executive/"><span>Next branch</span> The Executive</a>
+    {{ else if eq .Params.branch "executive" }}
+    <a href="/judicial/"><span>Next branch</span> The Judiciary</a>
+    {{ else if eq .Params.branch "judicial" }}
+    <a href="/checks/"><span>Next</span> Checks &amp; balances</a>
+    {{ else }}
+    <a href="/"><span>Return</span> Overview</a>
+    {{ end }}
+  </nav>
+</main>
+
+{{ partial "footer" . }}

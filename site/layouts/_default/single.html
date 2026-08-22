@@ -1,7 +1,14 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main id="main" class="page-wrap">
+  <article class="prose">
+    <header class="page-hero">
+      {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lede }}<p class="hero-lede">{{ . }}</p>{{ end }}
+    </header>
+    {{ .Content }}
+  </article>
+</main>
 
 {{ partial "footer" . }}

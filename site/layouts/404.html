@@ -1,8 +1,15 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<main id="main" class="page-wrap">
+  <section class="page-hero">
+    <p class="eyebrow">404</p>
+    <h1>This page is not in the Constitution.</h1>
+    <p class="hero-lede">The article you asked for was never ratified. Return to the three branches — or to the checks that bind them.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="/">Return home</a>
+      <a class="btn btn-ghost" href="/checks/">Checks &amp; balances</a>
+    </div>
+  </section>
+</main>
 
 {{ partial "footer" . }}
