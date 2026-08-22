@@ -96,7 +96,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
 
 <section class="cafe-band cafe-robust-banner">
   <div class="container cafe-banner-inner">
-    <img src="<?= e(asset_url($site['cafe_robust']['logos']['bean'])) ?>" alt="" width="72" height="96" aria-hidden="true" />
+    <img class="cafe-seal cafe-seal--band" src="<?= e(asset_url($site['cafe_robust']['logos']['seal'])) ?>" alt="" width="88" height="88" aria-hidden="true" />
     <div>
       <h2>Cafe Robust</h2>
       <p>House blend, espresso, and cold brew inside Bville.</p>

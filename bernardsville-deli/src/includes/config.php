@@ -188,6 +188,7 @@ return [
             'white' => '#FFFFFF',
         ],
         'logos' => [
+            'seal' => 'assets/cafe-robust/seal.png',
             'bean' => 'assets/cafe-robust/bean-logo.svg',
             'cup' => 'assets/cafe-robust/cup-logo.svg',
             'wordmark' => 'assets/cafe-robust/wordmark-bubble.svg',

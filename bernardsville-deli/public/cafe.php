@@ -16,7 +16,7 @@ require dirname(__DIR__) . '/src/includes/header.php';
   <div class="container cafe-robust-hero-grid">
     <div class="cafe-robust-copy">
       <p class="comic-pub">Чудо Комикс · Robust</p>
-      <img class="cafe-logo-arch" src="<?= e(asset_url($cafe['logos']['arch'])) ?>" alt="Cafe Robust" width="240" height="86" />
+      <img class="cafe-seal" src="<?= e(asset_url($cafe['logos']['seal'])) ?>" alt="Cafe Robust" width="220" height="220" />
       <p class="cafe-tagline"><?= e($cafe['tagline']) ?></p>
       <?php if ($cafeStory): ?>
         <p class="cafe-intro story-text" data-story-id="cafe-robust" data-field="excerpt"><?= e($cafeStory['excerpt']) ?></p>
@@ -26,15 +26,6 @@ require dirname(__DIR__) . '/src/includes/header.php';
       <?php endif; ?>
     </div>
     <?= photo_img('cafe', ['class' => 'cafe-hero-cup-photo', 'width' => 480, 'height' => 320]) ?>
-  </div>
-</section>
-
-<section class="cafe-lifestyle">
-  <div class="container cafe-logo-showcase cafe-logo-showcase--inline">
-    <img src="<?= e(asset_url($cafe['logos']['bean'])) ?>" alt="Cafe Robust bean emblem" width="100" height="133" />
-    <img src="<?= e(asset_url($cafe['logos']['wordmark'])) ?>" alt="Cafe Robust" width="260" height="65" />
-    <img src="<?= e(asset_url($cafe['logos']['cr'])) ?>" alt="CR mark" width="120" height="90" />
-    <img class="cafe-logo-cup" src="<?= e(asset_url($cafe['logos']['cup'])) ?>" alt="Cafe Robust coffee cup" width="160" height="144" />
   </div>
 </section>
 

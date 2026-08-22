@@ -1684,6 +1684,21 @@ address { font-style: normal; }
   align-items: center;
 }
 
+.cafe-seal {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.cafe-seal--band {
+  width: 88px;
+  height: 88px;
+}
+
 .cafe-tagline {
   font-family: var(--font-serif);
   color: var(--cafe-gold);
@@ -1724,7 +1739,7 @@ address { font-style: normal; }
   justify-content: center;
 }
 
-.cafe-menu-section { padding: 0 0 3rem; }
+.cafe-menu-section { padding: 2.5rem 0 3rem; }
 
 .cafe-menu-title {
   font-family: var(--font-script);
