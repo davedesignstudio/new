@@ -1,12 +1,6 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# Three Branches of Government
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
-
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
-
-To install and run the example site locally, here’s what you’ll need:
+An educational website about the Legislative, Executive, and Judicial branches of the United States government — and the system of checks and balances that binds them. Built with [Hugo](https://gohugo.io) on the [Victor Hugo](https://github.com/netlify/victor-hugo) boilerplate.
 
 ## System Requirements
 
