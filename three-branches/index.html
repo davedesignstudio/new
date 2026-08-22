@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive guide to the three branches of the United States government: Legislative, Executive, and Judicial." />
+  <title>The Three Branches of Government</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">&#9733;</span>
+        <span>Three Branches</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#legislative">Legislative</a></li>
+        <li><a href="#executive">Executive</a></li>
+        <li><a href="#judicial">Judicial</a></li>
+        <li><a href="#balances">Checks &amp; Balances</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Civics, made clear</p>
+        <h1>The Three Branches of the U.S. Government</h1>
+        <p class="lede">
+          The U.S. Constitution divides power among three co-equal branches so that no
+          single part of government can dominate. This is the principle of the
+          <strong>separation of powers</strong>.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#legislative">Explore the branches</a>
+          <a class="btn btn-ghost" href="#quiz">Test yourself</a>
+        </div>
+      </div>
+      <div class="hero-pillars" aria-hidden="true">
+        <span class="pillar" data-label="Legislative"></span>
+        <span class="pillar" data-label="Executive"></span>
+        <span class="pillar" data-label="Judicial"></span>
+      </div>
+    </section>
+
+    <section class="branches">
+      <article id="legislative" class="branch branch--legislative">
+        <div class="branch-icon" aria-hidden="true">&#127963;</div>
+        <h2>Legislative Branch</h2>
+        <p class="branch-role">Makes the laws</p>
+        <p class="branch-body">
+          Established by <strong>Article I</strong>, the legislative branch is the
+          <strong>Congress</strong>, a bicameral body made up of the House of
+          Representatives and the Senate.
+        </p>
+        <ul class="branch-facts">
+          <li><span>Who</span> Congress (House + Senate)</li>
+          <li><span>Members</span> 435 Representatives, 100 Senators</li>
+          <li><span>Key powers</span> Pass laws, declare war, tax &amp; spend, confirm appointments</li>
+        </ul>
+      </article>
+
+      <article id="executive" class="branch branch--executive">
+        <div class="branch-icon" aria-hidden="true">&#127970;</div>
+        <h2>Executive Branch</h2>
+        <p class="branch-role">Enforces the laws</p>
+        <p class="branch-body">
+          Established by <strong>Article II</strong>, the executive branch is led by the
+          <strong>President</strong>, who serves as head of state, head of government, and
+          commander in chief.
+        </p>
+        <ul class="branch-facts">
+          <li><span>Who</span> President, Vice President, Cabinet</li>
+          <li><span>Term</span> 4 years (max two terms)</li>
+          <li><span>Key powers</span> Sign or veto bills, command the military, conduct foreign policy</li>
+        </ul>
+      </article>
+
+      <article id="judicial" class="branch branch--judicial">
+        <div class="branch-icon" aria-hidden="true">&#9878;</div>
+        <h2>Judicial Branch</h2>
+        <p class="branch-role">Interprets the laws</p>
+        <p class="branch-body">
+          Established by <strong>Article III</strong>, the judicial branch is the
+          <strong>Supreme Court</strong> and the federal courts, which apply and interpret
+          the law in individual cases.
+        </p>
+        <ul class="branch-facts">
+          <li><span>Who</span> Supreme Court + federal courts</li>
+          <li><span>Justices</span> 9, appointed for life</li>
+          <li><span>Key powers</span> Interpret laws, judicial review, resolve disputes</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="balances" class="balances">
+      <div class="section-head">
+        <h2>Checks &amp; Balances</h2>
+        <p>Each branch can limit the powers of the others, keeping government in balance.</p>
+      </div>
+      <div class="balance-grid">
+        <div class="balance-card">
+          <h3>Congress checks the President</h3>
+          <p>Overrides vetoes, controls funding, and can impeach and remove the President.</p>
+        </div>
+        <div class="balance-card">
+          <h3>Congress checks the Courts</h3>
+          <p>Confirms or rejects judges and can propose constitutional amendments.</p>
+        </div>
+        <div class="balance-card">
+          <h3>President checks Congress</h3>
+          <p>Can veto legislation passed by Congress.</p>
+        </div>
+        <div class="balance-card">
+          <h3>President checks the Courts</h3>
+          <p>Nominates federal judges and Supreme Court justices.</p>
+        </div>
+        <div class="balance-card">
+          <h3>Courts check Congress</h3>
+          <p>Can declare laws unconstitutional through judicial review.</p>
+        </div>
+        <div class="balance-card">
+          <h3>Courts check the President</h3>
+          <p>Can rule executive actions unconstitutional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz">
+      <div class="section-head">
+        <h2>Quick Quiz</h2>
+        <p>Match each responsibility to the correct branch.</p>
+      </div>
+      <div class="quiz-card" id="quiz-card">
+        <p class="quiz-progress" id="quiz-progress"></p>
+        <p class="quiz-question" id="quiz-question"></p>
+        <div class="quiz-options" id="quiz-options"></div>
+        <p class="quiz-feedback" id="quiz-feedback" role="status"></p>
+        <div class="quiz-footer">
+          <span class="quiz-score" id="quiz-score">Score: 0</span>
+          <button class="btn btn-primary" id="quiz-next" type="button" disabled>Next</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built as an interactive civics reference &middot; Source material based on the U.S. Constitution.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
