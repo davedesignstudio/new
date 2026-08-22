@@ -513,12 +513,29 @@
   HikeApp.prototype.initThree = function () {
     var w = this.canvasHost.clientWidth || window.innerWidth;
     var h = this.canvasHost.clientHeight || window.innerHeight;
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     this.renderer.setSize(w, h);
     this.renderer.setClearColor(0x87a8c8, 1);
     this.renderer.shadowMap.enabled = true;
     this.canvasHost.appendChild(this.renderer.domElement);
+
+    var self = this;
+    this.renderer.domElement.addEventListener(
+      "webglcontextlost",
+      function (e) {
+        e.preventDefault();
+        self.setStatus("Graphics hiccup — click New trail to reshape.");
+      },
+      false
+    );
+    this.renderer.domElement.addEventListener(
+      "webglcontextrestored",
+      function () {
+        self.rebuild();
+      },
+      false
+    );
 
     this.scene = new THREE.Scene();
     this.scene.fog = new THREE.Fog(0xb8cce0, 28, 120);
@@ -545,7 +562,6 @@
     );
     this.scene.add(this.mars);
 
-    var self = this;
     window.addEventListener("resize", function () {
       self.onResize();
     });
@@ -576,6 +592,7 @@
   HikeApp.prototype.onResize = function () {
     var w = this.canvasHost.clientWidth || window.innerWidth;
     var h = this.canvasHost.clientHeight || window.innerHeight;
+    if (w < 16 || h < 16) return;
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(w, h);
@@ -586,15 +603,37 @@
       this.scene.remove(this.worldRoot);
       this.worldRoot.traverse(function (obj) {
         if (obj.geometry) obj.geometry.dispose();
-        if (obj.material && obj.material.dispose) obj.material.dispose();
+        if (obj.material) {
+          if (Object.prototype.toString.call(obj.material) === "[object Array]") {
+            obj.material.forEach(function (m) {
+              if (m && m.dispose) m.dispose();
+            });
+          } else if (obj.material.dispose) {
+            obj.material.dispose();
+          }
+        }
       });
+      this.worldRoot = null;
     }
     this.npcMeshes = [];
     this.vistaMarkers = [];
     this.trailPts = [];
+    this.nearNpc = null;
+    this.nearVista = null;
   };
 
   HikeApp.prototype.rebuild = function () {
+    try {
+      this._rebuildInner();
+    } catch (err) {
+      if (window.console && console.error) console.error(err);
+      this.setStatus("Trail reshape failed — try another seed.");
+    }
+  };
+
+  HikeApp.prototype._rebuildInner = function () {
+    if (document.exitPointerLock) document.exitPointerLock();
+    if (this.panel) this.panel.hidden = true;
     this.clearWorld();
     this.met = {};
     this.vistasSeen = {};
@@ -623,7 +662,6 @@
       this.worldRoot.add(buildCliffKitchen(terrain, this.trailPts[4]));
     }
 
-    // Place NPCs along the trail between vistas
     var rnd = mulberry32(this.seed ^ 0x4e5043);
     NPCS.forEach(function (npc, i) {
       var t = (i + 0.55) / (NPCS.length + 0.2);
@@ -647,11 +685,16 @@
 
     this.scene.add(this.worldRoot);
 
-    // Start at first trail point
     var start = this.trailPts[0] || new THREE.Vector3(0, 2, 10);
     this.pos.set(start.x, start.y + EYE, start.z + 3);
-    this.yaw = Math.atan2(-(this.trailPts[1] ? this.trailPts[1].x - start.x : 0), -(this.trailPts[1] ? this.trailPts[1].z - start.z : -1));
+    this.yaw = Math.atan2(
+      -(this.trailPts[1] ? this.trailPts[1].x - start.x : 0),
+      -(this.trailPts[1] ? this.trailPts[1].z - start.z : -1)
+    );
     this.pitch = -0.05;
+    this._eLatch = true;
+    this.keys = {};
+    this.onResize();
     this.renderJournal();
     this.setStatus("Click the view to hike. WASD walk · Shift slow · E talk · mouse look");
   };
