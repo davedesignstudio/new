@@ -1,18 +1,18 @@
 import { BRANCHES } from './data.js';
 import { ICONS } from './icons.js';
+import { accentStyle, applyAccent } from './theme.js';
 
 const pillarsEl = document.querySelector('.pillars');
 const briefEl = document.querySelector('#brief');
 
 function renderBrief(branch) {
-  briefEl.style.setProperty('--accent', `var(--${branch.id})`);
-  briefEl.style.setProperty('--accent-soft', `var(--${branch.id}-soft)`);
+  applyAccent(briefEl, branch.id);
   briefEl.setAttribute('aria-labelledby', `pillar-${branch.id}`);
 
   briefEl.innerHTML = `
     <div class="brief__bar">
       <h3>${branch.body}</h3>
-      <span class="pillar__article" style="color: inherit; opacity: .85">${branch.article} &middot; ${branch.tagline}</span>
+      <span class="brief__meta">${branch.article} &middot; ${branch.tagline}</span>
       <span class="brief__seat">${branch.seat}</span>
     </div>
     <p class="brief__summary">${branch.summary}</p>
@@ -61,7 +61,7 @@ export function initBranches() {
     (branch) => `
     <button class="pillar" type="button" role="tab" id="pillar-${branch.id}"
             aria-selected="false" aria-controls="brief" tabindex="-1"
-            style="--accent: var(--${branch.id}); --accent-soft: var(--${branch.id}-soft)">
+            style="${accentStyle(branch.id)}">
       ${ICONS[branch.id]}
       <span class="pillar__article">${branch.article}</span>
       <span class="pillar__name">${branch.name}</span>

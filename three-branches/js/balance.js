@@ -1,4 +1,5 @@
 import { BRANCHES, CHECKS } from './data.js';
+import { accentStyle, applyAccent } from './theme.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const NODE_R = 48;
@@ -88,7 +89,6 @@ function buildDiagram() {
   BRANCHES.forEach((branch) => {
     const { x, y } = NODES[branch.id];
     const group = el('g', { class: 'triangle__node', 'data-branch': branch.id });
-    group.style.setProperty('--accent', `var(--${branch.id})`);
     group.appendChild(el('circle', { cx: x, cy: y, r: NODE_R }));
     const text = el('text', { x, y: y + 5 });
     text.textContent = branch.name;
@@ -113,7 +113,7 @@ function render(sourceId) {
     const id = node.dataset.branch;
     node.classList.toggle('is-source', id === sourceId);
     node.classList.toggle('is-target', targets.includes(id));
-    if (id !== sourceId) node.style.setProperty('--accent', `var(--${sourceId})`);
+    applyAccent(node, sourceId);
   });
 
   switchEl.querySelectorAll('.chip').forEach((chip) => {
@@ -123,7 +123,7 @@ function render(sourceId) {
   detailEl.innerHTML = outgoing
     .map(
       (check) => `
-      <article class="check-card" style="--accent: var(--${check.from})">
+      <article class="check-card" style="${accentStyle(check.from)}">
         <h3>${check.title}</h3>
         <ul>${check.items.map((item) => `<li>${item}</li>`).join('')}</ul>
       </article>`
@@ -141,7 +141,7 @@ export function initBalance() {
   switchEl.innerHTML = BRANCHES.map(
     (branch) => `
     <button class="chip" type="button" data-branch="${branch.id}" aria-pressed="false"
-            style="--accent: var(--${branch.id})">${branch.name} checks&hellip;</button>`
+            style="${accentStyle(branch.id)}">${branch.name}</button>`
   ).join('');
 
   switchEl.querySelectorAll('.chip').forEach((chip) => {

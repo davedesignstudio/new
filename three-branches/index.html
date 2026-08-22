@@ -16,7 +16,7 @@
 
 <header class="hero">
   <div class="hero__ornament" aria-hidden="true">
-    <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax meet">
+    <svg viewBox="0 0 1200 425" preserveAspectRatio="xMidYMax meet">
       <defs>
         <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#fbf6ea" stop-opacity=".30" />
@@ -24,18 +24,17 @@
         </linearGradient>
       </defs>
       <g fill="url(#stone)">
-        <polygon points="600,40 1010,190 190,190" />
-        <rect x="150" y="190" width="900" height="26" />
-        <rect x="170" y="382" width="860" height="30" />
-        <g id="cols">
-          <rect x="215" y="216" width="58" height="166" />
-          <rect x="341" y="216" width="58" height="166" />
-          <rect x="467" y="216" width="58" height="166" />
-          <rect x="593" y="216" width="58" height="166" />
-          <rect x="719" y="216" width="58" height="166" />
-          <rect x="845" y="216" width="58" height="166" />
-          <rect x="927" y="216" width="58" height="166" />
-        </g>
+        <polygon points="600,46 1006,192 194,192" />
+        <rect x="164" y="192" width="872" height="24" />
+        <rect x="215" y="222" width="56" height="158" />
+        <rect x="357" y="222" width="56" height="158" />
+        <rect x="500" y="222" width="56" height="158" />
+        <rect x="644" y="222" width="56" height="158" />
+        <rect x="787" y="222" width="56" height="158" />
+        <rect x="929" y="222" width="56" height="158" />
+        <rect x="176" y="380" width="848" height="15" />
+        <rect x="146" y="395" width="908" height="15" />
+        <rect x="116" y="410" width="968" height="15" />
       </g>
     </svg>
   </div>
@@ -72,7 +71,7 @@
     <div class="section__head">
       <p class="eyebrow">Separation of powers</p>
       <h2 id="balances-title">Checks &amp; balances</h2>
-      <p class="section__lede">Every branch holds a leash on the other two. Choose a branch to trace the checks it exercises, or read the grid one cell at a time.</p>
+      <p class="section__lede">Every branch holds a leash on the other two. Pick a branch — on the diagram or below it — to light up the checks it exercises and read them in full.</p>
     </div>
 
     <div class="balance">
@@ -81,7 +80,8 @@
           <g class="triangle__arrows"></g>
           <g class="triangle__nodes"></g>
         </svg>
-        <div class="balance__switch" role="group" aria-label="Choose which branch's checks to trace"></div>
+        <p class="balance__label" id="balance-switch-label">Show the checks held by</p>
+        <div class="balance__switch" role="group" aria-labelledby="balance-switch-label"></div>
       </div>
       <div class="balance__detail" id="balance-detail" aria-live="polite"></div>
     </div>

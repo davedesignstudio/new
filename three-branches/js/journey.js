@@ -1,4 +1,5 @@
 import { BILL_STEPS, BRANCHES } from './data.js';
+import { accentStyle, applyAccent } from './theme.js';
 
 const trackEl = document.querySelector('.journey__track');
 const stageEl = document.querySelector('#journey-stage');
@@ -19,8 +20,7 @@ function render() {
     tick.setAttribute('aria-current', i === index ? 'step' : 'false');
   });
 
-  stageEl.style.setProperty('--accent', `var(--${step.branch})`);
-  stageEl.style.setProperty('--accent-soft', `var(--${step.branch}-soft)`);
+  applyAccent(stageEl, step.branch);
   stageEl.innerHTML = `
     <span class="journey__badge">${branchName(step.branch)} branch</span>
     <h3>${step.title}</h3>
@@ -45,7 +45,7 @@ export function initJourney() {
     (step, i) => `
     <li>
       <button class="journey__tick" type="button" data-step="${i}"
-              style="--accent: var(--${step.branch}); --accent-soft: var(--${step.branch}-soft)">
+              style="${accentStyle(step.branch)}">
         <span></span>
         <em>${step.title}</em>
       </button>
