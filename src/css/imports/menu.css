@@ -1,85 +1,210 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
+/* Homepage hero */
+.hero {
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: .5rem;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0 0 1rem 0;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+/* Branch cards */
+.branches {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 34em) {
+  .branches {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  h2 em, h3 {
-    text-transform: capitalize;
+@media (min-width: 72em) {
+  .branches {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
-  }
+.branch-card {
+  position: relative;
+  display: block;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--navy);
+  border-radius: 8px;
+  color: var(--ink);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+.branch-card:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(27, 42, 74, 0.14);
+}
 
-    li {
-      display: flex;
-      align-items: top;
-    }
+.branch-card h2 {
+  margin: .25rem 0 .25rem;
+  font-size: 1.4rem;
+}
 
-    p {
-      flex-grow: 1;
-      display: inline-block;
+.branch-card.legislative { border-top-color: var(--legislative); }
+.branch-card.executive  { border-top-color: var(--executive); }
+.branch-card.judicial   { border-top-color: var(--judicial); }
 
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
-  }
+.branch-numeral {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--gold);
+  display: inline-block;
+}
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+.branch-seat {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: .75rem;
+}
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
+.branch-role {
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: .5rem;
+}
 
-  .buttons {
-    text-align: center;
-  }
+.branch-desc {
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: 1rem;
+}
 
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
+.branch-link {
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--legislative);
+}
 
-    &:hover {
-      background: #d35b48;
-    }
+.branch-card.executive .branch-link { color: var(--executive); }
+.branch-card.judicial .branch-link  { color: var(--judicial); }
 
-    &.half-button {
-      display: inline-block;
-      width: 30%;
+/* Balance callout */
+.balance {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 1.75rem;
+  border-radius: 8px;
+  border-left: 6px solid var(--gold);
+}
 
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
-  }
+.balance-title {
+  color: #fff;
+  margin-top: 0;
+}
+
+.balance p {
+  margin-bottom: 1.25rem;
+}
+
+.balance strong {
+  color: #fff;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: #1a1a1a;
+  font-weight: 700;
+  padding: .7rem 1.4rem;
+  border-radius: 6px;
+  transition: background .2s ease;
+}
+
+.button:hover {
+  background: #d4a11a;
+  text-decoration: none;
+}
+
+/* Interior pages */
+.branch-lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.branch-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 1.75rem;
+  background: var(--navy);
+}
+
+.branch-banner.legislative { background: var(--legislative); }
+.branch-banner.executive  { background: var(--executive); }
+.branch-banner.judicial   { background: var(--judicial); }
+
+.branch-banner .branch-numeral {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 2.8rem;
+}
+
+.branch-banner .page-title {
+  color: #fff;
+  margin: 0;
+}
+
+.branch-banner-meta {
+  margin: .25rem 0 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.page-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page-body ul li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.page-body ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .6rem;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--gold);
 }

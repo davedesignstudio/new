@@ -1,14 +1,11 @@
-// JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
+// Highlight the sidebar link that matches the current page.
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+  document.querySelectorAll('.sidebar-nav a').forEach((link) => {
+    const href = link.getAttribute('href').replace(/\/+$/, '') || '/';
+    if (href === path) {
+      link.classList.add('active');
+    }
+  });
+});

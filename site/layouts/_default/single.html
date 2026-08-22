@@ -1,7 +1,25 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
+{{ $numerals := dict "legislative" "I" "executive" "II" "judicial" "III" }}
+
+<div class="content container page {{ with .Params.branch }}branch-page {{ . }}{{ end }}">
+
+  {{ if .Params.branch }}
+    <header class="branch-banner {{ .Params.branch }}">
+      <span class="branch-numeral">{{ index $numerals .Params.branch }}</span>
+      <div>
+        <h1 class="page-title">{{ .Title }}</h1>
+        <p class="branch-banner-meta">{{ .Params.role }} &middot; {{ .Params.seat }}</p>
+      </div>
+    </header>
+  {{ else }}
+    <h1 class="page-title">{{ .Title }}</h1>
+  {{ end }}
+
+  <div class="page-body">
+    {{ .Content }}
+  </div>
+
 </div>
 
 {{ partial "footer" . }}

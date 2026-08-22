@@ -1,11 +1,31 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Three Branches of Government"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A plain-language guide to how the United States government is divided into three co-equal branches — Legislative, Executive, and Judicial — and how they keep one another in check."
+
+[[menu.main]]
+    name = "Legislative"
+    url  = "/legislative"
+    weight = 1
+
+[[menu.main]]
+    name = "Executive"
+    url  = "/executive"
+    weight = 2
+
+[[menu.main]]
+    name = "Judicial"
+    url  = "/judicial"
+    weight = 3
+
+[[menu.main]]
+    name = "Checks & Balances"
+    url  = "/checks-and-balances"
+    weight = 4
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 5

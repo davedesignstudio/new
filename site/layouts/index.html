@@ -1,10 +1,50 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
+<div class="content container home">
+
+  <section class="hero">
+    <p class="eyebrow">United States Government</p>
+    <h1 class="hero-title">Three Branches, One Balance of Power</h1>
+    <p class="hero-lead">The U.S. Constitution divides the federal government into three co-equal branches. Each one has a distinct job, and each one can check the power of the others.</p>
+  </section>
+
+  <section class="branches">
+
+    <a class="branch-card legislative" href="/legislative">
+      <span class="branch-numeral">I</span>
+      <h2>Legislative</h2>
+      <p class="branch-seat">Congress &middot; The Capitol</p>
+      <p class="branch-role">Makes the laws</p>
+      <p class="branch-desc">The House and Senate write, debate, and pass the nation's laws and control federal spending.</p>
+      <span class="branch-link">Explore the Legislative branch &rarr;</span>
+    </a>
+
+    <a class="branch-card executive" href="/executive">
+      <span class="branch-numeral">II</span>
+      <h2>Executive</h2>
+      <p class="branch-seat">The President &middot; The White House</p>
+      <p class="branch-role">Carries out the laws</p>
+      <p class="branch-desc">The President, Vice President, and Cabinet enforce the laws and lead the nation at home and abroad.</p>
+      <span class="branch-link">Explore the Executive branch &rarr;</span>
+    </a>
+
+    <a class="branch-card judicial" href="/judicial">
+      <span class="branch-numeral">III</span>
+      <h2>Judicial</h2>
+      <p class="branch-seat">The Supreme Court</p>
+      <p class="branch-role">Interprets the laws</p>
+      <p class="branch-desc">The Supreme Court and lower federal courts interpret the law and decide what the Constitution means.</p>
+      <span class="branch-link">Explore the Judicial branch &rarr;</span>
+    </a>
+
+  </section>
+
+  <section class="balance">
+    <h2 class="balance-title">Kept in Balance</h2>
+    <p>No branch stands above the others. Through a system of <strong>checks and balances</strong>, each branch can limit the power of the other two — so that power stays shared, not concentrated.</p>
+    <a class="button" href="/checks-and-balances">See how they check each other</a>
+  </section>
+
 </div>
 
 {{ partial "footer" . }}
