@@ -377,6 +377,14 @@
     return orientTrio(shuffled.slice(0, 3));
   }
 
+  function inWeather(w) {
+    if (!w) return "the weather";
+    if (w.indexOf("a ") === 0) return w;
+    if (w === "endless night") return "endless night";
+    if (w === "clear") return "clear air";
+    return "the " + w;
+  }
+
   function composeSpawnedBeats(cards, mem, weather) {
     var out = [];
     if (!cards || !cards.length) return out;
@@ -385,7 +393,7 @@
     if (cards.indexOf("MOON") !== -1) {
       first.q = "From last time: the " + cards[0].toLowerCase() + " only appears at night now. The fortune was not describing the world. It was laying it.";
     } else {
-      first.q = "From last time: the " + cards[0].toLowerCase() + " is waiting in the " + weather + ", like it never left.";
+      first.q = "From last time: the " + cards[0].toLowerCase() + " is waiting in " + inWeather(weather) + ", like it never left.";
     }
     out.push(first);
     if (cards[1]) {
@@ -626,7 +634,7 @@
   function makeSymbolBeat(card, mem) {
     var weather = pick(WEATHER, mem);
     return {
-      q: "From last time: the " + card.toLowerCase() + " is waiting in the " + weather + ", like it never left.",
+      q: "From last time: the " + card.toLowerCase() + " is waiting in " + inWeather(weather) + ", like it never left.",
       card: card,
       spawned: true,
       a: [
@@ -957,22 +965,26 @@
         "FIVE CARDS",
         "from " + sp.origin,
         "follows " + sp.follows,
-        "you refuse " + sp.refuse,
         "ahead: " + sp.before,
-        "you become " + sp.become,
-        ""
+        "you become " + sp.become
       ].concat(halves);
     }
     if (sc === "fortune") {
       var f = s.spread;
       var lines = ["THE READING"].concat(wrapText(f.pair));
-      if (f.pair2 && f.pair2 !== f.pair) lines = lines.concat([""]).concat(wrapText(f.pair2));
+      if (f.matches && f.matches.length) {
+        lines = lines.concat(["", "halves:", f.matches.join(" + ")]);
+      }
+      lines = lines.concat(["", f.soul]);
+      var hist = f.history || [];
+      var hi;
+      for (hi = 0; hi < hist.length; hi++) {
+        if (hist[hi] && hist[hi].indexOf("Halves meet") !== 0) {
+          lines = lines.concat(wrapText(hist[hi]));
+          break;
+        }
+      }
       if (f.laid) lines = lines.concat([""]).concat(wrapText(f.laid));
-      lines = lines.concat(["", "If I had to name", "you: " + f.soul + "."]);
-      if (f.history[0]) lines = lines.concat([""]).concat(wrapText(f.history[0]));
-      if (f.history[1]) lines = lines.concat([""]).concat(wrapText(f.history[1]));
-      if (mem.cycles >= 5) lines = lines.concat([""]).concat(wrapText("Between us — you were looking for " + f.looking + "."));
-      if (f.hiding) lines = lines.concat(["", "You are hiding", f.hiding.title + "."]);
       lines = lines.concat(["", "The road is still", "open."]);
       return lines;
     }
