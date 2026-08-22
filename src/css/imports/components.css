@@ -1,0 +1,191 @@
+/* Homepage hero */
+
+.hero {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  color: #fff;
+  background-color: #16213a;
+  background-image: linear-gradient(135deg, #16213a 0%, #1f3358 100%);
+  border-top: 4px solid #a93226;
+  border-radius: 4px;
+}
+
+.hero-kicker {
+  margin-bottom: .5rem;
+  color: #d9a441;
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin-top: 0;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+.hero .lead {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Branch cards */
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.branch-card {
+  display: block;
+  padding: 1.25rem;
+  color: #3b414d;
+  background-color: #fff;
+  border: 1px solid #e4e2da;
+  border-top: 4px solid #16213a;
+  border-radius: 4px;
+  transition: box-shadow .2s ease, transform .2s ease;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(22, 33, 58, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+.branch-legislative {
+  border-top-color: #1f4e79;
+  .branch-article { color: #1f4e79; }
+}
+
+.branch-executive {
+  border-top-color: #a93226;
+  .branch-article { color: #a93226; }
+}
+
+.branch-judicial {
+  border-top-color: #a07d1c;
+  .branch-article { color: #a07d1c; }
+}
+
+.branch-article {
+  margin-bottom: .25rem;
+  font-size: .75rem;
+  font-weight: bold;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.branch-name {
+  margin-top: 0;
+  margin-bottom: .1rem;
+}
+
+.branch-role {
+  margin-bottom: .75rem;
+  color: #6a7180;
+  font-style: italic;
+}
+
+.branch-summary {
+  font-size: .9rem;
+}
+
+.branch-link {
+  margin-bottom: 0;
+  color: #1f4e79;
+  font-size: .85rem;
+  font-weight: bold;
+}
+
+/* How a law travels */
+
+.home-flow {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.flow-steps {
+  padding-left: 0;
+  list-style: none;
+  counter-reset: step;
+
+  li {
+    position: relative;
+    margin-bottom: .75rem;
+    padding: .75rem 1rem .75rem 3rem;
+    background-color: #f6f5f0;
+    border-radius: 4px;
+    counter-increment: step;
+
+    &::before {
+      content: counter(step);
+      position: absolute;
+      top: .75rem;
+      left: .75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #fff;
+      background-color: #16213a;
+      border-radius: 50%;
+      font-size: .85rem;
+      font-weight: bold;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+/* Fact box on branch pages */
+
+.fact-box {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background-color: #f6f5f0;
+  border-left: 4px solid #d9a441;
+  border-radius: 0 4px 4px 0;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  dl {
+    margin-bottom: 0;
+  }
+
+  dt {
+    color: #16213a;
+    font-size: .8rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin-left: 0;
+    margin-bottom: .6rem;
+  }
+}
+
+/* Generic page list */
+
+.page-list {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
