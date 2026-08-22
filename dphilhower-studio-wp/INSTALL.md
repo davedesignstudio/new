@@ -85,6 +85,17 @@ Database fields for the installer:
 - Password: `wordpress`
 - Database host: `db`
 
+## GitHub Pages (static site)
+
+The HTML site is copied to the `gh-pages` branch on every push. Enable it once in the GitHub repo:
+
+1. Settings → Pages
+2. Deploy from a branch
+3. Branch `gh-pages`, folder `/` (root)
+4. Save
+
+The public URL is https://davedesignstudio.github.io/new/
+
 ## After install
 
 1. Delete any default “Hello world” post if you do not want a blog.
