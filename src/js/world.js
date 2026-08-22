@@ -359,12 +359,13 @@
     );
   }
 
-  function buildForest(terrain, seed) {
+  function buildForest(terrain, seed, clearPts) {
     var noise = terrain.noise;
     var rnd = mulberry32(seed ^ 0xabc);
     var group = new THREE.Group();
+    var clears = clearPts || [];
     var i;
-    for (i = 0; i < 320; i++) {
+    for (i = 0; i < 280; i++) {
       var x = (rnd() - 0.5) * terrain.size * 0.88;
       var z = (rnd() - 0.5) * terrain.size * 0.88;
       var nx = x / (terrain.size * 0.5);
@@ -373,6 +374,17 @@
       var h = sampleHeight(terrain, x, z);
       if (d < 0.1 || d > 0.9 || h < 0.5 || h > 6.5) continue;
       if (Math.abs(noise.noise2(nx * 0.5, nz * 0.5 + 1.2)) < 0.16) continue;
+      var blocked = false;
+      var c;
+      for (c = 0; c < clears.length; c++) {
+        var dx = x - clears[c].x;
+        var dz = z - clears[c].z;
+        if (dx * dx + dz * dz < 16) {
+          blocked = true;
+          break;
+        }
+      }
+      if (blocked) continue;
       var th = 1.3 + rnd() * 1.4;
       var trunk = cyl(0.1 + rnd() * 0.12, th, "#3a2a1a", 5);
       trunk.position.set(x, h + th * 0.5, z);
@@ -440,11 +452,25 @@
     }
     var halo = new THREE.Mesh(
       new THREE.RingBufferGeometry(0.9, 1.15, 20),
-      new THREE.MeshBasicMaterial({ color: npc.accent, transparent: true, opacity: 0.35, side: THREE.DoubleSide })
+      new THREE.MeshBasicMaterial({
+        color: npc.accent,
+        transparent: true,
+        opacity: 0.45,
+        side: THREE.DoubleSide
+      })
     );
     halo.rotation.x = -Math.PI / 2;
     halo.position.y = 0.08;
     g.add(halo);
+    // Tall trail beacon so hikers can spot someone from a ridge away
+    var pole = cyl(0.07, 3.2, "#3a2a1a", 5);
+    pole.position.set(0.9, 1.6, 0);
+    g.add(pole);
+    var lamp = cyl(0.22, 0.35, npc.accent, 6);
+    lamp.position.set(0.9, 3.3, 0);
+    lamp.material.emissive = hex(npc.accent);
+    lamp.material.emissiveIntensity = 0.8;
+    g.add(lamp);
     g.userData = { npc: npc, line: 0, met: false, halo: halo };
     return g;
   }
@@ -641,7 +667,6 @@
     var terrain = buildTerrain(this.seed);
     this.terrain = terrain;
     this.worldRoot.add(terrain.mesh);
-    this.worldRoot.add(buildForest(terrain, this.seed));
     this.worldRoot.add(buildRocks(terrain, this.seed));
     this.worldRoot.add(buildStarTable(terrain));
 
@@ -663,34 +688,60 @@
     }
 
     var rnd = mulberry32(this.seed ^ 0x4e5043);
+    var curvePts = this.trailPts;
+    var curve =
+      curvePts.length > 1
+        ? new THREE.CatmullRomCurve3(curvePts, false, "catmullrom", 0.4)
+        : null;
+    var clearPts = this.trailPts.slice();
     NPCS.forEach(function (npc, i) {
-      var t = (i + 0.55) / (NPCS.length + 0.2);
-      var idx = Math.min(self.trailPts.length - 2, Math.floor(t * (self.trailPts.length - 1)));
-      var a = self.trailPts[idx];
-      var b = self.trailPts[Math.min(self.trailPts.length - 1, idx + 1)];
+      var u = (i + 0.35) / (NPCS.length + 0.2);
+      var mid;
+      if (curve) {
+        mid = curve.getPoint(Math.min(0.92, Math.max(0.04, u)));
+      } else {
+        mid = (curvePts[0] || new THREE.Vector3()).clone();
+      }
+      var tangent = curve
+        ? curve.getTangent(Math.min(0.92, Math.max(0.04, u)))
+        : new THREE.Vector3(1, 0, 0);
+      tangent.y = 0;
+      if (tangent.lengthSq() < 0.001) tangent.set(1, 0, 0);
+      tangent.normalize();
       var side = i % 2 === 0 ? 1 : -1;
-      var mid = a.clone().lerp(b, 0.35 + rnd() * 0.3);
-      var dir = b.clone().sub(a);
-      dir.y = 0;
-      if (dir.lengthSq() < 0.001) dir.set(1, 0, 0);
-      dir.normalize();
-      var perp = new THREE.Vector3(-dir.z, 0, dir.x).multiplyScalar(side * (2.2 + rnd()));
+      var perp = new THREE.Vector3(-tangent.z, 0, tangent.x).multiplyScalar(
+        side * (1.15 + rnd() * 0.35)
+      );
       mid.add(perp);
       mid.y = sampleHeight(terrain, mid.x, mid.z);
       var mesh = buildNpc(npc, mid);
-      mesh.lookAt(a.x, mid.y, a.z);
+      var look = mid.clone().add(tangent);
+      mesh.lookAt(look.x, mid.y, look.z);
       self.worldRoot.add(mesh);
       self.npcMeshes.push(mesh);
+      clearPts.push(mid.clone());
     });
+
+    this.worldRoot.add(buildForest(terrain, this.seed, clearPts));
 
     this.scene.add(this.worldRoot);
 
     var start = this.trailPts[0] || new THREE.Vector3(0, 2, 10);
-    this.pos.set(start.x, start.y + EYE, start.z + 3);
-    this.yaw = Math.atan2(
-      -(this.trailPts[1] ? this.trailPts[1].x - start.x : 0),
-      -(this.trailPts[1] ? this.trailPts[1].z - start.z : -1)
-    );
+    // Stand on the path facing the first walker
+    if (this.npcMeshes[0]) {
+      var first = this.npcMeshes[0].position;
+      var back = start.clone().sub(first).setY(0);
+      if (back.lengthSq() < 0.01) back.set(0, 0, 3);
+      back.normalize().multiplyScalar(4.5);
+      this.pos.set(first.x + back.x, sampleHeight(terrain, first.x + back.x, first.z + back.z) + EYE, first.z + back.z);
+      this.yaw = Math.atan2(-(first.x - this.pos.x), -(first.z - this.pos.z));
+    } else {
+      this.pos.set(start.x, start.y + EYE, start.z + 3);
+      this.yaw = Math.atan2(
+        -(this.trailPts[1] ? this.trailPts[1].x - start.x : 0),
+        -(this.trailPts[1] ? this.trailPts[1].z - start.z : -1)
+      );
+    }
     this.pitch = -0.05;
     this._eLatch = true;
     this.keys = {};
