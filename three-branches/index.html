@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Three Branches of Government — How American Power Is Divided</title>
+<meta name="description" content="An interactive guide to the legislative, executive, and judicial branches of the United States government, the checks each holds over the others, and how a bill becomes a law." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#branches">Skip to the three branches</a>
+
+<header class="hero">
+  <div class="hero__ornament" aria-hidden="true">
+    <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax meet">
+      <defs>
+        <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fbf6ea" stop-opacity=".30" />
+          <stop offset="100%" stop-color="#fbf6ea" stop-opacity=".04" />
+        </linearGradient>
+      </defs>
+      <g fill="url(#stone)">
+        <polygon points="600,40 1010,190 190,190" />
+        <rect x="150" y="190" width="900" height="26" />
+        <rect x="170" y="382" width="860" height="30" />
+        <g id="cols">
+          <rect x="215" y="216" width="58" height="166" />
+          <rect x="341" y="216" width="58" height="166" />
+          <rect x="467" y="216" width="58" height="166" />
+          <rect x="593" y="216" width="58" height="166" />
+          <rect x="719" y="216" width="58" height="166" />
+          <rect x="845" y="216" width="58" height="166" />
+          <rect x="927" y="216" width="58" height="166" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero__inner">
+    <p class="eyebrow">The United States Constitution</p>
+    <h1>Three&nbsp;Branches<br /><span class="hero__of">of</span> Government</h1>
+    <p class="hero__lede">
+      The framers split federal power in three so that no single office could hold all of it.
+      One branch writes the law, one carries it out, one says what it means — and each one can
+      stop the other two.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#branches">Explore the branches</a>
+      <a class="btn btn--ghost" href="#balances">See the checks &amp; balances</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="branches" class="section" aria-labelledby="branches-title">
+    <div class="section__head">
+      <p class="eyebrow">Articles I, II, and III</p>
+      <h2 id="branches-title">Pick a branch</h2>
+      <p class="section__lede">Each pillar below opens the full brief for that branch: who serves in it, what it may do, and where its authority runs out.</p>
+    </div>
+
+    <div class="pillars" role="tablist" aria-label="The three branches of government"></div>
+
+    <div class="brief" id="brief" role="tabpanel" tabindex="-1" aria-live="polite"></div>
+  </section>
+
+  <section id="balances" class="section section--dark" aria-labelledby="balances-title">
+    <div class="section__head">
+      <p class="eyebrow">Separation of powers</p>
+      <h2 id="balances-title">Checks &amp; balances</h2>
+      <p class="section__lede">Every branch holds a leash on the other two. Choose a branch to trace the checks it exercises, or read the grid one cell at a time.</p>
+    </div>
+
+    <div class="balance">
+      <div class="balance__diagram">
+        <svg class="triangle" viewBox="0 0 460 400" role="img" aria-label="Diagram of the three branches and the checks running between them">
+          <g class="triangle__arrows"></g>
+          <g class="triangle__nodes"></g>
+        </svg>
+        <div class="balance__switch" role="group" aria-label="Choose which branch's checks to trace"></div>
+      </div>
+      <div class="balance__detail" id="balance-detail" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="bill" class="section" aria-labelledby="bill-title">
+    <div class="section__head">
+      <p class="eyebrow">The system in motion</p>
+      <h2 id="bill-title">How a bill becomes a law</h2>
+      <p class="section__lede">A single idea has to survive all three branches. Step through the journey to see which branch holds the pen at each stage.</p>
+    </div>
+
+    <div class="journey">
+      <ol class="journey__track"></ol>
+      <div class="journey__stage" id="journey-stage" aria-live="polite"></div>
+      <div class="journey__controls">
+        <button class="btn btn--ghost" type="button" data-journey="prev">Previous step</button>
+        <p class="journey__count" id="journey-count"></p>
+        <button class="btn btn--primary" type="button" data-journey="next">Next step</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="section section--dark" aria-labelledby="quiz-title">
+    <div class="section__head">
+      <p class="eyebrow">Check yourself</p>
+      <h2 id="quiz-title">Six questions</h2>
+      <p class="section__lede">Answer to see whether you have the division of power straight.</p>
+    </div>
+    <div class="quiz" id="quiz-root"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer__quote">
+    &ldquo;The accumulation of all powers, legislative, executive, and judiciary, in the same hands
+    &hellip; may justly be pronounced the very definition of tyranny.&rdquo;
+  </p>
+  <p class="footer__cite">James Madison, Federalist No. 47</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
