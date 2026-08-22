@@ -10,7 +10,7 @@ Nobody can list every book in every library on Earth. That is the first true sen
 
 A **holding** is a copy on a shelf, or a record that says a copy is there. A **title** is the work those copies are trying to be. A **mouth** is the story a person actually tells. The three are not the same. Callimachus already knew: the Pinakes named a person, then a first line, then a doubt. Google, WorldCat, and the national stacks are still doing that work. They have not finished. They will not finish. Sunday’s number is already wrong.
 
-This page is not the books. It is the *sillybos* tied to the idea of the books. The one library we sat with at length is [Alexandria](/alexandria). The named storehouses through time are [Stacks](/stacks). The talk with other tellers is [Libraries](/libraries).
+This page is not the books. It is the *sillybos* tied to the idea of the books. The one library we sat with at length is [Alexandria](/alexandria). The named storehouses through time are [Stacks](/stacks). Public-domain English of the old mouths is [Mouths](/mouths). The talk with other tellers is [Libraries](/libraries).
 
 ---
 

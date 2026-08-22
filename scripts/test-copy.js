@@ -134,5 +134,13 @@ needFile("site/content/pages/holdings.md", [
   "holding is not a title",
   "129,864,880"
 ]);
+needFile("site/content/pages/mouths.md", [
+  "every text",
+  "Translation is also required",
+  "Aristeas",
+  "common meal",
+  "Forty thousand books",
+  "not that they prophesied"
+]);
 
 console.log("copy lint passed (" + files.length + " files)");

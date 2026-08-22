@@ -10,7 +10,7 @@ Nobody can find every library in existence in all of time. That is the first tru
 
 IFLA’s Library Map of the World counts libraries in the **millions** once you include public, school, academic, national, and special. Tomorrow some will open. Some will close. A complete list would be a live census of Earth, updated every second, and it would still miss the oral.
 
-This page is a Pinakes of **named** storehouses: enough to show that Alexandria was not the only hunger, and that storage is older than Greek. The deep sitting with one of them is [Alexandria](/alexandria). The attempt to count the books inside is [Holdings](/holdings). The craft conversation is [Libraries](/libraries).
+This page is a Pinakes of **named** storehouses: enough to show that Alexandria was not the only hunger, and that storage is older than Greek. The deep sitting with one of them is [Alexandria](/alexandria). The attempt to count the books inside is [Holdings](/holdings). Public-domain English of the old mouths: [Mouths](/mouths). The craft conversation is [Libraries](/libraries).
 
 ---
 
@@ -72,6 +72,6 @@ Athenaeus seated his philosophers at an endless dinner and let them quote lost b
 
 ## Tonight
 
-Walk [the story](/story). Count nothing. Sit. If you need the number of books, [Holdings](/holdings) will tell you why the number is already late. If you need one ancient table, [Alexandria](/alexandria). If you need how we read other tellers, [Libraries](/libraries).
+Walk [the story](/story). Count nothing. Sit. If you need the number of books, [Holdings](/holdings) will tell you why the number is already late. If you need one ancient table, [Alexandria](/alexandria). If you need the old mouths in English, [Mouths](/mouths). If you need how we read other tellers, [Libraries](/libraries).
 
 The path that eats its own dust is still a path. Walk it kindly. Earth does not end. It is only stored.

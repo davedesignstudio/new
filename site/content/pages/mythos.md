@@ -24,6 +24,7 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 - **[Alexandria](/alexandria)** — the Mouseion; Pinakes; not one fire.
 - **[Stacks](/stacks)** — named storehouses through time; not every library.
 - **[Holdings](/holdings)** — every book on Earth, which nobody has.
+- **[Mouths](/mouths)** — every text in English, which nobody has; public-domain scraps we sat with.
 - **[History](/history)** — palace, prairie, stall: one supper, not three captions.
 - **[Keystone](/keystone)** — the stone is not the soup; told down the table.
 

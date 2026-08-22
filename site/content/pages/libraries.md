@@ -106,7 +106,7 @@ Old host law (the Greek *xenia* of the roadside house, and every culture that sa
 
 ## The storehouses — not every book, not every room
 
-Nobody can list every book in every library on Earth, or find every library in all of time. The Mouseion at [Alexandria](/alexandria) is the one table we sat with until the crumbs spoke. [Stacks](/stacks) names other rooms — Nineveh, Nalanda, Fez, Dunhuang, Timbuktu — and admits the millions with no plaque. [Holdings](/holdings) is the union-catalog problem: a holding is not a title, WorldCat is not the planet, Sunday’s number is already late.
+Nobody can list every book in every library on Earth, or find every library in all of time. The Mouseion at [Alexandria](/alexandria) is the one table we sat with until the crumbs spoke. [Stacks](/stacks) names other rooms — Nineveh, Nalanda, Fez, Dunhuang, Timbuktu — and admits the millions with no plaque. [Holdings](/holdings) is the union-catalog problem: a holding is not a title, WorldCat is not the planet, Sunday’s number is already late. [Mouths](/mouths) is what we actually read in English: Aristeas, Strabo, Seneca, Plutarch — public-domain scraps, not every text.
 
 **What we took.** Pinakes as a table of persons and doubts. Store, don’t bury. Compare mouths.
 
@@ -137,4 +137,4 @@ Nobody can list every book in every library on Earth, or find every library in a
 | Gaiman / Zipes | Compost the tale. Contaminate it for this kitchen. |
 | Guest-friendship | Feed first. Ask names later. |
 
-If you are building a table of your own, start with [the story](/story). The pieces of history, told as one supper, are on [History](/history). The load-bearing stone, found in tales told down the table, is [Keystone](/keystone). Then drive [the paperback](/adventure). The six kitchens are on [the route](/route). Panels live on [craft](/craft). Food research lives on [kitchen](/kitchen). Named rooms through time: [Stacks](/stacks). The count of books, and why it cannot finish: [Holdings](/holdings). The one ancient table: [Alexandria](/alexandria).
+If you are building a table of your own, start with [the story](/story). The pieces of history, told as one supper, are on [History](/history). The load-bearing stone, found in tales told down the table, is [Keystone](/keystone). Then drive [the paperback](/adventure). The six kitchens are on [the route](/route). Panels live on [craft](/craft). Food research lives on [kitchen](/kitchen). Named rooms through time: [Stacks](/stacks). The count of books, and why it cannot finish: [Holdings](/holdings). The one ancient table: [Alexandria](/alexandria). The old mouths in English: [Mouths](/mouths).

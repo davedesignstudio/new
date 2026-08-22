@@ -10,13 +10,15 @@ Nobody can write from all the text held at Alexandria. That is the first true se
 
 This page is a *sillybos* — the scrap tied to a roll. First line. A count of what is still here. A note that “all the books of the world” was always a king’s hunger, not a packing list.
 
-The talk with other modern tellers is [Libraries](/libraries). Named rooms through time are [Stacks](/stacks). The attempt to count every book is [Holdings](/holdings). What Earth stores instead of burying is in [the Hidden Parts](/hidden).
+The talk with other modern tellers is [Libraries](/libraries). Named rooms through time are [Stacks](/stacks). The attempt to count every book is [Holdings](/holdings). Public-domain English of the old mouths, short and cited, is [Mouths](/mouths). What Earth stores instead of burying is in [the Hidden Parts](/hidden).
 
 ---
 
 ## The Mouseion was a table, then a stack
 
-The Great Library sat inside the **Mouseion**, a shrine of the Muses in the royal quarter of Alexandria, probably taking physical shape under Ptolemy II after groundwork under Ptolemy I. It was not a public browsing room. It was a research house: shared dining, gardens, lecture rooms, shelves of papyrus. Strabo, visiting around 20 BCE, still saw the community. Scholars were paid, housed, fed, and excused from tax so they could sit with the stacks.
+The Great Library sat inside the **Mouseion**, a shrine of the Muses in the royal quarter of Alexandria, probably taking physical shape under Ptolemy II after groundwork under Ptolemy I. It was not a public browsing room. It was a research house: shared dining, gardens, lecture rooms, shelves of papyrus. Strabo, visiting around 20 BCE, still saw the community. In Hamilton and Falconer’s English he says the Museum is **a part of the palaces**, with a public walk, seats, and a large hall where the learned take their **common meal**. A priest, once named by kings, was by then named by Caesar. He does not name a separate Library. The stack, if it still sat, sat inside the meal. Scholars were paid, housed, fed, and excused from tax so they could sit with the stacks.
+
+The city itself was traced in flour when the chalk ran out. Strabo keeps that omen. Food founded the map.
 
 A later, smaller store — the “daughter” library — was put in the **Serapeum**, the temple of Serapis, when the palace shelves ran out of room.
 
@@ -30,7 +32,7 @@ Agents bought at the book fairs of Athens and Rhodes. Older copies were preferre
 
 Galen, much later, reports a harbor rule: books found on incoming ships were taken, copied, and the **originals kept**. The copies went back to the owners. Those rolls were marked *from the ships*. Another Galen story: Ptolemy III borrowed Athens’ state copies of Aeschylus, Sophocles, and Euripides against a deposit of fifteen talents, sent back fair copies, and kept the old mouths. He forfeited the silver.
 
-The *Letter of Aristeas* — a second-century BCE story, not a shipping log — says Demetrius of Phalerum advised the king to collect the books of the world, and remembers a Greek Torah made for that table. Modern scholars treat the letter as late and partly wrong. The hunger inside it is still the policy: gather everything, then compare.
+The *Letter of Aristeas* — a second-century BCE story, not a shipping log — says Demetrius of Phalerum advised the king to collect the books of the world, and remembers a Greek Torah made for that table. Thackeray’s 1917 English already footnotes the lie: Demetrius **was never the royal librarian**. Jerome, reading the same tale, says the translators **conferred together, not that they prophesied**. Modern scholars treat the letter as late and partly wrong. The hunger inside it is still the policy: gather everything, then compare. The plates we actually sat with are on [Mouths](/mouths).
 
 **What we took.** Storage as a moral act. Compare versions. Tag where a story came from. Do not pretend two kitchens are one recipe.
 
@@ -92,7 +94,7 @@ The Homer in a modern schoolroom, the idea that a poem has a correct line-count,
 
 Popular tellings want a single blaze and a villain. The sources will not sit still for that.
 
-- **48 BCE.** Caesar’s fire at the docks. Seneca, quoting Livy, says forty thousand rolls. Plutarch says the great library burned. Cassius Dio points at warehouses of grain and books by the water. Strabo still visits the Mouseion decades later. Damage, then a smaller house.
+- **48 BCE.** Caesar’s fire at the docks. Seneca, quoting Livy, says forty thousand rolls, then calls the stack learned luxury — books amassed for show. Plutarch says the fire spread from the dockyards and destroyed the great library, and that Caesar swam with his own papers held dry. Cassius Dio points at warehouses of grain and books by the water. Strabo still visits the Mouseion decades later. Damage, then a smaller house. The English of those mouths: [Mouths](/mouths).
 - **270s CE.** Aurelian’s war wrecks the Broucheion, the royal quarter. If the Mouseion still lived, that is a likely death. Diocletian’s siege later hits the same streets.
 - **391 CE.** Bishop Theophilus’s people pull down the Serapeum. Whether a working library still sat in that temple is argued. Orosius is the loudest witness that books died with the building. Other writers go quiet, which is also a kind of witness.
 - **642 CE.** A late Arabic story has Caliph Umar fueling bath-fires with the residue of pagan wisdom. It appears centuries after the conquest. John Philoponus, named in the tale, was almost certainly already dead. Serious history sets this one aside.
@@ -125,6 +127,6 @@ A fortress of books falls the way a fortress of kitchens falls. First nobody is 
 
 The modern **Bibliotheca Alexandrina** is a new storehouse on the old water. It is not the Mouseion. Neither is this page.
 
-If you want the living catalog, walk [the story](/story). If you want the same supper told as history, sit at [History](/history). If you want the stone that is not the soup, read [Keystone](/keystone). If you want other tellers in this century, stay in [Libraries](/libraries). Named rooms: [Stacks](/stacks). The count of books: [Holdings](/holdings). If you want to be read while you walk, that is [Road-Wisdom](/road).
+If you want the living catalog, walk [the story](/story). If you want the same supper told as history, sit at [History](/history). If you want the stone that is not the soup, read [Keystone](/keystone). If you want other tellers in this century, stay in [Libraries](/libraries). Named rooms: [Stacks](/stacks). The count of books: [Holdings](/holdings). The old mouths in English: [Mouths](/mouths). If you want to be read while you walk, that is [Road-Wisdom](/road).
 
 The path that eats its own dust is still a path. Walk it kindly. Earth does not end. It is only stored.
