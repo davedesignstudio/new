@@ -1,15 +1,20 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
+  <div class="sidebar-inner">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
+      <a href="{{ .Site.BaseURL }}" class="brand">
+        <span class="brand-badge" aria-hidden="true">&#9733;</span>
+        <span class="brand-name">{{ .Site.Title }}</span>
+      </a>
+      <p class="lead">{{ .Site.Params.description }}</p>
     </div>
 
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+    <nav class="sidebar-nav" aria-label="Primary">
+      <a class="sidebar-nav-item" href="/">Home</a>
       {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
-    </ul>
+        <a class="sidebar-nav-item" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+
+    <p class="sidebar-foot">Separation of powers, in plain English.</p>
   </div>
 </div>

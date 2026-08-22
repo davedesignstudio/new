@@ -1,7 +1,13 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
+<div class="content">
+  <article class="page reveal">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="page-body">
+      {{ .Content }}
+    </div>
+    <p class="page-back"><a href="/">&larr; Back to the three branches</a></p>
+  </article>
 </div>
 
 {{ partial "footer" . }}

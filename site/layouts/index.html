@@ -1,10 +1,94 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
+<div class="content">
+
+  <section class="hero" id="top">
+    <p class="eyebrow">United States Federal Government</p>
+    <h1 class="hero-title">Three Branches,<br>One Republic</h1>
+    <p class="hero-lead">
+      The U.S. Constitution deliberately splits power among three co-equal
+      branches. Each has its own job, and each can check the others &mdash; so
+      that no single part of government grows too strong.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#legislative">Explore the branches</a>
+      <a class="btn btn-ghost" href="#checks">How they balance</a>
+    </div>
+  </section>
+
+  <section class="branches" aria-label="The three branches">
+
+    <article class="branch reveal" id="legislative">
+      <div class="branch-mark" aria-hidden="true">
+        <span class="article">Article&nbsp;I</span>
+        <span class="numeral">I</span>
+      </div>
+      <div class="branch-body">
+        <h2 class="branch-title">Legislative</h2>
+        <p class="branch-sub">Congress &mdash; it makes the laws.</p>
+        <dl class="branch-facts">
+          <div><dt>Made of</dt><dd>The House of Representatives (435 members) and the Senate (100 members).</dd></div>
+          <div><dt>Core job</dt><dd>Write and pass bills, control federal spending, and declare war.</dd></div>
+          <div><dt>Signature power</dt><dd>The &ldquo;power of the purse&rdquo; &mdash; only Congress can raise revenue and fund the government.</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="branch reveal" id="executive">
+      <div class="branch-mark" aria-hidden="true">
+        <span class="article">Article&nbsp;II</span>
+        <span class="numeral">II</span>
+      </div>
+      <div class="branch-body">
+        <h2 class="branch-title">Executive</h2>
+        <p class="branch-sub">The President &mdash; it carries out the laws.</p>
+        <dl class="branch-facts">
+          <div><dt>Made of</dt><dd>The President, the Vice President, the Cabinet, and the federal agencies.</dd></div>
+          <div><dt>Core job</dt><dd>Enforce the laws, conduct foreign policy, and command the armed forces.</dd></div>
+          <div><dt>Signature power</dt><dd>The veto &mdash; the President can reject legislation passed by Congress.</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="branch reveal" id="judicial">
+      <div class="branch-mark" aria-hidden="true">
+        <span class="article">Article&nbsp;III</span>
+        <span class="numeral">III</span>
+      </div>
+      <div class="branch-body">
+        <h2 class="branch-title">Judicial</h2>
+        <p class="branch-sub">The Courts &mdash; it interprets the laws.</p>
+        <dl class="branch-facts">
+          <div><dt>Made of</dt><dd>The Supreme Court and the lower federal courts.</dd></div>
+          <div><dt>Core job</dt><dd>Decide cases and settle what the law and the Constitution actually mean.</dd></div>
+          <div><dt>Signature power</dt><dd>Judicial review &mdash; courts can strike down laws or actions that violate the Constitution.</dd></div>
+        </dl>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="checks reveal" id="checks">
+    <h2 class="section-title">Checks &amp; Balances</h2>
+    <p class="section-lead">
+      Separating power is only half the design. Each branch also holds tools to
+      restrain the other two.
+    </p>
+    <ul class="checks-grid">
+      <li><span class="from">Congress</span> can override a veto, impeach the President, and reject appointments.</li>
+      <li><span class="from">The President</span> can veto bills and appoints federal judges.</li>
+      <li><span class="from">The Courts</span> can declare laws and executive actions unconstitutional.</li>
+      <li><span class="from">Congress</span> confirms judges and can impeach them too.</li>
+      <li><span class="from">The President</span> enforces &mdash; or must abide by &mdash; court rulings.</li>
+      <li><span class="from">The Courts</span> interpret the statutes Congress writes.</li>
+    </ul>
+  </section>
+
+  <footer class="site-note">
+    <p>An educational overview &middot; Based on Articles I, II, and III of the U.S. Constitution.</p>
+    <p><a href="/about">Read more about why it works this way &rarr;</a></p>
+  </footer>
+
 </div>
 
 {{ partial "footer" . }}

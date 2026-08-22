@@ -1,85 +1,305 @@
-.content {
-  h1 {
-    font-family: "Rock Salt", cursive;
-    text-transform: capitalize;
-    margin: 0 0 64px 0;
+/* ---------- Reveal animation ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
+}
 
-  h2 em, h3 {
-    text-transform: capitalize;
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 1rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--red);
+  margin: 0 0 1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 800;
+  margin: 0 0 1.1rem;
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 34rem;
+  margin: 0 0 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: .7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .01em;
+  transition: transform .15s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: var(--red);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  color: var(--navy);
+  border: 2px solid var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+/* ---------- Branch cards ---------- */
+
+.branches {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.branch {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.branch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+}
+
+.branch:nth-child(1)::before { background: var(--blue); }
+.branch:nth-child(2)::before { background: var(--red); }
+.branch:nth-child(3)::before { background: var(--gold); }
+
+.branch-mark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.branch-mark .article {
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.branch-mark .numeral {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: var(--navy);
+  line-height: 1;
+  opacity: .9;
+}
+
+.branch-title {
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+.branch-sub {
+  color: var(--red);
+  font-weight: 600;
+  margin: .2rem 0 0;
+}
+
+.branch-facts {
+  margin: .5rem 0 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.branch-facts > div {
+  display: grid;
+  gap: .15rem;
+}
+
+.branch-facts dt {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.branch-facts dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (min-width: 60em) {
+  .branches {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
   }
-
-  h2 em:after {
-    content: '. ';
-    color: #ff7660;
+  .branch {
+    padding: 1.75rem 1.5rem;
   }
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+/* ---------- Checks & balances ---------- */
 
-    li {
-      display: flex;
-      align-items: top;
-    }
+.checks {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  margin-bottom: 3rem;
+  scroll-margin-top: 1.5rem;
+  box-shadow: var(--shadow);
+}
 
-    p {
-      flex-grow: 1;
-      display: inline-block;
+.section-title {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 0 .5rem;
+}
 
-      &:last-child {
-        padding-left: 16px;
-        text-align: right;
-      }
-    }
+.checks .section-title::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 4px;
+  margin-top: .75rem;
+}
+
+.section-lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 34rem;
+}
+
+.checks .section-lead {
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.75rem;
+}
+
+.checks-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.checks-grid li {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  font-size: .98rem;
+}
+
+.checks-grid .from {
+  display: block;
+  color: var(--gold-soft);
+  font-weight: 700;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .25rem;
+}
+
+@media (min-width: 44em) {
+  .checks-grid {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  input,
-  textarea,
-  button {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+/* ---------- Notes / pages ---------- */
 
-  input,
-  textarea {
-    &:focus {
-      border: 1px solid #444;
-    }
-  }
+.site-note {
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
 
-  .buttons {
-    text-align: center;
-  }
+.site-note p {
+  margin: 0 0 .35rem;
+}
 
-  button {
-    color: white;
-    background: #ff7660;
-    border: none;
-    cursor: pointer;
-    transition: background .2s ease;
+.page-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 1.25rem;
+}
 
-    &:hover {
-      background: #d35b48;
-    }
+.page-body h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
 
-    &.half-button {
-      display: inline-block;
-      width: 30%;
+.page-body ul {
+  padding-left: 1.2rem;
+}
 
-      &:last-child {
-        margin-left: 2%;
-      }
-    }
-  }
+.page-body li {
+  margin-bottom: .4rem;
+}
+
+.page-back {
+  margin-top: 2.5rem;
+  font-weight: 600;
+}
+
+.list-links {
+  padding-left: 1.2rem;
 }
