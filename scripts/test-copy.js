@@ -99,4 +99,48 @@ if (keyMissing.length) {
   process.exit(1);
 }
 
+function needFile(rel, phrases) {
+  var p = path.join(__dirname, "..", rel);
+  if (!fs.existsSync(p)) {
+    console.log("copy lint failed: missing " + rel);
+    process.exit(1);
+  }
+  var text = fs.readFileSync(p, "utf8");
+  var miss = phrases.filter(function (w) {
+    return text.indexOf(w) === -1;
+  });
+  if (miss.length) {
+    console.log("copy lint failed: " + rel + " missing: " + miss.join(", "));
+    process.exit(1);
+  }
+}
+
+needFile("site/content/pages/alexandria.md", [
+  "We do not have the Library",
+  "Pinakes",
+  "from the ships",
+  "not one fire"
+]);
+needFile("site/content/pages/stacks.md", [
+  "every library",
+  "all of time",
+  "Ashurbanipal",
+  "Nalanda",
+  "opposite move"
+]);
+needFile("site/content/pages/holdings.md", [
+  "every book",
+  "WorldCat",
+  "holding is not a title",
+  "129,864,880"
+]);
+needFile("site/content/pages/mouths.md", [
+  "every text",
+  "Translation is also required",
+  "Aristeas",
+  "common meal",
+  "Forty thousand books",
+  "not that they prophesied"
+]);
+
 console.log("copy lint passed (" + files.length + " files)");

@@ -1002,6 +1002,18 @@ p {
   color: rgba(242, 239, 232, 0.88);
 }
 
+.section-pages .page-body.prose blockquote {
+  margin: 1.4rem 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid var(--copper);
+  color: var(--paper);
+}
+
+.section-pages .page-body.prose blockquote p {
+  color: var(--paper);
+  font-size: 1.04rem;
+}
+
 .site-footer .tape-note,
 .site-footer .tape-kicker {
   display: none;
