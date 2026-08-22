@@ -167,12 +167,13 @@ function dps_seed_demo_content( $force = false ) {
 	$about_id  = dps_sideload_theme_image( 'about-desk.png', 'Studio desk' );
 	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(
-		'work-brand.png' => dps_sideload_theme_image( 'work-brand.png', 'Brand identity' ),
-		'work-web.png'   => dps_sideload_theme_image( 'work-web.png', 'Website design' ),
-		'work-print.png' => dps_sideload_theme_image( 'work-print.png', 'Print design' ),
-		'work-menu.png'  => dps_sideload_theme_image( 'work-menu.png', 'Hospitality' ),
-		'work-pack.png'   => dps_sideload_theme_image( 'work-pack.png', 'Packaging' ),
-		'ember-kit.png'   => dps_sideload_theme_image( 'ember-kit.png', 'Ember Pie Co. kit' ),
+		'ember-kit.png'          => dps_sideload_theme_image( 'ember-kit.png', 'Ember Pie Co. kit' ),
+		'bville-hero.png'        => dps_sideload_theme_image( 'bville-hero.png', 'Bville Pizza & Grill' ),
+		'ritual-hero.png'        => dps_sideload_theme_image( 'ritual-hero.png', 'The Ritual Café' ),
+		'magicbuds-hero.png'     => dps_sideload_theme_image( 'magicbuds-hero.png', 'Magic Buds' ),
+		'cowlick-hero.png'       => dps_sideload_theme_image( 'cowlick-hero.png', 'Cow Lick' ),
+		'sthills-hero.png'       => dps_sideload_theme_image( 'sthills-hero.png', 'Service The Hills' ),
+		'bvdeli-hero.png'        => dps_sideload_theme_image( 'bvdeli-hero.png', 'Bernardsville Deli' ),
 	);
 
 	if ( $hero_id ) {
@@ -217,8 +218,8 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'ember-pie-co',
 			'title'    => 'Ember Pie Co.',
 			'image'    => 'ember-kit.png',
-			'excerpt'  => 'Live brand kit — window, menu, print',
-			'subtitle' => 'Live brand kit — window, menu, print',
+			'excerpt'  => 'Live brand kit — window · menu · print',
+			'subtitle' => 'Live brand kit — window · menu · print',
 			'client'   => 'Studio sample, Morris County pie shop',
 			'services' => 'Identity · menu · print · packaging',
 			'year'     => '2026',
@@ -226,66 +227,85 @@ function dps_seed_demo_content( $force = false ) {
 			'content'  => '<p>Guests meet this brand in the street, in their hands, and on a screen before the first slice. The kit is the proof: one type family, one red, one cream, used everywhere it has to survive a printer and a rainy sidewalk.</p><p>This is a studio sample of how D Philhower Studio would build a local pizzeria system — not a template with a new logo dropped in.</p>',
 		),
 		array(
-			'slug'     => 'restaurant-brand-systems',
-			'title'    => 'Restaurant brand systems',
-			'image'    => 'work-brand.png',
-			'excerpt'  => 'Identity, menus, and storefront presence',
-			'subtitle' => 'Identity, menus, and storefront presence',
-			'client'   => 'Hospitality groups, Morris County',
-			'services' => 'Identity · menus · signage direction',
-			'year'     => '2024',
-			'location' => 'Bernardsville & Morristown, NJ',
-			'content'  => '<p>Hospitality brands need more than a logo. Guests meet the identity on a window, a menu, a takeout bag, and a phone screen—often in the same week.</p><h2>The work</h2><p>D Philhower Studio builds restaurant brand systems from the ground up: mark, type, color, menus, and a simple set of rules so staff and printers stay consistent. The goal is a brand that feels local and crafted, not a template retrofitted for the next dining room.</p><h2>Outcome</h2><p>A kit of files and guidelines the kitchen, front of house, and website can all share—so the food and the design pull in the same direction.</p>',
+			'slug'     => 'bville-pizza-grill',
+			'title'    => 'Bville Pizza & Grill',
+			'image'    => 'bville-hero.png',
+			'excerpt'  => 'Bernardsville, shortened the way locals say it',
+			'subtitle' => 'Bernardsville, shortened the way locals say it',
+			'client'   => 'Studio sample, Bernardsville pizza and grill',
+			'services' => 'Identity · menu · packaging',
+			'year'     => '2025',
+			'location' => 'Bernardsville, NJ',
+			'content'  => '<p>Locals already shorten Bernardsville to Bville. The mark has to work as a script on slate and as one ink hit on kraft.</p><p>The orange B is appetite and oven heat — the first letter you see from the lot. Ville sits in forest green so the town and the grill are in the name, not a second pizza red. A gold outline lifts the script off dark slate like a physical sign. The swooshes are Friday-night energy without a clipart pizza.</p>',
 		),
 		array(
-			'slug'     => 'custom-website-design',
-			'title'    => 'Custom website design',
-			'image'    => 'work-web.png',
-			'excerpt'  => 'Marketing sites for Morris County businesses',
-			'subtitle' => 'Structure · visuals · responsive build',
-			'client'   => 'Local service and retail brands',
-			'services' => 'UX · visual design · WordPress / static build',
+			'slug'     => 'ritual-cafe',
+			'title'    => 'The Ritual Café',
+			'image'    => 'ritual-hero.png',
+			'excerpt'  => 'Coffee as a pause, not a rush',
+			'subtitle' => 'Coffee as a pause, not a rush',
+			'client'   => 'Studio sample, Morristown café',
+			'services' => 'Identity · menu · packaging · print',
+			'year'     => '2025',
+			'location' => 'Morristown, NJ',
+			'content'  => '<p>The daily cup is supposed to feel like a ritual. Black, cream, kraft, and gold — a board you can read before you order, and a mark that survives a sleeve.</p><p>The circular logo is a cup seen from above, the ring broken like a pause. Serif for THE RITUAL CAFÉ because this is tradition, not a startup. Gold on the slate board sets hierarchy: category, item, quiet italic ingredients, prices in a column.</p>',
+		),
+		array(
+			'slug'     => 'bernardsville-deli',
+			'title'    => 'Bernardsville Deli & Grocery',
+			'image'    => 'bvdeli-hero.png',
+			'excerpt'  => 'Warm deli, cool grocery',
+			'subtitle' => 'Warm deli, cool grocery',
+			'client'   => 'Studio sample, Bernardsville deli and grocery',
+			'services' => 'Identity · wrap · in-store print',
+			'year'     => '2024',
+			'location' => 'Bernardsville, NJ',
+			'content'  => '<p>Two businesses, one town name. Warm gradients for food you eat now, blue for the aisle you shop later.</p><p>Deli in orange-to-pink is appetite. Bernardsville gets the long B flourish — a signature, family-owned, large enough to survive crumpled paper. The blue line is a horizon between the counter and the grocery.</p>',
+		),
+		array(
+			'slug'     => 'cow-lick',
+			'title'    => 'Cow Lick',
+			'image'    => 'cowlick-hero.png',
+			'excerpt'  => 'A joke you can print',
+			'subtitle' => 'A joke you can print',
+			'client'   => 'Studio sample, ice cream shop',
+			'services' => 'Identity · packaging · window',
 			'year'     => '2025',
 			'location' => 'Morris County, NJ',
-			'content'  => '<p>Most local sites either look like everyone else or hide the thing that makes the business worth choosing. Custom website design here starts with structure: what a visitor needs to believe, then the layout and type that make that obvious on a phone.</p><h2>The work</h2><p>Information architecture, art direction, and a responsive build that matches the identity—fast to load, easy to contact, and ready for search. WordPress when you need to edit; static when you do not.</p><h2>Outcome</h2><p>A marketing site that feels like the same studio that designed the print, not a theme with the logo dropped in.</p>',
+			'content'  => '<p>The cow licks. That is the brief. If the drawing is not funny, the name is just two words.</p><p>The tongue is literal so you remember it. A thick sticker halo exists so the same die-cut can live on a pint, a window, and a freezer door. Chocolate-to-tan type reads as ice cream, not a farm NGO.</p>',
 		),
 		array(
-			'slug'     => 'print-and-packaging',
-			'title'    => 'Print & packaging',
-			'image'    => 'work-print.png',
-			'excerpt'  => 'Collateral that matches the digital brand',
-			'subtitle' => 'Collateral · packaging · campaigns',
-			'client'   => 'Retail and food brands',
-			'services' => 'Print · packaging · campaign art direction',
+			'slug'     => 'service-the-hills',
+			'title'    => 'Service The Hills',
+			'image'    => 'sthills-hero.png',
+			'excerpt'  => 'The tool, not the column',
+			'subtitle' => 'The tool, not the column',
+			'client'   => 'Studio sample, Hills renovation firm',
+			'services' => 'Identity · signage · stationery',
 			'year'     => '2024',
+			'location' => 'Bernardsville / Far Hills, NJ',
+			'content'  => '<p>The Hills already looks like money. The mark had to hold grit and glamour: a saw blade in bronze, not a colonial seal in navy.</p><p>The blade is the tool — precision, wood, the work. Bronze instead of hazard orange elevates a contractor to a studio the house can live with on the lawn. Serif SERVICE is authority. Script The Hills is the place.</p>',
+		),
+		array(
+			'slug'     => 'magic-buds',
+			'title'    => 'Magic Buds',
+			'image'    => 'magicbuds-hero.png',
+			'excerpt'  => 'Sleep without the circus',
+			'subtitle' => 'Sleep without the circus',
+			'client'   => 'Studio sample, wellness brand',
+			'services' => 'Identity · packaging · retail print',
+			'year'     => '2026',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Print still does work a homepage cannot: it sits on a table, gets handed across a counter, and has to survive a printer who has never seen your Figma file.</p><h2>The work</h2><p>Brochures, posters, packaging, and campaign pieces designed for how they actually get made—paper, ink, foil, and folds included. Specs go out with the art so production is not a second design problem.</p><h2>Outcome</h2><p>Collateral that feels worth keeping, and matches what people already saw online.</p>',
-		),
-		array(
-			'slug'     => 'hospitality-storytelling',
-			'title'    => 'Hospitality storytelling',
-			'image'    => 'work-menu.png',
-			'excerpt'  => 'Menus, photography direction, guest touchpoints',
-			'subtitle' => 'Menus · photography direction · guest touchpoints',
-			'client'   => 'Independent restaurants',
-			'services' => 'Menu design · art direction',
-			'year'     => '2023',
-			'location' => 'Morristown, NJ area',
-			'content'  => '<p>A menu is a layout problem and a hospitality problem. Guests should find a dish, feel the room, and trust the price without working for it.</p><h2>The work</h2><p>Menu systems, photo direction, and the small printed pieces that sit between the door and the table. Type and hierarchy do the quiet work so the food can be loud.</p><h2>Outcome</h2><p>Touchpoints that read as one guest journey—from reservation site to check presenter.</p>',
-		),
-		array(
-			'slug'     => 'packaging-systems',
-			'title'    => 'Packaging systems',
-			'image'    => 'work-pack.png',
-			'excerpt'  => 'Product and package design for small makers',
-			'subtitle' => 'Structure · label · unboxing',
-			'client'   => 'Makers and specialty food',
-			'services' => 'Packaging · label design',
-			'year'     => '2025',
-			'location' => 'New Jersey',
-			'content'  => '<p>Packaging has to sell at arm’s length and still feel honest in someone’s kitchen. The studio designs labels, sleeves, and structural graphics that can grow from one SKU to a family.</p><h2>The work</h2><p>Dielines, print-ready art, and a simple system for flavors or sizes so the next product does not need a whole new brand.</p>',
+			'content'  => '<p>Sleep is the product. The photograph sells the result; the label has to feel calm and expensive — not like a party and not like a clinic.</p><p>High-key white is trust and quiet. Deep purple is night without looking like a head shop. There is no cannabis leaf: this is rest. Gold on purple is the only luxury move.</p>',
 		),
 	);
+
+	foreach ( array( 'restaurant-brand-systems', 'custom-website-design', 'print-and-packaging', 'hospitality-storytelling', 'packaging-systems' ) as $old_slug ) {
+		$old = get_page_by_path( $old_slug, OBJECT, 'dps_work' );
+		if ( $old ) {
+			wp_delete_post( $old->ID, true );
+		}
+	}
 
 	$menu_order = 0;
 	foreach ( $projects as $project ) {
@@ -387,7 +407,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'png-native-1' );
+	update_option( 'dps_images_version', 'brands-print-1' );
 	return true;
 }
 

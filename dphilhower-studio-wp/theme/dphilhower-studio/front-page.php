@@ -38,12 +38,19 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		<p class="section-copy"><?php esc_html_e( 'From restaurant identities to marketing websites, each project starts with how the business should feel—then the mark, materials, and site follow.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
+			$featured_ids = array();
+			foreach ( array( 'ember-pie-co', 'ritual-cafe', 'service-the-hills' ) as $featured_slug ) {
+				$featured_post = get_page_by_path( $featured_slug, OBJECT, 'dps_work' );
+				if ( $featured_post ) {
+					$featured_ids[] = $featured_post->ID;
+				}
+			}
 			$works = new WP_Query(
 				array(
 					'post_type'      => 'dps_work',
+					'post__in'       => $featured_ids ? $featured_ids : array( 0 ),
+					'orderby'        => 'post__in',
 					'posts_per_page' => 3,
-					'orderby'        => 'menu_order date',
-					'order'          => 'ASC',
 				)
 			);
 			if ( $works->have_posts() ) :

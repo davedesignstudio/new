@@ -1,18 +1,26 @@
 D Philhower Studio — HTML / CSS / JS files
 
-html      2750  START-HERE.html
-html      2890  about/index.html
-html      3524  contact/index.html
-css      13610  css/main.css
-html      3350  files.html
-html      5797  index.html
-js        1658  js/main.js
-html      3497  services/index.html
-html      2832  work/custom-website-design/index.html
-html      2304  work/hospitality-storytelling/index.html
-html      3424  work/index.html
-html      2321  work/packaging-systems/index.html
-html      2497  work/print-and-packaging/index.html
-html      3452  work/restaurant-brand-systems/index.html
+html     2850  START-HERE.html
+html     3014  about/index.html
+html     3637  contact/index.html
+css      3466  css/editorial.css
+css     16578  css/main.css
+html     3537  files.html
+html     5917  index.html
+js       1167  js/main.js
+html     3610  services/index.html
+html     4577  work/bernardsville-deli/index.html
+html     4644  work/bville-pizza-grill/index.html
+html     4364  work/cow-lick/index.html
+html      373  work/custom-website-design/index.html
+html    10595  work/ember-pie-co/index.html
+html      355  work/hospitality-storytelling/index.html
+html     4171  work/index.html
+html     4510  work/magic-buds/index.html
+html      346  work/packaging-systems/index.html
+html      376  work/print-and-packaging/index.html
+html      376  work/restaurant-brand-systems/index.html
+html     4512  work/ritual-cafe/index.html
+html     4516  work/service-the-hills/index.html
 
-Total: 14 files
+Total: 22 files

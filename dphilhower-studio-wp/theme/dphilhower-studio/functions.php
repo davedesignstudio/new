@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DPS_VERSION', '1.0.2' );
+define( 'DPS_VERSION', '1.0.4' );
 define( 'DPS_DIR', get_template_directory() );
 define( 'DPS_URI', get_template_directory_uri() );
 
@@ -17,6 +17,7 @@ require_once DPS_DIR . '/inc/helpers.php';
 require_once DPS_DIR . '/inc/cpt.php';
 require_once DPS_DIR . '/inc/customizer.php';
 require_once DPS_DIR . '/inc/contact-form.php';
+require_once DPS_DIR . '/inc/brand-kits.php';
 require_once DPS_DIR . '/inc/setup-content.php';
 
 /**
@@ -163,28 +164,14 @@ function dps_maybe_upgrade_images() {
 	if ( 'dphilhower-studio' !== get_stylesheet() ) {
 		return;
 	}
-	if ( get_option( 'dps_images_version' ) === 'png-native-1' ) {
+	if ( get_option( 'dps_images_version' ) === 'brands-print-1' ) {
 		return;
 	}
 	if ( ! get_option( 'dps_demo_seeded' ) ) {
 		return;
 	}
-
-	$files = array(
-		'hero-editorial.png' => 'Studio hero',
-		'about-desk.png'     => 'Studio desk',
-		'street.png'         => 'Downtown street',
-		'work-brand.png'     => 'Brand identity',
-		'work-web.png'       => 'Website design',
-		'work-print.png'     => 'Print design',
-		'work-menu.png'      => 'Hospitality',
-		'work-pack.png'      => 'Packaging',
-		'ember-kit.png'      => 'Ember Pie Co. kit',
-	);
-	foreach ( $files as $file => $title ) {
-		dps_sideload_theme_image( $file, $title );
-	}
-	update_option( 'dps_images_version', 'png-native-1' );
+	dps_seed_demo_content( true );
+	update_option( 'dps_images_version', 'brands-print-1' );
 }
 
 /**

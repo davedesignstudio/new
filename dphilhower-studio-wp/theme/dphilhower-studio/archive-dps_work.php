@@ -10,7 +10,7 @@ get_header();
 <main id="main">
 	<header class="page-hero">
 		<h1><?php esc_html_e( 'Work', 'dphilhower-studio' ); ?></h1>
-		<p><?php esc_html_e( 'Case studies spanning brand identity, print, and website design for businesses in and around Morristown.', 'dphilhower-studio' ); ?></p>
+		<p><?php esc_html_e( 'Named brands from around Morris County — identity, print, and the pieces guests actually hold.', 'dphilhower-studio' ); ?></p>
 	</header>
 	<section class="section" style="padding-top:0">
 		<div class="work-grid">
