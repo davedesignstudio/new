@@ -175,6 +175,7 @@ function dps_seed_demo_content( $force = false ) {
 		'cowlick-hero.png'       => dps_sideload_theme_image( 'cowlick-hero.png', 'Cow Lick' ),
 		'sthills-hero.png'       => dps_sideload_theme_image( 'sthills-hero.png', 'Service The Hills' ),
 		'bvdeli-hero.png'        => dps_sideload_theme_image( 'bvdeli-hero.png', 'Bernardsville Deli' ),
+		'pok-hero.png'           => dps_sideload_theme_image( 'pok-hero.png', 'Philhower & O’Krogly' ),
 	);
 
 	if ( $hero_id ) {
@@ -249,7 +250,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · menu · packaging',
 			'year'     => '2025',
 			'location' => 'Bernardsville, NJ',
-			'content'  => '<p>Locals already shorten Bernardsville to Bville. The mark has to work as a script on slate and as one ink hit on kraft.</p><p>The orange B is appetite and oven heat — the first letter you see from the lot. Ville sits in forest green so the town and the grill are in the name, not a second pizza red. A gold outline lifts the script off dark slate like a physical sign. The swooshes are Friday-night energy without a clipart pizza.</p>',
+			'content'  => '<p>Locals already shorten Bernardsville to Bville. The mark has to work as a script on slate and as one ink hit on a burgundy lid.</p><p>The orange B is appetite and oven heat. Two crescent swooshes close into a circle so the lid, the window, and the coaster share one ring. No clipart pizza: the food is inside the box.</p>',
 		),
 		array(
 			'slug'     => 'ritual-cafe',
@@ -310,6 +311,18 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
 			'content'  => '<p>Sleep is the product. The photograph sells the result; the label has to feel calm and expensive — not like a party and not like a clinic.</p><p>High-key white is trust and quiet. Deep purple is night without looking like a head shop. There is no cannabis leaf: this is rest. Gold on purple is the only luxury move.</p>',
+		),
+		array(
+			'slug'     => 'philhower-okrogly',
+			'title'    => 'Philhower & O’Krogly',
+			'image'    => 'pok-hero.png',
+			'excerpt'  => 'Day and night are the hours',
+			'subtitle' => 'Day and night are the hours',
+			'client'   => 'Studio sample, design-build and emergency repair',
+			'services' => 'Identity · vehicle · signage · print',
+			'year'     => '2026',
+			'location' => 'Northern New Jersey',
+			'content'  => '<p>A contractor who answers at 2am cannot look like a franchise, and cannot look like a country club. The mark had to hold both: craft in daylight, emergency after dark.</p><p>The gothic kp ligature sits in a thin ice-blue diamond. Blue is the night call. Tan-gold is the build. The sun and the moon are the hours written as pictures. Hazard orange would make it a cone. Black keeps it a studio the house can live with on the lawn.</p>',
 		),
 	);
 
@@ -420,7 +433,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-2' );
+	update_option( 'dps_images_version', 'brands-print-3' );
 	return true;
 }
 

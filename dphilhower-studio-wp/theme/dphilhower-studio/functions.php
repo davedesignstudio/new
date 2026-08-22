@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DPS_VERSION', '1.0.6' );
+define( 'DPS_VERSION', '1.0.7' );
 define( 'DPS_DIR', get_template_directory() );
 define( 'DPS_URI', get_template_directory_uri() );
 
@@ -164,14 +164,14 @@ function dps_maybe_upgrade_images() {
 	if ( 'dphilhower-studio' !== get_stylesheet() ) {
 		return;
 	}
-	if ( get_option( 'dps_images_version' ) === 'brands-print-2' ) {
+	if ( get_option( 'dps_images_version' ) === 'brands-print-3' ) {
 		return;
 	}
 	if ( ! get_option( 'dps_demo_seeded' ) ) {
 		return;
 	}
 	dps_seed_demo_content( true );
-	update_option( 'dps_images_version', 'brands-print-2' );
+	update_option( 'dps_images_version', 'brands-print-3' );
 }
 
 /**

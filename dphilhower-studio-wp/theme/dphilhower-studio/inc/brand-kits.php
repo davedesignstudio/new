@@ -116,8 +116,26 @@ function dps_brand_kits() {
 		'bville-pizza-grill'       => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'How Bville leaves the building', 'dphilhower-studio' ),
-			'intro'  => __( 'Locals already shorten Bernardsville to Bville. The mark has to work as a script on slate and as one ink hit on kraft — orange for heat, green for the town, gold so it reads as a sign instead of a clipart pizza.', 'dphilhower-studio' ),
+			'intro'  => __( 'Locals already shorten Bernardsville to Bville. The uploaded circular mark — orange heat, sage town — rides a burgundy lid, then the same swooshes go on glass and a coaster. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
 			'pieces' => array(
+				array(
+					'file'    => 'bville-print-box-burgundy.png',
+					'alt'     => __( 'Burgundy Bville Pizza & Grill box with circular orange and sage swoosh mark', 'dphilhower-studio' ),
+					'heading' => __( 'Delivery box', 'dphilhower-studio' ),
+					'story'   => __( 'Burgundy board, not a coupon kraft. Two crescents close into a ring around the script. Side panel keeps the B as a letter. The food stays inside.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'bville-print-swoosh-window.png',
+					'alt'     => __( 'Bville Pizza & Grill night window with circular orange and green swoosh decal', 'dphilhower-studio' ),
+					'heading' => __( 'Swoosh window', 'dphilhower-studio' ),
+					'story'   => __( 'The lid, shop scale. Orange and green arcs on glass so the lot reads Bville before the hours card. Cream hours because the coaster is cream.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'bville-print-swoosh-coaster.png',
+					'alt'     => __( 'Cream Bville coaster and burgundy matchbook with orange and green swooshes', 'dphilhower-studio' ),
+					'heading' => __( 'Coaster and matchbook', 'dphilhower-studio' ),
+					'story'   => __( 'Same ring, table scale. Cream coaster for the drink. Burgundy matchbook for the box color. The B is still a letter.', 'dphilhower-studio' ),
+				),
 				array(
 					'file'    => 'bville-print-menu.png',
 					'alt'     => __( 'Bville Pizza & Grill cream menu with orange and green type', 'dphilhower-studio' ),
@@ -127,8 +145,8 @@ function dps_brand_kits() {
 				array(
 					'file'    => 'bville-print-box.png',
 					'alt'     => __( 'Kraft Bville pizza box with script logo and gold swoosh', 'dphilhower-studio' ),
-					'heading' => __( 'Pizza box', 'dphilhower-studio' ),
-					'story'   => __( 'Kraft is the oven, not a coupon. The script and gold swoosh are the only print so a delivery still reads as Bville under a porch light. No pizza photo on the lid: the food is inside.', 'dphilhower-studio' ),
+					'heading' => __( 'Kraft lid', 'dphilhower-studio' ),
+					'story'   => __( 'Earlier pass: kraft as the oven, script and gold swoosh only. Kept so the burgundy box has a quiet sibling for cheaper runs.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-window.png',
@@ -283,6 +301,37 @@ function dps_brand_kits() {
 					'alt'     => __( 'Bronze Service The Hills saw-blade sticker on a steel toolbox', 'dphilhower-studio' ),
 					'heading' => __( 'Toolbox sticker', 'dphilhower-studio' ),
 					'story'   => __( 'The blade is the tool. Die-cut bronze on steel so the crew’s kit matches the lawn. Grit and glamour at the scale of a hand.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'philhower-okrogly'        => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'The hours, printed', 'dphilhower-studio' ),
+			'intro'  => __( 'A contractor who answers at 2am cannot look like a franchise. Ice-blue diamond, tan gothic kp, sun and moon as the hours. Black instead of hazard orange so the house can live with it on the lawn.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'pok-print-card.png',
+					'alt'     => __( 'Black Philhower & O’Krogly business cards with kp diamond and Day Night reverse', 'dphilhower-studio' ),
+					'heading' => __( 'Cards', 'dphilhower-studio' ),
+					'story'   => __( 'Black stock, ice-blue name, gold kp. Reverse is Day and Night so the first handshake already says the hours. Alec and the 908 number in tan.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'pok-print-van.png',
+					'alt'     => __( 'Matte black Philhower & O’Krogly van with kp diamond and Day Night rear doors', 'dphilhower-studio' ),
+					'heading' => __( 'Van', 'dphilhower-studio' ),
+					'story'   => __( 'The identity, driving. Side panel is the seal. Rear doors split sun and moon so a neighbor sees the hours before they read the phone.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'pok-print-yard.png',
+					'alt'     => __( 'Black Philhower & O’Krogly yard sign with kp diamond on a colonial lawn', 'dphilhower-studio' ),
+					'heading' => __( 'Yard sign', 'dphilhower-studio' ),
+					'story'   => __( 'Black field, blue name, gold hours. Readable from the curb without a stock “we’re working here” banner.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'pok-print-magnet.png',
+					'alt'     => __( 'Philhower & O’Krogly fridge magnets with kp seal and Day Night emergency', 'dphilhower-studio' ),
+					'heading' => __( 'Fridge magnets', 'dphilhower-studio' ),
+					'story'   => __( 'The 2am number has to live in the kitchen. Round seal for the names. Rectangle for Day / Emergency / Night.', 'dphilhower-studio' ),
 				),
 			),
 		),

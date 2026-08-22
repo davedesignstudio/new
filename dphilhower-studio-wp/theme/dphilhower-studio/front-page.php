@@ -34,12 +34,12 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Selected work', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'Seven brands, one studio', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Each project starts with how the business should feel—then the mark, the print, and the site follow. All seven identities are on this page.', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'Eight brands, one studio', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy"><?php esc_html_e( 'Each project starts with how the business should feel—then the mark, the print, and the site follow. All eight identities are on this page.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
 			$featured_ids = array();
-			foreach ( array( 'ember-pie-co', 'bville-pizza-grill', 'ritual-cafe', 'bernardsville-deli', 'cow-lick', 'service-the-hills', 'magic-buds' ) as $featured_slug ) {
+			foreach ( array( 'ember-pie-co', 'bville-pizza-grill', 'ritual-cafe', 'bernardsville-deli', 'cow-lick', 'service-the-hills', 'magic-buds', 'philhower-okrogly' ) as $featured_slug ) {
 				$featured_post = get_page_by_path( $featured_slug, OBJECT, 'dps_work' );
 				if ( $featured_post ) {
 					$featured_ids[] = $featured_post->ID;
@@ -50,7 +50,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 					'post_type'      => 'dps_work',
 					'post__in'       => $featured_ids ? $featured_ids : array( 0 ),
 					'orderby'        => 'post__in',
-					'posts_per_page' => 7,
+					'posts_per_page' => 8,
 				)
 			);
 			if ( $works->have_posts() ) :
