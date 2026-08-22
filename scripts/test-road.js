@@ -268,6 +268,18 @@ check("a finished reading stores lastMatches and lastCards", function () {
   }
 });
 
+check("spawned omen uses weather without a double article", function () {
+  var mem = R.loadMem();
+  mem.lastMatches = ["KEY"];
+  mem.lastCards = ["KEY"];
+  var beats = R.composeSpawnedBeats(["KEY"], mem, "a red sunset");
+  assert.ok(beats[0]);
+  assert.ok(/waiting in a red sunset/i.test(beats[0].q), beats[0].q);
+  assert.ok(!/in the a red/i.test(beats[0].q), beats[0].q);
+  var rain = R.composeSpawnedBeats(["DOG"], mem, "rain");
+  assert.ok(/waiting in the rain/i.test(rain[0].q), rain[0].q);
+});
+
 check("six kitchen strangers exist", function () {
   var ids = R.STRANGERS.map(function (x) {
     return x.id;
