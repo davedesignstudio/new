@@ -324,7 +324,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>The Hills saw blade is the tool. Blue stays the diamond from the 2025 stitch. PHILHOWER sits in an inscriptional serif next to SERVICE, not the same cut. O’Krogly sits in a roundhand next to The Hills, not the same script. DESIGN + BUILD runs the inner ring. (908)-581-5385 stays in the mark.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
+			'content'  => '<p>The Hills saw blade is the tool. Blue stays the diamond from the 2025 stitch. Both names sit in the same script. Five quiet measure marks — registration, scale, square, dimension, radius. Wood letters, bronze blade. DESIGN + BUILD runs the inner ring. (908)-581-5385 stays in the mark.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -459,7 +459,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-9' );
+	update_option( 'dps_images_version', 'brands-print-10' );
 	return true;
 }
 
