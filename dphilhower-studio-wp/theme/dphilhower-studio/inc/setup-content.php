@@ -326,7 +326,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Hills blade, double ring, top arc. The cyan PK diamond is the mark. PHILHOWER in Times, O’Krogly in Garamond on the rings. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
+			'content'  => '<p>Same Hills blade, bigger type. PHILHOWER in modern Times New Roman. O’Krogly in Garamond. Between them a pale carpenter-square diamond — Times P, Garamond K — the NJ trade color for sky-blue ideas, not a union badge. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
