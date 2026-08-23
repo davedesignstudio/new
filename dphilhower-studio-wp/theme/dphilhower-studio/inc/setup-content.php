@@ -318,13 +318,13 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'philhower-okrogly',
 			'title'    => 'Philhower & O’Krogly',
 			'image'    => 'pok-hero.png',
-			'excerpt'  => 'Pencil to ridge beam',
-			'subtitle' => 'Pencil to ridge beam',
+			'excerpt'  => 'Design + Build',
+			'subtitle' => 'Design + Build',
 			'client'   => 'design-build',
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>The Hills saw blade is the tool. Inside it: the 2025 embroidery — gothic gold in a blue diamond, Philhower &amp; O’Krogly in gold serif, Design + Build in the Hills script, (908)-581-5385. Along the inner ring, the line the crew has to live with: Pencil to ridge beam.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond. The phone stays in the mark because a design-build crew is called, not scanned.</p>',
+			'content'  => '<p>The Hills saw blade is the tool. Blue stays the diamond from the 2025 stitch. PHILHOWER sits in an inscriptional serif next to SERVICE, not the same cut. O’Krogly sits in a roundhand next to The Hills, not the same script. DESIGN + BUILD runs the inner ring. (908)-581-5385 stays in the mark.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -459,7 +459,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-8' );
+	update_option( 'dps_images_version', 'brands-print-9' );
 	return true;
 }
 
