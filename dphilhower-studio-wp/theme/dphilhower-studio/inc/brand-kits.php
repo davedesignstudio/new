@@ -289,8 +289,14 @@ function dps_brand_kits() {
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
-			'intro'  => __( 'The Hills saw blade is the tool. Blue stays the diamond. Both names sit in the same script. Five quiet measure marks. Wood letters, bronze blade. DESIGN + BUILD runs the ring. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
+			'intro'  => __( 'The Hills saw blade is the tool. A larger cyan diamond holds PK in modern Old English. A professional seal uses the same monogram. Both names sit in the same script. Five quiet measure marks. Wood letters, bronze blade. DESIGN + BUILD runs the ring. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
 			'pieces' => array(
+				array(
+					'file'    => 'pok-seal-hero.png',
+					'alt'     => __( 'Philhower & O’Krogly professional seal with a PK Old English monogram in a cyan diamond', 'dphilhower-studio' ),
+					'heading' => __( 'Seal', 'dphilhower-studio' ),
+					'story'   => __( 'Circular seal. PK in modern Old English, cyan diamond, PHILHOWER / DESIGN + BUILD / O’KROGLY on the rings. Gold bead border on black.', 'dphilhower-studio' ),
+				),
 				array(
 					'file'    => 'pok-print-shirt.png',
 					'alt'     => __( 'Black polo with the Philhower & O’Krogly saw-blade lockup centered on the chest', 'dphilhower-studio' ),
