@@ -53,6 +53,9 @@ get_header();
 			} else {
 				dps_render_brand_kit( $slug );
 			}
+			if ( 'philhower-okrogly' === $slug ) {
+				get_template_part( 'template-parts/anthem-pok' );
+			}
 			?>
 			<p><a class="btn btn-outline" href="<?php echo esc_url( get_post_type_archive_link( 'dps_work' ) ); ?>"><?php esc_html_e( 'All work', 'dphilhower-studio' ); ?></a></p>
 		</article>
