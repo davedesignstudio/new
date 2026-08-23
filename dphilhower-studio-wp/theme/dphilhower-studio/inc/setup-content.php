@@ -318,13 +318,13 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'philhower-okrogly',
 			'title'    => 'Philhower & O’Krogly',
 			'image'    => 'pok-hero.png',
-			'excerpt'  => 'Day and night are the hours',
-			'subtitle' => 'Day and night are the hours',
-			'client'   => 'design-build and emergency repair',
-			'services' => 'Identity · vehicle · signage · print',
-			'year'     => '2026',
+			'excerpt'  => 'The 2025 embroidery is the lockup',
+			'subtitle' => 'The 2025 embroidery is the lockup',
+			'client'   => 'design-build',
+			'services' => 'Identity · embroidery · vehicle · signage',
+			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>A contractor who answers at 2am cannot look like a franchise, and cannot look like a country club. The mark had to hold both: craft in daylight, emergency after dark.</p><p>The gothic kp ligature sits in a thin ice-blue diamond. Blue is the night call. Tan-gold is the build. The sun and the moon are the hours written as pictures. Hazard orange would make it a cone. Black keeps it a studio the house can live with on the lawn.</p>',
+			'content'  => '<p>The mark that goes on the shirt is the mark. Gothic gold in a blue diamond, Philhower &amp; O’Krogly in gold serif, Design + Build, (908)-581-5385. That is the 2025 embroidery file — used as the logo, not redrawn for the van or the lawn.</p><p>Black is the field so gold thread reads on a polo. Blue is only the diamond. Hazard orange would make it a cone. The phone is in the lockup because a design-build crew is called, not scanned.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -348,7 +348,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · packaging · window',
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>The name is a pun you can see. EX sits left of the cup, Presso sits right, and the pour is the hyphen. Yellow on roasted beans is the only loud color.</p><p>The circular badge is the coaster version of the same pour. Window and sleeve keep the yellow so takeaway still reads as EXPresso.</p>',
+			'content'  => '<p>The name is a pun you can see. EX sits left of the cup, Presso sits right, and the pour is the hyphen. Yellow on roasted beans is the only loud color.</p><p>The coaster is the same lockup, round: EX, the pour, Presso — not a generic Coffee word-cloud. Window and bag keep the yellow so takeaway still reads as EXPresso.</p>',
 		),
 	);
 
@@ -459,7 +459,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-5' );
+	update_option( 'dps_images_version', 'brands-print-6' );
 	return true;
 }
 
