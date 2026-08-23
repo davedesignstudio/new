@@ -411,7 +411,7 @@ function dps_seed_demo_content( $force = false ) {
 		$menu_id,
 		0,
 		array(
-			'menu-item-title'  => __( 'Work', 'dphilhower-studio' ),
+			'menu-item-title'  => __( 'Brands', 'dphilhower-studio' ),
 			'menu-item-url'    => $work_link ? $work_link : home_url( '/work/' ),
 			'menu-item-status' => 'publish',
 			'menu-item-type'   => 'custom',

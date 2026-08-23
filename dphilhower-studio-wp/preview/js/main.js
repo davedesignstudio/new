@@ -10,7 +10,7 @@
     });
   }
 
-  var items = document.querySelectorAll(".work-item");
+  var items = document.querySelectorAll(".work-item, .work-item");
   items.forEach(function (item) {
     item.classList.add("is-visible");
   });

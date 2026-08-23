@@ -32,7 +32,7 @@ get_header();
 			</article>
 		</div>
 	</section>
-	<?php get_template_part( 'template-parts/cta-band' ); ?>
+	<?php get_template_part( 'template-parts/cta-brand' ); ?>
 </main>
 <?php
 get_footer();

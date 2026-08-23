@@ -419,7 +419,7 @@ function dps_render_brand_kit( $slug ) {
 	}
 	$kit = $kits[ $slug ];
 	?>
-<section class="kit-band">
+<section class="brand-kit">
 	<p class="section-label"><?php echo esc_html( $kit['label'] ); ?></p>
 	<h2 class="section-title"><?php echo esc_html( $kit['title'] ); ?></h2>
 	<p class="section-copy"><?php echo esc_html( $kit['intro'] ); ?></p>

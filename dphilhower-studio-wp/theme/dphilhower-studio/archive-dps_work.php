@@ -9,7 +9,7 @@ get_header();
 ?>
 <main id="main">
 	<header class="page-hero">
-		<h1><?php esc_html_e( 'Work', 'dphilhower-studio' ); ?></h1>
+		<h1><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></h1>
 		<p><?php esc_html_e( 'Restaurant and local identities from the studio — including in-house design for Bville Pizza & Grill, 2018–2021.', 'dphilhower-studio' ); ?></p>
 	</header>
 	<section class="section" style="padding-top:0">

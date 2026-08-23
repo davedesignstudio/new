@@ -5,7 +5,7 @@
  * @package DPhilhowerStudio
  */
 ?>
-<section class="kit-band">
+<section class="brand-kit">
 	<p class="section-label"><?php esc_html_e( 'The kit', 'dphilhower-studio' ); ?></p>
 	<h2 class="section-title"><?php esc_html_e( 'Mark, color, type', 'dphilhower-studio' ); ?></h2>
 	<div class="kit-panel">
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 </section>
-<section class="kit-band">
+<section class="brand-kit">
 	<p class="section-label"><?php esc_html_e( 'Before / after', 'dphilhower-studio' ); ?></p>
 	<h2 class="section-title"><?php esc_html_e( 'Window and menu', 'dphilhower-studio' ); ?></h2>
 	<div class="compare">
@@ -52,7 +52,7 @@
 		</figure>
 	</div>
 </section>
-<section class="kit-band">
+<section class="brand-kit">
 	<p class="section-label"><?php esc_html_e( 'Print system', 'dphilhower-studio' ); ?></p>
 	<h2 class="section-title"><?php esc_html_e( 'How the brand leaves the shop', 'dphilhower-studio' ); ?></h2>
 	<p class="section-copy"><?php esc_html_e( 'The window and menu set the rules. Print is those rules on kraft, cream board, and foil — same stamp, same forest green, same tomato. Nothing is a one-off layout.', 'dphilhower-studio' ); ?></p>
@@ -83,7 +83,7 @@
 		</figure>
 	</div>
 </section>
-<section class="kit-band">
+<section class="brand-kit">
 	<p class="section-label"><?php esc_html_e( 'In the hand / on the phone', 'dphilhower-studio' ); ?></p>
 	<h2 class="section-title"><?php esc_html_e( 'Bag and homepage', 'dphilhower-studio' ); ?></h2>
 	<div class="touch-grid">

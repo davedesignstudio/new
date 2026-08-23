@@ -57,7 +57,7 @@ get_header();
 			<p><a class="btn btn-outline" href="<?php echo esc_url( get_post_type_archive_link( 'dps_work' ) ); ?>"><?php esc_html_e( 'All work', 'dphilhower-studio' ); ?></a></p>
 		</article>
 	<?php endwhile; ?>
-	<?php get_template_part( 'template-parts/cta-band' ); ?>
+	<?php get_template_part( 'template-parts/cta-brand' ); ?>
 </main>
 <?php
 get_footer();

@@ -26,16 +26,16 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'Restaurant brands built from the ground up — not one layout for the next shop.' ) ); ?></h1>
 			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'Identity, menus, and websites for local food businesses in Morris County and nearby towns. Most of the thinking happens off the computer. The files come last.' ) ); ?></p>
 			<div class="cta-row">
-				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View work', 'dphilhower-studio' ); ?></a>
+				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View brands', 'dphilhower-studio' ); ?></a>
 				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Start a project', 'dphilhower-studio' ); ?></a>
 			</div>
 		</div>
 	</section>
 
 	<section class="section">
-		<p class="section-label"><?php esc_html_e( 'Selected work', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'Marks from the board', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Restaurant and local identities, including Bville Pizza & Grill in Bernardsville — in-house graphic design there from 2018 to 2021. All ten marks are on this page.', 'dphilhower-studio' ); ?></p>
+		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'Ten restaurant brands', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy"><?php esc_html_e( 'Restaurant and local identities, including Bville Pizza & Grill in Bernardsville — in-house graphic design there from 2018 to 2021. All ten brands are on this page.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
 			$featured_ids = array();
@@ -99,7 +99,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 	</section>
 
-	<?php get_template_part( 'template-parts/cta-band' ); ?>
+	<?php get_template_part( 'template-parts/cta-brand' ); ?>
 </main>
 <?php
 get_footer();
