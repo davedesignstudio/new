@@ -5,10 +5,11 @@
     "appearanceTools": true,
     "color": {
       "palette": [
-        { "slug": "ink", "color": "#10140f", "name": "Ink" },
-        { "slug": "paper", "color": "#f2f4ef", "name": "Paper" },
-        { "slug": "verdigris", "color": "#1d4ed8", "name": "Cobalt" },
-        { "slug": "brass", "color": "#d97706", "name": "Ember" }
+        { "slug": "ink", "color": "#1c1814", "name": "Ink" },
+        { "slug": "paper", "color": "#f4efe4", "name": "Paper" },
+        { "slug": "heat", "color": "#c24e1e", "name": "Terracotta" },
+        { "slug": "olive", "color": "#5c6b32", "name": "Olive" },
+        { "slug": "brass", "color": "#c9a227", "name": "Gold" }
       ]
     },
     "layout": {
@@ -18,14 +19,14 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "Space Grotesk, sans-serif",
+          "fontFamily": "Fraunces, Palatino Linotype, Palatino, serif",
           "slug": "display",
-          "name": "Space Grotesk"
+          "name": "Fraunces"
         },
         {
-          "fontFamily": "Inter, sans-serif",
+          "fontFamily": "Source Sans 3, Helvetica Neue, sans-serif",
           "slug": "body",
-          "name": "Inter"
+          "name": "Source Sans 3"
         }
       ]
     }

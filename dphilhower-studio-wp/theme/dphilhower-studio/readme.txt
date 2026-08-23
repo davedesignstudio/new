@@ -10,7 +10,7 @@ Custom graphic design studio theme for D Philhower Studio (dphilhower.com).
 
 == Description ==
 
-Portfolio, services, about, and project-inquiry templates for a Morristown-area graphic design studio. Activating the theme creates demo pages, a Work portfolio, and the primary menu.
+Portfolio, services, about, and project-inquiry templates for a Morris County restaurant graphic design studio. Activating the theme creates pages, a Work portfolio, and the primary menu.
 
 == Installation ==
 

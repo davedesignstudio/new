@@ -1,42 +1,48 @@
-/* Editorial restyle — D Philhower Studio */
+/* Studio restyle from the uploaded marks and practice notes.
+   Palette follows Bville lockup: terracotta, olive, gold, cream, slate.
+   Type is print-first (Fraunces + Source Sans 3), not a cobalt SaaS overlay. */
 
 :root {
-  --ink: #14120f;
-  --ink-soft: #211d18;
-  --stone: #e7e0d3;
-  --stone-deep: #d3c8b6;
-  --paper: #f6f1e6;
-  --verdigris: #1d4ed8;
-  --verdigris-bright: #2f66f0;
-  --brass: #d97706;
-  --muted: #6b6255;
-  --line: rgba(20, 18, 15, 0.14);
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --ink: #1c1814;
+  --ink-soft: #2a2420;
+  --stone: #e8dfd0;
+  --stone-deep: #d4c6b0;
+  --paper: #f4efe4;
+  --verdigris: #5c6b32;
+  --verdigris-bright: #6f8040;
+  --heat: #c24e1e;
+  --heat-bright: #d45c28;
+  --brass: #c9a227;
+  --muted: #6b6156;
+  --line: rgba(28, 24, 20, 0.14);
+  --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
+  --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
 }
 
 body {
   background:
-    radial-gradient(1100px 620px at 8% -8%, rgba(29, 78, 216, 0.12), transparent 52%),
-    radial-gradient(900px 540px at 100% 0%, rgba(217, 119, 6, 0.10), transparent 48%),
-    linear-gradient(165deg, #f2ecdf 0%, #e7dfd0 52%, #ded5c4 100%);
+    radial-gradient(1100px 620px at 8% -8%, rgba(194, 78, 30, 0.10), transparent 52%),
+    radial-gradient(900px 540px at 100% 0%, rgba(92, 107, 50, 0.12), transparent 48%),
+    linear-gradient(165deg, #f4efe4 0%, #ebe3d4 52%, #e0d5c3 100%);
   font-family: var(--font-body);
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
 }
 
 .site-header {
-  background: rgba(246, 241, 230, 0.92);
+  background: rgba(244, 239, 228, 0.94);
 }
 
 .brand-mark,
 .custom-logo-link {
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .hero {
   min-height: 92vh;
   min-height: 92dvh;
-  color: #f6f1e6;
+  color: #f4efe4;
 }
 
 .hero-media img {
@@ -46,46 +52,53 @@ body {
 
 .hero-media::after {
   background:
-    linear-gradient(180deg, rgba(12, 10, 8, 0.42) 0%, rgba(12, 10, 8, 0.18) 38%, rgba(12, 10, 8, 0.84) 100%),
-    linear-gradient(90deg, rgba(20, 18, 15, 0.55), transparent 58%);
+    linear-gradient(180deg, rgba(18, 14, 10, 0.38) 0%, rgba(18, 14, 10, 0.16) 38%, rgba(18, 14, 10, 0.86) 100%),
+    linear-gradient(90deg, rgba(28, 24, 20, 0.55), transparent 58%);
 }
 
 .hero-brand {
-  font-size: clamp(2.8rem, 9vw, 6.4rem);
-  letter-spacing: -0.045em;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 5.8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .hero-line {
+  font-family: var(--font-display);
   font-weight: 500;
+  font-optical-sizing: auto;
   letter-spacing: -0.02em;
+  max-width: 18ch;
 }
 
 .hero-support {
-  color: rgba(246, 241, 230, 0.88);
+  color: rgba(244, 239, 228, 0.9);
+  max-width: 38rem;
 }
 
 .btn {
-  border-radius: 999px;
-  padding: 0.85rem 1.4rem;
+  border-radius: 3px;
+  padding: 0.85rem 1.35rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .btn-primary {
-  background: var(--verdigris);
-  color: #f6f1e6;
+  background: var(--heat);
+  color: #f4efe4;
 }
 
 .btn-primary:hover {
-  background: var(--verdigris-bright);
+  background: var(--heat-bright);
 }
 
 .btn-ghost {
-  border-color: rgba(246, 241, 230, 0.5);
-  color: #f6f1e6;
+  border-color: rgba(244, 239, 228, 0.5);
+  color: #f4efe4;
 }
 
 .btn-ghost:hover {
-  background: rgba(246, 241, 230, 0.12);
+  background: rgba(244, 239, 228, 0.12);
 }
 
 .btn-dark {
@@ -99,13 +112,14 @@ body {
 }
 
 .section-label {
-  color: var(--verdigris);
-  letter-spacing: 0.16em;
+  color: var(--heat);
+  letter-spacing: 0.18em;
 }
 
 .section-title {
-  font-weight: 700;
-  letter-spacing: -0.035em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .section-copy {
@@ -113,7 +127,7 @@ body {
 }
 
 .work-item {
-  border-radius: 14px;
+  border-radius: 4px;
   background: var(--ink-soft);
 }
 
@@ -127,69 +141,78 @@ body {
 }
 
 .work-meta {
-  background: linear-gradient(180deg, transparent, rgba(12, 10, 8, 0.86));
+  background: linear-gradient(180deg, transparent, rgba(18, 14, 10, 0.88));
 }
 
 .work-meta h3 {
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
 .process-step strong {
+  font-family: var(--font-display);
   letter-spacing: -0.02em;
 }
 
 .locale-panel {
-  background: rgba(246, 241, 230, 0.78);
-  border-radius: 14px;
+  background: rgba(244, 239, 228, 0.82);
+  border-radius: 4px;
 }
 
 .locale-panel h2 {
+  font-family: var(--font-display);
   letter-spacing: -0.03em;
 }
 
 .cta-band-inner {
-  border-radius: 14px;
+  border-radius: 4px;
   background: var(--ink);
 }
 
 .cta-band h2 {
+  font-family: var(--font-display);
   letter-spacing: -0.03em;
 }
 
 .page-hero h1 {
-  letter-spacing: -0.045em;
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
 }
 
 .service-row h2 {
-  letter-spacing: -0.025em;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 .contact-form {
-  background: rgba(246, 241, 230, 0.72);
-  border-radius: 14px;
+  background: rgba(244, 239, 228, 0.76);
+  border-radius: 4px;
 }
 
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
-  border-radius: 8px;
-  background: #fbf8f1;
+  border-radius: 3px;
+  background: #fbf7ef;
 }
 
 .kit-panel {
-  background: rgba(246, 241, 230, 0.8);
-  border-radius: 14px;
+  background: rgba(244, 239, 228, 0.84);
+  border-radius: 4px;
 }
 
 .kit-wordmark {
-  letter-spacing: -0.05em;
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
 }
 
 .compare figure,
 .touch-card,
-.print-system figure {
-  border-radius: 14px;
+.print-system figure,
+.case-hero,
+.about-media img {
+  border-radius: 4px;
 }
 
 .compare figcaption strong {
@@ -197,20 +220,24 @@ body {
 }
 
 .swatch {
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .type-card small {
-  color: var(--verdigris);
+  color: var(--heat);
+}
+
+.nav .cta a {
+  border-radius: 3px;
 }
 
 @media (max-width: 720px) {
   .site-header {
-    background: rgba(246, 241, 230, 0.96);
+    background: rgba(244, 239, 228, 0.97);
   }
 
   .nav {
     background: var(--paper);
-    border-radius: 12px;
+    border-radius: 4px;
   }
 }

@@ -10,21 +10,21 @@ get_header();
 <main id="main">
 	<header class="page-hero">
 		<h1><?php esc_html_e( 'Services', 'dphilhower-studio' ); ?></h1>
-		<p><?php esc_html_e( 'One studio for the mark you hand out and the site people find first. Built for Morris County businesses that need both to feel related.', 'dphilhower-studio' ); ?></p>
+		<p><?php esc_html_e( 'Brands for small businesses, specializing in restaurants — built from the ground up, not one layout retrofitted for the next shop.', 'dphilhower-studio' ); ?></p>
 	</header>
 	<section class="section" style="padding-top:0">
 		<div class="service-list">
 			<article class="service-row">
 				<h2><?php esc_html_e( 'Brand identity', 'dphilhower-studio' ); ?></h2>
-				<p><?php esc_html_e( 'Logos, type, color, and simple guidelines so every flyer, window, and Instagram post points to the same business. Strong fit for restaurants, shops, and professional services launching or refreshing.', 'dphilhower-studio' ); ?></p>
+				<p><?php esc_html_e( 'Logos, type, and color drawn for that business. Strong fit for restaurants and shops that need the window, the menu, and the takeaway to say the same name.', 'dphilhower-studio' ); ?></p>
 			</article>
 			<article class="service-row">
 				<h2><?php esc_html_e( 'Graphic design', 'dphilhower-studio' ); ?></h2>
-				<p><?php esc_html_e( 'Menus, packaging, ads, event pieces, and print campaigns. We design for how things get printed and how they feel in someone’s hands—not only how they look on a screen.', 'dphilhower-studio' ); ?></p>
+				<p><?php esc_html_e( 'Menus, packaging, window graphics, and print. Designed for how things get printed and how they feel in someone’s hands — most of it starts on paper.', 'dphilhower-studio' ); ?></p>
 			</article>
 			<article class="service-row">
 				<h2><?php esc_html_e( 'Website design', 'dphilhower-studio' ); ?></h2>
-				<p><?php esc_html_e( 'Custom marketing websites with clear structure, mobile-first layouts, and a visual system that matches your identity. Built to load quickly and make contact easy—including this WordPress theme for dphilhower.com.', 'dphilhower-studio' ); ?></p>
+				<p><?php esc_html_e( 'Custom marketing sites that match the identity already on the board. Built to load quickly and make contact easy — including this WordPress theme for dphilhower.com.', 'dphilhower-studio' ); ?></p>
 			</article>
 			<article class="service-row">
 				<h2><?php esc_html_e( 'Art direction', 'dphilhower-studio' ); ?></h2>

@@ -36,7 +36,7 @@ function dps_customize_register( $wp_customize ) {
 		),
 		'dps_location'     => array(
 			'label'   => __( 'Location', 'dphilhower-studio' ),
-			'default' => 'Morristown, NJ area',
+			'default' => 'Morris County, NJ',
 			'type'    => 'text',
 		),
 		'dps_hero_title'   => array(
@@ -46,12 +46,12 @@ function dps_customize_register( $wp_customize ) {
 		),
 		'dps_hero_line'    => array(
 			'label'   => __( 'Hero headline', 'dphilhower-studio' ),
-			'default' => 'Graphic design and websites that feel like one system.',
+			'default' => 'Restaurant brands built from the ground up — not one layout for the next shop.',
 			'type'    => 'textarea',
 		),
 		'dps_hero_support' => array(
 			'label'   => __( 'Hero support copy', 'dphilhower-studio' ),
-			'default' => 'A design studio serving Morristown and the surrounding Morris County area—identity, print, and custom web for local brands that want to look intentional.',
+			'default' => 'Identity, menus, and websites for local food businesses in Morris County and nearby towns. Most of the thinking happens off the computer. The files come last.',
 			'type'    => 'textarea',
 		),
 	);

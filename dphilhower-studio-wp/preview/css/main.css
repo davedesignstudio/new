@@ -1,16 +1,16 @@
 :root {
-  --ink: #10140f;
-  --ink-soft: #1c241c;
-  --stone: #e4e7e0;
-  --stone-deep: #c8cec2;
-  --paper: #f2f4ef;
-  --verdigris: #2f6b66;
-  --verdigris-bright: #3d8a83;
-  --brass: #9a7b45;
-  --muted: #5c6558;
-  --line: rgba(16, 20, 15, 0.12);
-  --font-display: "Syne", sans-serif;
-  --font-body: "Karla", sans-serif;
+  --ink: #1c1814;
+  --ink-soft: #2a2420;
+  --stone: #e8dfd0;
+  --stone-deep: #d4c6b0;
+  --paper: #f4efe4;
+  --verdigris: #5c6b32;
+  --verdigris-bright: #6f8040;
+  --brass: #c9a227;
+  --muted: #6b6156;
+  --line: rgba(28, 24, 20, 0.14);
+  --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
+  --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
   --space: clamp(1rem, 2.5vw, 2rem);
   --max: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -30,9 +30,9 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(1200px 700px at 12% -10%, rgba(47, 107, 102, 0.18), transparent 55%),
-    radial-gradient(900px 600px at 100% 0%, rgba(154, 123, 69, 0.12), transparent 50%),
-    linear-gradient(165deg, #ecefe8 0%, #dfe4d8 48%, #d5dbd0 100%);
+    radial-gradient(1200px 700px at 12% -10%, rgba(194, 78, 30, 0.12), transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, rgba(92, 107, 50, 0.12), transparent 50%),
+    linear-gradient(165deg, #f4efe4 0%, #ebe3d4 48%, #e0d5c3 100%);
   background-attachment: fixed;
   font-family: var(--font-body);
   font-size: 1.05rem;

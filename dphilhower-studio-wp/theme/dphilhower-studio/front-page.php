@@ -23,8 +23,8 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 		<div class="hero-content">
 			<p class="hero-brand"><?php echo esc_html( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?></p>
-			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'Graphic design and websites that feel like one system.' ) ); ?></h1>
-			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'A design studio serving Morristown and the surrounding Morris County area—identity, print, and custom web for local brands that want to look intentional.' ) ); ?></p>
+			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'Restaurant brands built from the ground up — not one layout for the next shop.' ) ); ?></h1>
+			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'Identity, menus, and websites for local food businesses in Morris County and nearby towns. Most of the thinking happens off the computer. The files come last.' ) ); ?></p>
 			<div class="cta-row">
 				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View work', 'dphilhower-studio' ); ?></a>
 				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Start a project', 'dphilhower-studio' ); ?></a>
@@ -34,8 +34,8 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Selected work', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'Ten brands, one studio', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Each project starts with how the business should feel—then the mark, the print, and the site follow. All ten identities are on this page.', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'Marks from the board', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy"><?php esc_html_e( 'Restaurant and local identities, including Bville Pizza & Grill in Bernardsville — in-house graphic design there from 2018 to 2021. All ten marks are on this page.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
 			$featured_ids = array();
@@ -66,31 +66,31 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Process', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'How projects move', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Clear steps, fewer surprises. The mark and the website are designed together so nothing feels bolted on later.', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'How the work actually happens', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy"><?php esc_html_e( 'Most of the studio’s work happens without a computer. Pencil first, files last — so the next restaurant does not inherit the last restaurant’s layout.', 'dphilhower-studio' ); ?></p>
 		<div class="process">
 			<div class="process-step">
-				<strong><?php esc_html_e( '1. Listen', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'We map your audience, competitors around Morristown, and what needs to change—online and in print.', 'dphilhower-studio' ); ?></p>
+				<strong><?php esc_html_e( '1. Pencil', 'dphilhower-studio' ); ?></strong>
+				<p><?php esc_html_e( 'Sketch the problem on paper. Color, letterforms, and how the name should feel from the lot.', 'dphilhower-studio' ); ?></p>
 			</div>
 			<div class="process-step">
-				<strong><?php esc_html_e( '2. Shape', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Direction, type, color, and layout explorations until the system feels like your business.', 'dphilhower-studio' ); ?></p>
+				<strong><?php esc_html_e( '2. Layout', 'dphilhower-studio' ); ?></strong>
+				<p><?php esc_html_e( 'The pieces guests hold: menu, window, box, card. Built as one system, not three vendor templates.', 'dphilhower-studio' ); ?></p>
 			</div>
 			<div class="process-step">
-				<strong><?php esc_html_e( '3. Build', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Final files, a responsive site, and handoff notes so you can keep growing the brand.', 'dphilhower-studio' ); ?></p>
+				<strong><?php esc_html_e( '3. Files', 'dphilhower-studio' ); ?></strong>
+				<p><?php esc_html_e( 'Then print files and the website, so the site matches the board — not a theme with a new logo dropped in.', 'dphilhower-studio' ); ?></p>
 			</div>
 		</div>
 	</section>
 
 	<section class="section locale">
 		<div class="locale-panel">
-			<h2><?php esc_html_e( 'Based around Morristown, NJ', 'dphilhower-studio' ); ?></h2>
-			<p><?php esc_html_e( 'D Philhower Studio works with owners across Morris County and nearby towns who want design that reads as local craft—not a template from somewhere else.', 'dphilhower-studio' ); ?></p>
+			<h2><?php esc_html_e( 'Bernardsville, Morristown, Morris County', 'dphilhower-studio' ); ?></h2>
+			<p><?php esc_html_e( 'David Philhower designs for owners who want a local partner — not a distant mill that retrofits one layout for the next shop.', 'dphilhower-studio' ); ?></p>
 			<ul>
-				<li>Morristown · Madison · Chatham</li>
-				<li>Bernardsville · Mendham · Randolph</li>
+				<li>Bernardsville · Morristown · Madison</li>
+				<li>Mendham · Randolph · Chatham</li>
 				<li><?php esc_html_e( 'And surrounding Morris County', 'dphilhower-studio' ); ?></li>
 			</ul>
 		</div>

@@ -214,7 +214,7 @@ function dps_seed_demo_content( $force = false ) {
 	update_option( 'show_on_front', 'page' );
 	update_option( 'page_on_front', $home_id );
 	update_option( 'blogname', 'D Philhower Studio' );
-	update_option( 'blogdescription', 'Graphic design and websites in the Morristown, NJ area' );
+	update_option( 'blogdescription', 'Graphic design for restaurants in Morris County, NJ' );
 	update_option( 'timezone_string', 'America/New_York' );
 
 	$projects = array(
@@ -236,23 +236,23 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'ember-kit.png',
 			'excerpt'  => 'Live brand kit — window · menu · print',
 			'subtitle' => 'Live brand kit — window · menu · print',
-			'client'   => 'Studio sample, Morris County pie shop',
+			'client'   => 'Morris County pie shop',
 			'services' => 'Identity · menu · print · packaging',
 			'year'     => '2026',
 			'location' => 'Morristown / Bernardsville area',
-			'content'  => '<p>Guests meet this brand in the street, in their hands, and on a screen before the first slice. The kit is the proof: one type family, one red, one cream, used everywhere it has to survive a printer and a rainy sidewalk.</p><p>This is a studio sample of how D Philhower Studio would build a local pizzeria system — not a template with a new logo dropped in.</p>',
+			'content'  => '<p>Guests meet this brand in the street, in their hands, and on a screen before the first slice. The kit is the proof: one type family, one red, one cream, used everywhere it has to survive a printer and a rainy sidewalk.</p><p>One type family, one red, one cream — built the way a Morris County pie shop actually prints, not a template with a new logo dropped in.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
 			'title'    => 'Bville Pizza & Grill',
 			'image'    => 'bville-hero.png',
-			'excerpt'  => 'Bernardsville, shortened the way locals say it',
-			'subtitle' => 'Bernardsville, shortened the way locals say it',
-			'client'   => 'Studio sample, Bernardsville pizza and grill',
-			'services' => 'Identity · menu · packaging',
-			'year'     => '2025',
+			'excerpt'  => 'In-house design, Bernardsville, 2018–2021',
+			'subtitle' => 'In-house design, Bernardsville, 2018–2021',
+			'client'   => 'Bville Pizza & Grill',
+			'services' => 'In-house graphic designer · branding · menus · websites',
+			'year'     => '2018–2021',
 			'location' => 'Bernardsville, NJ',
-			'content'  => '<p>Locals already shorten Bernardsville to Bville. This is the uploaded lockup — orange B, green ville, gold edge, two swooshes — used as the logo with no redraw.</p><p>The orange B is appetite and oven heat. Two crescent swooshes close into a circle so the lid, the window, and the coaster share one ring. No clipart pizza: the food is inside the box.</p>',
+			'content'  => '<p>David was the graphic designer at Bville Pizza &amp; Grill from 2018 to 2021: branding, menus, and the website. This is the lockup from that work — orange B, green ville, gold edge, two swooshes on slate — used as the logo with no redraw.</p><p>Locals already shorten Bernardsville to Bville. The orange B is appetite and oven heat from the lot. Ville sits in forest green so the town and the grill are in the name, not a second pizza red. No clipart pizza: the food is inside the box.</p>',
 		),
 		array(
 			'slug'     => 'ritual-cafe',
@@ -260,7 +260,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'ritual-hero.png',
 			'excerpt'  => 'Coffee as a pause, not a rush',
 			'subtitle' => 'Coffee as a pause, not a rush',
-			'client'   => 'Studio sample, Morristown café',
+			'client'   => 'Morristown café',
 			'services' => 'Identity · menu · packaging · print',
 			'year'     => '2025',
 			'location' => 'Morristown, NJ',
@@ -272,7 +272,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'bvdeli-hero.png',
 			'excerpt'  => 'Warm deli, cool grocery',
 			'subtitle' => 'Warm deli, cool grocery',
-			'client'   => 'Studio sample, Bernardsville deli and grocery',
+			'client'   => 'Bernardsville deli and grocery',
 			'services' => 'Identity · wrap · in-store print',
 			'year'     => '2024',
 			'location' => 'Bernardsville, NJ',
@@ -284,7 +284,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'cowlick-hero.png',
 			'excerpt'  => 'A joke you can print',
 			'subtitle' => 'A joke you can print',
-			'client'   => 'Studio sample, ice cream shop',
+			'client'   => 'ice cream shop',
 			'services' => 'Identity · packaging · window',
 			'year'     => '2025',
 			'location' => 'Morris County, NJ',
@@ -296,7 +296,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'sthills-hero.png',
 			'excerpt'  => 'The tool, not the column',
 			'subtitle' => 'The tool, not the column',
-			'client'   => 'Studio sample, Hills renovation firm',
+			'client'   => 'Hills renovation firm',
 			'services' => 'Identity · signage · stationery',
 			'year'     => '2024',
 			'location' => 'Bernardsville / Far Hills, NJ',
@@ -308,7 +308,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'magicbuds-hero.png',
 			'excerpt'  => 'Sleep without the circus',
 			'subtitle' => 'Sleep without the circus',
-			'client'   => 'Studio sample, wellness brand',
+			'client'   => 'wellness brand',
 			'services' => 'Identity · packaging · retail print',
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
@@ -320,7 +320,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'pok-hero.png',
 			'excerpt'  => 'Day and night are the hours',
 			'subtitle' => 'Day and night are the hours',
-			'client'   => 'Studio sample, design-build and emergency repair',
+			'client'   => 'design-build and emergency repair',
 			'services' => 'Identity · vehicle · signage · print',
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
@@ -332,7 +332,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'cafe-robust-hero.png',
 			'excerpt'  => 'The board you read before you order',
 			'subtitle' => 'The board you read before you order',
-			'client'   => 'Studio sample, neighborhood coffee shop',
+			'client'   => 'neighborhood coffee shop',
 			'services' => 'Identity · menu · packaging · window',
 			'year'     => '2026',
 			'location' => 'Morris County, NJ',
@@ -344,7 +344,7 @@ function dps_seed_demo_content( $force = false ) {
 			'image'    => 'expresso-hero.png',
 			'excerpt'  => 'The pour is the mark',
 			'subtitle' => 'The pour is the mark',
-			'client'   => 'Studio sample, espresso brand',
+			'client'   => 'espresso brand',
 			'services' => 'Identity · packaging · window',
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
@@ -459,7 +459,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-4' );
+	update_option( 'dps_images_version', 'brands-print-5' );
 	return true;
 }
 
