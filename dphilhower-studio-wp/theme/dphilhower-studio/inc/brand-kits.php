@@ -289,7 +289,7 @@ function dps_brand_kits() {
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
-			'intro'  => __( 'Hills blade, double ring, top arc. Big type like Service The Hills: Times PHILHOWER, cyan PK diamond, Garamond O’Krogly filling the field. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
+			'intro'  => __( 'Hills blade, double ring, top arc. The cyan PK diamond is the mark. Times PHILHOWER and Garamond O’Krogly on the rings. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'pok-seal-hero.png',
@@ -301,7 +301,7 @@ function dps_brand_kits() {
 					'file'    => 'pok-print-shirt.png',
 					'alt'     => __( 'Black polo with the Philhower & O’Krogly saw-blade lockup centered on the chest', 'dphilhower-studio' ),
 					'heading' => __( 'Polo', 'dphilhower-studio' ),
-					'story'   => __( 'Center chest. Times, cyan PK diamond, Garamond — one lockup.', 'dphilhower-studio' ),
+					'story'   => __( 'Center chest. Cyan PK diamond is the focus; Times and Garamond on the rings.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'pok-print-van.png',
