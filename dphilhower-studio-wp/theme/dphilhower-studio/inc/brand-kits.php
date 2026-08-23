@@ -148,12 +148,6 @@ function dps_brand_kits() {
 					'heading' => __( 'Napkin band and matchbook', 'dphilhower-studio' ),
 					'story'   => __( 'Forest green is the ville color wrapped around linen. The same slate lockup, small enough for a matchbook.', 'dphilhower-studio' ),
 				),
-				array(
-					'file'    => 'bville-print-box.png',
-					'alt'     => __( 'Kraft Bville pizza box with script logo and gold swoosh', 'dphilhower-studio' ),
-					'heading' => __( 'Kraft lid', 'dphilhower-studio' ),
-					'story'   => __( 'Quieter sibling for cheaper runs. Script and gold swoosh only, kraft as the oven.', 'dphilhower-studio' ),
-				),
 			),
 		),
 		'ritual-cafe'              => array(
@@ -294,8 +288,8 @@ function dps_brand_kits() {
 		),
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
-			'title'  => __( 'The same file, four scales', 'dphilhower-studio' ),
-			'intro'  => __( 'The 2025 embroidery is the lockup: gothic gold in a blue diamond, Design + Build, (908)-581-5385. Polo, van, yard, card, and fridge use that file — never a second drawing of the letters.', 'dphilhower-studio' ),
+			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
+			'intro'  => __( 'The 2025 embroidery is the lockup: gothic gold in a blue diamond, Design + Build in the Hills script, (908)-581-5385. Polo, van, yard, card, and fridge use that file — one logo, never a second drawing of the letters.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'pok-print-shirt.png',
