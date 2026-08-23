@@ -326,7 +326,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Hills blade, double ring, top arc. PHILHOWER in modern Times New Roman. The cyan PK diamond at center. O’Krogly in Garamond. DESIGN + BUILD on the bottom arc — same face as the Times line.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
+			'content'  => '<p>Hills blade, double ring, top arc. Big type like Service The Hills: PHILHOWER in modern Times New Roman, cyan PK diamond, O’Krogly in Garamond filling the field. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -461,7 +461,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-18' );
+	update_option( 'dps_images_version', 'brands-print-19' );
 	return true;
 }
 
