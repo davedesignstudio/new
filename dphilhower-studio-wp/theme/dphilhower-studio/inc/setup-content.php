@@ -326,7 +326,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Built like Service The Hills: bronze saw blade, double ring, top arc. PHILHOWER sits in an inscriptional serif. O’Krogly sits in a roundhand. DESIGN + BUILD runs the bottom arc. A quiet cyan PK diamond sits under the top arc — modern Old English, not the hero. Same blade family, different names.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond.</p>',
+			'content'  => '<p>Same seal as Service The Hills: official bronze saw blade, double ring, top arcs. Philhower and O’Krogly share one modern Times serif — same size, same weight. DESIGN + BUILD on the bottom arc in the same face. Same metal — uniform type.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -461,7 +461,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-12' );
+	update_option( 'dps_images_version', 'brands-print-14' );
 	return true;
 }
 
