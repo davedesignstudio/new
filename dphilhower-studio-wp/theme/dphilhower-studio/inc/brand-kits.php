@@ -293,7 +293,7 @@ function dps_brand_kits() {
 			'pieces' => array(
 				array(
 					'file'    => 'pok-seal-hero.png',
-					'alt'     => __( 'Philhower & O’Krogly professional seal with a PK Old English monogram in a cyan diamond', 'dphilhower-studio' ),
+					'alt'     => __( 'Philhower & O’Krogly professional seal with PK on a pale carpenter-square diamond', 'dphilhower-studio' ),
 					'heading' => __( 'Seal', 'dphilhower-studio' ),
 					'story'   => __( 'Circular seal. PK in modern Old English, cyan diamond, PHILHOWER / DESIGN + BUILD / O’KROGLY on the rings. Gold bead border on black.', 'dphilhower-studio' ),
 				),
