@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</p>
 
 		<p class="anthem-kicker"><?php esc_html_e( 'Tag', 'dphilhower-studio' ); ?></p>
-		<p class="anthem-tag">Philhower &amp; O’Krogly · Design + Build · (908)-581-5385</p>
+		<p class="anthem-tag">Philhower &amp; O’Krogly · Pencil to ridge beam · (908)-581-5385</p>
 	</div>
 
 	<div class="anthem-cuts">

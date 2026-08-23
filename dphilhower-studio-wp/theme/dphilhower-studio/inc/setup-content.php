@@ -318,13 +318,13 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'philhower-okrogly',
 			'title'    => 'Philhower & O’Krogly',
 			'image'    => 'pok-hero.png',
-			'excerpt'  => 'The 2025 embroidery is the lockup',
-			'subtitle' => 'The 2025 embroidery is the lockup',
+			'excerpt'  => 'Pencil to ridge beam',
+			'subtitle' => 'Pencil to ridge beam',
 			'client'   => 'design-build',
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>The mark that goes on the shirt is the mark. Gothic gold in a blue diamond, Philhower &amp; O’Krogly in gold serif, Design + Build in the same formal script as The Hills, (908)-581-5385. That is the 2025 embroidery file — one lockup, used as the logo, not redrawn for the van or the lawn.</p><p>Black is the field so gold thread reads on a polo. Blue is only the diamond. Hazard orange would make it a cone. The phone is in the lockup because a design-build crew is called, not scanned.</p>',
+			'content'  => '<p>The Hills saw blade is the tool. Inside it: the 2025 embroidery — gothic gold in a blue diamond, Philhower &amp; O’Krogly in gold serif, Design + Build in the Hills script, (908)-581-5385. Along the inner ring, the line the crew has to live with: Pencil to ridge beam.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads. Blue is only the diamond. The phone stays in the mark because a design-build crew is called, not scanned.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -459,7 +459,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-7' );
+	update_option( 'dps_images_version', 'brands-print-8' );
 	return true;
 }
 
