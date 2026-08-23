@@ -289,7 +289,7 @@ function dps_brand_kits() {
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
-			'intro'  => __( 'Hills blade. Carpenter-square field, modern Old English PK etched into the steel. Times PHILHOWER and Garamond O’Krogly in their own lanes. DESIGN + BUILD on the bottom arc. Room so every word reads. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
+			'intro'  => __( 'Hills blade. Big Old English PK overlapping the carpenter-square. Gold–burgundy gradient in the open field. Times PHILHOWER, Garamond O’Krogly. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'pok-seal-hero.png',
@@ -301,7 +301,7 @@ function dps_brand_kits() {
 					'file'    => 'pok-print-shirt.png',
 					'alt'     => __( 'Black polo with the Philhower & O’Krogly saw-blade lockup centered on the chest', 'dphilhower-studio' ),
 					'heading' => __( 'Polo', 'dphilhower-studio' ),
-					'story'   => __( 'Center chest. Modern Old English PK etched into the square; Times and Garamond over it.', 'dphilhower-studio' ),
+					'story'   => __( 'Center chest. Big Old English PK overlapping the square on a gold–burgundy field; Times and Garamond over it.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'pok-print-van.png',

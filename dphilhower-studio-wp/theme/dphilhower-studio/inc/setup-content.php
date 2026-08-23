@@ -326,7 +326,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Same Hills blade. Carpenter-square field, PK etched into the steel in modern Old English. PHILHOWER in Times, O’Krogly in Garamond — each name in its own lane. DESIGN + BUILD on the bottom arc. Room so every word reads.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads.</p>',
+			'content'  => '<p>Same Hills blade. Big Old English PK overlapping the carpenter-square. Gold–burgundy gradient fills the open field. PHILHOWER in Times, O’Krogly in Garamond. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black outside the blade.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -461,7 +461,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-25' );
+	update_option( 'dps_images_version', 'brands-print-26' );
 	return true;
 }
 
