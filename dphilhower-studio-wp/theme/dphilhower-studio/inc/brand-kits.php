@@ -289,7 +289,7 @@ function dps_brand_kits() {
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
-			'intro'  => __( 'The Hills saw blade is the tool. A larger cyan diamond holds PK in modern Old English. A professional seal uses the same monogram. Both names sit in the same script. Five quiet measure marks. Wood letters, bronze blade. DESIGN + BUILD runs the ring. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
+			'intro'  => __( 'Built like Service The Hills: bronze blade, double ring, serif PHILHOWER, script O’Krogly, DESIGN + BUILD on the bottom arc. Quiet cyan PK diamond. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'pok-seal-hero.png',
@@ -301,7 +301,7 @@ function dps_brand_kits() {
 					'file'    => 'pok-print-shirt.png',
 					'alt'     => __( 'Black polo with the Philhower & O’Krogly saw-blade lockup centered on the chest', 'dphilhower-studio' ),
 					'heading' => __( 'Polo', 'dphilhower-studio' ),
-					'story'   => __( 'Center chest. Blue diamond. Same script for both names. Five measure marks. DESIGN + BUILD in the Hills blade.', 'dphilhower-studio' ),
+					'story'   => __( 'Center chest. Same Hills blade hierarchy: PHILHOWER, O’Krogly, DESIGN + BUILD.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'pok-print-van.png',
@@ -319,7 +319,7 @@ function dps_brand_kits() {
 					'file'    => 'pok-print-card.png',
 					'alt'     => __( 'Black business cards with the Philhower & O’Krogly saw-blade lockup', 'dphilhower-studio' ),
 					'heading' => __( 'Cards', 'dphilhower-studio' ),
-					'story'   => __( 'Black stock. Blade, blue diamond, matching script, five measure marks, and the 908 number already in the mark.', 'dphilhower-studio' ),
+					'story'   => __( 'Black stock. Blade, PHILHOWER, O’Krogly, DESIGN + BUILD — same Hills hierarchy.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'pok-print-magnet.png',
