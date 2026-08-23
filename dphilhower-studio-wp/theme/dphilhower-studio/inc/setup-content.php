@@ -326,7 +326,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Same seal as Service The Hills: official bronze saw blade, double ring, top arcs. Philhower and O’Krogly are both set in modern Times New Roman — same size, same weight. DESIGN + BUILD on the bottom arc in the same face.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads.</p>',
+			'content'  => '<p>Old-style, modern cut. Official Hills bronze blade, double ring, twin top arcs. Philhower and O’Krogly share one Garamond — same size, open tracking — split by a hairline and lozenge. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black field so gold reads.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -461,7 +461,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-15' );
+	update_option( 'dps_images_version', 'brands-print-16' );
 	return true;
 }
 

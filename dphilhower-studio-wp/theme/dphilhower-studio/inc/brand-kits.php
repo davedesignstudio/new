@@ -289,7 +289,7 @@ function dps_brand_kits() {
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
-			'intro'  => __( 'Same seal as Service The Hills: official bronze blade, double ring. Philhower and O’Krogly both in modern Times New Roman — same size and weight. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
+			'intro'  => __( 'Old-style, modern cut. Official Hills bronze blade, double ring, twin top arcs. Philhower and O’Krogly share one Garamond — same size, open tracking — split by a hairline and lozenge. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'pok-seal-hero.png',
@@ -301,7 +301,7 @@ function dps_brand_kits() {
 					'file'    => 'pok-print-shirt.png',
 					'alt'     => __( 'Black polo with the Philhower & O’Krogly saw-blade lockup centered on the chest', 'dphilhower-studio' ),
 					'heading' => __( 'Polo', 'dphilhower-studio' ),
-					'story'   => __( 'Center chest. Both names in modern Times New Roman.', 'dphilhower-studio' ),
+					'story'   => __( 'Center chest. Old-style modern seal — both names in Garamond.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'pok-print-van.png',
@@ -319,7 +319,7 @@ function dps_brand_kits() {
 					'file'    => 'pok-print-card.png',
 					'alt'     => __( 'Black business cards with the Philhower & O’Krogly saw-blade lockup', 'dphilhower-studio' ),
 					'heading' => __( 'Cards', 'dphilhower-studio' ),
-					'story'   => __( 'Black stock. Blade and Times New Roman names — same lockup as the shirt.', 'dphilhower-studio' ),
+					'story'   => __( 'Black stock. Blade and Garamond seal — same lockup as the shirt.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'pok-print-magnet.png',
