@@ -1,8 +1,9 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<article class="page-block">
+  <p class="page-kicker">404</p>
+  <h1 class="page-title">Page not found</h1>
+  <p class="page-lead">That URL is off the deck. <a href="{{ .Site.BaseURL }}">Head home</a> or look through <a href="/work/">the work</a>.</p>
+</article>
 
 {{ partial "footer" . }}

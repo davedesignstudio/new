@@ -1,29 +1,83 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
+<html{{ with .Site.LanguageCode }} lang="{{ . }}"{{ end }}>
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ .Hugo.Generator }}
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }} · {{ .Site.Title }}</title>
   {{ end }}
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/main.css">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-  <!-- Icons -->
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/img/favicon.png">
-
-  <!-- RSS -->
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}is-home{{ else }}is-page{{ end }} {{ .Section | urlize }}">
+  <a class="skip-link" href="#stage-main">Skip to content</a>
 
-{{ partial "sidebar" . }}
+  <div class="frame">
+    <aside class="rail" aria-label="Services">
+      {{ range .Site.Data.services }}
+      <a class="rail-panel" href="{{ .href }}" data-service="{{ .id }}">
+        <span class="rail-label">
+          {{ if .stack }}
+            {{ range .stack }}<span>{{ . }}</span>{{ end }}
+          {{ else }}
+            {{ .name }}
+          {{ end }}
+        </span>
+      </a>
+      {{ end }}
+    </aside>
+
+    <div class="stage">
+      <header class="stage-top">
+        <a class="brand" href="{{ .Site.BaseURL }}">
+          <span class="brand-frame">
+            <span class="brand-name">D. Philhower</span>
+            <span class="brand-row">
+              {{ partial "skateboard" "skateboard-brand" }}
+              <span class="brand-script">Studio</span>
+            </span>
+          </span>
+        </a>
+
+        <div class="stage-tools">
+          <nav class="nav" aria-label="Primary">
+            <a class="nav-link{{ if .IsHome }} is-active{{ end }}" href="/">Home</a>
+            <a class="nav-link nav-work{{ if eq .Section "work" }} is-active{{ end }}" href="/work/">
+              Work
+              {{ partial "skateboard" "skateboard-nav" }}
+            </a>
+            <a class="nav-link nav-call{{ if eq .Title "Call Us" }} is-active{{ end }}" href="/call-us/">Call Us</a>
+          </nav>
+
+          <div class="social">
+            <p class="social-label">Social</p>
+            <ul class="social-list">
+              <li>
+                <a class="social-dot" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.4" cy="7.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-dot" href="https://www.behance.net/" aria-label="Behance" rel="noopener noreferrer" target="_blank">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 8.2h3.1c1.5 0 2.4.8 2.4 2 0 1-.5 1.6-1.3 1.9 1.1.3 1.8 1.1 1.8 2.3 0 1.6-1.3 2.6-3.2 2.6H7.2V8.2Zm1.7 3.4h1.4c.7 0 1.1-.3 1.1-.9s-.4-.9-1.1-.9H8.9v1.8Zm0 3.7h1.6c.8 0 1.3-.4 1.3-1.1s-.5-1.1-1.4-1.1H8.9v2.2ZM15.2 11.4c1.9 0 3.2 1.2 3.4 3h-5c.3 1.2 1.2 1.8 2.4 1.8 1 0 1.7-.4 2.1-1.1l1.4.8c-.7 1.3-1.9 2-3.6 2-2.4 0-4-1.6-4-3.8s1.6-3.7 3.3-3.7Zm-.1 1.4c-.9 0-1.6.5-1.8 1.4h3.4c-.2-.9-.8-1.4-1.6-1.4ZM15 8.4h4.2v1.2H15V8.4Z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-dot" href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M8.4 10.2V16M8.4 8.1v.1M11.4 16v-3.4c0-1.6 2.2-1.7 2.2 0V16M11.4 12.2V10.2"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="stage-main" id="stage-main">

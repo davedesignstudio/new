@@ -1,0 +1,28 @@
+{{ partial "header" . }}
+
+<div class="work-board">
+  <header class="work-intro">
+    <p class="page-kicker">Selected work</p>
+    <h1 class="page-title">Work</h1>
+  </header>
+
+  {{ range $service := $.Site.Data.services }}
+  <section class="work-lane" id="{{ $service.id }}">
+    <h2 class="work-lane-title">{{ $service.name }}</h2>
+    <div class="work-grid">
+      {{ range where $.Data.Pages "Params.service" $service.id }}
+      <a class="work-card" href="{{ .URL }}">
+        <span class="work-card-cover" style="background: {{ .Params.cover }}"></span>
+        <span class="work-card-meta">
+          <span class="work-card-year">{{ .Params.year }}</span>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.summary }}</p>
+        </span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
+
+{{ partial "footer" . }}

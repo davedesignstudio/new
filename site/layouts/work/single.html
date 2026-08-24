@@ -1,0 +1,14 @@
+{{ partial "header" . }}
+
+<article class="page-block project">
+  <p class="page-kicker">{{ .Params.service }}</p>
+  <h1 class="page-title">{{ .Title }}</h1>
+  <p class="page-lead">{{ .Params.summary }}</p>
+  <div class="project-cover" style="background: {{ .Params.cover }}"></div>
+  <div class="page-body">
+    {{ .Content }}
+  </div>
+  <p class="page-back"><a href="/work/">← All work</a></p>
+</article>
+
+{{ partial "footer" . }}

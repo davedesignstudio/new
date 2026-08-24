@@ -1,11 +1,27 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "D. Philhower Studio"
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Web design, print, and advertising + marketing from D. Philhower Studio."
+  email = "dphilhowerstudio@gmail.com"
+  location = "Morristown, NJ"
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
-    weight = 1
+  name = "Home"
+  url = "/"
+  weight = 1
+  identifier = "home"
+
+[[menu.main]]
+  name = "Work"
+  url = "/work/"
+  weight = 2
+  identifier = "work"
+
+[[menu.main]]
+  name = "Call Us"
+  url = "/call-us/"
+  weight = 3
+  identifier = "call-us"

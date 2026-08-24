@@ -1,0 +1,29 @@
+{{ partial "header" . }}
+
+<article class="page-block contact-block">
+  <p class="page-kicker">{{ .Site.Params.location }}</p>
+  <h1 class="page-title">Call Us</h1>
+  <p class="page-lead">
+    Tell us about the site, the print, or the campaign.
+    We will write back from
+    <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>.
+  </p>
+
+  <form class="contact-form" name="contact" method="POST" netlify>
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      <span>What are we making?</span>
+      <textarea name="message" rows="6" required></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
+</article>
+
+{{ partial "footer" . }}

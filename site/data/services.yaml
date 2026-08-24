@@ -1,0 +1,12 @@
+- id: web-design
+  name: Web Design
+  href: /work/#web-design
+- id: print
+  name: Print
+  href: /work/#print
+- id: advertising
+  name: Advertising + Marketing
+  href: /work/#advertising
+  stack:
+    - Advertising
+    - "+ Marketing"

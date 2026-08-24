@@ -1,7 +1,11 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<article class="page-block">
+  <p class="page-kicker">{{ .Section }}</p>
+  <h1 class="page-title">{{ .Title }}</h1>
+  <div class="page-body">
+    {{ .Content }}
+  </div>
+</article>
 
 {{ partial "footer" . }}
