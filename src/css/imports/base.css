@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Great+Vibes&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap");
 
 :root {
-  --paper: #f3efe4;
-  --ink: #1c1a16;
-  --rule: #1c1a16;
-  --muted: #7a7368;
-  --indigo: #2f4a63;
-  --straw: #d7bc6a;
-  --wheel: #2f4a63;
-  --rail: 1.5px;
+  --paper: #f4ead4;
+  --ink: #14120f;
+  --rule: #14120f;
+  --muted: #6e675c;
+  --indigo: #1a4f86;
+  --wave: #0f2c4c;
+  --wave-mid: #2d6dad;
+  --straw: #e0b23a;
+  --foam: #f4ead4;
+  --bass: #c41e3a;
+  --wheel: #c41e3a;
+  --rail: 2px;
 }
 
 * {
@@ -32,19 +36,6 @@ body {
   background: var(--paper);
   font-family: "Zen Kaku Gothic New", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 40;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
 img {
