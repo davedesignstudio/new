@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" role="img" aria-labelledby="skateTitle">
+  <title id="skateTitle">Skateboard</title>
+  <defs>
+    <linearGradient id="deck" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a28"/>
+      <stop offset="50%" stop-color="#3d3a36"/>
+      <stop offset="100%" stop-color="#1c1b19"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1917"/>
+      <stop offset="100%" stop-color="#0e0e0d"/>
+    </linearGradient>
+  </defs>
+  <!-- Trucks / wheels (back) -->
+  <g transform="translate(58 108)">
+    <rect x="18" y="0" width="28" height="8" rx="2" fill="#8a8680"/>
+    <circle cx="10" cy="18" r="14" fill="#1f1f1f" stroke="#c9c4bc" stroke-width="3"/>
+    <circle cx="10" cy="18" r="5" fill="#d4ff3f"/>
+    <circle cx="54" cy="18" r="14" fill="#1f1f1f" stroke="#c9c4bc" stroke-width="3"/>
+    <circle cx="54" cy="18" r="5" fill="#d4ff3f"/>
+  </g>
+  <!-- Trucks / wheels (front) -->
+  <g transform="translate(248 108)">
+    <rect x="18" y="0" width="28" height="8" rx="2" fill="#8a8680"/>
+    <circle cx="10" cy="18" r="14" fill="#1f1f1f" stroke="#c9c4bc" stroke-width="3"/>
+    <circle cx="10" cy="18" r="5" fill="#d4ff3f"/>
+    <circle cx="54" cy="18" r="14" fill="#1f1f1f" stroke="#c9c4bc" stroke-width="3"/>
+    <circle cx="54" cy="18" r="5" fill="#d4ff3f"/>
+  </g>
+  <!-- Deck -->
+  <path d="M42 58
+           C78 34, 120 28, 180 30
+           C240 32, 286 40, 318 62
+           C328 70, 328 86, 316 94
+           C282 116, 236 122, 180 120
+           C124 118, 76 110, 46 90
+           C34 82, 32 68, 42 58Z"
+        fill="url(#deck)" stroke="#0a0a0a" stroke-width="3"/>
+  <!-- Grip tape -->
+  <path d="M56 62
+           C88 44, 126 40, 180 42
+           C234 44, 274 52, 300 68
+           C308 74, 308 84, 298 90
+           C270 106, 232 110, 180 108
+           C128 106, 88 100, 62 86
+           C52 80, 50 70, 56 62Z"
+        fill="url(#grip)" opacity="0.92"/>
+  <!-- Graphic stripe -->
+  <path d="M120 58 L210 52 L216 72 L126 78 Z" fill="#d4ff3f" opacity="0.85"/>
+  <path d="M140 64 L198 58" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+</svg>

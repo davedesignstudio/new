@@ -1,10 +1,92 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
+<div class="studio-shell">
+  <nav class="category-rail" aria-label="Services">
+    <a class="category" href="#web-design">
+      <span class="category__label">WebDesign</span>
+    </a>
+    <a class="category" href="#print">
+      <span class="category__label">Print</span>
+    </a>
+    <a class="category category--wide" href="#advertising">
+      <span class="category__label">Advertising + Marketing</span>
+    </a>
+  </nav>
+
+  <main class="studio-stage">
+    <header class="brand">
+      <h1 class="brand__name">Ditchover</h1>
+      <span class="brand__tag">Studio</span>
+    </header>
+
+    <section class="hero-visuals" aria-label="Featured work">
+      <div class="video-frame" id="studio-video-frame" data-video-frame>
+        <video
+          class="video-frame__media"
+          id="studio-video"
+          muted
+          playsinline
+          loop
+          preload="metadata"
+          poster=""
+        >
+          <source src="/videos/SDVid.mp4" type="video/mp4">
+          <source src="/videos/SDVid.ogg" type="video/ogg">
+        </video>
+        <span class="video-frame__x" aria-hidden="true"></span>
+        <span class="video-frame__label">video</span>
+      </div>
+
+      <div class="skate-figure" id="work">
+        <img
+          class="skate-figure__art"
+          src="/img/skateboard.svg"
+          width="360"
+          height="180"
+          alt="Illustrated skateboard"
+        >
+      </div>
+    </section>
+
+    <footer class="studio-footer">
+      <ul class="site-nav">
+        <li>
+          <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+        </li>
+        <li>
+          <a class="site-nav__work" href="#work">
+            Work
+            <svg class="site-nav__icon" viewBox="0 0 40 20" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="36" height="8" rx="3" fill="currentColor"/>
+              <circle cx="10" cy="16" r="3.5" fill="currentColor"/>
+              <circle cx="30" cy="16" r="3.5" fill="currentColor"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="cta-call" href="{{ .Site.Params.phone | safeURL }}">call us</a>
+        </li>
+      </ul>
+
+      <div class="social-block">
+        <p class="social-block__label">Social</p>
+        <ul class="social-links">
+          {{ range .Site.Menus.social }}
+          <li>
+            <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .Name }}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </footer>
+  </main>
 </div>
+
+{{/* Anchor targets for category links — layout start only */}}
+<section id="web-design" hidden></section>
+<section id="print" hidden></section>
+<section id="advertising" hidden></section>
 
 {{ partial "footer" . }}

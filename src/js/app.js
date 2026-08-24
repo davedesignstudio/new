@@ -1,14 +1,36 @@
-// JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
+document.addEventListener("DOMContentLoaded", function () {
+  var frame = document.querySelector("[data-video-frame]");
+  var video = document.getElementById("studio-video");
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+  if (!frame || !video) {
+    return;
+  }
+
+  function markPlaying() {
+    frame.classList.add("is-playing");
+  }
+
+  function markPaused() {
+    if (video.paused) {
+      frame.classList.remove("is-playing");
+    }
+  }
+
+  frame.addEventListener("click", function () {
+    if (video.paused) {
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise.then(markPlaying).catch(function () {});
+      } else {
+        markPlaying();
+      }
+    } else {
+      video.pause();
+      markPaused();
+    }
+  });
+
+  video.addEventListener("play", markPlaying);
+  video.addEventListener("pause", markPaused);
+  video.addEventListener("ended", markPaused);
+});

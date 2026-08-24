@@ -1,11 +1,33 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Ditchover Studio"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Web design, print, and advertising + marketing from Ditchover Studio."
+  phone = "tel:+15555550123"
+  email = "mailto:hello@ditchover.studio"
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
-    weight = 1
+  name = "Home"
+  url  = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Work"
+  url  = "/#work"
+  weight = 2
+
+[[menu.social]]
+  name = "IG"
+  url  = "https://instagram.com"
+  weight = 1
+
+[[menu.social]]
+  name = "FB"
+  url  = "https://facebook.com"
+  weight = 2
+
+[[menu.social]]
+  name = "X"
+  url  = "https://x.com"
+  weight = 3
