@@ -1,16 +1,14 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
 title = "Contact"
-url = "/contact"
+label = "Get in touch"
+subtitle = "Tell us what you’re building"
+date = "2026-08-24"
+url = "/contact/"
 +++
 
-## Please fill out the form below
+**Philhower & O’Krogly**  
+Design + Build · Northern New Jersey
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+Phone: **[(908) 581-5385](tel:+19085815385)**
 
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
-</form>
+Whether you need custom carpentry, a brand system, a website, or the full design-and-build path from sketch to install — call the crew. We’ll listen first, then draw, then build.

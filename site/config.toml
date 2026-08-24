@@ -1,11 +1,31 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Philhower & O’Krogly"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  tagline = "Design + Build"
+  description = "Philhower & O’Krogly is a Northern New Jersey design-and-build company specializing in carpentry design and build, plus web design and branding."
+  phone = "(908) 581-5385"
+  phoneHref = "tel:+19085815385"
+  region = "Northern New Jersey"
+  email = "hello@philhowerokrogly.com"
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
+    name = "Theme Song"
+    url  = "/theme-song/"
     weight = 1
+
+[[menu.main]]
+    name = "Craft"
+    url  = "/#craft"
+    weight = 2
+
+[[menu.main]]
+    name = "Studio"
+    url  = "/#studio"
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+    weight = 4

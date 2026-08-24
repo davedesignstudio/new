@@ -1,10 +1,116 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<main id="main">
+  <section class="hero">
+    <div class="hero-plane" aria-hidden="true">
+      <img src="/img/pok-hero.png" alt="" width="1536" height="1024">
+      <div class="hero-grain"></div>
+    </div>
+    <div class="hero-copy">
+      <p class="hero-brand">Philhower &amp; O’Krogly</p>
+      <h1>Design + Build</h1>
+      <p class="hero-support">Carpentry you can stand under. Brands and websites you can stand behind.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="/theme-song/">Hear the theme song</a>
+        <a class="btn btn-ghost" href="{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section song-teaser" id="theme">
+    <div class="section-inner">
+      <p class="section-label">Company theme</p>
+      <h2>From timber to type — one crew, one song.</h2>
+      <p class="section-lead">Our theme song is the shop floor set to rhythm: square the line, raise the frame, then lock the brand so it reads from the curb to the screen.</p>
+      <div class="song-panel" data-song-panel>
+        <button class="play-theme" type="button" data-play-theme aria-pressed="false">
+          <span class="play-icon" aria-hidden="true"></span>
+          <span class="play-label">Play theme</span>
+        </button>
+        <div class="song-snippet">
+          <p class="lyric-line">Philhower &amp; O’Krogly —</p>
+          <p class="lyric-line lyric-chorus">Design + Build, from curb to screen.</p>
+          <p class="lyric-line">Gold on black, the diamond blue —</p>
+          <p class="lyric-line">We build it once, we build it true.</p>
+        </div>
+        <a class="text-link" href="/theme-song/">Full lyrics &amp; arrangement →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section craft-section" id="craft">
+    <div class="section-inner split">
+      <div class="split-copy">
+        <p class="section-label">Carpentry design &amp; build</p>
+        <h2>Millwork, joinery, and structures meant to last.</h2>
+        <p class="section-lead">We design and build custom carpentry — cabinetry, stairs, porches, interiors, and whole structures — with the same care that goes into a hand-fitted joint.</p>
+        <ul class="plain-list">
+          <li>Custom cabinetry &amp; built-ins</li>
+          <li>Heritage millwork &amp; restoration</li>
+          <li>Porches, stairs, and fine trim</li>
+          <li>Design-build carpentry from sketch to install</li>
+        </ul>
+      </div>
+      <figure class="split-media">
+        <img src="/img/pok-print-yard.png" alt="Philhower & O’Krogly yard presence on a job site" width="1536" height="1024">
+        <figcaption>Job-site presence — the lockup at lawn scale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section studio-section" id="studio">
+    <div class="section-inner split reverse">
+      <div class="split-copy">
+        <p class="section-label">Web design &amp; branding</p>
+        <h2>Identity systems that travel from polo to homepage.</h2>
+        <p class="section-lead">We shape marks, type, color, and custom websites so the business feels intentional everywhere it shows up — embroidery, vehicle, yard sign, and the web.</p>
+        <ul class="plain-list">
+          <li>Brand identity &amp; lockups</li>
+          <li>Custom marketing websites</li>
+          <li>Print, apparel &amp; vehicle systems</li>
+          <li>Menus, packaging &amp; local campaigns</li>
+        </ul>
+      </div>
+      <figure class="split-media">
+        <img src="/img/pok-print-shirt.png" alt="Philhower & O’Krogly embroidery lockup on a black polo" width="1536" height="1024">
+        <figcaption>The embroidery is the lockup — one file, every scale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section process-section" id="process">
+    <div class="section-inner">
+      <p class="section-label">How we work</p>
+      <h2>Listen. Draw. Build.</h2>
+      <p class="section-lead">Whether the deliverable is a staircase or a site, the sequence stays honest.</p>
+      <ol class="process-rail">
+        <li>
+          <strong>Listen</strong>
+          <p>Walk the site, hear the brand, map what’s load-bearing — wood or reputation.</p>
+        </li>
+        <li>
+          <strong>Draw</strong>
+          <p>Plans, type, joinery details, and layout explorations until the system fits.</p>
+        </li>
+        <li>
+          <strong>Build</strong>
+          <p>Install the work. Ship the site. Leave you with something that holds.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section cta-section" id="contact-band">
+    <div class="section-inner cta-inner">
+      <p class="hero-brand">Philhower &amp; O’Krogly</p>
+      <h2>Ready to design and build?</h2>
+      <p class="section-lead">Northern New Jersey design-build for carpentry, web, and brand. Call the crew — we answer.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+        <a class="btn btn-ghost" href="/contact/">Send a note</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 {{ partial "footer" . }}

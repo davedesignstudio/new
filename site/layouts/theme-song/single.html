@@ -1,0 +1,28 @@
+{{ partial "header" . }}
+
+<main id="main" class="page theme-song-page">
+  <header class="page-hero song-hero">
+    <p class="section-label">Official theme</p>
+    <p class="hero-brand">Philhower &amp; O’Krogly</p>
+    <h1>{{ .Title }}</h1>
+    <p class="page-subtitle">{{ .Params.subtitle }}</p>
+    <div class="song-controls" data-song-panel>
+      <button class="play-theme play-theme-lg" type="button" data-play-theme aria-pressed="false">
+        <span class="play-icon" aria-hidden="true"></span>
+        <span class="play-label">Play the theme song</span>
+      </button>
+      <p class="song-hint">A short original jingle in the browser — sawdust rhythm, gold-note chorus.</p>
+    </div>
+  </header>
+
+  <article class="lyrics-sheet">
+    {{ .Content }}
+  </article>
+
+  <aside class="song-meta section-inner">
+    <p><strong>Arrangement notes:</strong> Mid-tempo build in D major. Verse on workbench pulse, chorus lifting into the company name. Whistle the diamond; stomp the frame.</p>
+    <p><a class="text-link" href="/">← Back to Design + Build</a></p>
+  </aside>
+</main>
+
+{{ partial "footer" . }}
