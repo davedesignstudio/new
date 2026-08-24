@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call us — D Philhower Studio</title>
+  <meta name="description" content="Contact D Philhower Studio for web design, print, and marketing projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="page-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/work/">Work</a>
+      <a class="nav-cta" href="/contact/">call us</a>
+    </nav>
+    <h1>Call us</h1>
+    <p>Tell us about the project. Web, print, advertising + marketing — we’ll reply with next steps.</p>
+    <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks — we’ll be in touch';">
+      <label>
+        Name
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</body>
+</html>

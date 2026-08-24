@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D Philhower Studio — Web, Print &amp; Marketing</title>
+  <meta name="description" content="D Philhower Studio — web design, print, and advertising + marketing with a skate-culture edge.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="stage">
+    <aside class="services" aria-label="Services">
+      <a class="service" href="#web-design" data-service="web">
+        <span class="service-label">Web Design</span>
+      </a>
+      <a class="service" href="#print" data-service="print">
+        <span class="service-label">Print</span>
+      </a>
+      <a class="service" href="#advertising" data-service="advertising">
+        <span class="service-label">Advertising + Marketing</span>
+      </a>
+    </aside>
+
+    <div class="main">
+      <header class="top">
+        <a class="brand" href="/">
+          <span class="brand-name">D Philhower</span>
+          <span class="brand-studio-row">
+            <span class="brand-studio">Studio</span>
+            <svg class="skate" viewBox="0 0 64 28" aria-hidden="true" focusable="false">
+              <ellipse cx="12" cy="22" rx="5" ry="2.2" fill="currentColor" opacity="0.35"/>
+              <ellipse cx="52" cy="22" rx="5" ry="2.2" fill="currentColor" opacity="0.35"/>
+              <path d="M6 14c2-6 10-9 26-9s24 3 26 9c-1 3-8 5-26 5S7 17 6 14z" fill="currentColor"/>
+              <circle cx="16" cy="20" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="48" cy="20" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="16" cy="20" r="1.1" fill="currentColor"/>
+              <circle cx="48" cy="20" r="1.1" fill="currentColor"/>
+            </svg>
+          </span>
+        </a>
+
+        <div class="top-bar">
+          <nav class="nav" aria-label="Primary">
+            <a class="nav-link is-active" href="/">Home</a>
+            <a class="nav-link" href="/work/">
+              Work
+              <svg class="skate-mini" viewBox="0 0 40 16" aria-hidden="true" focusable="false">
+                <path d="M3 8c1.2-3.5 6-5 17-5s15.8 1.5 17 5c-.6 1.6-4.5 2.6-17 2.6S3.6 9.6 3 8z" fill="currentColor"/>
+                <circle cx="11" cy="11.5" r="2" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="29" cy="11.5" r="2" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </a>
+            <a class="nav-cta" href="/contact/">call us</a>
+          </nav>
+
+          <div class="social">
+            <span class="social-label">Social</span>
+            <div class="social-icons">
+              <a class="social-dot" href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer"></a>
+              <a class="social-dot" href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"></a>
+              <a class="social-dot" href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero-video" aria-label="Featured video">
+        <div class="video-frame">
+          <video
+            id="hero-video"
+            class="video"
+            muted
+            loop
+            playsinline
+            poster="/img/hero-studio.jpg"
+            preload="metadata"
+          >
+            <source src="/videos/hero.mp4" type="video/mp4">
+          </video>
+          <button class="video-toggle" type="button" aria-pressed="false" aria-controls="hero-video">
+            <span class="video-toggle-mark" aria-hidden="true"></span>
+            <span class="video-toggle-text">Video</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
