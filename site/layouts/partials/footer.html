@@ -1,4 +1,21 @@
-<script src="/js/siema.min.js"></script>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-mark">Philhower <em>&amp;</em> Okrogly</p>
+      <p class="footer-tag">Carpentry. Web. Brand.<br>From the grain to the grid.</p>
+    </div>
+    <div>
+      <p class="footer-label">Studio</p>
+      <p>{{ .Site.Params.location }}<br>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+    </div>
+    <div>
+      <p class="footer-label">Listen</p>
+      <p><a href="/theme-song">Theme song — <em>Grain &amp; Grid</em></a></p>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; {{ dateFormat "2006" now }} Philhower &amp; Okrogly Design &amp; Build. Built to last.</p>
+</footer>
 <script src="/app.js"></script>
 </body>
 </html>

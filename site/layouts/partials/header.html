@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{ .Hugo.Generator }}
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
   {{ if .IsHome }}
-  <title>{{ .Site.Title }}</title>
+  <title>{{ .Site.Title }} — {{ .Site.Params.tagline }}</title>
   {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }} · {{ .Site.Title }}</title>
   {{ end }}
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:500,600,700|Source+Sans+Pro:400,600,700|IBM+Plex+Mono:400,500">
   <link rel="stylesheet" href="/css/main.css">
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
   <link rel="shortcut icon" href="/img/favicon.png">
-
-  <!-- RSS -->
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />{{ end }}
 </head>
-<body class="{{ .Section | urlize }}">
-
-{{ partial "sidebar" . }}
+<body class="{{ if .IsHome }}is-home{{ end }} {{ .Section | urlize }}">
+<header class="site-header">
+  <a class="brand" href="{{ .Site.BaseURL }}">
+    <img src="/img/po-mark.png" alt="" class="brand-mark" width="48" height="48">
+    <span class="brand-lockup">
+      <span class="brand-name">Philhower <em>&amp;</em> Okrogly</span>
+      <span class="brand-tag">{{ .Site.Params.tagline }}</span>
+    </span>
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+    <span></span><span></span>
+  </button>
+  <nav id="site-nav" class="site-nav">
+    <a href="/">Home</a>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

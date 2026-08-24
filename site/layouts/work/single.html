@@ -1,0 +1,16 @@
+{{ partial "header" . }}
+
+<main class="project">
+  <figure class="project-hero">
+    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+  </figure>
+  <div class="wrap project-body">
+    <p class="eyebrow">{{ .Params.discipline }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+    {{ .Content }}
+    <p><a href="/work/">← All work</a></p>
+  </div>
+</main>
+
+{{ partial "footer" . }}

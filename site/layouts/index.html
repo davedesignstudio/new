@@ -1,10 +1,81 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-</div>
+<section class="hero">
+  <img src="/img/hero-workshop.jpg" alt="Sunlit workshop with a walnut table underway and a brand identity on the bench" class="hero-image">
+  <div class="hero-veil"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">Carpentry · Web design · Branding</p>
+    <h1>Design it.<br>Build it.<br>Let it last.</h1>
+    <p class="lede">Philhower &amp; Okrogly is a construction and design company. We cut joinery in the shop and identity on the page — custom carpentry, websites, and brands made with the same hand.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/work/">See the work</a>
+      <a class="btn btn-ghost" href="/theme-song">Play the theme song</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    {{ partial "player" (dict "compact" true) }}
+  </div>
+</section>
+
+<section class="wrap split">
+  <div>
+    <p class="eyebrow">The practice</p>
+    <h2>Two crafts. One standard.</h2>
+    <p>A mortise has to fit. A homepage has to hold. Whether we are raising a walnut table or a type system, we measure twice, cut clean, and leave work you can live with.</p>
+  </div>
+  <figure class="frame">
+    <img src="/img/craft-dovetail.jpg" alt="Hands assembling a walnut dovetail joint">
+  </figure>
+</section>
+
+<section class="services-row wrap">
+  <article>
+    <p class="eyebrow">01</p>
+    <h3>Carpentry design &amp; build</h3>
+    <p>Custom furniture, millwork, stairs, built-ins, and small structures. Designed in the studio, cut in the shop, installed to last.</p>
+    <a href="/services">Explore carpentry</a>
+  </article>
+  <article>
+    <p class="eyebrow">02</p>
+    <h3>Web design</h3>
+    <p>Sites with the same joinery as the objects they represent — considered type, honest structure, and pages that do real work.</p>
+    <a href="/services">Explore web design</a>
+  </article>
+  <article>
+    <p class="eyebrow">03</p>
+    <h3>Branding</h3>
+    <p>Names, marks, color, and print. Identity systems that feel like well-made tools: simple in the hand, stubborn over time.</p>
+    <a href="/services">Explore branding</a>
+  </article>
+</section>
+
+<section class="wrap">
+  <div class="section-head">
+    <p class="eyebrow">Selected work</p>
+    <h2>From the grain to the grid</h2>
+  </div>
+  <div class="work-grid">
+    {{ range first 6 (where .Site.RegularPages "Section" "work") }}
+    <a class="work-card" href="{{ .Permalink }}">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      <span>
+        <small>{{ .Params.discipline }}</small>
+        <strong>{{ .Title }}</strong>
+      </span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Have a house, a shop, or a brand to build?</h2>
+    <p>Tell us what you are making. We will tell you how we would cut it.</p>
+    <a class="btn btn-primary" href="/contact">Start a project</a>
+  </div>
+</section>
 
 {{ partial "footer" . }}

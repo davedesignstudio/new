@@ -1,0 +1,73 @@
+<div class="player {{ if .compact }}player--compact{{ end }}" data-theme-player>
+  <audio preload="metadata">
+    <source src="/audio/grain-and-grid.mp3" type="audio/mpeg">
+    <source src="/audio/grain-and-grid.ogg" type="audio/ogg">
+  </audio>
+  <div class="player-controls">
+    <button class="play-btn" type="button" aria-label="Play Grain and Grid">
+      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,5 20,12 8,19"></polygon></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg>
+    </button>
+    <div class="player-meta">
+      <p class="player-kicker">Official theme song</p>
+      <h2 class="player-title">Grain &amp; Grid</h2>
+      <p class="player-by">Philhower &amp; Okrogly · 96 BPM · G major</p>
+    </div>
+    <div class="player-time">
+      <span data-elapsed>0:00</span>
+      <span class="player-slash">/</span>
+      <span data-duration>2:01</span>
+    </div>
+  </div>
+  <div class="player-progress" role="slider" aria-label="Seek" tabindex="0">
+    <div class="player-progress-bar" data-progress></div>
+  </div>
+  {{ if not .compact }}
+  <ol class="lyrics" data-lyrics>
+    <li data-t="5.0">Sawdust in the morning light</li>
+    <li data-t="7.5">Pencil lines on maple white</li>
+    <li data-t="10.0">Every joint and every grain</li>
+    <li data-t="12.5">Tells a story, bears a name</li>
+    <li data-t="15.0">We take the timber, take the time</li>
+    <li data-t="17.5">Square the corner, true the line</li>
+    <li data-t="20.0">Measure what the wood will give</li>
+    <li data-t="22.5">Build the way we want to live</li>
+    <li data-t="25.0" class="chorus">Philhower and Okrogly</li>
+    <li data-t="27.5" class="chorus">Design it, build it, let it be</li>
+    <li data-t="30.0" class="chorus">From the workshop to the web</li>
+    <li data-t="32.5" class="chorus">From the brand to the homestead</li>
+    <li data-t="35.0" class="chorus">Measure twice and cut it clean</li>
+    <li data-t="37.5" class="chorus">Make it honest, make it seen</li>
+    <li data-t="40.0" class="chorus">Philhower and Okrogly</li>
+    <li data-t="42.5" class="chorus">Craft in wood and craft in screen</li>
+    <li data-t="45.0">Pixels stacked like dovetail joints</li>
+    <li data-t="47.5">Type that holds and color points</li>
+    <li data-t="50.0">A logo like a mortise lock</li>
+    <li data-t="52.5">A site that stands, a brand that talks</li>
+    <li data-t="55.0">We draw the plan, we raise the frame</li>
+    <li data-t="57.5">Digital or grain — it’s all the same</li>
+    <li data-t="60.0">Identity you live inside</li>
+    <li data-t="62.5">A table, mark, and place of pride</li>
+    <li data-t="65.0" class="chorus">Philhower and Okrogly</li>
+    <li data-t="67.5" class="chorus">Design it, build it, let it be</li>
+    <li data-t="70.0" class="chorus">From the workshop to the web</li>
+    <li data-t="72.5" class="chorus">From the brand to the homestead</li>
+    <li data-t="75.0" class="chorus">Measure twice and cut it clean</li>
+    <li data-t="77.5" class="chorus">Make it honest, make it seen</li>
+    <li data-t="80.0" class="chorus">Philhower and Okrogly</li>
+    <li data-t="82.5" class="chorus">Craft in wood and craft in screen</li>
+    <li data-t="85.0" class="bridge">Hammer, chisel, keyboard, mouse</li>
+    <li data-t="87.5" class="bridge">We’re building more than just a house</li>
+    <li data-t="90.0" class="bridge">Join the grain and join the grid</li>
+    <li data-t="92.5" class="bridge">Leave it better than we did</li>
+    <li data-t="95.0" class="chorus">Philhower and Okrogly</li>
+    <li data-t="97.5" class="chorus">Design it, build it, let it be</li>
+    <li data-t="100.0" class="chorus">From the workshop to the web</li>
+    <li data-t="102.5" class="chorus">From the brand to the homestead</li>
+    <li data-t="105.0" class="chorus">Measure twice and cut it clean</li>
+    <li data-t="107.5" class="chorus">Make it honest, make it seen</li>
+    <li data-t="110.0" class="chorus">Philhower and Okrogly</li>
+    <li data-t="112.5" class="chorus">Craft in wood and craft in screen</li>
+  </ol>
+  {{ end }}
+</div>

@@ -1,7 +1,8 @@
 {{ partial "header" . }}
 
-<div class="content container">
+<main class="page wrap">
+  {{ if .Title }}<h1 class="page-title">{{ .Title }}</h1>{{ end }}
   {{ .Content }}
-</div>
+</main>
 
 {{ partial "footer" . }}

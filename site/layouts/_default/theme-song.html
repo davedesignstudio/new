@@ -1,0 +1,13 @@
+{{ partial "header" . }}
+
+<main class="page wrap theme-song-page">
+  <p class="eyebrow">Official theme song</p>
+  <h1>Grain &amp; Grid</h1>
+  <p class="lede">Written for Philhower &amp; Okrogly — a workshop anthem for a studio that builds in timber and in type.</p>
+  {{ partial "player" (dict "compact" false) }}
+  <section class="song-notes">
+    {{ .Content }}
+  </section>
+</main>
+
+{{ partial "footer" . }}

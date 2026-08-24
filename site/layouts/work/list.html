@@ -1,0 +1,21 @@
+{{ partial "header" . }}
+
+<main class="page wrap">
+  <p class="eyebrow">Work</p>
+  <h1>{{ with .Params.headline }}{{ . }}{{ else }}Selected work{{ end }}</h1>
+  {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+  {{ .Content }}
+  <div class="work-grid">
+    {{ range .Data.Pages }}
+    <a class="work-card" href="{{ .Permalink }}">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      <span>
+        <small>{{ .Params.discipline }}</small>
+        <strong>{{ .Title }}</strong>
+      </span>
+    </a>
+    {{ end }}
+  </div>
+</main>
+
+{{ partial "footer" . }}
