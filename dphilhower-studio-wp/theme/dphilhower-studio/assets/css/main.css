@@ -997,3 +997,58 @@ select {
   margin-bottom: 0.35rem;
   font-size: 1.05rem;
 }
+
+.field-notes {
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--space);
+  background: #0a0c10;
+  color: #f4efe4;
+}
+
+.field-notes .section-label {
+  color: #3dc8ff;
+}
+
+.field-notes .section-title {
+  color: #f4efe4;
+}
+
+.field-notes .section-copy {
+  max-width: 42rem;
+  color: rgba(244, 239, 228, 0.82);
+}
+
+.field-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.1rem;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.field-notes-grid li {
+  margin: 0;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  background: #11141a;
+}
+
+.field-notes-grid h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #c9a227;
+}
+
+.field-notes-grid p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(244, 239, 228, 0.82);
+}
+
+.field-notes .trail {
+  margin: 1.75rem 0 0;
+  max-width: 42rem;
+}

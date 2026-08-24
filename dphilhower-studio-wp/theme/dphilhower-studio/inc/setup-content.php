@@ -326,7 +326,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Same Hills blade. Balanced lockup: PK overlapping the carpenter-square on a gold–burgundy field. PHILHOWER and O’Krogly in the diamond points. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black outside the blade.</p>',
+			'content'  => '<p>Same Hills blade. Balanced lockup: PK overlapping the carpenter-square on a gold–burgundy field. PHILHOWER and O’Krogly in the diamond points. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black outside the blade.</p><p>NJ carpenter marks cluster into four families — union shield, house-and-script, truck-door gothic, mill-and-saw. This lockup stays with the mill-and-saw line. The diamond is a carpenter’s square — the rule from the trade, not the union shield.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',

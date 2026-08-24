@@ -48,6 +48,9 @@ get_header();
 			</div>
 			<?php
 			$slug = get_post_field( 'post_name', get_the_ID() );
+			if ( 'philhower-okrogly' === $slug ) {
+				get_template_part( 'template-parts/field-notes-pok' );
+			}
 			if ( 'ember-pie-co' === $slug ) {
 				get_template_part( 'template-parts/brand-kit-ember' );
 			} else {
