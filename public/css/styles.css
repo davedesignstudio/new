@@ -306,6 +306,8 @@ p {
   margin: 0 auto;
   padding: clamp(4rem, 12vh, 7rem) 0 clamp(3rem, 8vh, 5rem);
   animation: riseIn 1s var(--ease) both;
+  /* Lockup in .hero-media is the brand signal; copy stays lean. */
+  max-width: 34rem;
 }
 
 @keyframes riseIn {
