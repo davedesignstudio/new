@@ -72,7 +72,7 @@ svg {
 
 .services {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2px;
   background: var(--ink);
 }
@@ -97,10 +97,11 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0.5rem;
+  min-width: 0;
+  padding: 0.75rem 0.4rem;
   background: var(--rail);
   color: #f4f0e8;
-  overflow: visible;
+  overflow: hidden;
   transition: background 0.35s var(--ease-out), color 0.35s var(--ease-out);
   animation: rise-in 0.7s var(--ease-out) both;
 }
@@ -116,32 +117,44 @@ svg {
   outline: none;
 }
 
-@media (min-width: 860px) {
-  .services__item {
-    padding: 1.5rem;
-  }
-}
-
 .services__label {
   font-family: var(--font-condensed);
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
-  line-height: 1;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
   text-transform: uppercase;
-  white-space: nowrap;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 @media (min-width: 860px) {
+  .services__item {
+    padding: 1.5rem 0.75rem;
+  }
+
   .services__label {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 1.85rem;
+    font-size: 1.65rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .services__item:nth-child(3) .services__label {
+    font-size: 1.35rem;
   }
 }
 
 @media (min-width: 1100px) {
   .services__label {
-    font-size: 2.35rem;
+    font-size: 2rem;
+  }
+
+  .services__item:nth-child(3) .services__label {
+    font-size: 1.55rem;
   }
 }
 
