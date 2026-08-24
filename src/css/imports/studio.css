@@ -75,12 +75,12 @@
   max-width: 42rem;
 }
 
-.brand-board {
-  width: 9.5rem;
+.brand-brush {
+  width: 10.5rem;
   height: auto;
   color: var(--ink);
-  transform: rotate(-8deg);
   flex-shrink: 0;
+  margin-right: -0.35rem;
 }
 
 .brand-line {
@@ -144,7 +144,7 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.nav-cta .skate-icon {
+.nav-cta .brush-icon {
   width: 1.7rem;
   height: auto;
 }
@@ -435,8 +435,8 @@
     margin-left: 0.2rem;
   }
 
-  .brand-board {
-    width: 6.5rem;
+  .brand-brush {
+    width: 7.2rem;
   }
 
   .social {
