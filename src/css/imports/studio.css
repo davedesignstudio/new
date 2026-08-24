@@ -264,8 +264,9 @@ svg {
   transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.skate-figure:hover .skate-figure__art {
-  transform: rotate(-10deg) translateY(-6px);
+.skate-figure:hover .skate-figure__art,
+.skate-figure:focus-within .skate-figure__art {
+  transform: rotate(-6deg) translateY(-10px) scale(1.04);
 }
 
 .studio-footer {
@@ -322,9 +323,10 @@ svg {
 }
 
 .site-nav__icon {
-  width: 1.35rem;
-  height: 0.7rem;
+  width: 1.6rem;
+  height: 1rem;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .cta-call {
