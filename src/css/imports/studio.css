@@ -23,7 +23,7 @@
   border-bottom: var(--rail) solid var(--rule);
   text-decoration: none;
   color: var(--ink);
-  min-height: 33.333vh;
+  min-height: 0;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -65,39 +65,41 @@
 }
 
 .brand-lockup {
-  display: grid;
-  grid-template-columns: minmax(140px, 28%) 1fr;
-  align-items: end;
-  gap: 0.4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
   text-decoration: none;
   color: inherit;
   position: relative;
+  max-width: 42rem;
 }
 
 .brand-board {
-  width: 100%;
-  max-width: 280px;
+  width: 9.5rem;
   height: auto;
   color: var(--ink);
-  transform: rotate(-6deg);
-  transform-origin: left bottom;
-}
-
-.brand-name {
-  display: flex;
-  flex-direction: column;
-  font-family: "Rock Salt", cursive;
-  line-height: 0.95;
+  transform: rotate(-8deg);
+  flex-shrink: 0;
 }
 
 .brand-line {
+  font-family: "Rock Salt", cursive;
   font-size: clamp(1.7rem, 4.4vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.brand-studio-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 1.5rem;
 }
 
 .brand-studio {
+  font-family: "Rock Salt", cursive;
   font-size: clamp(1.4rem, 3.6vw, 2.8rem);
-  margin-left: 2.2rem;
-  margin-top: 0.15rem;
+  line-height: 1;
 }
 
 .studio-nav {
@@ -155,6 +157,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.28rem;
+  flex-shrink: 0;
 }
 
 .social-label {
@@ -421,11 +424,15 @@
   }
 
   .brand-lockup {
-    grid-template-columns: 110px 1fr;
+    max-width: none;
   }
 
-  .brand-studio {
-    margin-left: 0.4rem;
+  .brand-studio-row {
+    margin-left: 0.2rem;
+  }
+
+  .brand-board {
+    width: 6.5rem;
   }
 
   .social {
