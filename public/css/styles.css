@@ -147,6 +147,10 @@ button {
   user-select: none;
 }
 
+.service-label-short {
+  display: none;
+}
+
 /* —— Main column —— */
 .main {
   display: grid;
@@ -195,10 +199,10 @@ button {
 }
 
 .skate {
-  width: clamp(2.4rem, 4.5vw, 3.4rem);
+  width: clamp(2.8rem, 5vw, 3.8rem);
   height: auto;
   color: var(--signal);
-  transform: rotate(-8deg);
+  transform: rotate(-6deg);
   animation: skate-nudge 3.2s var(--ease) infinite;
 }
 
@@ -548,19 +552,24 @@ button {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     min-height: auto;
+    width: 100%;
+    overflow-x: clip;
   }
 
   .services {
     grid-template-rows: none;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     border-right: 0;
     border-bottom: 2px solid var(--ink);
-    min-height: 5.5rem;
+    min-height: 4.75rem;
+    width: 100%;
   }
 
   .service {
     border-bottom: 0;
     border-right: 2px solid rgba(255, 255, 255, 0.18);
+    min-width: 0;
+    padding: 0.35rem;
   }
 
   .service:nth-child(3) {
@@ -570,23 +579,35 @@ button {
   .service-label {
     writing-mode: horizontal-tb;
     transform: none;
-    font-size: clamp(0.72rem, 2.8vw, 0.95rem);
-    letter-spacing: 0.06em;
+    font-size: clamp(0.62rem, 2.6vw, 0.8rem);
+    letter-spacing: 0.04em;
     text-align: center;
     white-space: normal;
-    padding: 0.5rem;
-    line-height: 1.15;
+    padding: 0;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .service-label-full {
+    display: none;
+  }
+
+  .service-label-short {
+    display: inline;
   }
 
   .main {
     padding: 1rem;
     gap: 1rem;
+    min-width: 0;
+    width: 100%;
   }
 
   .brand {
     justify-items: start;
     text-align: left;
     margin-left: 0;
+    max-width: 100%;
   }
 
   .brand-name {
@@ -597,8 +618,25 @@ button {
     margin-right: 0;
   }
 
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    width: 100%;
+  }
+
+  .nav {
+    gap: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  .social {
+    justify-items: start;
+  }
+
   .hero-video {
     width: 100%;
+    min-width: 0;
   }
 
   .video-frame {
