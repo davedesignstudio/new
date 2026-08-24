@@ -461,7 +461,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-27' );
+	update_option( 'dps_images_version', 'brands-print-28' );
 	return true;
 }
 

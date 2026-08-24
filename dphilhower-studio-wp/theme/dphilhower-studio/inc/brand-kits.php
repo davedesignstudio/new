@@ -382,31 +382,19 @@ function dps_brand_kits() {
 		'bernardsville-deli'       => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'Warm deli, cool grocery', 'dphilhower-studio' ),
-			'intro'  => __( 'Two businesses, one town name. Warm gradients for food you eat now, blue for the aisle you shop later. The B flourish is a signature so it still reads after the paper is crumpled.', 'dphilhower-studio' ),
+			'intro'  => __( 'Two businesses, one town name. Warm gradients for food you eat now, blue for the aisle you shop later. The B flourish is a signature so it still reads in a grip and at grocery scale.', 'dphilhower-studio' ),
 			'pieces' => array(
-				array(
-					'file'    => 'bvdeli-print-wrap.png',
-					'alt'     => __( 'Bernardsville Deli butcher paper and kraft bag with the official stacked lockup', 'dphilhower-studio' ),
-					'heading' => __( 'Wrap and bag', 'dphilhower-studio' ),
-					'story'   => __( 'Butcher paper gets crushed in a car. The official stacked lockup — yellow-to-red Deli, cream Bernardsville, blue Grocery — sits on the wrap and the kraft bag so the town name survives the fold.', 'dphilhower-studio' ),
-				),
-				array(
-					'file'    => 'bvdeli-print-counter.png',
-					'alt'     => __( 'Bernardsville Deli cream tent card with the official stacked lockup on a glass case', 'dphilhower-studio' ),
-					'heading' => __( 'Counter card', 'dphilhower-studio' ),
-					'story'   => __( 'Specials change; the card should not look like a new brand every Tuesday. The same stacked lockup on cream stock. The case does the food photography.', 'dphilhower-studio' ),
-				),
 				array(
 					'file'    => 'bvdeli-print-cup.png',
 					'alt'     => __( 'Bernardsville Deli paper cup with stacked gradient wordmark', 'dphilhower-studio' ),
 					'heading' => __( 'Cup', 'dphilhower-studio' ),
-					'story'   => __( 'The B flourish wraps the cup so the town name survives a grip. Warm Deli on top, cool Grocery below, red ampersand as the only loud punctuation. Same stack as the wrap.', 'dphilhower-studio' ),
+					'story'   => __( 'The B flourish wraps the cup so the town name survives a grip. Warm Deli on top, cool Grocery below, red ampersand as the only loud punctuation.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bvdeli-print-tote.png',
 					'alt'     => __( 'Kraft Bernardsville Deli grocery bag with the official stacked lockup and navy handles', 'dphilhower-studio' ),
 					'heading' => __( 'Tote', 'dphilhower-studio' ),
-					'story'   => __( 'Grocery scale, navy handles, the same stacked lockup. Cooler than the wrap on purpose: the aisle, not the counter. The sandwich inside still wears the warm mark.', 'dphilhower-studio' ),
+					'story'   => __( 'Grocery scale, navy handles, the same stacked lockup. The aisle, not the counter.', 'dphilhower-studio' ),
 				),
 			),
 		),
