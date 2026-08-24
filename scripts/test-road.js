@@ -306,6 +306,17 @@ check("kitchen stranger questions resolve", function () {
   });
 });
 
+check("rye is a guest stranger with bounce art", function () {
+  var ids = R.STRANGERS.map(function (x) {
+    return x.id;
+  });
+  assert.ok(ids.indexOf("rye") !== -1, "missing rye");
+  var mem = R.loadMem();
+  var q = R.questionForStranger({ id: "rye" }, mem);
+  assert.ok(/extra chair|mustard|rye/i.test(q.q), q.q);
+  assert.equal(R.artForStranger({ id: "rye" }, function () { return "/img/road/paper.jpg"; }, mem), "/img/road/rye.jpg");
+});
+
 if (fails) {
   console.log("\n" + fails + " failed");
   process.exit(1);

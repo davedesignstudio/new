@@ -44,6 +44,8 @@ The comic rule still holds: **show the steam, don’t caption the soul.**
 
 **Prophet Gary** arrived in a booth of light to announce the Chosen Two. Zorya keeps stealing his lines. Nobody told him about the hound, the munchies, or the rubber masks.
 
+**Rye** is a guest with a mustard coat and a loaf that still walks. First-issue splash: [Sample](/sample). She is the extra place, not a cape. Gary starts a sentence. She slides him the ketchup.
+
 ---
 
 ## The route (mysteries you can eat)

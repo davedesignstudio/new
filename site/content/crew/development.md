@@ -20,7 +20,7 @@ Applied rule for WIDER: every major seat gets a distinct need. Shared wants (the
 
 ### Ensemble balance
 
-Ensembles fail when one lead owns every arc and the rest react, or when focus rotates so fast nobody lands. Fix: map wants and arcs first; stagger emotional peaks; give meaningful time, not equal time. Readers track about five or six mains before investment thins. WIDER’s six: **Zorya, Bodie, Klax, Grub, VANESSA, Prophet Gary**. Guests (auntie, widow, princess, Bind) echo the theme and leave.
+Ensembles fail when one lead owns every arc and the rest react, or when focus rotates so fast nobody lands. Fix: map wants and arcs first; stagger emotional peaks; give meaningful time, not equal time. Readers track about five or six mains before investment thins. WIDER’s six: **Zorya, Bodie, Klax, Grub, VANESSA, Prophet Gary**. Guests (auntie, widow, princess, Bind, Rye) echo the theme and leave.
 
 ### Buddy / road-trip foils
 
@@ -57,6 +57,8 @@ Every arc answers that. Fortress fails. Guests who pass the ketchup live. The te
 
 Guest echo — **the princess / high girder**: want = rescue or recognition; need = to leave the throne that remembers abandonment; she is The Tower in a skazka dress, not a second protagonist.
 
+Guest echo — **Rye / the extra place**: want = keep the loaf moving (fire escape, nickel cafeteria, communal steam as one street); need = to sit after the bounce. She is street-level scale for the Tower-fall: the kitchen that thought it could not fall still falls; she does not punch Hunger; she is the spare chair. Not a seventh main. Splash: [Sample](/sample). Bible: [Rye](/crew/rye).
+
 ---
 
 ## Relationship map (who changes whom)
@@ -64,8 +66,9 @@ Guest echo — **the princess / high girder**: want = rescue or recognition; nee
 - **Bodie ↔ Klax:** foil partners. Mid-story break when confidence and itinerary both fail the diner. Reunion is passing the ketchup — commensality as friendship.
 - **Grub → party:** courage catalyst. He unmasks when the boys freeze. His need beat is one scene without a treat.
 - **VANESSA → boys:** mother/vehicle. She refuses to start until they share. Her need beat is being thanked without a punchline.
-- **Gary → theme:** false structure. His prophecy is the franchise map; Zorya steals his lines and seats the hound.
+- **Gary → theme:** false structure. His prophecy is the franchise map; Zorya steals his lines and seats the hound. He will try to announce Rye. The interruption is bread.
 - **Zorya → everyone:** thematic truth. She does not finish their arcs. She names the pattern after they walk it.
+- **Rye → extra place:** guest motion. She bounces so the spare seat arrives; she must not win the storm by hitting it.
 
 ---
 
@@ -92,6 +95,7 @@ Road-Wisdom loop is Zorya’s infinite B-plot: the seeker’s traits accumulate;
 - **Grub:** food first. One brave silence per arc is louder than puns.
 - **VANESSA:** glyphs, delayed verbs, maternal threats. No face — lights only.
 - **Gary:** unbroken majestic diction until interrupted. The interruption is the joke and the thesis.
+- **Rye:** short, one kitchen object, gravity jokes. Never destiny font. Never a seventh monologue.
 
 ---
 

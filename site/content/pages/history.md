@@ -12,7 +12,9 @@ She does not lecture countries. She is not stacking them. She is remembering a t
 
 A man carried black bread to a house that had locked its kitchen. The people upstairs had forgotten crust. They laughed. Then they tasted it and called it a crown, which is the wrong name for bread.
 
-The stove, insulted, went to live in a smaller house. That is how a fortress starts: it stops smelling its own soup. That is how The Tower starts. Tarot will name it later. The cooks already knew.
+The stove, insulted, went to live in a smaller house. That is how a fortress starts: it stops smelling its own soup. That is how The Tower starts. Tarot will name it later. The cooks already knew. The kitchen that thought it could not fall was already that stove, years later, with better masonry.
+
+On a later street the loaf is still walking. A woman in a mustard coat takes the fire escape instead of the locked door. Nickel cafeteria in one window. Communal steam in the next. Same crust. She is not stacking countries. She is remembering a table — and bouncing so the extra chair arrives before Hunger finishes the sentence.
 
 ## The case that was dinner
 

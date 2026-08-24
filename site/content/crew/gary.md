@@ -23,7 +23,7 @@ Herald in a shimmering booth of light. Sent to guide the Chosen Two. Nobody told
 
 ## Arc
 
-He begins as exposition with a halo. He becomes comedy when the boys talk over him. He becomes theme when Zorya steals his lines and seats Grub. His change is surrender: prophecy as franchise map fails; dinner as destiny holds.
+He begins as exposition with a halo. He becomes comedy when the boys talk over him. He becomes theme when Zorya steals his lines and seats Grub. He will try to announce [Rye](/crew/rye). The interruption is bread. His change is surrender: prophecy as franchise map fails; dinner as destiny holds.
 
 ## Craft job
 

@@ -10,10 +10,11 @@ summary = "How this comic novel is built: panels, a road of kitchens, and a plan
 
 WIDER is a **graphic novel** — book-length sequential art — not a prose novel with illustrations. The script is a blueprint for pages and panels.
 
-- Average **3–6 panels per page**; splash pages hold wonder; dense grids speed travel
+- Average **3–6 panels per page**; splash pages hold wonder (and the first-issue clash: kitchen vs Hunger as a body); dense grids speed travel
 - Dialogue stays short (**~15–25 words** per balloon)
 - Never say in a caption what the drawing already shows
 - Use **page turns** as cliffhangers (left page tension → right page payoff)
+- **Bounce** is a layout verb: diagonal leap, fire escape to fire escape, then a quiet splash that sits
 
 Two production modes to choose early: **full script** (panel-by-panel) or **plot-first** (artist layouts, dialogue after).
 

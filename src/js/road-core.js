@@ -247,6 +247,14 @@
         { id: "walk-star", label: "Keep walking", t: { wander: 1 } },
         { id: "split-slider", label: "Split it", t: { loyalty: 1, mercy: 1 }, flag: "satStar", card: "HEART" }
       ]
+    },
+    {
+      q: "A mustard coat bounces off the fire escape. Black rye. A cup that did not spill. She points at the extra chair. Sit — or punch the storm?",
+      a: [
+        { id: "sit-rye", label: "Sit", t: { mercy: 1, trust: 1 }, flag: "satRye" },
+        { id: "punch-storm", label: "Punch the storm", t: { courage: 1, suspicion: 1 } },
+        { id: "ask-rye", label: "Ask who she is", t: { curiosity: 1 } }
+      ]
     }
   ];
 
@@ -269,7 +277,8 @@
     { id: "diner", name: "a diner cook", art: "creamery" },
     { id: "mascot", name: "a rubber head", art: "road" },
     { id: "canteen", name: "a widow cook", art: "chapel" },
-    { id: "star", name: "the Star-table", art: "oracle" }
+    { id: "star", name: "the Star-table", art: "oracle" },
+    { id: "rye", name: "Rye", art: "village" }
   ];
 
   function blankTraits() {
@@ -547,7 +556,8 @@
       diner: "pass-ketchup",
       mascot: "say-cook",
       canteen: "eat-stew",
-      star: "sit-star"
+      star: "sit-star",
+      rye: "sit-rye"
     };
     var want = who[stranger.id] || "return-it";
     var q = QUESTIONS[0];
@@ -595,6 +605,7 @@
     if (stranger.id === "mascot") return pick(["/img/road/kong.jpg", "/img/road/scan-a.png"], mem);
     if (stranger.id === "canteen") return pick(["/img/road/paper.jpg", "/img/road/scan-b.png"], mem);
     if (stranger.id === "star") return "/img/tower/ch4.jpg";
+    if (stranger.id === "rye") return "/img/road/rye.jpg";
     return nextArt();
   }
 
@@ -941,6 +952,7 @@
       }
       var out = [s.stranger.name.toUpperCase(), ""];
       if (s.stranger.id === "princess") out = ["HIGH GIRDER", "", "She is waiting."];
+      if (s.stranger.id === "rye") out = ["THE EXTRA PLACE", "", "Mustard coat.", "Loaf still warm."];
       return out.concat(wrapText(e.q, 18));
     }
     if (sc === "discover") {
@@ -1271,6 +1283,7 @@
     HIDDEN: HIDDEN,
     cloneBeat: cloneBeat,
     questionForStranger: questionForStranger,
+    artForStranger: artForStranger,
     pairLine: pairLine,
     childMemoryBeat: childMemoryBeat,
     makeSymbolBeat: makeSymbolBeat,

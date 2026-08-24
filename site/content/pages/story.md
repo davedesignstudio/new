@@ -32,6 +32,12 @@ Every haunting is a person protecting food: a night clerk and the last bag of cr
 
 Unmask. Sit. The slider stand at the edge of the map is the Star-table with a bun on it. **Prophet Gary** announced Chosen Ones. Zorya stole his lines. The hound was not in the prophecy. The hound was in the booth.
 
+Sometimes a mustard coat bounces in with the extra chair. That is **[Rye](/crew/rye)**. Gary starts a sentence. She slides him the ketchup. First issue: [Sample](/sample).
+
+## The extra place
+
+The kitchen thought it could not fall. Hunger arrived as a body — locked doors, empty bowls, lightning with a chest like a safe. The keep still came down. What bounces in the wreckage is not a god. It is a loaf, a cup that did not spill, a spare seat. Punching the storm is fortress work. Sitting is the plot.
+
 ## What she remembers
 
 A palace forgot crust. A prairie kitchen split a loaf. A stall would not sell its name. Same supper. She is not stacking countries. She is remembering a table.
@@ -42,6 +48,6 @@ The long memory is [History](/history). The load-bearing stone, told down the ta
 
 After enough miles she stops selling you a future. You thought you wanted a fortune. You wanted permission to sit.
 
-[Drive it](/adventure). [Sit. She is the DM](/table). [What you hid](/hidden). [The six kitchens](/route). [Hike the trail](/world) — meet them on the way.
+[Drive it](/adventure). [Sit. She is the DM](/table). [What you hid](/hidden). [The six kitchens](/route). [Hike the trail](/world) — meet them on the way. [First issue](/sample).
 
 If you make stories of your own: [Libraries](/libraries).

@@ -148,5 +148,16 @@ needFile("site/content/pages/about.md", [
 needFile("site/content/pages/contact.md", [
   "We help independent restaurants look as exceptional as the food they serve."
 ]);
+needFile("site/content/crew/rye.md", [
+  "extra place",
+  "mustard",
+  "not a seventh main"
+]);
+needFile("site/content/pages/sample.md", [
+  "/img/comic/rye-clash.jpg",
+  "/img/comic/rye-bounce.jpg",
+  "/img/comic/rye-star.jpg",
+  "The kitchen thought it could not fall"
+]);
 
 console.log("copy lint passed (" + files.length + " files)");

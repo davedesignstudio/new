@@ -20,6 +20,8 @@ WIDER uses food the way a mystery uses clues. Each stop is researched as a **foo
 
 **The street processes the food.** A bun on a plate in a palace is not the same bun passed through a van window at 2 a.m. Location is an ingredient.
 
+**Street-level bounce.** A nickel cafeteria and a communal kitchen are one foodscape if you draw them in the same panel: steam, black bread, a cup that does not spill. Modern-art geometry (a black square that is a plate, color-field booths) is how the splash holds two rooms without stacking captions. [Rye](/crew/rye) is that panel walking.
+
 ## Per-stop kitchen bible
 
 | Stop | Earth analog (research, not copy) | Comic hook |
@@ -35,4 +37,4 @@ Write smell first. Then steam. Then who gets a seat. Other tellers on why the ta
 
 ## Dinner mythos (The Tower → The Star)
 
-The citadel in Path B1 is the kitchen under weather. Wards are recipes you refuse to franchise. Lightning is Hunger. Phantom knights are guests who will not share. When the tower becomes dust, the sanctuary of white stone is **service**: plates, glass, a beam like a candle. Brand line: *every night The Tower may fall; every night dinner rebuilds The Star.*
+The citadel in Path B1 is the kitchen under weather. Wards are recipes you refuse to franchise. Lightning is Hunger. When Hunger arrives as a body — locked doors, empty bowls — the kitchen that thought it could not fall still falls. Phantom knights are guests who will not share. When the tower becomes dust, the sanctuary of white stone is **service**: plates, glass, a beam like a candle. Brand line: *every night The Tower may fall; every night dinner rebuilds The Star.* First-issue splash of that clash: [Sample](/sample).

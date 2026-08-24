@@ -75,7 +75,8 @@
       lines: [
         "Behold — wait. Did she steal my lines again?",
         "I announced Chosen Ones. The hound was not in the prophecy. The hound was in the booth.",
-        "Buy a prophet dinner and the night softens."
+        "Buy a prophet dinner and the night softens.",
+        "Behold the extra place — wait. That is a person. With bread."
       ]
     },
     {
@@ -124,6 +125,18 @@
         "I refuse the cage. The view from here is honest.",
         "An ape can keep a tower. A person keeps walking.",
         "Look out. That valley does not end. Neither does Earth."
+      ]
+    },
+    {
+      id: "rye",
+      name: "Rye",
+      role: "the extra place",
+      color: "#c4a030",
+      accent: "#f2efe8",
+      lines: [
+        "I am not the kitchen that cannot fall. I am the chair that still bounces.",
+        "The loaf walked. I just kept it moving.",
+        "Gary wants a cape. The nickel cafeteria wants a nickel. Same hunger. Sit."
       ]
     }
   ];
@@ -449,6 +462,11 @@
       var van = box(2.4, 1.3, 1.4, npc.color);
       van.position.set(0, 0.85, -1.6);
       g.add(van);
+    }
+    if (npc.id === "rye") {
+      body.rotation.z = 0.28;
+      body.position.y = 1.2;
+      scarf.rotation.z = -0.35;
     }
     var halo = new THREE.Mesh(
       new THREE.RingBufferGeometry(0.9, 1.15, 20),

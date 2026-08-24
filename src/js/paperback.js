@@ -346,7 +346,7 @@
       art: "/img/tower/ch3.jpg",
       text: [
         "Four hours. You are terrible at it and then, briefly, around hour three, you are not.",
-        "The lightning gets in at 2 a.m. It takes the east wall and most of the roof and every single ward the owner paid for.",
+        "The kitchen thought it could not fall. Hunger arrives as a body — locked doors, empty bowls, lightning with a chest like a safe. It takes the east wall and most of the roof and every single ward the owner paid for.",
         "The head cook does not evacuate. She moves the whole service out into the courtyard, in the rain, and keeps going. Somebody props the safe open for the light."
       ],
       choices: [
@@ -362,6 +362,7 @@
       text: [
         "The keep comes down and becomes, in about six hours, a very good open-air restaurant.",
         "The recipe turns out to be four lines on an index card and the head cook reads it aloud to everyone present, twice, so that it cannot be locked up again.",
+        "A mustard coat is already in the courtyard, bouncing a spare chair into place like gravity owed her a nickel. Gary starts a sentence about Chosen. She slides him the ketchup.",
         "The owner stands in his own courtyard eating his own food off a plate someone handed him and cannot stop crying, which everyone has the grace to ignore. A cook, without looking at him, butters him more bread."
       ],
       choices: [
@@ -757,7 +758,7 @@
         "At the edge of the map, where the road stops pretending it goes anywhere else, there is a slider stand with a light on.",
         "It is not a castle. It is a counter, eight stools, and a man who has been waiting up.",
         "He pours coffee before he asks who you are.",
-        "There are exactly enough seats. There have always been exactly enough seats. That was the prophecy; Gary just read it in a font that made it sound like war."
+        "A woman in a mustard coat is already on a stool. Black bread. A cup that did not spill. There are exactly enough seats. There have always been exactly enough seats. That was the prophecy; Gary just read it in a font that made it sound like war."
       ],
       choices: [
         { label: "Sit", to: 100 },

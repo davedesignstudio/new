@@ -27,6 +27,8 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 - **[Mouths](/mouths)** — every text in English, which nobody has; public-domain scraps we sat with.
 - **[History](/history)** — palace, prairie, stall: one supper, not three captions.
 - **[Keystone](/keystone)** — the stone is not the soup; told down the table.
+- **[Sample](/sample)** — first-issue splash: Hunger as a body, Rye as the extra place that bounces.
+- **[Rye](/crew/rye)** — guest, not a seventh main. Mustard coat. Spare chair.
 
 Mars is not a sequel. It is Earth imagining an exit and still having to set supper.
 
