@@ -1,4 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="D Philhower Studio">
-  <rect width="64" height="64" fill="#10140f"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#f2f4ef">DP</text>
+  <rect width="64" height="64" fill="#0a0c16"/>
+  <circle cx="34" cy="32" r="18" fill="#fcdd44"/>
+  <path d="M14 12c10 0 22 4 22 20S24 52 14 52V12z" fill="#2e41a1"/>
+  <path d="M14 12c10 0 22 4 22 20S24 52 14 52V12z" fill="url(#d-mag)" opacity="0.55"/>
+  <defs>
+    <linearGradient id="d-mag" x1="14" y1="52" x2="36" y2="12">
+      <stop stop-color="#5b1f8a"/>
+      <stop offset="1" stop-color="#d03393"/>
+    </linearGradient>
+  </defs>
 </svg>

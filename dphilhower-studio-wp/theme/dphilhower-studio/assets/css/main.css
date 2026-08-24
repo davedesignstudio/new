@@ -1,16 +1,16 @@
 :root {
-  --ink: #1c1814;
-  --ink-soft: #2a2420;
-  --stone: #e8dfd0;
-  --stone-deep: #d4c6b0;
-  --paper: #f4efe4;
-  --verdigris: #5c6b32;
-  --verdigris-bright: #6f8040;
-  --heat: #c24e1e;
-  --heat-bright: #d45c28;
-  --brass: #c9a227;
-  --muted: #6b6156;
-  --line: rgba(28, 24, 20, 0.14);
+  --ink: #12163a;
+  --ink-soft: #1c2558;
+  --stone: #ece6c4;
+  --stone-deep: #d8d09a;
+  --paper: #f8f4dc;
+  --verdigris: #c42e86;
+  --verdigris-bright: #d03393;
+  --heat: #2e41a1;
+  --heat-bright: #3d54c4;
+  --brass: #fcdd44;
+  --muted: #5a5670;
+  --line: rgba(18, 22, 58, 0.14);
   --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
   --space: clamp(1rem, 2.5vw, 2rem);
@@ -32,9 +32,9 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(1200px 700px at 12% -10%, rgba(194, 78, 30, 0.12), transparent 55%),
-    radial-gradient(900px 600px at 100% 0%, rgba(92, 107, 50, 0.12), transparent 50%),
-    linear-gradient(165deg, #f4efe4 0%, #ebe3d4 48%, #e0d5c3 100%);
+    radial-gradient(1200px 700px at 12% -10%, rgba(252, 221, 68, 0.22), transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, rgba(46, 65, 161, 0.14), transparent 50%),
+    linear-gradient(165deg, #f8f4dc 0%, #efe8c4 48%, #e4dcb0 100%);
   background-attachment: fixed;
   font-family: var(--font-body);
   font-size: 1.05rem;
@@ -85,7 +85,7 @@ select {
   gap: 1rem;
   padding: 1rem var(--space);
   color: var(--ink);
-  background: rgba(242, 244, 239, 0.94);
+  background: rgba(248, 244, 220, 0.96);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
@@ -552,6 +552,21 @@ select {
 .service-row p {
   margin: 0;
   color: var(--muted);
+}
+
+.service-body {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.service-body ul {
+  margin: 0;
+  padding: 0 0 0 1.15rem;
+  color: var(--muted);
+}
+
+.service-body li + li {
+  margin-top: 0.35rem;
 }
 
 .about-layout {
