@@ -1,0 +1,17 @@
+{{ partial "header" . }}
+
+<article class="page-copy">
+  {{ if .Params.image }}
+  <div class="project-hero">
+    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+  </div>
+  {{ end }}
+  <header class="page-heading">
+    <p class="work-card-cat">{{ .Params.label }}</p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  {{ .Content }}
+  <p><a class="back-link" href="/work/">All work</a></p>
+</article>
+
+{{ partial "footer" . }}

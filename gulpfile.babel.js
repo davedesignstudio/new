@@ -5,7 +5,6 @@ import gutil from "gulp-util";
 import flatten from "gulp-flatten";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
-import cssnext from "postcss-cssnext";
 import cssNested from "postcss-nested";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
@@ -46,8 +45,7 @@ gulp.task("css", () =>
     .pipe(
       postcss([
         cssImport({ from: "./src/css/main.css" }),
-        cssNested(),
-        cssnext()
+        cssNested()
       ])
     )
     .pipe(gulp.dest("./dist/css"))

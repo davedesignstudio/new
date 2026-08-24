@@ -1,7 +1,10 @@
 {{ partial "header" . }}
 
-<div class="content container">
+<article class="page-copy">
+  <header class="page-heading">
+    <h1>{{ .Title }}</h1>
+  </header>
   {{ .Content }}
-</div>
+</article>
 
 {{ partial "footer" . }}

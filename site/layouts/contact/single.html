@@ -1,0 +1,52 @@
+{{ partial "header" . }}
+
+<article class="page-copy">
+  <header class="page-heading">
+    <h1>Call Us</h1>
+    <p>Web design, print, and advertising from the Morristown, NJ area. Leave a note and the studio will follow up.</p>
+  </header>
+
+  <div class="contact-layout">
+    <p>
+      <strong>D. Philhower Studio</strong><br>
+      {{ .Site.Params.location }}<br>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </p>
+
+    <p class="form-success" data-form-success hidden>Got it. We will call or write back shortly.</p>
+
+    <form class="contact-form" data-contact-form action="#" method="post">
+      <p class="honeypot">
+        <label>Don’t fill this in <input type="text" name="bot-field"></label>
+      </p>
+      <label>
+        Name
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+      <label>
+        Phone
+        <input type="tel" name="phone" autocomplete="tel">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>
+        What do you need?
+        <select name="need">
+          <option value="web">Web Design</option>
+          <option value="print">Print</option>
+          <option value="advertising">Advertising + Marketing</option>
+        </select>
+      </label>
+      <label>
+        Notes
+        <textarea name="notes" placeholder="Project, timing, links…"></textarea>
+      </label>
+      <button type="submit">Call me back</button>
+      <p class="form-note">This starter form confirms on the page. Connect it to your inbox before launch.</p>
+    </form>
+  </div>
+</article>
+
+{{ partial "footer" . }}

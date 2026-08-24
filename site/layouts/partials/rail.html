@@ -1,0 +1,41 @@
+<div class="rail">
+  <nav class="menu" aria-label="Primary">
+    <a class="menu-link{{ if .IsHome }} is-active{{ end }}" href="/">Home</a>
+    <a class="menu-link{{ if eq .Section "work" }} is-active{{ end }}" href="/work/">Work</a>
+    <a class="menu-call{{ if eq .Title "Call Us" }} is-active{{ end }}" href="/contact/">
+      <span class="menu-call-deck" aria-hidden="true">{{ partial "skateboard" . }}</span>
+      <span>Call Us</span>
+    </a>
+  </nav>
+
+  <div class="social">
+    <p class="social-label">Social</p>
+    <ul class="social-list">
+      <li>
+        <a class="social-dot" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+            <circle cx="12" cy="12" r="3.6"/>
+            <circle cx="16.7" cy="7.3" r="0.9" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="social-dot" href="https://www.linkedin.com/in/david-philhower-984264169" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+            <path d="M8 10.2V16M8 7.6h.01M12 16v-3.4c0-1 .7-1.7 1.7-1.7s1.7.7 1.7 1.7V16"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="social-dot" href="mailto:{{ .Site.Params.email }}" aria-label="Email the studio">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="3.5" y="6" width="17" height="12" rx="2"/>
+            <path d="M4 7.2L12 13l8-5.8"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
