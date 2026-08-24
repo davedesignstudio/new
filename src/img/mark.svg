@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Philhower and Okrogly mark">
+  <rect width="64" height="64" rx="8" fill="#f4efe6"/>
+  <path fill="#3d2918" d="M10 10h18v7H17v30h30v10H10V10z"/>
+  <circle cx="16.5" cy="13.5" r="1.6" fill="#c9a227"/>
+  <circle cx="21.5" cy="13.5" r="1.6" fill="#c9a227"/>
+  <circle cx="26.5" cy="13.5" r="1.6" fill="#c9a227"/>
+  <path fill="#c9a227" d="M30 28l1.6 16 4.2-4.6 4.8 9.2 3.8-2-4.9-9.3 6.3-.1L30 28z"/>
+</svg>

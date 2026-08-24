@@ -1,65 +1,25 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Section }}</h1>
-  {{ if eq .Section "food" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if ne $key "drinks"}}
-              <h2><em>{{ $key }}</em></h2>
-              <hr>
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h3>{{ .Key }}</h3>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </section>
+<main id="main" class="content-wrap">
+  <header class="section-head">
+    <p class="eyebrow">Portfolio</p>
+    <h1>{{ if eq .Section "work" }}Work{{ else }}{{ .Title }}{{ end }}</h1>
+    <p class="lede">Carpentry, websites, and brands built in the same shop.</p>
+  </header>
+
+  {{ if eq .Section "work" }}
+  <div class="work-grid work-grid-page">
+    {{ range .Data.Pages }}
+    <a class="work-card" href="{{ .Permalink }}">
+      {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}">{{ end }}
+      <span>{{ .Title }}</span>
+      <em>{{ .Params.category }}</em>
+    </a>
     {{ end }}
-  {{ else if eq .Section "drinks" }}
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <section>
-        {{ if eq "categories" $taxonomyname }}
-          {{ range $key, $value := $taxonomy }}
-            {{ if eq $key "drinks"}}
-              {{ range $value.Pages.GroupByParam "type" }}
-                <h2><em>{{ .Key }}</em></h3>
-                <hr>
-                <ul>
-                {{ range .Pages }}
-                  <li>
-                    <p><strong>{{ .Title }}:</strong> {{ .Params.description }}</p>
-                    <p>{{ .Params.price }}</p>
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </section>
-    {{ end }}
-  {{ else if eq .Section "gallery" }}
-    <div class="gallery-carousel">
-      {{ range where .Pages "Section" "gallery" }}
-        <div><img src="{{ .Params.image }}"/></div>
-      {{ end }}
-    </div>
-    <div class="buttons">
-      <button class="prev half-button">Prev</button>
-      <button class="next half-button">Next</button>
-    </div>
+  </div>
+  {{ else }}
+    {{ .Content }}
   {{ end }}
-</div>
+</main>
 
 {{ partial "footer" . }}

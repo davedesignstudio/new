@@ -1,8 +1,8 @@
 {
-  "name": "victor-hugo",
+  "name": "philhower-okrogly",
   "version": "1.0.0",
-  "description": "Victor Hugo is a Hugo boilerplate for creating truly epic websites!",
-  "repository": "netlify/victor-hugo",
+  "description": "Philhower & Okrogly — carpentry design and build, web design, and branding.",
+  "repository": "davedesignstudio/new",
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
@@ -12,7 +12,7 @@
     "start-preview": "gulp server-preview",
     "lint": "eslint src"
   },
-  "author": "",
+  "author": "Philhower & Okrogly",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.0",

@@ -1,0 +1,115 @@
+.player-panel {
+  background: var(--walnut);
+  color: var(--paper);
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.player-viz {
+  background: rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+}
+
+.player-viz canvas {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.player-meta span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--oak);
+}
+
+.player-progress {
+  margin-top: 1rem;
+  height: 4px;
+  background: rgba(244, 239, 230, 0.2);
+}
+
+.player-progress i,
+.mini-progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--brass);
+}
+
+.now-playing {
+  margin: 1rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--oak);
+}
+
+.lead-sheet {
+  margin-bottom: 2.5rem;
+}
+
+.chords {
+  background: var(--paper);
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--walnut);
+}
+
+.lyrics h2 {
+  margin-top: 2rem;
+}
+
+.mini-player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.mini-player[hidden] {
+  display: none;
+}
+
+.mini-play {
+  background: var(--brass);
+  color: var(--ink);
+  border: 0;
+  min-width: 4.5rem;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--sans);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mini-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.mini-copy span {
+  font-size: 0.78rem;
+  color: var(--oak);
+}
+
+.mini-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(244, 239, 230, 0.2);
+}

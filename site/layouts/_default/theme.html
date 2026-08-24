@@ -1,0 +1,40 @@
+{{ partial "header" . }}
+
+<main id="main" class="content-wrap theme-page">
+  <header class="section-head">
+    <p class="eyebrow">Official theme song</p>
+    <h1>Grain &amp; Grid</h1>
+    <p class="lede">The anthem of Philhower &amp; Okrogly. Folk-built in G major, 100 BPM. Play it in the shop, on the site, or on the way to a site visit.</p>
+  </header>
+
+  <section class="player-panel" id="theme-player" aria-label="Grain and Grid player">
+    <div class="player-viz" aria-hidden="true">
+      <canvas id="theme-canvas" width="640" height="120"></canvas>
+    </div>
+    <div class="player-controls">
+      <button type="button" class="btn btn-brass" data-theme-play>Play</button>
+      <div class="player-meta">
+        <strong>Grain &amp; Grid</strong>
+        <span>Philhower &amp; Okrogly · G major · 4/4 · 100 BPM</span>
+      </div>
+    </div>
+    <div class="player-progress" aria-hidden="true"><i id="theme-progress"></i></div>
+    <p class="now-playing" id="now-playing">Press play to hear the studio theme.</p>
+  </section>
+
+  <section class="lead-sheet">
+    <h2>Lead sheet</h2>
+    <p>Key of G. Intro motif is the sonic logo: a G-major triad that climbs <em>Phil-how-er</em> and falls <em>O-krog-ly</em>.</p>
+    <pre class="chords">Intro   G  D  Em  C
+Verse   G  C  G  D  |  Em  C  G  D
+Chorus  C  G  D  G  |  C  G  D  G
+Bridge  Em C  G  D
+Outro   C  G  D  G</pre>
+  </section>
+
+  <article class="lyrics prose">
+    {{ .Content }}
+  </article>
+</main>
+
+{{ partial "footer" . }}

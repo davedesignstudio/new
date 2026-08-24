@@ -1,11 +1,40 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "Philhower & Okrogly"
+canonifyurls = false
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Design and build studio specializing in carpentry, web design, and branding. From the grain to the grid."
+  tagline = "Design & Build"
+  email = "studio@philhowerandokrogly.com"
+  songTitle = "Grain & Grid"
+
+[[menu.main]]
+    name = "Carpentry"
+    url  = "/carpentry"
+    weight = 1
+
+[[menu.main]]
+    name = "Web & Brand"
+    url  = "/web"
+    weight = 2
+
+[[menu.main]]
+    name = "Work"
+    url  = "/work"
+    weight = 3
+
+[[menu.main]]
+    name = "Theme Song"
+    url  = "/theme"
+    weight = 4
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 5
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact"
+    weight = 6

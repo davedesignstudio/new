@@ -1,14 +1,17 @@
-// JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
+import { initThemeSong } from "./theme-song";
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+function initNav() {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("site-nav");
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initNav();
+  initThemeSong();
+});
