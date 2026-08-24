@@ -1,5 +1,10 @@
 import webpack from "webpack";
 import path from "path";
+import crypto from "crypto";
+
+const createHash = crypto.createHash;
+crypto.createHash = algorithm =>
+  createHash.call(crypto, algorithm === "md4" ? "sha256" : algorithm);
 
 export default {
   module: {

@@ -13,33 +13,12 @@ import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
 
-// Hugo arguments
 const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
 const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
-// Development tasks
 gulp.task("hugo", cb => buildSite(cb));
 gulp.task("hugo-preview", cb => buildSite(cb, hugoArgsPreview));
 
-// Run server tasks
-gulp.task("server", ["hugo", "css", "js", "fonts", "videos", "images"], cb =>
-  runServer(cb)
-);
-gulp.task(
-  "server-preview",
-  ["hugo-preview", "css", "js", "fonts", "videos", "images"],
-  cb => runServer(cb)
-);
-
-// Build/production tasks
-gulp.task("build", ["css", "js", "fonts", "videos", "images"], cb =>
-  buildSite(cb, [], "production")
-);
-gulp.task("build-preview", ["css", "js", "fonts", "videos", "images"], cb =>
-  buildSite(cb, hugoArgsPreview, "production")
-);
-
-// Compile CSS with PostCSS
 gulp.task("css", () =>
   gulp
     .src("./src/css/*.css")
@@ -54,7 +33,6 @@ gulp.task("css", () =>
     .pipe(browserSync.stream())
 );
 
-// Compile Javascript
 gulp.task("js", cb => {
   const myConfig = Object.assign({}, webpackConfig);
 
@@ -72,49 +50,42 @@ gulp.task("js", cb => {
   });
 });
 
-// Move all fonts in a flattened directory
 gulp.task("fonts", () =>
   gulp
-    .src("./src/fonts/**/*")
+    .src("./src/fonts/**/*", { allowEmpty: true })
     .pipe(flatten())
     .pipe(gulp.dest("./dist/fonts"))
     .pipe(browserSync.stream())
 );
 
-// Move all videos in a flattened directory
 gulp.task("videos", () =>
   gulp
-    .src("./src/videos/**/*")
+    .src("./src/videos/**/*", { allowEmpty: true })
     .pipe(gulp.dest("./dist/videos"))
     .pipe(browserSync.stream())
 );
 
-// Move all images in a flattened directory
 gulp.task("images", () =>
   gulp
-    .src("./src/img/**/*")
+    .src("./src/img/**/*", { allowEmpty: true })
     .pipe(gulp.dest("./dist/img"))
     .pipe(browserSync.stream())
 );
 
-// Development server with browsersync
 function runServer() {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
-  gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/css/**/*.css", ["css"]);
-  gulp.watch("./src/fonts/**/*", ["fonts"]);
-  gulp.watch("./src/img/**/*", ["images"]);
-  gulp.watch("./src/videos/**/*", ["videos"]);
-  gulp.watch("./site/**/*", ["hugo"]);
+  gulp.watch("./src/js/**/*.js", gulp.series("js"));
+  gulp.watch("./src/css/**/*.css", gulp.series("css"));
+  gulp.watch("./src/fonts/**/*", gulp.series("fonts"));
+  gulp.watch("./src/img/**/*", gulp.series("images"));
+  gulp.watch("./src/videos/**/*", gulp.series("videos"));
+  gulp.watch("./site/**/*", gulp.series("hugo"));
 }
 
-/**
- * Run hugo and build the site
- */
 function buildSite(cb, options, environment = "development") {
   const args = options ? hugoArgsDefault.concat(options) : hugoArgsDefault;
 
@@ -130,3 +101,23 @@ function buildSite(cb, options, environment = "development") {
     }
   });
 }
+
+const assets = gulp.parallel("css", "js", "fonts", "videos", "images");
+
+gulp.task(
+  "server",
+  gulp.series(gulp.parallel("hugo", assets), function serve() {
+    runServer();
+  })
+);
+gulp.task(
+  "server-preview",
+  gulp.series(gulp.parallel("hugo-preview", assets), function servePreview() {
+    runServer();
+  })
+);
+gulp.task("build", gulp.series(assets, cb => buildSite(cb, [], "production")));
+gulp.task(
+  "build-preview",
+  gulp.series(assets, cb => buildSite(cb, hugoArgsPreview, "production"))
+);
