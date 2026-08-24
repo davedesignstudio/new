@@ -11,7 +11,7 @@
   --font-display: "Permanent Marker", cursive;
   --font-condensed: "Bebas Neue", Impact, sans-serif;
   --font-body: "Outfit", system-ui, sans-serif;
-  --gutter: clamp(0.75rem, 1.5vw, 1.25rem);
+  --gutter: 1rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -58,12 +58,11 @@ svg {
   display: grid;
   grid-template-columns: 1fr;
   min-height: 100vh;
-  min-height: 100dvh;
 }
 
 @media (min-width: 860px) {
   .studio {
-    grid-template-columns: minmax(9rem, 22vw) 1fr;
+    grid-template-columns: minmax(7.5rem, 18vw) 1fr;
     gap: var(--gutter);
     padding: var(--gutter);
   }
@@ -82,10 +81,15 @@ svg {
   .services {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    min-height: calc(100vh - 2 * var(--gutter));
-    min-height: calc(100dvh - 2 * var(--gutter));
+    min-height: calc(100vh - 2rem);
     gap: var(--gutter);
     background: transparent;
+  }
+}
+
+@media (min-width: 1100px) {
+  .services {
+    min-height: calc(100vh - 2.5rem);
   }
 }
 
@@ -96,7 +100,7 @@ svg {
   padding: 1rem 0.5rem;
   background: var(--rail);
   color: #f4f0e8;
-  overflow: hidden;
+  overflow: visible;
   transition: background 0.35s var(--ease-out), color 0.35s var(--ease-out);
   animation: rise-in 0.7s var(--ease-out) both;
 }
@@ -120,7 +124,7 @@ svg {
 
 .services__label {
   font-family: var(--font-condensed);
-  font-size: clamp(1.1rem, 2.4vw, 2rem);
+  font-size: 1.25rem;
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
@@ -131,7 +135,13 @@ svg {
   .services__label {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: clamp(1.75rem, 3.2vw, 3rem);
+    font-size: 1.85rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .services__label {
+    font-size: 2.35rem;
   }
 }
 
@@ -155,17 +165,35 @@ svg {
   flex-wrap: wrap;
   align-items: flex-end;
   gap: 0.75rem 1.25rem;
-  margin-bottom: clamp(1.25rem, 3vh, 2.5rem);
+  margin-bottom: 1.5rem;
   animation: rise-in 0.8s var(--ease-out) 0.1s both;
+}
+
+@media (min-width: 860px) {
+  .brand {
+    margin-bottom: 2.25rem;
+  }
 }
 
 .brand__name {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6.5vw, 5.25rem);
+  font-size: 2.6rem;
   line-height: 0.95;
   letter-spacing: 0.01em;
   color: var(--ink);
   transition: color 0.25s ease;
+}
+
+@media (min-width: 720px) {
+  .brand__name {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .brand__name {
+    font-size: 5rem;
+  }
 }
 
 .brand__name:hover,
@@ -179,17 +207,29 @@ svg {
 }
 
 .brand--compact .brand__name {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: 2rem;
+}
+
+@media (min-width: 720px) {
+  .brand--compact .brand__name {
+    font-size: 2.5rem;
+  }
 }
 
 /* —— Skateboard —— */
 
 .skateboard {
-  width: clamp(7rem, 14vw, 11rem);
+  width: 8rem;
   height: auto;
   flex-shrink: 0;
   transform-origin: center bottom;
   animation: board-settle 1s var(--ease-out) 0.35s both;
+}
+
+@media (min-width: 860px) {
+  .skateboard {
+    width: 10.5rem;
+  }
 }
 
 .skateboard__wheel {
@@ -211,8 +251,14 @@ svg {
 @media (min-width: 720px) {
   .stage__body {
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: clamp(1.5rem, 4vw, 3rem);
+    gap: 2rem;
     align-items: stretch;
+  }
+}
+
+@media (min-width: 1100px) {
+  .stage__body {
+    gap: 3rem;
   }
 }
 
@@ -227,9 +273,9 @@ svg {
 
 @media (min-width: 860px) {
   .video-frame {
-    max-height: min(58vh, 520px);
     aspect-ratio: auto;
-    height: min(58vh, 520px);
+    height: 58vh;
+    max-height: 520px;
   }
 }
 
@@ -248,16 +294,26 @@ svg {
 
 .video-frame__label {
   position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-condensed);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: 2.5rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.28);
   pointer-events: none;
   mix-blend-mode: overlay;
+}
+
+@media (min-width: 860px) {
+  .video-frame__label {
+    font-size: 3.25rem;
+  }
 }
 
 /* —— Nav rail —— */
@@ -427,10 +483,16 @@ svg {
 .page-content__title {
   margin: 0 0 1rem;
   font-family: var(--font-condensed);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: 2.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1;
+}
+
+@media (min-width: 720px) {
+  .page-content__title {
+    font-size: 3.25rem;
+  }
 }
 
 .page-content p {
