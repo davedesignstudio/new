@@ -68,13 +68,13 @@
 
 .brand-deck {
   position: absolute;
-  right: -8%;
-  top: 18%;
-  width: min(46%, 240px);
+  left: 58%;
+  top: 8%;
+  width: min(52%, 280px);
   z-index: 0;
-  transform: rotate(-12deg);
+  transform: rotate(-18deg);
   pointer-events: none;
-  opacity: 0.95;
+  opacity: 1;
 }
 
 .brand-d,
@@ -116,7 +116,7 @@
   width: 100%;
   height: auto;
   stroke: currentColor;
-  stroke-width: 3.2;
+  stroke-width: 3.6;
 }
 
 .skateboard-deck {
@@ -145,11 +145,11 @@
 }
 
 .rail {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2.4rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  justify-items: end;
+  gap: 1.6rem;
   padding: 0.5rem clamp(0.9rem, 2vw, 1.6rem) 0.6rem 0.4rem;
 }
 
@@ -158,6 +158,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 0.7rem;
+  align-self: center;
 }
 
 .menu-link {
@@ -208,7 +209,6 @@
 }
 
 .social {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,8 +298,8 @@
   }
 
   .service {
-    min-height: 3.4rem;
-    padding: 0.7rem 0.35rem;
+    min-height: 4.4rem;
+    padding: 0.55rem 0.3rem;
     border-bottom: 0;
     border-right: var(--line-width) solid var(--line);
   }
@@ -312,11 +312,11 @@
   .service--long .service-label {
     writing-mode: horizontal-tb;
     transform: none;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: 0.64rem;
+    letter-spacing: 0.06em;
     white-space: normal;
     text-align: center;
-    line-height: 1.15;
+    line-height: 1.2;
   }
 
   .brand {
@@ -324,8 +324,9 @@
   }
 
   .brand-deck {
-    width: 38%;
-    right: 4%;
+    width: 42%;
+    left: 52%;
+    top: 12%;
   }
 
   .stage-body {
@@ -343,11 +344,16 @@
   }
 
   .rail {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     padding: 0 1rem 1rem;
+  }
+
+  .menu {
+    align-self: auto;
   }
 
   .menu {
