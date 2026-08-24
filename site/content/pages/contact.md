@@ -3,7 +3,7 @@ date = "2026-08-21"
 title = "Contact"
 url = "/contact"
 kicker = "Studio"
-summary = "We help independent restaurants look as exceptional as the food they serve."
+summary = "Menus, marks, rooms. Independent houses. Write the studio."
 +++
 
 **We help independent restaurants look as exceptional as the food they serve.**

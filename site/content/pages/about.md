@@ -3,7 +3,7 @@ date = "2026-08-21"
 title = "About"
 url = "/about"
 kicker = "Studio"
-summary = "We help independent restaurants look as exceptional as the food they serve. WIDER is the long table we built to prove it."
+summary = "Dave Design Studio. WIDER is the long table we built to prove the room can match the plate."
 +++
 
 **We help independent restaurants look as exceptional as the food they serve.**
