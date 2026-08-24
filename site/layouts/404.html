@@ -1,8 +1,16 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
+<div class="page-shell">
+  <a class="page-shell__brand" href="/">D Hülhower <em>Studio</em></a>
+  <nav class="page-shell__nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/work">Work</a>
+    <a class="page-shell__cta" href="/contact">Call us</a>
+  </nav>
+  <main class="page-shell__content">
+    <h1>404: Page not found</h1>
+    <p>That URL is missing. <a href="{{ .Site.BaseURL }}">Head back home</a>.</p>
+  </main>
 </div>
 
 {{ partial "footer" . }}

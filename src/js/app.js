@@ -1,14 +1,12 @@
-// JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
+// Home interactions for D Hülhower Studio
+document.addEventListener("DOMContentLoaded", () => {
+  const panels = document.querySelectorAll(".services__panel");
+  panels.forEach((panel) => {
+    panel.addEventListener("mouseenter", () => {
+      panel.classList.add("is-hot");
+    });
+    panel.addEventListener("mouseleave", () => {
+      panel.classList.remove("is-hot");
+    });
+  });
 });
-
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());

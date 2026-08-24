@@ -1,16 +1,9 @@
 +++
-date = "2017-05-17T13:03:58-04:00"
+date = "2026-08-24"
 title = "Contact"
 url = "/contact"
 +++
 
-## Please fill out the form below
+Ready to talk about a project?
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
-
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
-</form>
+**Call us** — leave a note and the studio will get back to you.

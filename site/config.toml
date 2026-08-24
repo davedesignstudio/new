@@ -1,11 +1,22 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "D Hülhower Studio"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "Web design, print, and advertising from D Hülhower Studio."
+  tagline = "Creative work that moves."
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
+    name = "Home"
+    url  = "/"
     weight = 1
+
+[[menu.main]]
+    name = "Work"
+    url  = "/work"
+    weight = 2
+
+[[menu.main]]
+    name = "Call us"
+    url  = "/contact"
+    weight = 3
