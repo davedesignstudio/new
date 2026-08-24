@@ -289,7 +289,7 @@ function dps_brand_kits() {
 		'philhower-okrogly'        => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One lockup, five scales', 'dphilhower-studio' ),
-			'intro'  => __( 'Hills blade. Big Old English PK overlapping the carpenter-square. Gold–burgundy gradient in the open field. Times PHILHOWER, Garamond O’Krogly. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
+			'intro'  => __( 'Hills blade. Balanced lockup: PK overlapping the carpenter-square on a gold–burgundy field. PHILHOWER and O’Krogly in the diamond points. DESIGN + BUILD on the bottom arc. Polo, van, yard, card, fridge — one lockup.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'pok-seal-hero.png',
