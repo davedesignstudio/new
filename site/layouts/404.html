@@ -1,8 +1,18 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
+<div class="studio studio--page">
+  {{ partial "sidebar" . }}
+
+  <main class="stage stage--page">
+    <header class="brand brand--compact">
+      <a class="brand__name" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </header>
+
+    <article class="page-content">
+      <h1 class="page-content__title">Page not found</h1>
+      <p>That page isn’t here. Head <a href="/">home</a>.</p>
+    </article>
+  </main>
 </div>
 
 {{ partial "footer" . }}

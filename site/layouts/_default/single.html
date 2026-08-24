@@ -1,7 +1,18 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
+<div class="studio studio--page">
+  {{ partial "sidebar" . }}
+
+  <main class="stage stage--page">
+    <header class="brand brand--compact">
+      <a class="brand__name" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </header>
+
+    <article class="page-content">
+      <h1 class="page-content__title">{{ .Title }}</h1>
+      {{ .Content }}
+    </article>
+  </main>
 </div>
 
 {{ partial "footer" . }}

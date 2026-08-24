@@ -1,0 +1,23 @@
+<svg class="skateboard" viewBox="0 0 220 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="deckGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#2c2c2c"/>
+      <stop offset="100%" stop-color="#111"/>
+    </linearGradient>
+  </defs>
+  <!-- Deck -->
+  <path class="skateboard__deck" d="M18 28 C28 12, 50 8, 110 8 C170 8, 192 12, 202 28 C192 44, 170 48, 110 48 C50 48, 28 44, 18 28 Z" fill="url(#deckGrad)"/>
+  <path d="M34 20 C48 14, 70 12, 110 12 C150 12, 172 14, 186 20" fill="none" stroke="#f5c518" stroke-width="1.5" opacity="0.85"/>
+  <!-- Trucks + wheels -->
+  <g class="skateboard__truck skateboard__truck--front">
+    <rect x="48" y="46" width="18" height="6" rx="1" fill="#8a8a8a"/>
+    <circle class="skateboard__wheel" cx="46" cy="56" r="8" fill="#222" stroke="#f5c518" stroke-width="2"/>
+    <circle class="skateboard__wheel" cx="68" cy="56" r="8" fill="#222" stroke="#f5c518" stroke-width="2"/>
+  </g>
+  <g class="skateboard__truck skateboard__truck--back">
+    <rect x="154" y="46" width="18" height="6" rx="1" fill="#8a8a8a"/>
+    <circle class="skateboard__wheel" cx="152" cy="56" r="8" fill="#222" stroke="#f5c518" stroke-width="2"/>
+    <circle class="skateboard__wheel" cx="174" cy="56" r="8" fill="#222" stroke="#f5c518" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,10 +1,59 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <video loop muted autoplay playsinline id="home_video" class="video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
+<div class="studio">
+  {{ partial "sidebar" . }}
+
+  <main class="stage">
+    <header class="brand">
+      <a class="brand__name" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      {{ partial "skateboard" . }}
+    </header>
+
+    <div class="stage__body">
+      <div class="video-frame" id="webdesign">
+        <video class="video-frame__media" loop muted autoplay playsinline poster="">
+          <source src="/videos/SDVid.mp4" type="video/mp4">
+          <source src="/videos/SDVid.ogg" type="video/ogg">
+        </video>
+        <span class="video-frame__label" aria-hidden="true">Video</span>
+      </div>
+
+      <div class="stage__rail">
+        <nav class="site-nav" aria-label="Primary">
+          {{ range .Site.Menus.main }}
+            {{ if eq .Identifier "cta" }}
+            <a class="site-nav__cta" href="{{ .URL }}">{{ .Name }}</a>
+            {{ else }}
+            <a class="site-nav__link{{ if $.IsHome }}{{ if eq .Name "Home" }} is-active{{ end }}{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          {{ end }}
+        </nav>
+
+        <div class="social" id="print">
+          <p class="social__label">Social</p>
+          <ul class="social__list">
+            <li>
+              <a class="social__link" href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 12 8.9a3.1 3.1 0 0 1 0 6.2zm6.1-8.2a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 4.4c-2.1 0-2.36.01-3.19.05-.82.04-1.38.17-1.87.36a3.78 3.78 0 0 0-1.37.89 3.78 3.78 0 0 0-.89 1.37c-.19.49-.32 1.05-.36 1.87C4.41 9.64 4.4 9.9 4.4 12s.01 2.36.05 3.19c.04.82.17 1.38.36 1.87.2.51.46.94.89 1.37.43.43.86.69 1.37.89.49.19 1.05.32 1.87.36.83.04 1.09.05 3.19.05s2.36-.01 3.19-.05c.82-.04 1.38-.17 1.87-.36a3.78 3.78 0 0 0 1.37-.89 3.78 3.78 0 0 0 .89-1.37c.19-.49.32-1.05.36-1.87.04-.83.05-1.09.05-3.19s-.01-2.36-.05-3.19c-.04-.82-.17-1.38-.36-1.87a3.78 3.78 0 0 0-.89-1.37 3.78 3.78 0 0 0-1.37-.89c-.49-.19-1.05-.32-1.87-.36C14.36 4.41 14.1 4.4 12 4.4zm0 1.53c2.06 0 2.3.01 3.11.05.75.03 1.16.16 1.43.26.36.14.62.31.89.58.27.27.44.53.58.89.1.27.23.68.26 1.43.04.81.05 1.05.05 3.11s-.01 2.3-.05 3.11c-.03.75-.16 1.16-.26 1.43-.14.36-.31.62-.58.89a2.4 2.4 0 0 1-.89.58c-.27.1-.68.23-1.43.26-.81.04-1.05.05-3.11.05s-2.3-.01-3.11-.05c-.75-.03-1.16-.16-1.43-.26a2.4 2.4 0 0 1-.89-.58 2.4 2.4 0 0 1-.58-.89c-.1-.27-.23-.68-.26-1.43-.04-.81-.05-1.05-.05-3.11s.01-2.3.05-3.11c.03-.75.16-1.16.26-1.43.14-.36.31-.62.58-.89.27-.27.53-.44.89-.58.27-.1.68-.23 1.43-.26.81-.04 1.05-.05 3.11-.05z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="social__link" href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8.1h2.7l.4-3.1h-3.1V8.8c0-.9.2-1.5 1.5-1.5h1.7V4.5c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.5v3.1h2.5V22h3.5z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="social__link" href="https://x.com" aria-label="X" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.5 3h2.7l-5.9 6.7L21.5 21h-5.4l-4.2-5.5L7 21H4.3l6.3-7.2L2.7 3H8.3l3.8 5L17.5 3zm-1 16.2h1.5L7.6 4.7H6L16.5 19.2z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <span class="stage__anchor" id="advertising" aria-hidden="true"></span>
+      </div>
+    </div>
+  </main>
 </div>
 
 {{ partial "footer" . }}
