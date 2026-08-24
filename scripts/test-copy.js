@@ -142,5 +142,11 @@ needFile("site/content/pages/mouths.md", [
   "Forty thousand books",
   "not that they prophesied"
 ]);
+needFile("site/content/pages/about.md", [
+  "We help independent restaurants look as exceptional as the food they serve."
+]);
+needFile("site/content/pages/contact.md", [
+  "We help independent restaurants look as exceptional as the food they serve."
+]);
 
 console.log("copy lint passed (" + files.length + " files)");

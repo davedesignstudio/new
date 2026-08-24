@@ -4,6 +4,8 @@ A playable comic about Earth: a roadside teller, a kitchen that tried to be a fo
 
 **The game is Earth. Earth does not end.**
 
+Dave Design Studio: **We help independent restaurants look as exceptional as the food they serve.** The comic is the long table. The studio is the room.
+
 Live doors:
 
 - `/` and `/story` — the one plot

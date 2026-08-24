@@ -36,6 +36,7 @@ Mars is not a sequel. It is Earth imagining an exit and still having to set supp
 - Every night The Tower may fall. Every night dinner rebuilds The Star.
 - We do not sell a fortress. We set a seat in the wreckage.
 - The stone is not the soup. Dinner stands on that.
+- We help independent restaurants look as exceptional as the food they serve.
 
 ## Her three tongues
 

@@ -2,10 +2,14 @@
 date = "2026-08-21"
 title = "Contact"
 url = "/contact"
-kicker = "Table"
-summary = "Want to draw a chapter, letter a sample, or sit as a reader?"
+kicker = "Studio"
+summary = "We help independent restaurants look as exceptional as the food they serve."
 +++
 
-For collaboration notes, art tests, or feedback on the route, open an issue on the project repo or leave a message with the studio.
+**We help independent restaurants look as exceptional as the food they serve.**
 
-This page is a place-setting. Swap in a real channel when you have one.
+Menus, marks, rooms, the printed night. Independent houses only. We match the look to the food — we do not franchise the bun, and we do not sell a fortress.
+
+WIDER is the story we cook when we are not in your dining room. The comic is the proof. The studio is the table.
+
+Write [dphilhowerstudio@gmail.com](mailto:dphilhowerstudio@gmail.com). Say what you plate, and what the room still gets wrong.
