@@ -114,13 +114,13 @@
 
 .brand-d {
   position: absolute;
-  left: -1%;
-  top: -12%;
+  left: 0;
+  top: 0;
   z-index: 3;
   font-family: "EB Garamond", Garamond, serif;
   font-weight: 700;
   font-style: italic;
-  font-size: clamp(7.2rem, 20vw, 15rem);
+  font-size: clamp(6.4rem, 17vw, 13rem);
   line-height: 0.72;
   color: var(--ink);
   pointer-events: none;
