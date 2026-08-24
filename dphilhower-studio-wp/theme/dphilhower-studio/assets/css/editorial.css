@@ -98,10 +98,10 @@ body {
 .hero-line {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.1rem, 6vw, 4.4rem);
+  font-size: clamp(1.85rem, 5.2vw, 3.6rem);
   letter-spacing: -0.035em;
-  max-width: 16ch;
-  line-height: 0.98;
+  max-width: 22ch;
+  line-height: 1.02;
 }
 
 .hero-support {
@@ -387,5 +387,142 @@ body {
   .work-grid.is-home .work-item:first-child {
     grid-column: auto;
     grid-row: auto;
+  }
+}
+
+/* Centered lockup with liquid gold melting on either side. */
+.lockup-gold {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 1fr) minmax(0, 46rem) minmax(4.5rem, 1fr);
+  align-items: stretch;
+  background: #070605;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lockup-gold .lockup-gold-mark,
+.case-hero.lockup-gold img {
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+  object-position: center center;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+  position: relative;
+}
+
+.gold-melt {
+  position: relative;
+  min-height: 18rem;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  filter: contrast(1.18) saturate(1.12);
+}
+
+.gold-melt-stream,
+.gold-melt-drip {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  display: block;
+  border-radius: 46% 46% 42% 42% / 18% 18% 48% 48%;
+  transform: translate3d(0, var(--gold-shift, 0px), 0);
+  will-change: transform, background-position;
+}
+
+.gold-melt-stream {
+  top: -45%;
+  bottom: -90%;
+  background:
+    radial-gradient(ellipse 80% 28% at 50% 8%, rgba(255, 248, 210, 0.95), transparent 58%),
+    linear-gradient(
+      180deg,
+      #6a430e 0%,
+      #d4a017 12%,
+      #fff3b0 22%,
+      #e6b422 34%,
+      #8a5410 48%,
+      #f0d36a 62%,
+      #c48918 76%,
+      #fff6c4 88%,
+      #7a4a12 100%
+    );
+  background-size: 100% 220%;
+  filter: blur(9px);
+  opacity: 0.92;
+  mix-blend-mode: screen;
+  animation: gold-pour 16s linear infinite;
+}
+
+.gold-melt-drip {
+  top: -20%;
+  bottom: -40%;
+  left: 32%;
+  right: 32%;
+  background:
+    radial-gradient(circle at 50% 18%, #fff8d0 0 14%, transparent 38%),
+    linear-gradient(180deg, transparent 0%, #f3d56a 18%, #b07a14 40%, #ffe9a0 58%, #8c5610 82%, transparent 100%);
+  background-size: 100% 180%;
+  filter: blur(5px);
+  opacity: 0.85;
+  mix-blend-mode: plus-lighter;
+  animation: gold-pour 11s linear infinite reverse;
+}
+
+.gold-melt-right .gold-melt-stream {
+  animation-duration: 19s;
+  animation-direction: reverse;
+}
+
+.gold-melt-right .gold-melt-drip {
+  animation-duration: 13s;
+  animation-direction: normal;
+}
+
+.gold-melt-left::before,
+.gold-melt-right::before {
+  content: "";
+  position: absolute;
+  inset: 8% 28% 6%;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 236, 170, 0.55), transparent 62%);
+  filter: blur(16px);
+  animation: gold-shimmer 6s ease-in-out infinite alternate;
+}
+
+@keyframes gold-pour {
+  from {
+    background-position: 50% 0%;
+  }
+  to {
+    background-position: 50% 220%;
+  }
+}
+
+@keyframes gold-shimmer {
+  from {
+    opacity: 0.35;
+    transform: translateY(-6%);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(10%);
+  }
+}
+
+@media (max-width: 720px) {
+  .lockup-gold {
+    grid-template-columns: 2.6rem minmax(0, 1fr) 2.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-melt-stream,
+  .gold-melt-drip,
+  .gold-melt-left::before,
+  .gold-melt-right::before {
+    animation: none;
   }
 }

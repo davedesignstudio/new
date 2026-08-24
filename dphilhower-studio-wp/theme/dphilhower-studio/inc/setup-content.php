@@ -163,7 +163,7 @@ function dps_seed_demo_content( $force = false ) {
 		return false;
 	}
 
-	$hero_id   = dps_sideload_theme_image( 'hero-editorial.png', 'Studio hero' );
+	$hero_id   = dps_sideload_theme_image( 'expresso-print-window.png', 'EXPresso cafe window' );
 	$about_id  = dps_sideload_theme_image( 'about-desk.png', 'Studio desk' );
 	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(
@@ -216,7 +216,7 @@ function dps_seed_demo_content( $force = false ) {
 	update_option( 'show_on_front', 'page' );
 	update_option( 'page_on_front', $home_id );
 	update_option( 'blogname', 'D Philhower Studio' );
-	update_option( 'blogdescription', 'Graphic design for restaurants in Morris County, NJ' );
+	update_option( 'blogdescription', 'We help independent restaurants look as exceptional as the food they serve.' );
 	update_option( 'timezone_string', 'America/New_York' );
 
 	$projects = array(

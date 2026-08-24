@@ -46,12 +46,12 @@ function dps_customize_register( $wp_customize ) {
 		),
 		'dps_hero_line'    => array(
 			'label'   => __( 'Hero headline', 'dphilhower-studio' ),
-			'default' => 'Restaurant brands built from the ground up — not one layout for the next shop.',
+			'default' => 'We help independent restaurants look as exceptional as the food they serve.',
 			'type'    => 'textarea',
 		),
 		'dps_hero_support' => array(
 			'label'   => __( 'Hero support copy', 'dphilhower-studio' ),
-			'default' => 'Identity, menus, and websites for local food businesses in Morris County and nearby towns. Most of the thinking happens off the computer. The files come last.',
+			'default' => 'Identity, menus, windows, and websites — so the room, the board, and the site feel like the same place.',
 			'type'    => 'textarea',
 		),
 	);

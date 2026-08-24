@@ -8,7 +8,7 @@
 get_header();
 
 $hero_id  = absint( get_theme_mod( 'dps_hero_image' ) );
-$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'full' ) : dps_image_url( 'hero-editorial.png' );
+$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'full' ) : dps_image_url( 'expresso-print-window.png' );
 $work_url = get_post_type_archive_link( 'dps_work' );
 if ( ! $work_url ) {
 	$work_url = home_url( '/work/' );
@@ -23,8 +23,8 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 		<div class="hero-content">
 			<p class="hero-brand"><?php echo esc_html( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?></p>
-			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'Restaurant brands built from the ground up — not one layout for the next shop.' ) ); ?></h1>
-			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'Identity, menus, and websites for local food businesses in Morris County and nearby towns. Most of the thinking happens off the computer. The files come last.' ) ); ?></p>
+			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'We help independent restaurants look as exceptional as the food they serve.' ) ); ?></h1>
+			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'Identity, menus, windows, and websites — so the room, the board, and the site feel like the same place.' ) ); ?></p>
 			<div class="cta-row">
 				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View brands', 'dphilhower-studio' ); ?></a>
 				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Start a project', 'dphilhower-studio' ); ?></a>
@@ -33,8 +33,14 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 	</section>
 
 	<section class="section">
+		<p class="section-label"><?php esc_html_e( 'Studio', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'The look should keep up with the kitchen', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy"><?php esc_html_e( 'We help independent restaurants look as exceptional as the food they serve. Marks that hold on a window. Menus you can read. Sites that feel like walking in.', 'dphilhower-studio' ); ?></p>
+	</section>
+
+	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'Ten restaurant brands', 'dphilhower-studio' ); ?></h2>
+		<h2 class="section-title"><?php esc_html_e( 'Work that has to live in the world', 'dphilhower-studio' ); ?></h2>
 		<p class="section-copy"><?php esc_html_e( 'Restaurant and local identities, including Bville Pizza & Grill in Bernardsville — in-house graphic design there from 2018 to 2021. All ten brands are on this page.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
@@ -66,20 +72,20 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Process', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'How the work actually happens', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Most of the studio’s work happens without a computer. Pencil first, files last — so the next restaurant does not inherit the last restaurant’s layout.', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'Strategy meets soul', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy"><?php esc_html_e( 'Design is more than decoration — it’s communication. We begin every project with deep discovery, aligning your goals with your audience’s needs. Our process blends strategic thinking with artistic intuition, ensuring every pixel has purpose.', 'dphilhower-studio' ); ?></p>
 		<div class="process">
 			<div class="process-step">
-				<strong><?php esc_html_e( '1. Pencil', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Sketch the problem on paper. Color, letterforms, and how the name should feel from the lot.', 'dphilhower-studio' ); ?></p>
+				<strong><?php esc_html_e( 'Clear messaging', 'dphilhower-studio' ); ?></strong>
+				<p><?php esc_html_e( 'Clear messaging over clutter. Say the thing, then stop.', 'dphilhower-studio' ); ?></p>
 			</div>
 			<div class="process-step">
-				<strong><?php esc_html_e( '2. Layout', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'The pieces guests hold: menu, window, box, card. Built as one system, not three vendor templates.', 'dphilhower-studio' ); ?></p>
+				<strong><?php esc_html_e( 'Modular systems', 'dphilhower-studio' ); ?></strong>
+				<p><?php esc_html_e( 'Modular systems over one-off assets. The window, the site, and the takeaway should be one voice.', 'dphilhower-studio' ); ?></p>
 			</div>
 			<div class="process-step">
-				<strong><?php esc_html_e( '3. Files', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Then print files and the website, so the site matches the board — not a theme with a new logo dropped in.', 'dphilhower-studio' ); ?></p>
+				<strong><?php esc_html_e( 'Collaboration', 'dphilhower-studio' ); ?></strong>
+				<p><?php esc_html_e( 'Collaboration over ego. We build with you, not at you.', 'dphilhower-studio' ); ?></p>
 			</div>
 		</div>
 	</section>
