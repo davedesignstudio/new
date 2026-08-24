@@ -1,14 +1,22 @@
-// JS Goes here - ES6 supported
-const mySiema = new Siema({
-  selector: '.gallery-carousel',
-  duration: 200,
-  easing: 'ease',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  threshold: 20,
-  loop: true
-});
+const rails = document.querySelectorAll(".service-rail");
+const hash = window.location.hash.replace("#", "");
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+if (hash) {
+  rails.forEach(rail => {
+    const href = rail.getAttribute("href") || "";
+    if (href.indexOf("#" + hash) !== -1) {
+      rail.classList.add("is-active");
+    }
+  });
+}
+
+const video = document.getElementById("home_video");
+if (video) {
+  video.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+}

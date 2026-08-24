@@ -1,8 +1,12 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  <h1>404: Page not found</h1>
-    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
-</div>
+<article id="stage" class="page-stage">
+  <header class="page-heading">
+    <p class="page-kicker">Lost the line</p>
+    <h1>404</h1>
+    <p class="page-lede">That URL is not on this deck. Head back home or check the work.</p>
+  </header>
+  <p><a class="nav-cta" href="/">Home</a></p>
+</article>
 
 {{ partial "footer" . }}

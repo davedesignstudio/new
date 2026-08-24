@@ -5,11 +5,11 @@
   "repository": "netlify/victor-hugo",
   "main": "index.js",
   "scripts": {
-    "hugo": "gulp hugo",
-    "build": "gulp build",
-    "build-preview": "gulp build-preview",
-    "start": "gulp server",
-    "start-preview": "gulp server-preview",
+    "hugo": "NODE_OPTIONS=--openssl-legacy-provider node scripts/build.js",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider node scripts/build.js",
+    "build-preview": "NODE_OPTIONS=--openssl-legacy-provider node scripts/build.js --preview",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider node scripts/dev.js",
+    "start-preview": "NODE_OPTIONS=--openssl-legacy-provider node scripts/dev.js --preview",
     "lint": "eslint src"
   },
   "author": "",

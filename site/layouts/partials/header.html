@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
+<html xmlns="http://www.w3.org/1999/xhtml"{{ with .Site.LanguageCode }} xml:lang="{{.}}" lang="{{.}}"{{ end }}>
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{ .Hugo.Generator }}
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }} · {{ .Site.Title }}</title>
   {{ end }}
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css">
-
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/img/favicon.png">
-
-  <!-- RSS -->
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
-
+<body class="{{ if .IsHome }}is-home{{ else }}is-page{{ end }} {{ .Section | urlize }}">
+<a class="skip-link" href="#stage">Skip to content</a>
+<div class="studio-shell">
 {{ partial "sidebar" . }}
+<div class="studio-main">
+  <header class="studio-top">
+    <a class="brand-lockup" href="{{ .Site.BaseURL }}">
+      {{ partial "skateboard.html" . }}
+      <span class="brand-name">
+        <span class="brand-line">D Philhower</span>
+        <span class="brand-studio">Studio</span>
+      </span>
+    </a>
+
+    <nav class="studio-nav" aria-label="Primary">
+      <a class="nav-link{{ if .IsHome }} is-active{{ end }}" href="/">Home</a>
+      <a class="nav-link{{ if or (eq .Section "work") (eq .RelPermalink "/work/") }} is-active{{ end }}" href="/work/">Work</a>
+      <a class="nav-cta{{ if in .RelPermalink "call-us" }} is-active{{ end }}" href="/call-us/">
+        {{ partial "skate-icon.html" . }}
+        <span>call us</span>
+      </a>
+      <div class="social">
+        <span class="social-label">Social</span>
+        <div class="social-dots">
+          <a href="https://www.instagram.com/" class="social-dot" aria-label="Instagram"></a>
+          <a href="https://www.behance.net/" class="social-dot" aria-label="Behance"></a>
+          <a href="https://www.linkedin.com/" class="social-dot" aria-label="LinkedIn"></a>
+        </div>
+      </div>
+    </nav>
+  </header>

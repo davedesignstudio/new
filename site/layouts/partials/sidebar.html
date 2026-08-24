@@ -1,15 +1,11 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">{{ .Site.Params.description | markdownify }}</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-      {{end}}
-    </ul>
-  </div>
-</div>
+<aside class="service-rails" aria-label="Services">
+  <a class="service-rail" href="/work/#web-design" data-service="web">
+    <span>Web Design</span>
+  </a>
+  <a class="service-rail" href="/work/#print" data-service="print">
+    <span>Print</span>
+  </a>
+  <a class="service-rail" href="/work/#advertising" data-service="advertising">
+    <span>Advertising + Marketing</span>
+  </a>
+</aside>

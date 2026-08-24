@@ -1,0 +1,443 @@
+.studio-shell {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.service-rails {
+  width: 22vw;
+  max-width: 280px;
+  min-width: 132px;
+  display: flex;
+  flex-direction: column;
+  border-right: var(--rail) solid var(--rule);
+  flex-shrink: 0;
+}
+
+.service-rail {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: var(--rail) solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 33.333vh;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.service-rail:last-child {
+  border-bottom: 0;
+}
+
+.service-rail span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.6vw, 2.35rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.service-rail:hover,
+.service-rail:focus,
+.service-rail.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.studio-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.1rem 1.4rem 1.35rem;
+}
+
+.studio-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.brand-lockup {
+  display: grid;
+  grid-template-columns: minmax(140px, 28%) 1fr;
+  align-items: end;
+  gap: 0.4rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.brand-board {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  color: var(--ink);
+  transform: rotate(-6deg);
+  transform-origin: left bottom;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  font-family: "Rock Salt", cursive;
+  line-height: 0.95;
+}
+
+.brand-line {
+  font-size: clamp(1.7rem, 4.4vw, 3.4rem);
+}
+
+.brand-studio {
+  font-size: clamp(1.4rem, 3.6vw, 2.8rem);
+  margin-left: 2.2rem;
+  margin-top: 0.15rem;
+}
+
+.studio-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem 1.4rem;
+  flex-wrap: wrap;
+  padding: 0.15rem 0 0.35rem;
+}
+
+.nav-link {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-link.is-active,
+.nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.28rem 0.95rem 0.32rem 0.7rem;
+  text-decoration: none;
+  font-family: "Rock Salt", cursive;
+  font-size: 0.95rem;
+  line-height: 1;
+  background: var(--paper);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-cta .skate-icon {
+  width: 1.7rem;
+  height: auto;
+}
+
+.nav-cta:hover,
+.nav-cta.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.social {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.social-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.social-dots {
+  display: flex;
+  gap: 0.42rem;
+}
+
+.social-dot {
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: block;
+  transition: background 0.2s ease;
+}
+
+.social-dot:hover,
+.social-dot:focus {
+  background: var(--wheel);
+  border-color: var(--wheel);
+}
+
+.hero-stage,
+.page-stage {
+  flex: 1;
+  position: relative;
+  border: var(--rail) solid var(--rule);
+  min-height: 52vh;
+  overflow: auto;
+  background: #0e0c0a;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-frame {
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border: 1px solid rgba(239, 230, 212, 0.35);
+}
+
+.hero-caption {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.85rem;
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--paper);
+  font-size: 0.85rem;
+  mix-blend-mode: difference;
+}
+
+.page-stage {
+  background: var(--paper);
+  padding: 1.5rem 1.6rem 2rem;
+}
+
+.page-kicker {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.page-heading h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+}
+
+.page-lede,
+.page-body {
+  max-width: 42rem;
+}
+
+.page-hero-img {
+  width: 100%;
+  max-width: 42rem;
+  height: 280px;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  margin-bottom: 1.2rem;
+}
+
+.page-body p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.page-body form,
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 32rem;
+  margin-top: 1.2rem;
+}
+
+.page-body label,
+.contact-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.page-body input,
+.page-body textarea,
+.page-body select,
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  font: 1rem/1.4 Karla, sans-serif;
+  border: 2px solid var(--ink);
+  background: #fffaf0;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0;
+  width: 100%;
+}
+
+.page-body textarea,
+.contact-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.page-body button,
+.contact-form button {
+  font-family: "Rock Salt", cursive;
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  padding: 0.85rem 1.2rem;
+  cursor: pointer;
+  justify-self: start;
+}
+
+.page-body button:hover,
+.contact-form button:hover {
+  background: var(--wheel);
+}
+
+.work-band {
+  margin-top: 1.8rem;
+}
+
+.work-band h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.work-card {
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  background: #fffaf0;
+  color: inherit;
+  overflow: hidden;
+}
+
+.work-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  filter: grayscale(0.15) contrast(1.05);
+}
+
+.work-card-meta {
+  padding: 0.75rem 0.85rem 0.95rem;
+}
+
+.work-card-meta h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.15rem;
+}
+
+.work-card-meta p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.work-card:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.work-card:hover p {
+  color: #d9d0c2;
+}
+
+.work-card:hover img {
+  filter: none;
+}
+
+@media (max-width: 800px) {
+  .studio-shell {
+    flex-direction: column;
+  }
+
+  .service-rails {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    flex-direction: row;
+    border-right: 0;
+    border-bottom: var(--rail) solid var(--rule);
+  }
+
+  .service-rail {
+    min-height: 0;
+    padding: 0.85rem 0.4rem;
+    border-bottom: 0;
+    border-right: var(--rail) solid var(--rule);
+  }
+
+  .service-rail:last-child {
+    border-right: 0;
+  }
+
+  .service-rail span {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .brand-lockup {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .brand-studio {
+    margin-left: 0.4rem;
+  }
+
+  .social {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.7rem;
+  }
+
+  .hero-stage,
+  .page-stage {
+    min-height: 42vh;
+  }
+}

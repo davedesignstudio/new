@@ -1,7 +1,15 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<article id="stage" class="page-stage">
+  <header class="page-heading">
+    <p class="page-kicker">{{ with .Params.kicker }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lede }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="page-body">
+    {{ with .Params.image }}<img class="page-hero-img" src="{{ . }}" alt="">{{ end }}
+    {{ .Content }}
+  </div>
+</article>
 
 {{ partial "footer" . }}
