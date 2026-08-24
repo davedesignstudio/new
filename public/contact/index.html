@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Philhower &amp; O’Krogly</title>
+  <meta name="description" content="Contact Philhower &amp; O’Krogly for carpentry design-build, web design, and branding. (908) 581-5385.">
+  <link rel="icon" href="/img/pok-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand-mark" href="/">
+      <img src="/img/pok-logo.png" alt="" width="36" height="36">
+      <span>Philhower &amp; O’Krogly</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav">
+      <a href="/services/">Services</a>
+      <a href="/work/">Work</a>
+      <a href="/theme-song/">Theme song</a>
+      <a href="/about/">About</a>
+      <a class="nav-cta" href="/contact/" aria-current="page">Call us</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-hero">
+      <p class="section-label">Contact</p>
+      <h1>Call the number on the lockup</h1>
+      <p>Carpentry, design-build, web, or brand — tell us what you’re raising next.</p>
+    </header>
+
+    <section class="section" style="padding-top: 1rem;">
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <p class="section-label">Phone</p>
+          <p class="phone-xl"><a href="tel:+19085815385">(908) 581-5385</a></p>
+          <p style="margin-top: 1rem; color: rgba(242,238,230,0.7); max-width: 32ch;">Northern New Jersey. Design + Build. The phone is in the mark because a design-build crew is called, not scanned.</p>
+        </div>
+        <form class="reveal" action="mailto:hello@philhowerokrogly.com" method="get" enctype="text/plain">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Project type
+            <select name="type">
+              <option>Carpentry / design-build</option>
+              <option>Web design</option>
+              <option>Branding / identity</option>
+              <option>Both — wood and web</option>
+            </select>
+          </label>
+          <label>
+            What are you building?
+            <textarea name="message" required placeholder="Room, site, mark, timeline…"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send inquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Philhower &amp; O’Krogly</div>
+        <div>Design + Build · Northern New Jersey</div>
+      </div>
+      <div>
+        <a href="tel:+19085815385">(908) 581-5385</a>
+        · © <span id="year">2026</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>
