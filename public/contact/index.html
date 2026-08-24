@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Philhower &amp; Okrogly</title>
+  <meta name="description" content="Start a carpentry, branding, or web design project with Philhower &amp; Okrogly.">
+  <link rel="canonical" href="https://philhowerokrogly.com/contact/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-mark" href="/">Philhower &amp; Okrogly</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav">
+      <a href="/services/">Services</a>
+      <a href="/work/">Work</a>
+      <a href="/about/">About</a>
+      <a href="/theme-song/">Theme song</a>
+      <a class="nav-cta" href="/contact/" aria-current="page">Start a build</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-hero">
+      <p class="section-label">Contact</p>
+      <h1>Start a build</h1>
+      <p>Tell us about the room, the brand, or both. This form is a demo—wire it to your inbox or CRM before launch.</p>
+    </header>
+
+    <section class="section" style="padding-top:0">
+      <form class="form reveal" id="project-form" action="#" method="post">
+        <label>
+          Name
+          <input type="text" name="name" required autocomplete="name" placeholder="Your name">
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </label>
+        <label>
+          Project type
+          <select name="type" required>
+            <option value="">Select one</option>
+            <option value="carpentry">Carpentry design &amp; build</option>
+            <option value="web">Web design</option>
+            <option value="branding">Branding &amp; identity</option>
+            <option value="combined">Combined design &amp; build</option>
+          </select>
+        </label>
+        <label>
+          Project notes
+          <textarea name="notes" required placeholder="What are you building? Timeline, location, and any references help."></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send inquiry</button>
+        <p id="form-note" hidden role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="y"></span> Philhower &amp; Okrogly</span>
+      <span>Carpentry · Web design · Branding</span>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>

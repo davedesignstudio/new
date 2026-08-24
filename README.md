@@ -1,37 +1,34 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# Philhower & Okrogly
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+Marketing site for **Philhower & Okrogly** — a construction and design company specializing in carpentry design & build, web design, and branding.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+## Theme song
 
-To install and run the example site locally, here’s what you’ll need:
+Lyrics live in [`THEME-SONG.md`](THEME-SONG.md) and on the site at `/theme-song/` (“Timber & Type”).
 
-## System Requirements
-
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
-
-## Usage
-
-Clone this repository and run:
+## Local development
 
 ```bash
-npm install
-npm run start
+npm start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+Open [http://localhost:3000](http://localhost:3000). The site is static HTML/CSS/JS in `public/`.
 
-To build your static output to the `/dist` folder, use:
+Or serve the folder directly:
 
 ```bash
-npm run build
+npx --yes serve public -l 3000
 ```
 
-## License
+## Deploy
 
-[MIT](LICENSE)
+Netlify publish directory: `public` (see `netlify.toml`).
+
+## Pages
+
+- `/` — Home
+- `/services/` — Carpentry, web, branding
+- `/work/` — Selected builds
+- `/about/` — The partnership
+- `/theme-song/` — Company anthem lyrics
+- `/contact/` — Project inquiry form (wire to a form provider before launch)
