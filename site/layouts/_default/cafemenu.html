@@ -3,7 +3,7 @@
 <nav class="menu-jump" aria-label="Menu sections">
   <div class="container menu-jump-inner">
     {{ range .Site.Data.house.sections }}
-      <a href="#{{ .id }}">{{ .name }}</a>
+      <a href="#{{ .id }}">{{ if .short }}{{ .short }}{{ else }}{{ .name }}{{ end }}</a>
     {{ end }}
   </div>
 </nav>

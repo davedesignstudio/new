@@ -1,6 +1,7 @@
 sections:
   - id: breakfast
     name: Eggs and skillets
+    short: Eggs
     note: The morning table, from 6 a.m.
     items:
       - name: Two eggs
@@ -32,6 +33,7 @@ sections:
         description: Crab cake under the sauce.
   - id: griddle
     name: Pancakes, French toast, waffles
+    short: Pancakes
     note: Sweet plates with a short stack if you want a lighter fork
     items:
       - name: Pancakes
@@ -51,6 +53,7 @@ sections:
         description: Walnuts, pistachios, granola, honey, cinnamon.
   - id: sandwiches
     name: Breakfast sandwiches
+    short: Sandwiches
     note: On a roll, bagel, or wrap
     items:
       - name: Taylor, egg, and cheese
@@ -65,6 +68,7 @@ sections:
         description: Cream cheese, tomato, red onion. Plain or everything.
   - id: lunch
     name: Burgers and handhelds
+    short: Burgers
     note: Lunch that can stand in for an early dinner
     items:
       - name: Smashed burger
@@ -87,6 +91,7 @@ sections:
         description: Roast beef, au jus, French roll.
   - id: greek
     name: Greek plates and salads
+    short: Greek
     note: The diner heart of the room
     items:
       - name: Spanakopita
@@ -104,6 +109,7 @@ sections:
         description: Cheddar-jack, pico, sour cream, guacamole.
   - id: plates
     name: Large plates until 4
+    short: Plates
     note: Early dinner before the kitchen closes
     items:
       - name: Skirt steak
@@ -121,6 +127,7 @@ sections:
         description: Brown gravy and mozzarella.
   - id: coffee
     name: Coffee and juice
+    short: Coffee
     note: The cups that start the Hills day
     items:
       - name: Coffee
