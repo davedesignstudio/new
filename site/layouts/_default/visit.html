@@ -2,29 +2,39 @@
 
 <main id="main">
 <div class="container page-wrap">
-  <article class="guest-check">
-    <header class="guest-check-head">
-      <p class="eyebrow">Guest check</p>
-      <h1>{{ .Title }}</h1>
-      <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
-      <p class="check-meta">Boonton Cafe · Table on Hawkins Place</p>
-    </header>
-    <figure class="gold-frame">
-      <img src="/img/food/patio.jpg" alt="Patio tables on the pavers at Boonton Cafe">
-    </figure>
-    {{ .Content }}
-    <dl>
-      <div class="check-line"><dt>Address</dt><dd>{{ .Site.Params.address }}<br>{{ .Site.Params.city }}</dd></div>
-      <div class="check-line"><dt>Phone</dt><dd><a href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a></dd></div>
-      <div class="check-line"><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
-      <div class="check-line"><dt>Room</dt><dd>Dine-in · takeout · patio · delivery</dd></div>
-    </dl>
-    <form name="boonton-table" netlify>
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Party size, time, or a note for the new owners" required></textarea>
-      <button type="submit">Send to the house</button>
-    </form>
+  <article class="house-check visit-check">
+    <span class="check-stub" aria-hidden="true"></span>
+    <div class="check-pad">
+      <p class="check-copy-label">Table copy</p>
+      <header class="house-check-head">
+        <p class="house-check-kicker">Guest Check</p>
+        <h1>{{ .Title }}</h1>
+        <p class="check-meta">Boonton Cafe · Please wait to be seated</p>
+        <dl class="check-fields">
+          <div><dt>Date</dt><dd></dd></div>
+          <div><dt>Table</dt><dd>patio</dd></div>
+          <div><dt>Guests</dt><dd></dd></div>
+          <div><dt>No.</dt><dd>125</dd></div>
+        </dl>
+      </header>
+      <figure class="gold-frame">
+        <img src="/img/food/patio.jpg" alt="Patio tables on the pavers at Boonton Cafe">
+      </figure>
+      {{ .Content }}
+      <dl class="visit-lines">
+        <div class="check-line"><dt>Address</dt><dd>{{ .Site.Params.address }}<br>{{ .Site.Params.city }}</dd></div>
+        <div class="check-line"><dt>Phone</dt><dd><a href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a></dd></div>
+        <div class="check-line"><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
+        <div class="check-line"><dt>Room</dt><dd>Dine-in · takeout · patio · delivery</dd></div>
+      </dl>
+      <form name="boonton-table" netlify>
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Party size, time, or a note for the new owners" required></textarea>
+        <button type="submit">Send to the house</button>
+      </form>
+      <p class="check-stamp" aria-hidden="true">Come again</p>
+    </div>
   </article>
 </div>
 </main>

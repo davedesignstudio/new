@@ -11,43 +11,48 @@
 <main id="main" class="menu-page">
 <div class="container page-wrap">
   <article class="house-check">
-    <header class="house-check-head">
-      <p class="house-check-kicker">Guest Check</p>
-      <h1>Boonton Cafe</h1>
-      <p class="check-meta">{{ .Site.Params.tagline }} · 125 Hawkins Place</p>
-      <dl class="check-fields">
-        <div><dt>Date</dt><dd></dd></div>
-        <div><dt>Table</dt><dd></dd></div>
-        <div><dt>Guests</dt><dd></dd></div>
-        <div><dt>No.</dt><dd>125</dd></div>
-      </dl>
-    </header>
+    <span class="check-stub" aria-hidden="true"></span>
+    <div class="check-pad">
+      <p class="check-copy-label">Customer copy</p>
+      <header class="house-check-head">
+        <p class="house-check-kicker">Guest Check</p>
+        <h1>Boonton Cafe</h1>
+        <p class="check-meta">Old diner · {{ .Site.Params.tagline }} · Hawkins Place</p>
+        <dl class="check-fields">
+          <div><dt>Date</dt><dd></dd></div>
+          <div><dt>Table</dt><dd>booth</dd></div>
+          <div><dt>Server</dt><dd></dd></div>
+          <div><dt>No.</dt><dd>125</dd></div>
+        </dl>
+      </header>
 
-    {{ range .Site.Data.house.sections }}
-      <section class="check-section" id="{{ .id }}">
-        <h2>{{ .name }}</h2>
-        {{ if .note }}<p class="check-section-note">{{ .note }}</p>{{ end }}
-        {{ range .items }}
-          <div class="check-line-item">
-            <span class="check-qty" aria-hidden="true"></span>
-            <div class="check-body">
-              <div class="check-row">
-                <h3>{{ .name }}</h3>
-                <span class="check-dots" aria-hidden="true"></span>
-                <span class="price">{{ .price }}</span>
+      {{ range .Site.Data.house.sections }}
+        <section class="check-section" id="{{ .id }}">
+          <h2>{{ .name }}</h2>
+          {{ if .note }}<p class="check-section-note">{{ .note }}</p>{{ end }}
+          {{ range .items }}
+            <div class="check-line-item">
+              <span class="check-qty" aria-hidden="true"></span>
+              <div class="check-body">
+                <div class="check-row">
+                  <h3>{{ .name }}</h3>
+                  <span class="check-dots" aria-hidden="true"></span>
+                  <span class="price">{{ .price }}</span>
+                </div>
+                {{ if .description }}<p>{{ .description }}</p>{{ end }}
               </div>
-              {{ if .description }}<p>{{ .description }}</p>{{ end }}
             </div>
-          </div>
-        {{ end }}
-      </section>
-    {{ end }}
+          {{ end }}
+        </section>
+      {{ end }}
 
-    <footer class="house-check-foot">
-      <p>{{ .Site.Params.hours }}</p>
-      <p>{{ .Site.Params.phone }} · {{ .Site.Params.address }}</p>
-    </footer>
-    <p class="check-stamp" aria-hidden="true">From the house</p>
+      <footer class="house-check-foot">
+        <p>Thank you — please come again</p>
+        <p>{{ .Site.Params.hours }}</p>
+        <p>{{ .Site.Params.phone }} · {{ .Site.Params.address }}</p>
+      </footer>
+      <p class="check-stamp" aria-hidden="true">Thank you</p>
+    </div>
   </article>
 </div>
 </main>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lato:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap");
 
 :root {
   --terracotta: #b85c38;
@@ -47,9 +47,23 @@ body {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(201, 162, 39, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 100%, rgba(184, 92, 56, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 0%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(184, 92, 56, 0.07) 0%, transparent 50%),
     var(--fresco-cream);
+}
+
+.diner-rail {
+  height: 14px;
+  background-color: #1f140c;
+  background-image:
+    linear-gradient(45deg, #f5ede0 25%, transparent 25%),
+    linear-gradient(-45deg, #f5ede0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f5ede0 75%),
+    linear-gradient(-45deg, transparent 75%, #f5ede0 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 0 7px, 7px -7px, -7px 0;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
 }
 
 img {
@@ -189,7 +203,7 @@ p {
 }
 
 .header-ornament-text {
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
 }
 
 .header-top {
