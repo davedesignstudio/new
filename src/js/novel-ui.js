@@ -79,7 +79,8 @@
     html += '<a href="/table">the table</a> · ';
     html += '<a href="/road">the small road</a> · ';
     html += '<a href="/world">the trail</a> · ';
-    html += '<a href="/sample">the first drawing</a>';
+    html += '<a href="/sample">the first drawing</a><br>';
+    html += '<button type="button" class="gn-start" data-gn-reset>Start from the tent</button>';
     html += "</p>";
     html += "</div></article>";
 
@@ -103,6 +104,13 @@
       picks[p].addEventListener("click", function () {
         var idx = parseInt(this.getAttribute("data-gn-choice"), 10);
         pick(idx);
+      });
+    }
+    var reset = root.querySelector("[data-gn-reset]");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        state = N.resetAll();
+        paint();
       });
     }
   }

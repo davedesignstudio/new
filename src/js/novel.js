@@ -6,8 +6,8 @@
       id: "candle",
       n: 1,
       title: "The tent",
-      art: "/img/road/paper.jpg",
-      alt: "A tent, a candle, a deck of cards",
+      art: "/img/comic/zorya-tent.jpg",
+      alt: "A tent at night with one candle and a deck of cards",
       caption: "Sit down.",
       teller: "I am Zorya. I keep a tent at the crossroads. One candle. One deck. I do not curse you. If you sit, I will tell you what happened.",
       next: "hunger"
@@ -76,8 +76,8 @@
       id: "clerk",
       n: 8,
       title: "The last bag",
-      art: "/img/road/coffee-cup.jpg",
-      alt: "A night counter and a hidden bag",
+      art: "/img/road/scan-a.png",
+      alt: "A night kitchen counter",
       caption: "The clerk hides the last bag.",
       teller: "She is not a ghost. She is tired. She is keeping food for morning. Share it, or keep it. I will remember which.",
       choices: [

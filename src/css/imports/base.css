@@ -2500,8 +2500,16 @@ a.gn-btn:hover {
   max-width: 40rem;
 }
 
-.gn-rooms a {
+.gn-start {
+  appearance: none;
+  border: 0;
+  background: none;
   color: var(--cyan);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media (min-width: 860px) {
