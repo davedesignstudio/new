@@ -3,6 +3,7 @@ sections:
     name: Eggs and skillets
     short: Eggs
     note: The morning table, from 6 a.m.
+    photo: "/img/hero/breakfast.jpg"
     items:
       - name: Two eggs
         price: "$9"
@@ -35,6 +36,7 @@ sections:
     name: Pancakes, French toast, waffles
     short: Pancakes
     note: Sweet plates with a short stack if you want a lighter fork
+    photo: "/img/hero/breakfast.jpg"
     items:
       - name: Pancakes
         price: "$11"
@@ -55,6 +57,7 @@ sections:
     name: Breakfast sandwiches
     short: Sandwiches
     note: On a roll, bagel, or wrap
+    photo: "/img/hero/breakfast.jpg"
     items:
       - name: Taylor, egg, and cheese
         price: "$11"
@@ -70,6 +73,7 @@ sections:
     name: Burgers and handhelds
     short: Burgers
     note: Lunch that can stand in for an early dinner
+    photo: "/img/food/smashed-burger.jpg"
     items:
       - name: Smashed burger
         price: "$19"
@@ -93,6 +97,7 @@ sections:
     name: Greek plates and salads
     short: Greek
     note: The diner heart of the room
+    photo: "/img/food/spanakopita.jpg"
     items:
       - name: Spanakopita
         price: "$16"
@@ -111,6 +116,7 @@ sections:
     name: Large plates until 4
     short: Plates
     note: Early dinner before the kitchen closes
+    photo: "/img/food/gyro.jpg"
     items:
       - name: Skirt steak
         price: "$33"
@@ -129,6 +135,7 @@ sections:
     name: Coffee and juice
     short: Coffee
     note: The cups that start the Hills day
+    photo: "/img/food/coffee.jpg"
     items:
       - name: Coffee
         price: "$3"

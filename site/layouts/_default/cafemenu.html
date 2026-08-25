@@ -19,8 +19,11 @@
   {{ range .Site.Data.house.sections }}
     <section class="menu-section" id="{{ .id }}">
       <header class="section-header">
-        <h2 class="section-title">{{ .name }}</h2>
-        {{ if .note }}<p class="section-sublabel">{{ .note }}</p>{{ end }}
+        {{ if .photo }}<img class="section-wash" src="{{ .photo }}" alt="">{{ end }}
+        <div class="section-header-content">
+          <h2 class="section-title">{{ .name }}</h2>
+          {{ if .note }}<p class="section-sublabel">{{ .note }}</p>{{ end }}
+        </div>
       </header>
       <div class="menu-grid">
         {{ range .items }}

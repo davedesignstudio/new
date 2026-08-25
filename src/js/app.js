@@ -16,3 +16,15 @@ if (header && toggle) {
     });
   });
 }
+
+if (header) {
+  var compact = false;
+  function onScroll() {
+    var next = window.scrollY > 48;
+    if (next === compact) return;
+    compact = next;
+    header.classList.toggle("is-compact", compact);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
