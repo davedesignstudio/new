@@ -578,9 +578,10 @@ p {
 .crew-portrait img {
   display: block;
   width: 100%;
-  max-height: 28rem;
-  object-fit: cover;
-  object-position: center 72%;
+  max-height: 32rem;
+  object-fit: contain;
+  object-position: center top;
+  background: #0c141e;
 }
 
 .panel-caption {
