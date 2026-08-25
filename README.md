@@ -1,31 +1,25 @@
-# The Garden Table
+# Boonton Cafe
 
-A researched **New Jersey dinner guide** built on the Victor Hugo / Netlify restaurant template.
-
-The original demo site was a single fictional restaurant. This version treats New Jersey as the restaurant: twenty-one dinner rooms mapped from 2026 statewide roundups, plus a short field guide to how the state actually dines (Italian tables, BYOB, Shore seafood, tasting-menu rooms inland).
+Restaurant site for **Boonton Cafe**, 125 Hawkins Place, Boonton, NJ — styled after the Bville fresco rooms (terracotta header, gold seal, Cinzel type) with a logo pulled from the storefront and redesigned as **Serving the Hills**.
 
 ## Local setup
 
-You need git, Node.js 8+, and the project dependencies:
+This stack still expects Node 8 (see `.nvmrc`):
 
 ```bash
+nvm use
 npm install
 npm run start
 ```
 
-Then open http://localhost:3000/. BrowserSync reloads CSS and content as they change.
+Then open http://localhost:3000/.
 
-```bash
-npm run build
-```
+## Pages
 
-writes the static site to `/dist`.
-
-## What is on the map
-
-- **North Jersey** — Hudson waterfront Italian, Montclair tasting menus, Bergen special-occasion rooms
-- **Central Jersey** — Metuchen tasting menus, Somerset farm estates, Freehold Indian, Bayshore Low Country
-- **Shore & South** — Atlantic City oyster houses, Cape May farm tables, Asbury Park, Collingswood BYOB French
+- Home — seal, extracted wordmark, morning / Greek / early-dinner cards
+- Menu — eggs, griddle, sandwiches, burgers, Greek plates, large plates
+- About — new ownership and both marks
+- Visit — address, hours, contact form
 
 ## License
 

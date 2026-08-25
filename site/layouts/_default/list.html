@@ -1,51 +1,12 @@
 {{ partial "header" . }}
 
-<div class="content container {{ .Title | urlize }} {{ .Section | urlize }}">
-  {{ if eq .Section "dinners" }}
-    <p class="eyebrow">The map</p>
-    <h1>Dinners in New Jersey</h1>
-    <p class="lead-copy">Twenty-one rooms chosen from 2026 statewide roundups. Filter by region or by the kind of night you are planning.</p>
-
-    <div class="filters" id="dinner-filters">
-      <button type="button" class="filter is-active" data-filter="all">All tables</button>
-      <button type="button" class="filter" data-filter="north-jersey">North</button>
-      <button type="button" class="filter" data-filter="central-jersey">Central</button>
-      <button type="button" class="filter" data-filter="shore-and-south">Shore &amp; South</button>
-      <button type="button" class="filter" data-filter="byob">BYOB</button>
-      <button type="button" class="filter" data-filter="tasting-menu">Tasting menu</button>
-      <button type="button" class="filter" data-filter="waterfront">Waterfront</button>
-      <button type="button" class="filter" data-filter="date-night">Date night</button>
-    </div>
-
-    {{ range $region := (slice "North Jersey" "Central Jersey" "Shore and South") }}
-      {{ $pages := where $.Data.Pages "Params.region" $region }}
-      {{ if $pages }}
-        <section class="region-block" id="{{ $region | urlize }}">
-          <h2>{{ $region }}</h2>
-          <div class="card-grid">
-            {{ range $pages }}
-              <article class="dinner-card" data-region="{{ .Params.region | urlize }}" data-tags="{{ .Params.region | urlize }} {{ if .Params.byob }}byob {{ end }}{{ range .Params.occasions }}{{ . | urlize }} {{ end }}">
-                <p class="card-meta">{{ .Params.city }} · {{ .Params.cuisine }} · {{ .Params.price }}</p>
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                <p>{{ .Description }}</p>
-                {{ if .Params.byob }}<p class="badge">BYOB</p>{{ end }}
-              </article>
-            {{ end }}
-          </div>
-        </section>
-      {{ end }}
+<div class="container page-wrap">
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range .Data.Pages }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
-
-    <p class="empty-filter" id="filter-empty" hidden>No tables match that filter. Try another region or occasion.</p>
-
-  {{ else }}
-    <h1>{{ .Title }}</h1>
-    <ul class="plain-list">
-      {{ range .Data.Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
-  {{ end }}
+  </ul>
 </div>
 
 {{ partial "footer" . }}

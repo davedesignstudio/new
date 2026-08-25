@@ -1,58 +1,66 @@
 {{ partial "header" . }}
 
-<div class="hero">
-  <video loop muted autoplay playsinline id="home_video" class="hero-video">
-    <source src="/videos/SDVid.mp4" type="video/mp4">
-    <source src="/videos/SDVid.ogg" type="video/ogg">
-  </video>
-  <div class="hero-overlay">
-    <p class="eyebrow">Researched August 2026</p>
-    <h1>Dinner, mapped across the Garden State</h1>
-    <p class="hero-lead">From Hudson waterfront tasting rooms to Cape May farm tables and Atlantic City oyster houses that have been plating dinner since the 1890s.</p>
-    <p class="hero-actions">
-      <a class="button" href="/dinners">Browse dinners</a>
-      <a class="button button-ghost" href="/how-nj-dines">How NJ dines</a>
-    </p>
+<section class="hero-banner">
+  <div class="hero-columns" aria-hidden="true">
+    <div class="column"></div>
+    <div class="column"></div>
   </div>
-</div>
-
-<div class="content container home-content">
-  <section class="intro">
-    <h2>What the research turned up</h2>
-    <p>New Jersey is not a satellite of New York dining. It has its own dinner grammar: a deep Italian table, a statewide BYOB habit shaped by scarce liquor licenses, a Shore season that still treats seafood as a night out, and a new wave of chef-owned tasting rooms in Montclair, Metuchen, and Jersey City.</p>
-    <p>This site is a working plan for that map. We read the 2026 New Jersey Monthly 50 Best list, OpenTable’s Jersey roundups, Shore and Atlantic City guides, and the state’s Italian / BYOB culture reporting, then selected twenty-one rooms that cover the night you actually want: date night, celebration, waterfront, BYO, steak, or a long tasting menu.</p>
-  </section>
-
-  <section class="featured">
-    <h2>Six tables to start with</h2>
-    <div class="card-grid">
-      {{ range sort (where .Site.RegularPages "Params.featured" true) "Params.rank" }}
-        <a class="dinner-card" href="{{ .Permalink }}">
-          <p class="card-meta">{{ .Params.city }} · {{ .Params.cuisine }}</p>
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Description }}</p>
-        </a>
-      {{ end }}
+  <div class="container hero-inner">
+    <div class="hero-arch-frame">
+      <img class="hero-seal" src="/img/brand/hills-seal.png" alt="Boonton Cafe seal: Serving the Hills">
+      <p class="hero-eyebrow">125 Hawkins Place · Boonton, New Jersey</p>
+      <h1 class="hero-title">Breakfast, diner plates, and coffee for the Hills</h1>
+      <p class="hero-subtitle">New owners on the brick sidewalk. Eggs at 6 a.m., Greek skillets, smashed burgers, and early-dinner plates until 4.</p>
+      <p class="hero-actions">
+        <a class="btn-gold" href="/menu">See the menu</a>
+        <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="regions">
-    <h2>Dine by region</h2>
-    <div class="region-grid">
-      <a class="region-card" href="/dinners/#north-jersey">
-        <h3>North Jersey</h3>
-        <p>Hudson skyline rooms, Montclair’s tasting-menu cluster, and restored barns in Saddle River.</p>
-      </a>
-      <a class="region-card" href="/dinners/#central-jersey">
-        <h3>Central Jersey</h3>
-        <p>Farm estates in Somerset, Chinese-inspired tasting menus in Metuchen, and Low Country cooking on the Bayshore.</p>
-      </a>
-      <a class="region-card" href="/dinners/#shore-and-south">
-        <h3>Shore &amp; South</h3>
-        <p>Victorian Cape May, Asbury Park’s new Italian rooms, and Atlantic City seafood houses with a century of service.</p>
-      </a>
+<section class="sign-strip">
+  <div class="container sign-strip-inner">
+    <p class="eyebrow">From the Hawkins Place sign</p>
+    <img class="extracted-wordmark" src="/img/brand/wordmark.png" alt="Boonton Cafe wordmark extracted from the storefront">
+    <p>The red condensed letters from the facade, redrawn clean. The circular seal is the house mark for Serving the Hills.</p>
+  </div>
+</section>
+
+<section class="deals-banner">
+  <div class="container deal-grid">
+    <article class="fresco-card">
+      <p class="eyebrow">Morning</p>
+      <h2>Eggs, Taylor ham, skillets</h2>
+      <p>Western omelettes, spanakopita skillets, avocado toast with chili crisp, and the Taylor-egg-and-cheese that is the Morris County handshake.</p>
+    </article>
+    <article class="fresco-card">
+      <p class="eyebrow">Table</p>
+      <h2>Greek diner heart</h2>
+      <p>Spanakopita, gyros, Greek salad with dolmades, baklava parfait. The room still cooks like a Jersey diner that takes feta seriously.</p>
+    </article>
+    <article class="fresco-card">
+      <p class="eyebrow">Until 4</p>
+      <h2>Early dinner plates</h2>
+      <p>Skirt steak, chicken Argentino, penne vodka, smashed burgers. Come for lunch that eats like dinner before the kitchen closes.</p>
+    </article>
+  </div>
+</section>
+
+<section class="visit-band">
+  <div class="container visit-band-inner">
+    <div>
+      <p class="eyebrow">Walk in</p>
+      <h2>Patio tables on the pavers</h2>
+      <p>{{ .Site.Params.address }}, next to 127. Outdoor chairs, indoor palms, seven days from 6 a.m. Pickup and delivery run the same hours.</p>
+      <p><a class="btn-gold" href="/contact">Plan a visit</a></p>
     </div>
-  </section>
-</div>
+    <dl class="fact-row">
+      <div><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
+      <div><dt>Phone</dt><dd>{{ .Site.Params.phone }}</dd></div>
+      <div><dt>Room</dt><dd>Dine-in · takeout · patio</dd></div>
+    </dl>
+  </div>
+</section>
 
 {{ partial "footer" . }}

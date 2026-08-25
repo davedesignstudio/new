@@ -1,3 +1,19 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="footer-brand" href="/">
+      <img src="/img/brand/hills-seal.png" alt="" width="72" height="72">
+      <span>
+        <strong>Boonton Cafe</strong>
+        <em>{{ .Site.Params.tagline }}</em>
+      </span>
+    </a>
+    <div>
+      <p>{{ .Site.Params.address }}<br>{{ .Site.Params.city }}</p>
+      <p><a href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a></p>
+      <p>{{ .Site.Params.hours }}</p>
+    </div>
+  </div>
+</footer>
 <script src="/app.js"></script>
 </body>
 </html>
