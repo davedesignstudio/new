@@ -1,9 +1,21 @@
 {{ partial "header" . }}
 
+<nav class="menu-jump" aria-label="Menu sections">
+  <div class="container menu-jump-inner">
+    {{ range .Site.Data.house.sections }}
+      <a href="#{{ .id }}">{{ .name }}</a>
+    {{ end }}
+  </div>
+</nav>
+
+<main id="main" class="menu-page">
 <div class="container page-wrap">
-  <p class="eyebrow">The house list</p>
-  <h1>{{ .Title }}</h1>
-  <p>{{ .Description }}</p>
+  <header class="menu-lede">
+    <p class="eyebrow">The house list</p>
+    <h1>{{ .Title }}</h1>
+    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
+    <p>{{ .Description }}</p>
+  </header>
   {{ range .Site.Data.house.sections }}
     <section class="menu-section" id="{{ .id }}">
       <header class="section-header">
@@ -12,17 +24,19 @@
       </header>
       <div class="menu-grid">
         {{ range .items }}
-          <article class="menu-item">
-            <div>
+          <article class="check-item">
+            <div class="check-row">
               <h3>{{ .name }}</h3>
-              {{ if .description }}<p>{{ .description }}</p>{{ end }}
+              <span class="check-dots" aria-hidden="true"></span>
+              <span class="price">{{ .price }}</span>
             </div>
-            <span class="price">{{ .price }}</span>
+            {{ if .description }}<p>{{ .description }}</p>{{ end }}
           </article>
         {{ end }}
       </div>
     </section>
   {{ end }}
 </div>
+</main>
 
 {{ partial "footer" . }}

@@ -1,33 +1,12 @@
 {{ partial "header" . }}
 
+<main id="main">
 <div class="container page-wrap">
-  {{ if eq .Params.layout "menu" }}
-    <p class="eyebrow">The house list</p>
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Description }}</p>
-    {{ range .Site.Data.house.sections }}
-      <section class="menu-section" id="{{ .id }}">
-        <header class="section-header">
-          <h2 class="section-title">{{ .name }}</h2>
-          {{ if .note }}<p class="section-sublabel">{{ .note }}</p>{{ end }}
-        </header>
-        <div class="menu-grid">
-          {{ range .items }}
-            <article class="menu-item">
-              <div>
-                <h3>{{ .name }}</h3>
-                {{ if .description }}<p>{{ .description }}</p>{{ end }}
-              </div>
-              <span class="price">{{ .price }}</span>
-            </article>
-          {{ end }}
-        </div>
-      </section>
-    {{ end }}
-  {{ else }}
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  {{ end }}
+  <p class="eyebrow">{{ .Site.Params.tagline }}</p>
+  <h1>{{ .Title }}</h1>
+  <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
+  {{ .Content }}
 </div>
+</main>
 
 {{ partial "footer" . }}

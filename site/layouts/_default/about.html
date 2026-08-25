@@ -1,0 +1,26 @@
+{{ partial "header" . }}
+
+<main id="main">
+<div class="container page-wrap">
+  <header class="about-copy">
+    <p class="eyebrow">New owners, same brick sidewalk</p>
+    <h1>{{ .Title }}</h1>
+    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
+  </header>
+  <div class="about-copy">
+    {{ .Content }}
+  </div>
+  <div class="about-marks">
+    <div class="wordmark-panel">
+      <p class="eyebrow">Extracted from the sign</p>
+      <img src="/img/brand/wordmark.png" alt="Boonton Cafe red condensed wordmark">
+    </div>
+    <div class="wordmark-panel">
+      <p class="eyebrow">Redesigned for Serving the Hills</p>
+      <img src="/img/brand/hills-seal.png" alt="Boonton Cafe Serving the Hills circular seal" style="max-width:280px;margin:0 auto;">
+    </div>
+  </div>
+</div>
+</main>
+
+{{ partial "footer" . }}

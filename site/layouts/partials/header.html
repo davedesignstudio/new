@@ -16,8 +16,9 @@
   <link rel="shortcut icon" href="/img/brand/hills-seal.png">
 </head>
 <body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}">
+<a class="skip-link" href="#main">Skip to the table</a>
 
-<header class="header">
+<header class="header fresco-grain">
   <div class="header-ornament" aria-hidden="true">
     <span>❧</span>
     <span class="header-ornament-text">{{ .Site.Params.ownership }} · {{ .Site.Params.hours }}</span>

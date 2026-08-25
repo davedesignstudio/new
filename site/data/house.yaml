@@ -119,3 +119,16 @@ sections:
       - name: Disco fries
         price: "$11"
         description: Brown gravy and mozzarella.
+  - id: coffee
+    name: Coffee and juice
+    note: The cups that start the Hills day
+    items:
+      - name: Coffee
+        price: "$3"
+        description: Bottomless diner cup.
+      - name: Iced coffee
+        price: "$4"
+      - name: Orange juice
+        price: "$4"
+      - name: Fresh fruit cup
+        price: "$7"

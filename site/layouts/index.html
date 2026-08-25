@@ -1,5 +1,6 @@
 {{ partial "header" . }}
 
+<main id="main">
 <section class="hero-banner">
   <div class="hero-columns" aria-hidden="true">
     <div class="column"></div>
@@ -22,36 +23,83 @@
 <section class="table-photo">
   <div class="container">
     <p class="eyebrow">The morning table</p>
-    <img src="/img/hero/breakfast.jpg" alt="Omelette, cheesy eggs, home fries, and coffee on the diner table">
+    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
+    <figure class="gold-frame">
+      <img src="/img/hero/breakfast.jpg" alt="Omelette, cheesy eggs, home fries, and coffee on the diner table">
+    </figure>
     <p>Omelettes, home fries, melted cheese, and coffee — the plates that start the Hills day.</p>
+  </div>
+</section>
+
+<section class="plate-gallery">
+  <div class="container">
+    <p class="eyebrow">From the oven and the grill</p>
+    <h2 class="menu-lede">The diner heart of the room</h2>
+    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
+    <p class="plate-gallery-intro">Spanakopita from the oven, gyros with tzatziki, smashed burgers on brioche. Jersey diner cooking with a Greek pulse.</p>
+    <div class="plate-grid">
+      <article class="plate-card">
+        <figure class="gold-frame">
+          <img src="/img/food/spanakopita.jpg" alt="Spanakopita spinach pie with lemon and tzatziki">
+        </figure>
+        <h3>Spanakopita</h3>
+        <p>Phyllo, spinach, and feta — the pie the room is built around.</p>
+      </article>
+      <article class="plate-card">
+        <figure class="gold-frame">
+          <img src="/img/food/gyro.jpg" alt="Beef gyro on pita with tzatziki and Greek salad">
+        </figure>
+        <h3>Gyro</h3>
+        <p>Pita, tzatziki, onion, tomato. A Hills lunch that still eats like dinner.</p>
+      </article>
+      <article class="plate-card">
+        <figure class="gold-frame">
+          <img src="/img/food/smashed-burger.jpg" alt="Smashed cheeseburger with fries">
+        </figure>
+        <h3>Smashed burger</h3>
+        <p>Two crispy patties, American cheese, house sauce, brioche, fries.</p>
+      </article>
+    </div>
   </div>
 </section>
 
 <section class="sign-strip">
   <div class="container sign-strip-inner">
     <p class="eyebrow">From the Hawkins Place sign</p>
+    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
     <img class="extracted-wordmark" src="/img/brand/wordmark.png" alt="Boonton Cafe wordmark extracted from the storefront">
     <p>The red condensed letters from the facade, redrawn clean. The circular seal is the house mark for Serving the Hills.</p>
   </div>
 </section>
 
 <section class="deals-banner">
-  <div class="container deal-grid">
-    <article class="fresco-card">
-      <p class="eyebrow">Morning</p>
-      <h2>Eggs, Taylor ham, skillets</h2>
-      <p>Western omelettes, spanakopita skillets, avocado toast with chili crisp, and the Taylor-egg-and-cheese that is the Morris County handshake.</p>
-    </article>
-    <article class="fresco-card">
-      <p class="eyebrow">Table</p>
-      <h2>Greek diner heart</h2>
-      <p>Spanakopita, gyros, Greek salad with dolmades, baklava parfait. The room still cooks like a Jersey diner that takes feta seriously.</p>
-    </article>
-    <article class="fresco-card">
-      <p class="eyebrow">Until 4</p>
-      <h2>Early dinner plates</h2>
-      <p>Skirt steak, chicken Argentino, penne vodka, smashed burgers. Come for lunch that eats like dinner before the kitchen closes.</p>
-    </article>
+  <div class="container">
+    <div class="deal-grid">
+      <article class="fresco-card">
+        <div class="card-photo">
+          <img src="/img/hero/breakfast.jpg" alt="">
+        </div>
+        <p class="eyebrow">Morning</p>
+        <h2>Eggs, Taylor ham, skillets</h2>
+        <p>Western omelettes, spanakopita skillets, avocado toast with chili crisp, and the Taylor-egg-and-cheese that is the Morris County handshake.</p>
+      </article>
+      <article class="fresco-card">
+        <div class="card-photo">
+          <img src="/img/food/spanakopita.jpg" alt="">
+        </div>
+        <p class="eyebrow">Table</p>
+        <h2>Greek diner heart</h2>
+        <p>Spanakopita, gyros, Greek salad with dolmades, baklava parfait. The room still cooks like a Jersey diner that takes feta seriously.</p>
+      </article>
+      <article class="fresco-card">
+        <div class="card-photo">
+          <img src="/img/food/smashed-burger.jpg" alt="">
+        </div>
+        <p class="eyebrow">Until 4</p>
+        <h2>Early dinner plates</h2>
+        <p>Skirt steak, chicken Argentino, penne vodka, smashed burgers. Come for lunch that eats like dinner before the kitchen closes.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -63,6 +111,9 @@
       <p>{{ .Site.Params.address }}, next to 127. Outdoor chairs, indoor palms, seven days from 6 a.m. Pickup and delivery run the same hours.</p>
       <p><a class="btn-gold" href="/contact">Plan a visit</a></p>
     </div>
+    <figure class="gold-frame visit-photo">
+      <img src="/img/food/coffee.jpg" alt="Diner coffee on the table at Boonton Cafe">
+    </figure>
     <dl class="fact-row">
       <div><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
       <div><dt>Phone</dt><dd>{{ .Site.Params.phone }}</dd></div>
@@ -70,5 +121,6 @@
     </dl>
   </div>
 </section>
+</main>
 
 {{ partial "footer" . }}

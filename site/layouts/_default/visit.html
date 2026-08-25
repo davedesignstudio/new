@@ -1,0 +1,32 @@
+{{ partial "header" . }}
+
+<main id="main">
+<div class="container page-wrap">
+  <article class="guest-check">
+    <header class="guest-check-head">
+      <p class="eyebrow">Guest check</p>
+      <h1>{{ .Title }}</h1>
+      <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
+      <p class="check-meta">Boonton Cafe · Table on Hawkins Place</p>
+    </header>
+    <figure class="gold-frame">
+      <img src="/img/food/coffee.jpg" alt="Coffee service at Boonton Cafe">
+    </figure>
+    {{ .Content }}
+    <dl>
+      <div class="check-line"><dt>Address</dt><dd>{{ .Site.Params.address }}<br>{{ .Site.Params.city }}</dd></div>
+      <div class="check-line"><dt>Phone</dt><dd><a href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a></dd></div>
+      <div class="check-line"><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
+      <div class="check-line"><dt>Room</dt><dd>Dine-in · takeout · patio · delivery</dd></div>
+    </dl>
+    <form name="boonton-table" netlify>
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Party size, time, or a note for the new owners" required></textarea>
+      <button type="submit">Send to the house</button>
+    </form>
+  </article>
+</div>
+</main>
+
+{{ partial "footer" . }}
