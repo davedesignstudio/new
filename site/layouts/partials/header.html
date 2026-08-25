@@ -19,4 +19,4 @@
   <link rel="shortcut icon" href="/img/favicon.png">
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ if .IsHome }}is-home{{ end }}{{ if .Params.fullbleed }} is-play{{ end }}{{ if .Params.road }} is-road{{ end }}{{ if .Params.world }} is-world{{ end }} section-{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}is-home{{ end }}{{ if .Params.fullbleed }} is-play{{ end }}{{ if .Params.road }} is-road{{ end }}{{ if .Params.world }} is-world{{ end }}{{ if .Params.novel }} is-novel{{ end }} section-{{ .Section | urlize }}">

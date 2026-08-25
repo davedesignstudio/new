@@ -14,41 +14,46 @@ title = "WIDER"
   sunoTitle = "The Game Is Earth — WIDER anthem"
 
 [[menu.main]]
+    name = "Book"
+    url  = "/book"
+    weight = 1
+
+[[menu.main]]
     name = "Story"
     url  = "/story"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     name = "Adventure"
     url  = "/adventure"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "Table"
     url  = "/table"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Hidden"
     url  = "/hidden"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "Crew"
     url  = "/crew"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     name = "Trail"
     url  = "/world"
-    weight = 6
+    weight = 7
 
 [[menu.main]]
     name = "Route"
     url  = "/route"
-    weight = 7
+    weight = 8
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 8
+    weight = 9

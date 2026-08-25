@@ -27,7 +27,7 @@ export default {
 
   context: path.join(__dirname, "src"),
   entry: {
-    app: ["./js/app", "./js/road-core", "./js/road", "./js/bind", "./js/paperback", "./js/paperback-ui", "./js/table", "./js/table-ui", "./js/world"]
+    app: ["./js/app", "./js/road-core", "./js/road", "./js/bind", "./js/paperback", "./js/paperback-ui", "./js/table", "./js/table-ui", "./js/world", "./js/novel", "./js/novel-ui"]
   },
   output: {
     path: path.join(__dirname, "dist"),

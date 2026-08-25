@@ -35,4 +35,4 @@ Short parable. One kitchen image. No boy-slang. No caricature accent. When she i
 
 ## Links
 
-[Character bible](/crew/development) · [The story](/story) · [Keystone](/keystone)
+[Character bible](/crew/development) · [The story](/story) · [The book](/book) · [Keystone](/keystone)

@@ -14,6 +14,7 @@ Hunger wants a seat it will not share. A kitchen puts up walls. The walls fall. 
 
 ## Same house
 
+- **[The Book](/book)** — one graphic novel. She tells it. You turn pages and choose.
 - **[The Paperback](/adventure)** — fifty-two numbered sections; you drive.
 - **[The Table](/table)** — she is the dungeon master; you type what you do; each playthrough is rolled on the fly.
 - **[The Hidden Parts](/hidden)** — what an endless Earth stores instead of burying.
