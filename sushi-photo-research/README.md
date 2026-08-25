@@ -1,13 +1,13 @@
 # Sushi Photo Research
 
-A two-hour research board for sushi photography, built as a homage to Lou Dorfsman’s **Gastrotypographicalassemblage** (the 1966 CBS cafeteria type wall).
+A two-hour research board for sushi photography, inspired by **the feeling of eating sushi at a restaurant in Korea** — counter, warm rice, one piece at a time.
 
 ## What this is
 
-- Visual research, not a restaurant marketing site.
-- The type wall mixes English, Hangul, and **Sushi Maru** roll names the way Dorfsman packed food words into a printer’s job case.
-- The field photo is a Sushi Maru grocery case (packaged rolls as a labeled grid).
-- The Korea pass maps four photo cultures: convenience maki, hypermarket deli sushi, market kimbap/hwe, and Seoul omakase.
+- Visual research from the diner’s stool, not a grocery case or a type specimen.
+- Wooden menu slats (연어, 광어, 오마카세) behind a hinoki-colored counter.
+- Three restaurant temperatures: neighborhood 초밥집, 회전초밥, omakase.
+- Grocery / kimbap frames kept only as “elsewhere.”
 
 ## Preview
 
