@@ -14,6 +14,8 @@ A closed fist cannot pass the salt. A house that will not feed a stranger is alr
 
 Who gets a seat. That is the plot.
 
+This week two men on a [box](https://www.youtube.com/watch?v=Y43T7VQGtOs) said the people in charge lost the room, that unrest is the next weather, that you cannot lock the sky. Zorya lets you hear them in [the book](/book#box). Then she walks you back to dinner: ships waiting, a thin harvest, a corner kitchen whose rent ate the week.
+
 ## The Tower
 
 There is a citadel on a sea-cliff. Tarot calls it **The Tower**. Zorya calls it a kitchen that armored itself — recipes locked, wards up, pride in the beams.

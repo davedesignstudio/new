@@ -26,20 +26,39 @@
     }
   }
 
+  function tellerHtml(text) {
+    return String(text)
+      .split(/\n\n+/)
+      .map(function (p) {
+        return '<p class="gn-teller">' + esc(p.replace(/\n/g, " ")) + "</p>";
+      })
+      .join("");
+  }
+
   function paint() {
     var sc = N.scene(state);
     setHash(sc.id);
 
     var html = "";
     html += '<article class="gn-page" aria-label="Page ' + sc.n + " of " + sc.total + '">';
-    html += '<div class="gn-art">';
-    html += '<img src="' + esc(sc.art) + '" alt="' + esc(sc.alt) + '">';
+    html += '<div class="gn-art' + (sc.video ? " gn-art-video" : "") + '">';
+    if (sc.video) {
+      html +=
+        '<iframe class="gn-embed" src="https://www.youtube.com/embed/' +
+        esc(sc.video) +
+        '?rel=0" title="' +
+        esc(sc.videoTitle || sc.title) +
+        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    } else {
+      html += '<img src="' + esc(sc.art) + '" alt="' + esc(sc.alt) + '">';
+    }
     if (sc.caption) html += '<p class="gn-caption">' + esc(sc.caption) + "</p>";
     html += "</div>";
     html += '<div class="gn-voice">';
     html += '<p class="gn-kicker">Zorya</p>';
+    if (sc.week) html += '<p class="gn-week">' + esc(sc.week) + "</p>";
     html += "<h1>" + esc(sc.title) + "</h1>";
-    html += '<p class="gn-teller">' + esc(sc.teller) + "</p>";
+    html += tellerHtml(sc.teller);
     html += '<p class="gn-count">Page ' + sc.n + " of " + sc.total + "</p>";
 
     html += '<div class="gn-nav">';
@@ -52,10 +71,15 @@
       html += '<div class="gn-choices">';
       sc.choices.forEach(function (c, i) {
         if (c.href) {
+          var extra = /^https?:\/\//.test(c.href)
+            ? ' target="_blank" rel="noopener noreferrer"'
+            : "";
           html +=
             '<a class="gn-btn gn-choice" href="' +
             esc(c.href) +
-            '">' +
+            '"' +
+            extra +
+            ">" +
             esc(c.label) +
             "</a>";
           return;

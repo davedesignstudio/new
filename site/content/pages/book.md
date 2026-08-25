@@ -1,9 +1,9 @@
 +++
-date = "2026-08-21"
+date = "2026-08-25"
 title = "The Book"
 url = "/book"
 kicker = "One graphic novel"
-summary = "Zorya tells the whole story in order. You turn pages. You choose. The other games are other rooms of the same book."
+summary = "Zorya tells this week in order: the ships, the heat, the men on the box, the kitchens that fell. You turn pages. You choose."
 fullbleed = true
 novel = true
 +++

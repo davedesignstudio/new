@@ -40,8 +40,8 @@ vm.runInNewContext(fs.readFileSync(path.join(__dirname, "..", "src", "js", "nove
 var N = sandbox.WIDERNOVEL;
 assert.ok(N, "WIDERNOVEL missing");
 
-check("sixteen pages in one book", function () {
-  assert.equal(N.PAGES.length, 16);
+check("nineteen pages in one book", function () {
+  assert.equal(N.PAGES.length, 19);
 });
 
 check("every page has art and a teller", function () {
@@ -122,6 +122,38 @@ check("loaf page remembers a table and does not stack countries", function () {
 
 check("Zorya names herself in the first page", function () {
   assert.ok(/I am Zorya/.test(N.PAGES[0].teller));
+});
+
+check("this week’s box is in the book", function () {
+  var box = N.PAGES.filter(function (p) {
+    return p.id === "box";
+  })[0];
+  assert.ok(box, "missing box page");
+  assert.equal(box.video, "Y43T7VQGtOs");
+  assert.ok(/lost the room/i.test(box.teller), box.teller);
+  assert.ok(/adapt/i.test(box.teller), box.teller);
+});
+
+check("current week is in the book", function () {
+  var blob = N.PAGES.map(function (p) {
+    return p.teller;
+  }).join(" ");
+  assert.ok(/ships/i.test(blob));
+  assert.ok(/Pacific is running hot/i.test(blob));
+  assert.ok(/collateral/i.test(blob));
+  assert.ok(/rent ate the week/i.test(blob));
+});
+
+check("hearing the box still reaches the ships", function () {
+  var s = N.go(N.newState(), "box");
+  var sc = N.scene(s);
+  assert.equal(sc.choices.length, 2);
+  var heard = N.choose(s, sc.choices[0]);
+  assert.equal(heard.page, "ships");
+  assert.equal(heard.flags.heardBox, true);
+  var dinner = N.choose(s, sc.choices[1]);
+  assert.equal(dinner.page, "ships");
+  assert.equal(dinner.flags.askedDinner, true);
 });
 
 if (fails) {
