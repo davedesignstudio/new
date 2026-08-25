@@ -279,10 +279,33 @@ p {
 .hero-banner {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(44, 24, 16, 0.72) 0%, rgba(44, 24, 16, 0.82) 100%),
+    linear-gradient(180deg, rgba(44, 24, 16, 0.62) 0%, rgba(44, 24, 16, 0.78) 100%),
+    url("/img/hero/breakfast.jpg") center 40% / cover no-repeat,
     linear-gradient(135deg, var(--terracotta-dark) 0%, var(--umber-dark) 50%, var(--olive) 100%);
   padding: 2.5rem 0 3.5rem;
   overflow: hidden;
+}
+
+.table-photo {
+  background: var(--marble);
+  padding: 2.25rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-photo img {
+  width: 100%;
+  max-width: 920px;
+  margin: 0.75rem auto 1rem;
+  border: 2px solid var(--gold-dark);
+  box-shadow: 0 12px 40px rgba(44, 24, 16, 0.18);
+}
+
+.table-photo p {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-muted);
 }
 
 .hero-columns {
@@ -533,6 +556,27 @@ p {
 
 .site-footer a {
   color: var(--gold-light);
+}
+
+.footer-studio {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(201, 162, 39, 0.28);
+  text-align: center;
+}
+
+.footer-studio img {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 0.5rem;
+}
+
+.footer-studio p {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--gold-light);
+  font-size: 0.95rem;
 }
 
 form input,
