@@ -7,5 +7,35 @@
 }
 
 .menu-page .page-wrap {
-  padding-top: 2.25rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 800px) {
+  .menu-grid {
+    margin: 0;
+  }
+
+  .check-item,
+  .menu-item {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin: 0 0 0.85rem;
+    padding: 1.05rem 1.05rem 1.1rem;
+  }
+
+  .check-item p,
+  .menu-item p {
+    margin-right: 0;
+  }
+
+  .menu-jump a {
+    padding: 0.45rem 0.55rem 0.55rem;
+    font-size: 0.65rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
 }

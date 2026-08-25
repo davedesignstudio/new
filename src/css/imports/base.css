@@ -626,7 +626,6 @@ p {
 
 .deal-grid,
 .card-grid,
-.menu-grid,
 .brand-grid {
   display: flex;
   flex-wrap: wrap;
@@ -657,9 +656,7 @@ p {
   border-color: var(--gold-dark);
 }
 
-.fresco-card h2,
-.menu-item h3,
-.check-item h3 {
+.fresco-card h2 {
   font-size: 1.15rem;
 }
 
@@ -739,24 +736,23 @@ p {
   background: var(--marble);
   border-bottom: 2px solid var(--border);
   box-shadow: 0 2px 8px rgba(61, 41, 20, 0.06);
-  overflow-x: auto;
 }
 
 .menu-jump-inner {
   display: flex;
-  min-width: max-content;
-  padding: 0.35rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.45rem 0 0.2rem;
 }
 
 .menu-jump a {
   font-family: "Cinzel", serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
-  padding: 0.65rem 0.85rem;
-  white-space: nowrap;
+  padding: 0.5rem 0.75rem 0.65rem;
   border-bottom: 2px solid transparent;
 }
 
@@ -769,15 +765,19 @@ p {
 .menu-lede {
   text-align: center;
   max-width: 38rem;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto 1.75rem;
 }
 
 .menu-lede h1 {
   font-size: 2.2rem;
 }
 
+.menu-lede p {
+  color: var(--text-muted);
+}
+
 .menu-section {
-  padding: 2rem 0 1.25rem;
+  padding: 0.75rem 0 2.25rem;
 }
 
 .section-header {
@@ -785,10 +785,9 @@ p {
   background: linear-gradient(90deg, var(--umber-dark), var(--terracotta-dark));
   border: 1px solid var(--gold-dark);
   text-align: center;
-  padding: 1.75rem 1rem;
-  margin-bottom: 1.15rem;
+  padding: 1.35rem 1.25rem;
+  margin-bottom: 1.35rem;
   overflow: hidden;
-  min-height: 6.5rem;
 }
 
 .section-wash {
@@ -811,6 +810,7 @@ p {
 .section-title {
   color: var(--marble);
   margin: 0;
+  font-size: 1.45rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -818,7 +818,7 @@ p {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
   color: var(--gold-light);
-  margin: 0.25rem 0 0;
+  margin: 0.35rem 0 0;
 }
 
 .check-sheet {
@@ -828,17 +828,26 @@ p {
   padding: 0.35rem 0.35rem 0.85rem;
 }
 
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.65rem;
+  align-items: stretch;
+}
+
 .check-item,
 .menu-item {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex: 1 1 16rem;
-  margin: 0.45rem;
-  padding: 0.95rem 1.1rem 1rem;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: calc(50% - 1.3rem);
+  max-width: calc(50% - 1.3rem);
+  flex: 0 0 calc(50% - 1.3rem);
+  margin: 0.65rem;
+  padding: 1.15rem 1.2rem 1.2rem;
   background: #fffdf7;
   border: 1px solid var(--border);
-  min-width: 15rem;
+  min-width: 0;
   position: relative;
 }
 
@@ -850,35 +859,44 @@ p {
 .check-row {
   display: flex;
   align-items: baseline;
+  min-width: 0;
+  width: 100%;
 }
 
 .check-item h3,
 .menu-item h3 {
-  margin-bottom: 0.2rem;
-  flex-shrink: 0;
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.3;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: calc(100% - 3.75rem);
+  overflow-wrap: break-word;
 }
 
 .check-dots {
-  flex: 1 1 auto;
+  flex: 1 1 1.25rem;
   border-bottom: 1px dotted var(--terracotta-light);
-  margin: 0 0.65rem 0.3rem;
-  min-width: 1.5rem;
+  margin: 0 0.55rem 0.28rem;
+  min-width: 0.85rem;
   height: 0.85em;
 }
 
 .check-item p,
 .menu-item p {
-  margin: 0.15rem 0 0;
+  margin: 0.4rem 3.5rem 0 0;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .check-item .price,
 .menu-item .price {
   font-family: "Cinzel", serif;
   color: var(--terracotta-dark);
-  margin-left: 0.35rem;
+  margin-left: 0.2rem;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .guest-check {
