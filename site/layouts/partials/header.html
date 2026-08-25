@@ -5,25 +5,20 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   {{ .Hugo.Generator }}
 
-  <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
   {{ if .IsHome }}
-  <title>{{ .Site.Title }}</title>
+  <title>{{ .Site.Title }} &middot; {{ .Site.Params.tagline }}</title>
   {{ else }}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{ end }}
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css">
-
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/img/favicon.png">
-
-  <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}">
 
 {{ partial "sidebar" . }}

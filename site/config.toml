@@ -1,11 +1,27 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "The Garden Table"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A researched dinner guide to New Jersey — waterfront Italian, tasting-menu rooms, Shore seafood, and the statewide BYOB habit."
+  tagline = "Where New Jersey sits down to dinner"
+
+[[menu.main]]
+    name = "Dinners"
+    url  = "/dinners"
+    weight = 1
+
+[[menu.main]]
+    name = "How NJ Dines"
+    url  = "/how-nj-dines"
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 3
+
+[[menu.main]]
+    name = "Suggest a Spot"
+    url  = "/contact"
+    weight = 4

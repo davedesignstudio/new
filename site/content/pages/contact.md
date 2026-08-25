@@ -1,16 +1,16 @@
 +++
 date = "2017-05-17T13:03:58-04:00"
-title = "Contact"
+title = "Suggest a Spot"
 url = "/contact"
 +++
 
-## Please fill out the form below
+<p class="eyebrow">The next reservation</p>
 
-Let us know when you'd like to book a reservation and we'll contact you within 30 min to confirm or find another time.
+If a room in your town is plating a night worth crossing a county for, send it. We are especially interested in chef-owned BYOBs, Shore seafood counters that still take dinner seriously, and Central Jersey kitchens that do not show up in Hudson-centric roundups.
 
-<form name="reservation">
-  <input type="text" placeholder="Your Name" name="name">
-  <input type="email" placeholder="Your Email" name="email">
-  <textarea name="message" placeholder="When would you like to book a reservation?"></textarea>
-  <button>Send</button>
+<form name="suggest-a-spot" netlify>
+  <input type="text" placeholder="Your name" name="name" required>
+  <input type="email" placeholder="Your email" name="email" required>
+  <textarea name="message" placeholder="Restaurant, town, and why it belongs on a Jersey dinner map" required></textarea>
+  <button type="submit">Send the tip</button>
 </form>

@@ -4,11 +4,24 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+<p class="eyebrow">The brief</p>
 
----
+The Garden Table started as a restaurant template and a simple assignment: plan a dinner website by researching dinners in New Jersey. The research said the site should not pretend to be one restaurant. New Jersey’s dinner story is a map, not a menu.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+### What we looked at
 
-Sincerely,
-# Mr. Bojangles
+- New Jersey Monthly’s expanded **50 Best Restaurants of 2026**, organized north, central, and Shore / South.
+- OpenTable’s current Jersey roundups, where Italian rooms, Hudson waterfront dining, and Lebanese-French and Mediterranean kitchens keep showing up.
+- Atlantic City and Cape May dinner reporting: oyster houses from 1897, Victorian hotel dining rooms, and casino steakhouses.
+- The state’s Italian and BYOB culture — liquor licenses are scarce, so a serious dinner often means you bring the wine.
+
+### What the site is for
+
+Use it to pick a region, a kind of night, and a room. Each dinner page is an original briefing — city, cuisine, chef, whether it is BYOB, and why it belongs on a 2026 Jersey table list — not a copy of a magazine review.
+
+### Sources
+
+Editorial facts were drawn from public 2026 dining roundups, including [New Jersey Monthly’s 50 Best Restaurants](https://njmonthly.com/articles/eat-drink/best-restaurants-new-jersey/), [OpenTable’s New Jersey guide](https://www.opentable.com/metro/us/new-jersey-restaurants), Atlantic City dinner reporting, and Jersey Shore Italian / BYOB coverage. Restaurant descriptions on this site are original briefings, not reprinted reviews.
+
+Sincerely,  
+**The Garden Table editors**

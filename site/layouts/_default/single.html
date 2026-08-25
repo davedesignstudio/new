@@ -1,7 +1,64 @@
 {{ partial "header" . }}
 
 <div class="content container">
-  {{ .Content }}
+  {{ if eq .Section "dinners" }}
+    <p class="eyebrow">{{ .Params.region }} · {{ .Params.city }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lead-copy">{{ .Description }}</p>
+
+    <dl class="fact-row">
+      <div>
+        <dt>Cuisine</dt>
+        <dd>{{ .Params.cuisine }}</dd>
+      </div>
+      <div>
+        <dt>Price</dt>
+        <dd>{{ .Params.price }}</dd>
+      </div>
+      <div>
+        <dt>Chef</dt>
+        <dd>{{ .Params.chef }}</dd>
+      </div>
+      <div>
+        <dt>Wine</dt>
+        <dd>{{ if .Params.byob }}BYOB{{ else }}Full bar{{ end }}</dd>
+      </div>
+    </dl>
+
+    <div class="dinner-body">
+      {{ .Content }}
+    </div>
+
+    <aside class="visit-box">
+      <h2>Plan the visit</h2>
+      <p><strong>Address.</strong> {{ .Params.address }}</p>
+      {{ if .Params.phone }}<p><strong>Phone.</strong> {{ .Params.phone }}</p>{{ end }}
+      {{ if .Params.occasions }}
+        <p><strong>Best for.</strong>
+          {{ range $i, $occasion := .Params.occasions }}{{ if $i }}, {{ end }}{{ $occasion }}{{ end }}
+        </p>
+      {{ end }}
+      <p><a class="button" href="/dinners">Back to all dinners</a></p>
+    </aside>
+
+    <section class="related">
+      <h2>More in {{ .Params.region }}</h2>
+      <div class="card-grid">
+        {{ $region := .Params.region }}
+        {{ $permalink := .Permalink }}
+        {{ range first 3 (where (where .Site.RegularPages "Params.region" $region) "Permalink" "!=" $permalink) }}
+          <a class="dinner-card" href="{{ .Permalink }}">
+            <p class="card-meta">{{ .Params.city }} · {{ .Params.cuisine }}</p>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description }}</p>
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ else }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  {{ end }}
 </div>
 
 {{ partial "footer" . }}

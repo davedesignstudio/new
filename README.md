@@ -1,36 +1,31 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# The Garden Table
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+A researched **New Jersey dinner guide** built on the Victor Hugo / Netlify restaurant template.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+The original demo site was a single fictional restaurant. This version treats New Jersey as the restaurant: twenty-one dinner rooms mapped from 2026 statewide roundups, plus a short field guide to how the state actually dines (Italian tables, BYOB, Shore seafood, tasting-menu rooms inland).
 
-To install and run the example site locally, here’s what you’ll need:
+## Local setup
 
-## System Requirements
-
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
-
-## Usage
-
-Clone this repository and run:
+You need git, Node.js 8+, and the project dependencies:
 
 ```bash
 npm install
 npm run start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
-
-To build your static output to the `/dist` folder, use:
+Then open http://localhost:3000/. BrowserSync reloads CSS and content as they change.
 
 ```bash
 npm run build
 ```
+
+writes the static site to `/dist`.
+
+## What is on the map
+
+- **North Jersey** — Hudson waterfront Italian, Montclair tasting menus, Bergen special-occasion rooms
+- **Central Jersey** — Metuchen tasting menus, Somerset farm estates, Freehold Indian, Bayshore Low Country
+- **Shore & South** — Atlantic City oyster houses, Cape May farm tables, Asbury Park, Collingswood BYOB French
 
 ## License
 
