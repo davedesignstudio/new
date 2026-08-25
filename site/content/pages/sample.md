@@ -17,7 +17,7 @@ summary = "First-issue splash: the kitchen that thought it could not fall, Hunge
       <div class="panel-stage">
         <img src="/img/comic/rye-clash.jpg" alt="First-issue splash: Rye leaps from a fire escape with rye bread and Automat coffee while a grey Hunger-giant of locked doors storms a kitchen-citadel; yellow cab, walking samovar, color-field booths in the wreckage">
       </div>
-      <p class="panel-caption">The kitchen thought it could not fall.</p>
+      <p class="panel-caption panel-caption--foot">The kitchen thought it could not fall.</p>
       <span class="panel-label">Splash — Hunger as a body</span>
     </div>
   </div>
@@ -26,6 +26,7 @@ summary = "First-issue splash: the kitchen that thought it could not fall, Hunge
       <div class="panel-stage">
         <img src="/img/comic/rye-bounce.jpg" alt="Rye bouncing between fire escapes over Tenth Avenue, loaf under one arm, coffee unspilled, communal kitchen windows and a nickel cafeteria in the same street">
       </div>
+      <p class="panel-caption">Tenth Avenue. Communal steam in the next window. Same crust.</p>
       <p class="panel-balloon">Loaf’s still warm. Cup didn’t spill. Sit or bounce — your knees, not a prophecy.</p>
       <span class="panel-label">Rye — the extra place, mid-air</span>
     </div>
