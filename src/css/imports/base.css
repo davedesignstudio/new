@@ -404,7 +404,7 @@ p {
 .poster-eat {
   margin: 0 0 0.15rem;
   font-family: "Pacifico", cursive;
-  font-size: 4.4rem;
+  font-size: 5.2rem;
   color: var(--gold);
   text-transform: none;
   letter-spacing: 0;
@@ -413,7 +413,7 @@ p {
 }
 
 .poster-copy h1 {
-  font-size: 3.2rem;
+  font-size: 2.55rem;
   color: #fff;
   text-shadow: 3px 3px 0 var(--black);
 }
@@ -975,12 +975,16 @@ form button {
     flex-wrap: wrap;
   }
 
+  .poster-hero {
+    padding: 3.2rem 0 2.8rem;
+  }
+
   .poster-eat {
-    font-size: 3.1rem;
+    font-size: 3.6rem;
   }
 
   .poster-copy h1 {
-    font-size: 2.1rem;
+    font-size: 1.85rem;
   }
 
   .burst {
@@ -999,6 +1003,7 @@ form button {
   .oval-frame {
     width: 16.5rem;
     height: 19.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .menu-jump {
