@@ -4,5 +4,5 @@ title = "Menu"
 url = "/menu"
 layout = "cafemenu"
 bodyclass = "is-menu"
-description = "Breakfast through early dinner at Boonton Cafe. Prices are the house list for the Hawkins Place room; delivery apps may add their own."
+description = "The Boonton Cafe house menu: juices, eggs, pancakes, handhelds, and large plates until 4. Prices are the Hawkins Place list; delivery apps may add their own."
 +++

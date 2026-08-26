@@ -168,7 +168,7 @@
   letter-spacing: 0;
   flex: 0 1 auto;
   min-width: 0;
-  max-width: calc(100% - 3.4rem);
+  max-width: calc(100% - 6.5rem);
   overflow-wrap: break-word;
 }
 
@@ -183,8 +183,10 @@
 .check-line-item .price {
   font-family: "Oswald", sans-serif;
   color: var(--cherry-dark);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: right;
   flex: 0 0 auto;
+  max-width: 8.5rem;
 }
 
 .check-line-item p {

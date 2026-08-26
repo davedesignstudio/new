@@ -1,148 +1,399 @@
+# House list from the Boonton Cafe Pages menu (ntouch ordering).
 sections:
-  - id: breakfast
-    name: Eggs and skillets
-    short: Eggs
-    note: The morning table, from 6 a.m.
-    photo: "/img/hero/breakfast.jpg"
+  - id: juices-fruit
+    name: "Juices & Fruit"
+    short: "Juices"
     items:
-      - name: Two eggs
-        price: "$9"
-        description: Any style, with toast.
-      - name: Two eggs with Taylor ham
-        price: "$13"
-        description: The Hills breakfast, plated the Jersey way.
-      - name: Western omelette
-        price: "$16"
-        description: Peppers, onions, and ham.
-      - name: Taylor ham omelette
-        price: "$16"
-        description: Pork roll folded into eggs.
-      - name: Spanakopita skillet
-        price: "$19"
-        description: Two eggs over spinach, dill, scallion, and feta, with toasted pita.
-      - name: Huevos rancheros skillet
-        price: "$19"
-        description: Corn tortillas, chorizo, black beans, cheddar, pico, sour cream, avocado.
-      - name: Spicy chili avocado toast
-        price: "$18"
-        description: Sourdough, avocado, two eggs, chili crisp, and hot honey.
-      - name: Eggs Benedict
-        price: "$17"
-        description: Canadian bacon, hollandaise.
-      - name: Crab Benedict
-        price: "$22"
-        description: Crab cake under the sauce.
-  - id: griddle
-    name: Pancakes, French toast, waffles
-    short: Pancakes
-    note: Sweet plates with a short stack if you want a lighter fork
-    photo: "/img/hero/breakfast.jpg"
+      - name: "Fresh Squeezed Orange Juice"
+        price: "Small $5.95 · Large $9.55"
+      - name: "Assorted Juices"
+        price: "Small $4.80 · Large $7.25"
+      - name: "Fresh Seasonal Fruit"
+        price: "$5.95"
+  - id: farm-fresh-eggs
+    name: "Farm Fresh Eggs"
+    short: "Eggs"
+    note: "Served with Home Fries & Toast"
     items:
-      - name: Pancakes
-        price: "$11"
-      - name: Triple berry pancakes
-        price: "$17"
-        description: Warm fruit compote, whipped cream, powdered sugar.
-      - name: Banana Nutella waffle
-        price: "$16"
-      - name: Triple berry French toast
-        price: "$17"
-      - name: Greek parfait
-        price: "$12"
-        description: Yogurt, strawberries, blueberries, granola, honey.
-      - name: Baklava parfait
-        price: "$13"
-        description: Walnuts, pistachios, granola, honey, cinnamon.
-  - id: sandwiches
-    name: Breakfast sandwiches
-    short: Sandwiches
-    note: On a roll, bagel, or wrap
-    photo: "/img/hero/breakfast.jpg"
+      - name: "Two Eggs, Any Style"
+        price: "$8.95"
+      - name: "Two Eggs, Any Style, with Breakfast Meat"
+        price: "$13.80"
+        description: "Choice of: Bacon, Ham, Turkey Bacon, Sausage or Taylor Ham"
+      - name: "Two Eggs, Any Style, with Canadian Bacon"
+        price: "$14.35"
+      - name: "Two Eggs, Any Style, & Corned Beef Hash"
+        price: "$17.45"
+  - id: three-egg-omelettes
+    name: "Three Egg Omelettes"
+    short: "Omelettes"
+    note: "Served with Home Fries & Toast"
     items:
-      - name: Taylor, egg, and cheese
-        price: "$11"
-      - name: Bacon, egg, and cheese
-        price: "$11"
-      - name: Breakfast burrito
-        price: "$17"
-        description: Eggs, chorizo, avocado, pico, sour cream, cheddar.
-      - name: Lox bagel
-        price: "$22"
-        description: Cream cheese, tomato, red onion. Plain or everything.
-  - id: lunch
-    name: Burgers and handhelds
-    short: Burgers
-    note: Lunch that can stand in for an early dinner
-    photo: "/img/food/smashed-burger.jpg"
+      - name: "Cheese Omelette"
+        price: "$13.20"
+        description: "Choice of American, Cheddar, Swiss, Mozzarella, Feta or Pepper Jack Cheese"
+      - name: "Veggie Omelette"
+        price: "$17.25"
+        description: "Tomato, Spinach, Mushrooms, Peppers & Onions, topped with Fresh Avocado"
+      - name: "Western Omelette"
+        price: "$16.80"
+        description: "Peppers, Onions & Ham"
+      - name: "Florentine Omelette"
+        price: "$16.80"
+        description: "Fresh Spinach & Feta Cheese"
+      - name: "Mexican Omelette"
+        price: "$17.95"
+        description: "Bacon, Cheddar, Salsa & Avocado"
+      - name: "Build Your Own Omelette"
+        price: "$16.80"
+        description: "Select 3 Items to add to your Omelette. Anything above 3 items can be added for an additional $2.40 per item"
+  - id: eggs-benedict
+    name: "Eggs Benedict"
+    short: "Benedict"
+    note: "Two Poached Eggs on a Toasted English Muffin topped with Hollandaise Sauce, served with Choice of Home Fries or Seasonal Fruit"
     items:
-      - name: Smashed burger
-        price: "$19"
-        description: Two crispy patties, American cheese, house sauce, brioche, fries.
-      - name: Texas burger
-        price: "$19"
-        description: Bacon, cheddar, fries.
-      - name: Chicken chipotle melt
-        price: "$19"
-        description: Ciabatta, chicken cutlet, avocado, cheddar, chipotle mayo.
-      - name: Gyro
-        price: "$19"
-        description: Beef gyro, lettuce, tomato, onion, tzatziki, pita.
-      - name: Turkey Reuben
-        price: "$19"
-        description: Grilled rye, sauerkraut, Swiss, Russian dressing.
-      - name: French dip
-        price: "$19"
-        description: Roast beef, au jus, French roll.
-  - id: greek
-    name: Greek plates and salads
-    short: Greek
-    note: The diner heart of the room
-    photo: "/img/food/spanakopita.jpg"
+      - name: "Classic Eggs Benedict"
+        price: "$16.65"
+        description: "topped with Canadian Bacon"
+      - name: "Crab Cake Benedict"
+        price: "$20.45"
+        description: "topped with Crab Cake"
+      - name: "Florentine Benedict"
+        price: "$18.00"
+        description: "topped with Spanakopita Filling (Sauteed Spinach with Dill, Scallions, Onions & Feta Cheese)"
+  - id: breakfast-sandwiches
+    name: "Breakfast Sandwiches"
+    short: "Sandwiches"
+    note: "Made with Two Eggs served on Choice of Toast, Roll, Croissant or Bagel. On 7-Grain or Sourdough Bread $1.30. Gluten Free Toast $2.40 extra"
     items:
-      - name: Spanakopita
-        price: "$16"
-        description: Spinach pie with feta.
-      - name: Greek salad
-        price: "$15"
-        description: Feta, olives, dolmades, house Greek dressing, pita.
-      - name: Greek salad with grilled chicken
-        price: "$22"
-      - name: Cobb salad
-        price: "$16"
-      - name: Grilled chicken quesadilla
-        price: "$23"
-        description: Cheddar-jack, pico, sour cream, guacamole.
-  - id: plates
-    name: Large plates until 4
-    short: Plates
-    note: Early dinner before the kitchen closes
-    photo: "/img/food/gyro.jpg"
+      - name: "Fried Egg Sandwich"
+        price: "$5.95"
+      - name: "Fried Egg & Cheese"
+        price: "$7.25"
+        description: "Choice of American, Cheddar, Swiss, Mozzarella, Feta or Pepper Jack Cheese"
+      - name: "Breakfast Meat, Egg & Cheese Sandwich"
+        price: "$11.50"
+        description: "Ham, Taylor Ham or Sausage"
+      - name: "Breakfast Burrito"
+        price: "$17.95"
+        description: "A Warm Tortilla stuffed with Scrambled Eggs, Chorizo, Avocado, Pico de Gallo, Sour Cream & Cheddar Cheese, grilled to perfection!"
+      - name: "Nova Scotia Lox Bagel"
+        price: "$22.75"
+        description: "Toasted Everything or Plain Bagel with Cream Cheese, Fresh Lox, Sliced Tomato & Red Onion"
+  - id: greek-yogurt-parfaits
+    name: "Greek Yogurt Parfaits"
+    short: "Parfaits"
     items:
-      - name: Skirt steak
-        price: "$33"
-        description: Potato, vegetable, soup or salad.
-      - name: Chicken Argentino
-        price: "$24"
-        description: Grilled chicken, pico de gallo, potato and vegetable.
-      - name: Penne vodka
-        price: "$17"
-      - name: Chicken penne vodka
-        price: "$24"
-      - name: Disco fries
-        price: "$11"
-        description: Brown gravy and mozzarella.
-  - id: coffee
-    name: Coffee and juice
-    short: Coffee
-    note: The cups that start the Hills day
-    photo: "/img/food/coffee.jpg"
+      - name: "Classic Greek Parfait"
+        price: "$12.65"
+        description: "Greek Yogurt with Strawberries, Blueberries, Granola & Honey"
+      - name: "Baklava Parfait"
+        price: "$12.65"
+        description: "Greek Yogurt topped with Walnuts, Pistachios, Granola, Honey & a Sprinkle of Cinnamon"
+  - id: buttermilk-pancakes
+    name: "Buttermilk Pancakes"
+    short: "Pancakes"
+    note: "Served with Butter & Syrup. With Vermont Maple Syrup $2.40 Extra"
     items:
-      - name: Coffee
-        price: "$3"
-        description: Bottomless diner cup.
-      - name: Iced coffee
-        price: "$4"
-      - name: Orange juice
-        price: "$4"
-      - name: Fresh fruit cup
-        price: "$7"
+      - name: "Classic Buttermilk Pancakes"
+        price: "$11.95"
+      - name: "Wild Blueberry Pancakes"
+        price: "$16.80"
+      - name: "Banana Nutella Pancakes"
+        price: "$16.80"
+      - name: "Banana Walnut Pancakes"
+        price: "$16.80"
+      - name: "Banana Walnut Chocolate Chip Pancakes"
+        price: "$17.95"
+      - name: "Chocolate Chip Pancakes"
+        price: "$16.80"
+      - name: "Triple Berry Pancakes"
+        price: "$17.95"
+        description: "with a Warm Fruit Compote, Whipped Cream & Powdered Sugar"
+  - id: french-toast
+    name: "French Toast"
+    short: "French toast"
+    note: "Served with Butter, Syrup & Powdered Sugar. With Vermont Maple Syrup $2.40 Extra"
+    items:
+      - name: "Classic French Toast"
+        price: "$11.95"
+      - name: "Banana Nutella French Toast"
+        price: "$16.80"
+      - name: "Triple Berry French Toast"
+        price: "$17.95"
+        description: "with a Warm Fruit Compote, Whipped Cream & Powdered Sugar"
+  - id: belgian-waffles
+    name: "Belgian Waffles"
+    short: "Waffles"
+    note: "Served with Butter & Syrup. With Vermont Maple Syrup $2.40 Extra"
+    items:
+      - name: "Crisp Belgian Waffle"
+        price: "$11.95"
+      - name: "Wild Blueberry Waffle"
+        price: "$16.80"
+      - name: "Banana Nutella Waffle"
+        price: "$16.80"
+      - name: "Banana Walnut Waffle"
+        price: "$16.80"
+      - name: "Banana Walnut Chocolate Chip Waffle"
+        price: "$17.95"
+      - name: "Chocolate Chip Waffle"
+        price: "$16.80"
+      - name: "Triple Berry Waffle"
+        price: "$17.95"
+        description: "with Warm Fruit Compote, Whipped Cream & Powdered Sugar"
+  - id: breakfast-skillets
+    name: "Breakfast Skillets"
+    short: "Skillets"
+    items:
+      - name: "Hot Honey Chicken Skillet"
+        price: "$18.95"
+        description: "Breakfast Potatoes, Crispy Chicken Tenders, Jalapenos, Two Eggs, Any Style, drizzled with Hot Honey, served with a Croissant"
+      - name: "Huevos Rancheros Skillet"
+        price: "$18.95"
+        description: "Two Corn Tortillas layered with Chorizo, Black Beans & Cheddar Cheese, topped with Two Eggs, Any Style, Pico de Gallo, Sour Cream & Avocado"
+      - name: "Spanakopita Skillet"
+        price: "$18.95"
+        description: "Two Eggs, Any Style, over a Bed of Spanakopita Filling (Sauteed Spinach with Dill, Scallions, Onions & Feta Cheese) topped with Feta Cheese, served with Toasted Pita"
+  - id: specialty-toast
+    name: "Specialty Toast"
+    short: "Toast"
+    note: "served with Choice of Home Fries, Seasonal Fruit or Side Salad"
+    items:
+      - name: "Classic Avocado Toast"
+        price: "$19.20"
+        description: "Toasted Sourdough topped with Fresh Avocado Spread, Two Eggs, Any Style & a Sprinkle of Flaky Salt"
+      - name: "Spicy Chili Crisp Avocado Toast"
+        price: "$19.20"
+        description: "Toasted Sourdough topped with Fresh Avocado Spread, Two Eggs, Any Style, & a Drizzle of Chili Crisp Oil & Hot Honey"
+      - name: "Greek Scramble"
+        price: "$19.20"
+        description: "Toasted Sourdough topped with a Scramble of Eggs, Feta Cheese, Red Onion & Tomato, topped with a Generous Sprinkling of More Feta"
+      - name: "Caprese Toast"
+        price: "$19.20"
+        description: "Toasted Sourdough topped with Tomatoes, Fresh Mozzarella, Fresh Basil, Balsamic Glaze, EVOO & a Sprinkle of Flaky Salt"
+  - id: breads-bagels-muffins
+    name: "Breads, Bagels & Muffins"
+    short: "Breads"
+    items:
+      - name: "Golden Toast"
+        price: "$3.65"
+        description: "Choice of White, Whole Wheat or Rye"
+      - name: "7-Grain Toast"
+        price: "$4.80"
+      - name: "Sourdough Bread"
+        price: "$4.80"
+      - name: "Gluten Free Toast"
+        price: "$5.95"
+      - name: "Toasted English Muffin"
+        price: "$3.65"
+      - name: "Plain Bagel"
+        price: "$3.65"
+      - name: "Everything Bagel"
+        price: "$3.65"
+      - name: "Assorted Croissants"
+        price: "$5.40"
+      - name: "Assorted Muffins"
+        price: "$4.80"
+  - id: breakfast-sides
+    name: "Breakfast Sides"
+    short: "Sides"
+    items:
+      - name: "Home Fries"
+        price: "$7.25"
+      - name: "French Fries"
+        price: "$8.40"
+      - name: "Sweet Potato Fries"
+        price: "$9.55"
+      - name: "Breakfast Meat"
+        price: "$8.40"
+        description: "Choice of Ham, Bacon, Sausage, Taylor Ham or Turkey Bacon"
+      - name: "Canadian Bacon"
+        price: "$8.95"
+      - name: "Corned Beef Hash"
+        price: "$11.95"
+      - name: "Cream Cheese"
+        price: "$1.85"
+      - name: "Avocado"
+        price: "$5.40"
+      - name: "Tossed Salad"
+        price: "$8.40"
+        description: "with Choice of Dressing"
+  - id: appetizers
+    name: "Appetizers"
+    short: "Apps"
+    items:
+      - name: "French Fries"
+        price: "$8.40"
+      - name: "Sweet Potato Fries"
+        price: "$9.55"
+      - name: "Disco Fries"
+        price: "$11.95"
+        description: "French Fries piled high smothered in Brown Gravy & Melted Mozzarella Cheese"
+      - name: "Mozzarella Sticks"
+        price: "$11.95"
+        description: "served with Marinara Sauce"
+      - name: "Buffalo Wings (8)"
+        price: "$16.80"
+        description: "served with Buttermilk Ranch or Blue Cheese Dressing"
+      - name: "Chicken Fingers (5)"
+        price: "$14.35"
+        description: "served with Honey Mustard or BBQ Sauce"
+      - name: "Spanakopita"
+        price: "$16.80"
+        description: "Greek Spinach Pie with Fresh Spinach & Feta Cheese"
+      - name: "Tossed Salad"
+        price: "$8.40"
+        description: "with Choice of Dressing"
+  - id: homemade-soups
+    name: "Homemade Soups"
+    short: "Soups"
+    items:
+      - name: "Soup of the Day"
+        price: "Pint $5.99 · Quart $10.99"
+  - id: fresh-garden-salads
+    name: "Fresh Garden Salads"
+    short: "Salads"
+    items:
+      - name: "Classic Greek Salad"
+        price: "$15.50"
+        description: "Iceberg Lettuce, Tomatoes, Cucumbers, Red Onion, Kalamata Olives, Crumbled Feta Cheese & Dolmades (Stuffed Grape Leaves) topped with our House-Made Greek Dressing, served with Toasted Pita Bread"
+      - name: "Classic Caesar Salad"
+        price: "$15.50"
+        description: "Romaine Lettuce, Parmesan Cheese, Croutons & Our Creamy Caesar Dressing"
+      - name: "Cobb Salad"
+        price: "$16.80"
+        description: "Romaine Lettuce, Blue Cheese Crumbles, Bacon, Hard Boiled Egg, Tomatoes & Avocado, served with Balsamic Vinaigrette"
+      - name: "Buffalo Chicken Salad"
+        price: "$22.75"
+        description: "Romaine Lettuce, Tomato & Blue Cheese Crumbles topped with Choice of Grilled Chicken Breast or Chicken Cutlet, tossed in Buffalo Sauce, served with Buttermilk Ranch or Blue Cheese Dressing"
+  - id: handhelds
+    name: "Handhelds"
+    short: "Handhelds"
+    note: "served with French Fries or Side Salad"
+    items:
+      - name: "Turkey Reuben"
+        price: "$19.55"
+        description: "Sliced Turkey on Grilled Rye topped with Sauerkraut & Melted Swiss Cheese, served with a Side of Russian Dressing"
+      - name: "Turkey Club"
+        price: "$19.55"
+        description: "Sliced Turkey, Crisp Bacon, Lettuce, Tomato & Mayo"
+      - name: "French Dip"
+        price: "$19.55"
+        description: "Fresh Sliced Roast Beef dipped in Au Jus, served on a French Roll"
+      - name: "Gyro"
+        price: "$19.55"
+        description: "Beef Gyro Meat, Lettuce, Tomato, Onion & Tzatziki Sauce wrapped in Pita Bread"
+      - name: "Tuna Melt"
+        price: "$19.55"
+        description: "Grilled Sourdough topped with Our House-Made Tuna Salad, Tomato & Melted Cheddar Cheese"
+      - name: "Chicken Chipotle Melt"
+        price: "$19.55"
+        description: "Grilled Ciabatta Bread, Crispy Chicken Cutlet, Avocado, Melted Cheddar Cheese & Chipotle Mayo"
+      - name: "Chicken Caesar Wrap"
+        price: "$19.55"
+        description: "Chopped Caesar Salad with Your Choice of Grilled Chicken Breast or Chicken Cutlet wrapped in a Tortilla then Grilled to Perfection!"
+      - name: "Chicken Caprese"
+        price: "$19.55"
+        description: "Toasted Ciabatta Bread topped with Grilled Chicken Breast or Chicken Cutlet, Fresh Mozzarella, Tomato & Fresh Basil with Balsamic Glaze"
+      - name: "Vegetarian Caprese"
+        price: "$19.55"
+        description: "Toasted Ciabatta Bread topped with Fresh Mozzarella, Tomato & Fresh Basil with Balsamic Glaze"
+      - name: "Chicken Panini"
+        price: "$19.55"
+        description: "Choice of Grilled Chicken Breast or Chicken Cutlet on Ciabatta Bread with Roasted Peppers, Fresh Mozzarella Cheese & Balsamic Glaze"
+      - name: "Buffalo Chicken Panini"
+        price: "$19.55"
+        description: "Choice of Grilled Chicken Breast or Chicken Cutlet on Ciabatta Bread with Buffalo Sauce, Lettuce, Tomato & Blue Cheese"
+      - name: "Chicken & Avocado Panini"
+        price: "$19.55"
+        description: "Grilled Chicken Breast on Ciabatta Bread with Avocado, Red Onion, Tomato, Pepper Jack Cheese & Chipotle Mayo"
+  - id: burgers
+    name: "Burgers"
+    short: "Burgers"
+    note: "8 oz. Angus Beef Burgers served on a Brioche Bun"
+    items:
+      - name: "Beef Burger"
+        price: "$11.95"
+      - name: "Cheeseburger"
+        price: "$13.80"
+      - name: "Texas Burger"
+        price: "$19.55"
+        description: "topped with Crisp Bacon & Cheddar Cheese, served with French Fries"
+      - name: "Smashed Burger"
+        price: "$19.55"
+        description: "Two Crispy Smashed Beef Patties topped with Melted American Cheese, Lettuce, Tomato, Onion, Pickle & Our House-Made Burger Sauce served on a Brioche Bun with French Fries"
+  - id: quesadillas
+    name: "Quesadillas"
+    short: "Quesadillas"
+    items:
+      - name: "Classic Quesadilla"
+        price: "$16.80"
+        description: "Grilled Tortilla stuffed with Melted Cheddar & Jack Cheeses, served with Pico de Gallo, Shredded Lettuce, Sour Cream & Guacamole"
+      - name: "Veggie Quesadilla"
+        price: "$16.80"
+        description: "Grilled Tortilla stuffed with Melted Cheddar & Jack Cheeses, Sauteed Peppers & Onions, served with a Side of Chipotle Mayo"
+  - id: large-plates
+    name: "Large Plates"
+    short: "Plates"
+    note: "Served with Choice of Soup of The Day or Salad"
+    items:
+      - name: "Skirt Steak"
+        price: "$33.35"
+        description: "served with French Fries & Broccoli"
+      - name: "Chicken Argentino"
+        price: "$25.15"
+        description: "Grilled Chicken with Pico de Gallo, served with French Fries & Broccoli"
+      - name: "Penne Ala Vodka"
+        price: "$17.95"
+        description: "Penne Pasta in a Creamy Vodka Sauce"
+      - name: "Penne Ala Vodka with Grilled Chicken"
+        price: "$25.15"
+        description: "In a Creamy Vodka Sauce"
+  - id: desserts
+    name: "Desserts"
+    short: "Desserts"
+    items:
+      - name: "Chocolate Cake"
+        price: "$8.40"
+      - name: "Apple Pie"
+        price: "$5.70"
+      - name: "Rice Pudding"
+        price: "$5.95"
+      - name: "Chocolate Chip Cookie"
+        price: "$4.80"
+  - id: beverages
+    name: "Beverages"
+    short: "Coffee"
+    items:
+      - name: "Coffee"
+        price: "$4.25"
+        description: "Regular or Decaf"
+      - name: "Tea"
+        price: "$4.25"
+      - name: "Herbal Tea"
+        price: "$4.25"
+      - name: "Cappuccino"
+        price: "$5.75"
+      - name: "Espresso"
+        price: "$4.80"
+      - name: "Hot Chocolate"
+        price: "$4.25"
+      - name: "Milk"
+        price: "$3.55"
+        description: "Choice of Whole, 2%, Skim or Oat Milk"
+      - name: "Chocolate Milk"
+        price: "$4.15"
+        description: "Choice of Whole, 2%, Skim or Oat Milk"
+      - name: "Iced Tea"
+        price: "$4.80"
+      - name: "Iced Coffee"
+        price: "$4.80"
+      - name: "Classic Milk Shake"
+        price: "$8.40"
+        description: "Choice of Vanilla, Chocolate or Strawberry"
+      - name: "Premium Milk Shake"
+        price: "$9.55"
+        description: "Choice of Cookies & Cream, Nutella or Chocolate Peanut Butter"
+      - name: "Assorted Soft Drinks"
+        price: "$4.80"
