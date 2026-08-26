@@ -5,6 +5,6 @@ url = "/about"
 layout = "about"
 +++
 
-Boonton Cafe sits at **125 Hawkins Place** in the hills of Morris County. The storefront still wears the red condensed **BOONTON CAFE** letters we pulled from the facade. The circular seal is new: a house mark for **Serving the Hills**, drawn in the same fresco language as the Bville rooms — terracotta, gold, olive hills, a cup on the patio.
+Boonton Cafe sits at **125 Hawkins Place** in Boonton. The storefront still wears the red condensed **BOONTON CAFE** letters. The circular seal is the house mark for **Serving the Hills**.
 
-The kitchen is a Jersey diner with a Greek pulse. Taylor ham and eggs in the morning. Spanakopita skillets. Gyros and Greek salad with dolmades. Smashed burgers and penne vodka when lunch needs to eat like dinner. The banner on the glass is honest: **under new ownership**. Hours stay neighborhood-simple: **seven days, 6 a.m. to 4 p.m.**
+This block of the site is a **1950s diner**: chrome, neon, vinyl booths, checker floor. The kitchen is still a Jersey room with a Greek pulse — Taylor ham and eggs, spanakopita, gyros, smashed burgers, early-dinner plates until 4. **Under new ownership.** Open **seven days, 6 a.m. to 4 p.m.**

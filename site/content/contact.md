@@ -6,4 +6,4 @@ layout = "visit"
 bodyclass = "is-menu"
 +++
 
-Come for coffee at 6. Stay through an early dinner plate before 4. Patio tables sit on the pavers under the sign; the indoor room keeps the palms in the window. Better to call than to guess a wait.
+Come for coffee at 6. Stay through an early dinner plate before 4. Counter stools, vinyl booths, and the lot out front. Better to call than to guess a wait.

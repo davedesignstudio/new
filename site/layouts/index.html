@@ -1,126 +1,110 @@
 {{ partial "header" . }}
 
 <main id="main">
-<section class="hero-banner">
-  <div class="hero-columns" aria-hidden="true">
-    <div class="column"></div>
-    <div class="column"></div>
-  </div>
-  <div class="container hero-inner">
-    <div class="hero-arch-frame">
-      <img class="hero-seal" src="/img/brand/hills-seal.png" alt="Boonton Cafe seal: Serving the Hills">
-      <p class="hero-eyebrow">Please wait to be seated · 125 Hawkins Place</p>
-      <h1 class="hero-title">An old diner for the Hills</h1>
-      <p class="hero-subtitle">Coffee at 6. Taylor ham and eggs. Spanakopita, gyros, smashed burgers, and early-dinner plates until 4. New owners. Same booths.</p>
-      <p class="hero-actions">
-        <a class="btn-gold" href="/menu">See the menu</a>
+  <section class="hero">
+    <img src="/img/fifties/diner-exterior-night.jpg" alt="1950s diner exterior at night with neon">
+    <div class="hero-scrim"></div>
+    <div class="container hero-copy">
+      <p class="hero-script">Please wait to be seated</p>
+      <h1>Boonton Cafe</h1>
+      <p>125 Hawkins Place. Coffee at 6. Dinner plates until 4. New owners. Same booths.</p>
+      <p>
+        <a class="btn" href="/menu">Tonight’s dinners</a>
         <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
       </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="table-photo">
-  <div class="container">
-    <p class="eyebrow">The morning table</p>
-    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
-    <figure class="gold-frame">
-      <img src="/img/hero/breakfast.jpg" alt="Omelette, cheesy eggs, home fries, and coffee on the diner table">
+  <div class="checker" aria-hidden="true"></div>
+
+  <section class="split">
+    <figure class="photo-block chrome-frame">
+      <img src="/img/fifties/diner-counter.jpg" alt="Chrome lunch counter and red stools">
     </figure>
-    <p>Omelettes, home fries, melted cheese, and coffee — the plates that start the Hills day.</p>
-  </div>
-</section>
-
-<section class="plate-gallery">
-  <div class="container">
-    <p class="eyebrow">From the oven and the grill</p>
-    <h2 class="menu-lede">The diner heart of the room</h2>
-    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
-    <p class="plate-gallery-intro">Spanakopita from the oven, gyros with tzatziki, smashed burgers on brioche. Jersey diner cooking with a Greek pulse.</p>
-    <div class="plate-grid">
-      <article class="plate-card">
-        <figure class="gold-frame">
-          <img src="/img/food/spanakopita.jpg" alt="Spanakopita spinach pie with lemon and tzatziki">
-        </figure>
-        <h3>Spanakopita</h3>
-        <p>Phyllo, spinach, and feta — the pie the room is built around.</p>
-      </article>
-      <article class="plate-card">
-        <figure class="gold-frame">
-          <img src="/img/food/gyro.jpg" alt="Beef gyro on pita with tzatziki and Greek salad">
-        </figure>
-        <h3>Gyro</h3>
-        <p>Pita, tzatziki, onion, tomato. A Hills lunch that still eats like dinner.</p>
-      </article>
-      <article class="plate-card">
-        <figure class="gold-frame">
-          <img src="/img/food/smashed-burger.jpg" alt="Smashed cheeseburger with fries">
-        </figure>
-        <h3>Smashed burger</h3>
-        <p>Two crispy patties, American cheese, house sauce, brioche, fries.</p>
-      </article>
+    <div class="caption-card cherry">
+      <p class="block-label">The counter</p>
+      <h2>Stools, coffee, pie case</h2>
+      <p>A long chrome rail. Swivel seats. The morning starts here and the last plate leaves before 4.</p>
+      <p><a class="btn" href="/menu">Order from the house</a></p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="sign-strip">
-  <div class="container sign-strip-inner">
-    <p class="eyebrow">From the Hawkins Place sign</p>
-    <div class="ornament-divider" aria-hidden="true"><span class="divider-line"></span><span>❧</span><span class="divider-line"></span></div>
-    <img class="extracted-wordmark" src="/img/brand/wordmark.png" alt="Boonton Cafe wordmark extracted from the storefront">
-    <p>The red condensed letters from the facade, redrawn clean. The circular seal is the house mark for Serving the Hills.</p>
-  </div>
-</section>
-
-<section class="deals-banner">
-  <div class="container">
-    <div class="deal-grid">
-      <article class="fresco-card">
-        <div class="card-photo">
-          <img src="/img/hero/breakfast.jpg" alt="">
-        </div>
-        <p class="eyebrow">Morning</p>
-        <h2>Eggs, Taylor ham, skillets</h2>
-        <p>Western omelettes, spanakopita skillets, avocado toast with chili crisp, and the Taylor-egg-and-cheese that is the Morris County handshake.</p>
-      </article>
-      <article class="fresco-card">
-        <div class="card-photo">
-          <img src="/img/food/spanakopita.jpg" alt="">
-        </div>
-        <p class="eyebrow">Table</p>
-        <h2>Greek diner heart</h2>
-        <p>Spanakopita, gyros, Greek salad with dolmades, baklava parfait. The room still cooks like a Jersey diner that takes feta seriously.</p>
-      </article>
-      <article class="fresco-card">
-        <div class="card-photo">
-          <img src="/img/food/smashed-burger.jpg" alt="">
-        </div>
-        <p class="eyebrow">Until 4</p>
-        <h2>Early dinner plates</h2>
-        <p>Skirt steak, chicken Argentino, penne vodka, smashed burgers. Come for lunch that eats like dinner before the kitchen closes.</p>
-      </article>
+  <section class="split">
+    <div class="caption-card black">
+      <p class="block-label">The booths</p>
+      <h2>Vinyl, Formica, jukebox</h2>
+      <p>Red booths, checker floor, neon on the chrome. Come for lunch that still eats like dinner.</p>
     </div>
-  </div>
-</section>
-
-<section class="visit-band">
-  <div class="container visit-band-inner">
-    <div>
-      <p class="eyebrow">Walk in</p>
-      <h2>Patio tables on the pavers</h2>
-      <p>{{ .Site.Params.address }}, next to 127. Outdoor chairs, indoor palms, seven days from 6 a.m. Pickup and delivery run the same hours.</p>
-      <dl class="fact-row">
-        <div><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
-        <div><dt>Phone</dt><dd>{{ .Site.Params.phone }}</dd></div>
-        <div><dt>Room</dt><dd>Dine-in · takeout · patio</dd></div>
-      </dl>
-      <p><a class="btn-gold" href="/contact">Plan a visit</a></p>
-    </div>
-    <figure class="gold-frame visit-photo">
-      <img src="/img/food/patio.jpg" alt="Patio tables on the pavers outside Boonton Cafe">
+    <figure class="photo-block chrome-frame">
+      <img src="/img/fifties/diner-booth.jpg" alt="Red vinyl booth and Formica table">
     </figure>
+  </section>
+
+  <div class="checker" aria-hidden="true"></div>
+
+  <section class="band black">
+    <div class="container">
+      <p class="block-label">Tonight’s dinners</p>
+      <h2>Plates until 4</h2>
+    </div>
+  </section>
+  <div class="plate-row">
+    <article>
+      <figure class="photo-block"><img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner"></figure>
+      <h3>Hot turkey</h3>
+    </article>
+    <article>
+      <figure class="photo-block"><img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner"></figure>
+      <h3>Meatloaf</h3>
+    </article>
+    <article>
+      <figure class="photo-block"><img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak"></figure>
+      <h3>Chicken fried steak</h3>
+    </article>
+    <article>
+      <figure class="photo-block"><img src="/img/fifties/diner-burger-malt.jpg" alt="Cheeseburger and malt"></figure>
+      <h3>Burger &amp; malt</h3>
+    </article>
   </div>
-</section>
+
+  <section class="split">
+    <figure class="photo-block">
+      <img src="/img/fifties/diner-jukebox.jpg" alt="1950s diner jukebox">
+    </figure>
+    <figure class="photo-block">
+      <img src="/img/fifties/diner-pie-case.jpg" alt="Revolving pie case">
+    </figure>
+  </section>
+
+  <section class="split">
+    <figure class="photo-block strip">
+      <img src="/img/fifties/diner-stools.jpg" alt="Chrome stools at a diner counter">
+    </figure>
+    <figure class="photo-block strip">
+      <img src="/img/fifties/diner-kitchen-pass.jpg" alt="Kitchen pass window in a diner">
+    </figure>
+    <figure class="photo-block strip">
+      <img src="/img/fifties/diner-window-night.jpg" alt="Diner window at night">
+    </figure>
+  </section>
+
+  <section class="band formica">
+    <div class="container split align-center">
+      <div class="caption-card">
+        <p class="block-label">Walk in</p>
+        <h2>Hawkins Place</h2>
+        <p>{{ .Site.Params.address }}, {{ .Site.Params.city }}. Dine-in, takeout, patio. Seven days from 6 a.m.</p>
+        <dl class="facts">
+          <div><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
+          <div><dt>Phone</dt><dd>{{ .Site.Params.phone }}</dd></div>
+        </dl>
+        <p><a class="btn" href="/contact">Plan a visit</a></p>
+      </div>
+      <figure class="photo-block chrome-frame mid">
+        <img src="/img/fifties/diner-parking-lot.jpg" alt="Diner parking lot at dusk">
+      </figure>
+    </div>
+  </section>
 </main>
 
 {{ partial "footer" . }}
