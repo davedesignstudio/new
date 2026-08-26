@@ -1,20 +1,27 @@
 {{ partial "header" . }}
 
 <main id="main">
-  <section class="split">
-    <figure class="photo-block">
-      <img src="/img/fifties/diner-waitress-coffee.jpg" alt="Waitress pouring coffee in a 1950s diner">
-    </figure>
-    <div class="caption-card">
-      <p class="block-label">The house</p>
-      <h1>About</h1>
-      <div class="about-copy">
-        {{ .Content }}
+  <section class="poster-hero">
+    <div class="burst" aria-hidden="true"><span>The<br>house</span></div>
+    <div class="container">
+      <div class="poster-copy">
+        <p class="hero-script">Serving the Hills</p>
+        <p class="poster-eat">About</p>
+        <h1>Boonton Cafe</h1>
       </div>
+      <figure class="oval-frame">
+        <img src="/img/fifties/diner-waitress-coffee.jpg" alt="Waitress pouring coffee in a 1950s diner">
+      </figure>
     </div>
   </section>
   <div class="checker" aria-hidden="true"></div>
   <div class="container page-wrap">
+    <div class="matchbook-card">
+      <p class="block-label">The house</p>
+      <div class="about-copy">
+        {{ .Content }}
+      </div>
+    </div>
     <div class="about-marks">
       <div class="wordmark-panel">
         <p class="block-label">From the sign</p>

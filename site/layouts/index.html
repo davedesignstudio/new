@@ -1,17 +1,22 @@
 {{ partial "header" . }}
 
 <main id="main">
-  <section class="hero">
-    <img src="/img/fifties/diner-exterior-night.jpg" alt="1950s diner exterior at night with neon">
-    <div class="hero-scrim"></div>
-    <div class="container hero-copy">
-      <p class="hero-script">Please wait to be seated</p>
-      <h1>Boonton Cafe</h1>
-      <p>125 Hawkins Place. Coffee at 6. Dinner plates until 4. New owners. Same booths.</p>
-      <p>
-        <a class="btn" href="/menu">Tonight’s dinners</a>
-        <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
-      </p>
+  <section class="poster-hero">
+    <div class="burst" aria-hidden="true"><span>Open<br>6 to 4</span></div>
+    <div class="container">
+      <div class="poster-copy">
+        <p class="hero-script">Please wait to be seated</p>
+        <p class="poster-eat">Eat.</p>
+        <h1>Boonton Cafe</h1>
+        <p>125 Hawkins Place. Coffee at 6. Dinner plates until 4. New owners. Same booths.</p>
+        <p>
+          <a class="btn" href="/menu">Tonight’s dinners</a>
+          <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+        </p>
+      </div>
+      <figure class="oval-frame">
+        <img src="/img/fifties/diner-exterior-night.jpg" alt="1950s diner exterior at night with neon">
+      </figure>
     </div>
   </section>
 
@@ -21,7 +26,7 @@
     <figure class="photo-block chrome-frame">
       <img src="/img/fifties/diner-counter.jpg" alt="Chrome lunch counter and red stools">
     </figure>
-    <div class="caption-card cherry">
+    <div class="matchbook-card cherry">
       <p class="block-label">The counter</p>
       <h2>Stools, coffee, pie case</h2>
       <p>A long chrome rail. Swivel seats. The morning starts here and the last plate leaves before 4.</p>
@@ -30,7 +35,7 @@
   </section>
 
   <section class="split">
-    <div class="caption-card black">
+    <div class="matchbook-card black">
       <p class="block-label">The booths</p>
       <h2>Vinyl, Formica, jukebox</h2>
       <p>Red booths, checker floor, neon on the chrome. Come for lunch that still eats like dinner.</p>
@@ -50,47 +55,35 @@
   </section>
   <div class="plate-row">
     <article>
-      <figure class="photo-block"><img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner"></figure>
+      <figure class="round-frame"><img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner"></figure>
       <h3>Hot turkey</h3>
     </article>
     <article>
-      <figure class="photo-block"><img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner"></figure>
+      <figure class="round-frame"><img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner"></figure>
       <h3>Meatloaf</h3>
     </article>
     <article>
-      <figure class="photo-block"><img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak"></figure>
+      <figure class="round-frame"><img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak"></figure>
       <h3>Chicken fried steak</h3>
     </article>
     <article>
-      <figure class="photo-block"><img src="/img/fifties/diner-burger-malt.jpg" alt="Cheeseburger and malt"></figure>
+      <figure class="round-frame"><img src="/img/fifties/diner-burger-malt.jpg" alt="Cheeseburger and malt"></figure>
       <h3>Burger &amp; malt</h3>
     </article>
   </div>
 
   <section class="split">
-    <figure class="photo-block">
+    <figure class="photo-block stamp-frame">
       <img src="/img/fifties/diner-jukebox.jpg" alt="1950s diner jukebox">
     </figure>
-    <figure class="photo-block">
+    <figure class="photo-block stamp-frame">
       <img src="/img/fifties/diner-pie-case.jpg" alt="Revolving pie case">
-    </figure>
-  </section>
-
-  <section class="split">
-    <figure class="photo-block strip">
-      <img src="/img/fifties/diner-stools.jpg" alt="Chrome stools at a diner counter">
-    </figure>
-    <figure class="photo-block strip">
-      <img src="/img/fifties/diner-kitchen-pass.jpg" alt="Kitchen pass window in a diner">
-    </figure>
-    <figure class="photo-block strip">
-      <img src="/img/fifties/diner-window-night.jpg" alt="Diner window at night">
     </figure>
   </section>
 
   <section class="band formica">
     <div class="container split align-center">
-      <div class="caption-card">
+      <div class="matchbook-card turquoise">
         <p class="block-label">Walk in</p>
         <h2>Hawkins Place</h2>
         <p>{{ .Site.Params.address }}, {{ .Site.Params.city }}. Dine-in, takeout, patio. Seven days from 6 a.m.</p>
@@ -100,7 +93,7 @@
         </dl>
         <p><a class="btn" href="/contact">Plan a visit</a></p>
       </div>
-      <figure class="photo-block chrome-frame mid">
+      <figure class="oval-frame small">
         <img src="/img/fifties/diner-parking-lot.jpg" alt="Diner parking lot at dusk">
       </figure>
     </div>

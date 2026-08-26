@@ -3,9 +3,54 @@
 }
 
 .menu-page {
-  background:
-    repeating-linear-gradient(90deg, var(--cream) 0 12px, #efe0be 12px 24px);
   padding-top: 0;
+}
+
+.matchbook-cover {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto 2rem;
+  padding: 1.6rem 1.2rem 1.4rem;
+  background: var(--cherry);
+  color: var(--cream);
+  border: 6px solid var(--black);
+  box-shadow: 10px 10px 0 var(--gold);
+}
+
+.matchbook-cover-copy {
+  flex: 1 1 14rem;
+  padding-right: 7rem;
+}
+
+.matchbook-cover .hero-script {
+  color: var(--gold);
+}
+
+.matchbook-cover h1 {
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 3px 3px 0 var(--black);
+}
+
+.matchbook-cover .burst {
+  right: auto;
+  left: auto;
+  top: 1rem;
+  right: 1.1rem;
+}
+
+@media (max-width: 800px) {
+  .matchbook-cover-copy {
+    padding-right: 0;
+    padding-top: 4.5rem;
+  }
+
+  .matchbook-cover .poster-eat {
+    font-size: 2.6rem;
+  }
 }
 
 .menu-page .page-wrap {
@@ -219,7 +264,7 @@
   pointer-events: none;
 }
 
-.visit-check .photo-block {
+.visit-check .stamp-frame {
   height: 200px;
   margin: 0.8rem 0 1rem;
 }
