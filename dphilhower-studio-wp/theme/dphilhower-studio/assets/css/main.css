@@ -683,6 +683,12 @@ select {
   object-fit: cover;
 }
 
+.case-hero.is-illustration img {
+  object-fit: contain;
+  max-height: 72vh;
+  background: #7ecad1;
+}
+
 .case-body {
   width: min(100%, 720px);
   margin: 0 auto;
