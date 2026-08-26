@@ -338,7 +338,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Identity · menu · packaging · window',
 			'year'     => '2026',
 			'location' => 'Morris County, NJ',
-			'content'  => '<p>A chalkboard that tries to look handmade usually looks cheap. This one is drawn as a sign: gold filigree, a cup from above, and a list you can read from the door.</p><p>The circular CR mark is the drink seen from above. Cups and the window carry the same seal so the board is not a one-off poster.</p>',
+			'content'  => '<p>A chalkboard that tries to look handmade usually looks cheap. This one is drawn as a sign: gold filigree, a cup from above, and a list you can read from the door.</p><p>The official seal is the crema ring: gold CR, silver CAFE / ROBUST, stars, and a foam border. That badge sits on the cups and the bag. The board and window keep the cup-from-above so the shop still reads from the sidewalk.</p>',
 		),
 		array(
 			'slug'     => 'expresso',
