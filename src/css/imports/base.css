@@ -13,6 +13,8 @@
   --muted: #5c4a44;
   --neon-pink: #ff4f7a;
   --gold: #d4a017;
+  --booth-blue: #1648a8;
+  --booth-blue-dark: #0e3278;
   --header-offset: 6.6rem;
 }
 
@@ -25,7 +27,7 @@ html {
   line-height: 1.5;
   font-family: "Lato", "Segoe UI", sans-serif;
   color: var(--ink);
-  background: var(--cream);
+  background: var(--booth-blue);
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-offset);
 }
@@ -38,9 +40,10 @@ body {
 
 body {
   min-height: 100vh;
-  background-color: var(--cream);
-  background-image: url("/img/art/formica.svg");
-  background-size: 220px 160px;
+  background-color: var(--booth-blue);
+  background-image: url("/img/art/burger-pattern.jpg");
+  background-size: 280px 190px;
+  background-repeat: repeat;
 }
 
 img {
@@ -432,9 +435,9 @@ body.has-scroll-walk .plate-row {
     repeating-linear-gradient(
       -28deg,
       transparent 0 18px,
-      rgba(255, 255, 255, 0.04) 18px 20px
+      rgba(255, 255, 255, 0.05) 18px 20px
     ),
-    linear-gradient(118deg, rgba(43, 179, 177, 0.22) 0 50%, rgba(196, 30, 58, 0.24) 54% 100%);
+    linear-gradient(180deg, rgba(14, 50, 120, 0.28) 0%, rgba(14, 50, 120, 0.08) 55%, rgba(14, 50, 120, 0.22) 100%);
 }
 
 .poster-hero::before {
@@ -465,7 +468,7 @@ body.has-scroll-walk .plate-row {
   flex: 1 1 20rem;
   max-width: 34rem;
   padding: 1.35rem 1.5rem 1.2rem;
-  background: rgba(23, 20, 23, 0.48);
+  background: rgba(14, 50, 120, 0.78);
   border: 4px solid var(--black);
   box-shadow: 8px 8px 0 var(--black);
 }

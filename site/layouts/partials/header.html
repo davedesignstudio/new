@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}{{ if or .IsHome (eq .Params.layout "walkthrough") }} class="has-scroll-walk"{{ end }}>
+<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}{{ if eq .Params.layout "walkthrough" }} class="has-scroll-walk"{{ end }}>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   {{ .Hugo.Generator }}
@@ -15,9 +15,9 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brand/hills-seal.png">
   <link rel="shortcut icon" href="/img/brand/hills-seal.png">
 </head>
-<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}{{ with .Params.bodyclass }} {{ . }}{{ end }}{{ if or .IsHome (eq .Params.layout "walkthrough") }} has-scroll-walk{{ end }}">
+<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}{{ with .Params.bodyclass }} {{ . }}{{ end }}{{ if eq .Params.layout "walkthrough" }} has-scroll-walk{{ end }}">
 <a class="skip-link" href="#main">Skip to the counter</a>
-{{ if or .IsHome (eq .Params.layout "walkthrough") }}
+{{ if eq .Params.layout "walkthrough" }}
 <video class="site-walk js-scroll-walk" muted playsinline preload="auto" poster="/img/walkthrough/diner-3d-still.jpg" aria-hidden="true">
   <source src="/videos/diner-walkthrough.mp4" type="video/mp4">
 </video>
