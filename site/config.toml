@@ -26,3 +26,8 @@ title = "Boonton Cafe"
     name = "Visit"
     url  = "/contact"
     weight = 3
+
+[[menu.main]]
+    name = "The room"
+    url  = "/walkthrough"
+    weight = 4

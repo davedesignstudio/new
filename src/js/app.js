@@ -28,3 +28,17 @@ if (header) {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 }
+
+document.querySelectorAll("video[autoplay]").forEach(function (video) {
+  video.muted = true;
+  video.setAttribute("playsinline", "");
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.removeAttribute("autoplay");
+    video.pause();
+    return;
+  }
+  var play = video.play();
+  if (play && play.catch) {
+    play.catch(function () {});
+  }
+});
