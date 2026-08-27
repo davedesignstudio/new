@@ -102,7 +102,13 @@ function runServer() {
   browserSync.init({
     server: {
       baseDir: "./dist"
-    }
+    },
+    host: "0.0.0.0",
+    port: 3000,
+    ui: { port: 3001 },
+    open: false,
+    notify: false,
+    ghostMode: false
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
