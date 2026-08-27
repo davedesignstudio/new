@@ -1,3 +1,6 @@
 dist/
 .DS_Store
 node_modules
+src/walkthrough/textures/
+src/walkthrough/*.blend
+src/walkthrough/*.blend1
