@@ -25,7 +25,7 @@
 html {
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Lato", "Segoe UI", sans-serif;
+  font-family: "Jost", "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--booth-blue);
   scroll-behavior: smooth;
@@ -59,11 +59,11 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--turquoise-dark);
+  color: var(--booth-blue-dark);
 }
 
 :focus-visible {
-  outline: 2px solid var(--turquoise);
+  outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
 
@@ -119,17 +119,17 @@ p {
 }
 
 .checker {
-  height: 18px;
+  height: 16px;
   background-color: var(--black);
   background-image:
-    linear-gradient(45deg, var(--cream) 25%, transparent 25%),
-    linear-gradient(-45deg, var(--cream) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--cream) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--cream) 75%);
-  background-size: 18px 18px;
-  background-position: 0 0, 0 9px, 9px -9px, -9px 0;
-  border-top: 3px solid var(--gold);
-  border-bottom: 3px solid var(--gold);
+    linear-gradient(45deg, #fff 25%, transparent 25%),
+    linear-gradient(-45deg, #fff 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #fff 75%),
+    linear-gradient(-45deg, transparent 75%, #fff 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  border-top: 4px solid var(--gold);
+  border-bottom: 4px solid var(--gold);
 }
 
 .block-label {
@@ -179,8 +179,8 @@ p {
 }
 
 .chrome-frame {
-  border: 6px solid var(--chrome);
-  box-shadow: inset 0 0 0 2px #fff, 0 0 0 3px var(--chrome-dark), 0 12px 28px rgba(0, 0, 0, 0.2);
+  border: 8px solid #fff;
+  box-shadow: 0 0 0 8px var(--black);
 }
 
 .header {
@@ -201,10 +201,30 @@ p {
 }
 
 .header-bar {
-  background: var(--cherry);
+  background: var(--black);
   color: var(--cream);
-  border-bottom: 5px solid var(--black);
-  box-shadow: inset 0 -4px 0 var(--gold);
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.bauhaus-stripe {
+  display: flex;
+  height: 12px;
+}
+
+.bauhaus-stripe .y {
+  flex: 1 1 0;
+  background: var(--gold);
+}
+
+.bauhaus-stripe .r {
+  flex: 1 1 0;
+  background: var(--cherry);
+}
+
+.bauhaus-stripe .b {
+  flex: 1 1 0;
+  background: var(--booth-blue);
 }
 
 .header-bar-inner {
@@ -227,15 +247,14 @@ p {
 }
 
 .logo-emblem {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   margin-right: 0.7rem;
-  border-radius: 50%;
+  border-radius: 0;
   overflow: hidden;
   border: 3px solid var(--gold);
-  background: var(--cream);
+  background: var(--gold);
   flex-shrink: 0;
-  box-shadow: 0 0 0 2px var(--black);
 }
 
 .logo-emblem img {
@@ -322,21 +341,21 @@ p {
 .btn {
   background: var(--gold);
   color: var(--black);
-  border: 3px solid var(--black);
-  box-shadow: 4px 4px 0 var(--black);
+  border: 0;
+  box-shadow: none;
 }
 
 .btn-gold:hover,
 .btn-gold:focus,
 .btn:hover,
 .btn:focus {
-  background: var(--mint);
+  background: #fff;
   color: var(--black);
 }
 
 .btn-ghost {
-  color: var(--cream);
-  border: 2px solid var(--cream);
+  color: #fff;
+  border: 3px solid #fff;
   margin-left: 0.4rem;
 }
 
@@ -441,17 +460,47 @@ body.has-scroll-walk .plate-row {
 }
 
 .poster-hero::before {
-  content: "";
+  display: none;
+}
+
+.bauhaus-geo {
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
-  width: 160px;
-  height: 70px;
-  left: -30px;
-  top: 28px;
+  pointer-events: none;
+}
+
+.geo-square {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  width: 6.5rem;
+  height: 6.5rem;
   background: var(--gold);
-  border-radius: 50% 50% 40% 60%;
-  transform: rotate(-18deg);
-  opacity: 0.85;
+}
+
+.geo-bar {
+  position: absolute;
+  right: 0;
+  top: 42%;
+  width: 38%;
+  height: 16px;
+  background: var(--cherry);
+}
+
+.geo-circle {
+  position: absolute;
+  right: 14%;
+  bottom: 16%;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  background: var(--booth-blue);
+  border: 10px solid #fff;
+  box-shadow: 0 0 0 10px var(--cherry);
 }
 
 .poster-hero .container {
@@ -468,26 +517,27 @@ body.has-scroll-walk .plate-row {
   flex: 1 1 20rem;
   max-width: 34rem;
   padding: 1.35rem 1.5rem 1.2rem;
-  background: rgba(14, 50, 120, 0.78);
-  border: 4px solid var(--black);
-  box-shadow: 8px 8px 0 var(--black);
+  background: rgba(14, 50, 120, 0.86);
+  border: 0;
+  border-left: 16px solid var(--gold);
+  box-shadow: none;
 }
 
 .poster-eat {
   margin: 0 0 0.15rem;
-  font-family: "Pacifico", cursive;
+  font-family: "Bowlby One SC", "Oswald", sans-serif;
   font-size: 5.2rem;
   color: var(--gold);
-  text-transform: none;
-  letter-spacing: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   line-height: 0.85;
-  text-shadow: 3px 4px 0 var(--black);
+  text-shadow: none;
 }
 
 .poster-copy h1 {
   font-size: 2.55rem;
   color: #fff;
-  text-shadow: 3px 3px 0 var(--black);
+  text-shadow: none;
 }
 
 .poster-copy p {
@@ -498,11 +548,11 @@ body.has-scroll-walk .plate-row {
 
 .hero-script {
   margin: 0 0 0.35rem;
-  font-family: "Pacifico", cursive;
-  font-size: 1.35rem;
-  color: var(--mint);
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.82rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
 }
 
 .burst {
@@ -510,26 +560,26 @@ body.has-scroll-walk .plate-row {
   right: 8%;
   top: 1.2rem;
   z-index: 4;
-  width: 7.4rem;
-  height: 7.4rem;
+  width: 7.2rem;
+  height: 7.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: repeating-conic-gradient(var(--gold) 0 9deg, var(--cherry) 9deg 18deg);
+  background: conic-gradient(var(--cherry) 0 120deg, var(--gold) 120deg 240deg, var(--booth-blue) 240deg 360deg);
   border-radius: 50%;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.25);
-  transform: rotate(8deg);
+  box-shadow: none;
+  transform: none;
 }
 
 .burst span {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.55rem;
-  height: 4.55rem;
+  width: 4.4rem;
+  height: 4.4rem;
   border-radius: 50%;
-  background: var(--cream);
-  color: var(--cherry-dark);
+  background: #fff;
+  color: var(--black);
   font-family: "Oswald", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
@@ -543,16 +593,13 @@ body.has-scroll-walk .plate-row {
   position: relative;
   flex: 0 1 22rem;
   width: 22rem;
-  height: 26rem;
+  height: 22rem;
   margin: 1.2rem auto;
   overflow: hidden;
-  border-radius: 50% 50% 48% 52% / 42% 46% 54% 58%;
-  border: 10px solid var(--chrome);
-  box-shadow:
-    inset 0 0 0 3px #fff,
-    0 0 0 4px var(--black),
-    0 18px 36px rgba(0, 0, 0, 0.28);
-  transform: rotate(-5deg);
+  border-radius: 0;
+  border: 8px solid var(--gold);
+  box-shadow: 0 0 0 8px var(--black);
+  transform: none;
   background: var(--black);
 }
 
@@ -565,10 +612,10 @@ body.has-scroll-walk .plate-row {
 
 .oval-frame.small {
   width: 14rem;
-  height: 16.5rem;
+  height: 14rem;
   flex-basis: 14rem;
   border-width: 8px;
-  transform: rotate(4deg);
+  transform: none;
 }
 
 .round-frame {
@@ -577,9 +624,9 @@ body.has-scroll-walk .plate-row {
   height: 168px;
   margin: 0 auto 0.7rem;
   overflow: hidden;
-  border-radius: 50%;
-  border: 7px solid var(--chrome);
-  box-shadow: 0 0 0 3px var(--black), 0 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+  border: 6px solid #fff;
+  box-shadow: 0 0 0 6px var(--black);
   background: var(--black);
 }
 
@@ -594,8 +641,8 @@ body.has-scroll-walk .plate-row {
   position: relative;
   overflow: hidden;
   background: var(--black);
-  border: 10px dotted var(--gold);
-  box-shadow: 0 0 0 6px var(--cherry), 8px 10px 0 var(--black);
+  border: 8px solid var(--gold);
+  box-shadow: 0 0 0 8px var(--cherry);
 }
 
 .stamp-frame img {
@@ -649,12 +696,13 @@ body.has-scroll-walk .plate-row {
 }
 
 .matchbook-card {
-  padding: 2.1rem 1.7rem 2rem;
+  padding: 2.4rem 1.8rem 2.1rem;
   background: var(--cream);
   color: var(--ink);
-  border: 5px solid var(--black);
-  box-shadow: 8px 8px 0 var(--black);
-  margin: 1.25rem;
+  border: 0;
+  border-left: 16px solid var(--gold);
+  box-shadow: none;
+  margin: 0;
 }
 
 .matchbook-card.cherry {
@@ -673,24 +721,25 @@ body.has-scroll-walk .plate-row {
 }
 
 .matchbook-card.black .block-label {
-  color: var(--turquoise);
+  color: var(--gold);
 }
 
 .matchbook-card.turquoise {
-  background: var(--turquoise);
-  color: var(--black);
+  background: var(--booth-blue);
+  color: #fff;
 }
 
 .matchbook-card.turquoise .facts dt {
-  color: var(--cherry-dark);
+  color: var(--gold);
 }
 
 .caption-card {
-  padding: 2.1rem 1.7rem 2rem;
+  padding: 2.4rem 1.8rem 2.1rem;
   background: var(--cream);
-  border: 5px solid var(--black);
-  box-shadow: 8px 8px 0 var(--black);
-  margin: 1.25rem;
+  border: 0;
+  border-left: 16px solid var(--cherry);
+  box-shadow: none;
+  margin: 0;
 }
 
 .caption-card.cherry {
@@ -709,7 +758,7 @@ body.has-scroll-walk .plate-row {
 }
 
 .caption-card.black .block-label {
-  color: var(--turquoise);
+  color: var(--gold);
 }
 
 .plate-row {
@@ -730,10 +779,10 @@ body.has-scroll-walk .plate-row {
 
 .plate-row h3 {
   margin: 0;
-  font-family: "Pacifico", cursive;
-  font-size: 1.35rem;
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--gold);
 }
 
@@ -919,15 +968,16 @@ form button {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 4px 4px 0 var(--black);
+  box-shadow: none;
 }
 
 .wordmark-panel {
-  background: var(--cream);
-  border: 5px solid var(--black);
-  box-shadow: 6px 6px 0 var(--gold);
+  background: #fff;
+  border: 0;
+  border-top: 12px solid var(--cherry);
+  box-shadow: none;
   padding: 1.25rem;
-  margin: 0.7rem;
+  margin: 0;
   text-align: center;
   flex: 1 1 16rem;
 }
@@ -961,10 +1011,9 @@ form button {
   background:
     repeating-linear-gradient(
       90deg,
-      var(--turquoise) 0 28px,
-      var(--cherry) 28px 32px,
-      var(--gold) 32px 36px,
-      var(--turquoise) 36px 64px
+      var(--gold) 0 40px,
+      var(--cherry) 40px 48px,
+      var(--booth-blue) 48px 88px
     );
   color: var(--cream);
 }
@@ -974,10 +1023,11 @@ form button {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: var(--cream);
+  background: #fff;
   color: var(--ink);
-  border: 6px solid var(--black);
-  box-shadow: 10px 10px 0 var(--black);
+  border: 0;
+  border-left: 16px solid var(--cherry);
+  box-shadow: none;
   padding: 1.5rem;
 }
 
@@ -1014,9 +1064,10 @@ form button {
   max-width: 28rem;
   margin: 3rem 8% 4rem;
   padding: 1.3rem 1.45rem 1.2rem;
-  background: rgba(23, 20, 23, 0.5);
-  border: 4px solid var(--black);
-  box-shadow: 8px 8px 0 var(--black);
+  background: rgba(14, 50, 120, 0.78);
+  border: 0;
+  border-left: 16px solid var(--gold);
+  box-shadow: none;
   color: var(--cream);
 }
 
@@ -1124,7 +1175,7 @@ form button {
 
   .matchbook-card,
   .caption-card {
-    margin: 0.85rem;
+    margin: 0;
   }
 }
 
