@@ -44,6 +44,9 @@ TEXTURE_URLS = {
     "plaster_rough.jpg": PH + "/Textures/jpg/2k/white_plaster_02/white_plaster_02_rough_2k.jpg",
     "tiles_nor.jpg": PH + "/Textures/jpg/2k/floor_tiles_06/floor_tiles_06_nor_gl_2k.jpg",
     "tiles_rough.jpg": PH + "/Textures/jpg/2k/floor_tiles_06/floor_tiles_06_rough_2k.jpg",
+    "wood_diff.jpg": PH + "/Textures/jpg/2k/dark_wood/dark_wood_diff_2k.jpg",
+    "wood_nor.jpg": PH + "/Textures/jpg/2k/dark_wood/dark_wood_nor_gl_2k.jpg",
+    "wood_rough.jpg": PH + "/Textures/jpg/2k/dark_wood/dark_wood_rough_2k.jpg",
     "cafe.hdr": PH + "/HDRIs/hdr/2k/warm_restaurant_night_2k.hdr",
 }
 
@@ -343,6 +346,86 @@ def add_round_seat(r, h, x, y, z, mat, plump_w=0.032):
     return ob
 
 
+def add_pipe_loop(cx, by, bz, width, depth, mat, pipe_r=0.011, n=40):
+    """White welt / chrome rib: rounded rectangle in the X–Y plane."""
+    curve = bpy.data.curves.new("PipeLoop", "CURVE")
+    curve.dimensions = "3D"
+    curve.bevel_depth = pipe_r
+    curve.bevel_resolution = 6
+    curve.fill_mode = "FULL"
+    spline = curve.splines.new("NURBS")
+    spline.points.add(n - 1)
+    spline.use_cyclic_u = True
+    spline.order_u = 4
+    hw = max(0.05, width * 0.5 - pipe_r)
+    hd = max(0.03, depth * 0.5 - pipe_r)
+    for i in range(n):
+        t = (2.0 * math.pi * i) / n
+        c, s = math.cos(t), math.sin(t)
+        px = cx + hw * math.copysign(abs(c) ** 0.35, c)
+        py = by + hd * math.copysign(abs(s) ** 0.35, s)
+        spline.points[i].co = (px, py, bz, 1.0)
+    ob = bpy.data.objects.new("PipeLoop", curve)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.data.materials.append(mat)
+    return ob
+
+
+def add_starburst_clock(x, y, z, gold, white):
+    """Wall clock facing -X (into the room). y=height, z=depth in Three.js."""
+    bpy.ops.mesh.primitive_cylinder_add(
+        vertices=48, radius=0.15, depth=0.04, location=(x, z, y)
+    )
+    face = bpy.context.object
+    face.rotation_euler = (0, math.pi / 2, 0)
+    face.data.materials.append(white)
+    shade_smooth(face)
+    bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+    for i in range(16):
+        a = (i * math.pi) / 8.0
+        bpy.ops.mesh.primitive_cube_add(
+            size=1,
+            location=(x - 0.01, z + math.cos(a) * 0.28, y + math.sin(a) * 0.28),
+        )
+        ray = bpy.context.object
+        ray.dimensions = (0.012, 0.30, 0.016)
+        ray.rotation_euler = (a, 0, 0)
+        bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+        ray.data.materials.append(gold)
+        shade_smooth(ray)
+    hub = bpy.ops.mesh.primitive_cylinder_add(
+        vertices=24, radius=0.03, depth=0.05, location=(x - 0.02, z, y)
+    )
+    hub = bpy.context.object
+    hub.rotation_euler = (0, math.pi / 2, 0)
+    hub.data.materials.append(gold)
+    return face
+
+
+def add_frosted_pendant(x, blender_y, z, frost, chrome):
+    bpy.ops.mesh.primitive_cone_add(
+        vertices=48, radius1=0.22, radius2=0.07, depth=0.18, location=(x, blender_y, z)
+    )
+    shade = bpy.context.object
+    shade.data.materials.append(frost)
+    shade_smooth(shade)
+    bevel_edges(shade, 0.012, segments=4, angle=30, sub=1)
+    bpy.ops.mesh.primitive_cylinder_add(
+        vertices=24, radius=0.03, depth=0.07, location=(x, blender_y, z + 0.12)
+    )
+    cap = bpy.context.object
+    cap.data.materials.append(chrome)
+    shade_smooth(cap)
+    lamp = bpy.data.lights.new("BoothLamp", "POINT")
+    lamp.energy = 160
+    lamp.color = (1.0, 0.86, 0.68)
+    lamp.shadow_soft_size = 0.14
+    lo = bpy.data.objects.new("BoothLamp", lamp)
+    lo.location = (x, blender_y, z - 0.08)
+    bpy.context.scene.collection.objects.link(lo)
+    return shade
+
+
 def add_uv():
     for ob in bpy.data.objects:
         if ob.type != "MESH":
@@ -456,7 +539,8 @@ def diner_chair(x, zz, vinyl, chrome):
 
 
 def build_room(mats):
-    vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c, gold, ceiling, rail, tube_p, tube_c = mats
+    (vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c,
+     gold, ceiling, rail, tube_p, tube_c, wood, pipe, frost, ceramic) = mats
     floor = add_box(18, 0.08, 16, 0, -0.04, 0, checker_floor_mat())
     bevel_edges(floor, 0.01, segments=3, angle=40, sub=0)
 
@@ -468,52 +552,58 @@ def build_room(mats):
     ):
         bevel_edges(wall, 0.02, segments=3, angle=50, sub=0)
 
+    # Dark wood wainscot like the reference booth photo
     for wain in (
-        add_box(18, 1.15, 0.28, 0, 0.57, -7.68, vinyl),
-        add_box(18, 1.15, 0.28, 0, 0.57, 7.68, vinyl),
-        add_box(0.28, 1.15, 16, -8.88, 0.57, 0, vinyl),
-        add_box(0.28, 1.15, 16, 8.88, 0.57, 0, vinyl),
+        add_box(18, 1.15, 0.28, 0, 0.57, -7.68, wood),
+        add_box(18, 1.15, 0.28, 0, 0.57, 7.68, wood),
+        add_box(0.28, 1.15, 16, -8.88, 0.57, 0, wood),
+        add_box(0.28, 1.15, 16, 8.88, 0.57, 0, wood),
     ):
-        bevel_edges(wain, 0.03, segments=4, angle=40, sub=0)
+        bevel_edges(wain, 0.02, segments=4, angle=40, sub=0)
 
-    add_box(18, 0.06, 0.12, 0, 1.18, -7.52, rail)
-    add_box(18, 0.06, 0.12, 0, 1.18, 7.52, rail)
-    add_box(0.12, 0.06, 16, -8.72, 1.18, 0, rail)
-    add_box(0.12, 0.06, 16, 8.72, 1.18, 0, rail)
+    add_box(18, 0.05, 0.1, 0, 1.16, -7.52, chrome)
+    add_box(18, 0.05, 0.1, 0, 1.16, 7.52, chrome)
+    add_box(0.1, 0.05, 16, -8.72, 1.16, 0, chrome)
+    add_box(0.1, 0.05, 16, 8.72, 1.16, 0, chrome)
     add_box(17.6, 0.12, 16, 0, 4.18, 0, ceiling)
-    add_box(17.7, 0.08, 0.08, 0, 1.28, -7.55, cherry)
 
     def booth(zz):
-        # Solid bases under both facing seats
-        left_base = add_box(1.68, 0.38, 1.48, 7.34, 0.19, zz - 0.82, cherry_dark)
-        right_base = add_box(1.68, 0.38, 1.48, 7.34, 0.19, zz + 0.82, cherry_dark)
-        bevel_edges(left_base, 0.06, segments=8, angle=None, sub=2)
-        bevel_edges(right_base, 0.06, segments=8, angle=None, sub=2)
-        # Both vinyl seats — plump beveled cushions
-        add_cushion(1.70, 0.16, 1.50, 7.33, 0.48, zz - 0.82, vinyl, 0.072)
-        add_cushion(1.70, 0.16, 1.50, 7.33, 0.48, zz + 0.82, vinyl, 0.072)
-        # Both vinyl backs
-        add_cushion(1.70, 0.90, 0.14, 7.33, 1.00, zz - 1.50, vinyl, 0.055)
-        add_cushion(1.70, 0.90, 0.14, 7.33, 1.00, zz + 1.50, vinyl, 0.055)
-        table = add_box(1.52, 0.07, 1.42, 7.28, 1.10, zz, formica)
-        bevel_edges(table, 0.024, segments=8, angle=None, sub=2)
+        left_base = add_box(1.68, 0.36, 1.48, 7.34, 0.18, zz - 0.82, cherry_dark)
+        right_base = add_box(1.68, 0.36, 1.48, 7.34, 0.18, zz + 0.82, cherry_dark)
+        bevel_edges(left_base, 0.07, segments=8, angle=None, sub=2)
+        bevel_edges(right_base, 0.07, segments=8, angle=None, sub=2)
+        # Both facing vinyl seats — thick beveled cushions + white piping
+        add_cushion(1.72, 0.18, 1.52, 7.33, 0.48, zz - 0.82, vinyl, 0.08)
+        add_cushion(1.72, 0.18, 1.52, 7.33, 0.48, zz + 0.82, vinyl, 0.08)
+        add_pipe_loop(7.33, zz - 0.82, 0.58, 1.62, 1.40, pipe, 0.012)
+        add_pipe_loop(7.33, zz + 0.82, 0.58, 1.62, 1.40, pipe, 0.012)
+        # Both vinyl backs with welt piping on the rounded top
+        add_cushion(1.72, 0.95, 0.16, 7.33, 1.04, zz - 1.52, vinyl, 0.07)
+        add_cushion(1.72, 0.95, 0.16, 7.33, 1.04, zz + 1.52, vinyl, 0.07)
+        add_pipe_loop(7.33, zz - 1.52, 1.52, 1.62, 0.12, pipe, 0.013)
+        add_pipe_loop(7.33, zz + 1.52, 1.52, 1.62, 0.12, pipe, 0.013)
+        # Cream laminate + triple chrome rib on the rim
+        table = add_box(1.50, 0.06, 1.38, 7.28, 1.10, zz, formica)
+        bevel_edges(table, 0.028, segments=8, angle=None, sub=2)
+        for zoff in (-0.022, 0.0, 0.022):
+            add_pipe_loop(7.28, zz, 1.10 + zoff, 1.54, 1.42, chrome, 0.009)
         stem = add_cyl(0.055, 1.02, 7.28, 0.52, zz, chrome, 48)
         bevel_edges(stem, 0.01, segments=4, angle=40, sub=0)
-        bpy.ops.mesh.primitive_cone_add(vertices=48, radius1=0.17, depth=0.26, location=(7.3, zz, 2.52))
-        cone = bpy.context.object
-        cone.data.materials.append(cherry)
-        shade_smooth(cone)
-        bevel_edges(cone, 0.012, segments=4, angle=35, sub=1)
-        lamp = bpy.data.lights.new("BoothLamp", "POINT")
-        lamp.energy = 70
-        lamp.color = (1.0, 0.66, 0.42)
-        lamp.shadow_soft_size = 0.1
-        lo = bpy.data.objects.new("BoothLamp", lamp)
-        lo.location = (7.3, zz, 2.36)
-        bpy.context.scene.collection.objects.link(lo)
+        add_frosted_pendant(7.3, zz, 2.48, frost, chrome)
+        # Table props from the reference still
+        mug_a = add_cyl(0.045, 0.08, 7.10, 1.18, zz - 0.18, ceramic, 32)
+        mug_b = add_cyl(0.045, 0.08, 7.42, 1.18, zz + 0.16, ceramic, 32)
+        bevel_edges(mug_a, 0.008, segments=4, angle=40, sub=0)
+        bevel_edges(mug_b, 0.008, segments=4, angle=40, sub=0)
+        nap = add_box(0.16, 0.10, 0.12, 7.28, 1.18, zz + 0.32, chrome)
+        bevel_edges(nap, 0.012, segments=4, angle=40, sub=0)
+        shaker = add_cyl(0.025, 0.09, 7.48, 1.18, zz - 0.08, chrome, 24)
+        bevel_edges(shaker, 0.006, segments=3, angle=40, sub=0)
 
     for zz in (3.4, 0.15, -3.1):
         booth(zz)
+
+    add_starburst_clock(8.55, 2.95, 0.15, gold, ceramic)
 
     def table(x, zz):
         top = add_cyl(0.62, 0.055, x, 1.05, zz, formica, 96)
@@ -570,10 +660,16 @@ def build_room(mats):
         so.location = (-6.45, sz, 2.55)
         bpy.context.scene.collection.objects.link(so)
 
-    body = add_box(1.12, 1.55, 0.62, 0.15, 0.82, -6.85, black)
-    cap = add_box(1.02, 0.62, 0.5, 0.15, 1.82, -6.85, gold)
-    bevel_edges(body, 0.04, segments=6, angle=40, sub=1)
-    bevel_edges(cap, 0.03, segments=5, angle=40, sub=1)
+    body = add_box(1.12, 1.45, 0.62, 0.15, 0.78, -6.85, black)
+    cap = add_box(1.02, 0.42, 0.5, 0.15, 1.72, -6.85, gold)
+    bevel_edges(body, 0.05, segments=6, angle=40, sub=1)
+    bevel_edges(cap, 0.04, segments=5, angle=40, sub=1)
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=32, ring_count=16, radius=0.42, location=(0.15, -6.85, 2.05))
+    arch = bpy.context.object
+    arch.scale = (1.15, 0.55, 0.55)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    arch.data.materials.append(gold)
+    shade_smooth(arch)
     cols = [(1, 0.2, 0.4, 1), (0.2, 0.86, 1, 1), (1, 0.8, 0.2, 1), (0.4, 1, 0.6, 1)]
     for i, col in enumerate(cols):
         em = bpy.data.materials.new("JukePanel%d" % i)
@@ -618,15 +714,15 @@ def lighting():
     bg = nt.nodes.new("ShaderNodeBackground")
     env = nt.nodes.new("ShaderNodeTexEnvironment")
     env.image = img(tex_path("cafe.hdr") if os.path.exists(tex_path("cafe.hdr")) else os.path.join(TEX, "cafe.hdr"))
-    bg.inputs["Strength"].default_value = 0.62
+    bg.inputs["Strength"].default_value = 0.48
     nt.links.new(env.outputs["Color"], bg.inputs["Color"])
     nt.links.new(bg.outputs["Background"], out.inputs["Surface"])
 
     down = (0, 0, 0)
-    add_area("NeonPinkCeil", (0, 0, 3.92), (1.0, 0.28, 0.55), 200, 9.0, 0.35, down)
-    add_area("NeonCyanCeil", (0.4, 1.2, 3.88), (0.2, 0.9, 1.0), 160, 8.0, 0.28, down)
-    add_area("FillWarm", (2.5, -1.0, 3.6), (1.0, 0.86, 0.72), 120, 4.5, 1.4, down)
-    add_area("FillBooth", (6.2, 0.2, 3.2), (1.0, 0.78, 0.62), 90, 3.5, 1.0, down)
+    add_area("NeonPinkCeil", (0, 0, 3.92), (1.0, 0.22, 0.18), 140, 9.0, 0.35, down)
+    add_area("NeonCyanCeil", (0.4, 1.2, 3.88), (0.2, 0.9, 1.0), 70, 8.0, 0.28, down)
+    add_area("FillWarm", (2.5, -1.0, 3.6), (1.0, 0.88, 0.7), 160, 4.5, 1.4, down)
+    add_area("FillBooth", (6.2, 0.2, 3.2), (1.0, 0.82, 0.62), 140, 3.5, 1.0, down)
     soffit = bpy.data.lights.new("Soffit", "AREA")
     soffit.energy = 380
     soffit.color = (1.0, 0.86, 0.74)
@@ -846,13 +942,13 @@ def make_materials():
         diff=tex_path("leather_diff.jpg"),
         nor=tex_path("leather_nor.jpg"),
         rough_map=tex_path("leather_rough.jpg"),
-        scale=2.6,
-        mix_color=(0.77, 0.118, 0.227, 1),
-        mix_fac=0.78,
-        roughness=0.22,
-        rough_mul=0.42,
-        nor_strength=1.15,
-        coat=0.55,
+        scale=2.4,
+        mix_color=(0.72, 0.08, 0.12, 1),
+        mix_fac=0.72,
+        roughness=0.16,
+        rough_mul=0.28,
+        nor_strength=1.2,
+        coat=0.75,
     )
     chrome = pbr_material(
         "Chrome",
@@ -903,7 +999,28 @@ def make_materials():
     tube_p = neon_mat("TubePink", (1.0, 0.18, 0.48), 32.0)
     tube_c = neon_mat("TubeCyan", (0.12, 0.9, 1.0), 28.0)
     rail = rail_checker_mat()
-    return vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c, gold, ceiling, rail, tube_p, tube_c
+    wood = pbr_material(
+        "WoodWainscot",
+        diff=tex_path("wood_diff.jpg"),
+        nor=tex_path("wood_nor.jpg"),
+        rough_map=tex_path("wood_rough.jpg"),
+        scale=2.2,
+        mix_color=(0.18, 0.08, 0.04, 1),
+        mix_fac=0.35,
+        roughness=0.42,
+        nor_strength=0.7,
+    )
+    pipe = pbr_material("Piping", color=(0.96, 0.96, 0.94, 1), roughness=0.28, coat=0.2)
+    frost = pbr_material(
+        "FrostGlass",
+        color=(0.95, 0.93, 0.88, 1),
+        roughness=0.35,
+        emission=(1.0, 0.92, 0.78, 1),
+        emission_strength=2.4,
+        coat=0.3,
+    )
+    ceramic = pbr_material("Ceramic", color=(0.93, 0.93, 0.9, 1), roughness=0.22, coat=0.55)
+    return vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c, gold, ceiling, rail, tube_p, tube_c, wood, pipe, frost, ceramic
 
 
 def render_frame(path, frame):
