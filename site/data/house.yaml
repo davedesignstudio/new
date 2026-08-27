@@ -1,6 +1,21 @@
 # House list from the Boonton Cafe Pages menu (ntouch ordering).
+folios:
+  - page: 1
+    script: "Breakfast"
+    kicker: "Good morning"
+  - page: 2
+    script: "The Griddle"
+    kicker: "Butter & syrup"
+  - page: 3
+    script: "Lunch"
+    kicker: "From the garden"
+  - page: 4
+    script: "Plates & pie"
+    kicker: "Until four"
+
 sections:
   - id: juices-fruit
+    page: 1
     name: "Juices & Fruit"
     short: "Juices"
     items:
@@ -11,6 +26,7 @@ sections:
       - name: "Fresh Seasonal Fruit"
         price: "$5.95"
   - id: farm-fresh-eggs
+    page: 1
     name: "Farm Fresh Eggs"
     short: "Eggs"
     note: "Served with Home Fries & Toast"
@@ -25,6 +41,7 @@ sections:
       - name: "Two Eggs, Any Style, & Corned Beef Hash"
         price: "$17.45"
   - id: three-egg-omelettes
+    page: 1
     name: "Three Egg Omelettes"
     short: "Omelettes"
     note: "Served with Home Fries & Toast"
@@ -48,6 +65,7 @@ sections:
         price: "$16.80"
         description: "Select 3 Items to add to your Omelette. Anything above 3 items can be added for an additional $2.40 per item"
   - id: eggs-benedict
+    page: 1
     name: "Eggs Benedict"
     short: "Benedict"
     note: "Two Poached Eggs on a Toasted English Muffin topped with Hollandaise Sauce, served with Choice of Home Fries or Seasonal Fruit"
@@ -62,6 +80,7 @@ sections:
         price: "$18.00"
         description: "topped with Spanakopita Filling (Sauteed Spinach with Dill, Scallions, Onions & Feta Cheese)"
   - id: breakfast-sandwiches
+    page: 1
     name: "Breakfast Sandwiches"
     short: "Sandwiches"
     note: "Made with Two Eggs served on Choice of Toast, Roll, Croissant or Bagel. On 7-Grain or Sourdough Bread $1.30. Gluten Free Toast $2.40 extra"
@@ -81,6 +100,7 @@ sections:
         price: "$22.75"
         description: "Toasted Everything or Plain Bagel with Cream Cheese, Fresh Lox, Sliced Tomato & Red Onion"
   - id: greek-yogurt-parfaits
+    page: 1
     name: "Greek Yogurt Parfaits"
     short: "Parfaits"
     items:
@@ -91,6 +111,7 @@ sections:
         price: "$12.65"
         description: "Greek Yogurt topped with Walnuts, Pistachios, Granola, Honey & a Sprinkle of Cinnamon"
   - id: buttermilk-pancakes
+    page: 2
     name: "Buttermilk Pancakes"
     short: "Pancakes"
     note: "Served with Butter & Syrup. With Vermont Maple Syrup $2.40 Extra"
@@ -111,6 +132,7 @@ sections:
         price: "$17.95"
         description: "with a Warm Fruit Compote, Whipped Cream & Powdered Sugar"
   - id: french-toast
+    page: 2
     name: "French Toast"
     short: "French toast"
     note: "Served with Butter, Syrup & Powdered Sugar. With Vermont Maple Syrup $2.40 Extra"
@@ -123,6 +145,7 @@ sections:
         price: "$17.95"
         description: "with a Warm Fruit Compote, Whipped Cream & Powdered Sugar"
   - id: belgian-waffles
+    page: 2
     name: "Belgian Waffles"
     short: "Waffles"
     note: "Served with Butter & Syrup. With Vermont Maple Syrup $2.40 Extra"
@@ -143,6 +166,7 @@ sections:
         price: "$17.95"
         description: "with Warm Fruit Compote, Whipped Cream & Powdered Sugar"
   - id: breakfast-skillets
+    page: 2
     name: "Breakfast Skillets"
     short: "Skillets"
     items:
@@ -156,6 +180,7 @@ sections:
         price: "$18.95"
         description: "Two Eggs, Any Style, over a Bed of Spanakopita Filling (Sauteed Spinach with Dill, Scallions, Onions & Feta Cheese) topped with Feta Cheese, served with Toasted Pita"
   - id: specialty-toast
+    page: 2
     name: "Specialty Toast"
     short: "Toast"
     note: "served with Choice of Home Fries, Seasonal Fruit or Side Salad"
@@ -173,6 +198,7 @@ sections:
         price: "$19.20"
         description: "Toasted Sourdough topped with Tomatoes, Fresh Mozzarella, Fresh Basil, Balsamic Glaze, EVOO & a Sprinkle of Flaky Salt"
   - id: breads-bagels-muffins
+    page: 2
     name: "Breads, Bagels & Muffins"
     short: "Breads"
     items:
@@ -196,6 +222,7 @@ sections:
       - name: "Assorted Muffins"
         price: "$4.80"
   - id: breakfast-sides
+    page: 3
     name: "Breakfast Sides"
     short: "Sides"
     items:
@@ -220,6 +247,7 @@ sections:
         price: "$8.40"
         description: "with Choice of Dressing"
   - id: appetizers
+    page: 3
     name: "Appetizers"
     short: "Apps"
     items:
@@ -246,12 +274,14 @@ sections:
         price: "$8.40"
         description: "with Choice of Dressing"
   - id: homemade-soups
+    page: 3
     name: "Homemade Soups"
     short: "Soups"
     items:
       - name: "Soup of the Day"
         price: "Pint $5.99 · Quart $10.99"
   - id: fresh-garden-salads
+    page: 3
     name: "Fresh Garden Salads"
     short: "Salads"
     items:
@@ -268,6 +298,7 @@ sections:
         price: "$22.75"
         description: "Romaine Lettuce, Tomato & Blue Cheese Crumbles topped with Choice of Grilled Chicken Breast or Chicken Cutlet, tossed in Buffalo Sauce, served with Buttermilk Ranch or Blue Cheese Dressing"
   - id: handhelds
+    page: 4
     name: "Handhelds"
     short: "Handhelds"
     note: "served with French Fries or Side Salad"
@@ -309,6 +340,7 @@ sections:
         price: "$19.55"
         description: "Grilled Chicken Breast on Ciabatta Bread with Avocado, Red Onion, Tomato, Pepper Jack Cheese & Chipotle Mayo"
   - id: burgers
+    page: 3
     name: "Burgers"
     short: "Burgers"
     note: "8 oz. Angus Beef Burgers served on a Brioche Bun"
@@ -324,6 +356,7 @@ sections:
         price: "$19.55"
         description: "Two Crispy Smashed Beef Patties topped with Melted American Cheese, Lettuce, Tomato, Onion, Pickle & Our House-Made Burger Sauce served on a Brioche Bun with French Fries"
   - id: quesadillas
+    page: 3
     name: "Quesadillas"
     short: "Quesadillas"
     items:
@@ -334,6 +367,7 @@ sections:
         price: "$16.80"
         description: "Grilled Tortilla stuffed with Melted Cheddar & Jack Cheeses, Sauteed Peppers & Onions, served with a Side of Chipotle Mayo"
   - id: large-plates
+    page: 4
     name: "Large Plates"
     short: "Plates"
     note: "Served with Choice of Soup of The Day or Salad"
@@ -351,6 +385,7 @@ sections:
         price: "$25.15"
         description: "In a Creamy Vodka Sauce"
   - id: desserts
+    page: 4
     name: "Desserts"
     short: "Desserts"
     items:
@@ -363,6 +398,7 @@ sections:
       - name: "Chocolate Chip Cookie"
         price: "$4.80"
   - id: beverages
+    page: 4
     name: "Beverages"
     short: "Coffee"
     items:

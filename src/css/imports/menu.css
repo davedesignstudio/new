@@ -6,6 +6,242 @@
   padding-top: 0;
 }
 
+body.is-menu {
+  background-color: #1a1210;
+  background-image: none;
+}
+
+.menu-hours-bar {
+  background: var(--gold);
+  color: var(--black);
+  text-align: center;
+  padding: 0.45rem 1rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.is-menu .menu-jump {
+  top: 6.6rem;
+  background: #111010;
+  border-bottom: 3px solid var(--cherry);
+}
+
+body.is-menu .menu-jump-inner {
+  padding: 0.15rem 0;
+}
+
+body.is-menu .menu-jump a {
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--cream);
+  padding: 0.55rem 0.55rem 0.4rem;
+  margin: 0;
+}
+
+body.is-menu .menu-jump a:hover,
+body.is-menu .menu-jump a:focus {
+  color: var(--gold);
+  background: transparent;
+}
+
+.menu-masthead {
+  text-align: center;
+  color: var(--cream);
+  padding: 1.6rem 1rem 0.6rem;
+}
+
+.menu-masthead .hero-script {
+  color: var(--gold);
+  margin-bottom: 0.15rem;
+}
+
+.menu-masthead h1 {
+  font-family: "Bowlby One SC", "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  color: #fff;
+  text-shadow: 3px 3px 0 var(--black);
+  margin: 0 0 0.35rem;
+}
+
+.menu-masthead p {
+  margin: 0 auto;
+  max-width: 34rem;
+  color: rgba(246, 228, 195, 0.82);
+}
+
+.menu-folio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  width: 96%;
+  max-width: 1440px;
+  margin: 0.6rem auto 1.4rem;
+}
+
+.menu-leaf {
+  flex: 1 1 18rem;
+  max-width: 22.5rem;
+  min-width: 16.5rem;
+  margin: 0.45rem;
+  padding: 1.05rem 0.95rem 1.3rem;
+  background: #fff6e4;
+  color: var(--ink);
+  border: 3px solid #e06a1c;
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.menu-leaf-kicker {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e06a1c;
+  text-align: center;
+}
+
+.menu-leaf-script {
+  margin: 0 0 0.7rem;
+  font-family: "Lobster", "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 2.15rem;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: center;
+  color: var(--cherry);
+  line-height: 1.05;
+}
+
+.menu-leaf-section {
+  margin: 0 0 0.85rem;
+  padding-top: 0.15rem;
+}
+
+.menu-leaf-section h3 {
+  margin: 0 0 0.2rem;
+  font-family: "Lobster", "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #e06a1c;
+  line-height: 1.1;
+}
+
+.menu-leaf-note {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.menu-leaf-item {
+  margin: 0 0 0.38rem;
+}
+
+.menu-leaf-row {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+}
+
+.menu-leaf-item h4 {
+  margin: 0;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: calc(100% - 5.5rem);
+}
+
+.menu-leaf-dots {
+  flex: 1 1 0.8rem;
+  border-bottom: 1px dotted #c9a27a;
+  margin: 0 0.35rem 0.18rem;
+  min-width: 0.5rem;
+  height: 0.7em;
+}
+
+.menu-leaf-item .price {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--cherry-dark);
+  white-space: normal;
+  text-align: right;
+  flex: 0 0 auto;
+  max-width: 7.2rem;
+}
+
+.menu-leaf-item p {
+  margin: 0.08rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.28;
+  color: var(--muted);
+}
+
+.menu-counter-banner {
+  background: #e06a1c;
+  color: #fff;
+  text-align: center;
+  padding: 1.6rem 1rem 1.8rem;
+  border-top: 6px solid var(--black);
+  border-bottom: 6px solid var(--black);
+}
+
+.menu-counter-banner p:first-child {
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.7rem;
+}
+
+.menu-counter-banner .btn {
+  background: var(--gold);
+}
+
+.menu-counter-banner .btn-ghost {
+  color: #fff;
+  border-color: #fff;
+}
+
+@media (max-width: 800px) {
+  body.is-menu .menu-jump {
+    top: 5.2rem;
+  }
+
+  .menu-masthead h1 {
+    font-size: 2.4rem;
+  }
+
+  .menu-leaf {
+    max-width: none;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+
+  .menu-leaf-script {
+    font-size: 1.85rem;
+  }
+
+  .menu-counter-banner p:first-child {
+    font-size: 1.55rem;
+  }
+}
+
 .matchbook-cover {
   display: flex;
   flex-wrap: wrap;

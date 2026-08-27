@@ -1,5 +1,7 @@
 {{ partial "header" . }}
 
+<div class="menu-hours-bar">{{ .Site.Params.hours }} · {{ .Site.Params.phone }} · {{ .Site.Params.address }}</div>
+
 <nav class="menu-jump" aria-label="Menu sections">
   <div class="container menu-jump-inner">
     {{ range .Site.Data.house.sections }}
@@ -9,65 +11,48 @@
 </nav>
 
 <main id="main" class="menu-page">
-<div class="container page-wrap">
-  <section class="matchbook-cover">
-    <div class="burst" aria-hidden="true"><span>House<br>list</span></div>
-    <div class="matchbook-cover-copy">
+  <section class="menu-masthead">
+    <div class="container">
       <p class="hero-script">Today’s bill of fare</p>
-      <p class="poster-eat">Menu</p>
-      <h1>Boonton Cafe</h1>
+      <h1>Menu</h1>
+      <p>House list from the Pages menu. Prices at Hawkins Place; delivery apps may add their own.</p>
     </div>
-    <figure class="oval-frame small">
-      <img src="/img/fifties/diner-guest-check.jpg" alt="Yellow 1950s guest check on a Formica table">
-    </figure>
   </section>
 
-  <article class="house-check">
-    <span class="check-stub" aria-hidden="true"></span>
-    <div class="check-pad">
-      <p class="check-copy-label">Customer copy</p>
-      <header class="house-check-head">
-        <p class="house-check-kicker">Guest Check</p>
-        <h1>Boonton Cafe</h1>
-        <p class="check-meta">House list · {{ .Site.Params.tagline }} · Hawkins Place</p>
-        <dl class="check-fields">
-          <div><dt>Date</dt><dd></dd></div>
-          <div><dt>Table</dt><dd>booth</dd></div>
-          <div><dt>Server</dt><dd></dd></div>
-          <div><dt>No.</dt><dd>125</dd></div>
-        </dl>
-      </header>
-
-      {{ range .Site.Data.house.sections }}
-        <section class="check-section" id="{{ .id }}">
-          <h2>{{ .name }}</h2>
-          {{ if .note }}<p class="check-section-note">{{ .note }}</p>{{ end }}
-          {{ range .items }}
-            <div class="check-line-item">
-              <span class="check-qty" aria-hidden="true"></span>
-              <div class="check-body">
-                <div class="check-row">
-                  <h3>{{ .name }}</h3>
-                  <span class="check-dots" aria-hidden="true"></span>
+  <div class="menu-folio">
+    {{ range .Site.Data.house.folios }}
+      <article class="menu-leaf" id="leaf-{{ .page }}">
+        <p class="menu-leaf-kicker">{{ .kicker }}</p>
+        <h2 class="menu-leaf-script">{{ .script }}</h2>
+        {{ range where $.Site.Data.house.sections "page" .page }}
+          <section class="menu-leaf-section" id="{{ .id }}">
+            <h3>{{ .name }}</h3>
+            {{ if .note }}<p class="menu-leaf-note">{{ .note }}</p>{{ end }}
+            {{ range .items }}
+              <div class="menu-leaf-item">
+                <div class="menu-leaf-row">
+                  <h4>{{ .name }}</h4>
+                  <span class="menu-leaf-dots" aria-hidden="true"></span>
                   <span class="price">{{ .price }}</span>
                 </div>
                 {{ if .description }}<p>{{ .description }}</p>{{ end }}
               </div>
-            </div>
-          {{ end }}
-        </section>
-      {{ end }}
+            {{ end }}
+          </section>
+        {{ end }}
+      </article>
+    {{ end }}
+  </div>
 
-      <footer class="house-check-foot">
-        <p>Thank you — please come again</p>
-        <p>{{ .Site.Params.hours }}</p>
-        <p>{{ .Site.Params.phone }} · {{ .Site.Params.address }}</p>
-        <p><a href="https://order.ntouchordering.com/boonton-cafe">Order online</a></p>
-      </footer>
-      <p class="check-stamp" aria-hidden="true">Thank you</p>
+  <section class="menu-counter-banner">
+    <div class="container">
+      <p>We’ll have it warm at the counter</p>
+      <p>
+        <a class="btn" href="https://order.ntouchordering.com/boonton-cafe">Order for the table</a>
+        <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+      </p>
     </div>
-  </article>
-</div>
+  </section>
 </main>
 
 {{ partial "footer" . }}
