@@ -379,6 +379,10 @@ p {
     radial-gradient(ellipse at center, transparent 38%, rgba(8, 6, 8, 0.42) 100%);
 }
 
+html.has-scroll-walk {
+  scroll-behavior: auto;
+}
+
 body.has-scroll-walk {
   background-color: #140e12;
   background-image: none;
