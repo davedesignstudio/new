@@ -1,12 +1,8 @@
 """
 Build and render the Boonton Cafe diner in Blender with Poly Haven PBR maps.
 
-CC0 textures (downloaded to src/walkthrough/textures/ if missing):
-  leather_red_02       cherry vinyl booths and stools
-  metal_plate          chrome rails and stool stems
-  floor_tiles_06       grout/normal under the checker floor
-  white_plaster_02     cream walls
-  warm_restaurant_night  HDRI fill and reflections
+Seats (booth pair + chairs/stools) use heavy bevels and subdivision so the
+vinyl reads as wrapped cushions, not boxes.
 
 Run:
   blender --background --python src/walkthrough/build_diner_blend.py -- --still
@@ -23,6 +19,7 @@ from mathutils import Vector, Matrix
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TEX = os.path.join(ROOT, "textures")
+TEX4K = os.path.join(TEX, "4k")
 FONT = os.path.join(ROOT, "fonts", "Pacifico-Regular.ttf")
 BLEND = os.path.join(ROOT, "boonton_diner.blend")
 STILL = "/tmp/diner-still.png"
@@ -30,24 +27,37 @@ FRAMES = "/tmp/diner-frames"
 PREVIEW = "/tmp/diner-preview"
 
 FPS = 15
-FRAME_COUNT = 210  # 14.0 seconds, matches scroll-scrub duration
+FRAME_COUNT = 210
+RES_X = 1920
+RES_Y = 1080
 PH = "https://dl.polyhaven.org/file/ph-assets"
 
 TEXTURE_URLS = {
-    "leather_diff.jpg": PH + "/Textures/jpg/2k/leather_red_02/leather_red_02_diff_2k.jpg",
+    "leather_diff.jpg": PH + "/Textures/jpg/2k/leather_red_02/leather_red_02_coll1_2k.jpg",
     "leather_nor.jpg": PH + "/Textures/jpg/2k/leather_red_02/leather_red_02_nor_gl_2k.jpg",
     "leather_rough.jpg": PH + "/Textures/jpg/2k/leather_red_02/leather_red_02_rough_2k.jpg",
-    "metal_diff.jpg": PH + "/Textures/jpg/2k/metal_plate/metal_plate_diff_2k.jpg",
     "metal_nor.jpg": PH + "/Textures/jpg/2k/metal_plate/metal_plate_nor_gl_2k.jpg",
     "metal_rough.jpg": PH + "/Textures/jpg/2k/metal_plate/metal_plate_rough_2k.jpg",
     "metal_metal.jpg": PH + "/Textures/jpg/2k/metal_plate/metal_plate_metal_2k.jpg",
     "plaster_diff.jpg": PH + "/Textures/jpg/2k/white_plaster_02/white_plaster_02_diff_2k.jpg",
     "plaster_nor.jpg": PH + "/Textures/jpg/2k/white_plaster_02/white_plaster_02_nor_gl_2k.jpg",
     "plaster_rough.jpg": PH + "/Textures/jpg/2k/white_plaster_02/white_plaster_02_rough_2k.jpg",
-    "tiles_diff.jpg": PH + "/Textures/jpg/2k/floor_tiles_06/floor_tiles_06_diff_2k.jpg",
     "tiles_nor.jpg": PH + "/Textures/jpg/2k/floor_tiles_06/floor_tiles_06_nor_gl_2k.jpg",
     "tiles_rough.jpg": PH + "/Textures/jpg/2k/floor_tiles_06/floor_tiles_06_rough_2k.jpg",
     "cafe.hdr": PH + "/HDRIs/hdr/2k/warm_restaurant_night_2k.hdr",
+}
+
+TEX4K_URLS = {
+    "leather_diff.jpg": PH + "/Textures/jpg/4k/leather_red_02/leather_red_02_coll1_4k.jpg",
+    "leather_nor.jpg": PH + "/Textures/jpg/4k/leather_red_02/leather_red_02_nor_gl_4k.jpg",
+    "leather_rough.jpg": PH + "/Textures/jpg/4k/leather_red_02/leather_red_02_rough_4k.jpg",
+    "metal_nor.jpg": PH + "/Textures/jpg/4k/metal_plate/metal_plate_nor_gl_4k.jpg",
+    "metal_rough.jpg": PH + "/Textures/jpg/4k/metal_plate/metal_plate_rough_4k.jpg",
+    "metal_metal.jpg": PH + "/Textures/jpg/4k/metal_plate/metal_plate_metal_4k.jpg",
+    "plaster_diff.jpg": PH + "/Textures/jpg/4k/white_plaster_02/white_plaster_02_diff_4k.jpg",
+    "plaster_nor.jpg": PH + "/Textures/jpg/4k/white_plaster_02/white_plaster_02_nor_gl_4k.jpg",
+    "tiles_nor.jpg": PH + "/Textures/jpg/4k/floor_tiles_06/floor_tiles_06_nor_gl_4k.jpg",
+    "tiles_rough.jpg": PH + "/Textures/jpg/4k/floor_tiles_06/floor_tiles_06_rough_4k.jpg",
 }
 
 
@@ -57,14 +67,36 @@ def argv_after():
     return []
 
 
+def fetch(url, path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    if os.path.exists(path) and os.path.getsize(path) > 1000:
+        return
+    print("DOWNLOAD", os.path.basename(path))
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=120) as src, open(path, "wb") as out:
+        out.write(src.read())
+
+
 def ensure_textures():
     os.makedirs(TEX, exist_ok=True)
+    os.makedirs(TEX4K, exist_ok=True)
     for name, url in TEXTURE_URLS.items():
-        path = os.path.join(TEX, name)
-        if os.path.exists(path) and os.path.getsize(path) > 1000:
-            continue
-        print("DOWNLOAD", name)
-        urllib.request.urlretrieve(url, path)
+        try:
+            fetch(url, os.path.join(TEX, name))
+        except Exception as err:
+            print("SKIP", name, err)
+    for name, url in TEX4K_URLS.items():
+        try:
+            fetch(url, os.path.join(TEX4K, name))
+        except Exception as err:
+            print("SKIP4K", name, err)
+
+
+def tex_path(name):
+    p4 = os.path.join(TEX4K, name)
+    if os.path.exists(p4) and os.path.getsize(p4) > 1000:
+        return p4
+    return os.path.join(TEX, name)
 
 
 def clear():
@@ -93,6 +125,55 @@ def mapping(nt, scale):
     return m
 
 
+def shade_smooth(ob):
+    mesh = ob.data
+    if not hasattr(mesh, "polygons"):
+        return
+    for p in mesh.polygons:
+        p.use_smooth = True
+    if hasattr(mesh, "use_auto_smooth"):
+        mesh.use_auto_smooth = True
+        mesh.auto_smooth_angle = math.radians(50)
+
+
+def apply_mods(ob):
+    bpy.context.view_layer.objects.active = ob
+    ob.select_set(True)
+    try:
+        bpy.ops.object.convert(target="MESH")
+    except Exception:
+        pass
+    ob.select_set(False)
+
+
+def bevel_edges(ob, width, segments=6, angle=None, sub=0):
+    """Bevel then optionally subdivide. angle=None bevels every edge (cushions)."""
+    bpy.context.view_layer.objects.active = ob
+    ob.select_set(True)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    bv = ob.modifiers.new("Bevel", "BEVEL")
+    bv.width = max(0.002, width)
+    bv.segments = segments
+    if angle is None:
+        bv.limit_method = "NONE"
+    else:
+        bv.limit_method = "ANGLE"
+        bv.angle_limit = math.radians(angle)
+    bv.miter_outer = "MITER_ARC"
+    if hasattr(bv, "harden_normals"):
+        bv.harden_normals = True
+    if sub:
+        ss = ob.modifiers.new("Subsurf", "SUBSURF")
+        ss.levels = max(1, sub - 1)
+        ss.render_levels = sub
+        ss.quality = 3
+    shade_smooth(ob)
+    apply_mods(ob)
+    shade_smooth(ob)
+    ob.select_set(False)
+    return ob
+
+
 def pbr_material(name, color=(0.8, 0.8, 0.8, 1), metallic=0.0, roughness=0.4,
                  emission=None, emission_strength=0.0, diff=None, nor=None,
                  rough_map=None, metal_map=None, scale=4.0, mix_color=None,
@@ -117,7 +198,7 @@ def pbr_material(name, color=(0.8, 0.8, 0.8, 1), metallic=0.0, roughness=0.4,
         elif "Clearcoat" in bsdf.inputs:
             bsdf.inputs["Clearcoat"].default_value = coat
         if "Coat Roughness" in bsdf.inputs:
-            bsdf.inputs["Coat Roughness"].default_value = 0.06
+            bsdf.inputs["Coat Roughness"].default_value = 0.05
     if emission and "Emission Color" in bsdf.inputs:
         bsdf.inputs["Emission Color"].default_value = emission
         if "Emission Strength" in bsdf.inputs:
@@ -178,34 +259,30 @@ def checker_floor_mat():
     bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
     gloss = nt.nodes.new("ShaderNodeBsdfGlossy")
     mixs = nt.nodes.new("ShaderNodeMixShader")
-    mixs.inputs["Fac"].default_value = 0.42
+    mixs.inputs["Fac"].default_value = 0.38
     if "Metallic" in bsdf.inputs:
-        bsdf.inputs["Metallic"].default_value = 0.12
+        bsdf.inputs["Metallic"].default_value = 0.08
     if "Specular IOR Level" in bsdf.inputs:
         bsdf.inputs["Specular IOR Level"].default_value = 1.0
-    elif "Specular" in bsdf.inputs:
-        bsdf.inputs["Specular"].default_value = 1.0
     if "Coat Weight" in bsdf.inputs:
         bsdf.inputs["Coat Weight"].default_value = 1.0
-        bsdf.inputs["Coat Roughness"].default_value = 0.03
-    elif "Clearcoat" in bsdf.inputs:
-        bsdf.inputs["Clearcoat"].default_value = 1.0
-    bsdf.inputs["Roughness"].default_value = 0.06
+        bsdf.inputs["Coat Roughness"].default_value = 0.025
+    bsdf.inputs["Roughness"].default_value = 0.05
     if "Roughness" in gloss.inputs:
-        gloss.inputs["Roughness"].default_value = 0.04
+        gloss.inputs["Roughness"].default_value = 0.035
     chk = nt.nodes.new("ShaderNodeTexChecker")
     chk.inputs["Scale"].default_value = 16.0
     chk.inputs["Color1"].default_value = (0.97, 0.96, 0.93, 1)
     chk.inputs["Color2"].default_value = (0.015, 0.015, 0.018, 1)
     coord = nt.nodes.new("ShaderNodeTexCoord")
     nt.links.new(coord.outputs["Generated"], chk.inputs["Vector"])
-    tiles = tex_node(nt, img(os.path.join(TEX, "tiles_nor.jpg")), True)
+    tiles = tex_node(nt, img(tex_path("tiles_nor.jpg")), True)
     mapn = nt.nodes.new("ShaderNodeMapping")
     mapn.inputs["Scale"].default_value = (6, 6, 6)
     nt.links.new(coord.outputs["UV"], mapn.inputs["Vector"])
     nt.links.new(mapn.outputs["Vector"], tiles.inputs["Vector"])
     nrm = nt.nodes.new("ShaderNodeNormalMap")
-    nrm.inputs["Strength"].default_value = 0.22
+    nrm.inputs["Strength"].default_value = 0.18
     nt.links.new(tiles.outputs["Color"], nrm.inputs["Color"])
     nt.links.new(chk.outputs["Color"], bsdf.inputs["Base Color"])
     nt.links.new(nrm.outputs["Normal"], bsdf.inputs["Normal"])
@@ -228,7 +305,7 @@ def rail_checker_mat():
     chk.inputs["Color2"].default_value = (0.83, 0.63, 0.09, 1)
     coord = nt.nodes.new("ShaderNodeTexCoord")
     nt.links.new(coord.outputs["Generated"], chk.inputs["Vector"])
-    bsdf.inputs["Roughness"].default_value = 0.35
+    bsdf.inputs["Roughness"].default_value = 0.32
     nt.links.new(chk.outputs["Color"], bsdf.inputs["Base Color"])
     nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
     return mat
@@ -243,10 +320,26 @@ def add_box(w, h, d, x, y, z, mat):
     return ob
 
 
-def add_cyl(r, h, x, y, z, mat, verts=24):
+def add_cyl(r, h, x, y, z, mat, verts=64):
     bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=h, vertices=verts, location=(x, z, y))
     ob = bpy.context.object
     ob.data.materials.append(mat)
+    shade_smooth(ob)
+    return ob
+
+
+def add_cushion(w, h, d, x, y, z, mat, plump_w=0.05):
+    """Vinyl seat or back pad with beveled edges on every side."""
+    ob = add_box(w, h, d, x, y, z, mat)
+    width = min(plump_w, h * 0.44, w * 0.18, d * 0.18)
+    bevel_edges(ob, width, segments=8, angle=None, sub=2)
+    return ob
+
+
+def add_round_seat(r, h, x, y, z, mat, plump_w=0.032):
+    """Round stool/chair seat with a beveled rim."""
+    ob = add_cyl(r, h, x, y, z, mat, verts=96)
+    bevel_edges(ob, min(plump_w, h * 0.42), segments=8, angle=40, sub=2)
     return ob
 
 
@@ -287,12 +380,15 @@ def neon_mat(name, color, strength):
 def neon_wave(name, x0, z_h, mat, phase=0.0, amp=0.55):
     curve = bpy.data.curves.new(name, "CURVE")
     curve.dimensions = "3D"
-    curve.bevel_depth = 0.032
-    curve.bevel_resolution = 4
+    curve.bevel_depth = 0.03
+    curve.bevel_resolution = 8
+    curve.resolution_u = 12
     curve.fill_mode = "FULL"
-    spline = curve.splines.new("POLY")
-    n = 36
+    spline = curve.splines.new("NURBS")
+    n = 48
     spline.points.add(n - 1)
+    spline.use_endpoint_u = True
+    spline.order_u = 4
     for i in range(n):
         t = i / float(n - 1)
         y = -7.15 + t * 14.3
@@ -306,11 +402,13 @@ def neon_wave(name, x0, z_h, mat, phase=0.0, amp=0.55):
 
 
 def neon_bar(name, loc, rot, length, radius, mat):
-    bpy.ops.mesh.primitive_cylinder_add(vertices=16, radius=radius, depth=length, location=loc)
+    bpy.ops.mesh.primitive_cylinder_add(vertices=48, radius=radius, depth=length, location=loc)
     ob = bpy.context.active_object
     ob.name = name
     ob.rotation_euler = rot
     ob.data.materials.append(mat)
+    shade_smooth(ob)
+    bevel_edges(ob, radius * 0.35, segments=4, angle=40, sub=0)
     return ob
 
 
@@ -324,8 +422,9 @@ def add_sign(neon_c, neon_p):
         ob = bpy.context.object
         ob.data.body = body
         ob.data.size = size
-        ob.data.extrude = 0.035
-        ob.data.bevel_depth = 0.006
+        ob.data.extrude = 0.04
+        ob.data.bevel_depth = 0.008
+        ob.data.bevel_resolution = 4
         ob.data.align_x = "CENTER"
         if font:
             ob.data.font = font
@@ -337,17 +436,46 @@ def add_sign(neon_c, neon_p):
     txt("Cafe", (0.0, -7.48, 2.78), neon_p, 0.5)
 
 
+def diner_chair(x, zz, vinyl, chrome):
+    """Round beveled vinyl seat + beveled back pad on a chrome stem."""
+    add_round_seat(0.23, 0.09, x, 0.64, zz, vinyl, 0.034)
+    add_cushion(0.36, 0.42, 0.08, x, 0.94, zz + 0.18, vinyl, 0.036)
+    stem = add_cyl(0.028, 0.62, x, 0.31, zz, chrome, 48)
+    bevel_edges(stem, 0.006, segments=4, angle=40, sub=0)
+    base = add_cyl(0.18, 0.035, x, 0.03, zz, chrome, 64)
+    bevel_edges(base, 0.01, segments=5, angle=40, sub=1)
+    bpy.ops.mesh.primitive_torus_add(
+        major_radius=0.15, minor_radius=0.012,
+        major_segments=64, minor_segments=16,
+        location=(x, zz, 0.22),
+    )
+    ring = bpy.context.object
+    ring.data.materials.append(chrome)
+    shade_smooth(ring)
+    return None
+
+
 def build_room(mats):
     vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c, gold, ceiling, rail, tube_p, tube_c = mats
-    add_box(18, 0.08, 16, 0, -0.04, 0, checker_floor_mat())
-    add_box(18, 4.1, 0.25, 0, 2.05, -7.7, plaster)
-    add_box(18, 4.1, 0.25, 0, 2.05, 7.7, plaster)
-    add_box(0.25, 4.1, 16, -8.9, 2.05, 0, plaster)
-    add_box(0.25, 4.1, 16, 8.9, 2.05, 0, plaster)
-    add_box(18, 1.15, 0.28, 0, 0.57, -7.68, vinyl)
-    add_box(18, 1.15, 0.28, 0, 0.57, 7.68, vinyl)
-    add_box(0.28, 1.15, 16, -8.88, 0.57, 0, vinyl)
-    add_box(0.28, 1.15, 16, 8.88, 0.57, 0, vinyl)
+    floor = add_box(18, 0.08, 16, 0, -0.04, 0, checker_floor_mat())
+    bevel_edges(floor, 0.01, segments=3, angle=40, sub=0)
+
+    for wall in (
+        add_box(18, 4.1, 0.25, 0, 2.05, -7.7, plaster),
+        add_box(18, 4.1, 0.25, 0, 2.05, 7.7, plaster),
+        add_box(0.25, 4.1, 16, -8.9, 2.05, 0, plaster),
+        add_box(0.25, 4.1, 16, 8.9, 2.05, 0, plaster),
+    ):
+        bevel_edges(wall, 0.02, segments=3, angle=50, sub=0)
+
+    for wain in (
+        add_box(18, 1.15, 0.28, 0, 0.57, -7.68, vinyl),
+        add_box(18, 1.15, 0.28, 0, 0.57, 7.68, vinyl),
+        add_box(0.28, 1.15, 16, -8.88, 0.57, 0, vinyl),
+        add_box(0.28, 1.15, 16, 8.88, 0.57, 0, vinyl),
+    ):
+        bevel_edges(wain, 0.03, segments=4, angle=40, sub=0)
+
     add_box(18, 0.06, 0.12, 0, 1.18, -7.52, rail)
     add_box(18, 0.06, 0.12, 0, 1.18, 7.52, rail)
     add_box(0.12, 0.06, 16, -8.72, 1.18, 0, rail)
@@ -356,67 +484,96 @@ def build_room(mats):
     add_box(17.7, 0.08, 0.08, 0, 1.28, -7.55, cherry)
 
     def booth(zz):
-        add_box(1.7, 1.05, 1.55, 7.35, 0.52, zz - 0.85, vinyl)
-        add_box(1.7, 1.05, 1.55, 7.35, 0.52, zz + 0.85, vinyl)
-        add_box(1.7, 0.9, 0.16, 7.35, 1.5, zz - 1.55, cherry_dark)
-        add_box(1.7, 0.9, 0.16, 7.35, 1.5, zz + 1.55, cherry_dark)
-        add_box(1.55, 0.08, 1.45, 7.3, 1.08, zz, formica)
-        add_cyl(0.06, 1.05, 7.3, 0.54, zz, chrome)
-        bpy.ops.mesh.primitive_cone_add(radius1=0.16, depth=0.28, location=(7.3, zz, 2.55))
+        # Solid bases under both facing seats
+        left_base = add_box(1.68, 0.38, 1.48, 7.34, 0.19, zz - 0.82, cherry_dark)
+        right_base = add_box(1.68, 0.38, 1.48, 7.34, 0.19, zz + 0.82, cherry_dark)
+        bevel_edges(left_base, 0.06, segments=8, angle=None, sub=2)
+        bevel_edges(right_base, 0.06, segments=8, angle=None, sub=2)
+        # Both vinyl seats — plump beveled cushions
+        add_cushion(1.70, 0.16, 1.50, 7.33, 0.48, zz - 0.82, vinyl, 0.072)
+        add_cushion(1.70, 0.16, 1.50, 7.33, 0.48, zz + 0.82, vinyl, 0.072)
+        # Both vinyl backs
+        add_cushion(1.70, 0.90, 0.14, 7.33, 1.00, zz - 1.50, vinyl, 0.055)
+        add_cushion(1.70, 0.90, 0.14, 7.33, 1.00, zz + 1.50, vinyl, 0.055)
+        table = add_box(1.52, 0.07, 1.42, 7.28, 1.10, zz, formica)
+        bevel_edges(table, 0.024, segments=8, angle=None, sub=2)
+        stem = add_cyl(0.055, 1.02, 7.28, 0.52, zz, chrome, 48)
+        bevel_edges(stem, 0.01, segments=4, angle=40, sub=0)
+        bpy.ops.mesh.primitive_cone_add(vertices=48, radius1=0.17, depth=0.26, location=(7.3, zz, 2.52))
         cone = bpy.context.object
         cone.data.materials.append(cherry)
+        shade_smooth(cone)
+        bevel_edges(cone, 0.012, segments=4, angle=35, sub=1)
         lamp = bpy.data.lights.new("BoothLamp", "POINT")
-        lamp.energy = 55
-        lamp.color = (1.0, 0.62, 0.4)
-        lamp.shadow_soft_size = 0.12
+        lamp.energy = 70
+        lamp.color = (1.0, 0.66, 0.42)
+        lamp.shadow_soft_size = 0.1
         lo = bpy.data.objects.new("BoothLamp", lamp)
-        lo.location = (7.3, zz, 2.38)
+        lo.location = (7.3, zz, 2.36)
         bpy.context.scene.collection.objects.link(lo)
 
     for zz in (3.4, 0.15, -3.1):
         booth(zz)
 
     def table(x, zz):
-        add_cyl(0.62, 0.07, x, 1.05, zz, formica)
-        add_cyl(0.07, 1.02, x, 0.52, zz, chrome)
-        add_cyl(0.28, 0.05, x, 0.04, zz, chrome)
+        top = add_cyl(0.62, 0.055, x, 1.05, zz, formica, 96)
+        bevel_edges(top, 0.016, segments=6, angle=35, sub=1)
+        stem = add_cyl(0.055, 1.0, x, 0.50, zz, chrome, 48)
+        bevel_edges(stem, 0.008, segments=4, angle=40, sub=0)
+        base = add_cyl(0.26, 0.04, x, 0.03, zz, chrome, 64)
+        bevel_edges(base, 0.01, segments=5, angle=40, sub=1)
         for k in range(4):
             a = (k * math.pi) / 2 + 0.4
             cx = x + math.cos(a) * 0.85
             cz = zz + math.sin(a) * 0.85
-            add_cyl(0.22, 0.08, cx, 0.62, cz, vinyl)
-            add_cyl(0.03, 0.62, cx, 0.31, cz, chrome)
-            add_box(0.32, 0.38, 0.05, cx, 0.88, cz, vinyl)
-        add_cyl(0.05, 0.16, x + 0.12, 1.16, zz + 0.1, cherry)
-        add_cyl(0.05, 0.16, x + 0.22, 1.16, zz + 0.05, gold)
+            diner_chair(cx, cz, vinyl, chrome)
+        ketchup = add_cyl(0.045, 0.15, x + 0.12, 1.16, zz + 0.1, cherry, 32)
+        mustard = add_cyl(0.045, 0.15, x + 0.22, 1.16, zz + 0.05, gold, 32)
+        bevel_edges(ketchup, 0.008, segments=4, angle=40, sub=0)
+        bevel_edges(mustard, 0.008, segments=4, angle=40, sub=0)
 
     table(-0.2, 2.1)
     table(1.15, -0.6)
     table(-0.4, -3.15)
 
-    add_box(1.55, 1.08, 10.4, -6.55, 0.54, 0.2, vinyl)
-    add_box(1.7, 0.08, 10.5, -6.5, 1.1, 0.2, formica)
-    add_box(0.08, 0.05, 10.2, -5.78, 0.72, 0.2, chrome)
-    add_box(0.08, 0.05, 10.2, -5.78, 0.5, 0.2, chrome)
-    add_box(0.08, 0.05, 10.2, -5.78, 0.28, 0.2, chrome)
-    add_box(1.9, 0.16, 10.6, -6.55, 2.72, 0.2, cherry_dark)
+    counter = add_box(1.55, 1.02, 10.4, -6.55, 0.51, 0.2, vinyl)
+    bevel_edges(counter, 0.04, segments=6, angle=40, sub=1)
+    top = add_box(1.72, 0.07, 10.5, -6.5, 1.08, 0.2, formica)
+    bevel_edges(top, 0.02, segments=6, angle=35, sub=1)
+    for yoff in (0.72, 0.50, 0.28):
+        band = add_box(0.07, 0.045, 10.2, -5.76, yoff, 0.2, chrome)
+        bevel_edges(band, 0.012, segments=4, angle=40, sub=0)
+    soffit = add_box(1.9, 0.14, 10.6, -6.55, 2.70, 0.2, cherry_dark)
+    bevel_edges(soffit, 0.03, segments=4, angle=40, sub=1)
     neon_bar("counter_neon", (-6.4, 0.2, 2.62), (math.pi / 2, 0, 0), 10.2, 0.025, tube_c)
     for si in range(8):
         sz = -4.2 + si * 1.2
-        add_cyl(0.2, 0.08, -5.35, 0.66, sz, vinyl)
-        add_cyl(0.035, 0.66, -5.35, 0.32, sz, chrome)
-        add_cyl(0.18, 0.04, -5.35, 0.03, sz, chrome)
+        add_round_seat(0.21, 0.085, -5.35, 0.66, sz, vinyl, 0.03)
+        stem = add_cyl(0.03, 0.64, -5.35, 0.31, sz, chrome, 48)
+        bevel_edges(stem, 0.006, segments=4, angle=40, sub=0)
+        base = add_cyl(0.17, 0.035, -5.35, 0.03, sz, chrome, 48)
+        bevel_edges(base, 0.009, segments=4, angle=40, sub=1)
+        bpy.ops.mesh.primitive_torus_add(
+            major_radius=0.14, minor_radius=0.011,
+            major_segments=48, minor_segments=12,
+            location=(-5.35, sz, 0.24),
+        )
+        ring = bpy.context.object
+        ring.data.materials.append(chrome)
+        shade_smooth(ring)
         spot = bpy.data.lights.new("SoffitSpot%d" % si, "SPOT")
-        spot.energy = 90
-        spot.color = (1.0, 0.86, 0.72)
-        spot.spot_size = math.radians(55)
-        spot.spot_blend = 0.45
+        spot.energy = 110
+        spot.color = (1.0, 0.88, 0.74)
+        spot.spot_size = math.radians(50)
+        spot.spot_blend = 0.5
         so = bpy.data.objects.new("SoffitSpot%d" % si, spot)
         so.location = (-6.45, sz, 2.55)
         bpy.context.scene.collection.objects.link(so)
 
-    add_box(1.15, 1.7, 0.7, 0.15, 0.85, -6.85, black)
-    add_box(1.05, 0.7, 0.55, 0.15, 1.85, -6.85, gold)
+    body = add_box(1.12, 1.55, 0.62, 0.15, 0.82, -6.85, black)
+    cap = add_box(1.02, 0.62, 0.5, 0.15, 1.82, -6.85, gold)
+    bevel_edges(body, 0.04, segments=6, angle=40, sub=1)
+    bevel_edges(cap, 0.03, segments=5, angle=40, sub=1)
     cols = [(1, 0.2, 0.4, 1), (0.2, 0.86, 1, 1), (1, 0.8, 0.2, 1), (0.4, 1, 0.6, 1)]
     for i, col in enumerate(cols):
         em = bpy.data.materials.new("JukePanel%d" % i)
@@ -426,13 +583,13 @@ def build_room(mats):
             b.inputs["Base Color"].default_value = col
         if "Emission Color" in b.inputs:
             b.inputs["Emission Color"].default_value = col
-            b.inputs["Emission Strength"].default_value = 12.0
-        add_box(0.18, 0.55, 0.04, -0.21 + i * 0.24, 1.85, -6.55, em)
+            b.inputs["Emission Strength"].default_value = 14.0
+        pane = add_box(0.18, 0.52, 0.04, -0.21 + i * 0.24, 1.85, -6.52, em)
+        bevel_edges(pane, 0.008, segments=3, angle=40, sub=0)
 
     neon_wave("neon_pink_wave", -0.35, 3.62, tube_p, phase=0.2, amp=0.62)
     neon_wave("neon_cyan_wave", 0.45, 3.48, tube_c, phase=1.4, amp=0.58)
     neon_bar("neon_back", (0, -7.35, 3.72), (0, math.pi / 2, 0), 5.2, 0.028, tube_p)
-
     add_sign(neon_c, neon_p)
 
 
@@ -460,18 +617,19 @@ def lighting():
     out = nt.nodes.new("ShaderNodeOutputWorld")
     bg = nt.nodes.new("ShaderNodeBackground")
     env = nt.nodes.new("ShaderNodeTexEnvironment")
-    env.image = img(os.path.join(TEX, "cafe.hdr"))
-    bg.inputs["Strength"].default_value = 0.55
+    env.image = img(tex_path("cafe.hdr") if os.path.exists(tex_path("cafe.hdr")) else os.path.join(TEX, "cafe.hdr"))
+    bg.inputs["Strength"].default_value = 0.62
     nt.links.new(env.outputs["Color"], bg.inputs["Color"])
     nt.links.new(bg.outputs["Background"], out.inputs["Surface"])
 
     down = (0, 0, 0)
-    add_area("NeonPinkCeil", (0, 0, 3.92), (1.0, 0.28, 0.55), 180, 9.0, 0.35, down)
-    add_area("NeonCyanCeil", (0.4, 1.2, 3.88), (0.2, 0.9, 1.0), 140, 8.0, 0.28, down)
-    add_area("FillWarm", (2.5, -1.0, 3.6), (1.0, 0.84, 0.7), 90, 4.0, 1.2, down)
+    add_area("NeonPinkCeil", (0, 0, 3.92), (1.0, 0.28, 0.55), 200, 9.0, 0.35, down)
+    add_area("NeonCyanCeil", (0.4, 1.2, 3.88), (0.2, 0.9, 1.0), 160, 8.0, 0.28, down)
+    add_area("FillWarm", (2.5, -1.0, 3.6), (1.0, 0.86, 0.72), 120, 4.5, 1.4, down)
+    add_area("FillBooth", (6.2, 0.2, 3.2), (1.0, 0.78, 0.62), 90, 3.5, 1.0, down)
     soffit = bpy.data.lights.new("Soffit", "AREA")
-    soffit.energy = 320
-    soffit.color = (1.0, 0.84, 0.72)
+    soffit.energy = 380
+    soffit.color = (1.0, 0.86, 0.74)
     soffit.size = 10
     soffit.size_y = 0.35
     so = bpy.data.objects.new("Soffit", soffit)
@@ -479,21 +637,21 @@ def lighting():
     so.rotation_euler = (0, math.radians(90), 0)
     bpy.context.scene.collection.objects.link(so)
     key = bpy.data.lights.new("Key", "SUN")
-    key.energy = 0.55
+    key.energy = 0.45
     key.color = (1.0, 0.95, 0.88)
     ko = bpy.data.objects.new("Key", key)
     ko.location = (-4, 6, 8)
     ko.rotation_euler = (math.radians(50), math.radians(-20), 0)
     bpy.context.scene.collection.objects.link(ko)
     jb = bpy.data.lights.new("JukeLight", "POINT")
-    jb.energy = 110
+    jb.energy = 130
     jb.color = (1.0, 0.38, 0.62)
-    jb.shadow_soft_size = 0.4
+    jb.shadow_soft_size = 0.35
     jo = bpy.data.objects.new("JukeLight", jb)
     jo.location = (0.15, -6.2, 2.1)
     bpy.context.scene.collection.objects.link(jo)
     sign = bpy.data.lights.new("SignGlow", "AREA")
-    sign.energy = 80
+    sign.energy = 90
     sign.color = (0.4, 0.85, 1.0)
     sign.size = 2.8
     sign.size_y = 1.1
@@ -548,7 +706,6 @@ def look_rotation(loc, target):
 
 
 def camera_path():
-    # Three.js Y-up waypoints from diner-tour.html
     pos_yup = [
         (0.15, 1.62, 6.5),
         (0.4, 1.58, 3.4),
@@ -612,9 +769,9 @@ def setup_compositor():
     except TypeError:
         pass
     if hasattr(glare, "mix"):
-        glare.mix = 0.12
+        glare.mix = 0.1
     if hasattr(glare, "threshold"):
-        glare.threshold = 0.85
+        glare.threshold = 0.9
     if hasattr(glare, "size"):
         glare.size = 6
     composite = nt.nodes.new("CompositorNodeComposite")
@@ -627,8 +784,8 @@ def setup_compositor():
 def render_settings(engine, samples):
     sc = bpy.context.scene
     sc.render.engine = engine
-    sc.render.resolution_x = 1280
-    sc.render.resolution_y = 720
+    sc.render.resolution_x = RES_X
+    sc.render.resolution_y = RES_Y
     sc.render.resolution_percentage = 100
     sc.render.fps = FPS
     sc.frame_start = 1
@@ -641,30 +798,35 @@ def render_settings(engine, samples):
         ee = sc.eevee
         for attr, val in (
             ("use_gtao", True),
-            ("gtao_distance", 0.4),
+            ("gtao_distance", 0.5),
             ("use_bloom", True),
-            ("bloom_intensity", 0.18),
-            ("bloom_threshold", 0.7),
+            ("bloom_intensity", 0.16),
+            ("bloom_threshold", 0.75),
             ("use_ssr", True),
             ("use_ssr_refraction", True),
-            ("ssr_quality", 0.75),
+            ("ssr_quality", 0.85),
             ("use_raytracing", True),
             ("taa_render_samples", samples),
             ("use_shadows", True),
+            ("shadow_cube_size", "1024"),
+            ("shadow_cascade_size", "1024"),
         ):
             if hasattr(ee, attr):
-                setattr(ee, attr, val)
+                try:
+                    setattr(ee, attr, val)
+                except Exception:
+                    pass
         if hasattr(ee, "ray_tracing_options"):
             opts = ee.ray_tracing_options
             if hasattr(opts, "use_denoise"):
                 opts.use_denoise = True
             if hasattr(opts, "screen_trace_quality"):
-                opts.screen_trace_quality = 0.35
+                opts.screen_trace_quality = 0.45
             if hasattr(opts, "trace_max_roughness"):
                 opts.trace_max_roughness = 0.55
     if engine == "CYCLES":
         sc.cycles.device = "CPU"
-        sc.cycles.samples = max(8, samples)
+        sc.cycles.samples = max(16, samples)
         sc.cycles.use_denoising = True
     setup_compositor()
 
@@ -681,62 +843,61 @@ def pick_engine():
 def make_materials():
     vinyl = pbr_material(
         "Vinyl",
-        diff=os.path.join(TEX, "leather_diff.jpg"),
-        nor=os.path.join(TEX, "leather_nor.jpg"),
-        rough_map=os.path.join(TEX, "leather_rough.jpg"),
-        scale=3.2,
+        diff=tex_path("leather_diff.jpg"),
+        nor=tex_path("leather_nor.jpg"),
+        rough_map=tex_path("leather_rough.jpg"),
+        scale=2.6,
         mix_color=(0.77, 0.118, 0.227, 1),
-        mix_fac=0.86,
-        roughness=0.24,
-        rough_mul=0.45,
-        nor_strength=0.95,
-        coat=0.4,
+        mix_fac=0.78,
+        roughness=0.22,
+        rough_mul=0.42,
+        nor_strength=1.15,
+        coat=0.55,
     )
     chrome = pbr_material(
         "Chrome",
-        color=(0.88, 0.90, 0.93, 1),
-        nor=os.path.join(TEX, "metal_nor.jpg"),
-        rough_map=os.path.join(TEX, "metal_rough.jpg"),
-        metal_map=os.path.join(TEX, "metal_metal.jpg"),
-        scale=6.0,
+        color=(0.90, 0.92, 0.95, 1),
+        nor=tex_path("metal_nor.jpg"),
+        rough_map=tex_path("metal_rough.jpg"),
+        metal_map=tex_path("metal_metal.jpg"),
+        scale=5.0,
         metallic=1.0,
-        roughness=0.05,
-        rough_mul=0.08,
-        nor_strength=0.28,
+        roughness=0.04,
+        rough_mul=0.07,
+        nor_strength=0.22,
     )
     plaster = pbr_material(
         "Plaster",
-        diff=os.path.join(TEX, "plaster_diff.jpg"),
-        nor=os.path.join(TEX, "plaster_nor.jpg"),
-        rough_map=os.path.join(TEX, "plaster_rough.jpg"),
-        scale=4.2,
+        diff=tex_path("plaster_diff.jpg"),
+        nor=tex_path("plaster_nor.jpg"),
+        scale=3.6,
         mix_color=(0.94, 0.90, 0.82, 1),
-        mix_fac=0.68,
-        roughness=0.58,
-        nor_strength=0.22,
+        mix_fac=0.62,
+        roughness=0.55,
+        nor_strength=0.2,
     )
     ceiling = pbr_material(
         "Ceiling",
         color=(0.09, 0.09, 0.1, 1),
-        nor=os.path.join(TEX, "plaster_nor.jpg"),
+        nor=tex_path("plaster_nor.jpg"),
         scale=3.5,
         roughness=0.78,
-        nor_strength=0.35,
+        nor_strength=0.3,
     )
     formica = pbr_material(
         "Formica",
         color=(0.94, 0.90, 0.82, 1),
-        nor=os.path.join(TEX, "tiles_nor.jpg"),
-        rough_map=os.path.join(TEX, "tiles_rough.jpg"),
-        scale=10.0,
-        roughness=0.16,
-        rough_mul=0.4,
-        coat=0.35,
+        nor=tex_path("tiles_nor.jpg"),
+        rough_map=tex_path("tiles_rough.jpg"),
+        scale=8.0,
+        roughness=0.14,
+        rough_mul=0.35,
+        coat=0.45,
     )
-    cherry = pbr_material("Cherry", color=(0.77, 0.118, 0.227, 1), roughness=0.22, metallic=0.04, coat=0.3)
-    cherry_dark = pbr_material("CherryDark", color=(0.28, 0.035, 0.09, 1), roughness=0.3)
-    black = pbr_material("Black", color=(0.02, 0.02, 0.02, 1), roughness=0.35)
-    gold = pbr_material("Gold", color=(0.83, 0.63, 0.09, 1), metallic=1.0, roughness=0.18)
+    cherry = pbr_material("Cherry", color=(0.77, 0.118, 0.227, 1), roughness=0.2, metallic=0.04, coat=0.35)
+    cherry_dark = pbr_material("CherryDark", color=(0.28, 0.035, 0.09, 1), roughness=0.28)
+    black = pbr_material("Black", color=(0.02, 0.02, 0.02, 1), roughness=0.32)
+    gold = pbr_material("Gold", color=(0.83, 0.63, 0.09, 1), metallic=1.0, roughness=0.16)
     neon_p = neon_mat("NeonPink", (1.0, 0.22, 0.52), 10.0)
     neon_c = neon_mat("NeonCyan", (0.18, 0.92, 1.0), 9.0)
     tube_p = neon_mat("TubePink", (1.0, 0.18, 0.48), 32.0)
@@ -762,13 +923,14 @@ def main():
     add_uv()
     camera_path()
     engine = pick_engine()
-    samples = 24 if "--still" in args else 8
+    samples = 20 if "--still" in args else 12
     if "--samples" in args:
         samples = int(args[args.index("--samples") + 1])
     render_settings(engine, samples)
     bpy.ops.wm.save_as_mainfile(filepath=BLEND)
     print("ENGINE", engine)
     print("SAMPLES", samples)
+    print("RES", RES_X, RES_Y)
     print("SAVED", BLEND)
 
     if "--still" in args:
