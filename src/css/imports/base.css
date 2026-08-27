@@ -354,6 +354,55 @@ p {
   padding: 0.4rem 0.7rem;
 }
 
+.site-walk {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-walk-scrim {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 38%, rgba(8, 6, 8, 0.42) 100%);
+}
+
+body.has-scroll-walk {
+  background-color: #140e12;
+  background-image: none;
+}
+
+body.has-scroll-walk .checker,
+body.has-scroll-walk #main,
+body.has-scroll-walk .site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+body.has-scroll-walk .site-footer {
+  background: rgba(23, 20, 23, 0.72);
+}
+
+body.has-scroll-walk .band.black {
+  background: rgba(23, 20, 23, 0.52);
+}
+
+body.has-scroll-walk .plate-row {
+  background: rgba(23, 20, 23, 0.4);
+}
+
 .poster-hero {
   display: flex;
   flex-wrap: wrap;
@@ -363,20 +412,8 @@ p {
   overflow: hidden;
   min-height: 86vh;
   padding: 2.75rem 0 3.25rem;
-  background: #140e12;
+  background: transparent;
   color: var(--cream);
-}
-
-.poster-hero-video {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
 }
 
 .poster-hero-scrim {
@@ -391,9 +428,9 @@ p {
     repeating-linear-gradient(
       -28deg,
       transparent 0 18px,
-      rgba(255, 255, 255, 0.05) 18px 20px
+      rgba(255, 255, 255, 0.04) 18px 20px
     ),
-    linear-gradient(118deg, rgba(43, 179, 177, 0.38) 0 50%, rgba(196, 30, 58, 0.42) 54% 100%);
+    linear-gradient(118deg, rgba(43, 179, 177, 0.22) 0 50%, rgba(196, 30, 58, 0.24) 54% 100%);
 }
 
 .poster-hero::before {
@@ -954,24 +991,18 @@ form button {
 
 .walkthrough-page {
   position: relative;
-  min-height: 78vh;
-  overflow: hidden;
-  background: #140e12;
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
 }
 
-.walkthrough-video {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.walk-track {
+  height: 320vh;
 }
 
 .walkthrough-hud {
-  position: relative;
+  position: sticky;
+  top: 7.4rem;
   z-index: 2;
   max-width: 28rem;
   margin: 3rem 8% 4rem;
@@ -1040,6 +1071,10 @@ form button {
     flex-wrap: wrap;
   }
 
+  .walkthrough-hud {
+    top: 6.2rem;
+  }
+
   .poster-hero {
     padding: 3.2rem 0 2.8rem;
   }
@@ -1083,5 +1118,23 @@ form button {
   .matchbook-card,
   .caption-card {
     margin: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .site-walk {
+    display: none;
+  }
+
+  body.has-scroll-walk {
+    background-color: #140e12;
+    background-image: url("/img/walkthrough/diner-3d-still.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 }

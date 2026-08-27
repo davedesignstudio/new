@@ -1,15 +1,13 @@
 {{ partial "header" . }}
 
 <main id="main" class="walkthrough-page">
-  <video class="walkthrough-video" autoplay muted loop playsinline poster="/img/walkthrough/diner-3d-still.jpg">
-    <source src="/videos/diner-walkthrough.mp4" type="video/mp4">
-  </video>
   <div class="walkthrough-hud">
     <p class="hero-script">Please wait to be seated</p>
     <h1>The room</h1>
-    <p>A looping walk through the diner. Counter, booths, jukebox.</p>
+    <p>Scroll the page to walk the diner. The camera moves with you.</p>
     <p><a class="btn" href="/menu">See the menu</a></p>
   </div>
+  <div class="walk-track" aria-hidden="true"></div>
 </main>
 
 {{ partial "footer" . }}

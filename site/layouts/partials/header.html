@@ -15,8 +15,14 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brand/hills-seal.png">
   <link rel="shortcut icon" href="/img/brand/hills-seal.png">
 </head>
-<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}{{ with .Params.bodyclass }} {{ . }}{{ end }}">
+<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}{{ with .Params.bodyclass }} {{ . }}{{ end }}{{ if or .IsHome (eq .Params.layout "walkthrough") }} has-scroll-walk{{ end }}">
 <a class="skip-link" href="#main">Skip to the counter</a>
+{{ if or .IsHome (eq .Params.layout "walkthrough") }}
+<video class="site-walk js-scroll-walk" muted playsinline preload="auto" poster="/img/walkthrough/diner-3d-still.jpg" aria-hidden="true">
+  <source src="/videos/diner-walkthrough.mp4" type="video/mp4">
+</video>
+<div class="site-walk-scrim" aria-hidden="true"></div>
+{{ end }}
 
 <header class="header">
   <div class="marquee">Eat · Drink · Pie · Open 6 to 4</div>
