@@ -6,11 +6,6 @@
   padding-top: 0;
 }
 
-body.is-menu {
-  background-color: #1a1210;
-  background-image: none;
-}
-
 .menu-hours-bar {
   background: var(--gold);
   color: var(--black);
