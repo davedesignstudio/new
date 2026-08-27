@@ -14,6 +14,7 @@ import sys
 import math
 import urllib.request
 import bpy
+import bmesh
 from mathutils import Vector, Matrix
 
 
@@ -21,6 +22,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 TEX = os.path.join(ROOT, "textures")
 TEX4K = os.path.join(TEX, "4k")
 FONT = os.path.join(ROOT, "fonts", "Pacifico-Regular.ttf")
+FONT_BOWLBY = os.path.join(ROOT, "fonts", "BowlbyOneSC-Regular.ttf")
 BLEND = os.path.join(ROOT, "boonton_diner.blend")
 STILL = "/tmp/diner-still.png"
 FRAMES = "/tmp/diner-frames"
@@ -495,28 +497,127 @@ def neon_bar(name, loc, rot, length, radius, mat):
     return ob
 
 
-def add_sign(neon_c, neon_p):
-    font = None
-    if os.path.exists(FONT):
-        font = bpy.data.fonts.load(FONT)
+def add_wedge_plate(mat, loc=(0.0, -7.46, 2.58)):
+    """Perspective bar from the pencil sketch: wide on the left, tapering right."""
+    mesh = bpy.data.meshes.new("ScriptWedge")
+    ob = bpy.data.objects.new("ScriptWedge", mesh)
+    bpy.context.scene.collection.objects.link(ob)
+    bm = bmesh.new()
+    # Front (camera) is -Y. Left is thick; right tapers.
+    verts = [
+        (-2.25, 0.00, 0.28),
+        (2.15, 0.00, 0.10),
+        (2.15, 0.00, -0.10),
+        (-2.25, 0.00, -0.28),
+        (-2.25, 0.09, 0.28),
+        (2.15, 0.09, 0.10),
+        (2.15, 0.09, -0.10),
+        (-2.25, 0.09, -0.28),
+    ]
+    bm_verts = [bm.verts.new(v) for v in verts]
+    bm.faces.new([bm_verts[i] for i in (0, 1, 2, 3)])
+    bm.faces.new([bm_verts[i] for i in (4, 7, 6, 5)])
+    bm.faces.new([bm_verts[i] for i in (0, 4, 5, 1)])
+    bm.faces.new([bm_verts[i] for i in (3, 2, 6, 7)])
+    bm.faces.new([bm_verts[i] for i in (0, 3, 7, 4)])
+    bm.faces.new([bm_verts[i] for i in (1, 5, 6, 2)])
+    bm.to_mesh(mesh)
+    bm.free()
+    ob.location = loc
+    ob.data.materials.append(mat)
+    bevel_edges(ob, 0.018, segments=4, angle=40, sub=1)
+    return ob
 
-    def txt(body, loc, mat, size):
-        bpy.ops.object.text_add(location=loc)
-        ob = bpy.context.object
-        ob.data.body = body
-        ob.data.size = size
-        ob.data.extrude = 0.04
-        ob.data.bevel_depth = 0.008
-        ob.data.bevel_resolution = 4
-        ob.data.align_x = "CENTER"
-        if font:
-            ob.data.font = font
-        ob.rotation_euler = (math.pi / 2, 0, math.pi)
-        ob.data.materials.append(mat)
-        return ob
 
-    txt("Boonton", (0.0, -7.48, 3.38), neon_c, 0.58)
-    txt("Cafe", (0.0, -7.48, 2.78), neon_p, 0.5)
+def marble_ledge_mat():
+    """Gray-white floral stone cap from the booth still."""
+    mat = bpy.data.materials.new("MarbleLedge")
+    mat.use_nodes = True
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 18.0
+    if "Detail" in noise.inputs:
+        noise.inputs["Detail"].default_value = 12.0
+    voro = nt.nodes.new("ShaderNodeTexVoronoi")
+    voro.inputs["Scale"].default_value = 9.0
+    mix = nt.nodes.new("ShaderNodeMixRGB")
+    mix.blend_type = "MIX"
+    mix.inputs["Fac"].default_value = 0.55
+    mix.inputs["Color1"].default_value = (0.78, 0.76, 0.72, 1)
+    mix.inputs["Color2"].default_value = (0.42, 0.40, 0.38, 1)
+    coord = nt.nodes.new("ShaderNodeTexCoord")
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    ramp.color_ramp.elements[0].color = (0.86, 0.84, 0.80, 1)
+    ramp.color_ramp.elements[1].color = (0.38, 0.36, 0.34, 1)
+    nt.links.new(coord.outputs["Generated"], noise.inputs["Vector"])
+    nt.links.new(coord.outputs["Generated"], voro.inputs["Vector"])
+    combine = nt.nodes.new("ShaderNodeMixRGB")
+    combine.blend_type = "OVERLAY"
+    combine.inputs["Fac"].default_value = 0.35
+    nt.links.new(noise.outputs["Fac"], mix.inputs["Fac"])
+    nt.links.new(mix.outputs["Color"], combine.inputs["Color1"])
+    nt.links.new(voro.outputs["Color"], combine.inputs["Color2"])
+    nt.links.new(combine.outputs["Color"], ramp.inputs["Fac"])
+    nt.links.new(ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    bsdf.inputs["Roughness"].default_value = 0.22
+    if "Coat Weight" in bsdf.inputs:
+        bsdf.inputs["Coat Weight"].default_value = 0.55
+        bsdf.inputs["Coat Roughness"].default_value = 0.08
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
+def add_sign(cherry, gold, wood, chrome):
+    """Condensed red BOONTON CAFE + script 'diner' in the sketch wedge."""
+    bowlby = bpy.data.fonts.load(FONT_BOWLBY) if os.path.exists(FONT_BOWLBY) else None
+    script = bpy.data.fonts.load(FONT) if os.path.exists(FONT) else None
+    sign_red = pbr_material(
+        "SignRed",
+        color=(0.82, 0.04, 0.07, 1),
+        roughness=0.16,
+        metallic=0.04,
+        coat=0.45,
+        emission=(0.82, 0.04, 0.07, 1),
+        emission_strength=0.25,
+    )
+
+    add_wedge_plate(wood)
+    band = add_box(4.35, 0.07, 0.11, 0.0, 2.38, -7.44, chrome)
+    bevel_edges(band, 0.012, segments=3, angle=40, sub=0)
+
+    bpy.ops.object.text_add(location=(0.0, -7.40, 3.22))
+    caps = bpy.context.object
+    caps.name = "SignCaps"
+    caps.data.body = "BOONTON CAFE"
+    caps.data.size = 0.46
+    caps.data.extrude = 0.07
+    caps.data.bevel_depth = 0.014
+    caps.data.bevel_resolution = 5
+    caps.data.align_x = "CENTER"
+    caps.data.space_character = 0.88
+    if bowlby:
+        caps.data.font = bowlby
+    caps.rotation_euler = (math.pi / 2, 0, math.pi)
+    caps.data.materials.append(sign_red)
+
+    bpy.ops.object.text_add(location=(0.05, -7.36, 2.55))
+    din = bpy.context.object
+    din.name = "SignScript"
+    din.data.body = "diner"
+    din.data.size = 0.38
+    din.data.extrude = 0.035
+    din.data.bevel_depth = 0.008
+    din.data.bevel_resolution = 4
+    din.data.align_x = "CENTER"
+    if script:
+        din.data.font = script
+    din.rotation_euler = (math.pi / 2, 0, math.pi)
+    # Slight Y rotation so the script follows the wedge taper
+    din.rotation_euler = (math.pi / 2, math.radians(-4), math.pi)
+    din.data.materials.append(gold)
 
 
 def diner_chair(x, zz, vinyl, chrome):
@@ -540,7 +641,7 @@ def diner_chair(x, zz, vinyl, chrome):
 
 def build_room(mats):
     (vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c,
-     gold, ceiling, rail, tube_p, tube_c, wood, pipe, frost, ceramic) = mats
+     gold, ceiling, rail, tube_p, tube_c, wood, pipe, frost, ceramic, marble) = mats
     floor = add_box(18, 0.08, 16, 0, -0.04, 0, checker_floor_mat())
     bevel_edges(floor, 0.01, segments=3, angle=40, sub=0)
 
@@ -561,10 +662,14 @@ def build_room(mats):
     ):
         bevel_edges(wain, 0.02, segments=4, angle=40, sub=0)
 
-    add_box(18, 0.05, 0.1, 0, 1.16, -7.52, chrome)
-    add_box(18, 0.05, 0.1, 0, 1.16, 7.52, chrome)
-    add_box(0.1, 0.05, 16, -8.72, 1.16, 0, chrome)
-    add_box(0.1, 0.05, 16, 8.72, 1.16, 0, chrome)
+    # Stone cap on the wainscot, matching the attached booth still
+    for cap in (
+        add_box(18, 0.06, 0.22, 0, 1.18, -7.52, marble),
+        add_box(18, 0.06, 0.22, 0, 1.18, 7.52, marble),
+        add_box(0.22, 0.06, 16, -8.72, 1.18, 0, marble),
+        add_box(0.22, 0.06, 16, 8.72, 1.18, 0, marble),
+    ):
+        bevel_edges(cap, 0.012, segments=3, angle=40, sub=0)
     add_box(17.6, 0.12, 16, 0, 4.18, 0, ceiling)
 
     def booth(zz):
@@ -590,15 +695,13 @@ def build_room(mats):
         stem = add_cyl(0.055, 1.02, 7.28, 0.52, zz, chrome, 48)
         bevel_edges(stem, 0.01, segments=4, angle=40, sub=0)
         add_frosted_pendant(7.3, zz, 2.48, frost, chrome)
-        # Table props from the reference still
-        mug_a = add_cyl(0.045, 0.08, 7.10, 1.18, zz - 0.18, ceramic, 32)
-        mug_b = add_cyl(0.045, 0.08, 7.42, 1.18, zz + 0.16, ceramic, 32)
-        bevel_edges(mug_a, 0.008, segments=4, angle=40, sub=0)
-        bevel_edges(mug_b, 0.008, segments=4, angle=40, sub=0)
-        nap = add_box(0.16, 0.10, 0.12, 7.28, 1.18, zz + 0.32, chrome)
-        bevel_edges(nap, 0.012, segments=4, angle=40, sub=0)
-        shaker = add_cyl(0.025, 0.09, 7.48, 1.18, zz - 0.08, chrome, 24)
-        bevel_edges(shaker, 0.006, segments=3, angle=40, sub=0)
+        # Blocky chrome napkin + shakers from the attached booth still
+        nap = add_box(0.18, 0.12, 0.14, 7.28, 1.19, zz + 0.28, chrome)
+        bevel_edges(nap, 0.016, segments=4, angle=40, sub=0)
+        shaker_a = add_cyl(0.028, 0.10, 7.48, 1.18, zz - 0.12, chrome, 24)
+        shaker_b = add_cyl(0.028, 0.10, 7.08, 1.18, zz - 0.08, chrome, 24)
+        bevel_edges(shaker_a, 0.008, segments=3, angle=40, sub=0)
+        bevel_edges(shaker_b, 0.008, segments=3, angle=40, sub=0)
 
     for zz in (3.4, 0.15, -3.1):
         booth(zz)
@@ -686,7 +789,7 @@ def build_room(mats):
     neon_wave("neon_pink_wave", -0.35, 3.62, tube_p, phase=0.2, amp=0.62)
     neon_wave("neon_cyan_wave", 0.45, 3.48, tube_c, phase=1.4, amp=0.58)
     neon_bar("neon_back", (0, -7.35, 3.72), (0, math.pi / 2, 0), 5.2, 0.028, tube_p)
-    add_sign(neon_c, neon_p)
+    add_sign(cherry, gold, wood, chrome)
 
 
 def add_area(name, loc, color, energy, size=1.2, size_y=0.18, rot=None):
@@ -799,6 +902,18 @@ def look_rotation(loc, target):
         x_axis.normalize()
     y_axis = z_axis.cross(x_axis).normalized()
     return Matrix((x_axis, y_axis, z_axis)).transposed().to_euler()
+
+
+def booth_camera(cob):
+    """Eye-level shot between the facing vinyl booths, matching the attached still."""
+    if cob.animation_data:
+        cob.animation_data_clear()
+    loc = y_up_to_blender(5.52, 1.08, 0.15)
+    target = y_up_to_blender(7.28, 1.10, 0.15)
+    cob.location = loc
+    cob.rotation_euler = look_rotation(loc, target)
+    cob.data.sensor_fit = "VERTICAL"
+    cob.data.angle = math.radians(48)
 
 
 def camera_path():
@@ -991,7 +1106,12 @@ def make_materials():
         coat=0.45,
     )
     cherry = pbr_material("Cherry", color=(0.77, 0.118, 0.227, 1), roughness=0.2, metallic=0.04, coat=0.35)
-    cherry_dark = pbr_material("CherryDark", color=(0.28, 0.035, 0.09, 1), roughness=0.28)
+    cherry_dark = pbr_material(
+        "CherryDark",
+        color=(0.42, 0.06, 0.20, 1),
+        roughness=0.22,
+        coat=0.25,
+    )
     black = pbr_material("Black", color=(0.02, 0.02, 0.02, 1), roughness=0.32)
     gold = pbr_material("Gold", color=(0.83, 0.63, 0.09, 1), metallic=1.0, roughness=0.16)
     neon_p = neon_mat("NeonPink", (1.0, 0.22, 0.52), 10.0)
@@ -1020,7 +1140,8 @@ def make_materials():
         coat=0.3,
     )
     ceramic = pbr_material("Ceramic", color=(0.93, 0.93, 0.9, 1), roughness=0.22, coat=0.55)
-    return vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c, gold, ceiling, rail, tube_p, tube_c, wood, pipe, frost, ceramic
+    marble = marble_ledge_mat()
+    return vinyl, chrome, plaster, formica, cherry, cherry_dark, black, neon_p, neon_c, gold, ceiling, rail, tube_p, tube_c, wood, pipe, frost, ceramic, marble
 
 
 def render_frame(path, frame):
@@ -1040,7 +1161,7 @@ def main():
     add_uv()
     camera_path()
     engine = pick_engine()
-    samples = 20 if "--still" in args else 12
+    samples = 20 if "--still" in args or "--booth" in args else 12
     if "--samples" in args:
         samples = int(args[args.index("--samples") + 1])
     render_settings(engine, samples)
@@ -1050,7 +1171,11 @@ def main():
     print("RES", RES_X, RES_Y)
     print("SAVED", BLEND)
 
-    if "--still" in args:
+    if "--booth" in args:
+        booth_camera(bpy.context.scene.camera)
+        render_frame(STILL, 1)
+        print("BOOTH", STILL)
+    elif "--still" in args:
         render_frame(STILL, 1)
         print("STILL", STILL)
     if "--preview" in args:
