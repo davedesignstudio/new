@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.51 =
+* Homepage hero uses the uploaded kitchen photo of a chef tossing dough.
+
 = 1.0.50 =
 * Studio mark is a bronze circular seal like Service The Hills, without a saw.
 
