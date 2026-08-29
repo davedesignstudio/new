@@ -372,7 +372,16 @@ sections:
     short: "Plates"
     note: "Served with Choice of Soup of The Day or Salad"
     items:
-      - name: "Skirt Steak"
+      - id: turkey
+        name: "Hot Turkey"
+        price: "$22.75"
+        description: "Open-faced sliced turkey, gravy, mashed potatoes, peas & cranberry sauce"
+      - id: meatloaf
+        name: "Meatloaf"
+        price: "$21.55"
+        description: "House meatloaf, gravy, mashed potatoes & green beans"
+      - id: steak
+        name: "Skirt Steak"
         price: "$33.35"
         description: "served with French Fries & Broccoli"
       - name: "Chicken Argentino"

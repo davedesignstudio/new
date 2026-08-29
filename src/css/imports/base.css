@@ -1251,6 +1251,21 @@ form button {
   justify-content: flex-start;
 }
 
+a.object-poster-mini {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.object-poster-mini:hover h2,
+a.object-poster-mini:focus h2 {
+  color: var(--title-blue-bright);
+}
+
+a.object-poster-gold:hover h2,
+a.object-poster-gold:focus h2 {
+  color: #fff;
+}
+
 .object-band {
   background: var(--cream);
   color: var(--ink);
