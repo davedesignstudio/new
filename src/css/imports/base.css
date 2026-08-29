@@ -15,6 +15,7 @@
   --gold: #d4a017;
   --booth-blue: #1648a8;
   --booth-blue-dark: #0e3278;
+  --navy: #01071a;
   --header-offset: 6.6rem;
 }
 
@@ -27,7 +28,7 @@ html {
   line-height: 1.5;
   font-family: "Jost", "Segoe UI", sans-serif;
   color: var(--ink);
-  background: var(--booth-blue);
+  background: var(--navy);
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-offset);
 }
@@ -40,9 +41,9 @@ body {
 
 body {
   min-height: 100vh;
-  background-color: var(--booth-blue);
-  background-image: url("/img/art/burger-pattern.jpg");
-  background-size: 280px 190px;
+  background-color: var(--navy);
+  background-image: url("/img/art/field.jpg");
+  background-size: 600px 600px;
   background-repeat: repeat;
 }
 
@@ -239,6 +240,14 @@ p {
   display: flex;
   align-items: center;
   color: var(--cream);
+}
+
+.logo-lockup {
+  display: block;
+  height: 64px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
 }
 
 .logo:hover,
@@ -456,7 +465,7 @@ body.has-scroll-walk .plate-row {
       transparent 0 18px,
       rgba(255, 255, 255, 0.05) 18px 20px
     ),
-    linear-gradient(180deg, rgba(14, 50, 120, 0.28) 0%, rgba(14, 50, 120, 0.08) 55%, rgba(14, 50, 120, 0.22) 100%);
+    linear-gradient(180deg, rgba(1, 7, 26, 0.15) 0%, rgba(1, 7, 26, 0.08) 55%, rgba(1, 7, 26, 0.35) 100%);
 }
 
 .poster-hero::before {
@@ -516,11 +525,29 @@ body.has-scroll-walk .plate-row {
 .poster-copy {
   flex: 1 1 20rem;
   max-width: 34rem;
-  padding: 1.35rem 1.5rem 1.2rem;
-  background: rgba(14, 50, 120, 0.86);
+  padding: 0.4rem 0 1.2rem;
+  background: transparent;
   border: 0;
-  border-left: 16px solid var(--gold);
   box-shadow: none;
+}
+
+.hero-lockup {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  margin: 0 0 0.85rem;
+}
+
+.clip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .poster-eat {
