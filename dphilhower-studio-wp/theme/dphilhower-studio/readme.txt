@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.52 =
+* Gold rules on both sides of the black stage.
+
 = 1.0.51 =
 * Homepage hero uses the uploaded kitchen photo of a chef tossing dough.
 

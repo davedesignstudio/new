@@ -49,6 +49,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  z-index: 50;
+  pointer-events: none;
+}
+
+body::before {
+  left: max(0px, calc(50% - (var(--stage-width) / 2)));
+}
+
+body::after {
+  right: max(0px, calc(50% - (var(--stage-width) / 2)));
+}
+
 img {
   max-width: 100%;
   height: auto;
