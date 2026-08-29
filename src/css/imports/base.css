@@ -1166,19 +1166,15 @@ form button {
 }
 
 .object-poster h1 {
-  margin: 0.2rem 0 0;
+  margin: 0.2rem 0 0.15rem;
   font-size: 8.2rem;
   color: #fff;
-  position: relative;
-  z-index: 1;
 }
 
 .object-poster-mini h2 {
-  margin: 0;
+  margin: 0 0 0.15rem;
   font-size: 4.4rem;
   color: #fff;
-  position: relative;
-  z-index: 1;
 }
 
 .object-poster-gold h1,
@@ -1212,51 +1208,31 @@ form button {
 }
 
 .object-figure {
-  margin: -1.35rem 0 0;
+  margin: 0;
   width: 100%;
-  max-width: none;
   flex: 1 1 auto;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
-  min-height: 0;
+  min-height: 12rem;
+  overflow: hidden;
 }
 
-.object-poster-hero .object-figure {
-  width: 100%;
+.object-poster-page .object-figure {
+  min-height: 22rem;
 }
 
 .object-poster-mini .object-figure {
-  width: 100%;
+  min-height: 16rem;
 }
 
 .object-figure img {
   display: block;
   width: 100%;
-  height: auto;
-  max-width: 58rem;
-  max-height: none;
+  height: 100%;
   object-fit: contain;
   object-position: top center;
   filter: contrast(1.08) saturate(0.94);
-}
-
-.object-poster-hero .object-figure img {
-  max-width: 72rem;
-  height: calc(100vh - 16rem);
-  width: auto;
-}
-
-.object-poster-page .object-figure img {
-  max-width: 46rem;
-  height: 28rem;
-  width: auto;
-}
-
-.object-poster-mini .object-figure img {
-  height: 22rem;
-  width: auto;
-  max-width: 100%;
 }
 
 .object-row {
@@ -1454,20 +1430,13 @@ form button {
     font-size: 3rem;
   }
 
-  .object-figure,
   .object-poster-hero .object-figure {
-    max-width: none;
+    min-height: 18rem;
   }
 
-  .object-poster-hero .object-figure img {
-    height: 22rem;
-    max-width: 100%;
-  }
-
-  .object-poster-page .object-figure img,
-  .object-poster-mini .object-figure img {
-    height: 18rem;
-    max-width: 100%;
+  .object-poster-page .object-figure,
+  .object-poster-mini .object-figure {
+    min-height: 16rem;
   }
 
   .object-poster-mini {
