@@ -1,15 +1,21 @@
 {{ partial "header" . }}
 
 <main id="main">
-<div class="container page-wrap">
-  <p class="hero-script">Lost the booth</p>
-  <h1>That page is not on Hawkins Place</h1>
-  <figure class="oval-frame small">
-    <img src="/img/fifties/diner-pie-coffee.jpg" alt="Pie and coffee on a diner table">
-  </figure>
-  <p>Head back to <a href="/">Boonton Cafe</a> or read the <a href="/menu">menu</a>.</p>
-  <p><a class="btn" href="/">Return to the counter</a></p>
-</div>
+  <section class="object-hero object-hero-page">
+    <div class="object-hero-type">
+      <p class="object-kicker">Lost the booth</p>
+      <p class="object-the">The</p>
+      <h1>Not on<br>Hawkins</h1>
+      <p class="object-product">404</p>
+      <p class="object-actions">
+        <a class="btn" href="/">Home</a>
+        <a class="btn-ghost" href="/menu">The menu</a>
+      </p>
+    </div>
+    <figure class="object-hero-thing">
+      <img src="/img/fifties/diner-pie-coffee.jpg" alt="Pie and coffee">
+    </figure>
+  </section>
 </main>
 
 {{ partial "footer" . }}

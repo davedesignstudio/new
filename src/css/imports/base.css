@@ -18,7 +18,7 @@
   --navy: #01071a;
   --title-blue: #3d8bfd;
   --title-blue-bright: #8ec5ff;
-  --header-offset: 6.6rem;
+  --header-offset: 4.6rem;
 }
 
 * {
@@ -44,9 +44,7 @@ body {
 body {
   min-height: 100vh;
   background-color: var(--navy);
-  background-image: url("/img/art/field.jpg");
-  background-size: 600px 600px;
-  background-repeat: repeat;
+  background-image: none;
 }
 
 img {
@@ -123,17 +121,7 @@ p {
 }
 
 .checker {
-  height: 16px;
-  background-color: var(--black);
-  background-image:
-    linear-gradient(45deg, #fff 25%, transparent 25%),
-    linear-gradient(-45deg, #fff 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #fff 75%),
-    linear-gradient(-45deg, transparent 75%, #fff 75%);
-  background-size: 16px 16px;
-  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-  border-top: 4px solid var(--gold);
-  border-bottom: 4px solid var(--gold);
+  display: none;
 }
 
 .block-label {
@@ -170,21 +158,12 @@ p {
 .oval-frame::after,
 .round-frame::after,
 .stamp-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: radial-gradient(circle, rgba(23, 20, 23, 0.38) 1px, transparent 1.3px);
-  background-size: 5px 5px;
-  mix-blend-mode: multiply;
-  pointer-events: none;
+  display: none;
 }
 
 .chrome-frame {
-  border: 8px solid #fff;
-  box-shadow: 0 0 0 8px var(--black);
+  border: 0;
+  box-shadow: none;
 }
 
 .header {
@@ -205,7 +184,7 @@ p {
 }
 
 .header-bar {
-  background: var(--black);
+  background: var(--navy);
   color: var(--cream);
   border-bottom: 0;
   box-shadow: none;
@@ -235,8 +214,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 78px;
-  padding: 0.35rem 0;
+  min-height: 64px;
+  padding: 0.2rem 0;
 }
 
 .logo {
@@ -247,9 +226,9 @@ p {
 
 .logo-lockup {
   display: block;
-  height: 64px;
+  height: 48px;
   width: auto;
-  max-width: 220px;
+  max-width: 160px;
   object-fit: contain;
 }
 
@@ -311,7 +290,7 @@ p {
 .nav-link:focus,
 .nav-link.is-active {
   color: #fff;
-  box-shadow: inset 0 -4px 0 var(--gold);
+  box-shadow: inset 0 -3px 0 var(--title-blue-bright);
 }
 
 .header-actions {
@@ -367,7 +346,7 @@ p {
 
 .btn-ghost {
   color: #fff;
-  border: 3px solid #fff;
+  border: 2px solid #fff;
   margin-left: 0.4rem;
 }
 
@@ -627,8 +606,8 @@ body.has-scroll-walk .plate-row {
   margin: 1.2rem auto;
   overflow: hidden;
   border-radius: 0;
-  border: 8px solid var(--gold);
-  box-shadow: 0 0 0 8px var(--black);
+  border: 0;
+  box-shadow: none;
   transform: none;
   background: var(--black);
 }
@@ -655,8 +634,8 @@ body.has-scroll-walk .plate-row {
   margin: 0 auto 0.7rem;
   overflow: hidden;
   border-radius: 0;
-  border: 6px solid #fff;
-  box-shadow: 0 0 0 6px var(--black);
+  border: 0;
+  box-shadow: none;
   background: var(--black);
 }
 
@@ -671,8 +650,8 @@ body.has-scroll-walk .plate-row {
   position: relative;
   overflow: hidden;
   background: var(--black);
-  border: 8px solid var(--gold);
-  box-shadow: 0 0 0 8px var(--cherry);
+  border: 0;
+  box-shadow: none;
 }
 
 .stamp-frame img {
@@ -730,7 +709,6 @@ body.has-scroll-walk .plate-row {
   background: var(--cream);
   color: var(--ink);
   border: 0;
-  border-left: 16px solid var(--gold);
   box-shadow: none;
   margin: 0;
 }
@@ -773,7 +751,6 @@ body.has-scroll-walk .plate-row {
   padding: 2.4rem 1.8rem 2.1rem;
   background: var(--cream);
   border: 0;
-  border-left: 16px solid var(--cherry);
   box-shadow: none;
   margin: 0;
 }
@@ -879,10 +856,10 @@ body.has-scroll-walk .plate-row {
 
 .menu-jump {
   position: sticky;
-  top: 5.75rem;
+  top: 4.6rem;
   z-index: 90;
-  background: var(--black);
-  border-bottom: 4px solid var(--gold);
+  background: var(--navy);
+  border-bottom: 2px solid var(--cherry);
 }
 
 .menu-jump-inner {
@@ -937,7 +914,7 @@ body.has-scroll-walk .plate-row {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 3px solid var(--gold);
+  border: 0;
   margin-right: 0.75rem;
 }
 
@@ -949,9 +926,11 @@ body.has-scroll-walk .plate-row {
 }
 
 .footer-brand em {
-  font-family: "Pacifico", cursive;
-  color: var(--gold);
+  font-family: "Oswald", sans-serif;
   font-style: normal;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--title-blue-bright);
 }
 
 .site-footer a {
@@ -1008,9 +987,8 @@ form button {
 }
 
 .wordmark-panel {
-  background: #fff;
+  background: var(--cream);
   border: 0;
-  border-top: 12px solid var(--cherry);
   box-shadow: none;
   padding: 1.25rem;
   margin: 0;
@@ -1043,14 +1021,8 @@ form button {
 .postcard {
   position: relative;
   overflow: hidden;
-  padding: 2.5rem 0 2.8rem;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      var(--gold) 0 40px,
-      var(--cherry) 40px 48px,
-      var(--booth-blue) 48px 88px
-    );
+  padding: 0;
+  background: var(--cherry);
   color: var(--cream);
 }
 
@@ -1059,10 +1031,9 @@ form button {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  color: var(--ink);
+  background: var(--cherry);
+  color: var(--cream);
   border: 0;
-  border-left: 16px solid var(--cherry);
   box-shadow: none;
   padding: 1.5rem;
 }
@@ -1095,14 +1066,13 @@ form button {
 
 .walkthrough-hud {
   position: sticky;
-  top: 7.4rem;
+  top: 5.4rem;
   z-index: 2;
   max-width: 28rem;
   margin: 3rem 8% 4rem;
   padding: 1.3rem 1.45rem 1.2rem;
-  background: rgba(14, 50, 120, 0.78);
+  background: var(--cherry);
   border: 0;
-  border-left: 16px solid var(--gold);
   box-shadow: none;
   color: var(--cream);
 }
@@ -1115,16 +1085,255 @@ form button {
 }
 
 .header.is-compact .header-bar-inner {
-  min-height: 58px;
+  min-height: 52px;
 }
 
-.header.is-compact .logo-emblem {
-  width: 42px;
-  height: 42px;
+.header.is-compact .logo-lockup {
+  height: 40px;
 }
 
 .header.is-compact .logo-name {
   font-size: 1.15rem;
+}
+
+.object-hero {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 4.6rem);
+  background: var(--cherry);
+  color: #fff;
+}
+
+.object-hero-page {
+  min-height: 0;
+}
+
+.object-hero-visit {
+  background: var(--navy);
+}
+
+.object-hero-type {
+  flex: 1 1 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.8rem 6% 2.4rem;
+  max-width: 40rem;
+}
+
+.object-kicker,
+.object-the,
+.object-product,
+.object-meta,
+.object-word {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+
+.object-kicker {
+  margin: 0 0 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.42em;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.object-the {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.48em;
+  color: var(--gold);
+}
+
+.object-hero h1,
+.object-band h2 {
+  font-family: "Bebas Neue", "Bowlby One SC", "Oswald", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.object-hero h1 {
+  margin: 0.15rem 0 0.55rem;
+  font-size: 6.6rem;
+  color: var(--title-blue-bright);
+}
+
+.object-product {
+  margin: 0 0 1.1rem;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.28em;
+  color: #fff;
+}
+
+.object-meta {
+  margin: 0 0 1.4rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.object-actions {
+  margin: 0;
+}
+
+.object-hero-thing {
+  flex: 1 1 22rem;
+  margin: 0;
+  min-height: 22rem;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.object-hero-thing img {
+  width: 100%;
+  height: calc(100vh - 4.6rem);
+  object-fit: cover;
+  filter: contrast(1.12) saturate(0.92);
+}
+
+.object-hero-page .object-hero-thing img {
+  height: 28rem;
+}
+
+.object-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.object-card {
+  flex: 1 1 14rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 12rem;
+  background: var(--navy);
+}
+
+.object-card-red {
+  background: var(--cherry);
+}
+
+.object-card-navy {
+  background: var(--navy);
+}
+
+.object-card-gold {
+  background: var(--gold);
+}
+
+.object-word {
+  margin: 0;
+  padding: 1.05rem 1.1rem 0.15rem;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: 3.4rem;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: #fff;
+}
+
+.object-card-gold .object-word {
+  color: var(--navy);
+}
+
+.object-card figure {
+  margin: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.object-card img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  filter: contrast(1.1) saturate(0.9);
+}
+
+.object-row-plates .object-card img {
+  height: 14rem;
+}
+
+.object-band {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 3.2rem 0 3.6rem;
+}
+
+.object-band h2 {
+  font-size: 3.4rem;
+  color: var(--title-blue);
+  margin: 0 0 0.7rem;
+}
+
+.object-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.object-band-inner > div {
+  flex: 1 1 18rem;
+  max-width: 34rem;
+  margin-right: 2rem;
+}
+
+.object-band .object-kicker {
+  color: var(--cherry);
+}
+
+.object-band .btn-ghost {
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.object-band .btn-ghost:hover,
+.object-band .btn-ghost:focus {
+  color: var(--cherry);
+  border-color: var(--cherry);
+}
+
+.object-facts {
+  flex: 1 1 14rem;
+  max-width: 22rem;
+  margin: 0.4rem 0 0;
+}
+
+.object-facts div {
+  margin: 0 0 1rem;
+}
+
+.object-facts dt {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cherry);
+}
+
+.object-facts dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.08rem;
+}
+
+.object-copy {
+  padding-top: 2.4rem;
+}
+
+.object-copy-card {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 2rem 1.6rem 2.2rem;
+  margin: 0 0 1.5rem;
+  max-width: 44rem;
+}
+
+.object-copy-card a {
+  color: var(--cherry);
+}
+
+.object-header .logo-lockup {
+  mix-blend-mode: normal;
 }
 
 @media (max-width: 800px) {
@@ -1166,7 +1375,7 @@ form button {
   }
 
   .walkthrough-hud {
-    top: 6.2rem;
+    top: 5.2rem;
   }
 
   .poster-hero {
@@ -1201,7 +1410,7 @@ form button {
   }
 
   .menu-jump {
-    top: 5.4rem;
+    top: 4.6rem;
   }
 
   .split .photo-block,
@@ -1212,6 +1421,38 @@ form button {
   .matchbook-card,
   .caption-card {
     margin: 0;
+  }
+
+  .object-hero {
+    min-height: 0;
+  }
+
+  .object-hero h1 {
+    font-size: 4.2rem;
+  }
+
+  .object-product {
+    font-size: 1.7rem;
+    letter-spacing: 0.18em;
+  }
+
+  .object-word {
+    font-size: 2.6rem;
+  }
+
+  .object-hero-thing,
+  .object-hero-thing img,
+  .object-hero-page .object-hero-thing img {
+    min-height: 0;
+    height: 18rem;
+  }
+
+  .object-band h2 {
+    font-size: 2.4rem;
+  }
+
+  .object-band-inner > div {
+    margin-right: 0;
   }
 }
 

@@ -1,34 +1,29 @@
 {{ partial "header" . }}
 
 <main id="main">
-  <section class="poster-hero">
-    <div class="burst" aria-hidden="true"><span>The<br>house</span></div>
-    <div class="container">
-      <div class="poster-copy">
-        <p class="hero-script">Serving the Hills</p>
-        <p class="poster-eat">About</p>
-        <h1>Boonton Cafe</h1>
-      </div>
-      <figure class="oval-frame">
-        <img src="/img/fifties/diner-waitress-coffee.jpg" alt="Waitress pouring coffee in a 1950s diner">
-      </figure>
+  <section class="object-hero object-hero-page">
+    <div class="object-hero-type">
+      <p class="object-kicker">The house</p>
+      <p class="object-the">The</p>
+      <h1>Boonton<br>Cafe</h1>
+      <p class="object-product">About</p>
     </div>
+    <figure class="object-hero-thing">
+      <img src="/img/fifties/diner-waitress-coffee.jpg" alt="Waitress pouring coffee">
+    </figure>
   </section>
-  <div class="checker" aria-hidden="true"></div>
-  <div class="container page-wrap">
-    <div class="matchbook-card">
-      <p class="block-label">The house</p>
-      <div class="about-copy">
-        {{ .Content }}
-      </div>
+
+  <div class="container page-wrap object-copy">
+    <div class="object-copy-card">
+      {{ .Content }}
     </div>
     <div class="about-marks">
       <div class="wordmark-panel">
-        <p class="block-label">From the sign</p>
-        <img src="/img/brand/wordmark.png" alt="Boonton Cafe red condensed wordmark">
+        <p class="object-kicker">From the sign</p>
+        <img src="/img/brand/wordmark.png" alt="Boonton Cafe condensed wordmark">
       </div>
       <div class="wordmark-panel">
-        <p class="block-label">House seal</p>
+        <p class="object-kicker">House seal</p>
         <img class="seal" src="/img/brand/hills-seal.png" alt="Boonton Cafe Serving the Hills circular seal">
       </div>
     </div>

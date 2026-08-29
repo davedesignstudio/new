@@ -1,104 +1,96 @@
 {{ partial "header" . }}
 
 <main id="main">
-  <section class="poster-hero">
-    <div class="poster-hero-scrim" aria-hidden="true"></div>
-    <div class="bauhaus-geo" aria-hidden="true">
-      <span class="geo-square"></span>
-      <span class="geo-bar"></span>
-      <span class="geo-circle"></span>
+  <section class="object-hero">
+    <div class="object-hero-type">
+      <p class="object-kicker">Boonton, N.J.</p>
+      <p class="object-the">The</p>
+      <h1>Boonton<br>Cafe</h1>
+      <p class="object-product">Hamburger</p>
+      <p class="object-meta">125 Hawkins Place · Open 6 to 4</p>
+      <p class="object-actions">
+        <a class="btn" href="/menu">The menu</a>
+        <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+      </p>
     </div>
-    <div class="burst" aria-hidden="true"><span>Open<br>6 to 4</span></div>
-    <div class="container">
-      <div class="poster-copy">
-        <p class="hero-script">Please wait to be seated</p>
-        <img class="hero-lockup" src="/img/brand/the-boonton-cafe.png" alt="The Boonton Cafe">
-        <h1 class="clip">Boonton Cafe</h1>
-        <p>125 Hawkins Place. Coffee at 6. Dinner plates until 4. New owners. Same booths.</p>
+    <figure class="object-hero-thing">
+      <img src="/img/food/smashed-burger.jpg" alt="Hamburger">
+    </figure>
+  </section>
+
+  <section class="object-row">
+    <article class="object-card object-card-red">
+      <p class="object-word">Coffee</p>
+      <figure>
+        <img src="/img/fifties/diner-counter.jpg" alt="Coffee counter">
+      </figure>
+    </article>
+    <article class="object-card object-card-navy">
+      <p class="object-word">Booth</p>
+      <figure>
+        <img src="/img/fifties/diner-booth.jpg" alt="Vinyl booth">
+      </figure>
+    </article>
+    <article class="object-card object-card-gold">
+      <p class="object-word">Malt</p>
+      <figure>
+        <img src="/img/fifties/diner-burger-malt.jpg" alt="Burger and malt">
+      </figure>
+    </article>
+  </section>
+
+  <section class="object-row object-row-plates">
+    <article class="object-card object-card-navy">
+      <p class="object-word">Turkey</p>
+      <figure>
+        <img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner">
+      </figure>
+    </article>
+    <article class="object-card object-card-red">
+      <p class="object-word">Meatloaf</p>
+      <figure>
+        <img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner">
+      </figure>
+    </article>
+    <article class="object-card object-card-gold">
+      <p class="object-word">Steak</p>
+      <figure>
+        <img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak">
+      </figure>
+    </article>
+    <article class="object-card object-card-navy">
+      <p class="object-word">Pie</p>
+      <figure>
+        <img src="/img/fifties/diner-pie-case.jpg" alt="Pie case">
+      </figure>
+    </article>
+  </section>
+
+  <section class="object-band">
+    <div class="container object-band-inner">
+      <div>
+        <p class="object-kicker">The house</p>
+        <h2>One diner. One menu.</h2>
+        <p>Greek diner cooking on a New Jersey counter. Breakfast through the last dinner plate at four. New owners. Same stools.</p>
         <p>
-          <a class="btn" href="/menu">Tonight’s dinners</a>
-          <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+          <a class="btn" href="/menu">Read the check</a>
+          <a class="btn-ghost" href="/contact">Hawkins Place</a>
         </p>
       </div>
-    </div>
-  </section>
-
-  <div class="checker" aria-hidden="true"></div>
-
-  <section class="split">
-    <figure class="photo-block chrome-frame">
-      <img src="/img/fifties/diner-counter.jpg" alt="Chrome lunch counter and red stools">
-    </figure>
-    <div class="matchbook-card cherry">
-      <p class="block-label">The counter</p>
-      <h2>Stools, coffee, pie case</h2>
-      <p>A long chrome rail. Swivel seats. The morning starts here and the last plate leaves before 4.</p>
-      <p><a class="btn" href="/menu">Order from the house</a></p>
-    </div>
-  </section>
-
-  <section class="split">
-    <div class="matchbook-card black">
-      <p class="block-label">The booths</p>
-      <h2>Vinyl, Formica, jukebox</h2>
-      <p>Red booths, checker floor, neon on the chrome. Come for lunch that still eats like dinner.</p>
-    </div>
-    <figure class="photo-block chrome-frame">
-      <img src="/img/fifties/diner-booth.jpg" alt="Red vinyl booth and Formica table">
-    </figure>
-  </section>
-
-  <div class="checker" aria-hidden="true"></div>
-
-  <section class="band black">
-    <div class="container">
-      <p class="block-label">Tonight’s dinners</p>
-      <h2>Plates until 4</h2>
-    </div>
-  </section>
-  <div class="plate-row">
-    <article>
-      <figure class="round-frame"><img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner"></figure>
-      <h3>Hot turkey</h3>
-    </article>
-    <article>
-      <figure class="round-frame"><img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner"></figure>
-      <h3>Meatloaf</h3>
-    </article>
-    <article>
-      <figure class="round-frame"><img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak"></figure>
-      <h3>Chicken fried steak</h3>
-    </article>
-    <article>
-      <figure class="round-frame"><img src="/img/fifties/diner-burger-malt.jpg" alt="Cheeseburger and malt"></figure>
-      <h3>Burger &amp; malt</h3>
-    </article>
-  </div>
-
-  <section class="split">
-    <figure class="photo-block stamp-frame">
-      <img src="/img/fifties/diner-jukebox.jpg" alt="1950s diner jukebox">
-    </figure>
-    <figure class="photo-block stamp-frame">
-      <img src="/img/fifties/diner-pie-case.jpg" alt="Revolving pie case">
-    </figure>
-  </section>
-
-  <section class="band formica">
-    <div class="container split align-center">
-      <div class="matchbook-card turquoise">
-        <p class="block-label">Walk in</p>
-        <h2>Hawkins Place</h2>
-        <p>{{ .Site.Params.address }}, {{ .Site.Params.city }}. Dine-in, takeout, patio. Seven days from 6 a.m.</p>
-        <dl class="facts">
-          <div><dt>Hours</dt><dd>{{ .Site.Params.hours }}</dd></div>
-          <div><dt>Phone</dt><dd>{{ .Site.Params.phone }}</dd></div>
-        </dl>
-        <p><a class="btn" href="/contact">Plan a visit</a></p>
-      </div>
-      <figure class="oval-frame small">
-        <img src="/img/fifties/diner-parking-lot.jpg" alt="Diner parking lot at dusk">
-      </figure>
+      <dl class="object-facts">
+        <div>
+          <dt>Hours</dt>
+          <dd>{{ .Site.Params.hours }}</dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd>{{ .Site.Params.phone }}</dd>
+        </div>
+        <div>
+          <dt>Address</dt>
+          <dd>{{ .Site.Params.address }}<br>{{ .Site.Params.city }}</dd>
+        </div>
+      </dl>
     </div>
   </section>
 </main>
