@@ -163,7 +163,7 @@ function dps_seed_demo_content( $force = false ) {
 		return false;
 	}
 
-	$hero_id   = dps_sideload_theme_image( 'expresso-print-window.png', 'EXPresso cafe window' );
+	$hero_id   = dps_sideload_theme_image( 'studio-runner.png', 'Studio runner illustration' );
 	$about_id  = dps_sideload_theme_image( 'about-desk.png', 'Studio desk' );
 	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(

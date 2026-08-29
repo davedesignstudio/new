@@ -1,16 +1,19 @@
 :root {
-  --ink: #12163a;
-  --ink-soft: #1c2558;
+  --ink: #f3ead8;
+  --ink-soft: #d8cbb8;
   --stone: #ece6c4;
   --stone-deep: #d8d09a;
   --paper: #f8f4dc;
+  --maroon: #6b1324;
+  --stage: #000000;
+  --stage-width: min(1240px, 100%);
   --verdigris: #c42e86;
   --verdigris-bright: #d03393;
   --heat: #2e41a1;
   --heat-bright: #3d54c4;
   --brass: #fcdd44;
-  --muted: #5a5670;
-  --line: rgba(18, 22, 58, 0.14);
+  --muted: #c4b4a4;
+  --line: rgba(243, 234, 216, 0.16);
   --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
   --space: clamp(1rem, 2.5vw, 2rem);
@@ -26,15 +29,17 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--maroon);
 }
 
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    radial-gradient(1200px 700px at 12% -10%, rgba(252, 221, 68, 0.22), transparent 55%),
-    radial-gradient(900px 600px at 100% 0%, rgba(46, 65, 161, 0.14), transparent 50%),
-    linear-gradient(165deg, #f8f4dc 0%, #efe8c4 48%, #e4dcb0 100%);
+  background-color: var(--maroon);
+  background-image: linear-gradient(var(--stage), var(--stage));
+  background-size: var(--stage-width) 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: var(--font-body);
   font-size: 1.05rem;
@@ -85,9 +90,9 @@ select {
   gap: 1rem;
   padding: 1rem var(--space);
   color: var(--ink);
-  background: rgba(248, 244, 220, 0.96);
+  background: transparent;
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
 }
 
 .admin-bar .site-header {
@@ -156,6 +161,8 @@ select {
 
 .hero {
   position: relative;
+  width: var(--stage-width);
+  margin-inline: auto;
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
@@ -266,7 +273,7 @@ select {
 }
 
 .btn-dark {
-  background: var(--ink);
+  background: var(--maroon);
   color: var(--paper);
 }
 
@@ -776,7 +783,7 @@ select {
 @media (max-width: 720px) {
   .site-header {
     color: var(--ink);
-    background: rgba(236, 239, 232, 0.96);
+    background: var(--stage);
   }
 
   .menu-toggle {
@@ -793,7 +800,7 @@ select {
     align-items: stretch;
     gap: 0;
     padding: 0.5rem;
-    background: var(--paper);
+    background: var(--stage);
     border: 1px solid var(--line);
     color: var(--ink);
   }

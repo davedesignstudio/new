@@ -1,34 +1,37 @@
-/* Studio chrome from the D Philhower mark: royal blue, sun yellow, magenta D.
-   Official client marks on the site are unchanged. */
+/* Studio chrome: maroon sides, black center. Official client marks stay as they are. */
 
 :root {
-  --ink: #12163a;
-  --ink-soft: #1c2558;
+  --ink: #f3ead8;
+  --ink-soft: #d8cbb8;
   --stone: #ece6c4;
   --stone-deep: #d8d09a;
   --paper: #f8f4dc;
+  --maroon: #6b1324;
+  --stage: #000000;
+  --stage-width: min(1240px, 100%);
   --verdigris: #c42e86;
   --verdigris-bright: #d03393;
   --heat: #2e41a1;
   --heat-bright: #3d54c4;
   --brass: #fcdd44;
-  --muted: #5a5670;
-  --line: rgba(18, 22, 58, 0.14);
+  --muted: #c4b4a4;
+  --line: rgba(243, 234, 216, 0.16);
   --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
 }
 
 body {
-  background:
-    linear-gradient(180deg, #2e41a1 0 5px, transparent 5px),
-    radial-gradient(1100px 620px at 8% -8%, rgba(252, 221, 68, 0.2), transparent 52%),
-    radial-gradient(900px 540px at 100% 0%, rgba(196, 46, 134, 0.12), transparent 48%),
-    linear-gradient(165deg, #f8f4dc 0%, #efe8c4 52%, #e4dcb0 100%);
+  background-color: var(--maroon);
+  background-image: linear-gradient(var(--stage), var(--stage));
+  background-size: var(--stage-width) 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: var(--font-body);
 }
 
 .site-header {
-  background: rgba(248, 244, 220, 0.96);
+  background: transparent;
   border-bottom: 1px solid var(--line);
   box-shadow: none;
 }
@@ -64,20 +67,25 @@ body {
 }
 
 .hero {
+  width: var(--stage-width);
+  margin-inline: auto;
   min-height: 88vh;
   min-height: 88dvh;
   color: #fff8dc;
 }
 
 .hero-media img {
+  object-fit: contain;
+  object-position: center center;
   transform: none;
   animation: none;
+  background: var(--stage);
 }
 
 .hero-media::after {
   background:
-    linear-gradient(180deg, rgba(10, 12, 32, 0.42) 0%, rgba(10, 12, 32, 0.18) 40%, rgba(10, 12, 32, 0.9) 100%),
-    linear-gradient(90deg, rgba(18, 22, 58, 0.62), transparent 60%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.72) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent 58%);
 }
 
 .hero-content {
@@ -375,11 +383,11 @@ body {
 
 @media (max-width: 720px) {
   .site-header {
-    background: rgba(248, 244, 220, 0.98);
+    background: var(--stage);
   }
 
   .nav {
-    background: var(--paper);
+    background: var(--stage);
     border-radius: 0;
   }
 

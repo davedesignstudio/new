@@ -8,7 +8,7 @@
 get_header();
 
 $hero_id  = absint( get_theme_mod( 'dps_hero_image' ) );
-$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'full' ) : dps_image_url( 'expresso-print-window.png' );
+$hero_src = $hero_id ? wp_get_attachment_image_url( $hero_id, 'full' ) : dps_image_url( 'studio-runner.png' );
 $work_url = get_post_type_archive_link( 'dps_work' );
 if ( ! $work_url ) {
 	$work_url = home_url( '/work/' );
@@ -19,7 +19,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 <main id="main">
 	<section class="hero">
 		<div class="hero-media" aria-hidden="true">
-			<img src="<?php echo esc_url( $hero_src ); ?>" alt="" width="1536" height="1024">
+			<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php esc_attr_e( 'Woman running with a loaf of bread and a coffee cup', 'dphilhower-studio' ); ?>" width="1318" height="1017">
 		</div>
 		<div class="hero-content">
 			<p class="hero-brand"><?php echo esc_html( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?></p>
