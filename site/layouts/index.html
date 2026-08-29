@@ -1,67 +1,59 @@
 {{ partial "header" . }}
 
 <main id="main">
-  <section class="object-hero">
-    <div class="object-hero-type">
-      <p class="object-kicker">Boonton, N.J.</p>
-      <p class="object-the">The</p>
-      <h1>Boonton<br>Cafe</h1>
-      <p class="object-product">Hamburger</p>
-      <p class="object-meta">125 Hawkins Place · Open 6 to 4</p>
-      <p class="object-actions">
-        <a class="btn" href="/menu">The menu</a>
-        <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
-      </p>
-    </div>
-    <figure class="object-hero-thing">
-      <img src="/img/food/smashed-burger.jpg" alt="Hamburger">
+  <section class="object-poster object-poster-hero">
+    <p class="object-brand">Boonton Cafe</p>
+    <h1>Hamburger</h1>
+    <figure class="object-figure">
+      <img src="/img/plakat/hamburger.png" alt="Hamburger">
     </figure>
+    <p class="object-place">Boonton, N.J.</p>
   </section>
 
   <section class="object-row">
-    <article class="object-card object-card-red">
-      <p class="object-word">Coffee</p>
-      <figure>
-        <img src="/img/fifties/diner-counter.jpg" alt="Coffee counter">
+    <article class="object-poster object-poster-mini object-poster-navy">
+      <h2>Coffee</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/coffee.png" alt="Coffee">
       </figure>
     </article>
-    <article class="object-card object-card-navy">
-      <p class="object-word">Booth</p>
-      <figure>
-        <img src="/img/fifties/diner-booth.jpg" alt="Vinyl booth">
+    <article class="object-poster object-poster-mini object-poster-gold">
+      <h2>Stool</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/stool.png" alt="Counter stool">
       </figure>
     </article>
-    <article class="object-card object-card-gold">
-      <p class="object-word">Malt</p>
-      <figure>
-        <img src="/img/fifties/diner-burger-malt.jpg" alt="Burger and malt">
+    <article class="object-poster object-poster-mini">
+      <h2>Malt</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/malt.png" alt="Burger and malt">
       </figure>
     </article>
   </section>
 
-  <section class="object-row object-row-plates">
-    <article class="object-card object-card-navy">
-      <p class="object-word">Turkey</p>
-      <figure>
-        <img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner">
+  <section class="object-row">
+    <article class="object-poster object-poster-mini object-poster-navy">
+      <h2>Turkey</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/turkey.png" alt="Hot turkey dinner">
       </figure>
     </article>
-    <article class="object-card object-card-red">
-      <p class="object-word">Meatloaf</p>
-      <figure>
-        <img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner">
+    <article class="object-poster object-poster-mini">
+      <h2>Meatloaf</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/meatloaf.png" alt="Meatloaf dinner">
       </figure>
     </article>
-    <article class="object-card object-card-gold">
-      <p class="object-word">Steak</p>
-      <figure>
-        <img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak">
+    <article class="object-poster object-poster-mini object-poster-gold">
+      <h2>Steak</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/steak.png" alt="Chicken fried steak">
       </figure>
     </article>
-    <article class="object-card object-card-navy">
-      <p class="object-word">Pie</p>
-      <figure>
-        <img src="/img/fifties/diner-pie-case.jpg" alt="Pie case">
+    <article class="object-poster object-poster-mini object-poster-navy">
+      <h2>Pie</h2>
+      <figure class="object-figure">
+        <img src="/img/plakat/pie.png" alt="Pie and coffee">
       </figure>
     </article>
   </section>
@@ -69,11 +61,11 @@
   <section class="object-band">
     <div class="container object-band-inner">
       <div>
-        <p class="object-kicker">The house</p>
+        <p class="object-brand">The house</p>
         <h2>One diner. One menu.</h2>
         <p>Greek diner cooking on a New Jersey counter. Breakfast through the last dinner plate at four. New owners. Same stools.</p>
         <p>
-          <a class="btn" href="/menu">Read the check</a>
+          <a class="btn" href="/menu">The menu</a>
           <a class="btn-ghost" href="/contact">Hawkins Place</a>
         </p>
       </div>
