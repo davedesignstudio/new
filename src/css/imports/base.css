@@ -16,6 +16,8 @@
   --booth-blue: #1648a8;
   --booth-blue-dark: #0e3278;
   --navy: #01071a;
+  --title-blue: #3d8bfd;
+  --title-blue-bright: #8ec5ff;
   --header-offset: 6.6rem;
 }
 
@@ -77,6 +79,7 @@ h3 {
   text-transform: uppercase;
   line-height: 1.12;
   margin: 0 0 0.55rem;
+  color: var(--title-blue);
 }
 
 .poster-copy h1,
@@ -554,7 +557,7 @@ body.has-scroll-walk .plate-row {
   margin: 0 0 0.15rem;
   font-family: "Bowlby One SC", "Oswald", sans-serif;
   font-size: 5.2rem;
-  color: var(--gold);
+  color: var(--title-blue-bright);
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 0.85;
@@ -563,7 +566,7 @@ body.has-scroll-walk .plate-row {
 
 .poster-copy h1 {
   font-size: 2.55rem;
-  color: #fff;
+  color: var(--title-blue-bright);
   text-shadow: none;
 }
 
@@ -756,8 +759,14 @@ body.has-scroll-walk .plate-row {
   color: #fff;
 }
 
-.matchbook-card.turquoise .facts dt {
-  color: var(--gold);
+.matchbook-card.cherry h2,
+.matchbook-card.black h2,
+.matchbook-card.turquoise h2,
+.caption-card.cherry h2,
+.caption-card.black h2,
+.band.black h2,
+.band.cherry h2 {
+  color: var(--title-blue-bright);
 }
 
 .caption-card {
@@ -810,7 +819,7 @@ body.has-scroll-walk .plate-row {
   font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gold);
+  color: var(--title-blue-bright);
 }
 
 .band {
@@ -1101,8 +1110,8 @@ form button {
 .walkthrough-hud h1 {
   font-family: "Bowlby One SC", "Oswald", sans-serif;
   font-weight: 400;
-  color: #fff;
-  text-shadow: 3px 3px 0 var(--black);
+  color: var(--title-blue-bright);
+  text-shadow: none;
 }
 
 .header.is-compact .header-bar-inner {

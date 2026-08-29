@@ -60,8 +60,8 @@ body.is-menu .menu-jump a:focus {
   font-family: "Bowlby One SC", "Oswald", sans-serif;
   font-weight: 400;
   font-size: 3.2rem;
-  color: #fff;
-  text-shadow: 3px 3px 0 var(--black);
+  color: var(--title-blue-bright);
+  text-shadow: none;
   margin: 0 0 0.35rem;
 }
 
@@ -111,7 +111,7 @@ body.is-menu .menu-jump a:focus {
   letter-spacing: 0;
   text-transform: none;
   text-align: center;
-  color: var(--cherry);
+  color: var(--title-blue);
   line-height: 1.05;
 }
 
@@ -127,7 +127,7 @@ body.is-menu .menu-jump a:focus {
   font-size: 1.45rem;
   letter-spacing: 0;
   text-transform: none;
-  color: #e06a1c;
+  color: var(--title-blue);
   line-height: 1.1;
 }
 
@@ -261,9 +261,9 @@ body.is-menu .menu-jump a:focus {
 }
 
 .matchbook-cover h1 {
-  color: #fff;
+  color: var(--title-blue-bright);
   font-size: 2rem;
-  text-shadow: 3px 3px 0 var(--black);
+  text-shadow: none;
 }
 
 .matchbook-cover .burst {
@@ -396,7 +396,7 @@ body.is-menu .menu-jump a:focus {
 .check-section h2 {
   margin: 0 0 0.15rem;
   font-size: 0.95rem;
-  color: var(--cherry);
+  color: var(--title-blue);
 }
 
 .check-section-note {
