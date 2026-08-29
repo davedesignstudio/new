@@ -1,0 +1,702 @@
+[
+  {
+    "slug": "oak-and-ember",
+    "name": "Oak & Ember",
+    "cat": "cafe",
+    "palette": "charcoal, copper, cream",
+    "tone": "neighborhood espresso roast house"
+  },
+  {
+    "slug": "north-lantern",
+    "name": "North Lantern",
+    "cat": "cafe",
+    "palette": "navy, warm gold, ivory",
+    "tone": "morning bakery cafe"
+  },
+  {
+    "slug": "millstone-drip",
+    "name": "Millstone Drip",
+    "cat": "cafe",
+    "palette": "stone gray, espresso brown, cream",
+    "tone": "pour-over bar"
+  },
+  {
+    "slug": "cedar-cup",
+    "name": "Cedar Cup",
+    "cat": "cafe",
+    "palette": "cedar green, cream, black",
+    "tone": "quiet woodland coffee"
+  },
+  {
+    "slug": "folio-roast",
+    "name": "Folio Roast",
+    "cat": "cafe",
+    "palette": "ink black, paper cream, rust",
+    "tone": "bookshop cafe"
+  },
+  {
+    "slug": "harbor-steam",
+    "name": "Harbor Steam",
+    "cat": "cafe",
+    "palette": "sea teal, foam white, navy",
+    "tone": "waterfront coffee cart"
+  },
+  {
+    "slug": "velvet-kiln",
+    "name": "Velvet Kiln",
+    "cat": "cafe",
+    "palette": "deep plum, gold, black",
+    "tone": "evening dessert coffee"
+  },
+  {
+    "slug": "ridge-press",
+    "name": "Ridge Press",
+    "cat": "cafe",
+    "palette": "slate, amber, white",
+    "tone": "mountain trail coffee"
+  },
+  {
+    "slug": "linen-latte",
+    "name": "Linen Latte",
+    "cat": "cafe",
+    "palette": "linen beige, soft brown, white",
+    "tone": "soft minimal cafe"
+  },
+  {
+    "slug": "bolt-brew",
+    "name": "Bolt Brew",
+    "cat": "cafe",
+    "palette": "electric blue, black, silver",
+    "tone": "fast commute coffee"
+  },
+  {
+    "slug": "red-table-inn",
+    "name": "Red Table Inn",
+    "cat": "restaurant",
+    "palette": "barn red, cream, black",
+    "tone": "farm-table supper club"
+  },
+  {
+    "slug": "salt-crate",
+    "name": "Salt Crate",
+    "cat": "restaurant",
+    "palette": "salt white, driftwood, navy",
+    "tone": "seafood shack elevated"
+  },
+  {
+    "slug": "iron-skillet-co",
+    "name": "Iron Skillet Co.",
+    "cat": "restaurant",
+    "palette": "cast-iron black, ember orange",
+    "tone": "cast-iron comfort food"
+  },
+  {
+    "slug": "parsley-row",
+    "name": "Parsley Row",
+    "cat": "restaurant",
+    "palette": "herb green, cream, terracotta",
+    "tone": "garden bistro"
+  },
+  {
+    "slug": "midnight-noodle",
+    "name": "Midnight Noodle",
+    "cat": "restaurant",
+    "palette": "midnight blue, chili red, cream",
+    "tone": "late-night noodle bar"
+  },
+  {
+    "slug": "brick-and-basil",
+    "name": "Brick & Basil",
+    "cat": "restaurant",
+    "palette": "brick red, basil green, cream",
+    "tone": "wood-fired Italian"
+  },
+  {
+    "slug": "copper-ladle",
+    "name": "Copper Ladle",
+    "cat": "restaurant",
+    "palette": "copper, cream, charcoal",
+    "tone": "soup and stew house"
+  },
+  {
+    "slug": "field-fork",
+    "name": "Field Fork",
+    "cat": "restaurant",
+    "palette": "wheat gold, soil brown, green",
+    "tone": "farm-to-table"
+  },
+  {
+    "slug": "smoke-lattice",
+    "name": "Smoke Lattice",
+    "cat": "restaurant",
+    "palette": "smoke gray, cherry wood, black",
+    "tone": "modern BBQ"
+  },
+  {
+    "slug": "citrus-rail",
+    "name": "Citrus Rail",
+    "cat": "restaurant",
+    "palette": "citrus yellow, white, teal",
+    "tone": "bright lunch counter"
+  },
+  {
+    "slug": "flour-chapel",
+    "name": "Flour Chapel",
+    "cat": "bakery",
+    "palette": "flour white, soft pink, brown",
+    "tone": "artisan bakery"
+  },
+  {
+    "slug": "honeycomb-lane",
+    "name": "Honeycomb Lane",
+    "cat": "bakery",
+    "palette": "honey gold, cream, black",
+    "tone": "honey pastry shop"
+  },
+  {
+    "slug": "crumb-circuit",
+    "name": "Crumb Circuit",
+    "cat": "bakery",
+    "palette": "warm brown, cream, coral",
+    "tone": "cookie lab"
+  },
+  {
+    "slug": "sugar-spine",
+    "name": "Sugar Spine",
+    "cat": "bakery",
+    "palette": "pastel mint, white, gold",
+    "tone": "wedding cake studio"
+  },
+  {
+    "slug": "oven-door",
+    "name": "Oven Door",
+    "cat": "bakery",
+    "palette": "ember orange, charcoal, cream",
+    "tone": "sourdough bakery"
+  },
+  {
+    "slug": "frost-paddle",
+    "name": "Frost Paddle",
+    "cat": "dessert",
+    "palette": "ice blue, cream, coral",
+    "tone": "hand-paddled ice cream"
+  },
+  {
+    "slug": "cone-compass",
+    "name": "Cone Compass",
+    "cat": "dessert",
+    "palette": "waffle tan, sky blue, cherry",
+    "tone": "soft-serve stand"
+  },
+  {
+    "slug": "milkglass",
+    "name": "Milkglass",
+    "cat": "dessert",
+    "palette": "milk white, soft blue, silver",
+    "tone": "milkshake parlor"
+  },
+  {
+    "slug": "scoop-radius",
+    "name": "Scoop Radius",
+    "cat": "dessert",
+    "palette": "berry purple, cream, mint",
+    "tone": "gelato bar"
+  },
+  {
+    "slug": "drizzle-dock",
+    "name": "Drizzle Dock",
+    "cat": "dessert",
+    "palette": "chocolate, caramel, cream",
+    "tone": "sundae shop"
+  },
+  {
+    "slug": "pie-orbit",
+    "name": "Pie Orbit",
+    "cat": "pizza",
+    "palette": "tomato red, mozzarella cream, basil",
+    "tone": "orbit-themed pizza"
+  },
+  {
+    "slug": "crust-and-key",
+    "name": "Crust & Key",
+    "cat": "pizza",
+    "palette": "key gold, crust tan, black",
+    "tone": "neighborhood pizzeria"
+  },
+  {
+    "slug": "slice-signal",
+    "name": "Slice Signal",
+    "cat": "pizza",
+    "palette": "signal red, white, charcoal",
+    "tone": "by-the-slice window"
+  },
+  {
+    "slug": "dough-decimal",
+    "name": "Dough Decimal",
+    "cat": "pizza",
+    "palette": "flour white, sauce red, olive",
+    "tone": "precise craft pizza"
+  },
+  {
+    "slug": "wedge-works",
+    "name": "Wedge Works",
+    "cat": "pizza",
+    "palette": "wedge yellow, black, red",
+    "tone": "industrial pizza works"
+  },
+  {
+    "slug": "counter-crest",
+    "name": "Counter Crest",
+    "cat": "deli",
+    "palette": "crest navy, mustard, cream",
+    "tone": "classic deli counter"
+  },
+  {
+    "slug": "jar-and-rye",
+    "name": "Jar & Rye",
+    "cat": "deli",
+    "palette": "rye brown, pickle green, cream",
+    "tone": "pickle-and-sandwich deli"
+  },
+  {
+    "slug": "aisle-ember",
+    "name": "Aisle Ember",
+    "cat": "market",
+    "palette": "ember orange, grocery green, kraft",
+    "tone": "specialty market"
+  },
+  {
+    "slug": "pantry-north",
+    "name": "Pantry North",
+    "cat": "market",
+    "palette": "pine green, cream, wood",
+    "tone": "northern pantry market"
+  },
+  {
+    "slug": "basket-borough",
+    "name": "Basket Borough",
+    "cat": "market",
+    "palette": "wicker tan, berry, leaf",
+    "tone": "borough grocery"
+  },
+  {
+    "slug": "low-watt",
+    "name": "Low Watt",
+    "cat": "bar",
+    "palette": "dim amber, black, brass",
+    "tone": "low-light cocktail bar"
+  },
+  {
+    "slug": "gilt-room",
+    "name": "Gilt Room",
+    "cat": "bar",
+    "palette": "gilt gold, velvet burgundy, black",
+    "tone": "speakeasy lounge"
+  },
+  {
+    "slug": "radar-tap",
+    "name": "Radar Tap",
+    "cat": "bar",
+    "palette": "radar green, black, silver",
+    "tone": "craft beer taproom"
+  },
+  {
+    "slug": "echo-booth",
+    "name": "Echo Booth",
+    "cat": "bar",
+    "palette": "vinyl black, neon pink, cream",
+    "tone": "listening bar"
+  },
+  {
+    "slug": "tide-measure",
+    "name": "Tide Measure",
+    "cat": "bar",
+    "palette": "tide blue, rope tan, white",
+    "tone": "harbor cocktail bar"
+  },
+  {
+    "slug": "plumb-line-co",
+    "name": "Plumb Line Co.",
+    "cat": "trade",
+    "palette": "tool steel, navy, orange accent",
+    "tone": "precision plumbing"
+  },
+  {
+    "slug": "ridgebeam",
+    "name": "Ridgebeam",
+    "cat": "trade",
+    "palette": "timber brown, sky, black",
+    "tone": "custom framing builders"
+  },
+  {
+    "slug": "volt-haven",
+    "name": "Volt Haven",
+    "cat": "trade",
+    "palette": "electric yellow, charcoal, white",
+    "tone": "residential electrician"
+  },
+  {
+    "slug": "hearth-right",
+    "name": "Hearth Right",
+    "cat": "trade",
+    "palette": "hearth red, stone, cream",
+    "tone": "fireplace and chimney"
+  },
+  {
+    "slug": "glass-meridian",
+    "name": "Glass Meridian",
+    "cat": "trade",
+    "palette": "glass cyan, silver, black",
+    "tone": "window and glass install"
+  },
+  {
+    "slug": "ink-harbor",
+    "name": "Ink Harbor",
+    "cat": "studio",
+    "palette": "ink black, harbor blue, cream",
+    "tone": "print and brand studio"
+  },
+  {
+    "slug": "frame-latitude",
+    "name": "Frame Latitude",
+    "cat": "studio",
+    "palette": "frame black, soft gold, white",
+    "tone": "photo studio"
+  },
+  {
+    "slug": "type-quarry",
+    "name": "Type Quarry",
+    "cat": "studio",
+    "palette": "stone, ink, paper",
+    "tone": "typography workshop"
+  },
+  {
+    "slug": "signal-draft",
+    "name": "Signal Draft",
+    "cat": "studio",
+    "palette": "draft blue, white, red pin",
+    "tone": "architecture graphics"
+  },
+  {
+    "slug": "mute-stage",
+    "name": "Mute Stage",
+    "cat": "studio",
+    "palette": "stage black, spotlight gold",
+    "tone": "performance design"
+  },
+  {
+    "slug": "still-water-spa",
+    "name": "Still Water Spa",
+    "cat": "wellness",
+    "palette": "still blue, sand, white",
+    "tone": "quiet spa"
+  },
+  {
+    "slug": "root-and-rest",
+    "name": "Root & Rest",
+    "cat": "wellness",
+    "palette": "root brown, sage, cream",
+    "tone": "yoga and recovery"
+  },
+  {
+    "slug": "bloom-clinic",
+    "name": "Bloom Clinic",
+    "cat": "wellness",
+    "palette": "bloom pink, leaf, white",
+    "tone": "skin clinic"
+  },
+  {
+    "slug": "pulse-grove",
+    "name": "Pulse Grove",
+    "cat": "wellness",
+    "palette": "pulse coral, grove green",
+    "tone": "fitness grove"
+  },
+  {
+    "slug": "calm-metric",
+    "name": "Calm Metric",
+    "cat": "wellness",
+    "palette": "soft gray, teal, white",
+    "tone": "mindfulness brand"
+  },
+  {
+    "slug": "wool-radar",
+    "name": "Wool Radar",
+    "cat": "retail",
+    "palette": "wool gray, rust, cream",
+    "tone": "knit goods shop"
+  },
+  {
+    "slug": "canvas-depot",
+    "name": "Canvas Depot",
+    "cat": "retail",
+    "palette": "canvas tan, navy, red",
+    "tone": "workwear store"
+  },
+  {
+    "slug": "brass-index",
+    "name": "Brass Index",
+    "cat": "retail",
+    "palette": "brass, black, ivory",
+    "tone": "home hardware boutique"
+  },
+  {
+    "slug": "paper-orbit",
+    "name": "Paper Orbit",
+    "cat": "retail",
+    "palette": "paper white, orbit blue, black",
+    "tone": "stationery shop"
+  },
+  {
+    "slug": "cedar-shelf",
+    "name": "Cedar Shelf",
+    "cat": "retail",
+    "palette": "cedar, cream, soft black",
+    "tone": "home goods"
+  },
+  {
+    "slug": "torque-lane",
+    "name": "Torque Lane",
+    "cat": "auto",
+    "palette": "torque orange, asphalt, white",
+    "tone": "auto garage"
+  },
+  {
+    "slug": "chrome-parish",
+    "name": "Chrome Parish",
+    "cat": "auto",
+    "palette": "chrome silver, black, red",
+    "tone": "classic car shop"
+  },
+  {
+    "slug": "axle-north",
+    "name": "Axle North",
+    "cat": "auto",
+    "palette": "axle steel, forest, yellow",
+    "tone": "truck service"
+  },
+  {
+    "slug": "rim-and-road",
+    "name": "Rim & Road",
+    "cat": "auto",
+    "palette": "rim black, road gray, neon",
+    "tone": "tire and wheel"
+  },
+  {
+    "slug": "idle-craft",
+    "name": "Idle Craft",
+    "cat": "auto",
+    "palette": "idle green, cream, black",
+    "tone": "custom motorcycle"
+  },
+  {
+    "slug": "trail-cipher",
+    "name": "Trail Cipher",
+    "cat": "outdoor",
+    "palette": "trail green, map cream, rust",
+    "tone": "hiking outfitter"
+  },
+  {
+    "slug": "summit-flask",
+    "name": "Summit Flask",
+    "cat": "outdoor",
+    "palette": "summit blue, steel, white",
+    "tone": "outdoor bottle brand"
+  },
+  {
+    "slug": "pine-bearing",
+    "name": "Pine Bearing",
+    "cat": "outdoor",
+    "palette": "pine, compass brass, cream",
+    "tone": "camping co"
+  },
+  {
+    "slug": "river-knot",
+    "name": "River Knot",
+    "cat": "outdoor",
+    "palette": "river blue, rope tan, green",
+    "tone": "fishing and river gear"
+  },
+  {
+    "slug": "wind-ledger",
+    "name": "Wind Ledger",
+    "cat": "outdoor",
+    "palette": "wind gray, sky, orange",
+    "tone": "sailing outfitter"
+  },
+  {
+    "slug": "local-packet",
+    "name": "Local Packet",
+    "cat": "tech",
+    "palette": "packet blue, white, lime",
+    "tone": "neighborhood delivery tech"
+  },
+  {
+    "slug": "grid-neighbor",
+    "name": "Grid Neighbor",
+    "cat": "tech",
+    "palette": "grid black, neighbor yellow",
+    "tone": "community energy"
+  },
+  {
+    "slug": "byte-barn",
+    "name": "Byte Barn",
+    "cat": "tech",
+    "palette": "barn red, screen blue, cream",
+    "tone": "rural tech cafe"
+  },
+  {
+    "slug": "node-porch",
+    "name": "Node Porch",
+    "cat": "tech",
+    "palette": "porch green, node purple, cream",
+    "tone": "smart home install"
+  },
+  {
+    "slug": "signal-stoop",
+    "name": "Signal Stoop",
+    "cat": "tech",
+    "palette": "stoop brown, signal cyan",
+    "tone": "neighborhood wifi co-op"
+  },
+  {
+    "slug": "little-orbit",
+    "name": "Little Orbit",
+    "cat": "family",
+    "palette": "orbit pastel, cream, navy",
+    "tone": "kids play cafe"
+  },
+  {
+    "slug": "story-latch",
+    "name": "Story Latch",
+    "cat": "family",
+    "palette": "story teal, latch gold, cream",
+    "tone": "children's bookstore"
+  },
+  {
+    "slug": "crayon-dock",
+    "name": "Crayon Dock",
+    "cat": "family",
+    "palette": "crayon multi, white, black",
+    "tone": "art studio for kids"
+  },
+  {
+    "slug": "nap-and-map",
+    "name": "Nap & Map",
+    "cat": "family",
+    "palette": "soft blue, map cream, coral",
+    "tone": "family travel kits"
+  },
+  {
+    "slug": "pebble-school",
+    "name": "Pebble School",
+    "cat": "family",
+    "palette": "pebble gray, leaf, cream",
+    "tone": "early learning"
+  },
+  {
+    "slug": "stem-and-stone",
+    "name": "Stem & Stone",
+    "cat": "floral",
+    "palette": "stem green, stone, blush",
+    "tone": "florist"
+  },
+  {
+    "slug": "petal-freight",
+    "name": "Petal Freight",
+    "cat": "floral",
+    "palette": "petal pink, freight black, cream",
+    "tone": "flower delivery"
+  },
+  {
+    "slug": "moss-index",
+    "name": "Moss Index",
+    "cat": "floral",
+    "palette": "moss, cream, charcoal",
+    "tone": "plant shop"
+  },
+  {
+    "slug": "bloom-rail",
+    "name": "Bloom Rail",
+    "cat": "floral",
+    "palette": "bloom coral, rail black, white",
+    "tone": "urban florist"
+  },
+  {
+    "slug": "vase-north",
+    "name": "Vase North",
+    "cat": "floral",
+    "palette": "ceramic blue, white, green",
+    "tone": "ceramic and flower"
+  },
+  {
+    "slug": "vinyl-porch",
+    "name": "Vinyl Porch",
+    "cat": "culture",
+    "palette": "vinyl black, porch cream, red",
+    "tone": "record shop"
+  },
+  {
+    "slug": "chord-market",
+    "name": "Chord Market",
+    "cat": "culture",
+    "palette": "chord purple, cream, gold",
+    "tone": "instrument shop"
+  },
+  {
+    "slug": "marquee-small",
+    "name": "Marquee Small",
+    "cat": "culture",
+    "palette": "marquee gold, black, red",
+    "tone": "indie cinema"
+  },
+  {
+    "slug": "stage-crumb",
+    "name": "Stage Crumb",
+    "cat": "culture",
+    "palette": "stage black, crumb gold",
+    "tone": "comedy club"
+  },
+  {
+    "slug": "folio-live",
+    "name": "Folio Live",
+    "cat": "culture",
+    "palette": "folio cream, live red, black",
+    "tone": "live literature venue"
+  },
+  {
+    "slug": "press-and-fold",
+    "name": "Press & Fold",
+    "cat": "service",
+    "palette": "press blue, fold white, gray",
+    "tone": "laundry and press"
+  },
+  {
+    "slug": "needle-borough",
+    "name": "Needle Borough",
+    "cat": "service",
+    "palette": "needle silver, borough burgundy",
+    "tone": "tailor shop"
+  },
+  {
+    "slug": "keycut-east",
+    "name": "Keycut East",
+    "cat": "service",
+    "palette": "key gold, east navy, white",
+    "tone": "locksmith"
+  },
+  {
+    "slug": "lens-corner",
+    "name": "Lens Corner",
+    "cat": "service",
+    "palette": "lens cyan, black, cream",
+    "tone": "optician"
+  },
+  {
+    "slug": "pet-meridian",
+    "name": "Pet Meridian",
+    "cat": "service",
+    "palette": "pet coral, cream, teal",
+    "tone": "pet grooming"
+  }
+]
