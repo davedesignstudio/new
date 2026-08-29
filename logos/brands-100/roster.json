@@ -803,5 +803,805 @@
     "cat": "service",
     "palette": "keystone slate, mend orange, white",
     "tone": "home repair and locksmith"
+  },
+  {
+    "slug": "lantern-folio",
+    "name": "Lantern Folio",
+    "cat": "cafe",
+    "palette": "#1a2332,#c9a227,#f3efe6",
+    "tone": "evening reading cafe",
+    "strategy": "Quiet light for slow coffee and longer pages."
+  },
+  {
+    "slug": "mill-and-meter",
+    "name": "Mill & Meter",
+    "cat": "cafe",
+    "palette": "#5c4033,#e8dcc8,#2f2a26",
+    "tone": "precision pour-over lab",
+    "strategy": "Measured grind, honest cup."
+  },
+  {
+    "slug": "coastal-drip",
+    "name": "Coastal Drip",
+    "cat": "cafe",
+    "palette": "#0e4d68,#f0e6d8,#1f1f1f",
+    "tone": "shoreline espresso cart",
+    "strategy": "Salt air, strong drip, nowhere to rush."
+  },
+  {
+    "slug": "inkwell-roast",
+    "name": "Inkwell Roast",
+    "cat": "cafe",
+    "palette": "#111111,#d4a574,#ffffff",
+    "tone": "studio cafe for makers",
+    "strategy": "Coffee for people who still sketch."
+  },
+  {
+    "slug": "thresh-house",
+    "name": "Thresh House",
+    "cat": "cafe",
+    "palette": "#6b5a3e,#f7f1e5,#2c2418",
+    "tone": "farmhouse morning cafe",
+    "strategy": "Harvest grain meets morning table."
+  },
+  {
+    "slug": "volt-cup",
+    "name": "Volt Cup",
+    "cat": "cafe",
+    "palette": "#111111,#f5c518,#ffffff",
+    "tone": "high-energy espresso bar",
+    "strategy": "Fast charge in a ceramic cup."
+  },
+  {
+    "slug": "paper-steam",
+    "name": "Paper Steam",
+    "cat": "cafe",
+    "palette": "#e9e2d6,#2a2a2a,#8b5a2b",
+    "tone": "zine and latte shop",
+    "strategy": "Print culture with a soft steam."
+  },
+  {
+    "slug": "grove-press-cafe",
+    "name": "Grove Press Cafe",
+    "cat": "cafe",
+    "palette": "#2d5a3d,#f2ead8,#c45c26",
+    "tone": "bookstore cafe",
+    "strategy": "Books first, coffee second, both strong."
+  },
+  {
+    "slug": "harbor-mug",
+    "name": "Harbor Mug",
+    "cat": "cafe",
+    "palette": "#16324f,#c7b299,#f5f0e8",
+    "tone": "dockside coffee",
+    "strategy": "Warm mug against cold harbor wind."
+  },
+  {
+    "slug": "kiln-latte",
+    "name": "Kiln Latte",
+    "cat": "cafe",
+    "palette": "#8b3a2a,#e8d5b7,#1e1e1e",
+    "tone": "ceramics studio cafe",
+    "strategy": "Fired clay cups, careful foam."
+  },
+  {
+    "slug": "iron-orchard",
+    "name": "Iron Orchard",
+    "cat": "restaurant",
+    "palette": "#2b2b2b,#c45c26,#f4efe6",
+    "tone": "wood-grill supper club",
+    "strategy": "Orchard wood, iron heat, honest plates."
+  },
+  {
+    "slug": "salt-line-kitchen",
+    "name": "Salt Line Kitchen",
+    "cat": "restaurant",
+    "palette": "#0b3d4a,#f5f0e6,#c9a24a",
+    "tone": "coastal seafood counter",
+    "strategy": "Catch of the day, drawn at the salt line."
+  },
+  {
+    "slug": "midnight-skillet",
+    "name": "Midnight Skillet",
+    "cat": "restaurant",
+    "palette": "#0d0d0d,#e85d04,#f8f4ef",
+    "tone": "late-night diner",
+    "strategy": "Open when the city finally gets hungry."
+  },
+  {
+    "slug": "basil-beam",
+    "name": "Basil Beam",
+    "cat": "restaurant",
+    "palette": "#2f6b3a,#f3efe6,#1a1a1a",
+    "tone": "garden italian",
+    "strategy": "Fresh basil under warm kitchen beams."
+  },
+  {
+    "slug": "copper-broth",
+    "name": "Copper Broth",
+    "cat": "restaurant",
+    "palette": "#b87333,#1f1a14,#f2e8dc",
+    "tone": "broth and dumpling house",
+    "strategy": "Long simmer, copper pot, quiet tables."
+  },
+  {
+    "slug": "field-ladle",
+    "name": "Field Ladle",
+    "cat": "restaurant",
+    "palette": "#5a6b3a,#d4c4a8,#2c2418",
+    "tone": "farm soup kitchen",
+    "strategy": "From field to ladle before noon."
+  },
+  {
+    "slug": "smoke-rail",
+    "name": "Smoke Rail",
+    "cat": "restaurant",
+    "palette": "#1a1a1a,#8b4513,#e8dcc8",
+    "tone": "rail-yard barbecue",
+    "strategy": "Slow smoke beside the rail line."
+  },
+  {
+    "slug": "citrus-counter",
+    "name": "Citrus Counter",
+    "cat": "restaurant",
+    "palette": "#f4a261,#264653,#ffffff",
+    "tone": "bright lunch counter",
+    "strategy": "Sharp citrus, quick plates, clean counter."
+  },
+  {
+    "slug": "flour-meridian",
+    "name": "Flour Meridian",
+    "cat": "bakery",
+    "palette": "#e8dcc8,#5c4033,#1f1a14",
+    "tone": "artisan bread bakery",
+    "strategy": "Where dough crosses the daily meridian."
+  },
+  {
+    "slug": "crumb-atlas",
+    "name": "Crumb Atlas",
+    "cat": "bakery",
+    "palette": "#c4a574,#2a2118,#f7f1e5",
+    "tone": "pastry map bakery",
+    "strategy": "A map of crumbs worth traveling for."
+  },
+  {
+    "slug": "honeycomb-press",
+    "name": "Honeycomb Press",
+    "cat": "bakery",
+    "palette": "#d4a017,#1a1a1a,#fff8e7",
+    "tone": "honey pastry shop",
+    "strategy": "Pressed honeycomb sweetness."
+  },
+  {
+    "slug": "dough-rivulet",
+    "name": "Dough Rivulet",
+    "cat": "bakery",
+    "palette": "#d5c4a1,#5d6d7e,#faf6f0",
+    "tone": "river-town bakery",
+    "strategy": "Dough rising beside the rivulet."
+  },
+  {
+    "slug": "sugar-rivet",
+    "name": "Sugar Rivet",
+    "cat": "dessert",
+    "palette": "#e8b4bc,#2b2b2b,#ffffff",
+    "tone": "industrial dessert bar",
+    "strategy": "Sweet finishes with steel precision."
+  },
+  {
+    "slug": "cone-lattice",
+    "name": "Cone Lattice",
+    "cat": "dessert",
+    "palette": "#f4a261,#264653,#fffaf0",
+    "tone": "gelato lattice shop",
+    "strategy": "Scoops framed in lattice light."
+  },
+  {
+    "slug": "drizzle-north",
+    "name": "Drizzle North",
+    "cat": "dessert",
+    "palette": "#5dade2,#f5cba7,#1c2833",
+    "tone": "sundae parlor",
+    "strategy": "Cold drizzle from the north window."
+  },
+  {
+    "slug": "pie-voltage",
+    "name": "Pie Voltage",
+    "cat": "pizza",
+    "palette": "#e74c3c,#f1c40f,#1a1a1a",
+    "tone": "electric slice shop",
+    "strategy": "Hot pie with a voltage kick."
+  },
+  {
+    "slug": "crust-ledger",
+    "name": "Crust Ledger",
+    "cat": "pizza",
+    "palette": "#8b5a2b,#f5f0e6,#1f1a14",
+    "tone": "accountable craft pizza",
+    "strategy": "Every crust logged, every pie earned."
+  },
+  {
+    "slug": "wedge-harbor",
+    "name": "Wedge Harbor",
+    "cat": "pizza",
+    "palette": "#1a5276,#e67e22,#fdfefe",
+    "tone": "waterfront pizza",
+    "strategy": "Harbor views, wedge by wedge."
+  },
+  {
+    "slug": "oven-cipher",
+    "name": "Oven Cipher",
+    "cat": "pizza",
+    "palette": "#922b21,#f5cba7,#1c1c1c",
+    "tone": "secret-recipe pizza",
+    "strategy": "Decode heat, dough, and time."
+  },
+  {
+    "slug": "slice-borough",
+    "name": "Slice Borough",
+    "cat": "pizza",
+    "palette": "#c0392b,#f7f1e5,#2c3e50",
+    "tone": "borough slice window",
+    "strategy": "One borough, one honest slice."
+  },
+  {
+    "slug": "jar-compass",
+    "name": "Jar Compass",
+    "cat": "deli",
+    "palette": "#1e8449,#f4d03f,#1a1a1a",
+    "tone": "pickle and sandwich deli",
+    "strategy": "Find true north in a jar."
+  },
+  {
+    "slug": "counter-orbit",
+    "name": "Counter Orbit",
+    "cat": "deli",
+    "palette": "#2c3e50,#e74c3c,#ecf0f1",
+    "tone": "rotating specials deli",
+    "strategy": "Daily specials in orbit around the counter."
+  },
+  {
+    "slug": "aisle-timber",
+    "name": "Aisle Timber",
+    "cat": "market",
+    "palette": "#6e4c1e,#f5edd8,#2c2418",
+    "tone": "wood-shelved specialty market",
+    "strategy": "Timber aisles, curated goods."
+  },
+  {
+    "slug": "pantry-cipher",
+    "name": "Pantry Cipher",
+    "cat": "market",
+    "palette": "#5d4e37,#c0392b,#faf6f0",
+    "tone": "coded pantry market",
+    "strategy": "Decode the shelves, stock the table."
+  },
+  {
+    "slug": "basket-meridian",
+    "name": "Basket Meridian",
+    "cat": "market",
+    "palette": "#27ae60,#f5cba7,#1a1a1a",
+    "tone": "produce market",
+    "strategy": "Fresh baskets at the market meridian."
+  },
+  {
+    "slug": "cask-latitude",
+    "name": "Cask Latitude",
+    "cat": "bar",
+    "palette": "#6e2c00,#f5cba7,#1a1208",
+    "tone": "barrel-aged bar",
+    "strategy": "Age and latitude in every pour."
+  },
+  {
+    "slug": "radar-pint",
+    "name": "Radar Pint",
+    "cat": "bar",
+    "palette": "#145a32,#f4d03f,#0b1a0f",
+    "tone": "craft beer radar bar",
+    "strategy": "Lock onto the next good pint."
+  },
+  {
+    "slug": "echo-cask",
+    "name": "Echo Cask",
+    "cat": "bar",
+    "palette": "#4a235a,#d5d8dc,#1a1a1a",
+    "tone": "listening room bar",
+    "strategy": "Music echoes off oak casks."
+  },
+  {
+    "slug": "gilt-tap",
+    "name": "Gilt Tap",
+    "cat": "bar",
+    "palette": "#b7950b,#1a1a1a,#f8f5f0",
+    "tone": "gilt cocktail lounge",
+    "strategy": "Gold edges, cold taps."
+  },
+  {
+    "slug": "low-tide-bar",
+    "name": "Low Tide Bar",
+    "cat": "bar",
+    "palette": "#1a5276,#d5d8dc,#0b1a26",
+    "tone": "harbor cocktail bar",
+    "strategy": "Best drinks when the tide drops."
+  },
+  {
+    "slug": "watt-lounge",
+    "name": "Watt Lounge",
+    "cat": "bar",
+    "palette": "#f1c40f,#1a1a1a,#ecf0f1",
+    "tone": "electric lounge",
+    "strategy": "Low light, high watt conversation."
+  },
+  {
+    "slug": "booth-and-rye",
+    "name": "Booth & Rye",
+    "cat": "bar",
+    "palette": "#7b241c,#f5cba7,#1c1c1c",
+    "tone": "booth whiskey bar",
+    "strategy": "Rye in the booth, stories after dark."
+  },
+  {
+    "slug": "plumb-orbit",
+    "name": "Plumb Orbit",
+    "cat": "trade",
+    "palette": "#e67e22,#1a252f,#ffffff",
+    "tone": "precision plumbing",
+    "strategy": "True vertical in every orbit of the home."
+  },
+  {
+    "slug": "ridge-voltage",
+    "name": "Ridge Voltage",
+    "cat": "trade",
+    "palette": "#f1c40f,#2c3e50,#ffffff",
+    "tone": "residential electrician",
+    "strategy": "Power along the ridge line."
+  },
+  {
+    "slug": "hearth-cipher",
+    "name": "Hearth Cipher",
+    "cat": "trade",
+    "palette": "#922b21,#d5a021,#f5f0e6",
+    "tone": "home remodel",
+    "strategy": "Decode the house, rebuild the hearth."
+  },
+  {
+    "slug": "glass-ledger",
+    "name": "Glass Ledger",
+    "cat": "studio",
+    "palette": "#5dade2,#1c2833,#f8f9f9",
+    "tone": "glass studio",
+    "strategy": "Every pour logged in light."
+  },
+  {
+    "slug": "ink-meridian",
+    "name": "Ink Meridian",
+    "cat": "studio",
+    "palette": "#1a1a1a,#e74c3c,#ffffff",
+    "tone": "tattoo studio",
+    "strategy": "Lines that cross a life meridian."
+  },
+  {
+    "slug": "frame-rivulet",
+    "name": "Frame Rivulet",
+    "cat": "studio",
+    "palette": "#5d6d7e,#f5cba7,#1a1a1a",
+    "tone": "custom framing",
+    "strategy": "Frames that follow the rivulet of art."
+  },
+  {
+    "slug": "type-harbor",
+    "name": "Type Harbor",
+    "cat": "studio",
+    "palette": "#2c3e50,#c9a24a,#f5f0e6",
+    "tone": "letterpress shop",
+    "strategy": "Type docked and pressed in harbor."
+  },
+  {
+    "slug": "signal-kiln",
+    "name": "Signal Kiln",
+    "cat": "studio",
+    "palette": "#c0392b,#1a1a1a,#fdebd0",
+    "tone": "ceramics design studio",
+    "strategy": "Fire as signal, form as message."
+  },
+  {
+    "slug": "lens-rivulet",
+    "name": "Lens Rivulet",
+    "cat": "studio",
+    "palette": "#1abc9c,#1a1a1a,#faf6f0",
+    "tone": "photo studio",
+    "strategy": "Light flowing through the lens rivulet."
+  },
+  {
+    "slug": "still-grove-spa",
+    "name": "Still Grove Spa",
+    "cat": "wellness",
+    "palette": "#1e8449,#d5f5e3,#1a1a1a",
+    "tone": "forest spa",
+    "strategy": "Stillness under the grove canopy."
+  },
+  {
+    "slug": "root-metric",
+    "name": "Root Metric",
+    "cat": "wellness",
+    "palette": "#6e2c00,#a9dfbf,#faf6f0",
+    "tone": "grounded wellness studio",
+    "strategy": "Measure calm from the root up."
+  },
+  {
+    "slug": "bloom-voltage",
+    "name": "Bloom Voltage",
+    "cat": "wellness",
+    "palette": "#e74c3c,#fdebd0,#1a1a1a",
+    "tone": "energizing wellness",
+    "strategy": "Bloom with a measured charge."
+  },
+  {
+    "slug": "pulse-harbor",
+    "name": "Pulse Harbor",
+    "cat": "wellness",
+    "palette": "#1a5276,#e74c3c,#ffffff",
+    "tone": "coastal fitness",
+    "strategy": "Heart rate against harbor wind."
+  },
+  {
+    "slug": "calm-rivet",
+    "name": "Calm Rivet",
+    "cat": "wellness",
+    "palette": "#5d6d7e,#aed6f1,#ffffff",
+    "tone": "industrial calm studio",
+    "strategy": "Calm bolted in place."
+  },
+  {
+    "slug": "wool-meridian",
+    "name": "Wool Meridian",
+    "cat": "retail",
+    "palette": "#7f8c8d,#922b21,#faf6f0",
+    "tone": "knitwear shop",
+    "strategy": "Wool crossing climate meridians."
+  },
+  {
+    "slug": "canvas-cipher",
+    "name": "Canvas Cipher",
+    "cat": "retail",
+    "palette": "#d5c4a1,#1a5276,#ffffff",
+    "tone": "art supply",
+    "strategy": "Decode the blank canvas."
+  },
+  {
+    "slug": "brass-folio",
+    "name": "Brass Folio",
+    "cat": "retail",
+    "palette": "#b7950b,#1a1a1a,#f8f5f0",
+    "tone": "hardware boutique",
+    "strategy": "Hardware collected like a folio."
+  },
+  {
+    "slug": "paper-ridge",
+    "name": "Paper Ridge",
+    "cat": "retail",
+    "palette": "#f5f0e6,#2c3e50,#c0392b",
+    "tone": "stationery shop",
+    "strategy": "Paper stacked along the ridge."
+  },
+  {
+    "slug": "cedar-orbit",
+    "name": "Cedar Orbit",
+    "cat": "retail",
+    "palette": "#6e4c1e,#f5edd8,#1a1a1a",
+    "tone": "furniture showroom",
+    "strategy": "Cedar forms in quiet orbit."
+  },
+  {
+    "slug": "torque-cipher",
+    "name": "Torque Cipher",
+    "cat": "auto",
+    "palette": "#e67e22,#1a1a1a,#ffffff",
+    "tone": "performance garage",
+    "strategy": "Decode torque, unlock road."
+  },
+  {
+    "slug": "chrome-rivulet",
+    "name": "Chrome Rivulet",
+    "cat": "auto",
+    "palette": "#bdc3c7,#1a1a1a,#e74c3c",
+    "tone": "detailing shop",
+    "strategy": "Chrome flow like a rivulet."
+  },
+  {
+    "slug": "axle-folio",
+    "name": "Axle Folio",
+    "cat": "auto",
+    "palette": "#566573,#27ae60,#f1c40f",
+    "tone": "truck service",
+    "strategy": "Heavy axles, documented care."
+  },
+  {
+    "slug": "rim-lattice",
+    "name": "Rim Lattice",
+    "cat": "auto",
+    "palette": "#1a1a1a,#7f8c8d,#2ecc71",
+    "tone": "tire shop",
+    "strategy": "Rims held in lattice strength."
+  },
+  {
+    "slug": "idle-meridian",
+    "name": "Idle Meridian",
+    "cat": "auto",
+    "palette": "#145a32,#f5cba7,#1a1a1a",
+    "tone": "custom motorcycle",
+    "strategy": "Idle at the meridian before the ride."
+  },
+  {
+    "slug": "trail-folio",
+    "name": "Trail Folio",
+    "cat": "outdoor",
+    "palette": "#1e8449,#f5cba7,#6e2c00",
+    "tone": "trail gear",
+    "strategy": "Every trail logged in the folio."
+  },
+  {
+    "slug": "summit-rivet",
+    "name": "Summit Rivet",
+    "cat": "outdoor",
+    "palette": "#1a5276,#bdc3c7,#ffffff",
+    "tone": "alpine gear",
+    "strategy": "Rivet-strong at summit height."
+  },
+  {
+    "slug": "pine-cipher",
+    "name": "Pine Cipher",
+    "cat": "outdoor",
+    "palette": "#196f3d,#b7950b,#faf6f0",
+    "tone": "navigation gear",
+    "strategy": "Read the pine, crack the code."
+  },
+  {
+    "slug": "river-voltage",
+    "name": "River Voltage",
+    "cat": "outdoor",
+    "palette": "#1a5276,#f1c40f,#ffffff",
+    "tone": "kayak outfitter",
+    "strategy": "Current with a voltage edge."
+  },
+  {
+    "slug": "wind-folio",
+    "name": "Wind Folio",
+    "cat": "outdoor",
+    "palette": "#7f8c8d,#5dade2,#e67e22",
+    "tone": "weather outdoor brand",
+    "strategy": "Wind recorded page by page."
+  },
+  {
+    "slug": "grid-cipher",
+    "name": "Grid Cipher",
+    "cat": "tech",
+    "palette": "#1abc9c,#1a1a1a,#ecf0f1",
+    "tone": "community tech hub",
+    "strategy": "Neighbors on a coded grid."
+  },
+  {
+    "slug": "byte-rivulet",
+    "name": "Byte Rivulet",
+    "cat": "tech",
+    "palette": "#c0392b,#1a1a1a,#2ecc71",
+    "tone": "rural tech repair",
+    "strategy": "Bytes flowing like a rivulet."
+  },
+  {
+    "slug": "node-lattice",
+    "name": "Node Lattice",
+    "cat": "tech",
+    "palette": "#5dade2,#f5cba7,#1a1a1a",
+    "tone": "smart home",
+    "strategy": "Home nodes in a living lattice."
+  },
+  {
+    "slug": "signal-folio",
+    "name": "Signal Folio",
+    "cat": "tech",
+    "palette": "#2c3e50,#ecf0f1,#e74c3c",
+    "tone": "neighborhood wifi",
+    "strategy": "Signals collected in the folio."
+  },
+  {
+    "slug": "packet-harbor",
+    "name": "Packet Harbor",
+    "cat": "tech",
+    "palette": "#1a5276,#f1c40f,#ffffff",
+    "tone": "local network co-op",
+    "strategy": "Packets docked at the harbor."
+  },
+  {
+    "slug": "bit-kiln",
+    "name": "Bit Kiln",
+    "cat": "tech",
+    "palette": "#27ae60,#922b21,#faf6f0",
+    "tone": "hardware lab",
+    "strategy": "Bits fired and finished in the kiln."
+  },
+  {
+    "slug": "little-rivet",
+    "name": "Little Rivet",
+    "cat": "family",
+    "palette": "#5dade2,#f5cba7,#1a5276",
+    "tone": "kids toys",
+    "strategy": "Small parts, strong rivets of play."
+  },
+  {
+    "slug": "story-voltage",
+    "name": "Story Voltage",
+    "cat": "family",
+    "palette": "#1abc9c,#f4d03f,#faf6f0",
+    "tone": "kids bookstore",
+    "strategy": "Stories with a voltage spark."
+  },
+  {
+    "slug": "crayon-meridian",
+    "name": "Crayon Meridian",
+    "cat": "family",
+    "palette": "#e74c3c,#f1c40f,#3498db",
+    "tone": "kids art studio",
+    "strategy": "Color crossing every meridian."
+  },
+  {
+    "slug": "nap-folio",
+    "name": "Nap Folio",
+    "cat": "family",
+    "palette": "#85929e,#f5cba7,#e74c3c",
+    "tone": "kids sleep travel",
+    "strategy": "Naps filed between map pages."
+  },
+  {
+    "slug": "pebble-cipher",
+    "name": "Pebble Cipher",
+    "cat": "family",
+    "palette": "#7f8c8d,#27ae60,#faf6f0",
+    "tone": "early learning",
+    "strategy": "Learn by decoding pebbles."
+  },
+  {
+    "slug": "stem-rivulet",
+    "name": "Stem Rivulet",
+    "cat": "floral",
+    "palette": "#1e8449,#d5d8dc,#f5b7b1",
+    "tone": "botanical florist",
+    "strategy": "Stems following a quiet rivulet."
+  },
+  {
+    "slug": "petal-voltage",
+    "name": "Petal Voltage",
+    "cat": "floral",
+    "palette": "#e74c3c,#1a1a1a,#faf6f0",
+    "tone": "flower delivery",
+    "strategy": "Petals with delivery voltage."
+  },
+  {
+    "slug": "moss-folio",
+    "name": "Moss Folio",
+    "cat": "floral",
+    "palette": "#196f3d,#faf6f0,#2c3e50",
+    "tone": "botanical archive",
+    "strategy": "Moss specimens in a living folio."
+  },
+  {
+    "slug": "bloom-cipher",
+    "name": "Bloom Cipher",
+    "cat": "floral",
+    "palette": "#e67e22,#1a1a1a,#ffffff",
+    "tone": "floral rail shop",
+    "strategy": "Bloom codes along the rail."
+  },
+  {
+    "slug": "vase-rivet",
+    "name": "Vase Rivet",
+    "cat": "floral",
+    "palette": "#2980b9,#ffffff,#27ae60",
+    "tone": "ceramics floral",
+    "strategy": "Vases riveted to daily bloom."
+  },
+  {
+    "slug": "mute-folio",
+    "name": "Mute Folio",
+    "cat": "culture",
+    "palette": "#1a1a1a,#d5d8dc,#f8f9f9",
+    "tone": "quiet listening venue",
+    "strategy": "Pages of sound, muted lights."
+  },
+  {
+    "slug": "vinyl-cipher",
+    "name": "Vinyl Cipher",
+    "cat": "culture",
+    "palette": "#1a1a1a,#f5cba7,#c0392b",
+    "tone": "record shop",
+    "strategy": "Decode the grooves."
+  },
+  {
+    "slug": "chord-rivulet",
+    "name": "Chord Rivulet",
+    "cat": "culture",
+    "palette": "#6c3483,#faf6f0,#b7950b",
+    "tone": "instrument market",
+    "strategy": "Chords flowing like a rivulet."
+  },
+  {
+    "slug": "marquee-folio",
+    "name": "Marquee Folio",
+    "cat": "culture",
+    "palette": "#b7950b,#1a1a1a,#c0392b",
+    "tone": "indie theater",
+    "strategy": "Lights collected in a folio of nights."
+  },
+  {
+    "slug": "stage-voltage",
+    "name": "Stage Voltage",
+    "cat": "culture",
+    "palette": "#1a1a1a,#f4d03f,#ffffff",
+    "tone": "theater cafe",
+    "strategy": "Stage crumbs with voltage."
+  },
+  {
+    "slug": "local-rivet",
+    "name": "Local Rivet",
+    "cat": "service",
+    "palette": "#2980b9,#ffffff,#27ae60",
+    "tone": "neighborhood courier",
+    "strategy": "Local deliveries bolted tight."
+  },
+  {
+    "slug": "press-rivet",
+    "name": "Press Rivet",
+    "cat": "service",
+    "palette": "#2980b9,#ffffff,#7f8c8d",
+    "tone": "laundry press",
+    "strategy": "Pressed clean, riveted sharp."
+  },
+  {
+    "slug": "needle-cipher",
+    "name": "Needle Cipher",
+    "cat": "service",
+    "palette": "#922b21,#bdc3c7,#1a1a1a",
+    "tone": "tailor shop",
+    "strategy": "Every stitch a decoded line."
+  },
+  {
+    "slug": "keycut-folio",
+    "name": "Keycut Folio",
+    "cat": "service",
+    "palette": "#1a5276,#b7950b,#ffffff",
+    "tone": "locksmith",
+    "strategy": "Keys filed in the folio of doors."
+  },
+  {
+    "slug": "pet-voltage",
+    "name": "Pet Voltage",
+    "cat": "service",
+    "palette": "#e74c3c,#faf6f0,#1abc9c",
+    "tone": "pet care",
+    "strategy": "Happy pets, charged days."
+  },
+  {
+    "slug": "mend-lattice",
+    "name": "Mend Lattice",
+    "cat": "service",
+    "palette": "#2c3e50,#e67e22,#ffffff",
+    "tone": "home repair",
+    "strategy": "Mends held in a strong lattice."
+  },
+  {
+    "slug": "forge-lattice",
+    "name": "Forge Lattice",
+    "cat": "trade",
+    "palette": "#c0392b,#1a1a1a,#f5cba7",
+    "tone": "metal fabrication",
+    "strategy": "Forged joints in a living lattice."
+  },
+  {
+    "slug": "quill-voltage",
+    "name": "Quill Voltage",
+    "cat": "studio",
+    "palette": "#1a1a1a,#c9a24a,#faf6f0",
+    "tone": "writing studio",
+    "strategy": "Ink with voltage, pages with charge."
   }
 ]
