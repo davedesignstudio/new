@@ -1171,15 +1171,15 @@ form button {
   color: #fff;
 }
 
-.object-poster-gold h1,
-.object-poster-gold h2 {
-  color: var(--navy);
-}
-
 .object-poster-mini h2 {
   margin: 0 0 0.2rem;
   font-size: 4.4rem;
   color: #fff;
+}
+
+.object-poster-gold h1,
+.object-poster-gold h2 {
+  color: var(--navy);
 }
 
 .object-place {
