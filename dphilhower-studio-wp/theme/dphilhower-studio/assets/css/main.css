@@ -426,7 +426,8 @@ select {
 
 .locale-panel {
   padding: clamp(1.5rem, 3vw, 2.25rem);
-  background: rgba(242, 244, 239, 0.72);
+  background: #ffffff;
+  color: #000000;
   border: 1px solid var(--line);
 }
 
@@ -436,11 +437,12 @@ select {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   line-height: 1.1;
   max-width: 14ch;
+  color: #000000;
 }
 
 .locale-panel p {
   margin: 0 0 1rem;
-  color: var(--muted);
+  color: #000000;
   max-width: 40ch;
 }
 
@@ -448,7 +450,7 @@ select {
   margin: 0;
   padding: 0;
   list-style: none;
-  color: var(--ink-soft);
+  color: #000000;
 }
 
 .locale-panel li + li {

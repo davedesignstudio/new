@@ -266,9 +266,17 @@ body {
 }
 
 .locale-panel {
-  background: rgba(248, 244, 220, 0.86);
+  background: #ffffff;
+  color: #000000;
   border-radius: 0;
   border-left: 4px solid var(--verdigris);
+}
+
+.locale-panel h2,
+.locale-panel p,
+.locale-panel ul,
+.locale-panel li {
+  color: #000000;
 }
 
 .contact-form {
@@ -402,4 +410,3 @@ body {
     grid-row: auto;
   }
 }
-
