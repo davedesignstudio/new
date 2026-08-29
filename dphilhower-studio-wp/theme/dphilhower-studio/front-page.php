@@ -22,7 +22,9 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php esc_attr_e( 'Woman running with a loaf of bread and a coffee cup', 'dphilhower-studio' ); ?>" width="1318" height="1017">
 		</div>
 		<div class="hero-content">
-			<p class="hero-brand"><?php echo esc_html( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?></p>
+			<p class="hero-brand">
+				<img src="<?php echo esc_url( dps_image_url( 'd-philhower-lockup.png' ) ); ?>" alt="<?php echo esc_attr( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?>" width="1426" height="522">
+			</p>
 			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'We help independent restaurants look as exceptional as the food they serve.' ) ); ?></h1>
 			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'Identity, menus, windows, and websites — so the room, the board, and the site feel like the same place.' ) ); ?></p>
 			<div class="cta-row">

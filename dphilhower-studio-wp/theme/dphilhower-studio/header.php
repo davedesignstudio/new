@@ -19,7 +19,9 @@
 	<?php if ( has_custom_logo() ) : ?>
 		<?php the_custom_logo(); ?>
 	<?php else : ?>
-		<a class="brand-mark" href="<?php echo esc_url( home_url( '/' ) ); ?>">D Philhower Studio</a>
+		<a class="brand-mark" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<img src="<?php echo esc_url( dps_image_url( 'd-philhower-lockup.png' ) ); ?>" alt="<?php esc_attr_e( 'D Philhower Studio', 'dphilhower-studio' ); ?>" width="1426" height="522">
+		</a>
 	<?php endif; ?>
 	<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><?php esc_html_e( 'Menu', 'dphilhower-studio' ); ?></button>
 	<?php dps_primary_nav(); ?>

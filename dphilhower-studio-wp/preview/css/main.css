@@ -101,17 +101,19 @@ select {
 
 .brand-mark,
 .custom-logo-link {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 auto;
+  line-height: 0;
   color: inherit;
 }
 
+.brand-mark img,
 .custom-logo-link img {
-  max-height: 36px;
+  display: block;
+  height: 48px;
   width: auto;
+  max-width: min(240px, 52vw);
 }
 
 .nav {
@@ -204,13 +206,14 @@ select {
 
 .hero-brand {
   margin: 0 0 1rem;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2.6rem, 8vw, 5.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  max-width: 11ch;
-  opacity: 1;
+  max-width: none;
+  line-height: 0;
+}
+
+.hero-brand img {
+  display: block;
+  width: min(420px, 86vw);
+  height: auto;
 }
 
 .hero-line {
