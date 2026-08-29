@@ -44,7 +44,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -134,7 +134,7 @@ select {
 }
 
 .nav a {
-  font-size: 1.1rem;
+  font-size: calc(1.1rem + 4pt);
   letter-spacing: 0.02em;
   opacity: 0.88;
   transition: opacity 0.25s var(--ease);
@@ -222,7 +222,7 @@ select {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  font-size: calc(clamp(1.55rem, 3.2vw, 2.2rem) + 4pt);
   max-width: 22ch;
   opacity: 1;
 }
@@ -249,7 +249,7 @@ select {
   border: 1px solid transparent;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
   letter-spacing: 0.02em;
   transition: transform 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
   cursor: pointer;
@@ -296,7 +296,7 @@ select {
 .section-label {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 4pt);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
@@ -306,7 +306,7 @@ select {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.15rem, 4.6vw, 3.35rem);
+  font-size: calc(clamp(2.15rem, 4.6vw, 3.35rem) + 4pt);
   line-height: 1.05;
   letter-spacing: -0.02em;
   max-width: 16ch;
@@ -376,12 +376,12 @@ select {
 .work-meta h3 {
   margin: 0 0 0.2rem;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: calc(1.5rem + 4pt);
 }
 
 .work-meta p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: calc(1.1rem + 4pt);
   color: rgba(244, 246, 241, 0.8);
 }
 
@@ -406,7 +406,7 @@ select {
   display: block;
   margin-bottom: 0.4rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
 }
 
 .process-step p {
@@ -436,7 +436,7 @@ select {
 .locale-panel h2 {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
-  font-size: clamp(1.95rem, 3.5vw, 2.65rem);
+  font-size: calc(clamp(1.95rem, 3.5vw, 2.65rem) + 4pt);
   line-height: 1.1;
   max-width: 14ch;
   color: #000000;
@@ -486,7 +486,7 @@ select {
 .cta-brand h2 {
   margin: 0 0 0.6rem;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-size: calc(clamp(2rem, 4vw, 2.85rem) + 4pt);
   max-width: 14ch;
 }
 
@@ -509,7 +509,7 @@ select {
   gap: 0.75rem 1.5rem;
   justify-content: space-between;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 4pt);
 }
 
 .page-hero {
@@ -522,7 +522,7 @@ select {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.75rem, 6.6vw, 4.6rem);
+  font-size: calc(clamp(2.75rem, 6.6vw, 4.6rem) + 4pt);
   line-height: 0.95;
   letter-spacing: -0.03em;
   max-width: 12ch;
@@ -560,7 +560,7 @@ select {
 .service-row h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  font-size: calc(clamp(1.6rem, 3vw, 2.15rem) + 4pt);
 }
 
 .service-row p {
@@ -645,7 +645,7 @@ select {
 .contact-form label {
   display: grid;
   gap: 0.35rem;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 4pt);
 }
 
 .contact-form input,
@@ -665,7 +665,7 @@ select {
 
 .form-note {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: calc(0.85rem + 4pt);
   color: var(--muted);
 }
 
@@ -711,7 +711,7 @@ select {
 
 .case-body h2 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: calc(1.5rem + 4pt);
 }
 
 .case-body p,
@@ -726,7 +726,7 @@ select {
   margin: 0 0 1.5rem;
   padding: 0;
   list-style: none;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 4pt);
   color: var(--muted);
 }
 
@@ -793,59 +793,59 @@ select {
   }
 
   body {
-    font-size: 1.05rem;
+    font-size: calc(1.05rem + 4pt);
   }
 
   .nav a {
-    font-size: 0.95rem;
+    font-size: calc(0.95rem + 4pt);
   }
 
   .btn {
-    font-size: 0.95rem;
+    font-size: calc(0.95rem + 4pt);
   }
 
   .hero-line {
-    font-size: clamp(1.35rem, 6.5vw, 1.85rem);
+    font-size: calc(clamp(1.35rem, 6.5vw, 1.85rem) + 4pt);
   }
 
   .section-label {
-    font-size: 0.8rem;
+    font-size: calc(0.8rem + 4pt);
   }
 
   .section-title {
-    font-size: clamp(1.7rem, 7vw, 2.25rem);
+    font-size: calc(clamp(1.7rem, 7vw, 2.25rem) + 4pt);
   }
 
   .work-meta h3 {
-    font-size: 1.2rem;
+    font-size: calc(1.2rem + 4pt);
   }
 
   .work-meta p {
-    font-size: 0.92rem;
+    font-size: calc(0.92rem + 4pt);
   }
 
   .locale-panel h2 {
-    font-size: clamp(1.5rem, 7vw, 2rem);
+    font-size: calc(clamp(1.5rem, 7vw, 2rem) + 4pt);
   }
 
   .cta-brand h2 {
-    font-size: clamp(1.55rem, 6.5vw, 2.1rem);
+    font-size: calc(clamp(1.55rem, 6.5vw, 2.1rem) + 4pt);
   }
 
   .page-hero h1 {
-    font-size: clamp(2rem, 9vw, 2.75rem);
+    font-size: calc(clamp(2rem, 9vw, 2.75rem) + 4pt);
   }
 
   .service-row h2 {
-    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+    font-size: calc(clamp(1.3rem, 5.5vw, 1.7rem) + 4pt);
   }
 
   .type-display {
-    font-size: clamp(1.5rem, 6.5vw, 2rem);
+    font-size: calc(clamp(1.5rem, 6.5vw, 2rem) + 4pt);
   }
 
   .case-body h2 {
-    font-size: 1.35rem;
+    font-size: calc(1.35rem + 4pt);
   }
 
   .site-header {
@@ -908,14 +908,14 @@ select {
   margin: 0 0 0.35rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-size: calc(clamp(2rem, 6vw, 3.6rem) + 4pt);
   letter-spacing: -0.04em;
   line-height: 0.95;
 }
 
 .kit-wordmark span {
   display: block;
-  font-size: 0.38em;
+  font-size: calc(0.38em + 4pt);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--verdigris);
@@ -935,7 +935,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  font-size: 0.78rem;
+  font-size: calc(0.78rem + 4pt);
   letter-spacing: 0.04em;
 }
 
@@ -976,7 +976,7 @@ select {
 .type-display {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.95rem, 3.5vw, 2.65rem);
+  font-size: calc(clamp(1.95rem, 3.5vw, 2.65rem) + 4pt);
   line-height: 1;
   margin: 0 0 0.35rem;
 }
@@ -1007,7 +1007,7 @@ select {
 
 .compare figcaption {
   padding: 0.7rem 0.9rem 0.9rem;
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 4pt);
   color: var(--muted);
 }
 
@@ -1079,7 +1079,7 @@ select {
 
 .print-system figcaption {
   padding: 0.85rem 1rem 1.1rem;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem + 4pt);
   line-height: 1.45;
   color: var(--muted);
   background: var(--paper);
@@ -1090,7 +1090,7 @@ select {
   font-family: var(--font-display);
   color: var(--ink);
   margin-bottom: 0.35rem;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 4pt);
 }
 
 .field-notes {
@@ -1131,14 +1131,14 @@ select {
 .field-notes-grid h3 {
   margin: 0 0 0.55rem;
   font-family: var(--font-display);
-  font-size: 1.12rem;
+  font-size: calc(1.12rem + 4pt);
   font-weight: 700;
   color: #c9a227;
 }
 
 .field-notes-grid p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 4pt);
   line-height: 1.5;
   color: rgba(244, 239, 228, 0.82);
 }

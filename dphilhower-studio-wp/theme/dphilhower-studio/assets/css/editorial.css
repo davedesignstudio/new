@@ -52,7 +52,7 @@ body {
 }
 
 .nav a {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 4pt);
   letter-spacing: 0.01em;
 }
 
@@ -112,7 +112,7 @@ body {
 .hero-line {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.85rem, 5.2vw, 3.6rem);
+  font-size: calc(clamp(1.85rem, 5.2vw, 3.6rem) + 4pt);
   letter-spacing: -0.035em;
   max-width: 22ch;
   line-height: 1.02;
@@ -206,7 +206,7 @@ body {
   left: 0.85rem;
   z-index: 2;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: calc(0.8rem + 4pt);
   letter-spacing: 0.12em;
   color: #fff8dc;
 }
@@ -316,7 +316,7 @@ body {
 
 .anthem-kicker {
   margin: 1.5rem 0 0.5rem;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 4pt);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #c9a227;
@@ -328,7 +328,7 @@ body {
 
 .anthem-chorus {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: calc(clamp(1.6rem, 4vw, 2.4rem) + 4pt);
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -341,7 +341,7 @@ body {
 
 .anthem-verse {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
   line-height: 1.55;
   color: rgba(244, 239, 228, 0.92);
 }
@@ -356,7 +356,7 @@ body {
 .anthem-tag {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
   color: #3dc8ff;
 }
 
@@ -376,7 +376,7 @@ body {
 .anthem-cuts h3 {
   margin: 0 0 0.65rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
 }
 
 .anthem-cuts p {
@@ -401,27 +401,27 @@ body {
   }
 
   .nav a {
-    font-size: 0.95rem;
+    font-size: calc(0.95rem + 4pt);
   }
 
   .hero-line {
-    font-size: clamp(1.45rem, 7vw, 2.1rem);
+    font-size: calc(clamp(1.45rem, 7vw, 2.1rem) + 4pt);
   }
 
   .hero-support {
-    font-size: 1.05rem;
+    font-size: calc(1.05rem + 4pt);
   }
 
   .section-label {
-    font-size: 0.8rem;
+    font-size: calc(0.8rem + 4pt);
   }
 
   .section-title {
-    font-size: clamp(1.7rem, 7vw, 2.25rem);
+    font-size: calc(clamp(1.7rem, 7vw, 2.25rem) + 4pt);
   }
 
   .locale-panel h2 {
-    font-size: clamp(1.5rem, 7vw, 2rem);
+    font-size: calc(clamp(1.5rem, 7vw, 2rem) + 4pt);
   }
 
   .site-header {
