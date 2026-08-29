@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.49 =
+* Hero runner is a man, with a high-angle city street behind him.
+
 = 1.0.48 =
 * Studio writing and a four-step process that starts with a meal at the restaurant.
 

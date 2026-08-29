@@ -19,7 +19,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 <main id="main">
 	<section class="hero">
 		<div class="hero-media" aria-hidden="true">
-			<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php esc_attr_e( 'Woman running with a loaf of bread and a coffee cup', 'dphilhower-studio' ); ?>" width="1318" height="1017">
+			<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php esc_attr_e( 'Man running with a loaf of bread and a coffee cup above a city street', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 		</div>
 		<div class="hero-content">
 			<p class="hero-brand">

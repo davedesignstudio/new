@@ -379,7 +379,7 @@ function dps_brand_kits() {
 				),
 				array(
 					'file'    => 'cafe-robust-print-illustration.png',
-					'alt'     => __( 'Comic-style illustration of a woman running with a loaf of bread and a coffee cup', 'dphilhower-studio' ),
+					'alt'     => __( 'Comic-style illustration of a man running with a loaf of bread and a coffee cup above a city street', 'dphilhower-studio' ),
 					'heading' => __( 'Illustration', 'dphilhower-studio' ),
 					'story'   => __( 'Bread under one arm, cup in the other. The shop in motion.', 'dphilhower-studio' ),
 				),
