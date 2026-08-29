@@ -377,12 +377,6 @@ function dps_brand_kits() {
 					'heading' => __( 'Window', 'dphilhower-studio' ),
 					'story'   => __( 'Cup-from-above on glass, cream hours.', 'dphilhower-studio' ),
 				),
-				array(
-					'file'    => 'cafe-robust-print-illustration.png',
-					'alt'     => __( 'Comic-style illustration of a man running with a loaf of bread and a coffee cup above a city street', 'dphilhower-studio' ),
-					'heading' => __( 'Illustration', 'dphilhower-studio' ),
-					'story'   => __( 'Bread under one arm, cup in the other. The shop in motion.', 'dphilhower-studio' ),
-				),
 			),
 		),
 		'bernardsville-deli'       => array(

@@ -163,8 +163,8 @@ function dps_seed_demo_content( $force = false ) {
 		return false;
 	}
 
-	$hero_id   = dps_sideload_theme_image( 'studio-runner.png', 'Studio runner illustration' );
-	$about_id  = dps_sideload_theme_image( 'about-desk.png', 'Studio desk' );
+	$hero_id   = dps_sideload_theme_image( 'studio-runner.png', 'Chef tossing pizza dough in a restaurant kitchen' );
+	$about_id  = dps_sideload_theme_image( 'ember-menu-after.png', 'Restaurant menu on a table' );
 	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(
 		'ember-kit.png'          => dps_sideload_theme_image( 'ember-kit.png', 'Ember Pie Co. kit' ),
@@ -361,9 +361,10 @@ function dps_seed_demo_content( $force = false ) {
 		}
 	}
 
-	$menu_order = 0;
+	$archive_rank = array_flip( dps_work_archive_slugs() );
 	foreach ( $projects as $project ) {
-		$menu_order    += 10;
+		$rank       = isset( $archive_rank[ $project['slug'] ] ) ? $archive_rank[ $project['slug'] ] : 99;
+		$menu_order = ( $rank + 1 ) * 10;
 		$existing = get_page_by_path( $project['slug'], OBJECT, 'dps_work' );
 		$postarr  = array(
 			'post_type'    => 'dps_work',

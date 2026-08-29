@@ -43,11 +43,11 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'Work that has to live in the world', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant and local identities that have to live after that first meal — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. All ten brands are on this page.', 'dphilhower-studio' ); ?></p>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant rooms first — pizza, coffee, deli, ice cream — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
 			$featured_ids = array();
-			foreach ( array( 'ember-pie-co', 'bville-pizza-grill', 'ritual-cafe', 'bernardsville-deli', 'cow-lick', 'service-the-hills', 'magic-buds', 'philhower-okrogly', 'cafe-robust', 'expresso' ) as $featured_slug ) {
+			foreach ( dps_work_home_slugs() as $featured_slug ) {
 				$featured_post = get_page_by_path( $featured_slug, OBJECT, 'dps_work' );
 				if ( $featured_post ) {
 					$featured_ids[] = $featured_post->ID;
@@ -58,7 +58,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 					'post_type'      => 'dps_work',
 					'post__in'       => $featured_ids ? $featured_ids : array( 0 ),
 					'orderby'        => 'post__in',
-					'posts_per_page' => 10,
+					'posts_per_page' => count( $featured_ids ),
 				)
 			);
 			if ( $works->have_posts() ) :
@@ -70,6 +70,9 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			endif;
 			?>
 		</div>
+		<p class="cta-row" style="margin-top:1.5rem">
+			<a class="btn btn-ghost" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'All brands', 'dphilhower-studio' ); ?></a>
+		</p>
 	</section>
 
 	<?php get_template_part( 'template-parts/process-section' ); ?>

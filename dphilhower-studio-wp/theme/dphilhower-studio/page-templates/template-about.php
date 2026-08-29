@@ -7,7 +7,7 @@
 
 get_header();
 
-$about_src = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : dps_image_url( 'about-desk.png' );
+$about_src = dps_image_url( 'ember-menu-after.png' );
 ?>
 <main id="main">
 	<header class="page-hero">
@@ -23,7 +23,7 @@ $about_src = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'f
 			<p><a class="btn btn-dark" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Invite us to the restaurant', 'dphilhower-studio' ); ?></a></p>
 		</div>
 		<div class="about-media">
-			<img src="<?php echo esc_url( $about_src ); ?>" alt="<?php esc_attr_e( 'Analog studio desk: markers, tracing paper, terracotta and olive color chips', 'dphilhower-studio' ); ?>" width="1536" height="1024">
+			<img src="<?php echo esc_url( $about_src ); ?>" alt="<?php esc_attr_e( 'Cream restaurant menu on a table with a candle and a fork', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 		</div>
 	</section>
 </main>

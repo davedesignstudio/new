@@ -12,8 +12,8 @@ get_header();
 		<h1><?php esc_html_e( 'Services', 'dphilhower-studio' ); ?></h1>
 		<p><?php esc_html_e( 'We help independent restaurants look as exceptional as the food they serve. The work starts at your table — then identity, print, and the site have to work in the room.', 'dphilhower-studio' ); ?></p>
 	</header>
-	<div class="case-hero is-illustration">
-		<img src="<?php echo esc_url( dps_image_url( 'studio-graphic-design.png' ) ); ?>" alt="<?php esc_attr_e( 'Graphic design tools: pen, type, color, and layout in one workspace', 'dphilhower-studio' ); ?>" width="1920" height="1296">
+	<div class="case-hero">
+		<img src="<?php echo esc_url( dps_image_url( 'ember-window-after.png' ) ); ?>" alt="<?php esc_attr_e( 'Pizza shop storefront with a gold window mark, menu, and wood-fired oven at dusk', 'dphilhower-studio' ); ?>" width="1536" height="1024">
 	</div>
 	<section class="section" style="padding-top:0">
 		<div class="service-list">
