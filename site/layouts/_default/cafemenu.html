@@ -23,13 +23,13 @@
         <p class="menu-leaf-kicker">{{ .kicker }}</p>
         <h2 class="menu-leaf-script">{{ .script }}</h2>
         {{ range where $.Site.Data.house.sections "page" .page }}
-          <section class="menu-leaf-section" id="{{ .id }}">
-            <h3>{{ .name }}</h3>
+          <section class="menu-leaf-section">
+            <h3 id="{{ .id }}">{{ .name }}</h3>
             {{ if .note }}<p class="menu-leaf-note">{{ .note }}</p>{{ end }}
             {{ range .items }}
-              <div class="menu-leaf-item"{{ with .id }} id="{{ . }}"{{ end }}>
+              <div class="menu-leaf-item">
                 <div class="menu-leaf-row">
-                  <h4>{{ .name }}</h4>
+                  <h4{{ with .id }} id="{{ . }}"{{ end }}>{{ .name }}</h4>
                   <span class="menu-leaf-dots" aria-hidden="true"></span>
                   <span class="price">{{ .price }}</span>
                 </div>

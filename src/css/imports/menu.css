@@ -131,7 +131,8 @@ body.is-menu {
   scroll-padding-top: 7.4rem;
 }
 
-.menu-leaf-item:target {
+.menu-leaf-section h3:target,
+.menu-leaf-item h4:target {
   background: #ffe7b8;
   outline: 2px solid var(--cherry);
   outline-offset: 3px;

@@ -352,7 +352,8 @@ sections:
       - name: "Texas Burger"
         price: "$19.55"
         description: "topped with Crisp Bacon & Cheddar Cheese, served with French Fries"
-      - name: "Smashed Burger"
+      - id: hamburger
+        name: "Smashed Burger"
         price: "$19.55"
         description: "Two Crispy Smashed Beef Patties topped with Melted American Cheese, Lettuce, Tomato, Onion, Pickle & Our House-Made Burger Sauce served on a Brioche Bun with French Fries"
   - id: quesadillas
@@ -400,7 +401,8 @@ sections:
     items:
       - name: "Chocolate Cake"
         price: "$8.40"
-      - name: "Apple Pie"
+      - id: pie
+        name: "Apple Pie"
         price: "$5.70"
       - name: "Rice Pudding"
         price: "$5.95"
@@ -411,7 +413,8 @@ sections:
     name: "Beverages"
     short: "Coffee"
     items:
-      - name: "Coffee"
+      - id: coffee
+        name: "Coffee"
         price: "$4.25"
         description: "Regular or Decaf"
       - name: "Tea"
@@ -434,7 +437,8 @@ sections:
         price: "$4.80"
       - name: "Iced Coffee"
         price: "$4.80"
-      - name: "Classic Milk Shake"
+      - id: malt
+        name: "Classic Milk Shake"
         price: "$8.40"
         description: "Choice of Vanilla, Chocolate or Strawberry"
       - name: "Premium Milk Shake"
