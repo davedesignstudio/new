@@ -46,9 +46,9 @@ body {
 
 .brand-mark img,
 .custom-logo-link img {
-  height: 52px;
+  height: 56px;
   width: auto;
-  max-width: min(260px, 54vw);
+  max-width: min(64px, 18vw);
 }
 
 .nav a {

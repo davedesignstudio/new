@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.50 =
+* Studio mark is a bronze circular seal like Service The Hills, without a saw.
+
 = 1.0.49 =
 * Hero runner is a man, with a high-angle city street behind him.
 

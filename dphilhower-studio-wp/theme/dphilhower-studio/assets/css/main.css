@@ -113,9 +113,9 @@ select {
 .brand-mark img,
 .custom-logo-link img {
   display: block;
-  height: 48px;
+  height: 56px;
   width: auto;
-  max-width: min(240px, 52vw);
+  max-width: min(64px, 18vw);
 }
 
 .nav {
@@ -214,7 +214,7 @@ select {
 
 .hero-brand img {
   display: block;
-  width: min(420px, 86vw);
+  width: min(220px, 48vw);
   height: auto;
 }
 
