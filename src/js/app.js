@@ -29,6 +29,57 @@ if (header) {
   onScroll();
 }
 
+(function bindMenuTitleScroll() {
+  var body = document.body;
+  if (!body || body.className.indexOf("is-menu") === -1) return;
+
+  function barOffset() {
+    var header = document.querySelector(".header");
+    var jump = document.querySelector(".menu-jump");
+    var y = 18;
+    if (header) y += header.getBoundingClientRect().height;
+    if (jump) y += jump.getBoundingClientRect().height;
+    return y;
+  }
+
+  function scrollToTitle(id) {
+    if (!id) return false;
+    var el = document.getElementById(id);
+    if (!el) return false;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - barOffset();
+    window.scrollTo(0, Math.max(0, top));
+    return true;
+  }
+
+  function fromHash() {
+    var id = window.location.hash.replace(/^#/, "");
+    if (!id) return;
+    try {
+      id = decodeURIComponent(id);
+    } catch (err) {}
+    scrollToTitle(id);
+  }
+
+  window.addEventListener("hashchange", fromHash);
+  window.addEventListener("load", fromHash);
+  document.addEventListener("DOMContentLoaded", fromHash);
+  setTimeout(fromHash, 0);
+  setTimeout(fromHash, 160);
+  setTimeout(fromHash, 480);
+
+  document.querySelectorAll('.menu-jump a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var id = (link.getAttribute("href") || "").replace(/^#/, "");
+      if (!id || !document.getElementById(id)) return;
+      e.preventDefault();
+      if (history.replaceState) {
+        history.replaceState(null, "", "#" + id);
+      }
+      scrollToTitle(id);
+    });
+  });
+})();
+
 document.querySelectorAll("video[autoplay]").forEach(function (video) {
   if (video.classList.contains("js-scroll-walk")) return;
   video.muted = true;
