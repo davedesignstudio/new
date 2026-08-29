@@ -11,6 +11,7 @@ title = "Boonton Cafe"
   city = "Boonton, NJ 07005"
   hours = "Open 7 days · 6:00 a.m. – 4:00 p.m."
   ownership = "Under new ownership"
+  orderUrl = "https://order.ntouchordering.com/boonton-cafe"
 
 [[menu.main]]
     name = "Menu"
