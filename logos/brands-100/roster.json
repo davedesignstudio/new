@@ -698,5 +698,110 @@
     "cat": "service",
     "palette": "pet coral, cream, teal",
     "tone": "pet grooming"
+  },
+  {
+    "slug": "ember-lane-bakery",
+    "name": "Ember Lane Bakery",
+    "cat": "bakery",
+    "palette": "ember orange, flour cream, charcoal",
+    "tone": "wood-fired neighborhood bakery"
+  },
+  {
+    "slug": "copper-quill",
+    "name": "Copper Quill",
+    "cat": "cafe",
+    "palette": "copper, ink black, cream",
+    "tone": "writers cafe with pour-over"
+  },
+  {
+    "slug": "night-rail-ramen",
+    "name": "Night Rail Ramen",
+    "cat": "restaurant",
+    "palette": "rail black, broth gold, chili red",
+    "tone": "late-night ramen under the tracks"
+  },
+  {
+    "slug": "parcel-green",
+    "name": "Parcel Green",
+    "cat": "market",
+    "palette": "leaf green, kraft, white",
+    "tone": "farm-box grocery delivery"
+  },
+  {
+    "slug": "brick-kiln-pizza",
+    "name": "Brick Kiln Pizza",
+    "cat": "pizza",
+    "palette": "brick red, kiln ash, cream",
+    "tone": "coal-fired slice shop"
+  },
+  {
+    "slug": "amber-cask",
+    "name": "Amber Cask",
+    "cat": "bar",
+    "palette": "amber, oak, deep brown",
+    "tone": "whiskey tasting room"
+  },
+  {
+    "slug": "loft-and-latch",
+    "name": "Loft & Latch",
+    "cat": "studio",
+    "palette": "loft gray, brass latch, white",
+    "tone": "architecture photography studio"
+  },
+  {
+    "slug": "tidepool-well",
+    "name": "Tidepool Well",
+    "cat": "wellness",
+    "palette": "tidepool teal, sand, white",
+    "tone": "coastal float and spa"
+  },
+  {
+    "slug": "needlepoint-garage",
+    "name": "Needlepoint Garage",
+    "cat": "auto",
+    "palette": "garage navy, stitch cream, red",
+    "tone": "precision classic car shop"
+  },
+  {
+    "slug": "summit-cord",
+    "name": "Summit Cord",
+    "cat": "outdoor",
+    "palette": "summit blue, cord tan, frost",
+    "tone": "climbing rope and gear"
+  },
+  {
+    "slug": "folio-bit",
+    "name": "Folio Bit",
+    "cat": "tech",
+    "palette": "bit green, folio cream, black",
+    "tone": "small-batch hardware lab"
+  },
+  {
+    "slug": "crayon-orbit-kids",
+    "name": "Crayon Orbit",
+    "cat": "family",
+    "palette": "crayon yellow, orbit blue, white",
+    "tone": "kids makerspace"
+  },
+  {
+    "slug": "petal-switch",
+    "name": "Petal Switch",
+    "cat": "floral",
+    "palette": "petal pink, switch charcoal, cream",
+    "tone": "modern flower delivery"
+  },
+  {
+    "slug": "marquee-grain",
+    "name": "Marquee Grain",
+    "cat": "culture",
+    "palette": "marquee gold, grain cream, black",
+    "tone": "indie film cafe"
+  },
+  {
+    "slug": "keystone-mend",
+    "name": "Keystone Mend",
+    "cat": "service",
+    "palette": "keystone slate, mend orange, white",
+    "tone": "home repair and locksmith"
   }
 ]
