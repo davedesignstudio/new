@@ -30,6 +30,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--maroon);
+  font-size: 18px;
 }
 
 body {
@@ -42,8 +43,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  line-height: 1.55;
+  font-size: 1.15rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -132,7 +133,7 @@ select {
 }
 
 .nav a {
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   letter-spacing: 0.02em;
   opacity: 0.88;
   transition: opacity 0.25s var(--ease);
@@ -220,7 +221,7 @@ select {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
   max-width: 22ch;
   opacity: 1;
 }
@@ -247,7 +248,7 @@ select {
   border: 1px solid transparent;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   letter-spacing: 0.02em;
   transition: transform 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
   cursor: pointer;
@@ -294,7 +295,7 @@ select {
 .section-label {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--verdigris);
@@ -304,7 +305,7 @@ select {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(2.15rem, 4.6vw, 3.35rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   max-width: 16ch;
@@ -374,12 +375,12 @@ select {
 .work-meta h3 {
   margin: 0 0 0.2rem;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .work-meta p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   color: rgba(244, 246, 241, 0.8);
 }
 
@@ -434,7 +435,7 @@ select {
 .locale-panel h2 {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.95rem, 3.5vw, 2.65rem);
   line-height: 1.1;
   max-width: 14ch;
   color: #000000;
@@ -484,7 +485,7 @@ select {
 .cta-brand h2 {
   margin: 0 0 0.6rem;
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-size: clamp(2rem, 4vw, 2.85rem);
   max-width: 14ch;
 }
 
@@ -520,7 +521,7 @@ select {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-size: clamp(2.75rem, 6.6vw, 4.6rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
   max-width: 12ch;
@@ -558,7 +559,7 @@ select {
 .service-row h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
 }
 
 .service-row p {
@@ -786,6 +787,66 @@ select {
 }
 
 @media (max-width: 720px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 1.05rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+  }
+
+  .hero-line {
+    font-size: clamp(1.35rem, 6.5vw, 1.85rem);
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 7vw, 2.25rem);
+  }
+
+  .work-meta h3 {
+    font-size: 1.2rem;
+  }
+
+  .work-meta p {
+    font-size: 0.92rem;
+  }
+
+  .locale-panel h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .cta-brand h2 {
+    font-size: clamp(1.55rem, 6.5vw, 2.1rem);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .service-row h2 {
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+  }
+
+  .type-display {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+  }
+
+  .case-body h2 {
+    font-size: 1.35rem;
+  }
+
   .site-header {
     color: var(--ink);
     background: var(--stage);
@@ -914,7 +975,7 @@ select {
 .type-display {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.95rem, 3.5vw, 2.65rem);
   line-height: 1;
   margin: 0 0 0.35rem;
 }

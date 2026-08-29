@@ -395,6 +395,34 @@ body {
 }
 
 @media (max-width: 720px) {
+  html {
+    font-size: 16px;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .hero-line {
+    font-size: clamp(1.45rem, 7vw, 2.1rem);
+  }
+
+  .hero-support {
+    font-size: 1.05rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 7vw, 2.25rem);
+  }
+
+  .locale-panel h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
   .site-header {
     background: var(--stage);
   }
