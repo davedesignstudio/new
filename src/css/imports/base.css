@@ -1083,9 +1083,9 @@ form button {
 }
 
 .walkthrough-hud h1 {
-  font-family: "Bowlby One SC", "Oswald", sans-serif;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
   font-weight: 400;
-  color: var(--title-blue-bright);
+  color: #fff;
   text-shadow: none;
 }
 
