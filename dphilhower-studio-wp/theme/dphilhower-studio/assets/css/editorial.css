@@ -14,8 +14,9 @@
   --heat: #2e41a1;
   --heat-bright: #3d54c4;
   --brass: #fcdd44;
+  --gold: #d4af37;
   --muted: #c4b4a4;
-  --line: rgba(243, 234, 216, 0.16);
+  --line: rgba(212, 175, 55, 0.22);
   --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
 }
@@ -56,8 +57,8 @@ body {
 }
 
 .nav a[aria-current="page"] {
-  color: var(--verdigris);
-  box-shadow: inset 0 -2px 0 var(--verdigris);
+  color: var(--gold);
+  box-shadow: inset 0 -2px 0 var(--gold);
 }
 
 .nav .cta > a {
@@ -94,7 +95,7 @@ body {
 }
 
 .hero-content {
-  border-left: 4px solid var(--brass);
+  border-left: 3px solid var(--gold);
   padding-left: clamp(1rem, 3vw, 1.75rem);
 }
 
@@ -139,12 +140,12 @@ body {
 }
 
 .btn-ghost {
-  border-color: rgba(252, 221, 68, 0.7);
+  border-color: var(--gold);
   color: #fff8dc;
 }
 
 .section-label {
-  color: var(--verdigris);
+  color: var(--gold);
   letter-spacing: 0.2em;
 }
 
@@ -231,7 +232,7 @@ body {
   background: var(--heat);
   color: #fff8dc;
   padding: clamp(2rem, 5vw, 3.25rem);
-  border-top: 4px solid var(--brass);
+  border-top: 3px solid var(--gold);
 }
 
 .cta-brand h2 {
@@ -262,14 +263,14 @@ body {
 .kit-panel {
   background: rgba(248, 244, 220, 0.88);
   border-radius: 0;
-  border-top: 4px solid var(--heat);
+  border-top: 3px solid var(--gold);
 }
 
 .locale-panel {
   background: #ffffff;
   color: #000000;
   border-radius: 0;
-  border-left: 4px solid var(--verdigris);
+  border-left: 3px solid var(--gold);
 }
 
 .locale-panel h2,

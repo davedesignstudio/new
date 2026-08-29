@@ -12,8 +12,9 @@
   --heat: #2e41a1;
   --heat-bright: #3d54c4;
   --brass: #fcdd44;
+  --gold: #d4af37;
   --muted: #c4b4a4;
-  --line: rgba(243, 234, 216, 0.16);
+  --line: rgba(212, 175, 55, 0.22);
   --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
   --space: clamp(1rem, 2.5vw, 2rem);
@@ -298,7 +299,7 @@ select {
   font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--verdigris);
+  color: var(--gold);
 }
 
 .section-title {
@@ -398,7 +399,7 @@ select {
 
 .process-step {
   padding-top: 1rem;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
 }
 
 .process-step strong {
