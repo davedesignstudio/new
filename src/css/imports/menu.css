@@ -129,12 +129,12 @@ body.is-menu .menu-jump a:focus {
 
 html.is-menu,
 body.is-menu {
-  scroll-padding-top: 8rem;
+  scroll-padding-top: calc(8rem - 0.2px);
 }
 
 html.is-menu .menu-leaf-section h3,
 html.is-menu .menu-leaf-item h4[id] {
-  scroll-margin-top: 8rem;
+  scroll-margin-top: calc(8rem - 0.2px);
 }
 
 .menu-leaf-section h3:target,

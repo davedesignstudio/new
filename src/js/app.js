@@ -36,7 +36,7 @@ if (header) {
   function barOffset() {
     var header = document.querySelector(".header");
     var jump = document.querySelector(".menu-jump");
-    var y = 18;
+    var y = 17.8;
     if (header) y += header.getBoundingClientRect().height;
     if (jump) y += jump.getBoundingClientRect().height;
     return y;
