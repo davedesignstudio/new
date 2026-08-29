@@ -51,7 +51,7 @@ function dps_customize_register( $wp_customize ) {
 		),
 		'dps_hero_support' => array(
 			'label'   => __( 'Hero support copy', 'dphilhower-studio' ),
-			'default' => 'Identity, menus, windows, and websites — so the room, the board, and the site feel like the same place.',
+			'default' => 'The first conversation is at your restaurant. Then identity, menus, windows, and the site become one place.',
 			'type'    => 'textarea',
 		),
 	);

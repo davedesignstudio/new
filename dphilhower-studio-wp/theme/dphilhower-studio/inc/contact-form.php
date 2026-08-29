@@ -43,7 +43,7 @@ function dps_handle_contact_form() {
 
 	$to      = dps_contact_email();
 	$subject = sprintf( '[D Philhower Studio] Project inquiry from %s', $name );
-	$body    = "Name: {$name}\nEmail: {$email}\nBusiness / location: {$business}\nNeed: {$need}\n\n{$notes}\n";
+	$body    = "Name: {$name}\nEmail: {$email}\nRestaurant / town: {$business}\nNeed: {$need}\n\n{$notes}\n";
 	$headers = array(
 		'Content-Type: text/plain; charset=UTF-8',
 		'Reply-To: ' . $name . ' <' . $email . '>',
@@ -61,7 +61,7 @@ add_action( 'template_redirect', 'dps_handle_contact_form' );
 function dps_render_contact_form() {
 	$status = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'] ) ) : '';
 	if ( 'sent' === $status ) {
-		echo '<p class="form-success">' . esc_html__( 'Thanks — the studio received your note and will reply with next steps.', 'dphilhower-studio' ) . '</p>';
+		echo '<p class="form-success">' . esc_html__( 'Thanks — the studio received your note and will reply with a time to sit down at the restaurant.', 'dphilhower-studio' ) . '</p>';
 	} elseif ( 'error' === $status ) {
 		echo '<p class="form-success" style="border-color:#8a3b2b">' . esc_html__( 'Something went wrong. Please check your name and email, or write hello@dphilhower.com directly.', 'dphilhower-studio' ) . '</p>';
 	}
@@ -80,25 +80,26 @@ function dps_render_contact_form() {
 			<input type="email" name="dps_email" required autocomplete="email">
 		</label>
 		<label>
-			<?php esc_html_e( 'Business / location', 'dphilhower-studio' ); ?>
-			<input type="text" name="dps_business" placeholder="<?php esc_attr_e( 'e.g. Cafe in Morristown', 'dphilhower-studio' ); ?>" autocomplete="organization">
+			<?php esc_html_e( 'Restaurant / town', 'dphilhower-studio' ); ?>
+			<input type="text" name="dps_business" placeholder="<?php esc_attr_e( 'e.g. Tuesday lunch, two-top by the window', 'dphilhower-studio' ); ?>" autocomplete="organization">
 		</label>
 		<label>
 			<?php esc_html_e( 'What do you need?', 'dphilhower-studio' ); ?>
 			<select name="dps_need">
-				<option value="brand"><?php esc_html_e( 'Brand identity', 'dphilhower-studio' ); ?></option>
-				<option value="web"><?php esc_html_e( 'Website design', 'dphilhower-studio' ); ?></option>
-				<option value="both" selected><?php esc_html_e( 'Brand + website', 'dphilhower-studio' ); ?></option>
-				<option value="print"><?php esc_html_e( 'Print / packaging', 'dphilhower-studio' ); ?></option>
+				<option value="sitdown" selected><?php esc_html_e( 'Meet at the restaurant', 'dphilhower-studio' ); ?></option>
+				<option value="brand"><?php esc_html_e( 'Identity', 'dphilhower-studio' ); ?></option>
+				<option value="web"><?php esc_html_e( 'Website', 'dphilhower-studio' ); ?></option>
+				<option value="both"><?php esc_html_e( 'Identity + website', 'dphilhower-studio' ); ?></option>
+				<option value="print"><?php esc_html_e( 'Menus, windows, print', 'dphilhower-studio' ); ?></option>
 				<option value="other"><?php esc_html_e( 'Something else', 'dphilhower-studio' ); ?></option>
 			</select>
 		</label>
 		<label>
-			<?php esc_html_e( 'Project notes', 'dphilhower-studio' ); ?>
-			<textarea name="dps_notes" placeholder="<?php esc_attr_e( 'Timeline, goals, links to current site…', 'dphilhower-studio' ); ?>"></textarea>
+			<?php esc_html_e( 'Where should we sit?', 'dphilhower-studio' ); ?>
+			<textarea name="dps_notes" placeholder="<?php esc_attr_e( 'What to eat, what has to live on the window, when you want to meet…', 'dphilhower-studio' ); ?>"></textarea>
 		</label>
-		<button class="btn btn-dark" type="submit" name="dps_contact_submit" value="1"><?php esc_html_e( 'Send message', 'dphilhower-studio' ); ?></button>
-		<p class="form-note"><?php esc_html_e( 'Messages go to the studio inbox. Typical reply: a few questions and a sense of fit.', 'dphilhower-studio' ); ?></p>
+		<button class="btn btn-dark" type="submit" name="dps_contact_submit" value="1"><?php esc_html_e( 'Invite us over', 'dphilhower-studio' ); ?></button>
+		<p class="form-note"><?php esc_html_e( 'Messages go to the studio inbox. Typical reply: a time to sit down at your restaurant.', 'dphilhower-studio' ); ?></p>
 	</form>
 	<?php
 }

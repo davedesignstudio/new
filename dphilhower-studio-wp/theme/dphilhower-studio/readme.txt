@@ -20,5 +20,8 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.48 =
+* Studio writing and a four-step process that starts with a meal at the restaurant.
+
 = 1.0.0 =
 * First release for dphilhower.com

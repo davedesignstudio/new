@@ -12,8 +12,8 @@ $location = dps_mod( 'dps_location', 'Morris County, NJ' );
 ?>
 <main id="main">
 	<header class="page-hero">
-		<h1><?php esc_html_e( 'Let’s build something together', 'dphilhower-studio' ); ?></h1>
-		<p><?php esc_html_e( 'If the food is already there, the look should catch up. Tell us what you’re cooking, pouring, or plating.', 'dphilhower-studio' ); ?></p>
+		<h1><?php esc_html_e( 'Let’s sit down', 'dphilhower-studio' ); ?></h1>
+		<p><?php esc_html_e( 'Invite us to your restaurant for the first conversation. We will eat, walk the room, and write back what we heard before we draw a line.', 'dphilhower-studio' ); ?></p>
 	</header>
 	<section class="section contact-layout" style="padding-top:0">
 		<div class="contact-details">
@@ -23,7 +23,7 @@ $location = dps_mod( 'dps_location', 'Morris County, NJ' );
 			<?php if ( $phone ) : ?>
 				<p><strong><?php esc_html_e( 'Phone', 'dphilhower-studio' ); ?></strong><br><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a></p>
 			<?php endif; ?>
-			<p><?php esc_html_e( 'Typical projects: restaurant identity, menus, windows, websites, and print that has to hold up in the room.', 'dphilhower-studio' ); ?></p>
+			<p><?php esc_html_e( 'The first meeting is at your place — Bernardsville, Morristown, or the next town over. Typical work: identity, menus, windows, websites, and print that has to hold up in the room.', 'dphilhower-studio' ); ?></p>
 		</div>
 		<?php dps_render_contact_form(); ?>
 	</section>

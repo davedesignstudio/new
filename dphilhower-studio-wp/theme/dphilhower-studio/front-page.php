@@ -26,24 +26,24 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 				<img src="<?php echo esc_url( dps_image_url( 'd-philhower-lockup.png' ) ); ?>" alt="<?php echo esc_attr( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?>" width="1426" height="522">
 			</p>
 			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'We help independent restaurants look as exceptional as the food they serve.' ) ); ?></h1>
-			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'Identity, menus, windows, and websites — so the room, the board, and the site feel like the same place.' ) ); ?></p>
+			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'The first conversation is at your restaurant. Then identity, menus, windows, and the site become one place.' ) ); ?></p>
 			<div class="cta-row">
 				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View brands', 'dphilhower-studio' ); ?></a>
-				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Start a project', 'dphilhower-studio' ); ?></a>
+				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Invite us over', 'dphilhower-studio' ); ?></a>
 			</div>
 		</div>
 	</section>
 
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Studio', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'The look should keep up with the kitchen', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'We help independent restaurants look as exceptional as the food they serve. Marks that hold on a window. Menus you can read. Sites that feel like walking in.', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'We start at the table', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'The first conversation is a meal, not a pitch. We sit at your restaurant — a two-top, the bar, or the pass — and talk the way hospitality people talk: who walks in, what they order, what the block already thinks you are. From that table we write, draw, and build so guests recognize you before they sit down.', 'dphilhower-studio' ); ?></p>
 	</section>
 
 	<section class="section">
 		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'Work that has to live in the world', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Restaurant and local identities, including Bville Pizza & Grill in Bernardsville — in-house graphic design there from 2018 to 2021. All ten brands are on this page.', 'dphilhower-studio' ); ?></p>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant and local identities that have to live after that first meal — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. All ten brands are on this page.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
 			$featured_ids = array();
@@ -72,30 +72,12 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 	</section>
 
-	<section class="section">
-		<p class="section-label"><?php esc_html_e( 'Process', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'Strategy meets soul', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy"><?php esc_html_e( 'Design is more than decoration — it’s communication. We begin every project with deep discovery, aligning your goals with your audience’s needs. Our process blends strategic thinking with artistic intuition, ensuring every pixel has purpose.', 'dphilhower-studio' ); ?></p>
-		<div class="process">
-			<div class="process-step">
-				<strong><?php esc_html_e( 'Clear messaging', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Clear messaging over clutter. Say the thing, then stop.', 'dphilhower-studio' ); ?></p>
-			</div>
-			<div class="process-step">
-				<strong><?php esc_html_e( 'Modular systems', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Modular systems over one-off assets. The window, the site, and the takeaway should be one voice.', 'dphilhower-studio' ); ?></p>
-			</div>
-			<div class="process-step">
-				<strong><?php esc_html_e( 'Collaboration', 'dphilhower-studio' ); ?></strong>
-				<p><?php esc_html_e( 'Collaboration over ego. We build with you, not at you.', 'dphilhower-studio' ); ?></p>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/process-section' ); ?>
 
 	<section class="section locale">
 		<div class="locale-panel">
 			<h2><?php esc_html_e( 'Bernardsville, Morristown, Morris County', 'dphilhower-studio' ); ?></h2>
-			<p><?php esc_html_e( 'David Philhower designs for owners who want a local partner — not a distant mill that retrofits one layout for the next shop.', 'dphilhower-studio' ); ?></p>
+			<p><?php esc_html_e( 'David Philhower designs for owners who want a local partner. The first meeting is at your restaurant — in Bernardsville, Morristown, or the next town over — not a distant mill that retrofits one layout for the next shop.', 'dphilhower-studio' ); ?></p>
 			<ul>
 				<li>Bernardsville · Morristown · Madison</li>
 				<li>Mendham · Randolph · Chatham</li>
