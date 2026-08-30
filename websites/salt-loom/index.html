@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salt Loom — Coastal Restaurant</title>
+  <meta name="description" content="Harbor terrace dining woven with salt air and loom-honest craft." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --ink: #1b2228;
+      --accent: #1f4d5c;
+      --display: "Bodoni Moda", serif;
+      --stake-bg: #152028;
+      --stake-ink: #f0ebe3;
+    }
+    body { background: radial-gradient(ellipse at 90% 0%, rgba(31,77,92,0.14), transparent 48%), linear-gradient(180deg, #f7f2ea, #ebe4d8); }
+    
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="shellfish">
+    <strong>Critical allergen:</strong>
+    <span class="critical">Shellfish on the shared grill — cross-contact possible.</span><span>Ask for the land-only loom board.</span>
+  </div>
+  <div class="stream-rail" id="stream-rail" data-phase="skeleton" role="status" aria-live="polite" data-envelope="stream">
+    <span class="phase-pill">skeleton</span>
+    <span class="ail" id="stream-ail" data-ail="stream">Streaming · Board fill · Waiting on first component</span>
+    <button type="button" class="btn btn-ghost" id="force-fallback" style="min-height:40px;padding:0.4rem 0.9rem;color:inherit;border-color:color-mix(in srgb, var(--ink) 25%, transparent);background:transparent;margin-left:auto">Use static fallback</button>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Salt Loom logo" width="44" height="44" />
+      <span>Salt Loom</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand kinetic-wind" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Coastal terrace restaurant overlooking harbor water with linen tables" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Salt Loom</h1>
+        <p class="hero-line">Warp meets tide. The table keeps the beat.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a terrace</a>
+          <a class="btn btn-ghost" href="#menu">See the board</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — harbor terrace, salt wind light</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Loom board</h2>
+      <p class="lead">Stream the fill; keep the envelope. Shellfish stakes stay above the fold forever.</p>
+      
+      <div class="card-grid" data-fill="stream">
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Tide Thread">
+          <span class="meta">Catch</span>
+          <h3>Tide Thread</h3>
+          <p>Day-boat whitefish, citrus weave, fennel pollen. Ask about shellfish contact.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" >Add to tray</button>
+        </article>
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Dry Warp">
+          <span class="meta">Land</span>
+          <h3>Dry Warp</h3>
+          <p>Roasted roots, smoked salt, herb oil. Land-only safe path.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" >Add to tray</button>
+        </article>
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Loom Clams">
+          <span class="meta">Shell</span>
+          <h3>Loom Clams</h3>
+          <p>Contains shellfish. Broth finished with kelp butter.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" >Add to tray</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">We confirm the table, the wind side, and the hold window in one sentence.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Terrace table for 2 · Hold expires in 25 minutes after confirmation
+      </p>
+            <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Terrace table for 2 · Arrive by 12:05 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="11:20" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+    
+  </main>
+  <footer class="site-footer">
+    <span>Salt Loom · coastal restaurant · Pass HJ Deepen</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+  
+
+<script>
+(function () {
+  const rail = document.getElementById('stream-rail');
+  const ail = document.getElementById('stream-ail');
+  const cards = Array.from(document.querySelectorAll('[data-stream-card]'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const delays = reduce ? [0, 0, 0] : [280, 620, 980];
+
+  function setRail(phase, text) {
+    if (!rail || !ail) return;
+    rail.dataset.phase = phase;
+    rail.querySelector('.phase-pill').textContent = phase;
+    ail.textContent = text;
+  }
+
+  // Start skeleton
+  cards.forEach((c) => { c.dataset.stream = 'skeleton'; });
+  setRail('skeleton', 'Streaming · Board fill · Waiting on first component');
+
+  cards.forEach((card, i) => {
+    window.setTimeout(() => {
+      card.dataset.stream = 'partial';
+      setRail('partial', 'Streaming · ' + (card.dataset.title || 'Item') + ' · Partial props landing');
+    }, delays[i] || 400);
+    window.setTimeout(() => {
+      card.dataset.stream = 'ready';
+      const done = cards.every((c) => c.dataset.stream === 'ready');
+      if (done) {
+        setRail('ready', 'Assembled · Full board · Envelope unchanged · Fallback unused');
+      }
+    }, (delays[i] || 400) + (reduce ? 80 : 420));
+  });
+
+  // Deterministic fallback demo control (optional)
+  const fb = document.getElementById('force-fallback');
+  if (fb) {
+    fb.addEventListener('click', () => {
+      cards.forEach((c) => { c.dataset.stream = 'ready'; });
+      setRail('fallback', 'Fallback · Static board served · Generative layer skipped');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

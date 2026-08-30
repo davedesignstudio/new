@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cedar Drift — Woodland Cafe</title>
+  <meta name="description" content="Mist between the cedars. Slow coffee under living timber." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #eef3ef;
+      --ink: #1a2420;
+      --accent: #2f6b5a;
+      --display: "Cormorant Garamond", serif;
+      --stake-bg: #1c2a24;
+      --stake-ink: #e8f2ec;
+    }
+    body { background: radial-gradient(ellipse at 15% 0%, rgba(47,107,90,0.16), transparent 45%), linear-gradient(180deg, #f2f7f4, #e4ebe6); }
+    
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="tree-nut">
+    <strong>Allergen notice:</strong>
+    <span class="critical">House pastry contains tree nuts (walnut + almond).</span><span>Mist advisory — patio seating may be slick.</span>
+  </div>
+  <div class="stream-rail" id="stream-rail" data-phase="skeleton" role="status" aria-live="polite" data-envelope="stream">
+    <span class="phase-pill">skeleton</span>
+    <span class="ail" id="stream-ail" data-ail="stream">Streaming · Board fill · Waiting on first component</span>
+    <button type="button" class="btn btn-ghost" id="force-fallback" style="min-height:40px;padding:0.4rem 0.9rem;color:inherit;border-color:color-mix(in srgb, var(--ink) 25%, transparent);background:transparent;margin-left:auto">Use static fallback</button>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Cedar Drift logo" width="44" height="44" />
+      <span>Cedar Drift</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand kinetic-mist" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Woodland cafe in a cedar grove with soft mist between the trees" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Cedar Drift</h1>
+        <p class="hero-line">Mist holds the grove. The pour holds still.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a bench</a>
+          <a class="btn btn-ghost" href="#menu">See the board</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — cedar grove, cool mist light</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Grove board</h2>
+      <p class="lead">Progressive streaming for fill only. Mist kinetic cancels under prefers-reduced-motion.</p>
+      
+      <div class="card-grid" data-fill="stream">
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Grove Drip">
+          <span class="meta">Filter</span>
+          <h3>Grove Drip</h3>
+          <p>Light roast through cedar-smoked paper. Quiet cup for fog mornings.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" >Add to tray</button>
+        </article>
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Moss Steam">
+          <span class="meta">Latte</span>
+          <h3>Moss Steam</h3>
+          <p>Oat milk optional. Foam edged like lichen on wet bark.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" >Add to tray</button>
+        </article>
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Walnut Drift">
+          <span class="meta">Pastry</span>
+          <h3>Walnut Drift</h3>
+          <p>Contains tree nuts. Brown-butter walnut loaf, almond crumble.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" >Add to tray</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Action + Item + Limit — no panic prose.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Grove bench for 2 · Hold expires in 20 minutes after confirmation
+      </p>
+            <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Grove bench for 2 · Arrive by 11:40 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="11:20" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+    
+  </main>
+  <footer class="site-footer">
+    <span>Cedar Drift · woodland cafe · Pass HJ Deepen</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+  
+
+<script>
+(function () {
+  const rail = document.getElementById('stream-rail');
+  const ail = document.getElementById('stream-ail');
+  const cards = Array.from(document.querySelectorAll('[data-stream-card]'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const delays = reduce ? [0, 0, 0] : [280, 620, 980];
+
+  function setRail(phase, text) {
+    if (!rail || !ail) return;
+    rail.dataset.phase = phase;
+    rail.querySelector('.phase-pill').textContent = phase;
+    ail.textContent = text;
+  }
+
+  // Start skeleton
+  cards.forEach((c) => { c.dataset.stream = 'skeleton'; });
+  setRail('skeleton', 'Streaming · Board fill · Waiting on first component');
+
+  cards.forEach((card, i) => {
+    window.setTimeout(() => {
+      card.dataset.stream = 'partial';
+      setRail('partial', 'Streaming · ' + (card.dataset.title || 'Item') + ' · Partial props landing');
+    }, delays[i] || 400);
+    window.setTimeout(() => {
+      card.dataset.stream = 'ready';
+      const done = cards.every((c) => c.dataset.stream === 'ready');
+      if (done) {
+        setRail('ready', 'Assembled · Full board · Envelope unchanged · Fallback unused');
+      }
+    }, (delays[i] || 400) + (reduce ? 80 : 420));
+  });
+
+  // Deterministic fallback demo control (optional)
+  const fb = document.getElementById('force-fallback');
+  if (fb) {
+    fb.addEventListener('click', () => {
+      cards.forEach((c) => { c.dataset.stream = 'ready'; });
+      setRail('fallback', 'Fallback · Static board served · Generative layer skipped');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
