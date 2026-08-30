@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln &amp; Cup — Fired clay · slow coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f3e6d8;
+      --ink: #2a1c14;
+      --accent: #b85a32;
+      --accent-ink: #fff8f1;
+      --stake-bg: #3a2418;
+      --stake-ink: #f6e4d4;
+      --hero-ink: #fff6ec;
+      --hero-scrim: #24160f;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-testid="stakes">
+    <strong>Allergen stakes:</strong>
+    <span>Sesame in kiln crackers · dairy in cortado foam</span>
+    <span class="ail" data-testid="ail">Reserve · 2-top window · until 11:00</span>
+  </div>
+  <header class="site-nav">
+    <a class="brand-lockup" href="./index.html" data-testid="logo">
+      <img src="./assets/logo.png" width="44" height="44" alt="Kiln &amp; Cup logo" />
+      <span>Kiln &amp; Cup</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#workshop">Workshop</a></li>
+      <li><a href="#reserve">Reserve</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Kiln and Cup hero">
+      <div class="hero__media"><img src="./assets/hero.png" alt="Warm kiln workshop with handmade cups on shelves" /></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__brand">Kiln &amp; Cup</h1>
+        <p class="hero__line">Clay fires slow. Coffee pours clear. A neighborhood kiln cafe where the cup you hold was thrown upstairs.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#reserve" data-testid="cta-primary">Reserve a seat</a>
+          <a class="btn btn--ghost" href="#menu">See today’s pours</a>
+        </div>
+        <p class="place-credit">Place credit · Ceramic workshop, morning fire · Pass HF Crosslink</p>
+      </div>
+    </section>
+
+    <section class="band band--split" id="menu">
+      <div>
+        <h2>Today’s pours</h2>
+        <p class="lead">Imagist menu lines — one image, no garnish prose. Hebrew parallel stakes keep allergens visible twice.</p>
+        <div class="menu-grid">
+          <a class="item-card" href="#reserve"><h3>Kiln Pour</h3><p>Single-origin drip, ash-dark and bright.</p><div class="meta">$4 · vegan</div></a>
+          <a class="item-card" href="#reserve"><h3>Cortado Foam</h3><p>Short milk, long silence.</p><div class="meta">$5 · dairy</div></a>
+          <a class="item-card" href="#reserve"><h3>Sesame Cracker</h3><p>Fired thin with kiln salt.</p><div class="meta">$3 · sesame</div></a>
+        </div>
+      </div>
+      <div id="workshop">
+        <h2>Workshop hours</h2>
+        <p class="lead">Shu: the wheel. Ha: the glaze break. Ri: the cup that fits your hand without thinking.</p>
+        <div class="hold-panel" id="reserve">
+          <h3>Reserve</h3>
+          <p>Action · Item · Limit — no panic copy.</p>
+          <p class="ail" data-testid="ail-detail">Reserve · kiln-side table · hold until 11:00</p>
+          <p style="margin-top:1rem"><a class="btn btn--primary" href="mailto:reserve@kilnandcup.example">Email to hold</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>Kiln &amp; Cup · cafe · Pass HF</div>
+    <div class="joint-mark">Joint hallmark · Fitts·PRM·stakes·A+I+L</div>
+  </footer>
+</body>
+</html>

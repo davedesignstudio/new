@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Courtyard fire · walnut service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Fraunces:opsz,wght@9..144,650&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #1a1410;
+      --ink: #f0e2d2;
+      --accent: #c4783a;
+      --accent-ink: #1a120c;
+      --stake-bg: #2a1c14;
+      --stake-ink: #ead7c4;
+      --hero-ink: #f7ebe0;
+      --hero-scrim: #100c09;
+      --font-display: "Bodoni Moda", "Fraunces", Georgia, serif;
+    }
+    body { background: #120e0b; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-testid="stakes">
+    <strong>Kitchen stakes:</strong>
+    <span>Walnut ash on grilled fish · open flame courtyard · tree-nut oil in finishing</span>
+    <span class="ail" data-testid="ail">Book · courtyard table · 15 min grace</span>
+  </div>
+  <header class="site-nav">
+    <a class="brand-lockup" href="./index.html" data-testid="logo">
+      <img src="./assets/logo.png" width="44" height="44" alt="Ember Court logo" />
+      <span>Ember Court</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#court">Courtyard</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Ember Court hero">
+      <div class="hero__media"><img src="./assets/hero.png" alt="Dusk courtyard with copper ember light and long walnut table" /></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__brand">Ember Court</h1>
+        <p class="hero__line">Dinner under copper light. The brand is the architecture — Bodoni as layout, fire as atmosphere.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#book" data-testid="cta-primary">Book the court</a>
+          <a class="btn btn--ghost" href="#menu">Evening menu</a>
+        </div>
+        <p class="place-credit">Place credit · Stone courtyard at dusk · Pass HF Crosslink</p>
+      </div>
+    </section>
+
+    <section class="band band--split" id="menu">
+      <div>
+        <h2>Evening plates</h2>
+        <p class="lead">Soft maximalism in the fill: copper, ash, walnut. Envelope chrome stays quiet so service can be loud.</p>
+        <div class="menu-grid">
+          <a class="item-card" href="#book"><h3>Ash Char</h3><p>Market fish, walnut finish.</p><div class="meta">MP · tree nut</div></a>
+          <a class="item-card" href="#book"><h3>Ember Root</h3><p>Roasted beets, smoke oil.</p><div class="meta">$18 · vegan</div></a>
+          <a class="item-card" href="#book"><h3>Court Bread</h3><p>Hearth loaf, copper salt.</p><div class="meta">$9 · gluten</div></a>
+        </div>
+      </div>
+      <div id="court">
+        <h2>The courtyard</h2>
+        <p class="lead">Craft: sashimono honesty — joints you can trust. Service: Fitts-sized booking, never a tiny cancel.</p>
+        <div class="hold-panel" id="book">
+          <h3>Book</h3>
+          <p class="ail" data-testid="ail-detail">Book · courtyard table · 15-minute grace from seating time</p>
+          <p style="margin-top:1rem"><a class="btn btn--primary" href="mailto:book@embercourt.example">Request seating</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>Ember Court · restaurant · Pass HF</div>
+    <div class="joint-mark">Joint hallmark · Bodoni display · nut stakes above fold</div>
+  </footer>
+</body>
+</html>
