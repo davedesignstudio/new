@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design techniques — D Philhower Studio</title>
+  <meta name="description" content="Craft canon for D Philhower Studio: GenUI envelope contracts, front-loaded stakes, objecthood, plain writing, labeled canons, and cooperage logic.">
+  <link rel="canonical" href="https://dphilhowerstudio.com/techniques/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-mark" href="/">D Philhower Studio</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav">
+      <a href="/work/">Work</a>
+      <a href="/services/">Services</a>
+      <a href="/techniques/" aria-current="page">Techniques</a>
+      <a href="/about/">About</a>
+      <a class="nav-cta" href="/contact/">Start a project</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-hero">
+      <p class="section-label">Craft canon</p>
+      <h1>Design techniques</h1>
+      <p>Labeled shelves. Plain speech. Pressure before polish. This is how the studio builds marks, pages, and systems.</p>
+    </header>
+
+    <section class="section tech-shelves" style="padding-top:0">
+      <article class="tech-shelf" id="genui">
+        <p class="shelf-label">Design techniques</p>
+        <h2>GenUI envelope contract + partial-safe streaming</h2>
+        <ul class="tech-points">
+          <li><strong>Envelope contract</strong> — each generated chunk names its kind, its scope, and what it must not invent before content streams.</li>
+          <li><strong>Partial-safe streaming</strong> — incomplete replies stay usable; status reads as Action + Item + Limit.</li>
+          <li><strong>Limit</strong> — stream stakes and constraints first; polish last.</li>
+        </ul>
+      </article>
+
+      <article class="tech-shelf" id="stakes">
+        <p class="shelf-label">Principles / breaks</p>
+        <h2>Front-load stakes; never stage away danger/legal</h2>
+        <ul class="tech-points">
+          <li>Put risk, cost, liability, and legal edges in the first pass — not Act III.</li>
+          <li>Do not soften danger with euphemism, decorative delay, or “we’ll handle that later.”</li>
+          <li><strong>Break</strong> — if a mockup hides the hard part, the mockup is wrong.</li>
+        </ul>
+      </article>
+
+      <article class="tech-shelf" id="art">
+        <p class="shelf-label">Art</p>
+        <h2>Objecthood + Afrofuturist craft; no civilizational ladder</h2>
+        <ul class="tech-points">
+          <li>Marks and materials are <em>objects</em> — weight, join, use — not flat decoration.</li>
+          <li>Afrofuturist craft: speculative, technical, ancestral, made.</li>
+          <li><strong>Limit</strong> — no primitive→modern→future ladder. Parallel crafts on labeled shelves.</li>
+        </ul>
+      </article>
+
+      <article class="tech-shelf" id="writing">
+        <p class="shelf-label">Writing</p>
+        <h2>Plain ≠ meagre; Action + Item + Limit</h2>
+        <ul class="tech-points">
+          <li>Plain writing carries full meaning. Short is not empty.</li>
+          <li>Status format: <strong>Action</strong> (what moved) + <strong>Item</strong> (what it touched) + <strong>Limit</strong> (what it does not claim).</li>
+          <li>Example: <em>Updated</em> work index · <em>three identity kits</em> · <em>case studies only; no pricing</em>.</li>
+        </ul>
+      </article>
+
+      <article class="tech-shelf" id="canons">
+        <p class="shelf-label">Jesus / Bible / canons</p>
+        <h2>Mt 7 hear+do; shelves labeled</h2>
+        <ul class="tech-points">
+          <li>Matthew 7: hearing without doing is unfinished craft — apply the brief; don’t only quote it.</li>
+          <li>Keep canons on labeled shelves: <strong>Meqabyan ≠ Maccabees</strong>. Do not collapse names or traditions.</li>
+          <li><strong>Limit</strong> — accuracy of citation and practice, not brand cosplay.</li>
+        </ul>
+      </article>
+
+      <article class="tech-shelf" id="craft">
+        <p class="shelf-label">Craftsmanship</p>
+        <h2>Cooperage rive/saw logic; pressure-test ≠ polish</h2>
+        <ul class="tech-points">
+          <li>Some work is <em>riven</em> with the grain; some is <em>sawn</em> across it. Match the tool to the stave.</li>
+          <li>Pressure-test the joint under load before polishing the surface.</li>
+          <li><strong>Limit</strong> — shine without a stress-test is unfinished work.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <p class="section-copy">Source note for the studio: <code>logos/craft/DESIGN-TECHNIQUES.md</code></p>
+      <p class="kit-cta">
+        <a class="btn btn-outline" href="/work/">See the work</a>
+        <a class="btn btn-dark" href="/contact/">Start a project</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="y"></span> D Philhower Studio</span>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
