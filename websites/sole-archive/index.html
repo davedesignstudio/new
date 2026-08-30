@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectable Nike sneakers · authenticated holds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #ece8e1;
+      --ink: #121212;
+      --accent: #111111;
+      --accent-ink: #f4f0ea;
+      --stake-bg: #111111;
+      --stake-ink: #f0ebe3;
+      --hero-ink: #f5f1ea;
+      --hero-scrim: #0a0a0a;
+    }
+    .btn--primary { background: #111; color: #f4f0ea; }
+    .mark-note {
+      font-family: var(--font-mono); font-size: 0.75rem; opacity: 0.75; margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-testid="stakes">
+    <strong>Archive stakes:</strong>
+    <span data-testid="reseller">Authenticated retail &amp; verified reseller lots only · no mystery pairs</span>
+    <span class="ail" data-testid="ail">Hold · Dunk Low Panda · 24h</span>
+  </div>
+  <header class="site-nav">
+    <a class="brand-lockup" href="./index.html" data-testid="logo">
+      <img src="./assets/logo.png" width="44" height="44" alt="Sole Archive SA monogram logo" data-testid="sa-mark" />
+      <span>Sole Archive</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#drops">Drops</a></li>
+      <li><a href="#auth">Auth</a></li>
+      <li><a href="#hold">Hold</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Sole Archive hero">
+      <div class="hero__media"><img src="./assets/hero.png" alt="Dim vault with collectible sneakers on sparse shelves behind glass" /></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__brand">Sole Archive</h1>
+        <p class="hero__line">A small vault for collectable Nike sneakers. SA keyhole mark only — Nike trademarks stay on the product, never in our logo.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#hold" data-testid="cta-primary">Start a 24h hold</a>
+          <a class="btn btn--ghost" href="#drops">View drops</a>
+        </div>
+        <p class="place-credit">Place credit · Archive vault lighting · Pass HF Crosslink</p>
+        <p class="mark-note" data-testid="mark-hygiene">Mark hygiene: SA monogram · no swoosh in brand mark</p>
+      </div>
+    </section>
+
+    <section class="band band--split" id="drops">
+      <div>
+        <h2>Collectable drops</h2>
+        <p class="lead">Progressive disclosure for optional filters only. Hold and auth stay always visible — hear-do applied to retail truth.</p>
+        <div class="drop-grid">
+          <a class="item-card" href="#hold" data-testid="drop-dunk">
+            <h3>Dunk Low Panda</h3>
+            <p>Size run 8–12 · authenticated.</p>
+            <div class="meta">Hold available · Nike product</div>
+          </a>
+          <a class="item-card" href="#hold">
+            <h3>Air Max 1 Anniversary</h3>
+            <p>Verified reseller lot · condition A.</p>
+            <div class="meta">1 pair · Nike product</div>
+          </a>
+          <a class="item-card" href="#hold">
+            <h3>Jordan 1 Lost &amp; Found</h3>
+            <p>Box intact · photo set on request.</p>
+            <div class="meta">Auth pass · Nike product</div>
+          </a>
+        </div>
+        <details style="margin-top:1.25rem">
+          <summary style="min-height:48px;display:inline-flex;align-items:center;cursor:pointer">Optional filters</summary>
+          <p style="font-size:0.92rem;opacity:0.8">Size · condition · year — expand only when needed (progressive disclosure).</p>
+        </details>
+      </div>
+      <div id="auth">
+        <h2>Auth &amp; hold</h2>
+        <p class="lead">A+I+L microcopy. Zero panic-FID. Fitts targets on every hold control.</p>
+        <div class="hold-panel" id="hold" data-testid="hold-panel">
+          <h3>24-hour hold</h3>
+          <p data-testid="hold-copy">Action + Item + Limit:</p>
+          <p class="ail" data-testid="ail-detail">Hold · Dunk Low Panda · 24 hours from confirm</p>
+          <p style="margin-top:1rem"><a class="btn btn--primary" href="mailto:hold@solearchive.example" data-testid="hold-cta">Confirm hold by email</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>Sole Archive · collectable Nike sneakers · Pass HF</div>
+    <div class="joint-mark">Joint hallmark · SA mark only · reseller stakes · 24h A+I+L</div>
+  </footer>
+</body>
+</html>

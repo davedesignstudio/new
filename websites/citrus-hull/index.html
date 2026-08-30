@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Sea wind · bright plates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f4f7e8;
+      --ink: #1f2a14;
+      --accent: #e07a2f;
+      --accent-ink: #1a140c;
+      --stake-bg: #243018;
+      --stake-ink: #eef5d8;
+      --hero-ink: #f7ffe8;
+      --hero-scrim: #1a2810;
+    }
+    .hero__brand { animation-name: windDrift; }
+    @keyframes windDrift {
+      from { opacity: 0; transform: translateX(-14px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__brand { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-testid="stakes">
+    <strong>Critical stakes:</strong>
+    <span>Shellfish on shared grill · citrus oils in dressings · wind may move outdoor service</span>
+    <span class="ail" data-testid="ail">Reserve · terrace two-top · until 17:30</span>
+  </div>
+  <header class="site-nav">
+    <a class="brand-lockup" href="./index.html" data-testid="logo">
+      <img src="./assets/logo.png" width="44" height="44" alt="Citrus Hull logo" />
+      <span>Citrus Hull</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#plates">Plates</a></li>
+      <li><a href="#terrace">Terrace</a></li>
+      <li><a href="#reserve">Reserve</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Citrus Hull hero">
+      <div class="hero__media"><img src="./assets/hero.png" alt="Sunlit coastal terrace with citrus trees and sea beyond a hull railing" /></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__brand">Citrus Hull</h1>
+        <p class="hero__line">Bright plates where the hull meets the orchard. Wind motion on the brand — cancelled under reduced motion.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#reserve" data-testid="cta-primary">Reserve terrace</a>
+          <a class="btn btn--ghost" href="#plates">Lunch plates</a>
+        </div>
+        <p class="place-credit">Place credit · Coastal citrus terrace · Pass HF Crosslink</p>
+      </div>
+    </section>
+
+    <section class="band band--split" id="plates">
+      <div>
+        <h2>Lunch plates</h2>
+        <p class="lead">Broken-grid fill with clear hierarchy. Shellfish stakes stay parallel — said twice, never cute.</p>
+        <div class="menu-grid">
+          <a class="item-card" href="#reserve"><h3>Hull Citrus</h3><p>Grilled greens, orange oil.</p><div class="meta">$16 · vegan</div></a>
+          <a class="item-card" href="#reserve"><h3>Shared Grill</h3><p>Catch of the day.</p><div class="meta">MP · shellfish risk</div></a>
+          <a class="item-card" href="#reserve"><h3>Salt Bread</h3><p>Olive oil, wind-cooled.</p><div class="meta">$7 · gluten</div></a>
+        </div>
+      </div>
+      <div id="terrace">
+        <h2>Terrace</h2>
+        <p class="lead">Principle break: stakes above fold (Jakob’s tidy bury fails the fruit test). Keep Fitts on Reserve.</p>
+        <div class="hold-panel" id="reserve">
+          <h3>Reserve</h3>
+          <p class="ail" data-testid="ail-detail">Reserve · terrace two-top · held until 17:30</p>
+          <p style="margin-top:1rem"><a class="btn btn--primary" href="mailto:reserve@citrushull.example">Email reserve</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>Citrus Hull · restaurant · Pass HF</div>
+    <div class="joint-mark">Joint hallmark · wind kinetic · shellfish critical</div>
+  </footer>
+</body>
+</html>

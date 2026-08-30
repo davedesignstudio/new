@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Fog coffee · pier quiet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #e4ebf0;
+      --ink: #142028;
+      --accent: #3d6d82;
+      --accent-ink: #f2f7fa;
+      --stake-bg: #1c2c36;
+      --stake-ink: #d9e6ee;
+      --hero-ink: #eef5f8;
+      --hero-scrim: #0f1a22;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-testid="stakes">
+    <strong>Harbor stakes:</strong>
+    <span>Fog advisory — outdoor seats may close · shellfish stock in chowder</span>
+    <span class="ail" data-testid="ail">Hold · pier bench · 45 min</span>
+  </div>
+  <header class="site-nav">
+    <a class="brand-lockup" href="./index.html" data-testid="logo">
+      <img src="./assets/logo.png" width="44" height="44" alt="Mist Harbor logo" />
+      <span>Mist Harbor</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#pours">Pours</a></li>
+      <li><a href="#fog">Fog desk</a></li>
+      <li><a href="#hold">Hold</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Mist Harbor hero">
+      <div class="hero__media"><img src="./assets/hero.png" alt="Wooden pier dissolving into sea fog with soft lighthouse glow" /></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__brand">Mist Harbor</h1>
+        <p class="hero__line">Coffee where the fog keeps time. Soft light, wet boards, cups that warm your hands before the harbor clears.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#hold" data-testid="cta-primary">Hold a bench</a>
+          <a class="btn btn--ghost" href="#pours">Today’s pours</a>
+        </div>
+        <p class="place-credit">Place credit · Coastal pier in fog · Pass HF Crosslink</p>
+      </div>
+    </section>
+
+    <section class="band band--split" id="pours">
+      <div>
+        <h2>Harbor pours</h2>
+        <p class="lead">Organic fill band — asymmetric storytelling. Utility stays structured: fog desk and holds never drift.</p>
+        <div class="menu-grid">
+          <a class="item-card" href="#hold"><h3>Pier Drip</h3><p>Cool-brewed clarity.</p><div class="meta">$4 · vegan</div></a>
+          <a class="item-card" href="#hold"><h3>Lantern Latte</h3><p>Milk steamed soft as fog.</p><div class="meta">$5 · dairy</div></a>
+          <a class="item-card" href="#hold"><h3>Chowder Cup</h3><p>Weekend only.</p><div class="meta">$7 · shellfish</div></a>
+        </div>
+      </div>
+      <div id="fog">
+        <h2>Fog desk</h2>
+        <p class="lead">Hear-do truth: if outdoor seats close, we say so in the stakes — not buried in a footer.</p>
+        <div class="hold-panel" id="hold">
+          <h3>Hold</h3>
+          <p class="ail" data-testid="ail-detail">Hold · pier bench · 45 minutes from confirm</p>
+          <p style="margin-top:1rem"><a class="btn btn--primary" href="mailto:hold@mistharbor.example">Request hold</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>Mist Harbor · cafe · Pass HF</div>
+    <div class="joint-mark">Joint hallmark · envelope≠fill · fog stakes visible</div>
+  </footer>
+</body>
+</html>
