@@ -29,18 +29,24 @@ def fetch(path: str):
         return 0, str(e).encode(), {}
 
 def brand_score(html: str, variant: str):
+    """Score against harness mapping: A = Okrogly alternate, B = live D Philhower Studio."""
     text = html
     checks = {}
     if variant == "A":
-        checks["has_legacy_brand"] = "D Philhower Studio" in text
-        checks["no_okrogly"] = "Okrogly" not in text
-        checks["no_sth"] = "Service The Hills" not in text
-    else:
-        checks["has_okrogly"] = ("Philhower and Okrogly" in text) or ("Philhower &amp; Okrogly" in text) or ("Philhower & Okrogly" in text)
+        checks["has_okrogly"] = (
+            ("Philhower and Okrogly" in text)
+            or ("Philhower &amp; Okrogly" in text)
+            or ("Philhower & Okrogly" in text)
+            or ("Okrogly" in text)
+        )
         checks["has_design_build"] = ("Design and Build" in text) or ("design and build" in text.lower())
-        checks["no_legacy_studio"] = "D Philhower Studio" not in text
+        checks["no_live_studio_mark"] = "D Philhower Studio" not in text
         checks["no_sth"] = "Service The Hills" not in text and "STH text" not in text
-    checks["has_nav_library"] = 'href="/library/"' in text or "Library" in text
+    else:
+        checks["has_live_brand"] = "D Philhower Studio" in text
+        checks["no_okrogly"] = "Okrogly" not in text
+        checks["no_sth"] = "Service The Hills" not in text and "STH text" not in text
+    checks["has_nav_library"] = 'href="/library/"' in text or ">Library<" in text
     score = sum(1 for v in checks.values() if v) / max(len(checks), 1)
     return score, checks
 
@@ -64,18 +70,19 @@ def run_once(round_id: int):
     for path in LIVE:
         code, body, _ = fetch(path)
         item = {"path": path, "http": code, "bytes": len(body) if code == 200 else 0}
-        if code == 200 and path.endswith(".html") or path.endswith("/"):
+        if code == 200 and (path.endswith(".html") or path.endswith("/")):
             t = body.decode("utf-8", "ignore")
             item["sth_leak"] = ("Service The Hills" in t)
             item["okrogly"] = ("Okrogly" in t)
-            item["legacy"] = ("D Philhower Studio" in t)
+            item["live_brand"] = ("D Philhower Studio" in t)
         live.append(item)
     # Aggregate
     a_avg = sum(p["a"]["score"] for p in page_results) / len(page_results)
     b_avg = sum(p["b"]["score"] for p in page_results) / len(page_results)
     live_ok = sum(1 for x in live if x["http"] == 200)
     sth_leaks = [x["path"] for x in live if x.get("sth_leak")]
-    legacy_on_live = [x["path"] for x in live if x.get("legacy")]
+    okrogly_on_live = [x["path"] for x in live if x.get("okrogly")]
+    live_brand_on_live = [x["path"] for x in live if x.get("live_brand")]
     result = {
         "round": round_id,
         "started": started,
@@ -86,7 +93,8 @@ def run_once(round_id: int):
             "preferred": "B" if b_avg >= a_avg else "A",
             "live_routes_ok": f"{live_ok}/{len(live)}",
             "sth_leaks_on_live": sth_leaks,
-            "legacy_brand_on_live": legacy_on_live,
+            "okrogly_leaks_on_live": okrogly_on_live,
+            "dphilhower_on_live": live_brand_on_live,
         },
         "pages": page_results,
         "live": live,
