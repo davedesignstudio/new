@@ -2,6 +2,8 @@
 
 Plain language. Labeled shelves. Pressure-tested work beats polish theater.
 
+**History shelf:** `DESIGN-HISTORY-1950-NOW.md` (site: `/history/`) — design from 1950 to now on parallel labeled shelves.
+
 ## Design techniques
 
 **GenUI envelope contract + partial-safe streaming**

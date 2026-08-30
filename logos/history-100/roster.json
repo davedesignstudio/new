@@ -1,0 +1,1002 @@
+[
+  {
+    "slug": "grid-meridian",
+    "name": "Grid Meridian",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "strict modular grid, Akzidenz/Helvetica sans, asymmetric flush-left, black white red only",
+    "palette": "black, white, signal red",
+    "tagline": "TYPE \u00b7 GRID \u00b7 FACT",
+    "cat": "studio"
+  },
+  {
+    "slug": "basel-axis",
+    "name": "Basel Axis",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "Hofmann geometry, high-contrast circle and bar, photographic objectivity",
+    "palette": "black, white, cool gray",
+    "tagline": "FORM WITHOUT NOISE",
+    "cat": "studio"
+  },
+  {
+    "slug": "neue-ledger",
+    "name": "Neue Ledger",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "Neue Grafik journal austerity, trilingual small caps, mathematical curves",
+    "palette": "ink black, paper white, cyan",
+    "tagline": "CLARITY IN THREE LANGUAGES",
+    "cat": "publisher"
+  },
+  {
+    "slug": "univers-rail",
+    "name": "Univers Rail",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "Univers-like width system, numbered weight marks as logo motif",
+    "palette": "charcoal, silver, white",
+    "tagline": "ONE FAMILY \u00b7 MANY WIDTHS",
+    "cat": "type"
+  },
+  {
+    "slug": "helvetia-north",
+    "name": "Helvetia North",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "neutral corporate sans lockup, horizontal rules, zero ornament",
+    "palette": "navy, white, pale gray",
+    "tagline": "OBJECTIVE MARKS",
+    "cat": "civic"
+  },
+  {
+    "slug": "modulus-press",
+    "name": "Modulus Press",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "poster with giant sans numerals and thin grid lines",
+    "palette": "black, yellow, white",
+    "tagline": "PRINT BY MODULE",
+    "cat": "print"
+  },
+  {
+    "slug": "akzidenz-folio",
+    "name": "Akzidenz Folio",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "pre-Helvetica grotesque wordmark, tight tracking, square mark",
+    "palette": "black, warm gray, white",
+    "tagline": "GROTESQUE STANDARD",
+    "cat": "archive"
+  },
+  {
+    "slug": "tm-matrix",
+    "name": "TM Matrix",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "Typografische Monatsbl\u00e4tter cover logic, diagonal bar, photo crop",
+    "palette": "black, white, vermillion",
+    "tagline": "MONTHLY STRUCTURE",
+    "cat": "magazine"
+  },
+  {
+    "slug": "flush-left-works",
+    "name": "Flush Left Works",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "all type flush left ragged right as the logo itself",
+    "palette": "black, white",
+    "tagline": "NO CENTER \u00b7 NO ORNAMENT",
+    "cat": "studio"
+  },
+  {
+    "slug": "photo-object",
+    "name": "Photo Object",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "B&W product photo as mark, sans caption stacked below",
+    "palette": "black, white, mid gray",
+    "tagline": "MACHINE RECORD",
+    "cat": "lab"
+  },
+  {
+    "slug": "yale-link",
+    "name": "Yale Link",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "Basel-to-Yale teaching mark, geometric Y built from bars",
+    "palette": "blue, white, black",
+    "tagline": "TEACH THE GRID",
+    "cat": "school"
+  },
+  {
+    "slug": "zero-ornament",
+    "name": "Zero Ornament",
+    "era": "1950\u20131970",
+    "shelf": "Swiss / International",
+    "style": "extreme reduction, single circle and word, mathematical spacing",
+    "palette": "black, white",
+    "tagline": "ONLY WHAT WORKS",
+    "cat": "studio"
+  },
+  {
+    "slug": "plywood-orbit",
+    "name": "Plywood Orbit",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "Eames-like molded plywood curve as monogram, warm wood grain hint",
+    "palette": "walnut, cream, black",
+    "tagline": "MOLDED FOR DAILY USE",
+    "cat": "furniture"
+  },
+  {
+    "slug": "braun-dial",
+    "name": "Braun Dial",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "Rams-like circular control dial as logo, quiet sans",
+    "palette": "light gray, black, soft orange accent",
+    "tagline": "LESS BUT BETTER",
+    "cat": "product"
+  },
+  {
+    "slug": "knoll-angle",
+    "name": "Knoll Angle",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "sharp lounge geometry, tubular steel line drawing mark",
+    "palette": "chrome silver, black, ivory",
+    "tagline": "SEATING AS SYSTEM",
+    "cat": "furniture"
+  },
+  {
+    "slug": "scandia-warmth",
+    "name": "Scandia Warmth",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "light wood, soft serif-free wordmark, domestic scale",
+    "palette": "birch, soft blue, white",
+    "tagline": "LIGHT \u00b7 WOOD \u00b7 HOME",
+    "cat": "home"
+  },
+  {
+    "slug": "tubular-seat",
+    "name": "Tubular Seat",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "continuous bent-tube silhouette as icon",
+    "palette": "black, steel, cream",
+    "tagline": "BENT FOR COMFORT",
+    "cat": "furniture"
+  },
+  {
+    "slug": "herman-lattice",
+    "name": "Herman Lattice",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "office system grid pattern as abstract mark",
+    "palette": "graphite, teal, white",
+    "tagline": "WORKPLACE SYSTEMS",
+    "cat": "office"
+  },
+  {
+    "slug": "plasticene-curve",
+    "name": "Plasticene Curve",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "injection-mold plastic color block logo, optimistic 50s",
+    "palette": "coral, mint, cream",
+    "tagline": "NEW MATERIALS \u00b7 NEW FORMS",
+    "cat": "product"
+  },
+  {
+    "slug": "lounge-shell",
+    "name": "Lounge Shell",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "shell chair profile as negative-space mark",
+    "palette": "rosewood, black, ivory",
+    "tagline": "SIT IN THE CURVE",
+    "cat": "furniture"
+  },
+  {
+    "slug": "domestic-good",
+    "name": "Domestic Good",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "honest household object ethics mark, soft geometric",
+    "palette": "sage, cream, charcoal",
+    "tagline": "GOOD OBJECTS DAILY",
+    "cat": "home"
+  },
+  {
+    "slug": "wire-base",
+    "name": "Wire Base",
+    "era": "1950\u20131970",
+    "shelf": "Mid-century modern",
+    "style": "Eames wire-base pattern reduced to logo lattice",
+    "palette": "black, white, brass",
+    "tagline": "STRUCTURE YOU SEE",
+    "cat": "furniture"
+  },
+  {
+    "slug": "rand-signal",
+    "name": "Rand Signal",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Paul Rand wit: rebus or striped eye, playful geometry, IBM-era craft",
+    "palette": "blue, black, white",
+    "tagline": "WIT WITH SYSTEM",
+    "cat": "identity"
+  },
+  {
+    "slug": "bass-prolog",
+    "name": "Bass Prolog",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Saul Bass kinetic cut-paper figure, film-title energy as static mark",
+    "palette": "orange, black, cream",
+    "tagline": "THE MARK AS PROLOGUE",
+    "cat": "film"
+  },
+  {
+    "slug": "fleet-manual",
+    "name": "Fleet Manual",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "identity system diagram as logo: logo+stationery+fleet icons stacked",
+    "palette": "navy, gold, white",
+    "tagline": "ONE MARK \u00b7 EVERY SURFACE",
+    "cat": "identity"
+  },
+  {
+    "slug": "pictogram-city",
+    "name": "Pictogram City",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Aicher Olympic pictogram athlete reduced to event mark",
+    "palette": "black, white, rainbow stripe accents",
+    "tagline": "CITY-SCALE SYMBOLS",
+    "cat": "civic"
+  },
+  {
+    "slug": "stripe-eye",
+    "name": "Stripe Eye",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Rand-like striped circle eye rebus for a watching brand",
+    "palette": "black, white, red",
+    "tagline": "SEE THE SYSTEM",
+    "cat": "media"
+  },
+  {
+    "slug": "bell-cut",
+    "name": "Bell Cut",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Bass-era AT&T-like bell abstraction, thick cut shapes",
+    "palette": "blue, white",
+    "tagline": "SIGNAL CLEAR",
+    "cat": "telecom"
+  },
+  {
+    "slug": "united-wing",
+    "name": "United Wing",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "airline wing tulip-era geometry, confident travel mark",
+    "palette": "blue, red, white",
+    "tagline": "ROUTES AS IDENTITY",
+    "cat": "travel"
+  },
+  {
+    "slug": "abc-blocks",
+    "name": "ABC Blocks",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Rand ABC-like lowercase geometric letterforms interlocking",
+    "palette": "black, white, yellow",
+    "tagline": "LETTERS AS OBJECTS",
+    "cat": "broadcast"
+  },
+  {
+    "slug": "ups-shield",
+    "name": "Parcel Shield",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "Rand-like shield with bow, package craft (fictional parcel brand)",
+    "palette": "brown, gold, white",
+    "tagline": "DELIVERED WITH CARE",
+    "cat": "logistics"
+  },
+  {
+    "slug": "operating-kit",
+    "name": "Operating Kit",
+    "era": "1950\u20131970",
+    "shelf": "Corporate identity",
+    "style": "logo that looks like an open brand manual cover",
+    "palette": "black, cream, copper",
+    "tagline": "BRAND AS KIT",
+    "cat": "identity"
+  },
+  {
+    "slug": "empty-luxury",
+    "name": "Empty Luxury",
+    "era": "1950\u20131970",
+    "shelf": "Japanese modernism",
+    "style": "MUJI-like no-brand restraint, vast white, tiny precise wordmark",
+    "palette": "off-white, soft brown, black",
+    "tagline": "SPACE IS THE MARK",
+    "cat": "retail"
+  },
+  {
+    "slug": "kamekura-ring",
+    "name": "Kamekura Ring",
+    "era": "1950\u20131970",
+    "shelf": "Japanese modernism",
+    "style": "Olympic-era red circle geometry, rising-sun modern craft",
+    "palette": "red, white, black",
+    "tagline": "CIRCLE AS FORCE",
+    "cat": "event"
+  },
+  {
+    "slug": "ink-void",
+    "name": "Ink Void",
+    "era": "1960\u20131980",
+    "shelf": "Japanese modernism",
+    "style": "sumi emptiness with one sharp sans line",
+    "palette": "black, white",
+    "tagline": "LEAVE ROOM",
+    "cat": "studio"
+  },
+  {
+    "slug": "tokyo-module",
+    "name": "Tokyo Module",
+    "era": "1960\u20131980",
+    "shelf": "Japanese modernism",
+    "style": "metabolism-inspired modular block mark",
+    "palette": "concrete gray, orange, white",
+    "tagline": "BUILD IN UNITS",
+    "cat": "architecture"
+  },
+  {
+    "slug": "quiet-goods",
+    "name": "Quiet Goods",
+    "era": "1980\u20132000",
+    "shelf": "Japanese modernism",
+    "style": "anonymous packaging aesthetic as brand, soft sans",
+    "palette": "kraft, white, charcoal",
+    "tagline": "NO SHOUT",
+    "cat": "retail"
+  },
+  {
+    "slug": "panther-press",
+    "name": "Panther Press",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "Emory Douglas-inspired thick line, high contrast, block type, fist-not-cliche: newspaper masthead energy",
+    "palette": "black, white, bold yellow",
+    "tagline": "HEAR + DO",
+    "cat": "publisher"
+  },
+  {
+    "slug": "tricontinental",
+    "name": "Tricontinental",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "OSPAAAL poster: limited ink, coded symbol, anti-imperial clarity, silkscreen feel",
+    "palette": "red, black, cream",
+    "tagline": "THREE CONTINENTS \u00b7 ONE BRIEF",
+    "cat": "archive"
+  },
+  {
+    "slug": "black-arts-slab",
+    "name": "Black Arts Slab",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "slab serif militant clarity, Black Arts Movement cover energy",
+    "palette": "black, orange, white",
+    "tagline": "COVER AS CALL",
+    "cat": "publisher"
+  },
+  {
+    "slug": "silk-screen-dawn",
+    "name": "Silk Screen Dawn",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "hand-pulled screen texture, sun rising over silhouette crowd",
+    "palette": "gold, deep green, black",
+    "tagline": "PULL THE PRINT",
+    "cat": "print"
+  },
+  {
+    "slug": "coded-star",
+    "name": "Coded Star",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "OSPAAAL star/globe abstraction without copying existing posters",
+    "palette": "red, yellow, black",
+    "tagline": "SYMBOL UNDER LIMIT",
+    "cat": "civic"
+  },
+  {
+    "slug": "newspaper-weapon",
+    "name": "Newspaper Weapon",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "masthead as object, thick rules, urgent sans",
+    "palette": "black, white, red",
+    "tagline": "INK AS ACTION",
+    "cat": "media"
+  },
+  {
+    "slug": "block-type-rise",
+    "name": "Block Type Rise",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "woodblock-like raised letters forming rising figure",
+    "palette": "black, cream, green",
+    "tagline": "TYPE THAT STANDS",
+    "cat": "studio"
+  },
+  {
+    "slug": "photomontage-call",
+    "name": "Photomontage Call",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "high-contrast montage frame as logo badge",
+    "palette": "black, white, magenta",
+    "tagline": "CUT + JOIN + SPEAK",
+    "cat": "media"
+  },
+  {
+    "slug": "africa-asia-latin",
+    "name": "AAL Link",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "three interlocking continents as abstract mark",
+    "palette": "earth red, deep blue, gold",
+    "tagline": "LINKED STRUGGLE",
+    "cat": "civic"
+  },
+  {
+    "slug": "objecthood-poster",
+    "name": "Objecthood Poster",
+    "era": "1960\u20131970",
+    "shelf": "Liberation print",
+    "style": "poster treated as physical object/weapon silhouette with type",
+    "palette": "black, yellow, white",
+    "tagline": "OBJECT WITH WEIGHT",
+    "cat": "studio"
+  },
+  {
+    "slug": "fillmore-wave",
+    "name": "Fillmore Wave",
+    "era": "1960\u20131970",
+    "shelf": "Pop / psychedelic",
+    "style": "Wes Wilson-like liquid letterforms, concert poster density, readable enough as logo",
+    "palette": "teal, magenta, gold",
+    "tagline": "TYPE AS TRIP",
+    "cat": "music"
+  },
+  {
+    "slug": "warhol-brand",
+    "name": "Warhol Brand",
+    "era": "1960\u20131970",
+    "shelf": "Pop art",
+    "style": "brand-as-subject: repeated soup-can-like product icon grid, ironic logo",
+    "palette": "red, gold, white",
+    "tagline": "THE PRODUCT IS THE ART",
+    "cat": "gallery"
+  },
+  {
+    "slug": "polish-metaphor",
+    "name": "Polish Metaphor",
+    "era": "1960\u20131980",
+    "shelf": "Polish School of Posters",
+    "style": "metaphor illustration mark, craft under constraint, surreal object",
+    "palette": "black, blood red, cream",
+    "tagline": "IMAGE SAYS MORE",
+    "cat": "theater"
+  },
+  {
+    "slug": "protest-stack",
+    "name": "Protest Stack",
+    "era": "1960\u20131970",
+    "shelf": "Protest graphics",
+    "style": "stacked urgent sans, handmade placard aesthetic",
+    "palette": "black, white, safety yellow",
+    "tagline": "HOLD THE LINE",
+    "cat": "civic"
+  },
+  {
+    "slug": "album-spin",
+    "name": "Album Spin",
+    "era": "1970\u20131980",
+    "shelf": "Pop / psychedelic",
+    "style": "vinyl circle with warped type ring",
+    "palette": "black, chrome, crimson",
+    "tagline": "SPIN THE COVER",
+    "cat": "music"
+  },
+  {
+    "slug": "event-as-poster",
+    "name": "Event as Poster",
+    "era": "1960\u20131970",
+    "shelf": "Pop / psychedelic",
+    "style": "logo that is a miniature poster composition",
+    "palette": "orange, black, cream",
+    "tagline": "THE POSTER IS THE EVENT",
+    "cat": "events"
+  },
+  {
+    "slug": "cut-paper-pop",
+    "name": "Cut Paper Pop",
+    "era": "1960\u20131970",
+    "shelf": "Pop art",
+    "style": "flat cut-paper shapes, bold comic outline",
+    "palette": "cyan, yellow, black, white",
+    "tagline": "CUT THE SURFACE",
+    "cat": "studio"
+  },
+  {
+    "slug": "illegible-attitude",
+    "name": "Illegible Attitude",
+    "era": "1960\u20131970",
+    "shelf": "Pop / psychedelic",
+    "style": "almost-illegible psychedelic wordmark that still reads at logo size",
+    "palette": "deep green, gold, black",
+    "tagline": "EXPERIENCE FIRST",
+    "cat": "music"
+  },
+  {
+    "slug": "weingart-shatter",
+    "name": "Weingart Shatter",
+    "era": "1970\u20131990",
+    "shelf": "Postmodern / New Wave",
+    "style": "Swiss bones broken: overlapping type layers, letterspacing chaos with precision",
+    "palette": "black, white, fluorescent orange",
+    "tagline": "RULES UNDER STRESS",
+    "cat": "studio"
+  },
+  {
+    "slug": "cranbrook-layer",
+    "name": "Cranbrook Layer",
+    "era": "1980\u20131990",
+    "shelf": "Postmodern / New Wave",
+    "style": "McCoy-era theory layers, translucent type planes",
+    "palette": "dusty rose, black, pale blue",
+    "tagline": "MEANING IN LAYERS",
+    "cat": "school"
+  },
+  {
+    "slug": "ray-gun-noise",
+    "name": "Ray Gun Noise",
+    "era": "1990s",
+    "shelf": "Postmodern / New Wave",
+    "style": "Carson-like distressed type, grunge texture, magazine attitude",
+    "palette": "black, sickly green, white",
+    "tagline": "ILLEGIBILITY AS VOICE",
+    "cat": "magazine"
+  },
+  {
+    "slug": "memphis-surface",
+    "name": "Memphis Surface",
+    "era": "1980s",
+    "shelf": "Postmodern / Memphis",
+    "style": "Memphis Group patterns: squiggles, laminates, playful geometry \u2014 not purple AI look",
+    "palette": "lemon, black, teal, coral",
+    "tagline": "SURFACE AS MEANING",
+    "cat": "furniture"
+  },
+  {
+    "slug": "vegas-learn",
+    "name": "Vegas Learn",
+    "era": "1970\u20131980",
+    "shelf": "Postmodern architecture",
+    "style": "Learning from Las Vegas: duck vs decorated shed as witty logo diagram",
+    "palette": "neon pink, black, gold",
+    "tagline": "SIGNS ON THE SHED",
+    "cat": "architecture"
+  },
+  {
+    "slug": "odermatt-play",
+    "name": "Odermatt Play",
+    "era": "1970\u20131980",
+    "shelf": "Postmodern / New Wave",
+    "style": "play inside Swiss precision, tilted bars, witty crop",
+    "palette": "red, black, white",
+    "tagline": "PLAY WITH BONES",
+    "cat": "studio"
+  },
+  {
+    "slug": "pastiche-warning",
+    "name": "Pastiche Warning",
+    "era": "1980\u20131990",
+    "shelf": "Postmodern / New Wave",
+    "style": "ironic collage mark that critiques empty pastiche",
+    "palette": "sepia, black, cyan",
+    "tagline": "QUOTE WITH STAKES",
+    "cat": "studio"
+  },
+  {
+    "slug": "new-wave-slash",
+    "name": "New Wave Slash",
+    "era": "1980s",
+    "shelf": "California New Wave",
+    "style": "diagonal slash, stepped type, West Coast energy",
+    "palette": "black, electric blue, white",
+    "tagline": "CUT THE DIAGONAL",
+    "cat": "studio"
+  },
+  {
+    "slug": "theory-object",
+    "name": "Theory Object",
+    "era": "1980\u20131990",
+    "shelf": "Postmodern / New Wave",
+    "style": "design-as-criticism badge, footnote marks as ornament",
+    "palette": "academic navy, cream, red",
+    "tagline": "CRITIQUE MADE VISIBLE",
+    "cat": "school"
+  },
+  {
+    "slug": "chaos-with-stakes",
+    "name": "Chaos with Stakes",
+    "era": "1980\u20131990",
+    "shelf": "Postmodern / New Wave",
+    "style": "controlled explosion of type that still holds a clear brand name",
+    "palette": "black, white, warning orange",
+    "tagline": "NOISE WITH A BRIEF",
+    "cat": "studio"
+  },
+  {
+    "slug": "hello-mac",
+    "name": "Hello Mac",
+    "era": "1984\u20131990",
+    "shelf": "Desktop publishing",
+    "style": "1984 Mac smile/hello era: pixel-aware wordmark, bitmap charm",
+    "palette": "warm beige, black, six-color stripe",
+    "tagline": "HELLO \u00b7 CREATE",
+    "cat": "software"
+  },
+  {
+    "slug": "postscript-curve",
+    "name": "Postscript Curve",
+    "era": "1985\u20131995",
+    "shelf": "Desktop publishing",
+    "style": "Bezier handle visible as logo motif, vector craft",
+    "palette": "black, white, cyan",
+    "tagline": "CURVES YOU OWN",
+    "cat": "type"
+  },
+  {
+    "slug": "fontographer-lab",
+    "name": "Fontographer Lab",
+    "era": "1990s",
+    "shelf": "Desktop publishing",
+    "style": "indie type foundry mark, glyph outline with points",
+    "palette": "black, paper cream, blue",
+    "tagline": "DRAW THE GLYPH",
+    "cat": "type"
+  },
+  {
+    "slug": "paste-up-file",
+    "name": "Paste-up File",
+    "era": "1985\u20131995",
+    "shelf": "Desktop publishing",
+    "style": "transition metaphor: waxed type strip becoming a digital file icon",
+    "palette": "kraft, black, screen blue",
+    "tagline": "FROM BOARD TO DISK",
+    "cat": "studio"
+  },
+  {
+    "slug": "illustrator-pen",
+    "name": "Illustrator Pen",
+    "era": "1987\u20132000",
+    "shelf": "Desktop publishing",
+    "style": "pen tool cursor as confident brand mark",
+    "palette": "black, orange, white",
+    "tagline": "PATH AND ANCHOR",
+    "cat": "software"
+  },
+  {
+    "slug": "table-layout",
+    "name": "Table Layout",
+    "era": "1995\u20132005",
+    "shelf": "Early web",
+    "style": "HTML table border aesthetic as ironic logo grid",
+    "palette": "browser gray, blue link, white",
+    "tagline": "NESTED CELLS",
+    "cat": "web"
+  },
+  {
+    "slug": "gif-loop",
+    "name": "GIF Loop",
+    "era": "1995\u20132005",
+    "shelf": "Early web",
+    "style": "dithered looping animation still as logo, 256-color feel",
+    "palette": "web-safe cyan, magenta, black",
+    "tagline": "LOOP FOREVER",
+    "cat": "web"
+  },
+  {
+    "slug": "flash-stage",
+    "name": "Flash Stage",
+    "era": "1999\u20132010",
+    "shelf": "Early web",
+    "style": "Flash-era stage rectangle with play arrow, motion brand",
+    "palette": "black, red, white",
+    "tagline": "TIMELINE CRAFT",
+    "cat": "web"
+  },
+  {
+    "slug": "reflow-mark",
+    "name": "Reflow Mark",
+    "era": "2005\u20132010",
+    "shelf": "Web 2.0",
+    "style": "logo that visibly reflows across three widths in one image",
+    "palette": "sky blue, white, soft green",
+    "tagline": "SURVIVE THE VIEWPORT",
+    "cat": "web"
+  },
+  {
+    "slug": "avatar-round",
+    "name": "Avatar Round",
+    "era": "2005\u20132010",
+    "shelf": "Web 2.0",
+    "style": "social avatar circle as primary mark, glossy button era",
+    "palette": "bright blue, white, soft shadow",
+    "tagline": "FACE OF THE FEED",
+    "cat": "social"
+  },
+  {
+    "slug": "leather-stitch",
+    "name": "Leather Stitch",
+    "era": "2007\u20132012",
+    "shelf": "Skeuomorphism",
+    "style": "iOS-era leather + stitching calendar aesthetic as logo badge",
+    "palette": "saddle brown, cream, gold thread",
+    "tagline": "TOUCH WHAT YOU KNOW",
+    "cat": "app"
+  },
+  {
+    "slug": "felt-green",
+    "name": "Felt Green",
+    "era": "2007\u20132012",
+    "shelf": "Skeuomorphism",
+    "style": "felt poker-table texture mark, realistic material UI",
+    "palette": "casino green, wood, ivory",
+    "tagline": "MATERIAL METAPHOR",
+    "cat": "app"
+  },
+  {
+    "slug": "metro-tile",
+    "name": "Metro Tile",
+    "era": "2011\u20132014",
+    "shelf": "Flat design",
+    "style": "Windows Metro live-tile grid as logo, authentically digital",
+    "palette": "cyan, magenta, yellow, black, white",
+    "tagline": "AUTHENTICALLY DIGITAL",
+    "cat": "software"
+  },
+  {
+    "slug": "flat-seven",
+    "name": "Flat Seven",
+    "era": "2013\u20132016",
+    "shelf": "Flat design",
+    "style": "iOS7-flat icon language: thin line, no gloss, single hue",
+    "palette": "sky blue, white",
+    "tagline": "STRIP THE CHROME",
+    "cat": "app"
+  },
+  {
+    "slug": "flat-two",
+    "name": "Flat Two",
+    "era": "2014\u20132018",
+    "shelf": "Flat 2.0",
+    "style": "subtle shadow affordance, almost-flat button as mark",
+    "palette": "soft gray, blue, white",
+    "tagline": "SIGNIFIERS RETURN",
+    "cat": "app"
+  },
+  {
+    "slug": "material-paper",
+    "name": "Material Paper",
+    "era": "2014\u20132020",
+    "shelf": "Material Design",
+    "style": "Google Material paper sheet with elevation shadow as logo",
+    "palette": "teal, white, amber",
+    "tagline": "INK ON DIGITAL PAPER",
+    "cat": "software"
+  },
+  {
+    "slug": "elevation-card",
+    "name": "Elevation Card",
+    "era": "2014\u20132020",
+    "shelf": "Material Design",
+    "style": "layered cards with z-depth as abstract brand",
+    "palette": "white, soft shadow gray, green",
+    "tagline": "DEPTH WITH RULES",
+    "cat": "software"
+  },
+  {
+    "slug": "motion-easing",
+    "name": "Motion Easing",
+    "era": "2015\u20132022",
+    "shelf": "Material Design",
+    "style": "easing curve path drawn as logo line",
+    "palette": "black, electric teal, white",
+    "tagline": "DURATION IS CRAFT",
+    "cat": "motion"
+  },
+  {
+    "slug": "soft-ui-press",
+    "name": "Soft UI Press",
+    "era": "2019\u20132023",
+    "shelf": "Neo-skeuomorphism",
+    "style": "neumorphic soft button pressed state as logo",
+    "palette": "pale gray-blue, soft white, muted shadow",
+    "tagline": "DEPTH WITHOUT LEATHER",
+    "cat": "app"
+  },
+  {
+    "slug": "token-library",
+    "name": "Token Library",
+    "era": "2016\u20132024",
+    "shelf": "Design systems",
+    "style": "design token chips (color/space/type) arranged as mark",
+    "palette": "black, white, system green",
+    "tagline": "CHANGE ONCE \u00b7 DEPLOY",
+    "cat": "systems"
+  },
+  {
+    "slug": "variable-axis",
+    "name": "Variable Axis",
+    "era": "2018\u20132026",
+    "shelf": "Variable type",
+    "style": "font variation axes (weight/width) visualized as logo diagram",
+    "palette": "black, white, hot pink",
+    "tagline": "ONE FILE \u00b7 MANY FORMS",
+    "cat": "type"
+  },
+  {
+    "slug": "lockup-tiers",
+    "name": "Lockup Tiers",
+    "era": "2015\u20132026",
+    "shelf": "Adaptive logos",
+    "style": "full wordmark \u2192 icon \u2192 favicon shown as three-tier system logo",
+    "palette": "navy, gold, white",
+    "tagline": "FULL \u00b7 SHORT \u00b7 DOT",
+    "cat": "identity"
+  },
+  {
+    "slug": "breathing-mark",
+    "name": "Breathing Mark",
+    "era": "2018\u20132026",
+    "shelf": "Motion identity",
+    "style": "logo drawn mid-breath/pulse, motion blur suggestion in still",
+    "palette": "deep black, silver, soft blue",
+    "tagline": "THE MARK BREATHES",
+    "cat": "identity"
+  },
+  {
+    "slug": "sonic-twin",
+    "name": "Sonic Twin",
+    "era": "2018\u20132026",
+    "shelf": "Motion identity",
+    "style": "waveform + wordmark twin, sonic branding visual",
+    "palette": "black, lime, white",
+    "tagline": "SOUND AS SISTER",
+    "cat": "audio"
+  },
+  {
+    "slug": "sth-heir",
+    "name": "Heir Text",
+    "era": "2015\u20132026",
+    "shelf": "Adaptive logos",
+    "style": "caps serif + script + small-caps tagline hierarchy (STH text system homage)",
+    "palette": "navy, warm gold, ivory",
+    "tagline": "RENOVATE \u00b7 REMODEL \u00b7 RESTORE",
+    "cat": "trades"
+  },
+  {
+    "slug": "sun-ra-circuit",
+    "name": "Sun Ra Circuit",
+    "era": "1960\u20132026",
+    "shelf": "Afrofuturist craft",
+    "style": "cosmic jazz geometry, ancestral + technical, circuit-as-constellation",
+    "palette": "gold, indigo, black",
+    "tagline": "SPACE IS THE PLACE",
+    "cat": "music"
+  },
+  {
+    "slug": "ancestral-tech",
+    "name": "Ancestral Tech",
+    "era": "2000\u20132026",
+    "shelf": "Afrofuturist craft",
+    "style": "speculative mask geometry meeting machine precision",
+    "palette": "bronze, black, electric cyan",
+    "tagline": "MADE \u00b7 NOT LADDERED",
+    "cat": "studio"
+  },
+  {
+    "slug": "parallel-craft",
+    "name": "Parallel Craft",
+    "era": "2000\u20132026",
+    "shelf": "Afrofuturist craft",
+    "style": "two craft traditions as parallel bars, labeled shelves visual",
+    "palette": "ochre, black, white",
+    "tagline": "NO CIVILIZATIONAL LADDER",
+    "cat": "studio"
+  },
+  {
+    "slug": "speculative-join",
+    "name": "Speculative Join",
+    "era": "2010\u20132026",
+    "shelf": "Afrofuturist craft",
+    "style": "joinery detail as futurist mark, objecthood of materials",
+    "palette": "iron black, copper, bone",
+    "tagline": "WEIGHT \u00b7 JOIN \u00b7 USE",
+    "cat": "craft"
+  },
+  {
+    "slug": "diaspora-signal",
+    "name": "Diaspora Signal",
+    "era": "1990\u20132026",
+    "shelf": "Afrofuturist craft",
+    "style": "radio/antenna + Adinkra-inspired abstract (original, not copy) geometry",
+    "palette": "forest green, gold, black",
+    "tagline": "TRANSMIT ACROSS",
+    "cat": "media"
+  },
+  {
+    "slug": "envelope-contract",
+    "name": "Envelope Contract",
+    "era": "2023\u20132026",
+    "shelf": "GenUI",
+    "style": "UI chunk envelope: kind/scope/constraints labels as logo architecture",
+    "palette": "terminal green, black, white",
+    "tagline": "DECLARE BEFORE STREAM",
+    "cat": "software"
+  },
+  {
+    "slug": "partial-safe",
+    "name": "Partial Safe",
+    "era": "2023\u20132026",
+    "shelf": "GenUI",
+    "style": "incomplete progress bar that still reads as honest status logo",
+    "palette": "black, amber, white",
+    "tagline": "ACTION \u00b7 ITEM \u00b7 LIMIT",
+    "cat": "software"
+  },
+  {
+    "slug": "stakes-first",
+    "name": "Stakes First",
+    "era": "2020\u20132026",
+    "shelf": "GenUI / principles",
+    "style": "warning diamond front-loaded in logo, legal edge visible",
+    "palette": "black, safety orange, white",
+    "tagline": "RISK IN PASS ONE",
+    "cat": "systems"
+  },
+  {
+    "slug": "pressure-joint",
+    "name": "Pressure Joint",
+    "era": "2020\u20132026",
+    "shelf": "Craftsmanship",
+    "style": "cooperage barrel joint under stress test as mark",
+    "palette": "oak, iron, cream",
+    "tagline": "TEST BEFORE POLISH",
+    "cat": "craft"
+  },
+  {
+    "slug": "labeled-shelf",
+    "name": "Labeled Shelf",
+    "era": "2020\u20132026",
+    "shelf": "Canons",
+    "style": "archive shelf with distinct labeled boxes as logo, Meqabyan\u2260Maccabees idea",
+    "palette": "walnut, paper, black",
+    "tagline": "NAME THE TRADITION",
+    "cat": "archive"
+  }
+]
