@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cedar Drift · Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>:root{--accent:#2f4a3a;--paper:#eef2ef;--ink:#1c2420;--focus-ring:#1c2420;}</style>
+</head>
+<body class="mist-drift brand-breathe">
+  <div class="envelope" data-envelope>
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img class="logo" src="./assets/logo.png" width="48" height="48" alt="Cedar Drift logo" />
+        <span class="brand-name">Cedar Drift</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#board">Board</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="../index.html">All sites</a></li>
+      </ul>
+    </div>
+    <div class="stream-rail" data-stream-rail aria-live="polite" aria-busy="true" aria-atomic="false"></div>
+  </div>
+
+  <div class="stakes " role="note">
+    <div class="stakes-inner">
+      <span class="label">Allergen + mist</span>
+      Tree-nut milks on the bar. Coastal mist advisory: paths may be slick — ask for indoor seating if mobility is limited.
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-media">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero-copy">
+      <p class="place-credit">Cedar grove · Olympic Peninsula verge</p>
+      <h1 class="brand-hero">Cedar Drift</h1>
+      <p class="lede">Mist in the boughs. Quiet cups under living cedar.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#visit">Plan a visit</a>
+        <a class="btn btn-ghost" href="#board">See the board</a>
+      </div>
+      <p class="integrate-mark">Integrate HM · cycle sealed</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="board">
+      <h2>Grove board</h2>
+      <p class="support">Fill streams skeleton → partial → ready. The envelope never leaves.</p>
+      <div
+        class="stream-board"
+        data-stream-board
+        data-board-name="Grove board"
+        data-items='[{"title":"Drift latte","teaser":"Cedar…","body":"Espresso with steamed oat; almond on request (labeled)."},{"title":"Moss cake","teaser":"Matcha…","body":"Matcha crumb; contains tree nuts."},{"title":"Fog tonic","teaser":"Citrus…","body":"Yuzu soda, no nuts."}]'
+        data-fallback='[{"title":"Drift latte","teaser":"Cedar…","body":"Espresso with steamed oat; almond on request (labeled)."},{"title":"Moss cake","teaser":"Matcha…","body":"Matcha crumb; contains tree nuts."},{"title":"Fog tonic","teaser":"Citrus…","body":"Yuzu soda, no nuts."}]'
+      ></div>
+      <div class="filters">
+        <details>
+          <summary>Optional filters</summary>
+          <p>Advanced dietary filters stay in the drawer. Danger stays above the fold.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="visit">
+      <h2>Visit</h2>
+      <p class="support">Cards exist only for interaction. Seal before promise.</p>
+      <div class="card-grid">
+        
+      <article class="card">
+        <span class="practice-seal" data-sealed="false">Joints open</span>
+        <h3>Reserve grove bench</h3>
+        <p>Covered bench for two. Seal before we promise the seat.</p>
+        <button type="button" class="btn btn-primary" data-cta data-reserve data-requires-seal data-item="grove bench" data-limit="60 min" disabled aria-disabled="true">Reserve</button>
+      </article>
+      <article class="card">
+        <span class="practice-seal" data-sealed="false">Joints open</span>
+        <h3>Mist walk cup</h3>
+        <p>Takeaway only when paths are posted clear.</p>
+        <button type="button" class="btn btn-primary" data-cta data-reserve data-requires-seal data-item="mist walk cup" data-limit="while supplies last" disabled aria-disabled="true">Order cup</button>
+      </article>
+      </div>
+    </section>
+
+    <div class="section" id="status-panel">
+        <h2>Live status</h2>
+        <p class="support">Action · Item · Limit — written plain, not meagre.</p>
+        <div data-hold-status class="card"><p class="meta">Waiting for a sealed Reserve.</p></div>
+      </div>
+
+    <p class="canon-shelf">Looking ethic: place credited; unfamiliar grove ≠ undeveloped. Plain language for mist advisory.</p>
+  </main>
+
+  <footer class="site-foot">
+    <p>Cedar Drift · Cafe · Pass HM Integrate · Fitts ≥48px · prefers-reduced-motion honored</p>
+    
+  </footer>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>
