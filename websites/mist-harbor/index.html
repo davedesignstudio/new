@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Coastal Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "DM Sans", system-ui, sans-serif;
+      --ink: #0e2433;
+      --paper: #e8f0f2;
+      --panel: #f4f8f9;
+      --accent: #2a7a7b;
+      --accent-ink: #f2fbfb;
+      --on-hero: #eef6f8;
+      --hero-veil: linear-gradient(180deg, rgba(14,36,51,0.4) 0%, rgba(14,36,51,0.58) 50%, rgba(14,36,51,0.88) 100%);
+      --stakes-bg: #dce9ec;
+      --stakes-ink: #0e2433;
+      --stakes-accent: #2a7a7b;
+      --radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="" width="48" height="48" />
+        Mist Harbor
+      </a>
+      <ul class="nav-links">
+        <li><a href="#board">Pier board</a></li>
+        <li><a href="#croze">Care</a></li>
+        <li><a href="#tide">Tides</a></li>
+      </ul>
+    </nav>
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/hero.png" alt="" />
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Fog-side cafe · harbor pours</p>
+      <h1>Mist Harbor</h1>
+      <p class="hero__lede">Warm cups on a cold pier—when the fog lifts, the kettle still sings.</p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="#board">Read the pier board</a>
+        <a class="btn btn--ghost" href="#croze">Guest croze</a>
+      </div>
+      <p class="place-credit">Place: north pier cafe under the beacon · looking regime: hospitality invitation</p>
+    </div>
+    <aside class="stakes" aria-label="Guest care stakes">
+        <p class="stakes__label">Two Ways · life path (mercy)</p>
+        <p class="stakes__ail"><strong>Action:</strong> Ask for the allergen slate at the board. <strong>Item:</strong> shellfish stock in weekend chowder; tree nuts in harbor bars. <strong>Limit:</strong> shared pier kitchen—fog days mean slower ticket times, not skipped checks.</p>
+      </aside>
+  </header>
+
+  <section class="section" id="board">
+    <h2>One job: the pier board</h2>
+    <p class="section__lede">What is open with the tide—nothing more competing for attention.</p>
+    <div class="card-grid">
+      <a class="card" href="#tide">
+        <div class="card__body">
+          <p class="card__meta">Morning</p>
+          <h3>Beacon Brew</h3>
+          <p>Dark roast, molasses, sea-air finish.</p>
+        </div>
+      </a>
+      <a class="card" href="#tide">
+        <div class="card__body">
+          <p class="card__meta">Bowl</p>
+          <h3>Weekend Chowder</h3>
+          <p>Shellfish stock—named on the croze.</p>
+          <div class="badge-row"><span class="badge badge--alert">Shellfish</span></div>
+        </div>
+      </a>
+      <a class="card" href="#tide">
+        <div class="card__body">
+          <p class="card__meta">Sweet</p>
+          <h3>Harbor Bar</h3>
+          <p>Oat · almond · sea salt. Tree nuts flagged.</p>
+          <div class="badge-row"><span class="badge badge--alert">Tree nuts</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section band" id="croze">
+    <h2>Guest croze (care groove)</h2>
+    <p class="section__lede">Same pattern language as Kiln’s croze and Sole’s vault schema—truth before speed.</p>
+    <div class="croze" role="list">
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Item</span>
+        <p class="croze__val">Shellfish (chowder), tree nuts (bars), dairy (default creamers).</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Action</span>
+        <p class="croze__val">Point to the board allergen slate; we echo it back.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Limit</span>
+        <p class="croze__val">Fog delays ≠ skipped verification. Holds on specials if stock runs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tide">
+    <h2>Tide hours</h2>
+    <p class="section__lede">Daily 6:30a–1p · storm closures posted on the pier board by 5a.</p>
+    <a class="btn btn--solid" href="mailto:tide@mistharbor.example">Write the harbor</a>
+  </section>
+
+  <footer class="footer">
+    <span>Mist Harbor · Pass HA Crosslink pattern</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+</body>
+</html>

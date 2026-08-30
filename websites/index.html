@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studio Five — Logos, Illustrations &amp; Sites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1b1a17;
+      --paper: #f0ebe3;
+      --panel: #faf7f2;
+      --line: rgba(27, 26, 23, 0.12);
+      --accent: #3d5a45;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(61,90,69,0.12), transparent 45%),
+        radial-gradient(ellipse at 90% 10%, rgba(180,90,50,0.1), transparent 40%),
+        var(--paper);
+      line-height: 1.5;
+    }
+    header {
+      padding: clamp(2.5rem, 8vh, 5rem) clamp(1.25rem, 4vw, 3rem) 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: "Syne", system-ui, sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .lede { max-width: 48ch; margin: 0 0 1rem; opacity: 0.85; }
+    .meta { font-size: 0.85rem; opacity: 0.7; }
+    main { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem) 3rem; }
+    h2 {
+      font-family: "Syne", system-ui, sans-serif;
+      font-size: 1.35rem;
+      margin: 2.5rem 0 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .tile {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .tile:hover { transform: translateY(-3px); }
+    .tile img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .tile--wide img { aspect-ratio: 16/9; }
+    .tile figcaption { padding: 0.85rem 1rem 1rem; font-size: 0.95rem; }
+    .tile strong { font-family: "Syne", system-ui, sans-serif; display: block; }
+    .tile span { opacity: 0.7; font-size: 0.85rem; }
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem clamp(1.25rem, 4vw, 3rem) 3rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Studio Five</h1>
+    <p class="lede">Pass HA · Crosslink — five logos, five illustrations, five websites (2 cafes, 2 restaurants, 1 sneaker vault) sharing one pattern language: croze ↔ catalog schema ↔ Two Ways mercy.</p>
+    <p class="meta">Research hubs deepened across design, art, writing, craftsmanship, biblical canons, and principle breaks.</p>
+  </header>
+  <main>
+    <h2>Websites</h2>
+    <div class="grid">
+      <a class="tile" href="kiln-and-cup/">
+        <img src="kiln-and-cup/assets/logo.png" alt="" />
+        <figcaption><strong>Kiln &amp; Cup</strong><span>Cafe · ceramic workshop</span></figcaption>
+      </a>
+      <a class="tile" href="mist-harbor/">
+        <img src="mist-harbor/assets/logo.png" alt="" />
+        <figcaption><strong>Mist Harbor</strong><span>Cafe · fog pier</span></figcaption>
+      </a>
+      <a class="tile" href="ember-court/">
+        <img src="ember-court/assets/logo.png" alt="" />
+        <figcaption><strong>Ember Court</strong><span>Restaurant · courtyard</span></figcaption>
+      </a>
+      <a class="tile" href="citrus-hull/">
+        <img src="citrus-hull/assets/logo.png" alt="" />
+        <figcaption><strong>Citrus Hull</strong><span>Restaurant · coastal terrace</span></figcaption>
+      </a>
+      <a class="tile" href="sole-archive/">
+        <img src="sole-archive/assets/logo.png" alt="" />
+        <figcaption><strong>Sole Archive</strong><span>Sneaker vault · Nike collectibles</span></figcaption>
+      </a>
+    </div>
+
+    <h2>Logos</h2>
+    <div class="grid">
+      <figure class="tile"><img src="_assets/logo-kiln-and-cup.png" alt="Kiln and Cup logo" /><figcaption><strong>Kiln &amp; Cup</strong></figcaption></figure>
+      <figure class="tile"><img src="_assets/logo-mist-harbor.png" alt="Mist Harbor logo" /><figcaption><strong>Mist Harbor</strong></figcaption></figure>
+      <figure class="tile"><img src="_assets/logo-ember-court.png" alt="Ember Court logo" /><figcaption><strong>Ember Court</strong></figcaption></figure>
+      <figure class="tile"><img src="_assets/logo-citrus-hull.png" alt="Citrus Hull logo" /><figcaption><strong>Citrus Hull</strong></figcaption></figure>
+      <figure class="tile"><img src="_assets/logo-sole-archive.png" alt="Sole Archive logo" /><figcaption><strong>Sole Archive</strong></figcaption></figure>
+    </div>
+
+    <h2>Illustrations</h2>
+    <div class="grid">
+      <figure class="tile tile--wide"><img src="_assets/hero-kiln-and-cup.png" alt="Kiln cafe workshop hero" /><figcaption><strong>Kiln workshop</strong></figcaption></figure>
+      <figure class="tile tile--wide"><img src="_assets/hero-mist-harbor.png" alt="Mist Harbor pier hero" /><figcaption><strong>Mist pier</strong></figcaption></figure>
+      <figure class="tile tile--wide"><img src="_assets/hero-ember-court.png" alt="Ember Court courtyard hero" /><figcaption><strong>Ember courtyard</strong></figcaption></figure>
+      <figure class="tile tile--wide"><img src="_assets/hero-citrus-hull.png" alt="Citrus Hull terrace hero" /><figcaption><strong>Citrus terrace</strong></figcaption></figure>
+      <figure class="tile tile--wide"><img src="_assets/hero-sole-archive.png" alt="Sole Archive vault hero" /><figcaption><strong>Sole vault</strong></figcaption></figure>
+    </div>
+  </main>
+  <footer>Pass HA · Hour 3 of 5 · Cycle GY→… · Crosslink</footer>
+</body>
+</html>

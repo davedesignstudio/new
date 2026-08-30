@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Coastal Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Literata", Georgia, serif;
+      --font-body: "Manrope", system-ui, sans-serif;
+      --ink: #12343a;
+      --paper: #f3f7f2;
+      --panel: #fafdf8;
+      --accent: #1f7a6c;
+      --accent-ink: #f4fff9;
+      --on-hero: #f4fbf7;
+      --hero-veil: linear-gradient(180deg, rgba(18,52,58,0.32) 0%, rgba(18,52,58,0.55) 50%, rgba(18,52,58,0.86) 100%);
+      --stakes-bg: #e5f0e8;
+      --stakes-ink: #12343a;
+      --stakes-accent: #e2b93b;
+      --radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="" width="48" height="48" />
+        Citrus Hull
+      </a>
+      <ul class="nav-links">
+        <li><a href="#catch">Catch</a></li>
+        <li><a href="#croze">Allergens</a></li>
+        <li><a href="#deck">Deck</a></li>
+      </ul>
+    </nav>
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/hero.png" alt="" />
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Terrace restaurant · citrus &amp; tide</p>
+      <h1>Citrus Hull</h1>
+      <p class="hero__lede">Seafood brightened with citrus—served on a deck that faces the hull of the bay.</p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="#catch">Today’s catch board</a>
+        <a class="btn btn--ghost" href="#croze">Shellfish croze</a>
+      </div>
+      <p class="place-credit">Place: coastal terrace over teal water · looking regime: hospitality invitation</p>
+    </div>
+    <aside class="stakes" aria-label="Guest care stakes">
+        <p class="stakes__label">Two Ways · life path (mercy)</p>
+        <p class="stakes__ail"><strong>Action:</strong> Declare shellfish / citrus peel sensitivity before seating. <strong>Item:</strong> crustacean &amp; mollusk on the catch board; citrus oils in dressings. <strong>Limit:</strong> shared fryer &amp; grill—cross-contact is real.</p>
+      </aside>
+  </header>
+
+  <section class="section" id="catch">
+    <h2>One job: the catch board</h2>
+    <p class="section__lede">What came in with the tide—one board, one purpose.</p>
+    <div class="card-grid">
+      <a class="card" href="#deck">
+        <div class="card__body">
+          <p class="card__meta">Raw</p>
+          <h3>Lemon Crudo</h3>
+          <p>Day-boat fish, citrus oil, chili.</p>
+          <div class="badge-row"><span class="badge badge--alert">Fish · citrus</span></div>
+        </div>
+      </a>
+      <a class="card" href="#deck">
+        <div class="card__body">
+          <p class="card__meta">Grill</p>
+          <h3>Hull Prawns</h3>
+          <p>Shell-on, garlic, lemon zest.</p>
+          <div class="badge-row"><span class="badge badge--alert">Shellfish</span></div>
+        </div>
+      </a>
+      <a class="card" href="#deck">
+        <div class="card__body">
+          <p class="card__meta">Land</p>
+          <h3>Citrus Greens</h3>
+          <p>No seafood—ask for citrus-free dressing.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section band" id="croze">
+    <h2>Shellfish &amp; citrus croze</h2>
+    <p class="section__lede">Same croze grammar as Kiln &amp; Mist; maps to Sole’s authenticity/hold fields—truth that protects.</p>
+    <div class="croze" role="list">
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Item</span>
+        <p class="croze__val">Shellfish (prawns, optional specials), fish (crudo), citrus oils.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Action</span>
+        <p class="croze__val">Tell the host before you sit; we mark the ticket in the croze groove.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Limit</span>
+        <p class="croze__val">Shared cookline—we cannot guarantee zero airborne citrus oil.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deck">
+    <h2>Deck hours</h2>
+    <p class="section__lede">Wed–Sun · 5–10p · walk-ins for the rail; tables need a note ahead.</p>
+    <a class="btn btn--solid" href="mailto:deck@citrushull.example">Hold a deck seat</a>
+  </section>
+
+  <footer class="footer">
+    <span>Citrus Hull · Pass HA Crosslink pattern</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+</body>
+</html>
