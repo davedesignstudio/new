@@ -2,18 +2,18 @@
   "generated": true,
   "studio": "D Philhower Studio",
   "totals": {
-    "creations_with_logos": 585,
+    "creations_with_logos": 660,
     "history": 100,
-    "brands_with_logos": 485,
-    "full_kits": 553,
+    "brands_with_logos": 560,
+    "full_kits": 628,
     "shelves": 34
   },
   "technique_usage": {
-    "swiss": 69,
-    "objecthood": 81,
-    "operating-kit": 65,
-    "shelves": 247,
-    "cooperage": 111,
+    "swiss": 75,
+    "objecthood": 87,
+    "operating-kit": 71,
+    "shelves": 289,
+    "cooperage": 126,
     "genui": 8,
     "writing": 1,
     "wordmark": 3
@@ -21,12 +21,12 @@
   "shelves": [
     {
       "shelf": "Swiss / International",
-      "count": 63,
-      "full_kits": 61,
+      "count": 69,
+      "full_kits": 67,
       "technique_id": "swiss",
       "technique": "Modular order before ornament",
-      "top_palette": "white, charcoal, silver, copper",
-      "learning": "Across 63 creations on the Swiss / International shelf, the studio pressure-tests modular order before ornament. Recurring palette notes: white, charcoal, silver, copper. 61 carry full process kits.",
+      "top_palette": "white, silver, charcoal, midnight blue",
+      "learning": "Across 69 creations on the Swiss / International shelf, the studio pressure-tests modular order before ornament. Recurring palette notes: white, silver, charcoal, midnight blue. 67 carry full process kits.",
       "examples": [
         {
           "slug": "grid-meridian",
@@ -68,12 +68,12 @@
     },
     {
       "shelf": "Mid-century modern",
-      "count": 61,
-      "full_kits": 57,
+      "count": 67,
+      "full_kits": 63,
       "technique_id": "objecthood",
       "technique": "Objecthood + honest materials",
-      "top_palette": "black, ivory, walnut, cream",
-      "learning": "Across 61 creations on the Mid-century modern shelf, the studio pressure-tests objecthood + honest materials. Recurring palette notes: black, ivory, walnut, cream. 57 carry full process kits.",
+      "top_palette": "black, cream, walnut, ivory",
+      "learning": "Across 67 creations on the Mid-century modern shelf, the studio pressure-tests objecthood + honest materials. Recurring palette notes: black, cream, walnut, ivory. 63 carry full process kits.",
       "examples": [
         {
           "slug": "plywood-orbit",
@@ -115,12 +115,12 @@
     },
     {
       "shelf": "Corporate identity",
-      "count": 61,
-      "full_kits": 56,
+      "count": 67,
+      "full_kits": 62,
       "technique_id": "operating-kit",
       "technique": "Operating kit (logo \u2192 fleet)",
-      "top_palette": "cream, stone gray, espresso, moss",
-      "learning": "Across 61 creations on the Corporate identity shelf, the studio pressure-tests operating kit (logo \u2192 fleet). Recurring palette notes: cream, stone gray, espresso, moss. 56 carry full process kits.",
+      "top_palette": "cream, moss, clay, charcoal",
+      "learning": "Across 67 creations on the Corporate identity shelf, the studio pressure-tests operating kit (logo \u2192 fleet). Recurring palette notes: cream, moss, clay, charcoal. 62 carry full process kits.",
       "examples": [
         {
           "slug": "rand-signal",
@@ -162,12 +162,12 @@
     },
     {
       "shelf": "Liberation print",
-      "count": 61,
-      "full_kits": 59,
+      "count": 67,
+      "full_kits": 65,
       "technique_id": "shelves",
       "technique": "Labeled parallel crafts; hear + do",
-      "top_palette": "black, white, cream, cedar green",
-      "learning": "Across 61 creations on the Liberation print shelf, the studio pressure-tests labeled parallel crafts; hear + do. Recurring palette notes: black, white, cream, cedar green. 59 carry full process kits.",
+      "top_palette": "black, white, cream, cobalt",
+      "learning": "Across 67 creations on the Liberation print shelf, the studio pressure-tests labeled parallel crafts; hear + do. Recurring palette notes: black, white, cream, cobalt. 65 carry full process kits.",
       "examples": [
         {
           "slug": "panther-press",
@@ -209,12 +209,12 @@
     },
     {
       "shelf": "Postmodern / New Wave",
-      "count": 58,
-      "full_kits": 56,
+      "count": 64,
+      "full_kits": 62,
       "technique_id": "cooperage",
       "technique": "Break rules after pressure-test",
-      "top_palette": "black, ink black, paper cream, rust",
-      "learning": "Across 58 creations on the Postmodern / New Wave shelf, the studio pressure-tests break rules after pressure-test. Recurring palette notes: black, ink black, paper cream, rust. 56 carry full process kits.",
+      "top_palette": "black, ochre, ink, chalk",
+      "learning": "Across 64 creations on the Postmodern / New Wave shelf, the studio pressure-tests break rules after pressure-test. Recurring palette notes: black, ochre, ink, chalk. 62 carry full process kits.",
       "examples": [
         {
           "slug": "weingart-shatter",
@@ -256,12 +256,12 @@
     },
     {
       "shelf": "Desktop publishing",
-      "count": 51,
-      "full_kits": 50,
+      "count": 60,
+      "full_kits": 59,
       "technique_id": "cooperage",
       "technique": "File craft; pressure-test systems",
       "top_palette": "white, sea teal, foam white, navy",
-      "learning": "Across 51 creations on the Desktop publishing shelf, the studio pressure-tests file craft; pressure-test systems. Recurring palette notes: white, sea teal, foam white, navy. 50 carry full process kits.",
+      "learning": "Across 60 creations on the Desktop publishing shelf, the studio pressure-tests file craft; pressure-test systems. Recurring palette notes: white, sea teal, foam white, navy. 59 carry full process kits.",
       "examples": [
         {
           "slug": "hello-mac",
@@ -303,12 +303,12 @@
     },
     {
       "shelf": "Early web / Web 2.0",
-      "count": 46,
-      "full_kits": 45,
+      "count": 55,
+      "full_kits": 54,
       "technique_id": "shelves",
       "technique": "Labeled shelves; parallel craft",
       "top_palette": "barn red, cream, black, navy",
-      "learning": "Across 46 creations on the Early web / Web 2.0 shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: barn red, cream, black, navy. 45 carry full process kits.",
+      "learning": "Across 55 creations on the Early web / Web 2.0 shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: barn red, cream, black, navy. 54 carry full process kits.",
       "examples": [
         {
           "slug": "amber-cask-w1",
@@ -350,12 +350,12 @@
     },
     {
       "shelf": "Flat / Material",
-      "count": 46,
-      "full_kits": 45,
+      "count": 55,
+      "full_kits": 54,
       "technique_id": "shelves",
       "technique": "Labeled shelves; parallel craft",
       "top_palette": "forest green, brass, bone, stone gray",
-      "learning": "Across 46 creations on the Flat / Material shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: forest green, brass, bone, stone gray. 45 carry full process kits.",
+      "learning": "Across 55 creations on the Flat / Material shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: forest green, brass, bone, stone gray. 54 carry full process kits.",
       "examples": [
         {
           "slug": "amber-chamber",
@@ -397,12 +397,12 @@
     },
     {
       "shelf": "Adaptive / motion identity",
-      "count": 46,
-      "full_kits": 44,
+      "count": 55,
+      "full_kits": 53,
       "technique_id": "shelves",
       "technique": "Labeled shelves; parallel craft",
       "top_palette": "black, slate, amber, white",
-      "learning": "Across 46 creations on the Adaptive / motion identity shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: black, slate, amber, white. 44 carry full process kits.",
+      "learning": "Across 55 creations on the Adaptive / motion identity shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: black, slate, amber, white. 53 carry full process kits.",
       "examples": [
         {
           "slug": "amber-circuit",
@@ -444,12 +444,12 @@
     },
     {
       "shelf": "GenUI / craft systems",
-      "count": 46,
-      "full_kits": 43,
+      "count": 55,
+      "full_kits": 52,
       "technique_id": "shelves",
       "technique": "Labeled shelves; parallel craft",
       "top_palette": "oxide red, sand, black, ink black",
-      "learning": "Across 46 creations on the GenUI / craft systems shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: oxide red, sand, black, ink black. 43 carry full process kits.",
+      "learning": "Across 55 creations on the GenUI / craft systems shelf, the studio pressure-tests labeled shelves; parallel craft. Recurring palette notes: oxide red, sand, black, ink black. 52 carry full process kits.",
       "examples": [
         {
           "slug": "amber-clinic",
@@ -11801,6 +11801,1231 @@
       "img": "/brands-500/birch-project/01-logo.png"
     },
     {
+      "slug": "birch-provender",
+      "name": "Birch Provender",
+      "wave": 1,
+      "cat": "publisher",
+      "tone": "press",
+      "palette": "sea teal, foam white, navy",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; press",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Provender",
+        "item": "press on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette sea teal, foam white, navy. Style vector craft, PostScript era; press. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-provender",
+      "img": "/brands-500/birch-provender/01-logo.png"
+    },
+    {
+      "slug": "birch-rail",
+      "name": "Birch Rail",
+      "wave": 1,
+      "cat": "music",
+      "tone": "listening bar",
+      "palette": "barn red, cream, black",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; listening bar",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Rail",
+        "item": "listening bar on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette barn red, cream, black. Style screen as substrate, reflow; listening bar. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-rail",
+      "img": "/brands-500/birch-rail/01-logo.png"
+    },
+    {
+      "slug": "birch-range",
+      "name": "Birch Range",
+      "wave": 1,
+      "cat": "gallery",
+      "tone": "art space",
+      "palette": "forest green, brass, bone",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; art space",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Range",
+        "item": "art space on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette forest green, brass, bone. Style digital clarity, motion hierarchy; art space. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-range",
+      "img": "/brands-500/birch-range/01-logo.png"
+    },
+    {
+      "slug": "birch-room",
+      "name": "Birch Room",
+      "wave": 1,
+      "cat": "tech",
+      "tone": "software studio",
+      "palette": "slate, amber, white",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; software studio",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Room",
+        "item": "software studio on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette slate, amber, white. Style variable type, responsive lockups; software studio. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-room",
+      "img": "/brands-500/birch-room/01-logo.png"
+    },
+    {
+      "slug": "birch-row",
+      "name": "Birch Row",
+      "wave": 1,
+      "cat": "civic",
+      "tone": "public workshop",
+      "palette": "oxide red, sand, black",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; public workshop",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Row",
+        "item": "public workshop on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette oxide red, sand, black. Style envelope constraints, pressure-test; public workshop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-row",
+      "img": "/brands-500/birch-row/01-logo.png"
+    },
+    {
+      "slug": "birch-shop",
+      "name": "Birch Shop",
+      "wave": 1,
+      "cat": "cafe",
+      "tone": "espresso bar",
+      "palette": "midnight blue, silver, white",
+      "era": "1950\u20131970",
+      "shelf": "Swiss / International",
+      "style": "grid, grotesque sans, objective photo; espresso bar",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Shop",
+        "item": "espresso bar on the Swiss / International shelf",
+        "limit": "does not claim every swiss / international move\u2014only this brief",
+        "technique_id": "swiss",
+        "technique": "Modular order before ornament",
+        "note": "Wave 1. Palette midnight blue, silver, white. Style grid, grotesque sans, objective photo; espresso bar. Technique: Modular order before ornament."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-shop",
+      "img": "/brands-500/birch-shop/01-logo.png"
+    },
+    {
+      "slug": "birch-society",
+      "name": "Birch Society",
+      "wave": 1,
+      "cat": "restaurant",
+      "tone": "supper club",
+      "palette": "walnut, linen, iron",
+      "era": "1950\u20131970",
+      "shelf": "Mid-century modern",
+      "style": "molded forms, honest materials; supper club",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Society",
+        "item": "supper club on the Mid-century modern shelf",
+        "limit": "does not claim every mid-century modern move\u2014only this brief",
+        "technique_id": "objecthood",
+        "technique": "Objecthood + honest materials",
+        "note": "Wave 1. Palette walnut, linen, iron. Style molded forms, honest materials; supper club. Technique: Objecthood + honest materials."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-society",
+      "img": "/brands-500/birch-society/01-logo.png"
+    },
+    {
+      "slug": "birch-stack",
+      "name": "Birch Stack",
+      "wave": 1,
+      "cat": "bakery",
+      "tone": "bread house",
+      "palette": "moss, clay, charcoal",
+      "era": "1950\u20131970",
+      "shelf": "Corporate identity",
+      "style": "system mark, fleet logic; bread house",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Stack",
+        "item": "bread house on the Corporate identity shelf",
+        "limit": "does not claim every corporate identity move\u2014only this brief",
+        "technique_id": "operating-kit",
+        "technique": "Operating kit (logo \u2192 fleet)",
+        "note": "Wave 1. Palette moss, clay, charcoal. Style system mark, fleet logic; bread house. Technique: Operating kit (logo \u2192 fleet)."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-stack",
+      "img": "/brands-500/birch-stack/01-logo.png"
+    },
+    {
+      "slug": "birch-studio",
+      "name": "Birch Studio",
+      "wave": 1,
+      "cat": "bar",
+      "tone": "cocktail lounge",
+      "palette": "cobalt, cloud, black",
+      "era": "1960\u20131970",
+      "shelf": "Liberation print",
+      "style": "thick line, high contrast, block type; cocktail lounge",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Studio",
+        "item": "cocktail lounge on the Liberation print shelf",
+        "limit": "does not claim every liberation print move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled parallel crafts; hear + do",
+        "note": "Wave 1. Palette cobalt, cloud, black. Style thick line, high contrast, block type; cocktail lounge. Technique: Labeled parallel crafts; hear + do."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-studio",
+      "img": "/brands-500/birch-studio/01-logo.png"
+    },
+    {
+      "slug": "birch-table",
+      "name": "Birch Table",
+      "wave": 1,
+      "cat": "brewery",
+      "tone": "taproom",
+      "palette": "ochre, ink, chalk",
+      "era": "1970\u20131990",
+      "shelf": "Postmodern / New Wave",
+      "style": "layered type, rule-breaking; taproom",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Table",
+        "item": "taproom on the Postmodern / New Wave shelf",
+        "limit": "does not claim every postmodern / new wave move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "Break rules after pressure-test",
+        "note": "Wave 1. Palette ochre, ink, chalk. Style layered type, rule-breaking; taproom. Technique: Break rules after pressure-test."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-table",
+      "img": "/brands-500/birch-table/01-logo.png"
+    },
+    {
+      "slug": "birch-tap",
+      "name": "Birch Tap",
+      "wave": 1,
+      "cat": "hotel",
+      "tone": "inn",
+      "palette": "charcoal, copper, cream",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; inn",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Tap",
+        "item": "inn on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette charcoal, copper, cream. Style vector craft, PostScript era; inn. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-tap",
+      "img": "/brands-500/birch-tap/01-logo.png"
+    },
+    {
+      "slug": "birch-works",
+      "name": "Birch Works",
+      "wave": 1,
+      "cat": "retail",
+      "tone": "goods shop",
+      "palette": "navy, warm gold, ivory",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; goods shop",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Works",
+        "item": "goods shop on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette navy, warm gold, ivory. Style screen as substrate, reflow; goods shop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-works",
+      "img": "/brands-500/birch-works/01-logo.png"
+    },
+    {
+      "slug": "birch-yard",
+      "name": "Birch Yard",
+      "wave": 1,
+      "cat": "fashion",
+      "tone": "apparel label",
+      "palette": "stone gray, espresso, cream",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; apparel label",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Birch Yard",
+        "item": "apparel label on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette stone gray, espresso, cream. Style digital clarity, motion hierarchy; apparel label. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#birch-yard",
+      "img": "/brands-500/birch-yard/01-logo.png"
+    },
+    {
+      "slug": "bloom-archive",
+      "name": "Bloom Archive",
+      "wave": 1,
+      "cat": "beauty",
+      "tone": "apothecary",
+      "palette": "cedar green, cream, black",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; apothecary",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Archive",
+        "item": "apothecary on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette cedar green, cream, black. Style variable type, responsive lockups; apothecary. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-archive",
+      "img": "/brands-500/bloom-archive/01-logo.png"
+    },
+    {
+      "slug": "bloom-atelier",
+      "name": "Bloom Atelier",
+      "wave": 1,
+      "cat": "fitness",
+      "tone": "training gym",
+      "palette": "ink black, paper cream, rust",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; training gym",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Atelier",
+        "item": "training gym on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette ink black, paper cream, rust. Style envelope constraints, pressure-test; training gym. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-atelier",
+      "img": "/brands-500/bloom-atelier/01-logo.png"
+    },
+    {
+      "slug": "bloom-beacon",
+      "name": "Bloom Beacon",
+      "wave": 1,
+      "cat": "wellness",
+      "tone": "spa studio",
+      "palette": "sea teal, foam white, navy",
+      "era": "1950\u20131970",
+      "shelf": "Swiss / International",
+      "style": "grid, grotesque sans, objective photo; spa studio",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Beacon",
+        "item": "spa studio on the Swiss / International shelf",
+        "limit": "does not claim every swiss / international move\u2014only this brief",
+        "technique_id": "swiss",
+        "technique": "Modular order before ornament",
+        "note": "Wave 1. Palette sea teal, foam white, navy. Style grid, grotesque sans, objective photo; spa studio. Technique: Modular order before ornament."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-beacon",
+      "img": "/brands-500/bloom-beacon/01-logo.png"
+    },
+    {
+      "slug": "bloom-bench",
+      "name": "Bloom Bench",
+      "wave": 1,
+      "cat": "pet",
+      "tone": "pet goods",
+      "palette": "barn red, cream, black",
+      "era": "1950\u20131970",
+      "shelf": "Mid-century modern",
+      "style": "molded forms, honest materials; pet goods",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Bench",
+        "item": "pet goods on the Mid-century modern shelf",
+        "limit": "does not claim every mid-century modern move\u2014only this brief",
+        "technique_id": "objecthood",
+        "technique": "Objecthood + honest materials",
+        "note": "Wave 1. Palette barn red, cream, black. Style molded forms, honest materials; pet goods. Technique: Objecthood + honest materials."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-bench",
+      "img": "/brands-500/bloom-bench/01-logo.png"
+    },
+    {
+      "slug": "bloom-borough",
+      "name": "Bloom Borough",
+      "wave": 1,
+      "cat": "auto",
+      "tone": "garage",
+      "palette": "forest green, brass, bone",
+      "era": "1950\u20131970",
+      "shelf": "Corporate identity",
+      "style": "system mark, fleet logic; garage",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Borough",
+        "item": "garage on the Corporate identity shelf",
+        "limit": "does not claim every corporate identity move\u2014only this brief",
+        "technique_id": "operating-kit",
+        "technique": "Operating kit (logo \u2192 fleet)",
+        "note": "Wave 1. Palette forest green, brass, bone. Style system mark, fleet logic; garage. Technique: Operating kit (logo \u2192 fleet)."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-borough",
+      "img": "/brands-500/bloom-borough/01-logo.png"
+    },
+    {
+      "slug": "bloom-bureau",
+      "name": "Bloom Bureau",
+      "wave": 1,
+      "cat": "trades",
+      "tone": "renovation shop",
+      "palette": "slate, amber, white",
+      "era": "1960\u20131970",
+      "shelf": "Liberation print",
+      "style": "thick line, high contrast, block type; renovation shop",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Bureau",
+        "item": "renovation shop on the Liberation print shelf",
+        "limit": "does not claim every liberation print move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled parallel crafts; hear + do",
+        "note": "Wave 1. Palette slate, amber, white. Style thick line, high contrast, block type; renovation shop. Technique: Labeled parallel crafts; hear + do."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-bureau",
+      "img": "/brands-500/bloom-bureau/01-logo.png"
+    },
+    {
+      "slug": "bloom-cask",
+      "name": "Bloom Cask",
+      "wave": 1,
+      "cat": "architecture",
+      "tone": "design office",
+      "palette": "oxide red, sand, black",
+      "era": "1970\u20131990",
+      "shelf": "Postmodern / New Wave",
+      "style": "layered type, rule-breaking; design office",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Cask",
+        "item": "design office on the Postmodern / New Wave shelf",
+        "limit": "does not claim every postmodern / new wave move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "Break rules after pressure-test",
+        "note": "Wave 1. Palette oxide red, sand, black. Style layered type, rule-breaking; design office. Technique: Break rules after pressure-test."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-cask",
+      "img": "/brands-500/bloom-cask/01-logo.png"
+    },
+    {
+      "slug": "bloom-chamber",
+      "name": "Bloom Chamber",
+      "wave": 1,
+      "cat": "publisher",
+      "tone": "press",
+      "palette": "midnight blue, silver, white",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; press",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Chamber",
+        "item": "press on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette midnight blue, silver, white. Style vector craft, PostScript era; press. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-chamber",
+      "img": "/brands-500/bloom-chamber/01-logo.png"
+    },
+    {
+      "slug": "bloom-circuit",
+      "name": "Bloom Circuit",
+      "wave": 1,
+      "cat": "music",
+      "tone": "listening bar",
+      "palette": "walnut, linen, iron",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; listening bar",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Circuit",
+        "item": "listening bar on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette walnut, linen, iron. Style screen as substrate, reflow; listening bar. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-circuit",
+      "img": "/brands-500/bloom-circuit/01-logo.png"
+    },
+    {
+      "slug": "bloom-clinic-w1",
+      "name": "Bloom Clinic",
+      "wave": 1,
+      "cat": "gallery",
+      "tone": "art space",
+      "palette": "moss, clay, charcoal",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; art space",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Clinic",
+        "item": "art space on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette moss, clay, charcoal. Style digital clarity, motion hierarchy; art space. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-clinic-w1",
+      "img": "/brands-500/bloom-clinic-w1/01-logo.png"
+    },
+    {
+      "slug": "bloom-closet",
+      "name": "Bloom Closet",
+      "wave": 1,
+      "cat": "tech",
+      "tone": "software studio",
+      "palette": "cobalt, cloud, black",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; software studio",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Closet",
+        "item": "software studio on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette cobalt, cloud, black. Style variable type, responsive lockups; software studio. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-closet",
+      "img": "/brands-500/bloom-closet/01-logo.png"
+    },
+    {
+      "slug": "bloom-co",
+      "name": "Bloom Co",
+      "wave": 1,
+      "cat": "civic",
+      "tone": "public workshop",
+      "palette": "ochre, ink, chalk",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; public workshop",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Co",
+        "item": "public workshop on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette ochre, ink, chalk. Style envelope constraints, pressure-test; public workshop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-co",
+      "img": "/brands-500/bloom-co/01-logo.png"
+    },
+    {
+      "slug": "bloom-collective",
+      "name": "Bloom Collective",
+      "wave": 1,
+      "cat": "cafe",
+      "tone": "espresso bar",
+      "palette": "charcoal, copper, cream",
+      "era": "1950\u20131970",
+      "shelf": "Swiss / International",
+      "style": "grid, grotesque sans, objective photo; espresso bar",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Collective",
+        "item": "espresso bar on the Swiss / International shelf",
+        "limit": "does not claim every swiss / international move\u2014only this brief",
+        "technique_id": "swiss",
+        "technique": "Modular order before ornament",
+        "note": "Wave 1. Palette charcoal, copper, cream. Style grid, grotesque sans, objective photo; espresso bar. Technique: Modular order before ornament."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-collective",
+      "img": "/brands-500/bloom-collective/01-logo.png"
+    },
+    {
+      "slug": "bloom-commons",
+      "name": "Bloom Commons",
+      "wave": 1,
+      "cat": "restaurant",
+      "tone": "supper club",
+      "palette": "navy, warm gold, ivory",
+      "era": "1950\u20131970",
+      "shelf": "Mid-century modern",
+      "style": "molded forms, honest materials; supper club",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Commons",
+        "item": "supper club on the Mid-century modern shelf",
+        "limit": "does not claim every mid-century modern move\u2014only this brief",
+        "technique_id": "objecthood",
+        "technique": "Objecthood + honest materials",
+        "note": "Wave 1. Palette navy, warm gold, ivory. Style molded forms, honest materials; supper club. Technique: Objecthood + honest materials."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-commons",
+      "img": "/brands-500/bloom-commons/01-logo.png"
+    },
+    {
+      "slug": "bloom-company",
+      "name": "Bloom Company",
+      "wave": 1,
+      "cat": "bakery",
+      "tone": "bread house",
+      "palette": "stone gray, espresso, cream",
+      "era": "1950\u20131970",
+      "shelf": "Corporate identity",
+      "style": "system mark, fleet logic; bread house",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Company",
+        "item": "bread house on the Corporate identity shelf",
+        "limit": "does not claim every corporate identity move\u2014only this brief",
+        "technique_id": "operating-kit",
+        "technique": "Operating kit (logo \u2192 fleet)",
+        "note": "Wave 1. Palette stone gray, espresso, cream. Style system mark, fleet logic; bread house. Technique: Operating kit (logo \u2192 fleet)."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-company",
+      "img": "/brands-500/bloom-company/01-logo.png"
+    },
+    {
+      "slug": "bloom-counter",
+      "name": "Bloom Counter",
+      "wave": 1,
+      "cat": "bar",
+      "tone": "cocktail lounge",
+      "palette": "cedar green, cream, black",
+      "era": "1960\u20131970",
+      "shelf": "Liberation print",
+      "style": "thick line, high contrast, block type; cocktail lounge",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Counter",
+        "item": "cocktail lounge on the Liberation print shelf",
+        "limit": "does not claim every liberation print move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled parallel crafts; hear + do",
+        "note": "Wave 1. Palette cedar green, cream, black. Style thick line, high contrast, block type; cocktail lounge. Technique: Labeled parallel crafts; hear + do."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-counter",
+      "img": "/brands-500/bloom-counter/01-logo.png"
+    },
+    {
+      "slug": "bloom-craft",
+      "name": "Bloom Craft",
+      "wave": 1,
+      "cat": "brewery",
+      "tone": "taproom",
+      "palette": "ink black, paper cream, rust",
+      "era": "1970\u20131990",
+      "shelf": "Postmodern / New Wave",
+      "style": "layered type, rule-breaking; taproom",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Craft",
+        "item": "taproom on the Postmodern / New Wave shelf",
+        "limit": "does not claim every postmodern / new wave move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "Break rules after pressure-test",
+        "note": "Wave 1. Palette ink black, paper cream, rust. Style layered type, rule-breaking; taproom. Technique: Break rules after pressure-test."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-craft",
+      "img": "/brands-500/bloom-craft/01-logo.png"
+    },
+    {
+      "slug": "bloom-depot",
+      "name": "Bloom Depot",
+      "wave": 1,
+      "cat": "hotel",
+      "tone": "inn",
+      "palette": "sea teal, foam white, navy",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; inn",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Depot",
+        "item": "inn on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette sea teal, foam white, navy. Style vector craft, PostScript era; inn. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-depot",
+      "img": "/brands-500/bloom-depot/01-logo.png"
+    },
+    {
+      "slug": "bloom-desk",
+      "name": "Bloom Desk",
+      "wave": 1,
+      "cat": "retail",
+      "tone": "goods shop",
+      "palette": "barn red, cream, black",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; goods shop",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Desk",
+        "item": "goods shop on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette barn red, cream, black. Style screen as substrate, reflow; goods shop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-desk",
+      "img": "/brands-500/bloom-desk/01-logo.png"
+    },
+    {
+      "slug": "bloom-exchange",
+      "name": "Bloom Exchange",
+      "wave": 1,
+      "cat": "fashion",
+      "tone": "apparel label",
+      "palette": "forest green, brass, bone",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; apparel label",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Exchange",
+        "item": "apparel label on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette forest green, brass, bone. Style digital clarity, motion hierarchy; apparel label. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-exchange",
+      "img": "/brands-500/bloom-exchange/01-logo.png"
+    },
+    {
+      "slug": "bloom-factory",
+      "name": "Bloom Factory",
+      "wave": 1,
+      "cat": "beauty",
+      "tone": "apothecary",
+      "palette": "slate, amber, white",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; apothecary",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Factory",
+        "item": "apothecary on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette slate, amber, white. Style variable type, responsive lockups; apothecary. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-factory",
+      "img": "/brands-500/bloom-factory/01-logo.png"
+    },
+    {
+      "slug": "bloom-field",
+      "name": "Bloom Field",
+      "wave": 1,
+      "cat": "fitness",
+      "tone": "training gym",
+      "palette": "oxide red, sand, black",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; training gym",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Field",
+        "item": "training gym on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette oxide red, sand, black. Style envelope constraints, pressure-test; training gym. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-field",
+      "img": "/brands-500/bloom-field/01-logo.png"
+    },
+    {
       "slug": "bloom-folio",
       "name": "Bloom Folio",
       "wave": 1,
@@ -11976,6 +13201,531 @@
       "img": "/brands-500/bloom-house/01-logo.png"
     },
     {
+      "slug": "bloom-index",
+      "name": "Bloom Index",
+      "wave": 1,
+      "cat": "publisher",
+      "tone": "press",
+      "palette": "charcoal, copper, cream",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; press",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Index",
+        "item": "press on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette charcoal, copper, cream. Style vector craft, PostScript era; press. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-index",
+      "img": "/brands-500/bloom-index/01-logo.png"
+    },
+    {
+      "slug": "bloom-kitchen",
+      "name": "Bloom Kitchen",
+      "wave": 1,
+      "cat": "music",
+      "tone": "listening bar",
+      "palette": "navy, warm gold, ivory",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; listening bar",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Kitchen",
+        "item": "listening bar on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette navy, warm gold, ivory. Style screen as substrate, reflow; listening bar. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-kitchen",
+      "img": "/brands-500/bloom-kitchen/01-logo.png"
+    },
+    {
+      "slug": "bloom-lab",
+      "name": "Bloom Lab",
+      "wave": 1,
+      "cat": "gallery",
+      "tone": "art space",
+      "palette": "stone gray, espresso, cream",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; art space",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Lab",
+        "item": "art space on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette stone gray, espresso, cream. Style digital clarity, motion hierarchy; art space. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-lab",
+      "img": "/brands-500/bloom-lab/01-logo.png"
+    },
+    {
+      "slug": "bloom-lattice",
+      "name": "Bloom Lattice",
+      "wave": 1,
+      "cat": "tech",
+      "tone": "software studio",
+      "palette": "cedar green, cream, black",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; software studio",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Lattice",
+        "item": "software studio on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette cedar green, cream, black. Style variable type, responsive lockups; software studio. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-lattice",
+      "img": "/brands-500/bloom-lattice/01-logo.png"
+    },
+    {
+      "slug": "bloom-league",
+      "name": "Bloom League",
+      "wave": 1,
+      "cat": "civic",
+      "tone": "public workshop",
+      "palette": "ink black, paper cream, rust",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; public workshop",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom League",
+        "item": "public workshop on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette ink black, paper cream, rust. Style envelope constraints, pressure-test; public workshop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-league",
+      "img": "/brands-500/bloom-league/01-logo.png"
+    },
+    {
+      "slug": "bloom-library",
+      "name": "Bloom Library",
+      "wave": 1,
+      "cat": "cafe",
+      "tone": "espresso bar",
+      "palette": "sea teal, foam white, navy",
+      "era": "1950\u20131970",
+      "shelf": "Swiss / International",
+      "style": "grid, grotesque sans, objective photo; espresso bar",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Library",
+        "item": "espresso bar on the Swiss / International shelf",
+        "limit": "does not claim every swiss / international move\u2014only this brief",
+        "technique_id": "swiss",
+        "technique": "Modular order before ornament",
+        "note": "Wave 1. Palette sea teal, foam white, navy. Style grid, grotesque sans, objective photo; espresso bar. Technique: Modular order before ornament."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-library",
+      "img": "/brands-500/bloom-library/01-logo.png"
+    },
+    {
+      "slug": "bloom-line",
+      "name": "Bloom Line",
+      "wave": 1,
+      "cat": "restaurant",
+      "tone": "supper club",
+      "palette": "barn red, cream, black",
+      "era": "1950\u20131970",
+      "shelf": "Mid-century modern",
+      "style": "molded forms, honest materials; supper club",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Line",
+        "item": "supper club on the Mid-century modern shelf",
+        "limit": "does not claim every mid-century modern move\u2014only this brief",
+        "technique_id": "objecthood",
+        "technique": "Objecthood + honest materials",
+        "note": "Wave 1. Palette barn red, cream, black. Style molded forms, honest materials; supper club. Technique: Objecthood + honest materials."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-line",
+      "img": "/brands-500/bloom-line/01-logo.png"
+    },
+    {
+      "slug": "bloom-lodge",
+      "name": "Bloom Lodge",
+      "wave": 1,
+      "cat": "bakery",
+      "tone": "bread house",
+      "palette": "forest green, brass, bone",
+      "era": "1950\u20131970",
+      "shelf": "Corporate identity",
+      "style": "system mark, fleet logic; bread house",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Lodge",
+        "item": "bread house on the Corporate identity shelf",
+        "limit": "does not claim every corporate identity move\u2014only this brief",
+        "technique_id": "operating-kit",
+        "technique": "Operating kit (logo \u2192 fleet)",
+        "note": "Wave 1. Palette forest green, brass, bone. Style system mark, fleet logic; bread house. Technique: Operating kit (logo \u2192 fleet)."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-lodge",
+      "img": "/brands-500/bloom-lodge/01-logo.png"
+    },
+    {
+      "slug": "bloom-loft",
+      "name": "Bloom Loft",
+      "wave": 1,
+      "cat": "bar",
+      "tone": "cocktail lounge",
+      "palette": "slate, amber, white",
+      "era": "1960\u20131970",
+      "shelf": "Liberation print",
+      "style": "thick line, high contrast, block type; cocktail lounge",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Loft",
+        "item": "cocktail lounge on the Liberation print shelf",
+        "limit": "does not claim every liberation print move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled parallel crafts; hear + do",
+        "note": "Wave 1. Palette slate, amber, white. Style thick line, high contrast, block type; cocktail lounge. Technique: Labeled parallel crafts; hear + do."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-loft",
+      "img": "/brands-500/bloom-loft/01-logo.png"
+    },
+    {
+      "slug": "bloom-market",
+      "name": "Bloom Market",
+      "wave": 1,
+      "cat": "brewery",
+      "tone": "taproom",
+      "palette": "oxide red, sand, black",
+      "era": "1970\u20131990",
+      "shelf": "Postmodern / New Wave",
+      "style": "layered type, rule-breaking; taproom",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Market",
+        "item": "taproom on the Postmodern / New Wave shelf",
+        "limit": "does not claim every postmodern / new wave move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "Break rules after pressure-test",
+        "note": "Wave 1. Palette oxide red, sand, black. Style layered type, rule-breaking; taproom. Technique: Break rules after pressure-test."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-market",
+      "img": "/brands-500/bloom-market/01-logo.png"
+    },
+    {
+      "slug": "bloom-meridian",
+      "name": "Bloom Meridian",
+      "wave": 1,
+      "cat": "hotel",
+      "tone": "inn",
+      "palette": "midnight blue, silver, white",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; inn",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Meridian",
+        "item": "inn on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette midnight blue, silver, white. Style vector craft, PostScript era; inn. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-meridian",
+      "img": "/brands-500/bloom-meridian/01-logo.png"
+    },
+    {
+      "slug": "bloom-mill",
+      "name": "Bloom Mill",
+      "wave": 1,
+      "cat": "retail",
+      "tone": "goods shop",
+      "palette": "walnut, linen, iron",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; goods shop",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Mill",
+        "item": "goods shop on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette walnut, linen, iron. Style screen as substrate, reflow; goods shop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-mill",
+      "img": "/brands-500/bloom-mill/01-logo.png"
+    },
+    {
+      "slug": "bloom-office",
+      "name": "Bloom Office",
+      "wave": 1,
+      "cat": "fashion",
+      "tone": "apparel label",
+      "palette": "moss, clay, charcoal",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; apparel label",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Office",
+        "item": "apparel label on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette moss, clay, charcoal. Style digital clarity, motion hierarchy; apparel label. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-office",
+      "img": "/brands-500/bloom-office/01-logo.png"
+    },
+    {
+      "slug": "bloom-parish",
+      "name": "Bloom Parish",
+      "wave": 1,
+      "cat": "beauty",
+      "tone": "apothecary",
+      "palette": "cobalt, cloud, black",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; apothecary",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Parish",
+        "item": "apothecary on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette cobalt, cloud, black. Style variable type, responsive lockups; apothecary. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-parish",
+      "img": "/brands-500/bloom-parish/01-logo.png"
+    },
+    {
+      "slug": "bloom-partner",
+      "name": "Bloom Partner",
+      "wave": 1,
+      "cat": "fitness",
+      "tone": "training gym",
+      "palette": "ochre, ink, chalk",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; training gym",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Partner",
+        "item": "training gym on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette ochre, ink, chalk. Style envelope constraints, pressure-test; training gym. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-partner",
+      "img": "/brands-500/bloom-partner/01-logo.png"
+    },
+    {
       "slug": "bloom-press",
       "name": "Bloom Press",
       "wave": 1,
@@ -12149,6 +13899,881 @@
       },
       "href": "/brands-500/#bloom-range",
       "img": "/brands-500/bloom-range/01-logo.png"
+    },
+    {
+      "slug": "bloom-room",
+      "name": "Bloom Room",
+      "wave": 1,
+      "cat": "publisher",
+      "tone": "press",
+      "palette": "sea teal, foam white, navy",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; press",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Room",
+        "item": "press on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette sea teal, foam white, navy. Style vector craft, PostScript era; press. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-room",
+      "img": "/brands-500/bloom-room/01-logo.png"
+    },
+    {
+      "slug": "bloom-row",
+      "name": "Bloom Row",
+      "wave": 1,
+      "cat": "music",
+      "tone": "listening bar",
+      "palette": "barn red, cream, black",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; listening bar",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Row",
+        "item": "listening bar on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette barn red, cream, black. Style screen as substrate, reflow; listening bar. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-row",
+      "img": "/brands-500/bloom-row/01-logo.png"
+    },
+    {
+      "slug": "bloom-shop",
+      "name": "Bloom Shop",
+      "wave": 1,
+      "cat": "gallery",
+      "tone": "art space",
+      "palette": "forest green, brass, bone",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; art space",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Shop",
+        "item": "art space on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette forest green, brass, bone. Style digital clarity, motion hierarchy; art space. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-shop",
+      "img": "/brands-500/bloom-shop/01-logo.png"
+    },
+    {
+      "slug": "bloom-society",
+      "name": "Bloom Society",
+      "wave": 1,
+      "cat": "tech",
+      "tone": "software studio",
+      "palette": "slate, amber, white",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; software studio",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Society",
+        "item": "software studio on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette slate, amber, white. Style variable type, responsive lockups; software studio. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-society",
+      "img": "/brands-500/bloom-society/01-logo.png"
+    },
+    {
+      "slug": "bloom-stack",
+      "name": "Bloom Stack",
+      "wave": 1,
+      "cat": "civic",
+      "tone": "public workshop",
+      "palette": "oxide red, sand, black",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; public workshop",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Stack",
+        "item": "public workshop on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette oxide red, sand, black. Style envelope constraints, pressure-test; public workshop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-stack",
+      "img": "/brands-500/bloom-stack/01-logo.png"
+    },
+    {
+      "slug": "bloom-studio",
+      "name": "Bloom Studio",
+      "wave": 1,
+      "cat": "cafe",
+      "tone": "espresso bar",
+      "palette": "midnight blue, silver, white",
+      "era": "1950\u20131970",
+      "shelf": "Swiss / International",
+      "style": "grid, grotesque sans, objective photo; espresso bar",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Studio",
+        "item": "espresso bar on the Swiss / International shelf",
+        "limit": "does not claim every swiss / international move\u2014only this brief",
+        "technique_id": "swiss",
+        "technique": "Modular order before ornament",
+        "note": "Wave 1. Palette midnight blue, silver, white. Style grid, grotesque sans, objective photo; espresso bar. Technique: Modular order before ornament."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-studio",
+      "img": "/brands-500/bloom-studio/01-logo.png"
+    },
+    {
+      "slug": "bloom-table",
+      "name": "Bloom Table",
+      "wave": 1,
+      "cat": "restaurant",
+      "tone": "supper club",
+      "palette": "walnut, linen, iron",
+      "era": "1950\u20131970",
+      "shelf": "Mid-century modern",
+      "style": "molded forms, honest materials; supper club",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Table",
+        "item": "supper club on the Mid-century modern shelf",
+        "limit": "does not claim every mid-century modern move\u2014only this brief",
+        "technique_id": "objecthood",
+        "technique": "Objecthood + honest materials",
+        "note": "Wave 1. Palette walnut, linen, iron. Style molded forms, honest materials; supper club. Technique: Objecthood + honest materials."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-table",
+      "img": "/brands-500/bloom-table/01-logo.png"
+    },
+    {
+      "slug": "bloom-tap",
+      "name": "Bloom Tap",
+      "wave": 1,
+      "cat": "bakery",
+      "tone": "bread house",
+      "palette": "moss, clay, charcoal",
+      "era": "1950\u20131970",
+      "shelf": "Corporate identity",
+      "style": "system mark, fleet logic; bread house",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Tap",
+        "item": "bread house on the Corporate identity shelf",
+        "limit": "does not claim every corporate identity move\u2014only this brief",
+        "technique_id": "operating-kit",
+        "technique": "Operating kit (logo \u2192 fleet)",
+        "note": "Wave 1. Palette moss, clay, charcoal. Style system mark, fleet logic; bread house. Technique: Operating kit (logo \u2192 fleet)."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-tap",
+      "img": "/brands-500/bloom-tap/01-logo.png"
+    },
+    {
+      "slug": "bloom-works",
+      "name": "Bloom Works",
+      "wave": 1,
+      "cat": "bar",
+      "tone": "cocktail lounge",
+      "palette": "cobalt, cloud, black",
+      "era": "1960\u20131970",
+      "shelf": "Liberation print",
+      "style": "thick line, high contrast, block type; cocktail lounge",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Works",
+        "item": "cocktail lounge on the Liberation print shelf",
+        "limit": "does not claim every liberation print move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled parallel crafts; hear + do",
+        "note": "Wave 1. Palette cobalt, cloud, black. Style thick line, high contrast, block type; cocktail lounge. Technique: Labeled parallel crafts; hear + do."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-works",
+      "img": "/brands-500/bloom-works/01-logo.png"
+    },
+    {
+      "slug": "bloom-yard",
+      "name": "Bloom Yard",
+      "wave": 1,
+      "cat": "brewery",
+      "tone": "taproom",
+      "palette": "ochre, ink, chalk",
+      "era": "1970\u20131990",
+      "shelf": "Postmodern / New Wave",
+      "style": "layered type, rule-breaking; taproom",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bloom Yard",
+        "item": "taproom on the Postmodern / New Wave shelf",
+        "limit": "does not claim every postmodern / new wave move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "Break rules after pressure-test",
+        "note": "Wave 1. Palette ochre, ink, chalk. Style layered type, rule-breaking; taproom. Technique: Break rules after pressure-test."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bloom-yard",
+      "img": "/brands-500/bloom-yard/01-logo.png"
+    },
+    {
+      "slug": "bolt-archive",
+      "name": "Bolt Archive",
+      "wave": 1,
+      "cat": "hotel",
+      "tone": "inn",
+      "palette": "charcoal, copper, cream",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; inn",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Archive",
+        "item": "inn on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette charcoal, copper, cream. Style vector craft, PostScript era; inn. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-archive",
+      "img": "/brands-500/bolt-archive/01-logo.png"
+    },
+    {
+      "slug": "bolt-atelier",
+      "name": "Bolt Atelier",
+      "wave": 1,
+      "cat": "retail",
+      "tone": "goods shop",
+      "palette": "navy, warm gold, ivory",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; goods shop",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Atelier",
+        "item": "goods shop on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette navy, warm gold, ivory. Style screen as substrate, reflow; goods shop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-atelier",
+      "img": "/brands-500/bolt-atelier/01-logo.png"
+    },
+    {
+      "slug": "bolt-beacon",
+      "name": "Bolt Beacon",
+      "wave": 1,
+      "cat": "fashion",
+      "tone": "apparel label",
+      "palette": "stone gray, espresso, cream",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; apparel label",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Beacon",
+        "item": "apparel label on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette stone gray, espresso, cream. Style digital clarity, motion hierarchy; apparel label. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-beacon",
+      "img": "/brands-500/bolt-beacon/01-logo.png"
+    },
+    {
+      "slug": "bolt-bench",
+      "name": "Bolt Bench",
+      "wave": 1,
+      "cat": "beauty",
+      "tone": "apothecary",
+      "palette": "cedar green, cream, black",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; apothecary",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Bench",
+        "item": "apothecary on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette cedar green, cream, black. Style variable type, responsive lockups; apothecary. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-bench",
+      "img": "/brands-500/bolt-bench/01-logo.png"
+    },
+    {
+      "slug": "bolt-borough",
+      "name": "Bolt Borough",
+      "wave": 1,
+      "cat": "fitness",
+      "tone": "training gym",
+      "palette": "ink black, paper cream, rust",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; training gym",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Borough",
+        "item": "training gym on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette ink black, paper cream, rust. Style envelope constraints, pressure-test; training gym. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-borough",
+      "img": "/brands-500/bolt-borough/01-logo.png"
+    },
+    {
+      "slug": "bolt-bureau",
+      "name": "Bolt Bureau",
+      "wave": 1,
+      "cat": "wellness",
+      "tone": "spa studio",
+      "palette": "sea teal, foam white, navy",
+      "era": "1950\u20131970",
+      "shelf": "Swiss / International",
+      "style": "grid, grotesque sans, objective photo; spa studio",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Bureau",
+        "item": "spa studio on the Swiss / International shelf",
+        "limit": "does not claim every swiss / international move\u2014only this brief",
+        "technique_id": "swiss",
+        "technique": "Modular order before ornament",
+        "note": "Wave 1. Palette sea teal, foam white, navy. Style grid, grotesque sans, objective photo; spa studio. Technique: Modular order before ornament."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-bureau",
+      "img": "/brands-500/bolt-bureau/01-logo.png"
+    },
+    {
+      "slug": "bolt-cask",
+      "name": "Bolt Cask",
+      "wave": 1,
+      "cat": "pet",
+      "tone": "pet goods",
+      "palette": "barn red, cream, black",
+      "era": "1950\u20131970",
+      "shelf": "Mid-century modern",
+      "style": "molded forms, honest materials; pet goods",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Cask",
+        "item": "pet goods on the Mid-century modern shelf",
+        "limit": "does not claim every mid-century modern move\u2014only this brief",
+        "technique_id": "objecthood",
+        "technique": "Objecthood + honest materials",
+        "note": "Wave 1. Palette barn red, cream, black. Style molded forms, honest materials; pet goods. Technique: Objecthood + honest materials."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-cask",
+      "img": "/brands-500/bolt-cask/01-logo.png"
+    },
+    {
+      "slug": "bolt-chamber",
+      "name": "Bolt Chamber",
+      "wave": 1,
+      "cat": "auto",
+      "tone": "garage",
+      "palette": "forest green, brass, bone",
+      "era": "1950\u20131970",
+      "shelf": "Corporate identity",
+      "style": "system mark, fleet logic; garage",
+      "tagline": "PRESS \u00b7 MARK \u00b7 MAKE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Chamber",
+        "item": "garage on the Corporate identity shelf",
+        "limit": "does not claim every corporate identity move\u2014only this brief",
+        "technique_id": "operating-kit",
+        "technique": "Operating kit (logo \u2192 fleet)",
+        "note": "Wave 1. Palette forest green, brass, bone. Style system mark, fleet logic; garage. Technique: Operating kit (logo \u2192 fleet)."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-chamber",
+      "img": "/brands-500/bolt-chamber/01-logo.png"
+    },
+    {
+      "slug": "bolt-circuit",
+      "name": "Bolt Circuit",
+      "wave": 1,
+      "cat": "trades",
+      "tone": "renovation shop",
+      "palette": "slate, amber, white",
+      "era": "1960\u20131970",
+      "shelf": "Liberation print",
+      "style": "thick line, high contrast, block type; renovation shop",
+      "tagline": "HOLD \u00b7 CRAFT \u00b7 SERVE",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Circuit",
+        "item": "renovation shop on the Liberation print shelf",
+        "limit": "does not claim every liberation print move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled parallel crafts; hear + do",
+        "note": "Wave 1. Palette slate, amber, white. Style thick line, high contrast, block type; renovation shop. Technique: Labeled parallel crafts; hear + do."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-circuit",
+      "img": "/brands-500/bolt-circuit/01-logo.png"
+    },
+    {
+      "slug": "bolt-clinic",
+      "name": "Bolt Clinic",
+      "wave": 1,
+      "cat": "architecture",
+      "tone": "design office",
+      "palette": "oxide red, sand, black",
+      "era": "1970\u20131990",
+      "shelf": "Postmodern / New Wave",
+      "style": "layered type, rule-breaking; design office",
+      "tagline": "OPEN \u00b7 MAKE \u00b7 BUILD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Clinic",
+        "item": "design office on the Postmodern / New Wave shelf",
+        "limit": "does not claim every postmodern / new wave move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "Break rules after pressure-test",
+        "note": "Wave 1. Palette oxide red, sand, black. Style layered type, rule-breaking; design office. Technique: Break rules after pressure-test."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-clinic",
+      "img": "/brands-500/bolt-clinic/01-logo.png"
+    },
+    {
+      "slug": "bolt-closet",
+      "name": "Bolt Closet",
+      "wave": 1,
+      "cat": "publisher",
+      "tone": "press",
+      "palette": "midnight blue, silver, white",
+      "era": "1984\u20131995",
+      "shelf": "Desktop publishing",
+      "style": "vector craft, PostScript era; press",
+      "tagline": "MARK \u00b7 SERVE \u00b7 PRESS",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Closet",
+        "item": "press on the Desktop publishing shelf",
+        "limit": "does not claim every desktop publishing move\u2014only this brief",
+        "technique_id": "cooperage",
+        "technique": "File craft; pressure-test systems",
+        "note": "Wave 1. Palette midnight blue, silver, white. Style vector craft, PostScript era; press. Technique: File craft; pressure-test systems."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-closet",
+      "img": "/brands-500/bolt-closet/01-logo.png"
+    },
+    {
+      "slug": "bolt-co",
+      "name": "Bolt Co",
+      "wave": 1,
+      "cat": "music",
+      "tone": "listening bar",
+      "palette": "walnut, linen, iron",
+      "era": "1995\u20132010",
+      "shelf": "Early web / Web 2.0",
+      "style": "screen as substrate, reflow; listening bar",
+      "tagline": "CRAFT \u00b7 BUILD \u00b7 HOLD",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Co",
+        "item": "listening bar on the Early web / Web 2.0 shelf",
+        "limit": "does not claim every early web / web 2.0 move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette walnut, linen, iron. Style screen as substrate, reflow; listening bar. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-co",
+      "img": "/brands-500/bolt-co/01-logo.png"
+    },
+    {
+      "slug": "bolt-collective",
+      "name": "Bolt Collective",
+      "wave": 1,
+      "cat": "gallery",
+      "tone": "art space",
+      "palette": "moss, clay, charcoal",
+      "era": "2010\u20132020",
+      "shelf": "Flat / Material",
+      "style": "digital clarity, motion hierarchy; art space",
+      "tagline": "MAKE \u00b7 PRESS \u00b7 OPEN",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Collective",
+        "item": "art space on the Flat / Material shelf",
+        "limit": "does not claim every flat / material move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette moss, clay, charcoal. Style digital clarity, motion hierarchy; art space. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-collective",
+      "img": "/brands-500/bolt-collective/01-logo.png"
+    },
+    {
+      "slug": "bolt-commons",
+      "name": "Bolt Commons",
+      "wave": 1,
+      "cat": "tech",
+      "tone": "software studio",
+      "palette": "cobalt, cloud, black",
+      "era": "2018\u20132026",
+      "shelf": "Adaptive / motion identity",
+      "style": "variable type, responsive lockups; software studio",
+      "tagline": "SERVE \u00b7 HOLD \u00b7 MARK",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Commons",
+        "item": "software studio on the Adaptive / motion identity shelf",
+        "limit": "does not claim every adaptive / motion identity move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette cobalt, cloud, black. Style variable type, responsive lockups; software studio. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-commons",
+      "img": "/brands-500/bolt-commons/01-logo.png"
+    },
+    {
+      "slug": "bolt-company",
+      "name": "Bolt Company",
+      "wave": 1,
+      "cat": "civic",
+      "tone": "public workshop",
+      "palette": "ochre, ink, chalk",
+      "era": "2020\u20132026",
+      "shelf": "GenUI / craft systems",
+      "style": "envelope constraints, pressure-test; public workshop",
+      "tagline": "BUILD \u00b7 OPEN \u00b7 CRAFT",
+      "source": "brands-500",
+      "knowledge": {
+        "action": "Learned from Bolt Company",
+        "item": "public workshop on the GenUI / craft systems shelf",
+        "limit": "does not claim every genui / craft systems move\u2014only this brief",
+        "technique_id": "shelves",
+        "technique": "Labeled shelves; parallel craft",
+        "note": "Wave 1. Palette ochre, ink, chalk. Style envelope constraints, pressure-test; public workshop. Technique: Labeled shelves; parallel craft."
+      },
+      "ready": {
+        "logo": true,
+        "full_kit": true,
+        "steps": 5,
+        "files": [
+          "01-logo.png",
+          "02-sketches.png",
+          "03-moodboard.png",
+          "04-brand-kit.png",
+          "05-guidelines.png"
+        ]
+      },
+      "href": "/brands-500/#bolt-company",
+      "img": "/brands-500/bolt-company/01-logo.png"
     },
     {
       "slug": "bolt-counter",

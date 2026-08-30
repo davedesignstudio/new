@@ -3,7 +3,9 @@
   "brands_per_wave": 500,
   "interval_minutes": 10,
   "current_wave": 2,
-  "waves_completed": [],
+  "waves_completed": [
+    1
+  ],
   "waves_started": [
     1,
     2
