@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mist Harbor — Pier cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --navy: #0B1F33;
+  --sea: #7FB9A8;
+  --fog: #D7E2E6;
+  --ink: #102033;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Figtree, system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 500px at 80% 0%, rgba(127,185,168,.28), transparent 50%),
+    linear-gradient(180deg, #C9D7DE 0%, #E8F0F2 45%, #D5E0E4 100%);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes drift {
+  from { transform: scale(1.06) translateY(0); }
+  to { transform: scale(1) translateY(-1.5%); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.brand-nav {
+  position: absolute; inset: 0 0 auto 0; z-index: 3;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 4vw; color: #EAF4F6;
+}
+.brand-nav a { color: inherit; text-decoration: none; font-weight: 600; }
+.mark { display: flex; gap: .75rem; align-items: center; font-family: "Cormorant Garamond", serif; font-size: 1.45rem; font-weight: 700; }
+.mark img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #fff; }
+.hero { position: relative; min-height: calc(100svh - 4.25rem); display: grid; align-items: end; color: #F4FBFC; overflow: hidden; }
+.hero-media {
+  position: absolute; inset: 0;
+  background: #0B1F33 center/cover no-repeat;
+  animation: drift 20s ease-out forwards;
+}
+.hero-media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,31,51,.45), rgba(11,31,51,.2) 40%, rgba(11,31,51,.82));
+}
+.hero-copy { position: relative; z-index: 1; padding: 0 4vw 4.5rem; max-width: 36rem; animation: rise .9s ease-out both; }
+.hero-copy h1 {
+  font-family: "Cormorant Garamond", serif; font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: .92; margin-bottom: .75rem;
+}
+.hero-copy p { margin-bottom: 1.35rem; font-size: 1.08rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+  padding: .85rem 1.3rem; text-decoration: none; font-weight: 600; border-radius: 999px;
+}
+.btn-primary { background: var(--sea); color: var(--navy); }
+.btn-ghost { outline: 1px solid rgba(255,255,255,.55); color: #fff; margin-left: .5rem; }
+.stakes {
+  background: var(--navy); color: #D9F0EA; padding: 1rem 4vw;
+  animation: pulse-soft 5s ease-in-out infinite;
+}
+.stakes strong { display: block; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .25rem; color: var(--sea); }
+.place-credit { padding: .65rem 4vw; font-size: .85rem; color: #445966; }
+section { padding: 4.25rem 4vw; max-width: 70rem; margin: 0 auto; }
+section h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: .5rem; }
+.lede { max-width: 34rem; color: #354855; margin-bottom: 1.25rem; }
+.board {
+  display: grid; gap: 1rem; max-width: 28rem;
+  border-left: 3px solid var(--sea); padding-left: 1rem;
+}
+footer { padding: 2rem 4vw 3rem; color: #445966; font-size: .9rem; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="brand-nav"><a class="mark" href="#top"><img src="assets/logo.png" alt="" />Mist Harbor</a><a href="#hold">Hold a seat</a></nav>
+    <div class="hero-media" role="img" aria-label="Foggy pier with distant lighthouse" style="background-image:url('assets/hero.png')"></div>
+    <div class="hero-copy" id="top">
+      <h1>Mist Harbor</h1>
+      <p>Quiet pours on the pier when the fog softens the lighthouse — warmth without hurry.</p>
+      <a class="btn btn-primary" href="#hold">Hold a seat</a>
+      <a class="btn btn-ghost" href="#pier">Pier board</a>
+    </div>
+  </header>
+  <aside class="stakes" role="status">
+    <strong>Neighbor care · pier stakes</strong>
+    <p><b>Check pier board</b> · walkway spray when fog thickens · outdoor seats paused until clear</p>
+  </aside>
+  <p class="place-credit">Place credit: Harbor pier in fog — hospitality looking (shelter before scenery).</p>
+  <section id="pier">
+    <h2>Pier board</h2>
+    <p class="lede">Hospitality as composition: we stage the fog honestly so guests choose dry seats without panic copy.</p>
+    <div class="board">
+      <p><b>Action:</b> take indoor booth if spray rises</p>
+      <p><b>Item:</b> slick planks beyond the railing gate</p>
+      <p><b>Limit:</b> outdoor service resumes after clear</p>
+    </div>
+  </section>
+  <section id="hold">
+    <h2>Hold a seat</h2>
+    <p class="lede">A+I+L confirmation — no “ERROR FOG” screaming.</p>
+    <button class="btn btn-primary" style="border:0;cursor:pointer;font:inherit;" onclick="document.getElementById('ok').textContent='Hold seat · fog-side booth · kept 20 minutes.'">Confirm hold</button>
+    <p id="ok" role="status" style="margin-top:1rem;min-height:1.4em;"></p>
+  </section>
+  <footer>Mist Harbor · coastal cafe · Pass GZ · Samaritan mercy = clear stakes</footer>
+</body>
+</html>
