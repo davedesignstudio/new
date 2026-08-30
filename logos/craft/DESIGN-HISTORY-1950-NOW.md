@@ -9,7 +9,7 @@ Labeled shelves. Parallel streams — not a civilizational ladder.
 
 - Shelves run **in parallel** where dates overlap. Swiss grid and Black Panther newspaper graphics share decades; they are not rungs on one ladder.
 - Each shelf names **what it gave the field** and a **limit** (what it cannot claim).
-- Studio mapping sits at the end — how this history feeds Philhower and Okrogly craft, the Service the Hills subdomain, identity kits, and the Techniques canon.
+- Studio mapping sits at the end — how this history feeds D Philhower Studio craft, the Service the Hills subdomain, identity kits, and the Techniques canon.
 
 ---
 

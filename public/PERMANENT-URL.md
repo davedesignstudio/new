@@ -33,3 +33,15 @@ Optional: switch Source to **GitHub Actions** so `.github/workflows/deploy-githu
 3. `public/sthills/CNAME` already declares `sthills.dphilhowerstudio.com` for GitHub Pages-style custom domains when that folder is published as a site root.
 
 Until DNS is set, use the `/sthills/` path on the parent studio.
+
+## Incorporated under D Philhower Studio
+
+Primary brand and apex: **dphilhowerstudio.com** (D Philhower Studio).
+
+| Surface | Path / host |
+|---|---|
+| Studio site | `https://dphilhowerstudio.com/` |
+| Library | `/library/` |
+| Techniques | `/techniques/` |
+| Brands-500 | `/brands-500/` |
+| Service the Hills | `/sthills/` → `sthills.dphilhowerstudio.com` |
