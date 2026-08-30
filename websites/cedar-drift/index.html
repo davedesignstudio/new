@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cedar Drift — Woodland Cafe</title>
+  <meta name="description" content="Mist, cedar, and quiet cups at the forest edge." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #eef2ea;
+      --ink: #1e2a22;
+      --accent: #2f4a3a;
+      --display: "Cormorant Garamond", serif;
+      --stake-bg: #243028;
+      --stake-ink: #eef2ea;
+    }
+    body { background:
+      radial-gradient(ellipse at 15% 0%, rgba(47,74,58,0.12), transparent 45%),
+      linear-gradient(180deg, #f3f6f0, #e4ebe3);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="tree-nut">
+    <strong>Allergen notice:</strong>
+    <span class="critical">Today’s cedar pastry contains tree nuts (walnut).</span>
+    <span>Trail mist advisory — porch seating may be damp until noon.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Cedar Drift logo" width="44" height="44" />
+      <span>Cedar Drift</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-mist" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Woodland cedar cafe with mist among trees and ceramic tea bowls" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content kinetic-brand">
+        <h1 class="hero-brand">Cedar Drift</h1>
+        <p class="hero-line">Fog holds the trees. Tea holds the quiet.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a seat</a>
+          <a class="btn btn-ghost" href="#menu">See the menu</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — cedar grove cafe, morning mist</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Forest board</h2>
+      <p class="lead">One purpose: warm hands and clear air. Order only what you can hold.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Tea</span>
+          <h3>Moss Steam</h3>
+          <p>Sencha poured into cedar-scented bowls. Soft mineral finish.</p>
+          <button class="btn btn-primary" type="button" data-order="moss-steam">Add to tray</button>
+        </article>
+        <article class="card">
+          <span class="meta">Coffee</span>
+          <h3>Drift Filter</h3>
+          <p>Light roast, cloth drip, served on a plank with trail salt.</p>
+          <button class="btn btn-primary" type="button" data-order="drift-filter">Add to tray</button>
+        </article>
+        <article class="card">
+          <span class="meta">Pastry</span>
+          <h3>Cedar Walnut Coil</h3>
+          <p>Contains tree nuts. Laminated dough with toasted walnut.</p>
+          <button class="btn btn-primary" type="button" data-order="cedar-walnut">Add to tray</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">A seat is a promise: action, place, and time limit named before you confirm.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Porch seat for 2 · Hold expires in 20 minutes after confirmation
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Porch seat for 2 · Arrive by 10:50 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="10:30" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Cedar Drift · woodland cafe · Pass HI Survey</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salt Loom — Coastal Restaurant</title>
+  <meta name="description" content="Sea air, woven linen, and catch of the day on the terrace." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f2ebe2;
+      --ink: #1a2a30;
+      --accent: #1f4d5c;
+      --display: "Bodoni Moda", serif;
+      --stake-bg: #16343c;
+      --stake-ink: #f2ebe2;
+    }
+    body { background:
+      radial-gradient(ellipse at 90% 5%, rgba(212,106,76,0.12), transparent 42%),
+      linear-gradient(180deg, #f7f1e9, #e8e0d4);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="shellfish">
+    <strong>Allergen notice:</strong>
+    <span class="critical">Tonight’s tasting includes shellfish (mussel, crab).</span>
+    <span>Ask for the land menu if you cannot eat shellfish.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Salt Loom logo" width="44" height="44" />
+      <span>Salt Loom</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-wind" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Coastal restaurant terrace with woven linen tables at golden hour" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Salt Loom</h1>
+        <p class="hero-line">Warp of linen. Weft of tide. Dinner between them.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a table</a>
+          <a class="btn btn-ghost" href="#menu">View tasting</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — harbor terrace, woven linen, golden hour</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Tasting threads</h2>
+      <p class="lead">One purpose: the catch, honestly plated. Cards are for ordering only.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Starter</span>
+          <h3>Salt Loom Mussel</h3>
+          <p>Contains shellfish. Steamed with citrus broth and woven-herb oil.</p>
+          <button class="btn btn-primary" type="button" data-order="mussel">Add course</button>
+        </article>
+        <article class="card">
+          <span class="meta">Main</span>
+          <h3>Crab Warp</h3>
+          <p>Contains shellfish. Hand-picked crab over saffron grain.</p>
+          <button class="btn btn-primary" type="button" data-order="crab">Add course</button>
+        </article>
+        <article class="card">
+          <span class="meta">Land</span>
+          <h3>Garden Weft</h3>
+          <p>No shellfish. Roasted roots, bitter greens, smoked salt.</p>
+          <button class="btn btn-primary" type="button" data-order="garden">Add course</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Terrace holds name the table, the party, and the release time.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Harbor terrace for 2 · Hold expires in 25 minutes after confirmation
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Harbor terrace for 2 · Arrive by 18:55 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="18:30" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Salt Loom · coastal restaurant · Pass HI Survey</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>
