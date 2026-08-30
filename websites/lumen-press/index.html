@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumen Press — Letterpress Cafe</title>
+  <meta name="description" content="Coffee beside the platen. Letterpress mornings and slow pours." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f3ebe0;
+      --ink: #1a1612;
+      --accent: #c4782a;
+      --display: "Fraunces", serif;
+      --stake-bg: #2a2118;
+      --stake-ink: #f6ebe0;
+    }
+    body { background: radial-gradient(ellipse at 85% 0%, rgba(196,120,42,0.14), transparent 48%), linear-gradient(180deg, #f8f1e7, #ebe1d2); }
+    
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="soy-ink">
+    <strong>Allergen notice:</strong>
+    <span class="critical">Today’s soy-ink crackers contain soy.</span><span>Press floor is warm — ask before seating near the platen.</span>
+  </div>
+  <div class="stream-rail" id="stream-rail" data-phase="skeleton" role="status" aria-live="polite" data-envelope="stream">
+    <span class="phase-pill">skeleton</span>
+    <span class="ail" id="stream-ail" data-ail="stream">Streaming · Board fill · Waiting on first component</span>
+    <button type="button" class="btn btn-ghost" id="force-fallback" style="min-height:40px;padding:0.4rem 0.9rem;color:inherit;border-color:color-mix(in srgb, var(--ink) 25%, transparent);background:transparent;margin-left:auto">Use static fallback</button>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Lumen Press logo" width="44" height="44" />
+      <span>Lumen Press</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Letterpress workshop cafe with morning light on a platen press and coffee bar" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Lumen Press</h1>
+        <p class="hero-line">Ink dries slow. Coffee doesn’t wait — except here.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a table</a>
+          <a class="btn btn-ghost" href="#menu">See the board</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — letterpress loft, amber morning light</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>On the board</h2>
+      <p class="lead">Fill streams in. Envelope (stakes + stream rail + nav) never moves. Cards only for things you can order.</p>
+      
+      <div class="card-grid" data-fill="stream">
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Platen Bloom">
+          <span class="meta">Pour-over</span>
+          <h3>Platen Bloom</h3>
+          <p>Washed Ethiopian in a hand-thrown dripper. Paper filters stacked like proof sheets.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" data-order="platen-bloom">Add to tray</button>
+        </article>
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Proof Short">
+          <span class="meta">Espresso</span>
+          <h3>Proof Short</h3>
+          <p>Honey-sweet ristretto. Served beside a spare impression from this morning’s run.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" data-order="proof-short">Add to tray</button>
+        </article>
+        <article class="card" data-stream-card data-stream="skeleton" data-title="Soy-Ink Cracker">
+          <span class="meta">Snack</span>
+          <h3>Soy-Ink Cracker</h3>
+          <p>Contains soy. Seeded cracker finished with a light soy glaze.</p>
+          
+          <button class="btn btn-primary" type="button" data-fitts="primary" data-order="soy-ink">Add to tray</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Holds are promises. We name the action, the table, and the limit.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Window table for 2 · Hold expires in 20 minutes after confirmation
+      </p>
+            <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Window table for 2 · Arrive by 11:40 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="11:20" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+    
+  </main>
+  <footer class="site-footer">
+    <span>Lumen Press · letterpress cafe · Pass HJ Deepen</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+  
+
+<script>
+(function () {
+  const rail = document.getElementById('stream-rail');
+  const ail = document.getElementById('stream-ail');
+  const cards = Array.from(document.querySelectorAll('[data-stream-card]'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const delays = reduce ? [0, 0, 0] : [280, 620, 980];
+
+  function setRail(phase, text) {
+    if (!rail || !ail) return;
+    rail.dataset.phase = phase;
+    rail.querySelector('.phase-pill').textContent = phase;
+    ail.textContent = text;
+  }
+
+  // Start skeleton
+  cards.forEach((c) => { c.dataset.stream = 'skeleton'; });
+  setRail('skeleton', 'Streaming · Board fill · Waiting on first component');
+
+  cards.forEach((card, i) => {
+    window.setTimeout(() => {
+      card.dataset.stream = 'partial';
+      setRail('partial', 'Streaming · ' + (card.dataset.title || 'Item') + ' · Partial props landing');
+    }, delays[i] || 400);
+    window.setTimeout(() => {
+      card.dataset.stream = 'ready';
+      const done = cards.every((c) => c.dataset.stream === 'ready');
+      if (done) {
+        setRail('ready', 'Assembled · Full board · Envelope unchanged · Fallback unused');
+      }
+    }, (delays[i] || 400) + (reduce ? 80 : 420));
+  });
+
+  // Deterministic fallback demo control (optional)
+  const fb = document.getElementById('force-fallback');
+  if (fb) {
+    fb.addEventListener('click', () => {
+      cards.forEach((c) => { c.dataset.stream = 'ready'; });
+      setRail('fallback', 'Fallback · Static board served · Generative layer skipped');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
