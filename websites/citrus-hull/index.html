@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Seaside Restaurant</title>
+  <meta name="description" content="Mediterranean terrace dining. Citrus wind, shellfish honesty." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f7f3e8;
+      --ink: #143038;
+      --accent: #0d5c63;
+      --display: "Syne", sans-serif;
+      --stake-bg: #12363a;
+      --stake-ink: #f3f0e4;
+    }
+    body { background:
+      radial-gradient(ellipse at 100% 0%, rgba(232,163,23,0.18), transparent 45%),
+      radial-gradient(ellipse at 0% 40%, rgba(13,92,99,0.1), transparent 50%),
+      linear-gradient(180deg, #faf6ea, #ebe4d4);
+    }
+  </style>
+</head>
+<body class="kinetic-wind">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="shellfish">
+    <strong>Critical allergen:</strong>
+    <span class="critical">Shellfish on most plates tonight — shared fryer.</span>
+    <span>Wind advisory: terrace umbrellas secured; ask for lee seating.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Citrus Hull logo" width="44" height="44" />
+      <span>Citrus Hull</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Mediterranean terrace with citrus trees and teal sea" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand kinetic-brand">Citrus Hull</h1>
+        <p class="hero-line">Salt air, bright peel, plates that tell the wind the truth.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve terrace</a>
+          <a class="btn btn-ghost" href="#menu">Catch board</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — lee terrace, citrus in afternoon wind</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Catch board</h2>
+      <p class="lead">Kinetic brand as layout—wind sway on the hero—cancelled when you prefer reduced motion.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Shellfish</span>
+          <h3>Hull Mussels</h3>
+          <p>White wine, citrus peel, grilled bread. Shellfish.</p>
+          <button class="btn btn-primary" type="button">Add course</button>
+        </article>
+        <article class="card">
+          <span class="meta">Vegetable</span>
+          <h3>Charred Lemon Greens</h3>
+          <p>Market greens, preserved lemon, olive oil. Cross-contact risk noted above.</p>
+          <button class="btn btn-primary" type="button">Add course</button>
+        </article>
+        <article class="card">
+          <span class="meta">Dessert</span>
+          <h3>Bitter Orange Tart</h3>
+          <p>Short crust, bitter curd, sea salt.</p>
+          <button class="btn btn-primary" type="button">Add course</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="status" data-tone="critical" data-ail="reserve" id="reserve-status" role="status">
+        Holding · Lee terrace for 2 · Shellfish kitchen active · Confirm within 12 minutes
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Lee terrace for 2 · Arrive by 18:20 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Seating
+          <select name="seat" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>Lee terrace</option>
+            <option>Indoor hull room</option>
+          </select>
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Citrus Hull · restaurant · Pass HH Integrate</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>

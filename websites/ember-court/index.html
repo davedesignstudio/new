@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Firelit Restaurant</title>
+  <meta name="description" content="Courtyard dining beside open fire. Walnut ash, seasonal plates." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f3ece3;
+      --ink: #1a1410;
+      --accent: #b85a2a;
+      --display: "Bodoni Moda", serif;
+      --stake-bg: #211612;
+      --stake-ink: #f4e8db;
+    }
+    body { background:
+      radial-gradient(ellipse at 70% 0%, rgba(184,90,42,0.14), transparent 48%),
+      linear-gradient(180deg, #f6eee4, #e8ddd0);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="walnut-ash">
+    <strong>Allergen notice:</strong>
+    <span class="critical">Tonight’s grilled pears finish with walnut ash.</span>
+    <span>Tree-nut allergy? Tell the fire desk before seating.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Ember Court logo" width="44" height="44" />
+      <span>Ember Court</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Stone courtyard restaurant with open fire at dusk" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Ember Court</h1>
+        <p class="hero-line">Heat as hospitality. Ash as seasoning, never as surprise.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve the court</a>
+          <a class="btn btn-ghost" href="#menu">Evening plates</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — inner court, copper fire at dusk</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Evening plates</h2>
+      <p class="lead">Bodoni for the brand voice; danger stays in the stakes, not buried in footnotes.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Starter</span>
+          <h3>Charred Citrus</h3>
+          <p>Blood orange, smoked oil, bitter greens.</p>
+          <button class="btn btn-primary" type="button">Course it</button>
+        </article>
+        <article class="card">
+          <span class="meta">Main · contains nuts</span>
+          <h3>Pear &amp; Walnut Ash</h3>
+          <p>Grill-finished pears dusted with walnut ash. Tree nuts.</p>
+          <button class="btn btn-primary" type="button">Course it</button>
+        </article>
+        <article class="card">
+          <span class="meta">Fire desk</span>
+          <h3>Ember Flatbread</h3>
+          <p>Wood-fired dough, herbs, cultured cream on the side.</p>
+          <button class="btn btn-primary" type="button">Course it</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Courtyard table for 4 · Hold expires 30 minutes after confirmation
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Courtyard table for 4 · Arrive by 19:30 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option selected>4</option><option>6</option>
+          </select>
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Ember Court · restaurant · Pass HH Integrate</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>

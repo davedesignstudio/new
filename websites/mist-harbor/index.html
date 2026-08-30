@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Coastal Cafe</title>
+  <meta name="description" content="Fog-lit coffee on the pier. Quiet cups, weather-honest service." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #eef3f6;
+      --ink: #1c2a33;
+      --accent: #4a6fa5;
+      --display: "Cormorant Garamond", serif;
+      --stake-bg: #243445;
+      --stake-ink: #e8eef4;
+    }
+    body { background:
+      radial-gradient(ellipse at 0% 10%, rgba(74,111,165,0.16), transparent 50%),
+      linear-gradient(180deg, #f2f6f8, #e4ebf0);
+    }
+  </style>
+</head>
+<body class="kinetic-mist">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="fog">
+    <strong>Harbor advisory:</strong>
+    <span class="critical">Dense fog until noon — pier walkways damp.</span>
+    <span>Guest croze seating moves indoors on request.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Mist Harbor logo" width="44" height="44" />
+      <span>Mist Harbor</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Foggy harbor pier with warm cafe windows at dawn" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand kinetic-brand">Mist Harbor</h1>
+        <p class="hero-line">Steam against fog. A cup that keeps its own weather.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a seat</a>
+          <a class="btn btn-ghost" href="#menu">Morning board</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — north pier, fog bank at first light</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Morning board</h2>
+      <p class="lead">Organic fill lives here—in the menu band—not in the header chrome.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Filter</span>
+          <h3>Pier Drip</h3>
+          <p>Light roast, soft acidity, served in sea-glass glaze mugs.</p>
+          <button class="btn btn-primary" type="button">Add to tray</button>
+        </article>
+        <article class="card">
+          <span class="meta">Milk drink</span>
+          <h3>Fog Flat</h3>
+          <p>Double ristretto, microfoam, optional oat.</p>
+          <button class="btn btn-primary" type="button">Add to tray</button>
+        </article>
+        <article class="card">
+          <span class="meta">Savory</span>
+          <h3>Kelp Butter Toast</h3>
+          <p>Sourdough, cultured butter, smoked salt. Contains dairy.</p>
+          <button class="btn btn-primary" type="button">Add to tray</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Action · Item · Limit — stated before you commit.</p>
+      <p class="status" data-tone="warn" data-ail="reserve" id="reserve-status" role="status">
+        Holding · Indoor booth for 2 · Fog advisory active · Confirm within 15 minutes
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Indoor booth for 2 · Arrive by 09:45 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Seating
+          <select name="seat" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>Indoor booth</option>
+            <option>Window ledge</option>
+            <option>Guest croze (covered)</option>
+          </select>
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Mist Harbor · coastal cafe · Pass HH Integrate</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>

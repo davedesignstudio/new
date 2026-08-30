@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln & Cup — Ceramic Cafe</title>
+  <meta name="description" content="Hand-fired cups and slow coffee in the kiln district." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f4ebe1;
+      --ink: #2a1c14;
+      --accent: #c45c26;
+      --display: "Fraunces", serif;
+      --stake-bg: #3a2418;
+      --stake-ink: #f6ebe0;
+    }
+    body { background:
+      radial-gradient(ellipse at 80% 0%, rgba(196,92,38,0.12), transparent 45%),
+      linear-gradient(180deg, #f8f0e6, #efe3d4);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="sesame">
+    <strong>Allergen notice:</strong>
+    <span class="critical">Today’s croissants contain sesame.</span>
+    <span>Ask before ordering if you have seed allergies.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Kiln & Cup logo" width="44" height="44" />
+      <span>Kiln &amp; Cup</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Warm kiln workshop with ceramic cups on wooden shelves" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Kiln &amp; Cup</h1>
+        <p class="hero-line">Clay remembers heat. Coffee remembers patience.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a table</a>
+          <a class="btn btn-ghost" href="#menu">See today’s cups</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — kiln district workshop, morning fire</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>Fired this morning</h2>
+      <p class="lead">One purpose: pour coffee into vessels made here. No decorative cards—only things you can order.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Pour-over</span>
+          <h3>Kiln Bloom</h3>
+          <p>Washed Ethiopian, ceramic dripper, sesame seed brittle on request.</p>
+          <button class="btn btn-primary" type="button" data-order="kiln-bloom">Add to tray</button>
+        </article>
+        <article class="card">
+          <span class="meta">Espresso</span>
+          <h3>Ash Short</h3>
+          <p>Dark honey sweetness, short ristretto in a hand-thrown demitasse.</p>
+          <button class="btn btn-primary" type="button" data-order="ash-short">Add to tray</button>
+        </article>
+        <article class="card">
+          <span class="meta">Pastry</span>
+          <h3>Sesame Coil</h3>
+          <p>Contains sesame. Laminated dough finished with toasted seeds.</p>
+          <button class="btn btn-primary" type="button" data-order="sesame-coil">Add to tray</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Holds are promises. We name the action, the table, and the limit.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Window table for 2 · Hold expires in 20 minutes after confirmation
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Window table for 2 · Arrive by 11:40 or release';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="11:20" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Kiln &amp; Cup · ceramic cafe · Pass HH Integrate</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>
