@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Seaside Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #0f6a6a;
+      --lemon: #e8c547;
+      --sand: #f6f1e4;
+      --ink: #132628;
+      --foam: #e7f4f2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Literata, serif; background: var(--sand); color: var(--ink); line-height: 1.55; }
+    .skip { position: absolute; left: -999px; background: var(--teal); color: white; padding: .5rem 1rem; z-index: 40; }
+    .skip:focus { left: 0; }
+    .hoop {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: .7rem 1.25rem;
+      background: color-mix(in srgb, var(--sand) 88%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--lemon);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: inherit; }
+    .brand-lockup img { width: 42px; height: 42px; border-radius: 8px; object-fit: cover; }
+    .brand-lockup span { font-family: "Archivo Black", sans-serif; letter-spacing: .02em; font-size: 1rem; }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .92rem; font-family: Literata, serif; }
+    nav a { color: inherit; text-decoration: none; opacity: .78; }
+    nav a:hover, nav a:focus-visible { opacity: 1; outline: 2px solid var(--teal); outline-offset: 3px; }
+    .status { font-size: .78rem; font-family: Literata, serif; background: var(--foam); color: var(--teal); padding: .35rem .7rem; }
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100dvh;
+      display: grid; align-items: end; color: white; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(15,106,106,.15), rgba(19,38,40,.72) 62%, rgba(19,38,40,.92)),
+        url("assets/hero.png") center/cover no-repeat;
+      animation: swell 18s ease-in-out infinite alternate;
+    }
+    .hero-inner { position: relative; z-index: 1; padding: 4.5rem 1.5rem 3rem; max-width: 40rem; }
+    .hero-mark { width: 88px; height: 88px; border-radius: 12px; margin-bottom: 1rem; animation: pop .85s ease both; }
+    .hero h1 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.8rem, 8vw, 5rem); line-height: .95;
+      animation: pop .85s .08s ease both;
+    }
+    .hero p { margin-top: .9rem; max-width: 28rem; font-size: 1.1rem; opacity: .92; animation: pop .85s .14s ease both; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; animation: pop .85s .2s ease both; }
+    .btn {
+      min-height: 48px; padding: .85rem 1.3rem; border: 0; cursor: pointer;
+      font: 600 .95rem Literata, serif; text-decoration: none; display: inline-flex; align-items: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--lemon); outline-offset: 3px; }
+    .btn-primary { background: var(--lemon); color: var(--ink); }
+    .btn-primary:hover { transform: translateY(-1px); background: #f0d05a; }
+    .btn-ghost { background: transparent; color: white; border: 1px solid color-mix(in srgb, white 50%, transparent); }
+    .place { margin-top: 1.2rem; font-size: .8rem; opacity: .75; animation: pop .85s .26s ease both; }
+    section { padding: 4.25rem 1.5rem; max-width: 68rem; margin: 0 auto; }
+    section h2 { font-family: "Archivo Black", sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--teal); margin-bottom: .5rem; }
+    .lede { max-width: 34rem; margin-bottom: 1.75rem; color: #3d5555; }
+    .catch {
+      background: linear-gradient(135deg, var(--foam), #fff8d8);
+      padding: 1.4rem 1.5rem; border-left: 6px solid var(--teal);
+    }
+    .catch li { list-style: none; display: flex; justify-content: space-between; gap: 1rem; padding: .55rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--teal) 25%, transparent); }
+    .stakes { margin-top: 1rem; background: #fff1b8; padding: .85rem 1rem; font-size: .9rem; }
+    #live { margin-top: 1rem; min-height: 1.4em; font-weight: 600; color: var(--teal); }
+    footer { padding: 2rem 1.5rem; border-top: 1px solid #ddd3b8; color: #5a6d6d; font-size: .85rem; }
+    @keyframes swell {
+      from { transform: scale(1.03) translateY(0); }
+      to { transform: scale(1.07) translateY(-1%); }
+    }
+    @keyframes pop {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .hero::before { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" alt="" width="42" height="42" />
+      <span>Citrus Hull</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#catch">Catch</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#terrace">Terrace</a>
+    </nav>
+    <p class="status" id="status-chip">Tide in · terrace open</p>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <img class="hero-mark" src="assets/logo.png" alt="Citrus Hull logo" width="88" height="88" />
+        <h1>Citrus Hull</h1>
+        <p>Seaside plates cut with lemon. Hull timber under the tables.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Reserve terrace</a>
+          <a class="btn btn-ghost" href="#catch">Today’s catch</a>
+        </div>
+        <p class="place">Place: Citrus Hull seaside terrace — rind and hull in daylight.</p>
+      </div>
+    </section>
+
+    <section id="catch">
+      <h2>Today’s catch</h2>
+      <p class="lede">One board. One job. What came in with the tide.</p>
+      <ul class="catch">
+        <li><span>Lemon-cured snapper</span><span>28</span></li>
+        <li><span>Hull clams, citrus broth</span><span>22</span></li>
+        <li><span>Charred greens, preserved lemon</span><span>14</span></li>
+        <li><span>Yuzu granita</span><span>9</span></li>
+      </ul>
+    </section>
+
+    <section id="reserve">
+      <h2>Reserve terrace</h2>
+      <p class="lede">Wind moves the linen — we still hold your seat with a clear limit.</p>
+      <p class="stakes"><strong>Allergy stakes:</strong> Shellfish and citrus oils are core to this kitchen. Tell us allergies before you reserve.</p>
+      <button class="btn btn-primary" id="reserve-btn" type="button" style="margin-top:1rem;background:var(--teal);color:white">Reserve terrace table</button>
+      <p id="live" aria-live="polite"></p>
+    </section>
+
+    <section id="terrace">
+      <h2>The terrace</h2>
+      <p class="lede">Open to weather. If the wind rises, service shifts under the hull awning without changing the catch board.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Citrus Hull · Pass GW Practice · One-job catch board · A+I+L reserve</p>
+  </footer>
+  <script>
+    const live = document.getElementById('live');
+    const chip = document.getElementById('status-chip');
+    document.getElementById('reserve-btn').addEventListener('click', () => {
+      const msg = 'Reserved terrace table for 2 · Sunday 12:30 · hold ends 15 min before';
+      live.textContent = msg;
+      chip.textContent = msg;
+    });
+  </script>
+</body>
+</html>

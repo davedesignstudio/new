@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design Studio — Pass GW Creative Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14120f;
+      --paper: #f7f4ef;
+      --line: #d9d2c5;
+      --accent: #2f5d50;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Outfit, sans-serif;
+      background:
+        radial-gradient(ellipse at top left, #efe7d8, transparent 45%),
+        radial-gradient(ellipse at bottom right, #dfece7, transparent 40%),
+        var(--paper);
+      color: var(--ink);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    header { padding: 3rem 1.5rem 1.5rem; max-width: 72rem; margin: 0 auto; }
+    header h1 { font-family: Fraunces, serif; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; }
+    header p { margin-top: .75rem; max-width: 40rem; color: #5a554c; }
+    .meta { margin-top: 1rem; font-size: .85rem; color: var(--accent); font-weight: 500; }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem; padding: 1rem 1.5rem 3rem; max-width: 72rem; margin: 0 auto;
+    }
+    a.site {
+      display: grid; gap: .75rem; text-decoration: none; color: inherit;
+      border: 1px solid var(--line); background: color-mix(in srgb, white 70%, transparent);
+      padding: 1rem; transition: transform .2s ease, border-color .2s ease;
+    }
+    a.site:hover, a.site:focus-visible {
+      transform: translateY(-2px); border-color: var(--accent);
+      outline: 2px solid var(--accent); outline-offset: 2px;
+    }
+    a.site img.logo { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; }
+    a.site img.hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    a.site h2 { font-family: Fraunces, serif; font-size: 1.35rem; }
+    a.site .type { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: #7a7468; }
+    footer { padding: 1.5rem; max-width: 72rem; margin: 0 auto; font-size: .85rem; color: #6b655c; border-top: 1px solid var(--line); }
+    @media (prefers-reduced-motion: reduce) {
+      a.site { transition: none; }
+      a.site:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pass GW · Creative delivery</h1>
+    <p>Hour 4 Practice: five logos, five place-credited heroes, five brand sites — two cafes, two restaurants, one collectible Nike sneaker vault.</p>
+    <p class="meta">Drills: brand-survives-nav · A+I+L status · place credit · mark hygiene · stakes above fold · envelope≠fill</p>
+  </header>
+  <div class="grid">
+    <a class="site" href="kiln-and-cup/">
+      <img class="logo" src="kiln-and-cup/assets/logo.png" alt="Kiln &amp; Cup logo" />
+      <img class="hero" src="kiln-and-cup/assets/hero.png" alt="Kiln studio cafe hero" />
+      <p class="type">Cafe</p>
+      <h2>Kiln &amp; Cup</h2>
+      <p>Workshop cafe beside the kiln.</p>
+    </a>
+    <a class="site" href="mist-harbor/">
+      <img class="logo" src="mist-harbor/assets/logo.png" alt="Mist Harbor logo" />
+      <img class="hero" src="mist-harbor/assets/hero.png" alt="Harbor pier cafe hero" />
+      <p class="type">Cafe</p>
+      <h2>Mist Harbor</h2>
+      <p>Fog pier mornings.</p>
+    </a>
+    <a class="site" href="ember-court/">
+      <img class="logo" src="ember-court/assets/logo.png" alt="Ember Court logo" />
+      <img class="hero" src="ember-court/assets/hero.png" alt="Courtyard restaurant hero" />
+      <p class="type">Restaurant</p>
+      <h2>Ember Court</h2>
+      <p>Courtyard fire dining.</p>
+    </a>
+    <a class="site" href="citrus-hull/">
+      <img class="logo" src="citrus-hull/assets/logo.png" alt="Citrus Hull logo" />
+      <img class="hero" src="citrus-hull/assets/hero.png" alt="Seaside terrace hero" />
+      <p class="type">Restaurant</p>
+      <h2>Citrus Hull</h2>
+      <p>Lemon cut seaside plates.</p>
+    </a>
+    <a class="site" href="sole-archive/">
+      <img class="logo" src="sole-archive/assets/logo.png" alt="Sole Archive logo" />
+      <img class="hero" src="sole-archive/assets/hero.png" alt="Sneaker vault hero" />
+      <p class="type">Sneaker store</p>
+      <h2>Sole Archive</h2>
+      <p>Collectible Nike vault · independent reseller.</p>
+    </a>
+  </div>
+  <footer>
+    <p>Research cycle GT→… Hour 4/5 · Workspace path <code>/workspace/websites/</code></p>
+  </footer>
+</body>
+</html>
