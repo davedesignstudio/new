@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pass GY · Five Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1a1a1a; --muted:#5a5650; --bg:#f3f0eb; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(196,92,38,.08), transparent 40%),
+    radial-gradient(ellipse at 100% 0%, rgba(31,111,106,.08), transparent 40%),
+    var(--bg);
+  color:var(--ink); padding:3rem 6vw 4rem; line-height:1.5;
+}
+h1 { font-family:'Syne',sans-serif; font-size:clamp(2rem,5vw,3.2rem); margin-bottom:.4rem; }
+.sub { color:var(--muted); max-width:40rem; margin-bottom:2.5rem; }
+.grid { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); }
+a.card {
+  display:block; text-decoration:none; color:inherit;
+  background:rgba(255,255,255,.55); padding:1.25rem;
+  border:1px solid rgba(0,0,0,.08);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+a.card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+a.card img { width:56px; height:56px; object-fit:contain; margin-bottom:.75rem; }
+a.card strong { display:block; font-family:'Syne',sans-serif; font-size:1.15rem; }
+a.card span { color:var(--muted); font-size:.9rem; }
+.note { margin-top:2.5rem; font-size:.88rem; color:var(--muted); max-width:40rem; }
+</style>
+</head>
+<body>
+<h1>Pass GY · Survey delivery</h1>
+<p class="sub">Five brand sites from Hour 1 Survey — GenUI control-plane thinking, cooperage hospitality (hoop holds staves), Good Samaritan neighbor ethic. 2 cafes · 2 restaurants · 1 sneaker archive.</p>
+<div class="grid">
+  <a class="card" href="kiln-and-cup/index.html"><img src="kiln-and-cup/assets/logo.png" alt=""><strong>Kiln &amp; Cup</strong><span>Cafe · ceramic workshop</span></a>
+  <a class="card" href="mist-harbor/index.html"><img src="mist-harbor/assets/logo.png" alt=""><strong>Mist Harbor</strong><span>Cafe · fog pier</span></a>
+  <a class="card" href="ember-court/index.html"><img src="ember-court/assets/logo.png" alt=""><strong>Ember Court</strong><span>Restaurant · courtyard fire</span></a>
+  <a class="card" href="citrus-hull/index.html"><img src="citrus-hull/assets/logo.png" alt=""><strong>Citrus Hull</strong><span>Restaurant · coastal terrace</span></a>
+  <a class="card" href="sole-archive/index.html"><img src="sole-archive/assets/logo.png" alt=""><strong>Sole Archive</strong><span>Boutique · Nike collectibles</span></a>
+</div>
+<p class="note">Research notes live in <code>research-notes/</code>. Sole Archive is an independent reseller fiction — no Nike™ in the SA monogram. Cards appear only on this index (interaction to choose a brand), never in heroes.</p>
+</body>
+</html>
