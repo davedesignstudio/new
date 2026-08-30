@@ -1,4 +1,4 @@
-# Design techniques — D Philhower Studio craft canon
+# Design techniques — Philhower and Okrogly Design and Build craft canon
 
 Plain language. Labeled shelves. Pressure-tested work beats polish theater.
 
@@ -51,3 +51,19 @@ Plain language. Labeled shelves. Pressure-tested work beats polish theater.
 - Cooperage logic: some wood is *riven* (split with the grain), some is *sawn* (cut across). Choose the method that fits the stave — don’t force one tool for every job.
 - Pressure-test the joint under load before polishing the surface.
 - Limit: shine without stress-test is unfinished work.
+
+
+## Cherry-picked best eight
+
+Combined for daily studio use and the Service the Hills subdomain:
+
+1. Caps–script wordmark hierarchy
+2. Operating kit (logo → fleet)
+3. Swiss modular order
+4. Objecthood + parallel crafts
+5. Cooperage pressure-test
+6. Action + Item + Limit writing
+7. GenUI envelope + stakes first
+8. Labeled shelves; hear + do
+
+Site: `/techniques/` · Application: `/sthills/`
