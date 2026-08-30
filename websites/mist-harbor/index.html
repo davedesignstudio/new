@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Fog Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    .btn--primary { background: #b0894f; color: #0f1a22; }
+    .section { background: linear-gradient(145deg, #e8eef2 0%, #d5e0e8 50%, #c5d4df 100%); }
+    .hero__brand { font-family: "Fraunces", serif; font-style: italic; }
+  </style>
+</head>
+<body data-brand="mist-harbor">
+  <div class="stake-strip" data-level="warn" role="status" data-testid="stake-strip">
+    <span><strong>Fog advisory:</strong> Pier seating closes when visibility drops below safe harbor rules.</span>
+    <span class="stake-echo">weather stake · always seen</span>
+  </div>
+
+  <header class="hero" data-testid="hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./" data-testid="logo-link">
+        <img src="logo.png" alt="Mist Harbor logo" width="48" height="48" data-testid="logo" />
+        <span>Mist Harbor</span>
+      </a>
+      <ul>
+        <li><a href="#brew">Brew</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+    <div class="hero__content">
+      <h1 class="hero__brand kinetic" data-testid="brand-title">Mist Harbor</h1>
+      <p class="hero__line">Coffee at the edge of the fog line. Quiet tables when the pier holds.</p>
+      <div class="cta-row">
+        <button type="button" class="btn btn--primary" id="reserve-btn" data-testid="primary-cta" style="min-height:48px;min-width:48px">Reserve pier table</button>
+        <a class="btn btn--ghost" href="#brew">Harbor brew</a>
+      </div>
+      <p class="live-status" id="live-status" data-testid="live-status" data-empty="true" aria-live="polite">No hold yet — reserve when ready.</p>
+      <p class="hero__credit" data-testid="place-credit">Place credit · Harbor pier in morning fog · Pass HG practice</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="brew">
+      <div class="section__inner organic-fill">
+        <div>
+          <h2>Harbor brew</h2>
+          <p class="lede">Organic asymmetry in the fill band — never in the stakes chrome.</p>
+          <p>Steeped black, steamed milk, and a brass pot that never leaves the counter.</p>
+        </div>
+        <div id="reserve">
+          <h2>Reserve</h2>
+          <div class="interact-card">
+            <h3>Pier table · two seats</h3>
+            <p>Subject to fog advisory above. Pickup window 45 minutes.</p>
+            <button type="button" class="btn btn--primary" id="confirm-reserve" data-testid="reserve-confirm" style="min-height:48px">Confirm reserve</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Mist Harbor · Practice HG</span>
+      <a href="../index.html">Studio hub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var status = document.getElementById("live-status");
+      function setHold() {
+        status.dataset.empty = "false";
+        status.textContent = "Holding pier table · for 2 · expires in 45 min";
+      }
+      document.getElementById("reserve-btn").addEventListener("click", setHold);
+      document.getElementById("confirm-reserve").addEventListener("click", setHold);
+    })();
+  </script>
+</body>
+</html>
