@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pair Registry — Collectible Sneaker Boutique</title>
+  <meta name="description" content="Independent boutique for collectible Nike sneakers. Authentication, holds, and archival care. Not affiliated with Nike." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f2ede4;
+      --ink: #111111;
+      --accent: #2c333a;
+      --display: "Syne", sans-serif;
+      --stake-bg: #111111;
+      --stake-ink: #f2ede4;
+    }
+    body { background: linear-gradient(180deg, #f5f1ea, #e8e2d8); }
+    .auth-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="reseller-hold">
+    <strong>Independent reseller:</strong>
+    <span>Pair Registry is not affiliated with Nike, Inc.</span>
+    <span class="critical">Holds expire in 24 hours · authentication required before release.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Pair Registry PR monogram logo" width="44" height="44" data-mark="pr-only" />
+      <span>Pair Registry</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#vault">Vault</a>
+      <a href="#hold">Hold</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Independent sneaker archive boutique with collectible pairs in clear boxes" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Pair Registry</h1>
+        <p class="hero-line">Collectible Nike pairs, logged like ledgers. PR mark only—no borrowed trademarks.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#hold" data-fitts="primary">Hold this pair</a>
+          <a class="btn btn-ghost" href="#vault">Browse vault</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — independent vault floor, archival lighting</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="vault">
+      <h2>Vault floor</h2>
+      <p class="lead">Cards are for interaction. Advanced filters stay progressive; hold stakes stay visible.</p>
+      <details class="filters">
+        <summary aria-controls="vault-filters" id="filters-summary">Advanced filters (optional)</summary>
+        <div class="filters-body" id="vault-filters" role="group" aria-labelledby="filters-summary">
+          <label><input type="checkbox" name="sz" value="9" /> Size 9</label>
+          <label><input type="checkbox" name="sz" value="10" /> Size 10</label>
+          <label><input type="checkbox" name="cond" value="deadstock" /> Deadstock</label>
+          <label><input type="checkbox" name="era" value="2010s" /> 2010s</label>
+        </div>
+      </details>
+      <div class="card-grid">
+        <article class="card" data-sku="dunk-panda-10">
+          <span class="meta">Nike Dunk Low · Size 10</span>
+          <h3>Panda Dunk</h3>
+          <p>Deadstock · last inspected 2026-08-29 · independent authentication pending buyer hold.</p>
+          <span class="auth-badge">Auth lane · PR vault</span>
+          <button class="btn btn-primary" type="button" data-fitts="primary" data-hold="dunk-panda-10" onclick="holdPair(this)">Hold this pair</button>
+        </article>
+        <article class="card" data-sku="aj1-chicago-9">
+          <span class="meta">Air Jordan 1 · Size 9</span>
+          <h3>Chicago (vault grade)</h3>
+          <p>Collectible condition · box present · reseller listing with photo set.</p>
+          <span class="auth-badge">Auth lane · PR vault</span>
+          <button class="btn btn-primary" type="button" data-fitts="primary" data-hold="aj1-chicago-9" onclick="holdPair(this)">Hold this pair</button>
+        </article>
+        <article class="card" data-sku="sb-tiffany-10.5">
+          <span class="meta">SB Dunk · Size 10.5</span>
+          <h3>Tiffany (archive)</h3>
+          <p>Museum lighting storage · humidity logged · hold starts authentication clock.</p>
+          <span class="auth-badge">Auth lane · PR vault</span>
+          <button class="btn btn-primary" type="button" data-fitts="primary" data-hold="sb-tiffany-10.5" onclick="holdPair(this)">Hold this pair</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="hold">
+      <h2>Hold desk</h2>
+      <p class="lead">A hold is a promise: we name the pair, the size, and the 24-hour limit before you tap.</p>
+      <p class="status" data-tone="warn" data-ail="hold" id="hold-status" role="status">
+        Idle · No pair selected · Limit: 24-hour hold after confirm · Auth required before release
+      </p>
+      <div class="card" style="max-width:32rem;margin-top:1rem">
+        <p style="margin:0 0 0.75rem">Selecting <strong>Hold this pair</strong> on a vault card starts Action + Item + Limit here. Nike product names describe inventory; the brand mark remains PR only.</p>
+        <button class="btn btn-primary" type="button" data-fitts="primary" id="confirm-hold" disabled onclick="confirmHold()">Confirm hold</button>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Pair Registry · independent sneaker boutique · not affiliated with Nike, Inc. · Pass HI Survey</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+  <script>
+    let pending = null;
+    function holdPair(btn) {
+      const card = btn.closest('.card');
+      const title = card.querySelector('h3').textContent;
+      const meta = card.querySelector('.meta').textContent;
+      pending = { title, meta, sku: btn.dataset.hold };
+      const status = document.getElementById('hold-status');
+      status.dataset.tone = 'warn';
+      status.textContent = 'Holding · ' + title + ' · ' + meta + ' · Expires in 24 hours after confirm · Auth required';
+      document.getElementById('confirm-hold').disabled = false;
+      document.getElementById('hold').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function confirmHold() {
+      if (!pending) return;
+      const status = document.getElementById('hold-status');
+      status.dataset.tone = 'ok';
+      status.textContent = 'Confirmed · ' + pending.title + ' · ' + pending.meta + ' · 24-hour hold active · Auth lane queued';
+      document.getElementById('confirm-hold').disabled = true;
+      pending = null;
+    }
+  </script>
+</body>
+</html>

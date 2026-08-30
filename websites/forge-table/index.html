@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forge Table — Hearth Restaurant</title>
+  <meta name="description" content="Open-hearth dining. Iron, ash, and shared tables." />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --paper: #f0e8df;
+      --ink: #1c1410;
+      --accent: #d45a2a;
+      --display: "Libre Baskerville", serif;
+      --stake-bg: #241810;
+      --stake-ink: #f0e8df;
+    }
+    body { background:
+      radial-gradient(ellipse at 70% 0%, rgba(212,90,42,0.14), transparent 48%),
+      linear-gradient(180deg, #f5ede4, #e6dbd0);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stakes" role="status" data-stakes="open-flame">
+    <strong>Safety notice:</strong>
+    <span class="critical">Open hearth — active flame and radiant heat near the forge table.</span>
+    <span>Ask for the cool hall if you prefer distance from the fire.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" alt="Forge Table logo" width="44" height="44" />
+      <span>Forge Table</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="../index.html">Studio</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero kinetic-brand" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Hearth restaurant with forge fire and long iron-and-wood dining table" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-brand">Forge Table</h1>
+        <p class="hero-line">Heat shapes iron. Fire shapes supper.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve" data-fitts="primary">Reserve a bench</a>
+          <a class="btn btn-ghost" href="#menu">See the hearth</a>
+        </div>
+        <p class="hero-credit">Place &amp; atmosphere — forge hall, ember light on stone</p>
+      </div>
+    </section>
+
+    <section class="section fill-band" id="menu">
+      <h2>From the hearth</h2>
+      <p class="lead">One purpose: food touched by fire. Cards only for courses you can take.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="meta">Shared</span>
+          <h3>Ash Bread</h3>
+          <p>Loaf finished in hearth ash. Served with smoked butter.</p>
+          <button class="btn btn-primary" type="button" data-order="ash-bread">Add course</button>
+        </article>
+        <article class="card">
+          <span class="meta">Main</span>
+          <h3>Ember Steak</h3>
+          <p>Cast-iron sear, bone marrow gloss, bitter greens.</p>
+          <button class="btn btn-primary" type="button" data-order="ember-steak">Add course</button>
+        </article>
+        <article class="card">
+          <span class="meta">Side</span>
+          <h3>Forged Roots</h3>
+          <p>Charred carrots and beets with iron-pan fond.</p>
+          <button class="btn btn-primary" type="button" data-order="forged-roots">Add course</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Benches near the forge stay warm — we name heat proximity in the hold.</p>
+      <p class="status" data-tone="ok" data-ail="reserve" id="reserve-status" role="status">
+        Ready · Forge bench for 2 · Hold expires in 20 minutes after confirmation
+      </p>
+      <form class="card" style="max-width:28rem;margin-top:1rem" onsubmit="event.preventDefault();document.getElementById('reserve-status').textContent='Reserved · Forge bench for 2 · Arrive by 19:40 or release · Open-flame seating';document.getElementById('reserve-status').dataset.tone='ok';">
+        <label>Party size
+          <select name="party" style="display:block;width:100%;min-height:48px;margin-top:0.35rem">
+            <option>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <label>Time
+          <input name="time" type="time" value="19:20" style="display:block;width:100%;min-height:48px;margin-top:0.35rem" />
+        </label>
+        <button class="btn btn-primary" type="submit" data-fitts="primary">Confirm reserve</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>Forge Table · hearth restaurant · Pass HI Survey</span>
+    <a href="../index.html">Back to studio hub</a>
+  </footer>
+</body>
+</html>
