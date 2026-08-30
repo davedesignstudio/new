@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salt Loom — Restaurant · Harbor craft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;700&family=Karla:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+    --bg: #F4F7F5;
+    --ink: #0E2433;
+    --accent: #3D6B5A;
+    --muted: #4A5F6A;
+    --surface: #E4EBE7;
+    --hero-overlay: rgba(14,36,51,0.48);
+      --font-display: "Newsreader", Georgia, serif;
+      --font-body: "Karla", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="kinetic-wind" data-brand="salt-loom" data-pass="HL">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-nav" data-envelope="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" width="48" height="48" alt="Salt Loom logo" data-logo />
+      <span>Salt Loom</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#stakes">Stakes</a>
+      <a href="#board">Menu</a>
+      <a href="#reserve">Reserve</a>
+      
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="assets/hero.png" alt="" role="presentation" />
+      </div>
+      <div class="hero-content">
+        <p class="hero-brand" data-hero-brand>Salt Loom</p>
+        <h1 class="hero-headline">Harbor tables, woven salt air.</h1>
+        <p class="hero-support">A coastal restaurant where loom craft and tide tables set the pace.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-accent-on-dark="1" href="#reserve">Reserve a table</a>
+          <a class="btn btn-ghost" href="#board">View menu</a>
+        </div>
+        <p class="place-credit" data-place-credit>Harbor terrace — dusk salt wind</p>
+      </div>
+    </section>
+
+    <aside class="stakes" id="stakes" data-stakes role="note" aria-label="Critical allergen">
+      <strong>Critical allergen</strong>
+      <p>Shellfish is prepared throughout the kitchen. Cross-contact cannot be fully avoided. Do not dine here if you have a shellfish allergy.</p>
+    </aside>
+
+    <div class="status-rail" data-status-rail aria-live="polite" aria-atomic="true">
+      <span data-ail="action">Loading</span>
+      <span data-ail="item">Board</span>
+      <span data-ail="limit">—</span>
+    </div>
+
+    <section class="section" id="board" aria-labelledby="board-title">
+      <h2 id="board-title">Menu</h2>
+      <p class="lede">Pattern 2 stream: skeleton → partial → ready. Envelope chrome never streams.</p>
+      <div class="stream-board" data-stream-board data-stream-state="skeleton">
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Tide Crudo">Tide Crudo</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Kelp Broth">Kelp Broth</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Harbor Grill">Harbor Grill</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Salt Caramel Loom">Salt Caramel Loom</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+      </div>
+      <div class="menu-list" style="margin-top:1.5rem">
+          <div class="menu-row"><div><strong>Tide Crudo</strong></div><div class="price">$18</div><div class="desc">Catch of day — ask server for species</div></div>
+          <div class="menu-row"><div><strong>Loom Loaf</strong></div><div class="price">$7</div><div class="desc">Sourdough, cultured butter, sea salt</div></div>
+          <div class="menu-row"><div><strong>Kelp Broth</strong></div><div class="price">$14</div><div class="desc">Vegetable stock, toasted nori oil</div></div>
+          <div class="menu-row"><div><strong>Harbor Grill</strong></div><div class="price">$29</div><div class="desc">Seasonal fish, bitter greens</div></div>
+      </div>
+    </section>
+
+
+
+    <section class="section" id="reserve" aria-labelledby="reserve-title">
+      <h2 id="reserve-title">Reserve a table</h2>
+      <p class="lede">Practice HL: the CTA stays locked until stakes, A+I+L, and Fitts joints stamp green.</p>
+      <div class="interact-card">
+        <div class="practice-seal" data-practice-seal><span class="dot" aria-hidden="true"></span><span class="label">Joints open</span></div>
+        <h3>Terrace table for four</h3>
+        <p>Limit: 90 min table hold. Status rail narrates Action · Item · Limit — no panic FID.</p>
+        <button type="button" class="btn btn-primary" data-hold-cta data-fitts-primary style="color:#fff;background:var(--accent)">Reserve a table</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Salt Loom · Restaurant · Pass HL Practice</div>
+    <div class="pass">Joints: stream · hear-do stakes · A+I+L · place-credit · mark hygiene · Fitts</div>
+  </footer>
+
+  <script>
+    window.__PRACTICE__ = {
+      streamItems: ['Tide Crudo', 'Kelp Broth', 'Harbor Grill', 'Salt Caramel Loom'],
+      defaultItem: 'Terrace table for four',
+      defaultLimit: 'open',
+      holdAction: 'Reserved',
+      holdItem: 'Terrace table for four',
+      holdLimit: '90 min table hold',
+      heldLabel: 'Reservation placed'
+    };
+  </script>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>

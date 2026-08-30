@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cedar Drift — Cafe · Grove mist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+    --bg: #E8EEE8;
+    --ink: #1E2A24;
+    --accent: #2F4A3C;
+    --muted: #5C6B62;
+    --surface: #DCE5DC;
+    --hero-overlay: rgba(30,42,36,0.45);
+      --font-display: "Literata", Georgia, serif;
+      --font-body: "DM Sans", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="kinetic-mist" data-brand="cedar-drift" data-pass="HL">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-nav" data-envelope="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" width="48" height="48" alt="Cedar Drift logo" data-logo />
+      <span>Cedar Drift</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#stakes">Stakes</a>
+      <a href="#board">Board</a>
+      <a href="#reserve">Reserve</a>
+      
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="assets/hero.png" alt="" role="presentation" />
+      </div>
+      <div class="hero-content">
+        <p class="hero-brand" data-hero-brand>Cedar Drift</p>
+        <h1 class="hero-headline">Coffee in the cedar mist.</h1>
+        <p class="hero-support">A quiet grove cafe where fog softens the edges of the day.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-accent-on-dark="1" href="#reserve">Reserve a seat</a>
+          <a class="btn btn-ghost" href="#board">View board</a>
+        </div>
+        <p class="place-credit" data-place-credit>Cedar grove terrace — coastal fog</p>
+      </div>
+    </section>
+
+    <aside class="stakes" id="stakes" data-stakes role="note" aria-label="Allergen & mist notice">
+      <strong>Allergen & mist notice</strong>
+      <p>Tree-nut preparations (walnut, hazelnut) are used daily. Cedar mist and essential oils scent the terrace — disclose sensitivities before seating.</p>
+    </aside>
+
+    <div class="status-rail" data-status-rail aria-live="polite" aria-atomic="true">
+      <span data-ail="action">Loading</span>
+      <span data-ail="item">Board</span>
+      <span data-ail="limit">—</span>
+    </div>
+
+    <section class="section" id="board" aria-labelledby="board-title">
+      <h2 id="board-title">Board</h2>
+      <p class="lede">Pattern 2 stream: skeleton → partial → ready. Envelope chrome never streams.</p>
+      <div class="stream-board" data-stream-board data-stream-state="skeleton">
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Grove Filter">Grove Filter</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Mist Matcha">Mist Matcha</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Moss Bowl">Moss Bowl</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Fog Shortbread">Fog Shortbread</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+      </div>
+      <div class="menu-list" style="margin-top:1.5rem">
+          <div class="menu-row"><div><strong>Grove Filter</strong></div><div class="price">$5</div><div class="desc">Washed process, soft cedar finish</div></div>
+          <div class="menu-row"><div><strong>Mist Matcha</strong></div><div class="price">$6</div><div class="desc">Ceremonial grade, oat milk</div></div>
+          <div class="menu-row"><div><strong>Hazelnut Drift Bun</strong></div><div class="price">$4</div><div class="desc">Contains tree nuts — ask for seed bun</div></div>
+          <div class="menu-row"><div><strong>Moss Bowl</strong></div><div class="price">$12</div><div class="desc">Greens, pickled fennel, toasted seeds</div></div>
+      </div>
+    </section>
+
+
+
+    <section class="section" id="reserve" aria-labelledby="reserve-title">
+      <h2 id="reserve-title">Reserve a seat</h2>
+      <p class="lede">Practice HL: the CTA stays locked until stakes, A+I+L, and Fitts joints stamp green.</p>
+      <div class="interact-card">
+        <div class="practice-seal" data-practice-seal><span class="dot" aria-hidden="true"></span><span class="label">Joints open</span></div>
+        <h3>Mist booth for two</h3>
+        <p>Limit: 40 min seat hold. Status rail narrates Action · Item · Limit — no panic FID.</p>
+        <button type="button" class="btn btn-primary" data-hold-cta data-fitts-primary style="color:#fff;background:var(--accent)">Reserve a seat</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Cedar Drift · Cafe · Pass HL Practice</div>
+    <div class="pass">Joints: stream · hear-do stakes · A+I+L · place-credit · mark hygiene · Fitts</div>
+  </footer>
+
+  <script>
+    window.__PRACTICE__ = {
+      streamItems: ['Grove Filter', 'Mist Matcha', 'Moss Bowl', 'Fog Shortbread'],
+      defaultItem: 'Mist booth for two',
+      defaultLimit: 'open',
+      holdAction: 'Reserved',
+      holdItem: 'Mist booth for two',
+      holdLimit: '40 min seat hold',
+      heldLabel: 'Reservation placed'
+    };
+  </script>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>
