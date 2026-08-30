@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Coastal Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root { --ink: #24343c; --sage: #6b8f71; --mist: #e7eef0; }
+    body {
+      font-family: "Nunito Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 500px at 80% 0%, #c9d9d4 0%, transparent 50%),
+        linear-gradient(180deg, #eef3f4 0%, #d9e4e6 100%);
+    }
+    .brand-mark .name, .section h2, .hero h1 { font-family: "Libre Baskerville", Georgia, serif; }
+    .stakes { background: color-mix(in srgb, var(--sage) 12%, #fff); color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Pier board</strong>
+    <div class="ail">
+      <span data-label="Action">Check fog delay before you walk the pier</span>
+      <span data-label="Item">Guest croze · gluten · shellfish steam</span>
+      <span data-label="Limit">Kitchen closes when the horn sounds</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero__fill" aria-hidden="true"><img src="assets/hero.png" alt="" /></div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="brand-mark">
+        <img src="assets/logo.png" alt="Mist Harbor logo" width="78" height="78" />
+        <div class="name">Mist Harbor</div>
+      </div>
+      <h1>Coffee where the fog meets the pier.</h1>
+      <p class="lede">A quiet coastal cafe for slow mornings and tide tables.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#board">Today’s board</a>
+        <a class="btn btn--ghost" href="#croze">Guest croze</a>
+      </div>
+    </div>
+    <p class="place-credit">Place · misted pier, lighthouse glow</p>
+  </header>
+
+  <main>
+    <section class="section" id="board">
+      <h2>Harbor board</h2>
+      <p class="support">One board, rewritten at dawn. No brunch collage—just what the fog allows.</p>
+      <p>Steamed oat milk · harbor drip · smoked lemon tea.</p>
+    </section>
+
+    <section class="section" id="croze">
+      <h2>Guest croze</h2>
+      <p class="support">Mercy first: we seat the guest’s limits before we seat the cup.</p>
+      <ul class="croze">
+        <li class="croze__row">
+          <div><span class="croze__label">Item</span><span class="croze__value">Gluten</span></div>
+          <div><span class="croze__label">Action</span><span class="croze__value">Separate toaster</span></div>
+          <div><span class="croze__label">Limit</span><span class="croze__value">Shared butter knife</span></div>
+          <button type="button" class="croze__seen" aria-pressed="false">Seen</button>
+        </li>
+        <li class="croze__row">
+          <div><span class="croze__label">Item</span><span class="croze__value">Shellfish steam</span></div>
+          <div><span class="croze__label">Action</span><span class="croze__value">Seat away from pass</span></div>
+          <div><span class="croze__label">Limit</span><span class="croze__value">Fog horn rush hours</span></div>
+          <button type="button" class="croze__seen" aria-pressed="false">Seen</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Mist Harbor · coastal cafe · Pass HB · <a href="../index.html">All brands</a>
+  </footer>
+  <script>
+    document.querySelectorAll('.croze__seen').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const on = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!on));
+        btn.textContent = on ? 'Seen' : 'Noted';
+      });
+    });
+  </script>
+</body>
+</html>
