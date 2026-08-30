@@ -37,22 +37,35 @@ a { color:var(--accent); }
 
 /* —— 3D stage: zoomed-out field of marks —— */
 .stage {
-  perspective: 1400px;
-  perspective-origin: 50% 18%;
-  padding: 1.5rem 0 3rem;
-  margin: 0 -0.35rem;
+  perspective: 900px;
+  perspective-origin: 50% 0%;
+  padding: 2rem 0 6rem;
+  margin: 0 -0.5rem;
+  position: relative;
+}
+.stage::after {
+  content:"";
+  pointer-events:none;
+  position:absolute; left:5%; right:5%; bottom:0; height:42%;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55) 70%);
+  transform: perspective(900px) rotateX(60deg) scaleY(1.2);
+  transform-origin: center bottom;
+  opacity:.65;
+  z-index:0;
 }
 .grid {
+  position: relative;
+  z-index: 1;
   display:grid;
-  gap: 0.85rem 0.7rem;
-  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 0.95rem 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   transform-style: preserve-3d;
   transform:
-    rotateX(18deg)
-    rotateZ(-1.2deg)
-    scale(0.82)
-    translateY(-1.5%);
-  transform-origin: center top;
+    rotateX(32deg)
+    rotateZ(-2deg)
+    scale(0.78)
+    translateY(-4%);
+  transform-origin: center 8%;
   will-change: transform;
 }
 .card {
@@ -107,17 +120,17 @@ a { color:var(--accent); }
 .card.is-hidden { display:none; }
 
 /* staggered depth — nth-child translateZ for a real field */
-.card:nth-child(3n)  { transform: translateZ(8px)  rotateY(-2deg); }
-.card:nth-child(3n+1){ transform: translateZ(-6px) rotateY(2.2deg); }
-.card:nth-child(3n+2){ transform: translateZ(14px) rotateY(-1deg); }
-.card:nth-child(5n)  { transform: translateZ(22px) rotateX(-1.5deg); }
-.card:nth-child(7n)  { transform: translateZ(-12px) rotateX(1deg); }
+.card:nth-child(3n)  { transform: translateZ(18px)  rotateY(-4deg); }
+.card:nth-child(3n+1){ transform: translateZ(-14px) rotateY(4deg); }
+.card:nth-child(3n+2){ transform: translateZ(28px) rotateY(-2deg); }
+.card:nth-child(5n)  { transform: translateZ(40px) rotateX(-3deg); }
+.card:nth-child(7n)  { transform: translateZ(-22px) rotateX(2deg); }
 
 .card:hover,
 .card:focus-within {
   z-index: 2;
   border-color: #5a4630;
-  transform: translateZ(56px) rotateX(-6deg) rotateY(0deg) scale(1.06);
+  transform: translateZ(90px) rotateX(-10deg) rotateY(0deg) scale(1.12);
   box-shadow:
     0 1px 0 rgba(255,255,255,.08) inset,
     0 28px 40px -12px rgba(0,0,0,.75),
@@ -126,13 +139,13 @@ a { color:var(--accent); }
 .card:hover img { transform: scale(1); }
 
 @media (min-width: 1100px) {
-  .grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 1rem .85rem; }
-  .stage { perspective: 1600px; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem .85rem; }
+  .stage { perspective: 1000px; }
 }
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
-    transform: rotateX(12deg) scale(0.9);
+    transform: rotateX(22deg) scale(0.86);
   }
   .meta h2 { font-size:.62rem; }
 }
