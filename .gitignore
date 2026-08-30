@@ -1,3 +1,7 @@
 dist/
 .DS_Store
 node_modules
+
+websites/node_modules/
+websites/package-lock.json
+websites/package.json

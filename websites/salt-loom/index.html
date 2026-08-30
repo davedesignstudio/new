@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salt Loom · Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>:root{--accent:#1c3d44;--paper:#f2f0ea;--ink:#142428;--focus-ring:#142428;}</style>
+</head>
+<body class="wind-sway">
+  <div class="envelope" data-envelope>
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img class="logo" src="./assets/logo.png" width="48" height="48" alt="Salt Loom logo" />
+        <span class="brand-name">Salt Loom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#board">Board</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="../index.html">All sites</a></li>
+      </ul>
+    </div>
+    <div class="stream-rail" data-stream-rail aria-live="polite" aria-busy="true" aria-atomic="false"></div>
+  </div>
+
+  <div class="stakes critical" role="note">
+    <div class="stakes-inner">
+      <span class="label">Critical allergen</span>
+      Shellfish is central to tonight’s loom — crab, mussel, shrimp. Cross-contact possible on shared flat-tops. Tell us before seating.
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-media">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero-copy">
+      <p class="place-credit">Harbor terrace · Port Townsend</p>
+      <h1 class="brand-hero">Salt Loom</h1>
+      <p class="lede">Warp of rope, weft of tide. Dinner where the wind finds the linen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#visit">Plan a visit</a>
+        <a class="btn btn-ghost" href="#board">See the board</a>
+      </div>
+      <p class="integrate-mark">Integrate HM · cycle sealed</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="board">
+      <h2>Tide board</h2>
+      <p class="support">Fill streams skeleton → partial → ready. The envelope never leaves.</p>
+      <div
+        class="stream-board"
+        data-stream-board
+        data-board-name="Tide board"
+        data-items='[{"title":"Warp broth","teaser":"Shell…","body":"Shellfish broth; vegetarian kelp alternate."},{"title":"Weft noodles","teaser":"Crab…","body":"Hand-pulled, crab butter (critical)."},{"title":"Salt cake","teaser":"Citrus…","body":"Olive oil cake, no shellfish."}]'
+        data-fallback='[{"title":"Warp broth","teaser":"Shell…","body":"Shellfish broth; vegetarian kelp alternate."},{"title":"Weft noodles","teaser":"Crab…","body":"Hand-pulled, crab butter (critical)."},{"title":"Salt cake","teaser":"Citrus…","body":"Olive oil cake, no shellfish."}]'
+      ></div>
+      <div class="filters">
+        <details>
+          <summary>Optional filters</summary>
+          <p>Advanced dietary filters stay in the drawer. Danger stays above the fold.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="visit">
+      <h2>Visit</h2>
+      <p class="support">Cards exist only for interaction. Seal before promise.</p>
+      <div class="card-grid">
+        
+      <article class="card">
+        <span class="practice-seal" data-sealed="false">Joints open</span>
+        <h3>Reserve terrace</h3>
+        <p>Wind-forward tables. Seal stamps after shellfish stakes are acknowledged in status.</p>
+        <button type="button" class="btn btn-primary" data-cta data-reserve data-requires-seal data-item="harbor terrace" data-limit="seating window 90 min" disabled aria-disabled="true">Reserve</button>
+      </article>
+      <article class="card">
+        <span class="practice-seal" data-sealed="false">Joints open</span>
+        <h3>Loom tasting</h3>
+        <p>Five courses. Shellfish flight unless you request the kelp path.</p>
+        <button type="button" class="btn btn-primary" data-cta data-reserve data-requires-seal data-item="loom tasting" data-limit="Thu–Sat" disabled aria-disabled="true">Book tasting</button>
+      </article>
+      </div>
+    </section>
+
+    <div class="section" id="status-panel">
+        <h2>Live status</h2>
+        <p class="support">Action · Item · Limit — written plain, not meagre.</p>
+        <div data-hold-status class="card"><p class="meta">Waiting for a sealed Reserve.</p></div>
+      </div>
+
+    <p class="canon-shelf">Hear-do (Mt 7): naming shellfish above the fold is the rock; burying it in a drawer is sand.</p>
+  </main>
+
+  <footer class="site-foot">
+    <p>Salt Loom · Restaurant · Pass HM Integrate · Fitts ≥48px · prefers-reduced-motion honored</p>
+    
+  </footer>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>
