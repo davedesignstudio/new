@@ -2,13 +2,14 @@
   "waves_total": 5,
   "brands_per_wave": 500,
   "interval_minutes": 10,
-  "current_wave": 2,
+  "current_wave": 3,
   "waves_completed": [
     1
   ],
   "waves_started": [
     1,
-    2
+    2,
+    3
   ],
   "total_target": 2500
 }
