@@ -1,1121 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>100 logos — design history 1950–now</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink:#0c0c0c; --paper:#f3efe6; --mute:#8a8276; --line:#2a2620; --accent:#c45c26;
-  --face:#161310; --depth:rgba(0,0,0,.55);
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0; min-height:100vh;
-  background:
-    radial-gradient(ellipse 80% 45% at 10% -10%, #3a2a1c 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, #1a2830 0%, transparent 50%),
-    linear-gradient(180deg, #12100e 0%, var(--ink) 40%, #080808 100%);
-  color:var(--paper); font-family:"DM Sans",system-ui,sans-serif;
-  overflow-x:hidden;
-}
-.wrap { max-width:1480px; margin:0 auto; padding:2.25rem 1.1rem 5rem; }
-.eyebrow { letter-spacing:.28em; text-transform:uppercase; font-size:.68rem; color:var(--accent); font-weight:700; }
-h1 { font-family:Syne,sans-serif; font-size:clamp(2.2rem,5vw,3.4rem); margin:.4rem 0 .8rem; max-width:18ch; line-height:1.05; }
-.lede { color:#c9c0b2; max-width:42rem; line-height:1.55; margin:0 0 1.5rem; }
-.filters { display:flex; flex-wrap:wrap; gap:.45rem; margin:0 0 1.25rem; }
-.filters button {
-  background:transparent; border:1px solid var(--line); color:var(--paper);
-  font:600 .72rem/1 "DM Sans",sans-serif; letter-spacing:.06em; text-transform:uppercase;
-  padding:.45rem .7rem; cursor:pointer;
-}
-.filters button[aria-pressed="true"], .filters button:hover { border-color:var(--accent); color:var(--accent); }
-.stats { color:var(--mute); font-size:.85rem; margin-bottom:1rem; }
-a { color:var(--accent); }
-
-/* —— 3D stage: zoomed-out field of marks —— */
-.stage {
-  perspective: 900px;
-  perspective-origin: 50% 0%;
-  padding: 2rem 0 6rem;
-  margin: 0 -0.5rem;
-  position: relative;
-}
-.stage::after {
-  content:"";
-  pointer-events:none;
-  position:absolute; left:5%; right:5%; bottom:0; height:42%;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55) 70%);
-  transform: perspective(900px) rotateX(60deg) scaleY(1.2);
-  transform-origin: center bottom;
-  opacity:.65;
-  z-index:0;
-}
-.grid {
-  position: relative;
-  z-index: 1;
-  display:grid;
-  gap: 0.95rem 0.75rem;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  transform-style: preserve-3d;
-  transform:
-    rotateX(32deg)
-    rotateZ(-2deg)
-    scale(0.78)
-    translateY(-4%);
-  transform-origin: center 8%;
-  will-change: transform;
-}
-.card {
-  margin:0;
-  background: var(--face);
-  border: 1px solid #2e2820;
-  display:flex;
-  flex-direction:column;
-  transform-style: preserve-3d;
-  transform: translateZ(0);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.04) inset,
-    0 18px 28px -14px var(--depth),
-    0 6px 10px -6px rgba(0,0,0,.65);
-  transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .25s ease;
-  cursor: default;
-}
-.card::before {
-  content:"";
-  position:absolute; inset:0; pointer-events:none;
-  background: linear-gradient(145deg, rgba(255,255,255,.07), transparent 42%, rgba(0,0,0,.18));
-  opacity:.85;
-  mix-blend-mode: soft-light;
-}
-.card { position:relative; overflow:hidden; border-radius: 2px; }
-.card .face {
-  transform: translateZ(12px);
-  transform-style: preserve-3d;
-  background: #0a0a0a;
-  padding: 12%;
-  aspect-ratio: 1;
-  display:grid; place-items:center;
-}
-.card img {
-  width:100%; height:100%;
-  object-fit: contain;
-  display:block;
-  background: transparent;
-  transform: scale(0.92);
-  filter: drop-shadow(0 10px 14px rgba(0,0,0,.45));
-}
-.meta {
-  padding:.55rem .55rem .65rem;
-  transform: translateZ(8px);
-  border-top: 1px solid #2a241c;
-  background: linear-gradient(180deg, #1a1612, #12100e);
-}
-.meta h2 { font-family:Syne,sans-serif; font-size:.72rem; margin:0 0 .2rem; line-height:1.15; }
-.shelf { margin:0; color:var(--accent); font-size:.52rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; }
-.era { margin:.15rem 0 0; color:var(--mute); font-size:.58rem; }
-.tag { display:none; }
-.card.is-hidden { display:none; }
-
-/* staggered depth — nth-child translateZ for a real field */
-.card:nth-child(3n)  { transform: translateZ(18px)  rotateY(-4deg); }
-.card:nth-child(3n+1){ transform: translateZ(-14px) rotateY(4deg); }
-.card:nth-child(3n+2){ transform: translateZ(28px) rotateY(-2deg); }
-.card:nth-child(5n)  { transform: translateZ(40px) rotateX(-3deg); }
-.card:nth-child(7n)  { transform: translateZ(-22px) rotateX(2deg); }
-
-.card:hover,
-.card:focus-within {
-  z-index: 2;
-  border-color: #5a4630;
-  transform: translateZ(90px) rotateX(-10deg) rotateY(0deg) scale(1.12);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.08) inset,
-    0 28px 40px -12px rgba(0,0,0,.75),
-    0 0 0 1px rgba(196,92,38,.25);
-}
-.card:hover img { transform: scale(1); }
-
-@media (min-width: 1100px) {
-  .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem .85rem; }
-  .stage { perspective: 1000px; }
-}
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
-    transform: rotateX(22deg) scale(0.86);
-  }
-  .meta h2 { font-size:.62rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .grid, .card, .card img { transition: none; transform: none; }
-  .stage { perspective: none; }
-  .card:nth-child(n) { transform: none; }
-  .card:hover { transform: none; box-shadow: 0 8px 16px rgba(0,0,0,.4); }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>100 logos — design history 1950–now — D Philhower Studio</title>
+  <meta name="description" content="One hundred unique logos mapped to design history shelves from 1950 to now — Swiss, corporate identity, liberation print, postmodern, digital, GenUI.">
+  <link rel="canonical" href="https://dphilhowerstudio.com/history-100/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<main class="wrap">
-  <p class="eyebrow">Design history · 1950–now</p>
-  <h1>One hundred unique logos.</h1>
-  <p class="lede">Each mark maps to a labeled shelf from the studio survey — Swiss grid, liberation print, postmodern break, desktop publishing, flat/Material, Afrofuturist craft, GenUI — parallel streams, not a civilizational ladder. Source: <a href="/history/">DESIGN-HISTORY-1950-NOW.md</a></p>
-  <p class="stats" id="stats">100 logos across 30 shelves</p>
-  <div class="filters" role="toolbar" aria-label="Filter by shelf">
-    <button type="button" data-filter="All" aria-pressed="true">All</button>
-    <button type="button" data-filter="Swiss / International" aria-pressed="false">Swiss / International</button>
-<button type="button" data-filter="Mid-century modern" aria-pressed="false">Mid-century modern</button>
-<button type="button" data-filter="Corporate identity" aria-pressed="false">Corporate identity</button>
-<button type="button" data-filter="Japanese modernism" aria-pressed="false">Japanese modernism</button>
-<button type="button" data-filter="Liberation print" aria-pressed="false">Liberation print</button>
-<button type="button" data-filter="Pop / psychedelic" aria-pressed="false">Pop / psychedelic</button>
-<button type="button" data-filter="Pop art" aria-pressed="false">Pop art</button>
-<button type="button" data-filter="Polish School of Posters" aria-pressed="false">Polish School of Posters</button>
-<button type="button" data-filter="Protest graphics" aria-pressed="false">Protest graphics</button>
-<button type="button" data-filter="Postmodern / New Wave" aria-pressed="false">Postmodern / New Wave</button>
-<button type="button" data-filter="Postmodern / Memphis" aria-pressed="false">Postmodern / Memphis</button>
-<button type="button" data-filter="Postmodern architecture" aria-pressed="false">Postmodern architecture</button>
-<button type="button" data-filter="California New Wave" aria-pressed="false">California New Wave</button>
-<button type="button" data-filter="Desktop publishing" aria-pressed="false">Desktop publishing</button>
-<button type="button" data-filter="Early web" aria-pressed="false">Early web</button>
-<button type="button" data-filter="Web 2.0" aria-pressed="false">Web 2.0</button>
-<button type="button" data-filter="Skeuomorphism" aria-pressed="false">Skeuomorphism</button>
-<button type="button" data-filter="Flat design" aria-pressed="false">Flat design</button>
-<button type="button" data-filter="Flat 2.0" aria-pressed="false">Flat 2.0</button>
-<button type="button" data-filter="Material Design" aria-pressed="false">Material Design</button>
-<button type="button" data-filter="Neo-skeuomorphism" aria-pressed="false">Neo-skeuomorphism</button>
-<button type="button" data-filter="Design systems" aria-pressed="false">Design systems</button>
-<button type="button" data-filter="Variable type" aria-pressed="false">Variable type</button>
-<button type="button" data-filter="Adaptive logos" aria-pressed="false">Adaptive logos</button>
-<button type="button" data-filter="Motion identity" aria-pressed="false">Motion identity</button>
-<button type="button" data-filter="Afrofuturist craft" aria-pressed="false">Afrofuturist craft</button>
-<button type="button" data-filter="GenUI" aria-pressed="false">GenUI</button>
-<button type="button" data-filter="GenUI / principles" aria-pressed="false">GenUI / principles</button>
-<button type="button" data-filter="Craftsmanship" aria-pressed="false">Craftsmanship</button>
-<button type="button" data-filter="Canons" aria-pressed="false">Canons</button>
-  </div>
-  <div class="stage" id="stage">
-  <div class="grid" id="grid">
-    
-    <article class="card" data-shelf="Swiss / International" id="grid-meridian">
-      <div class="face"><img src="grid-meridian/01-logo.png" alt="Grid Meridian logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+  <header class="site-header">
+    <a class="brand-mark" href="/">D Philhower Studio</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav">
+      <a href="/work/">Work</a>
+      <a href="/services/">Services</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/history/">History</a>
+      <a href="/about/">About</a>
+      <a class="nav-cta" href="/contact/">Start a project</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-hero">
+      <p class="section-label">Design history · 1950–now</p>
+      <h1>One hundred unique logos.</h1>
+      <p>Each mark maps to a labeled shelf from the studio survey — parallel streams, not a civilizational ladder. Zoomed-out field with perspective depth.</p>
+    </header>
+
+    <section class="section h100-controls" style="padding-top:0; padding-bottom:1rem">
+      <p class="section-copy" id="h100-stats" style="margin-bottom:1rem">100 logos across 30 shelves</p>
+      <div class="h100-filters" role="toolbar" aria-label="Filter by shelf">
+      <button type="button" class="h100-filter" data-filter="All" aria-pressed="true">All</button>
+      <button type="button" class="h100-filter" data-filter="Swiss / International" aria-pressed="false">Swiss / International</button>
+      <button type="button" class="h100-filter" data-filter="Mid-century modern" aria-pressed="false">Mid-century modern</button>
+      <button type="button" class="h100-filter" data-filter="Corporate identity" aria-pressed="false">Corporate identity</button>
+      <button type="button" class="h100-filter" data-filter="Japanese modernism" aria-pressed="false">Japanese modernism</button>
+      <button type="button" class="h100-filter" data-filter="Liberation print" aria-pressed="false">Liberation print</button>
+      <button type="button" class="h100-filter" data-filter="Pop / psychedelic" aria-pressed="false">Pop / psychedelic</button>
+      <button type="button" class="h100-filter" data-filter="Pop art" aria-pressed="false">Pop art</button>
+      <button type="button" class="h100-filter" data-filter="Polish School of Posters" aria-pressed="false">Polish School of Posters</button>
+      <button type="button" class="h100-filter" data-filter="Protest graphics" aria-pressed="false">Protest graphics</button>
+      <button type="button" class="h100-filter" data-filter="Postmodern / New Wave" aria-pressed="false">Postmodern / New Wave</button>
+      <button type="button" class="h100-filter" data-filter="Postmodern / Memphis" aria-pressed="false">Postmodern / Memphis</button>
+      <button type="button" class="h100-filter" data-filter="Postmodern architecture" aria-pressed="false">Postmodern architecture</button>
+      <button type="button" class="h100-filter" data-filter="California New Wave" aria-pressed="false">California New Wave</button>
+      <button type="button" class="h100-filter" data-filter="Desktop publishing" aria-pressed="false">Desktop publishing</button>
+      <button type="button" class="h100-filter" data-filter="Early web" aria-pressed="false">Early web</button>
+      <button type="button" class="h100-filter" data-filter="Web 2.0" aria-pressed="false">Web 2.0</button>
+      <button type="button" class="h100-filter" data-filter="Skeuomorphism" aria-pressed="false">Skeuomorphism</button>
+      <button type="button" class="h100-filter" data-filter="Flat design" aria-pressed="false">Flat design</button>
+      <button type="button" class="h100-filter" data-filter="Flat 2.0" aria-pressed="false">Flat 2.0</button>
+      <button type="button" class="h100-filter" data-filter="Material Design" aria-pressed="false">Material Design</button>
+      <button type="button" class="h100-filter" data-filter="Neo-skeuomorphism" aria-pressed="false">Neo-skeuomorphism</button>
+      <button type="button" class="h100-filter" data-filter="Design systems" aria-pressed="false">Design systems</button>
+      <button type="button" class="h100-filter" data-filter="Variable type" aria-pressed="false">Variable type</button>
+      <button type="button" class="h100-filter" data-filter="Adaptive logos" aria-pressed="false">Adaptive logos</button>
+      <button type="button" class="h100-filter" data-filter="Motion identity" aria-pressed="false">Motion identity</button>
+      <button type="button" class="h100-filter" data-filter="Afrofuturist craft" aria-pressed="false">Afrofuturist craft</button>
+      <button type="button" class="h100-filter" data-filter="GenUI" aria-pressed="false">GenUI</button>
+      <button type="button" class="h100-filter" data-filter="GenUI / principles" aria-pressed="false">GenUI / principles</button>
+      <button type="button" class="h100-filter" data-filter="Craftsmanship" aria-pressed="false">Craftsmanship</button>
+      <button type="button" class="h100-filter" data-filter="Canons" aria-pressed="false">Canons</button>
+      </div>
+    </section>
+
+    <section class="h100-stage-wrap" aria-label="Logo field">
+      <div class="h100-stage" id="h100-stage">
+        <div class="h100-grid" id="h100-grid">
+    <article class="h100-card" data-shelf="Swiss / International" id="grid-meridian">
+      <div class="h100-face"><img src="grid-meridian/01-logo.png" alt="Grid Meridian logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Grid Meridian</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">TYPE · GRID · FACT</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="basel-axis">
-      <div class="face"><img src="basel-axis/01-logo.png" alt="Basel Axis logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="basel-axis">
+      <div class="h100-face"><img src="basel-axis/01-logo.png" alt="Basel Axis logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Basel Axis</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">FORM WITHOUT NOISE</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="neue-ledger">
-      <div class="face"><img src="neue-ledger/01-logo.png" alt="Neue Ledger logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="neue-ledger">
+      <div class="h100-face"><img src="neue-ledger/01-logo.png" alt="Neue Ledger logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Neue Ledger</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">CLARITY IN THREE LANGUAGES</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="univers-rail">
-      <div class="face"><img src="univers-rail/01-logo.png" alt="Univers Rail logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="univers-rail">
+      <div class="h100-face"><img src="univers-rail/01-logo.png" alt="Univers Rail logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Univers Rail</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">ONE FAMILY · MANY WIDTHS</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="helvetia-north">
-      <div class="face"><img src="helvetia-north/01-logo.png" alt="Helvetia North logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="helvetia-north">
+      <div class="h100-face"><img src="helvetia-north/01-logo.png" alt="Helvetia North logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Helvetia North</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">OBJECTIVE MARKS</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="modulus-press">
-      <div class="face"><img src="modulus-press/01-logo.png" alt="Modulus Press logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="modulus-press">
+      <div class="h100-face"><img src="modulus-press/01-logo.png" alt="Modulus Press logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Modulus Press</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">PRINT BY MODULE</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="akzidenz-folio">
-      <div class="face"><img src="akzidenz-folio/01-logo.png" alt="Akzidenz Folio logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="akzidenz-folio">
+      <div class="h100-face"><img src="akzidenz-folio/01-logo.png" alt="Akzidenz Folio logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Akzidenz Folio</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">GROTESQUE STANDARD</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="tm-matrix">
-      <div class="face"><img src="tm-matrix/01-logo.png" alt="TM Matrix logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="tm-matrix">
+      <div class="h100-face"><img src="tm-matrix/01-logo.png" alt="TM Matrix logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>TM Matrix</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">MONTHLY STRUCTURE</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="flush-left-works">
-      <div class="face"><img src="flush-left-works/01-logo.png" alt="Flush Left Works logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="flush-left-works">
+      <div class="h100-face"><img src="flush-left-works/01-logo.png" alt="Flush Left Works logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Flush Left Works</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">NO CENTER · NO ORNAMENT</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="photo-object">
-      <div class="face"><img src="photo-object/01-logo.png" alt="Photo Object logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="photo-object">
+      <div class="h100-face"><img src="photo-object/01-logo.png" alt="Photo Object logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Photo Object</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">MACHINE RECORD</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="yale-link">
-      <div class="face"><img src="yale-link/01-logo.png" alt="Yale Link logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="yale-link">
+      <div class="h100-face"><img src="yale-link/01-logo.png" alt="Yale Link logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Yale Link</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">TEACH THE GRID</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Swiss / International" id="zero-ornament">
-      <div class="face"><img src="zero-ornament/01-logo.png" alt="Zero Ornament logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Swiss / International" id="zero-ornament">
+      <div class="h100-face"><img src="zero-ornament/01-logo.png" alt="Zero Ornament logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Zero Ornament</h2>
-        <p class="shelf">Swiss / International</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">ONLY WHAT WORKS</p>
+        <p class="h100-shelf">Swiss / International</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="plywood-orbit">
-      <div class="face"><img src="plywood-orbit/01-logo.png" alt="Plywood Orbit logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="plywood-orbit">
+      <div class="h100-face"><img src="plywood-orbit/01-logo.png" alt="Plywood Orbit logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Plywood Orbit</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">MOLDED FOR DAILY USE</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="braun-dial">
-      <div class="face"><img src="braun-dial/01-logo.png" alt="Braun Dial logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="braun-dial">
+      <div class="h100-face"><img src="braun-dial/01-logo.png" alt="Braun Dial logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Braun Dial</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">LESS BUT BETTER</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="knoll-angle">
-      <div class="face"><img src="knoll-angle/01-logo.png" alt="Knoll Angle logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="knoll-angle">
+      <div class="h100-face"><img src="knoll-angle/01-logo.png" alt="Knoll Angle logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Knoll Angle</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">SEATING AS SYSTEM</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="scandia-warmth">
-      <div class="face"><img src="scandia-warmth/01-logo.png" alt="Scandia Warmth logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="scandia-warmth">
+      <div class="h100-face"><img src="scandia-warmth/01-logo.png" alt="Scandia Warmth logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Scandia Warmth</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">LIGHT · WOOD · HOME</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="tubular-seat">
-      <div class="face"><img src="tubular-seat/01-logo.png" alt="Tubular Seat logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="tubular-seat">
+      <div class="h100-face"><img src="tubular-seat/01-logo.png" alt="Tubular Seat logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Tubular Seat</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">BENT FOR COMFORT</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="herman-lattice">
-      <div class="face"><img src="herman-lattice/01-logo.png" alt="Herman Lattice logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="herman-lattice">
+      <div class="h100-face"><img src="herman-lattice/01-logo.png" alt="Herman Lattice logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Herman Lattice</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">WORKPLACE SYSTEMS</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="plasticene-curve">
-      <div class="face"><img src="plasticene-curve/01-logo.png" alt="Plasticene Curve logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="plasticene-curve">
+      <div class="h100-face"><img src="plasticene-curve/01-logo.png" alt="Plasticene Curve logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Plasticene Curve</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">NEW MATERIALS · NEW FORMS</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="lounge-shell">
-      <div class="face"><img src="lounge-shell/01-logo.png" alt="Lounge Shell logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="lounge-shell">
+      <div class="h100-face"><img src="lounge-shell/01-logo.png" alt="Lounge Shell logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Lounge Shell</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">SIT IN THE CURVE</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="domestic-good">
-      <div class="face"><img src="domestic-good/01-logo.png" alt="Domestic Good logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="domestic-good">
+      <div class="h100-face"><img src="domestic-good/01-logo.png" alt="Domestic Good logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Domestic Good</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">GOOD OBJECTS DAILY</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Mid-century modern" id="wire-base">
-      <div class="face"><img src="wire-base/01-logo.png" alt="Wire Base logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Mid-century modern" id="wire-base">
+      <div class="h100-face"><img src="wire-base/01-logo.png" alt="Wire Base logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Wire Base</h2>
-        <p class="shelf">Mid-century modern</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">STRUCTURE YOU SEE</p>
+        <p class="h100-shelf">Mid-century modern</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="rand-signal">
-      <div class="face"><img src="rand-signal/01-logo.png" alt="Rand Signal logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="rand-signal">
+      <div class="h100-face"><img src="rand-signal/01-logo.png" alt="Rand Signal logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Rand Signal</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">WIT WITH SYSTEM</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="bass-prolog">
-      <div class="face"><img src="bass-prolog/01-logo.png" alt="Bass Prolog logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="bass-prolog">
+      <div class="h100-face"><img src="bass-prolog/01-logo.png" alt="Bass Prolog logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Bass Prolog</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">THE MARK AS PROLOGUE</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="fleet-manual">
-      <div class="face"><img src="fleet-manual/01-logo.png" alt="Fleet Manual logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="fleet-manual">
+      <div class="h100-face"><img src="fleet-manual/01-logo.png" alt="Fleet Manual logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Fleet Manual</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">ONE MARK · EVERY SURFACE</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="pictogram-city">
-      <div class="face"><img src="pictogram-city/01-logo.png" alt="Pictogram City logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="pictogram-city">
+      <div class="h100-face"><img src="pictogram-city/01-logo.png" alt="Pictogram City logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Pictogram City</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">CITY-SCALE SYMBOLS</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="stripe-eye">
-      <div class="face"><img src="stripe-eye/01-logo.png" alt="Stripe Eye logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="stripe-eye">
+      <div class="h100-face"><img src="stripe-eye/01-logo.png" alt="Stripe Eye logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Stripe Eye</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">SEE THE SYSTEM</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="bell-cut">
-      <div class="face"><img src="bell-cut/01-logo.png" alt="Bell Cut logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="bell-cut">
+      <div class="h100-face"><img src="bell-cut/01-logo.png" alt="Bell Cut logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Bell Cut</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">SIGNAL CLEAR</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="united-wing">
-      <div class="face"><img src="united-wing/01-logo.png" alt="United Wing logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="united-wing">
+      <div class="h100-face"><img src="united-wing/01-logo.png" alt="United Wing logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>United Wing</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">ROUTES AS IDENTITY</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="abc-blocks">
-      <div class="face"><img src="abc-blocks/01-logo.png" alt="ABC Blocks logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="abc-blocks">
+      <div class="h100-face"><img src="abc-blocks/01-logo.png" alt="ABC Blocks logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>ABC Blocks</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">LETTERS AS OBJECTS</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="ups-shield">
-      <div class="face"><img src="ups-shield/01-logo.png" alt="Parcel Shield logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="ups-shield">
+      <div class="h100-face"><img src="ups-shield/01-logo.png" alt="Parcel Shield logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Parcel Shield</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">DELIVERED WITH CARE</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Corporate identity" id="operating-kit">
-      <div class="face"><img src="operating-kit/01-logo.png" alt="Operating Kit logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Corporate identity" id="operating-kit">
+      <div class="h100-face"><img src="operating-kit/01-logo.png" alt="Operating Kit logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Operating Kit</h2>
-        <p class="shelf">Corporate identity</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">BRAND AS KIT</p>
+        <p class="h100-shelf">Corporate identity</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Japanese modernism" id="empty-luxury">
-      <div class="face"><img src="empty-luxury/01-logo.png" alt="Empty Luxury logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Japanese modernism" id="empty-luxury">
+      <div class="h100-face"><img src="empty-luxury/01-logo.png" alt="Empty Luxury logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Empty Luxury</h2>
-        <p class="shelf">Japanese modernism</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">SPACE IS THE MARK</p>
+        <p class="h100-shelf">Japanese modernism</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Japanese modernism" id="kamekura-ring">
-      <div class="face"><img src="kamekura-ring/01-logo.png" alt="Kamekura Ring logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Japanese modernism" id="kamekura-ring">
+      <div class="h100-face"><img src="kamekura-ring/01-logo.png" alt="Kamekura Ring logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Kamekura Ring</h2>
-        <p class="shelf">Japanese modernism</p>
-        <p class="era">1950–1970</p>
-        <p class="tag">CIRCLE AS FORCE</p>
+        <p class="h100-shelf">Japanese modernism</p>
+        <p class="h100-era">1950–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Japanese modernism" id="ink-void">
-      <div class="face"><img src="ink-void/01-logo.png" alt="Ink Void logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Japanese modernism" id="ink-void">
+      <div class="h100-face"><img src="ink-void/01-logo.png" alt="Ink Void logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Ink Void</h2>
-        <p class="shelf">Japanese modernism</p>
-        <p class="era">1960–1980</p>
-        <p class="tag">LEAVE ROOM</p>
+        <p class="h100-shelf">Japanese modernism</p>
+        <p class="h100-era">1960–1980</p>
       </div>
     </article>
-    <article class="card" data-shelf="Japanese modernism" id="tokyo-module">
-      <div class="face"><img src="tokyo-module/01-logo.png" alt="Tokyo Module logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Japanese modernism" id="tokyo-module">
+      <div class="h100-face"><img src="tokyo-module/01-logo.png" alt="Tokyo Module logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Tokyo Module</h2>
-        <p class="shelf">Japanese modernism</p>
-        <p class="era">1960–1980</p>
-        <p class="tag">BUILD IN UNITS</p>
+        <p class="h100-shelf">Japanese modernism</p>
+        <p class="h100-era">1960–1980</p>
       </div>
     </article>
-    <article class="card" data-shelf="Japanese modernism" id="quiet-goods">
-      <div class="face"><img src="quiet-goods/01-logo.png" alt="Quiet Goods logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Japanese modernism" id="quiet-goods">
+      <div class="h100-face"><img src="quiet-goods/01-logo.png" alt="Quiet Goods logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Quiet Goods</h2>
-        <p class="shelf">Japanese modernism</p>
-        <p class="era">1980–2000</p>
-        <p class="tag">NO SHOUT</p>
+        <p class="h100-shelf">Japanese modernism</p>
+        <p class="h100-era">1980–2000</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="panther-press">
-      <div class="face"><img src="panther-press/01-logo.png" alt="Panther Press logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="panther-press">
+      <div class="h100-face"><img src="panther-press/01-logo.png" alt="Panther Press logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Panther Press</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">HEAR + DO</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="tricontinental">
-      <div class="face"><img src="tricontinental/01-logo.png" alt="Tricontinental logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="tricontinental">
+      <div class="h100-face"><img src="tricontinental/01-logo.png" alt="Tricontinental logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Tricontinental</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">THREE CONTINENTS · ONE BRIEF</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="black-arts-slab">
-      <div class="face"><img src="black-arts-slab/01-logo.png" alt="Black Arts Slab logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="black-arts-slab">
+      <div class="h100-face"><img src="black-arts-slab/01-logo.png" alt="Black Arts Slab logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Black Arts Slab</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">COVER AS CALL</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="silk-screen-dawn">
-      <div class="face"><img src="silk-screen-dawn/01-logo.png" alt="Silk Screen Dawn logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="silk-screen-dawn">
+      <div class="h100-face"><img src="silk-screen-dawn/01-logo.png" alt="Silk Screen Dawn logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Silk Screen Dawn</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">PULL THE PRINT</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="coded-star">
-      <div class="face"><img src="coded-star/01-logo.png" alt="Coded Star logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="coded-star">
+      <div class="h100-face"><img src="coded-star/01-logo.png" alt="Coded Star logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Coded Star</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">SYMBOL UNDER LIMIT</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="newspaper-weapon">
-      <div class="face"><img src="newspaper-weapon/01-logo.png" alt="Newspaper Weapon logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="newspaper-weapon">
+      <div class="h100-face"><img src="newspaper-weapon/01-logo.png" alt="Newspaper Weapon logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Newspaper Weapon</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">INK AS ACTION</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="block-type-rise">
-      <div class="face"><img src="block-type-rise/01-logo.png" alt="Block Type Rise logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="block-type-rise">
+      <div class="h100-face"><img src="block-type-rise/01-logo.png" alt="Block Type Rise logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Block Type Rise</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">TYPE THAT STANDS</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="photomontage-call">
-      <div class="face"><img src="photomontage-call/01-logo.png" alt="Photomontage Call logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="photomontage-call">
+      <div class="h100-face"><img src="photomontage-call/01-logo.png" alt="Photomontage Call logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Photomontage Call</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">CUT + JOIN + SPEAK</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="africa-asia-latin">
-      <div class="face"><img src="africa-asia-latin/01-logo.png" alt="AAL Link logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="africa-asia-latin">
+      <div class="h100-face"><img src="africa-asia-latin/01-logo.png" alt="AAL Link logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>AAL Link</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">LINKED STRUGGLE</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Liberation print" id="objecthood-poster">
-      <div class="face"><img src="objecthood-poster/01-logo.png" alt="Objecthood Poster logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Liberation print" id="objecthood-poster">
+      <div class="h100-face"><img src="objecthood-poster/01-logo.png" alt="Objecthood Poster logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Objecthood Poster</h2>
-        <p class="shelf">Liberation print</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">OBJECT WITH WEIGHT</p>
+        <p class="h100-shelf">Liberation print</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Pop / psychedelic" id="fillmore-wave">
-      <div class="face"><img src="fillmore-wave/01-logo.png" alt="Fillmore Wave logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Pop / psychedelic" id="fillmore-wave">
+      <div class="h100-face"><img src="fillmore-wave/01-logo.png" alt="Fillmore Wave logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Fillmore Wave</h2>
-        <p class="shelf">Pop / psychedelic</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">TYPE AS TRIP</p>
+        <p class="h100-shelf">Pop / psychedelic</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Pop art" id="warhol-brand">
-      <div class="face"><img src="warhol-brand/01-logo.png" alt="Warhol Brand logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Pop art" id="warhol-brand">
+      <div class="h100-face"><img src="warhol-brand/01-logo.png" alt="Warhol Brand logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Warhol Brand</h2>
-        <p class="shelf">Pop art</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">THE PRODUCT IS THE ART</p>
+        <p class="h100-shelf">Pop art</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Polish School of Posters" id="polish-metaphor">
-      <div class="face"><img src="polish-metaphor/01-logo.png" alt="Polish Metaphor logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Polish School of Posters" id="polish-metaphor">
+      <div class="h100-face"><img src="polish-metaphor/01-logo.png" alt="Polish Metaphor logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Polish Metaphor</h2>
-        <p class="shelf">Polish School of Posters</p>
-        <p class="era">1960–1980</p>
-        <p class="tag">IMAGE SAYS MORE</p>
+        <p class="h100-shelf">Polish School of Posters</p>
+        <p class="h100-era">1960–1980</p>
       </div>
     </article>
-    <article class="card" data-shelf="Protest graphics" id="protest-stack">
-      <div class="face"><img src="protest-stack/01-logo.png" alt="Protest Stack logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Protest graphics" id="protest-stack">
+      <div class="h100-face"><img src="protest-stack/01-logo.png" alt="Protest Stack logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Protest Stack</h2>
-        <p class="shelf">Protest graphics</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">HOLD THE LINE</p>
+        <p class="h100-shelf">Protest graphics</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Pop / psychedelic" id="album-spin">
-      <div class="face"><img src="album-spin/01-logo.png" alt="Album Spin logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Pop / psychedelic" id="album-spin">
+      <div class="h100-face"><img src="album-spin/01-logo.png" alt="Album Spin logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Album Spin</h2>
-        <p class="shelf">Pop / psychedelic</p>
-        <p class="era">1970–1980</p>
-        <p class="tag">SPIN THE COVER</p>
+        <p class="h100-shelf">Pop / psychedelic</p>
+        <p class="h100-era">1970–1980</p>
       </div>
     </article>
-    <article class="card" data-shelf="Pop / psychedelic" id="event-as-poster">
-      <div class="face"><img src="event-as-poster/01-logo.png" alt="Event as Poster logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Pop / psychedelic" id="event-as-poster">
+      <div class="h100-face"><img src="event-as-poster/01-logo.png" alt="Event as Poster logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Event as Poster</h2>
-        <p class="shelf">Pop / psychedelic</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">THE POSTER IS THE EVENT</p>
+        <p class="h100-shelf">Pop / psychedelic</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Pop art" id="cut-paper-pop">
-      <div class="face"><img src="cut-paper-pop/01-logo.png" alt="Cut Paper Pop logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Pop art" id="cut-paper-pop">
+      <div class="h100-face"><img src="cut-paper-pop/01-logo.png" alt="Cut Paper Pop logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Cut Paper Pop</h2>
-        <p class="shelf">Pop art</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">CUT THE SURFACE</p>
+        <p class="h100-shelf">Pop art</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Pop / psychedelic" id="illegible-attitude">
-      <div class="face"><img src="illegible-attitude/01-logo.png" alt="Illegible Attitude logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Pop / psychedelic" id="illegible-attitude">
+      <div class="h100-face"><img src="illegible-attitude/01-logo.png" alt="Illegible Attitude logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Illegible Attitude</h2>
-        <p class="shelf">Pop / psychedelic</p>
-        <p class="era">1960–1970</p>
-        <p class="tag">EXPERIENCE FIRST</p>
+        <p class="h100-shelf">Pop / psychedelic</p>
+        <p class="h100-era">1960–1970</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="weingart-shatter">
-      <div class="face"><img src="weingart-shatter/01-logo.png" alt="Weingart Shatter logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="weingart-shatter">
+      <div class="h100-face"><img src="weingart-shatter/01-logo.png" alt="Weingart Shatter logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Weingart Shatter</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1970–1990</p>
-        <p class="tag">RULES UNDER STRESS</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1970–1990</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="cranbrook-layer">
-      <div class="face"><img src="cranbrook-layer/01-logo.png" alt="Cranbrook Layer logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="cranbrook-layer">
+      <div class="h100-face"><img src="cranbrook-layer/01-logo.png" alt="Cranbrook Layer logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Cranbrook Layer</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1980–1990</p>
-        <p class="tag">MEANING IN LAYERS</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1980–1990</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="ray-gun-noise">
-      <div class="face"><img src="ray-gun-noise/01-logo.png" alt="Ray Gun Noise logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="ray-gun-noise">
+      <div class="h100-face"><img src="ray-gun-noise/01-logo.png" alt="Ray Gun Noise logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Ray Gun Noise</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1990s</p>
-        <p class="tag">ILLEGIBILITY AS VOICE</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1990s</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / Memphis" id="memphis-surface">
-      <div class="face"><img src="memphis-surface/01-logo.png" alt="Memphis Surface logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / Memphis" id="memphis-surface">
+      <div class="h100-face"><img src="memphis-surface/01-logo.png" alt="Memphis Surface logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Memphis Surface</h2>
-        <p class="shelf">Postmodern / Memphis</p>
-        <p class="era">1980s</p>
-        <p class="tag">SURFACE AS MEANING</p>
+        <p class="h100-shelf">Postmodern / Memphis</p>
+        <p class="h100-era">1980s</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern architecture" id="vegas-learn">
-      <div class="face"><img src="vegas-learn/01-logo.png" alt="Vegas Learn logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern architecture" id="vegas-learn">
+      <div class="h100-face"><img src="vegas-learn/01-logo.png" alt="Vegas Learn logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Vegas Learn</h2>
-        <p class="shelf">Postmodern architecture</p>
-        <p class="era">1970–1980</p>
-        <p class="tag">SIGNS ON THE SHED</p>
+        <p class="h100-shelf">Postmodern architecture</p>
+        <p class="h100-era">1970–1980</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="odermatt-play">
-      <div class="face"><img src="odermatt-play/01-logo.png" alt="Odermatt Play logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="odermatt-play">
+      <div class="h100-face"><img src="odermatt-play/01-logo.png" alt="Odermatt Play logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Odermatt Play</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1970–1980</p>
-        <p class="tag">PLAY WITH BONES</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1970–1980</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="pastiche-warning">
-      <div class="face"><img src="pastiche-warning/01-logo.png" alt="Pastiche Warning logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="pastiche-warning">
+      <div class="h100-face"><img src="pastiche-warning/01-logo.png" alt="Pastiche Warning logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Pastiche Warning</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1980–1990</p>
-        <p class="tag">QUOTE WITH STAKES</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1980–1990</p>
       </div>
     </article>
-    <article class="card" data-shelf="California New Wave" id="new-wave-slash">
-      <div class="face"><img src="new-wave-slash/01-logo.png" alt="New Wave Slash logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="California New Wave" id="new-wave-slash">
+      <div class="h100-face"><img src="new-wave-slash/01-logo.png" alt="New Wave Slash logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>New Wave Slash</h2>
-        <p class="shelf">California New Wave</p>
-        <p class="era">1980s</p>
-        <p class="tag">CUT THE DIAGONAL</p>
+        <p class="h100-shelf">California New Wave</p>
+        <p class="h100-era">1980s</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="theory-object">
-      <div class="face"><img src="theory-object/01-logo.png" alt="Theory Object logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="theory-object">
+      <div class="h100-face"><img src="theory-object/01-logo.png" alt="Theory Object logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Theory Object</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1980–1990</p>
-        <p class="tag">CRITIQUE MADE VISIBLE</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1980–1990</p>
       </div>
     </article>
-    <article class="card" data-shelf="Postmodern / New Wave" id="chaos-with-stakes">
-      <div class="face"><img src="chaos-with-stakes/01-logo.png" alt="Chaos with Stakes logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Postmodern / New Wave" id="chaos-with-stakes">
+      <div class="h100-face"><img src="chaos-with-stakes/01-logo.png" alt="Chaos with Stakes logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Chaos with Stakes</h2>
-        <p class="shelf">Postmodern / New Wave</p>
-        <p class="era">1980–1990</p>
-        <p class="tag">NOISE WITH A BRIEF</p>
+        <p class="h100-shelf">Postmodern / New Wave</p>
+        <p class="h100-era">1980–1990</p>
       </div>
     </article>
-    <article class="card" data-shelf="Desktop publishing" id="hello-mac">
-      <div class="face"><img src="hello-mac/01-logo.png" alt="Hello Mac logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Desktop publishing" id="hello-mac">
+      <div class="h100-face"><img src="hello-mac/01-logo.png" alt="Hello Mac logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Hello Mac</h2>
-        <p class="shelf">Desktop publishing</p>
-        <p class="era">1984–1990</p>
-        <p class="tag">HELLO · CREATE</p>
+        <p class="h100-shelf">Desktop publishing</p>
+        <p class="h100-era">1984–1990</p>
       </div>
     </article>
-    <article class="card" data-shelf="Desktop publishing" id="postscript-curve">
-      <div class="face"><img src="postscript-curve/01-logo.png" alt="Postscript Curve logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Desktop publishing" id="postscript-curve">
+      <div class="h100-face"><img src="postscript-curve/01-logo.png" alt="Postscript Curve logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Postscript Curve</h2>
-        <p class="shelf">Desktop publishing</p>
-        <p class="era">1985–1995</p>
-        <p class="tag">CURVES YOU OWN</p>
+        <p class="h100-shelf">Desktop publishing</p>
+        <p class="h100-era">1985–1995</p>
       </div>
     </article>
-    <article class="card" data-shelf="Desktop publishing" id="fontographer-lab">
-      <div class="face"><img src="fontographer-lab/01-logo.png" alt="Fontographer Lab logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Desktop publishing" id="fontographer-lab">
+      <div class="h100-face"><img src="fontographer-lab/01-logo.png" alt="Fontographer Lab logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Fontographer Lab</h2>
-        <p class="shelf">Desktop publishing</p>
-        <p class="era">1990s</p>
-        <p class="tag">DRAW THE GLYPH</p>
+        <p class="h100-shelf">Desktop publishing</p>
+        <p class="h100-era">1990s</p>
       </div>
     </article>
-    <article class="card" data-shelf="Desktop publishing" id="paste-up-file">
-      <div class="face"><img src="paste-up-file/01-logo.png" alt="Paste-up File logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Desktop publishing" id="paste-up-file">
+      <div class="h100-face"><img src="paste-up-file/01-logo.png" alt="Paste-up File logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Paste-up File</h2>
-        <p class="shelf">Desktop publishing</p>
-        <p class="era">1985–1995</p>
-        <p class="tag">FROM BOARD TO DISK</p>
+        <p class="h100-shelf">Desktop publishing</p>
+        <p class="h100-era">1985–1995</p>
       </div>
     </article>
-    <article class="card" data-shelf="Desktop publishing" id="illustrator-pen">
-      <div class="face"><img src="illustrator-pen/01-logo.png" alt="Illustrator Pen logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Desktop publishing" id="illustrator-pen">
+      <div class="h100-face"><img src="illustrator-pen/01-logo.png" alt="Illustrator Pen logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Illustrator Pen</h2>
-        <p class="shelf">Desktop publishing</p>
-        <p class="era">1987–2000</p>
-        <p class="tag">PATH AND ANCHOR</p>
+        <p class="h100-shelf">Desktop publishing</p>
+        <p class="h100-era">1987–2000</p>
       </div>
     </article>
-    <article class="card" data-shelf="Early web" id="table-layout">
-      <div class="face"><img src="table-layout/01-logo.png" alt="Table Layout logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Early web" id="table-layout">
+      <div class="h100-face"><img src="table-layout/01-logo.png" alt="Table Layout logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Table Layout</h2>
-        <p class="shelf">Early web</p>
-        <p class="era">1995–2005</p>
-        <p class="tag">NESTED CELLS</p>
+        <p class="h100-shelf">Early web</p>
+        <p class="h100-era">1995–2005</p>
       </div>
     </article>
-    <article class="card" data-shelf="Early web" id="gif-loop">
-      <div class="face"><img src="gif-loop/01-logo.png" alt="GIF Loop logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Early web" id="gif-loop">
+      <div class="h100-face"><img src="gif-loop/01-logo.png" alt="GIF Loop logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>GIF Loop</h2>
-        <p class="shelf">Early web</p>
-        <p class="era">1995–2005</p>
-        <p class="tag">LOOP FOREVER</p>
+        <p class="h100-shelf">Early web</p>
+        <p class="h100-era">1995–2005</p>
       </div>
     </article>
-    <article class="card" data-shelf="Early web" id="flash-stage">
-      <div class="face"><img src="flash-stage/01-logo.png" alt="Flash Stage logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Early web" id="flash-stage">
+      <div class="h100-face"><img src="flash-stage/01-logo.png" alt="Flash Stage logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Flash Stage</h2>
-        <p class="shelf">Early web</p>
-        <p class="era">1999–2010</p>
-        <p class="tag">TIMELINE CRAFT</p>
+        <p class="h100-shelf">Early web</p>
+        <p class="h100-era">1999–2010</p>
       </div>
     </article>
-    <article class="card" data-shelf="Web 2.0" id="reflow-mark">
-      <div class="face"><img src="reflow-mark/01-logo.png" alt="Reflow Mark logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Web 2.0" id="reflow-mark">
+      <div class="h100-face"><img src="reflow-mark/01-logo.png" alt="Reflow Mark logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Reflow Mark</h2>
-        <p class="shelf">Web 2.0</p>
-        <p class="era">2005–2010</p>
-        <p class="tag">SURVIVE THE VIEWPORT</p>
+        <p class="h100-shelf">Web 2.0</p>
+        <p class="h100-era">2005–2010</p>
       </div>
     </article>
-    <article class="card" data-shelf="Web 2.0" id="avatar-round">
-      <div class="face"><img src="avatar-round/01-logo.png" alt="Avatar Round logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Web 2.0" id="avatar-round">
+      <div class="h100-face"><img src="avatar-round/01-logo.png" alt="Avatar Round logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Avatar Round</h2>
-        <p class="shelf">Web 2.0</p>
-        <p class="era">2005–2010</p>
-        <p class="tag">FACE OF THE FEED</p>
+        <p class="h100-shelf">Web 2.0</p>
+        <p class="h100-era">2005–2010</p>
       </div>
     </article>
-    <article class="card" data-shelf="Skeuomorphism" id="leather-stitch">
-      <div class="face"><img src="leather-stitch/01-logo.png" alt="Leather Stitch logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Skeuomorphism" id="leather-stitch">
+      <div class="h100-face"><img src="leather-stitch/01-logo.png" alt="Leather Stitch logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Leather Stitch</h2>
-        <p class="shelf">Skeuomorphism</p>
-        <p class="era">2007–2012</p>
-        <p class="tag">TOUCH WHAT YOU KNOW</p>
+        <p class="h100-shelf">Skeuomorphism</p>
+        <p class="h100-era">2007–2012</p>
       </div>
     </article>
-    <article class="card" data-shelf="Skeuomorphism" id="felt-green">
-      <div class="face"><img src="felt-green/01-logo.png" alt="Felt Green logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Skeuomorphism" id="felt-green">
+      <div class="h100-face"><img src="felt-green/01-logo.png" alt="Felt Green logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Felt Green</h2>
-        <p class="shelf">Skeuomorphism</p>
-        <p class="era">2007–2012</p>
-        <p class="tag">MATERIAL METAPHOR</p>
+        <p class="h100-shelf">Skeuomorphism</p>
+        <p class="h100-era">2007–2012</p>
       </div>
     </article>
-    <article class="card" data-shelf="Flat design" id="metro-tile">
-      <div class="face"><img src="metro-tile/01-logo.png" alt="Metro Tile logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Flat design" id="metro-tile">
+      <div class="h100-face"><img src="metro-tile/01-logo.png" alt="Metro Tile logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Metro Tile</h2>
-        <p class="shelf">Flat design</p>
-        <p class="era">2011–2014</p>
-        <p class="tag">AUTHENTICALLY DIGITAL</p>
+        <p class="h100-shelf">Flat design</p>
+        <p class="h100-era">2011–2014</p>
       </div>
     </article>
-    <article class="card" data-shelf="Flat design" id="flat-seven">
-      <div class="face"><img src="flat-seven/01-logo.png" alt="Flat Seven logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Flat design" id="flat-seven">
+      <div class="h100-face"><img src="flat-seven/01-logo.png" alt="Flat Seven logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Flat Seven</h2>
-        <p class="shelf">Flat design</p>
-        <p class="era">2013–2016</p>
-        <p class="tag">STRIP THE CHROME</p>
+        <p class="h100-shelf">Flat design</p>
+        <p class="h100-era">2013–2016</p>
       </div>
     </article>
-    <article class="card" data-shelf="Flat 2.0" id="flat-two">
-      <div class="face"><img src="flat-two/01-logo.png" alt="Flat Two logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Flat 2.0" id="flat-two">
+      <div class="h100-face"><img src="flat-two/01-logo.png" alt="Flat Two logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Flat Two</h2>
-        <p class="shelf">Flat 2.0</p>
-        <p class="era">2014–2018</p>
-        <p class="tag">SIGNIFIERS RETURN</p>
+        <p class="h100-shelf">Flat 2.0</p>
+        <p class="h100-era">2014–2018</p>
       </div>
     </article>
-    <article class="card" data-shelf="Material Design" id="material-paper">
-      <div class="face"><img src="material-paper/01-logo.png" alt="Material Paper logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Material Design" id="material-paper">
+      <div class="h100-face"><img src="material-paper/01-logo.png" alt="Material Paper logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Material Paper</h2>
-        <p class="shelf">Material Design</p>
-        <p class="era">2014–2020</p>
-        <p class="tag">INK ON DIGITAL PAPER</p>
+        <p class="h100-shelf">Material Design</p>
+        <p class="h100-era">2014–2020</p>
       </div>
     </article>
-    <article class="card" data-shelf="Material Design" id="elevation-card">
-      <div class="face"><img src="elevation-card/01-logo.png" alt="Elevation Card logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Material Design" id="elevation-card">
+      <div class="h100-face"><img src="elevation-card/01-logo.png" alt="Elevation Card logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Elevation Card</h2>
-        <p class="shelf">Material Design</p>
-        <p class="era">2014–2020</p>
-        <p class="tag">DEPTH WITH RULES</p>
+        <p class="h100-shelf">Material Design</p>
+        <p class="h100-era">2014–2020</p>
       </div>
     </article>
-    <article class="card" data-shelf="Material Design" id="motion-easing">
-      <div class="face"><img src="motion-easing/01-logo.png" alt="Motion Easing logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Material Design" id="motion-easing">
+      <div class="h100-face"><img src="motion-easing/01-logo.png" alt="Motion Easing logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Motion Easing</h2>
-        <p class="shelf">Material Design</p>
-        <p class="era">2015–2022</p>
-        <p class="tag">DURATION IS CRAFT</p>
+        <p class="h100-shelf">Material Design</p>
+        <p class="h100-era">2015–2022</p>
       </div>
     </article>
-    <article class="card" data-shelf="Neo-skeuomorphism" id="soft-ui-press">
-      <div class="face"><img src="soft-ui-press/01-logo.png" alt="Soft UI Press logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Neo-skeuomorphism" id="soft-ui-press">
+      <div class="h100-face"><img src="soft-ui-press/01-logo.png" alt="Soft UI Press logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Soft UI Press</h2>
-        <p class="shelf">Neo-skeuomorphism</p>
-        <p class="era">2019–2023</p>
-        <p class="tag">DEPTH WITHOUT LEATHER</p>
+        <p class="h100-shelf">Neo-skeuomorphism</p>
+        <p class="h100-era">2019–2023</p>
       </div>
     </article>
-    <article class="card" data-shelf="Design systems" id="token-library">
-      <div class="face"><img src="token-library/01-logo.png" alt="Token Library logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Design systems" id="token-library">
+      <div class="h100-face"><img src="token-library/01-logo.png" alt="Token Library logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Token Library</h2>
-        <p class="shelf">Design systems</p>
-        <p class="era">2016–2024</p>
-        <p class="tag">CHANGE ONCE · DEPLOY</p>
+        <p class="h100-shelf">Design systems</p>
+        <p class="h100-era">2016–2024</p>
       </div>
     </article>
-    <article class="card" data-shelf="Variable type" id="variable-axis">
-      <div class="face"><img src="variable-axis/01-logo.png" alt="Variable Axis logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Variable type" id="variable-axis">
+      <div class="h100-face"><img src="variable-axis/01-logo.png" alt="Variable Axis logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Variable Axis</h2>
-        <p class="shelf">Variable type</p>
-        <p class="era">2018–2026</p>
-        <p class="tag">ONE FILE · MANY FORMS</p>
+        <p class="h100-shelf">Variable type</p>
+        <p class="h100-era">2018–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Adaptive logos" id="lockup-tiers">
-      <div class="face"><img src="lockup-tiers/01-logo.png" alt="Lockup Tiers logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Adaptive logos" id="lockup-tiers">
+      <div class="h100-face"><img src="lockup-tiers/01-logo.png" alt="Lockup Tiers logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Lockup Tiers</h2>
-        <p class="shelf">Adaptive logos</p>
-        <p class="era">2015–2026</p>
-        <p class="tag">FULL · SHORT · DOT</p>
+        <p class="h100-shelf">Adaptive logos</p>
+        <p class="h100-era">2015–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Motion identity" id="breathing-mark">
-      <div class="face"><img src="breathing-mark/01-logo.png" alt="Breathing Mark logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Motion identity" id="breathing-mark">
+      <div class="h100-face"><img src="breathing-mark/01-logo.png" alt="Breathing Mark logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Breathing Mark</h2>
-        <p class="shelf">Motion identity</p>
-        <p class="era">2018–2026</p>
-        <p class="tag">THE MARK BREATHES</p>
+        <p class="h100-shelf">Motion identity</p>
+        <p class="h100-era">2018–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Motion identity" id="sonic-twin">
-      <div class="face"><img src="sonic-twin/01-logo.png" alt="Sonic Twin logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Motion identity" id="sonic-twin">
+      <div class="h100-face"><img src="sonic-twin/01-logo.png" alt="Sonic Twin logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Sonic Twin</h2>
-        <p class="shelf">Motion identity</p>
-        <p class="era">2018–2026</p>
-        <p class="tag">SOUND AS SISTER</p>
+        <p class="h100-shelf">Motion identity</p>
+        <p class="h100-era">2018–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Adaptive logos" id="sth-heir">
-      <div class="face"><img src="sth-heir/01-logo.png" alt="Heir Text logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Adaptive logos" id="sth-heir">
+      <div class="h100-face"><img src="sth-heir/01-logo.png" alt="Heir Text logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Heir Text</h2>
-        <p class="shelf">Adaptive logos</p>
-        <p class="era">2015–2026</p>
-        <p class="tag">RENOVATE · REMODEL · RESTORE</p>
+        <p class="h100-shelf">Adaptive logos</p>
+        <p class="h100-era">2015–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Afrofuturist craft" id="sun-ra-circuit">
-      <div class="face"><img src="sun-ra-circuit/01-logo.png" alt="Sun Ra Circuit logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Afrofuturist craft" id="sun-ra-circuit">
+      <div class="h100-face"><img src="sun-ra-circuit/01-logo.png" alt="Sun Ra Circuit logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Sun Ra Circuit</h2>
-        <p class="shelf">Afrofuturist craft</p>
-        <p class="era">1960–2026</p>
-        <p class="tag">SPACE IS THE PLACE</p>
+        <p class="h100-shelf">Afrofuturist craft</p>
+        <p class="h100-era">1960–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Afrofuturist craft" id="ancestral-tech">
-      <div class="face"><img src="ancestral-tech/01-logo.png" alt="Ancestral Tech logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Afrofuturist craft" id="ancestral-tech">
+      <div class="h100-face"><img src="ancestral-tech/01-logo.png" alt="Ancestral Tech logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Ancestral Tech</h2>
-        <p class="shelf">Afrofuturist craft</p>
-        <p class="era">2000–2026</p>
-        <p class="tag">MADE · NOT LADDERED</p>
+        <p class="h100-shelf">Afrofuturist craft</p>
+        <p class="h100-era">2000–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Afrofuturist craft" id="parallel-craft">
-      <div class="face"><img src="parallel-craft/01-logo.png" alt="Parallel Craft logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Afrofuturist craft" id="parallel-craft">
+      <div class="h100-face"><img src="parallel-craft/01-logo.png" alt="Parallel Craft logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Parallel Craft</h2>
-        <p class="shelf">Afrofuturist craft</p>
-        <p class="era">2000–2026</p>
-        <p class="tag">NO CIVILIZATIONAL LADDER</p>
+        <p class="h100-shelf">Afrofuturist craft</p>
+        <p class="h100-era">2000–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Afrofuturist craft" id="speculative-join">
-      <div class="face"><img src="speculative-join/01-logo.png" alt="Speculative Join logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Afrofuturist craft" id="speculative-join">
+      <div class="h100-face"><img src="speculative-join/01-logo.png" alt="Speculative Join logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Speculative Join</h2>
-        <p class="shelf">Afrofuturist craft</p>
-        <p class="era">2010–2026</p>
-        <p class="tag">WEIGHT · JOIN · USE</p>
+        <p class="h100-shelf">Afrofuturist craft</p>
+        <p class="h100-era">2010–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Afrofuturist craft" id="diaspora-signal">
-      <div class="face"><img src="diaspora-signal/01-logo.png" alt="Diaspora Signal logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Afrofuturist craft" id="diaspora-signal">
+      <div class="h100-face"><img src="diaspora-signal/01-logo.png" alt="Diaspora Signal logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Diaspora Signal</h2>
-        <p class="shelf">Afrofuturist craft</p>
-        <p class="era">1990–2026</p>
-        <p class="tag">TRANSMIT ACROSS</p>
+        <p class="h100-shelf">Afrofuturist craft</p>
+        <p class="h100-era">1990–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="GenUI" id="envelope-contract">
-      <div class="face"><img src="envelope-contract/01-logo.png" alt="Envelope Contract logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="GenUI" id="envelope-contract">
+      <div class="h100-face"><img src="envelope-contract/01-logo.png" alt="Envelope Contract logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Envelope Contract</h2>
-        <p class="shelf">GenUI</p>
-        <p class="era">2023–2026</p>
-        <p class="tag">DECLARE BEFORE STREAM</p>
+        <p class="h100-shelf">GenUI</p>
+        <p class="h100-era">2023–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="GenUI" id="partial-safe">
-      <div class="face"><img src="partial-safe/01-logo.png" alt="Partial Safe logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="GenUI" id="partial-safe">
+      <div class="h100-face"><img src="partial-safe/01-logo.png" alt="Partial Safe logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Partial Safe</h2>
-        <p class="shelf">GenUI</p>
-        <p class="era">2023–2026</p>
-        <p class="tag">ACTION · ITEM · LIMIT</p>
+        <p class="h100-shelf">GenUI</p>
+        <p class="h100-era">2023–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="GenUI / principles" id="stakes-first">
-      <div class="face"><img src="stakes-first/01-logo.png" alt="Stakes First logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="GenUI / principles" id="stakes-first">
+      <div class="h100-face"><img src="stakes-first/01-logo.png" alt="Stakes First logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Stakes First</h2>
-        <p class="shelf">GenUI / principles</p>
-        <p class="era">2020–2026</p>
-        <p class="tag">RISK IN PASS ONE</p>
+        <p class="h100-shelf">GenUI / principles</p>
+        <p class="h100-era">2020–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Craftsmanship" id="pressure-joint">
-      <div class="face"><img src="pressure-joint/01-logo.png" alt="Pressure Joint logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Craftsmanship" id="pressure-joint">
+      <div class="h100-face"><img src="pressure-joint/01-logo.png" alt="Pressure Joint logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Pressure Joint</h2>
-        <p class="shelf">Craftsmanship</p>
-        <p class="era">2020–2026</p>
-        <p class="tag">TEST BEFORE POLISH</p>
+        <p class="h100-shelf">Craftsmanship</p>
+        <p class="h100-era">2020–2026</p>
       </div>
     </article>
-    <article class="card" data-shelf="Canons" id="labeled-shelf">
-      <div class="face"><img src="labeled-shelf/01-logo.png" alt="Labeled Shelf logo" loading="lazy" width="512" height="512"></div>
-      <div class="meta">
+    <article class="h100-card" data-shelf="Canons" id="labeled-shelf">
+      <div class="h100-face"><img src="labeled-shelf/01-logo.png" alt="Labeled Shelf logo" loading="lazy" width="512" height="512"></div>
+      <div class="h100-meta">
         <h2>Labeled Shelf</h2>
-        <p class="shelf">Canons</p>
-        <p class="era">2020–2026</p>
-        <p class="tag">NAME THE TRADITION</p>
+        <p class="h100-shelf">Canons</p>
+        <p class="h100-era">2020–2026</p>
       </div>
     </article>
-  </div>
-  </div>
-</main>
-<script>
-const buttons = document.querySelectorAll('.filters button');
-const cards = document.querySelectorAll('.card');
-buttons.forEach(btn => btn.addEventListener('click', () => {
-  const f = btn.dataset.filter;
-  buttons.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-  let n = 0;
-  cards.forEach(c => {
-    const show = f === 'All' || c.dataset.shelf === f;
-    c.classList.toggle('is-hidden', !show);
-    if (show) n++;
-  });
-  document.getElementById('stats').textContent = n + ' logo' + (n===1?'':'s') + (f==='All'?' across 30 shelves':' · ' + f);
-}));
-</script>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-copy">Research note and shelves: <a href="/history/">History</a>. Craft rules: <a href="/techniques/">Techniques</a>.</p>
+      <p class="kit-cta">
+        <a class="btn btn-outline" href="/history/">Design history</a>
+        <a class="btn btn-dark" href="/work/">See the work</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="y"></span> D Philhower Studio</span>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="/js/main.js"></script>
+  <script>
+  (function () {
+    var buttons = document.querySelectorAll(".h100-filter");
+    var cards = document.querySelectorAll(".h100-card");
+    var stats = document.getElementById("h100-stats");
+    var shelfCount = 30;
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var f = btn.getAttribute("data-filter");
+        buttons.forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+        var n = 0;
+        cards.forEach(function (c) {
+          var show = f === "All" || c.getAttribute("data-shelf") === f;
+          c.classList.toggle("is-hidden", !show);
+          if (show) n++;
+        });
+        stats.textContent = n + " logo" + (n === 1 ? "" : "s") + (f === "All" ? " across " + shelfCount + " shelves" : " · " + f);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
