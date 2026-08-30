@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Sneaker Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --accent: #111111;
+      --accent-ink: #EDE6D9;
+      --ok: #1a7f4b;
+      --warn: #9a3412;
+    }
+    body {
+      font-family: 'IBM Plex Sans', system-ui, sans-serif;
+      background: #EDE6D9;
+      color: #111111;
+    }
+    .hero-brand, .section h2, .brand-name {
+      font-family: 'Archivo', system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="sole-archive">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="envelope">
+    <div class="stakes" data-level="critical" role="status" aria-live="polite">
+      <span>Reseller pairs: authenticity slip required · no returns after hold starts</span><span aria-hidden="true">·</span><span>Hold expires in 24h · SA mark only (no Nike™ in boutique logo)</span>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <img src="./logo.png" alt="" width="44" height="44" />
+        <span class="brand-name">Sole Archive</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#menu">Vault</a></li>
+          <li><a href="#reserve">Hold</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <main id="main">
+    <section class="hero" aria-label="Sole Archive hero">
+      <img class="hero-media" src="./hero.png" alt="" />
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand kinetic">Sole Archive</h1>
+        <p class="hero-lead">A small vault for collectible Nike sneakers — authenticated, held, and logged.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Hold this pair</a>
+          <a class="btn btn-secondary" href="#menu">Browse vault</a>
+        </div>
+        <p class="place-credit">Place credit: archival vault · gallery light on shelf pairs · quiet room.</p>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <h2 class="organic-shift">Collectible vault</h2>
+      <p class="lede">Authenticated pairs with hold windows stated in plain language.</p>
+      <div class="interactive-grid" id="board">
+        <article class="interactive-card" >
+          <h3>Dunk Low · archival lot</h3>
+          <p>Size run logged · lastInspected on tag.</p>
+          <button type="button" class="btn btn-secondary board-act" data-item="Dunk Low · archival lot">Hold</button>
+        </article>
+<article class="interactive-card" >
+          <h3>Air Max 1 · vault grade</h3>
+          <p>Collector condition · 24h hold window.</p>
+          <button type="button" class="btn btn-secondary board-act" data-item="Air Max 1 · vault grade">Hold</button>
+        </article>
+<article class="interactive-card" >
+          <h3>Blazer Mid · clean</h3>
+          <p>Authenticated slip in sleeve.</p>
+          <button type="button" class="btn btn-secondary board-act" data-item="Blazer Mid · clean">Hold</button>
+        </article>
+      </div>
+      <details class="filters">
+        <summary>Optional vault filters</summary>
+        <div class="filter-body" role="group" aria-label="Optional vault filters">
+          <button type="button" class="chip" aria-pressed="false">Size 10</button>
+          <button type="button" class="chip" aria-pressed="false">Vault grade</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Hold a pair</h2>
+      <p class="lede">Hold is time-boxed. Status always names Action + Item + Limit.</p>
+      <div class="interactive-card" style="max-width:28rem">
+        <h3>Vault hold</h3>
+        <p>Primary control meets Fitts ≥48px. No buried expiry.</p>
+        <button type="button" class="btn btn-primary" id="primary-action">Hold this pair</button>
+        <p class="status" id="hold-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p class="lede">A small vault for collectible Nike sneakers — authenticated, held, and logged.</p>
+      <p data-field="lastInspected">Vault field <code>lastInspected</code> is part of the product truth — not a marketing badge. Boutique mark is the SA keyhole monogram only.</p>
+      <p class="canon-note">Design note (Pass HD Survey): kinetic brand type + light organic shift on fill; stakes, Fitts, A+I+L, and mark hygiene kept from Integrate HC. Hear-and-do (Mt 7): visible truth over slogans.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Sole Archive. Crafted for Dave Design Studio research cycle HD.</p>
+    <p><a href="../index.html">← All brands</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      const status = document.getElementById('hold-status');
+      const btn = document.getElementById('primary-action');
+      if (!btn || !status) return;
+      btn.addEventListener('click', function () {
+        status.dataset.tone = 'ok';
+        status.textContent = 'Holding Dunk Low · size 10 · expires in 24h';
+      });
+      document.querySelectorAll('.chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          const pressed = chip.getAttribute('aria-pressed') === 'true';
+          chip.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
