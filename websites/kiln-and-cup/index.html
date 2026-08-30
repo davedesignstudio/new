@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln & Cup — Ceramic Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Source Sans 3", system-ui, sans-serif;
+      --ink: #2a1c14;
+      --paper: #f3ebe3;
+      --panel: #faf5ef;
+      --accent: #b45a32;
+      --accent-ink: #fff8f2;
+      --on-hero: #fff6ef;
+      --hero-veil: linear-gradient(180deg, rgba(42,28,20,0.35) 0%, rgba(42,28,20,0.55) 45%, rgba(42,28,20,0.82) 100%);
+      --stakes-bg: #f7ebe1;
+      --stakes-ink: #2a1c14;
+      --stakes-accent: #b45a32;
+      --radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="" width="48" height="48" />
+        Kiln &amp; Cup
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#croze">Allergens</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/hero.png" alt="" />
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Studio cafe · clay &amp; pour-over</p>
+      <h1>Kiln &amp; Cup</h1>
+      <p class="hero__lede">Coffee fired beside the wheel—cups you can hold, clay you can watch.</p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="#menu">See today’s pour</a>
+        <a class="btn btn--ghost" href="#croze">Allergy croze</a>
+      </div>
+      <p class="place-credit">Place: kiln bay overlooking the throwing benches · looking regime: hospitality invitation</p>
+    </div>
+    <aside class="stakes" aria-label="Guest care stakes">
+        <p class="stakes__label">Two Ways · life path (mercy, not panic)</p>
+        <p class="stakes__ail"><strong>Action:</strong> Tell us allergens before ordering. <strong>Item:</strong> sesame in house granola; dairy in oat-optional lattes. <strong>Limit:</strong> shared kiln cafe—cross-contact possible.</p>
+      </aside>
+  </header>
+
+  <section class="section" id="menu">
+    <h2>One job: today’s pour</h2>
+    <p class="section__lede">Three drinks, one pastry—kept short so the wheel can keep spinning.</p>
+    <div class="card-grid">
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta">Pour-over</p>
+          <h3>Kiln Bloom</h3>
+          <p>Light roast, citrus peel, soft clay finish.</p>
+        </div>
+      </a>
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta">Latte</p>
+          <h3>Ember Milk</h3>
+          <p>Dairy or oat · tell us which at the croze.</p>
+        </div>
+      </a>
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta">Pastry</p>
+          <h3>Sesame Coil</h3>
+          <p>Contains sesame—flagged in the croze checklist.</p>
+          <div class="badge-row"><span class="badge badge--alert">Sesame</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section band" id="croze">
+    <h2>Allergy croze checklist</h2>
+    <p class="section__lede">Croze = the groove that seats the guest-head safely. Item · Action · Limit · Seen · Fitts ≥48px.</p>
+    <div class="croze" role="list">
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Item</span>
+        <p class="croze__val">Sesame (coil), dairy (default milk), gluten (pastry case).</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Action</span>
+        <p class="croze__val">Speak allergens at the counter before we pull a shot.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Limit</span>
+        <p class="croze__val">Open workshop kitchen—airborne flour and shared steam wand.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Seen</span>
+        <p class="croze__val">Staff confirms back the allergen list aloud (envelope ≠ fill).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <h2>Visit the bay</h2>
+    <p class="section__lede">Wed–Sun · 7a–2p · throw demos at 10a when the kiln is cool enough to talk over.</p>
+    <a class="btn btn--solid" href="mailto:hello@kilnandcup.example">Reserve a wheel-side seat</a>
+  </section>
+
+  <footer class="footer">
+    <span>Kiln &amp; Cup · Pass HA Crosslink pattern</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+</body>
+</html>

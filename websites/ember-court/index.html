@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Courtyard Dining</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,650&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Bodoni Moda", "Didot", serif;
+      --font-body: "Libre Franklin", system-ui, sans-serif;
+      --ink: #2a1218;
+      --paper: #f6efe6;
+      --panel: #fbf6ef;
+      --accent: #8b1e2d;
+      --accent-ink: #fff7f0;
+      --on-hero: #f8efe6;
+      --hero-veil: linear-gradient(180deg, rgba(42,18,24,0.35) 0%, rgba(42,18,24,0.62) 55%, rgba(42,18,24,0.9) 100%);
+      --stakes-bg: #f0e4d8;
+      --stakes-ink: #2a1218;
+      --stakes-accent: #c4a35a;
+      --radius: 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="" width="48" height="48" />
+        Ember Court
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#croze">Allergens</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/hero.png" alt="" />
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Courtyard restaurant · fire &amp; cloth</p>
+      <h1>Ember Court</h1>
+      <p class="hero__lede">Dinner beside the coals—courses paced to the courtyard dusk.</p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="#reserve">Request a table</a>
+        <a class="btn btn--ghost" href="#croze">Fire &amp; allergy croze</a>
+      </div>
+      <p class="place-credit">Place: stone courtyard with central fire · looking regime: hospitality invitation</p>
+    </div>
+    <aside class="stakes" aria-label="Guest care stakes">
+        <p class="stakes__label">Two Ways · life path (mercy)</p>
+        <p class="stakes__ail"><strong>Action:</strong> Name allergies and fire-smoke sensitivity when you reserve. <strong>Item:</strong> tree nuts in dessert; open wood fire. <strong>Limit:</strong> courtyard seating shares smoke plume on still nights.</p>
+      </aside>
+  </header>
+
+  <section class="section" id="menu">
+    <h2>One job: tonight’s court</h2>
+    <p class="section__lede">A short tasting—no competing promos in the first viewport, no card clutter in the hero.</p>
+    <div class="card-grid">
+      <a class="card" href="#reserve">
+        <div class="card__body">
+          <p class="card__meta">First</p>
+          <h3>Coal Citrus</h3>
+          <p>Charred citrus, olive oil, sea salt.</p>
+        </div>
+      </a>
+      <a class="card" href="#reserve">
+        <div class="card__body">
+          <p class="card__meta">Main</p>
+          <h3>Ember Bird</h3>
+          <p>Wood-fired half chicken, courtyard herbs.</p>
+        </div>
+      </a>
+      <a class="card" href="#reserve">
+        <div class="card__body">
+          <p class="card__meta">Last</p>
+          <h3>Gold Nut Tart</h3>
+          <p>Contains tree nuts—croze required.</p>
+          <div class="badge-row"><span class="badge badge--alert">Tree nuts</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section band" id="croze">
+    <h2>Fire &amp; allergy croze</h2>
+    <p class="section__lede">Crosslinked to Kiln/Mist croze and Sole vault fields: irreversible-adjacent risks stay above the fold.</p>
+    <div class="croze" role="list">
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Item</span>
+        <p class="croze__val">Tree nuts (tart), dairy (butter sauces), open flame smoke.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Action</span>
+        <p class="croze__val">Note allergies + smoke sensitivity on the reservation; we confirm at seat.</p>
+      </div>
+      <div class="croze__row" role="listitem">
+        <span class="croze__key">Limit</span>
+        <p class="croze__val">Indoor alcove available on high-smoke nights—ask early.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reserve">
+    <h2>Reserve the court</h2>
+    <p class="section__lede">Tue–Sat · seatings at 6p &amp; 8:30p · jackets welcome, sneakers fine.</p>
+    <a class="btn btn--solid" href="mailto:tables@embercourt.example">Write the court</a>
+  </section>
+
+  <footer class="footer">
+    <span>Ember Court · Pass HA Crosslink pattern</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+</body>
+</html>

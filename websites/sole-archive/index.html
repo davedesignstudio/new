@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Sneaker Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "IBM Plex Sans", system-ui, sans-serif;
+      --ink: #141414;
+      --paper: #eceae6;
+      --panel: #f7f5f1;
+      --accent: #1a1a1a;
+      --accent-ink: #f5f2ec;
+      --on-hero: #f3f0ea;
+      --hero-veil: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, rgba(20,20,20,0.62) 50%, rgba(20,20,20,0.92) 100%);
+      --stakes-bg: #e4e1db;
+      --stakes-ink: #141414;
+      --stakes-accent: #c45c26;
+      --radius: 2px;
+    }
+    .vault-sku {
+      font-family: ui-monospace, "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="" width="48" height="48" />
+        Sole Archive
+      </a>
+      <ul class="nav-links">
+        <li><a href="#vault">Vault</a></li>
+        <li><a href="#schema">Schema</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/hero.png" alt="" />
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Independent vault · collectible Nike sneakers</p>
+      <h1>Sole Archive</h1>
+      <p class="hero__lede">A small shop that treats pairs like provenance objects—not drop hype.</p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="#vault">Enter the vault</a>
+        <a class="btn btn--ghost" href="#schema">Catalog schema</a>
+      </div>
+      <p class="place-credit">Object credit: independent reseller archive · looking regime: object label + provenance · not Nike HQ</p>
+    </div>
+    <aside class="stakes" aria-label="Hold and authenticity stakes">
+        <p class="stakes__label">Two Ways · life path (truth over FOMO)</p>
+        <p class="stakes__ail"><strong>Action:</strong> Read hold status &amp; authenticity before you tap a pair. <strong>Item:</strong> held SKUs expire; unverified pairs stay off the floor. <strong>Limit:</strong> holds are irreversible once paid—cancel window is printed on the card.</p>
+      </aside>
+  </header>
+
+  <section class="section" id="vault">
+    <h2>One job: the vault floor</h2>
+    <p class="section__lede">Collectible Nike sneakers as catalog objects. Filters stay in a drawer (KEEP progressive disclosure). Hold + authenticity always visible (BREAK).</p>
+
+    <details class="filters-drawer">
+      <summary>Optional filters (KEEP · progressive disclosure)</summary>
+      <div class="filters" role="group" aria-label="Optional filters">
+        <label><input type="checkbox" /> 2010s</label>
+        <label><input type="checkbox" /> 2020s</label>
+        <label><input type="checkbox" /> DS only</label>
+        <label><input type="checkbox" /> Under $500</label>
+      </div>
+    </details>
+
+    <div class="card-grid">
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta vault-sku">SKU · SA-AJ1-85-001</p>
+          <h3>Air Jordan 1 Retro High</h3>
+          <p>Year 2015 · Condition DS · $420</p>
+          <div class="badge-row">
+            <span class="badge badge--alert">Auth · Legit-checked</span>
+            <span class="badge badge--alert">Hold · open until Fri 6p</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta vault-sku">SKU · SA-DUNK-SB-014</p>
+          <h3>Dunk Low Pro SB</h3>
+          <p>Year 2021 · Condition VNDS · $310</p>
+          <div class="badge-row">
+            <span class="badge badge--alert">Auth · Legit-checked</span>
+            <span class="badge">Hold · available</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta vault-sku">SKU · SA-AF1-97-008</p>
+          <h3>Air Force 1 ’07</h3>
+          <p>Year 2019 · Condition DS · $180</p>
+          <div class="badge-row">
+            <span class="badge badge--alert">Auth · Legit-checked</span>
+            <span class="badge badge--alert">Hold · expires in 2h</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="#visit">
+        <div class="card__body">
+          <p class="card__meta vault-sku">SKU · SA-REACT-EL-022</p>
+          <h3>React Element 87</h3>
+          <p>Year 2018 · Condition Used · $240</p>
+          <div class="badge-row">
+            <span class="badge badge--alert">Auth · Legit-checked</span>
+            <span class="badge">Hold · available</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section band" id="schema">
+    <h2>Mini catalog schema</h2>
+    <p class="section__lede">Control plane for vault cards—crosslinked to hospitality croze: Item↔sku/model, Action↔holdStatus, Limit↔holdExpiry.</p>
+    <div class="croze" role="list">
+      <div class="croze__row" role="listitem"><span class="croze__key">sku</span><p class="croze__val">Stable vault ID (envelope, not fill).</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">model</span><p class="croze__val">Human label for the pair.</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">year</span><p class="croze__val">Release / restock year for provenance.</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">condition</span><p class="croze__val">DS · VNDS · Used.</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">authenticity</span><p class="croze__val">BREAK · always visible · never drawer-only.</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">holdStatus</span><p class="croze__val">available · held · sold.</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">holdExpiry</span><p class="croze__val">BREAK · irreversible-adjacent · Fitts ≥48px.</p></div>
+      <div class="croze__row" role="listitem"><span class="croze__key">price</span><p class="croze__val">Quoted USD on the card body.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <h2>Visit the archive</h2>
+    <p class="section__lede">Thu–Sat · 12–7p · appointments preferred. Independent shop selling collectible Nike sneakers—SA monogram only; no Nike trademark in our mark.</p>
+    <a class="btn btn--solid" href="mailto:holds@solearchive.example">Request a hold</a>
+  </section>
+
+  <footer class="footer">
+    <span>Sole Archive · independent reseller · Pass HA Crosslink</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+</body>
+</html>
