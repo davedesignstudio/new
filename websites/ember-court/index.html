@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Courtyard Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Bodoni Moda", "Didot", serif;
+      --font-body: "Manrope", sans-serif;
+      --font-ui: "Manrope", sans-serif;
+      --accent: #b85a2a;
+      --accent-ink: #1a1512;
+      --stake-bg: #1a1512;
+      --stake-fg: #f0e6dc;
+      --card-bg: #1f1a17;
+      --card-border: rgba(255,255,255,0.08);
+      --organic-bg: linear-gradient(135deg, #1a1512 0%, #3a2218 55%, #b85a2a 120%);
+      --hero-wash: radial-gradient(ellipse at 60% 70%, rgba(184,90,42,0.35), transparent 55%);
+      --ail-bg: #b85a2a;
+      --ail-fg: #1a1512;
+    }
+    body { font-family: var(--font-body); background: #12100e; color: #f0e6dc; }
+    .interact-card { color: #f0e6dc; }
+    .site-footer { border-top-color: rgba(255,255,255,0.1); }
+    .hero-brand {
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .flame-line {
+      width: 4rem;
+      height: 3px;
+      margin: 0 0 1rem;
+      background: linear-gradient(90deg, #b85a2a, transparent);
+      animation: rise 1.6s var(--ease-out) infinite alternate;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .flame-line { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Service note:</strong>
+    <span>Walnut ash on the grill — nut allergy? Ask before seating.</span>
+    <span aria-hidden="true">·</span>
+    <span>Courtyard open-air · spark screens up</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="index.html">
+      <img src="logo.png" alt="Ember Court logo" width="48" height="48" />
+      <span>Ember Court</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#court">Court</a></li>
+        <li><a href="#book">Book</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <div class="hero-content">
+      <div class="flame-line" aria-hidden="true"></div>
+      <h1 class="hero-brand">Ember Court</h1>
+      <p class="hero-line">Fire, stone, and slow courses under open sky.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#book">Book the court</a>
+        <a class="btn btn-ghost" href="#menu">Evening menu</a>
+      </div>
+      <p class="place-credit">Place · Evening courtyard, copper pans over live fire</p>
+    </div>
+  </section>
+  <section class="section" id="menu">
+    <h2>Evening menu</h2>
+    <p class="lede">One job: choose a course. Danger stays above — walnut ash is never a footnote.</p>
+    <div class="card-grid">
+      <a class="interact-card" href="#book">
+        <h3>Coal-roasted squash</h3>
+        <p>Brown butter, sage, no nut ash on this plate.</p>
+        <span class="meta">Request →</span>
+      </a>
+      <a class="interact-card" href="#book">
+        <h3>Ember steak</h3>
+        <p>Dry-aged, finished over walnut — ask for oak alternate.</p>
+        <span class="meta">Request →</span>
+      </a>
+      <a class="interact-card" href="#book">
+        <h3>Court tasting</h3>
+        <p>Five courses, shared fire, 2.5 hours.</p>
+        <span class="meta">Book →</span>
+      </a>
+    </div>
+  </section>
+  <section class="organic-band" id="court">
+    <div class="inner">
+      <h2>The court</h2>
+      <p>Didone display for brand gravity; Manrope for scan. Personality in fill, Fitts in the book button.</p>
+    </div>
+  </section>
+  <section class="section" id="book">
+    <h2>Book</h2>
+    <p class="lede">Action · Item · Limit.</p>
+    <p><span class="status-ail">Hold · Court table for 2 · Releases in 30 min</span></p>
+    <p style="margin-top:1rem">
+      <a class="btn btn-primary" href="mailto:book@embercourt.example?subject=Court%20table">Confirm book</a>
+    </p>
+  </section>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Ember Court · Restaurant</span>
+      <a href="../index.html">← Studio Five</a>
+    </div>
+  </footer>
+</body>
+</html>

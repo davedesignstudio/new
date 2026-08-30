@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Fog Pier Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Libre Baskerville", Georgia, serif;
+      --font-body: "Nunito Sans", sans-serif;
+      --font-ui: "Nunito Sans", sans-serif;
+      --accent: #1a4a52;
+      --accent-ink: #e8f2f4;
+      --stake-bg: #0f2f35;
+      --stake-fg: #d5e4e8;
+      --card-bg: #eef4f5;
+      --organic-bg: linear-gradient(160deg, #1a4a52 0%, #3d6b73 50%, #6a8f96 100%);
+      --hero-wash: radial-gradient(ellipse at 20% 40%, rgba(197,208,212,0.35), transparent 50%);
+      --ail-bg: #0f2f35;
+    }
+    body { font-family: var(--font-body); background: #e8eef0; color: #12282c; }
+    .hero-brand { text-shadow: 0 2px 24px rgba(0,0,0,0.45); }
+    .mist-shift {
+      position: absolute;
+      inset: auto 0 18% 8%;
+      width: min(42vw, 20rem);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+      animation: rise 2.4s var(--ease-out) infinite alternate;
+      z-index: 2;
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mist-shift { animation: none; opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Fog advisory:</strong>
+    <span>Pier deck wet — use the rail walk to the cafe door.</span>
+    <span aria-hidden="true">·</span>
+    <span>Wind 18 kn · visibility short</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="index.html">
+      <img src="logo.png" alt="Mist Harbor logo" width="48" height="48" />
+      <span>Mist Harbor</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#board">Board</a></li>
+        <li><a href="#pier">Pier</a></li>
+        <li><a href="#table">Table</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <div class="mist-shift" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 class="hero-brand">Mist Harbor</h1>
+      <p class="hero-line">Coffee where the fog meets the pier. Warm glass, soft light, tide clock on the wall.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#table">Hold a window seat</a>
+        <a class="btn btn-ghost" href="#board">Today’s board</a>
+      </div>
+      <p class="place-credit">Place · Harbor pier at dawn, lighthouse beyond mist</p>
+    </div>
+  </section>
+  <section class="section" id="board">
+    <h2>Board</h2>
+    <p class="lede">Scan fast. Weather stays in the stake bar — never buried in a drawer.</p>
+    <div class="card-grid">
+      <a class="interact-card" href="#table">
+        <h3>Harbor drip</h3>
+        <p>Single origin, long steep, ceramic mug.</p>
+        <span class="meta">Order →</span>
+      </a>
+      <a class="interact-card" href="#table">
+        <h3>Fog bun</h3>
+        <p>Steamed cardamom roll, salted butter.</p>
+        <span class="meta">Order →</span>
+      </a>
+      <a class="interact-card" href="#table">
+        <h3>Window seat</h3>
+        <p>Two-person pane overlooking the dock.</p>
+        <span class="meta">Hold →</span>
+      </a>
+    </div>
+  </section>
+  <section class="organic-band" id="pier">
+    <div class="inner">
+      <h2>Organic fill</h2>
+      <p>Asymmetry lives here — soft band, uneven clip — while the envelope (stakes, Fitts CTAs) stays hoop-tight.</p>
+    </div>
+  </section>
+  <section class="section" id="table">
+    <h2>Hold a table</h2>
+    <p class="lede">Action · Item · Limit.</p>
+    <p><span class="status-ail">Hold · Window seat · Releases in 15 min</span></p>
+    <p style="margin-top:1rem">
+      <a class="btn btn-primary" href="mailto:hello@mistharbor.example?subject=Window%20seat%20hold">Confirm hold</a>
+    </p>
+  </section>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Mist Harbor · Cafe</span>
+      <a href="../index.html">← Studio Five</a>
+    </div>
+  </footer>
+</body>
+</html>

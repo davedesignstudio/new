@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Sneaker Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Space Grotesk", sans-serif;
+      --font-body: "IBM Plex Sans", sans-serif;
+      --font-ui: "IBM Plex Sans", sans-serif;
+      --accent: #9b1c1c;
+      --accent-ink: #fff;
+      --stake-bg: #9b1c1c;
+      --stake-fg: #fff;
+      --card-bg: #1c1c1c;
+      --card-border: rgba(255,255,255,0.1);
+      --organic-bg: linear-gradient(150deg, #111 0%, #2b2b2b 50%, #4a1515 100%);
+      --hero-wash: radial-gradient(ellipse at 30% 60%, rgba(155,28,28,0.35), transparent 55%);
+      --ail-bg: #9b1c1c;
+    }
+    body { font-family: var(--font-body); background: #0e0e0e; color: #e8e8e8; }
+    .interact-card { color: #e8e8e8; }
+    .site-footer { border-top-color: rgba(255,255,255,0.1); }
+    .hero-brand { font-weight: 700; letter-spacing: -0.04em; }
+    .vault-pulse {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #9b1c1c;
+      margin-right: 0.5rem;
+      animation: rise 1.2s ease-in-out infinite alternate;
+      vertical-align: middle;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .vault-pulse { animation: none; }
+    }
+    .mark-note {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-top: 0.75rem;
+    }
+    details.filters {
+      margin-top: var(--space-3);
+      max-width: 28rem;
+    }
+    details.filters summary {
+      min-height: var(--fitts-min);
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Reseller notice:</strong>
+    <span>Independent archive — not affiliated with Nike, Inc.</span>
+    <span aria-hidden="true">·</span>
+    <strong>Hold:</strong>
+    <span>Authenticated pairs — Releases in 24h if unpaid.</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="index.html">
+      <img src="logo.png" alt="Sole Archive logo" width="48" height="48" />
+      <span>Sole Archive</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#vault">Vault</a></li>
+        <li><a href="#auth">Auth</a></li>
+        <li><a href="#hold">Hold</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-brand">Sole Archive</h1>
+      <p class="hero-line">A small room for collectible Nike sneakers — authenticated, held, released with care.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#hold">Start a 24h hold</a>
+        <a class="btn btn-ghost" href="#vault">Browse vault</a>
+      </div>
+      <p class="place-credit">Place · Archival vault lighting, curated sole shelves</p>
+      <p class="mark-note">Brand mark: SA keyhole monogram only — Nike trademarks appear only as product names.</p>
+    </div>
+  </section>
+  <section class="section" id="vault">
+    <h2>Vault</h2>
+    <p class="lede"><span class="vault-pulse" aria-hidden="true"></span>Collectible Nike pairs in stock. Cards are for holds — optional filters stay progressive.</p>
+    <div class="card-grid">
+      <a class="interact-card" href="#hold">
+        <h3>Dunk Low · Panda</h3>
+        <p>US 10 · authenticated · box clean.</p>
+        <span class="meta">Hold 24h →</span>
+      </a>
+      <a class="interact-card" href="#hold">
+        <h3>Air Max 1 · Anniversary</h3>
+        <p>US 9.5 · authenticated · light wear noted.</p>
+        <span class="meta">Hold 24h →</span>
+      </a>
+      <a class="interact-card" href="#hold">
+        <h3>Jordan 1 · Chicago (2015)</h3>
+        <p>US 11 · authenticated · archive grade.</p>
+        <span class="meta">Hold 24h →</span>
+      </a>
+    </div>
+    <details class="filters">
+      <summary>Optional filters (size, year, wear)</summary>
+      <p>Advanced filters stay in a drawer — holds, auth, and reseller stakes never hide here.</p>
+      <label>Size <input type="number" min="4" max="18" step="0.5" aria-label="Shoe size" /></label>
+    </details>
+  </section>
+  <section class="organic-band" id="auth">
+    <div class="inner">
+      <h2>Authentication</h2>
+      <p>Every pair checked before hold. Reseller disclosure stays above the fold — hear the stake, then do the hold.</p>
+    </div>
+  </section>
+  <section class="section" id="hold">
+    <h2>24h hold</h2>
+    <p class="lede">Action · Item · Limit — zero panic FID.</p>
+    <p><span class="status-ail">Hold · Dunk Low Panda US 10 · Releases in 24h</span></p>
+    <p style="margin-top:1rem">
+      <a class="btn btn-primary" href="mailto:hold@solearchive.example?subject=24h%20hold%20Dunk%20Low">Confirm hold</a>
+    </p>
+  </section>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Sole Archive · Collectible sneaker boutique</span>
+      <a href="../index.html">← Studio Five</a>
+    </div>
+  </footer>
+</body>
+</html>

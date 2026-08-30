@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln &amp; Cup — Ceramic Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Cormorant Garamond", "Palatino Linotype", serif;
+      --font-body: "Source Sans 3", sans-serif;
+      --font-ui: "Source Sans 3", sans-serif;
+      --accent: #c45c26;
+      --accent-ink: #fff;
+      --stake-bg: #3d2418;
+      --stake-fg: #f3e6d8;
+      --card-bg: #faf6f1;
+      --organic-bg: linear-gradient(120deg, #8b4518 0%, #c45c26 45%, #a0522d 100%);
+      --organic-fg: #fff8f0;
+      --hero-wash: radial-gradient(ellipse at 70% 30%, rgba(196,92,38,0.25), transparent 55%);
+      --ail-bg: #3d2418;
+    }
+    body { font-family: var(--font-body); background: #f7efe6; color: #2a1c14; }
+    .hero-brand {
+      background: linear-gradient(90deg, #fff 0%, #f3e6d8 40%, #ffd7b8 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: brand-in 1.1s var(--ease-out) both, drift 8s ease-in-out infinite alternate;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-brand {
+        animation: none;
+        color: #fff;
+        background: none;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Allergen:</strong>
+    <span>Sesame in house tahini — tell us before pour.</span>
+    <span aria-hidden="true">·</span>
+    <span>Kiln open until 8pm · last pour 7:40</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="index.html">
+      <img src="logo.png" alt="Kiln &amp; Cup logo" width="48" height="48" />
+      <span>Kiln &amp; Cup</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#workshop">Workshop</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-brand">Kiln &amp; Cup</h1>
+      <p class="hero-line">Clay-fired mornings. Pour slow, drink warm, leave with a cup you made.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#reserve">Reserve a wheel</a>
+        <a class="btn btn-ghost" href="#menu">See pours</a>
+      </div>
+      <p class="place-credit">Place · Studio kiln, morning light through clay dust</p>
+    </div>
+  </section>
+  <section class="section" id="menu">
+    <h2>Pours &amp; plates</h2>
+    <p class="lede">One purpose: fuel the afternoon. Cards are for ordering — not decoration.</p>
+    <div class="card-grid">
+      <a class="interact-card" href="#reserve">
+        <h3>Ember latte</h3>
+        <p>Oat or dairy, smoked maple, ceramic demitasse.</p>
+        <span class="meta">Order →</span>
+      </a>
+      <a class="interact-card" href="#reserve">
+        <h3>Sesame bun</h3>
+        <p>Contains sesame — flagged on the stake bar above.</p>
+        <span class="meta">Order →</span>
+      </a>
+      <a class="interact-card" href="#reserve">
+        <h3>Throw &amp; sip</h3>
+        <p>45-minute wheel seat with a pour included.</p>
+        <span class="meta">Reserve →</span>
+      </a>
+    </div>
+  </section>
+  <section class="organic-band" id="workshop">
+    <div class="inner">
+      <h2>Workshop rhythm</h2>
+      <p class="lede" style="opacity:0.9">Organic fill under a calm envelope: the stake bar and reserve CTA never drift.</p>
+      <p>Shu: safe joints. Ha: clay personality. Ri: the cup that just works in your hand.</p>
+    </div>
+  </section>
+  <section class="section" id="reserve">
+    <h2>Reserve</h2>
+    <p class="lede">Action · Item · Limit — no panic phrasing.</p>
+    <p><span class="status-ail">Hold · Wheel seat · Releases in 20 min</span></p>
+    <p style="margin-top:1rem">
+      <a class="btn btn-primary" href="mailto:hello@kilnandcup.example?subject=Reserve%20a%20wheel">Confirm reserve</a>
+    </p>
+  </section>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Kiln &amp; Cup · Cafe</span>
+      <a href="../index.html">← Studio Five</a>
+    </div>
+  </footer>
+</body>
+</html>

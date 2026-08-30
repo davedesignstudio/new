@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Waterfront Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Outfit", sans-serif;
+      --font-body: "Literata", Georgia, serif;
+      --font-ui: "Outfit", sans-serif;
+      --accent: #d4a017;
+      --accent-ink: #0e2a3a;
+      --stake-bg: #7a1212;
+      --stake-fg: #fff5f5;
+      --card-bg: #f3f7f4;
+      --organic-bg: linear-gradient(115deg, #0e2a3a 0%, #1a5c4a 40%, #d4a017 100%);
+      --hero-wash: radial-gradient(ellipse at 80% 20%, rgba(212,160,23,0.3), transparent 50%);
+      --ail-bg: #0e2a3a;
+    }
+    body { font-family: var(--font-body); background: #eef3f0; color: #0e2a3a; }
+    .hero-brand { font-weight: 700; letter-spacing: -0.03em; }
+    .wind-bar {
+      height: 4px;
+      width: min(60vw, 18rem);
+      margin-bottom: 1rem;
+      background: repeating-linear-gradient(
+        90deg,
+        #d4a017 0 8px,
+        transparent 8px 14px
+      );
+      animation: drift 3s linear infinite;
+      background-size: 200% 100%;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wind-bar { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Critical allergen:</strong>
+    <span>Shellfish throughout the grill line — cross-contact risk.</span>
+    <span aria-hidden="true">·</span>
+    <span>Wind stake: terrace heaters on above 12 kn</span>
+  </div>
+  <header class="site-header">
+    <a class="brand-lockup" href="index.html">
+      <img src="logo.png" alt="Citrus Hull logo" width="48" height="48" />
+      <span>Citrus Hull</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#catch">Catch</a></li>
+        <li><a href="#terrace">Terrace</a></li>
+        <li><a href="#seat">Seat</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <div class="hero-content">
+      <div class="wind-bar" aria-hidden="true"></div>
+      <h1 class="hero-brand">Citrus Hull</h1>
+      <p class="hero-line">Bright catch, salt air, citrus on the rim of every plate.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#seat">Hold a terrace seat</a>
+        <a class="btn btn-ghost" href="#catch">Today’s catch</a>
+      </div>
+      <p class="place-credit">Place · Sunlit waterfront terrace, citrus and grill</p>
+    </div>
+  </section>
+  <section class="section" id="catch">
+    <h2>Today’s catch</h2>
+    <p class="lede">Order from interaction cards. Shellfish warning stays in the stake bar — hear and do.</p>
+    <div class="card-grid">
+      <a class="interact-card" href="#seat">
+        <h3>Citrus grilled fish</h3>
+        <p>Day-boat whitefish, no shellfish on this plate.</p>
+        <span class="meta">Order →</span>
+      </a>
+      <a class="interact-card" href="#seat">
+        <h3>Hull seafood platter</h3>
+        <p>Contains shellfish — see critical stake above.</p>
+        <span class="meta">Order →</span>
+      </a>
+      <a class="interact-card" href="#seat">
+        <h3>Lemon leaf salad</h3>
+        <p>Garden greens, preserved citrus, olive oil.</p>
+        <span class="meta">Order →</span>
+      </a>
+    </div>
+  </section>
+  <section class="organic-band" id="terrace">
+    <div class="inner">
+      <h2>Terrace wind</h2>
+      <p>Organic band for mood; structured seats for booking. Break the grid in fill — keep the hoop on stakes.</p>
+    </div>
+  </section>
+  <section class="section" id="seat">
+    <h2>Hold a seat</h2>
+    <p class="lede">Action · Item · Limit.</p>
+    <p><span class="status-ail">Hold · Terrace seat · Releases in 25 min</span></p>
+    <p style="margin-top:1rem">
+      <a class="btn btn-primary" href="mailto:seat@citrushull.example?subject=Terrace%20seat">Confirm hold</a>
+    </p>
+  </section>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Citrus Hull · Restaurant</span>
+      <a href="../index.html">← Studio Five</a>
+    </div>
+  </footer>
+</body>
+</html>
