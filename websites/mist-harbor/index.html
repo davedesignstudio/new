@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Coastal Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --bg: #e8eef2;
+      --ink: #1a2a44;
+      --accent: #7ba8a0;
+      --accent-ink: #0f1c2e;
+      --display: "Literata", Georgia, serif;
+      --body: "IBM Plex Sans", sans-serif;
+      --stakes-bg: #d5e4e8;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); }
+  </style>
+</head>
+<body>
+  <header class="envelope" role="banner">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" width="44" height="44" alt="Mist Harbor logo" />
+      <span>Mist Harbor</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#pier">Pier board</a>
+      <a href="#hold">Hold</a>
+      <a href="#tide">Tide</a>
+    </nav>
+  </header>
+
+  <div class="stakes" role="status">
+    <span><strong>Fog advisory:</strong> pier seating may close without notice</span>
+    <span><strong>Shellfish:</strong> chowder stock shared — ask staff</span>
+  </div>
+
+  <section class="hero" aria-label="Mist Harbor hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1 class="hero__brand">Mist Harbor</h1>
+      <p class="hero__line">Coffee and quiet at the end of the fog pier.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#hold">Hold a pier seat</a>
+        <a class="btn btn-ghost" href="#pier">Read the pier board</a>
+      </div>
+      <p class="place-credit">Illustration credit: fog pier atmosphere · lighthouse glow, weathered boards</p>
+    </div>
+  </section>
+
+  <section class="section" id="pier">
+    <h2>Pier board</h2>
+    <p class="lede">What the harbor poured while the fog held.</p>
+    <div class="board" role="list">
+      <div class="board-row" role="listitem">
+        <span>Seafoam flat white</span>
+        <span>$5.50</span>
+      </div>
+      <div class="board-row" role="listitem" data-practice="hc-integrate">
+        <span>Guest croze · kelp syrup latte</span>
+        <span>$6.25</span>
+      </div>
+      <div class="board-row" role="listitem">
+        <span>Harbor drip · cedar mug</span>
+        <span>$4.75</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hold">
+    <h2>Hold</h2>
+    <p class="lede">We keep your seat in fog — Action, Item, Limit.</p>
+    <p class="status" id="hold-status" aria-live="polite">
+      <strong>Holding</strong>
+      <span>pier bench A3</span>
+      <span>· expires in 30 min</span>
+    </p>
+    <p style="margin-top:1rem">
+      <button class="btn btn-primary" type="button" id="confirm-hold">Confirm hold</button>
+    </p>
+  </section>
+
+  <section class="section" id="tide">
+    <h2>Tide window</h2>
+    <p class="lede">Open daily with first light · kitchen closes when the fog bank densifies.</p>
+  </section>
+
+  <footer class="site-footer">
+    Mist Harbor · looking ethic: fog is co-author, not defect · reduced-motion honored
+  </footer>
+
+  <script>
+    document.getElementById("confirm-hold").addEventListener("click", () => {
+      document.getElementById("hold-status").innerHTML =
+        "<strong>Held</strong><span>pier bench A3</span><span>· arrive by 9:15am</span>";
+    });
+  </script>
+</body>
+</html>
