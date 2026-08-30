@@ -1,0 +1,361 @@
+/* Shared craft joints — envelope (hoop) stays stable; fill (stave) varies per brand */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.envelope {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.envelope-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+}
+
+.brand-lockup img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+
+.nav a {
+  text-decoration: none;
+  opacity: 0.82;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  opacity: 1;
+}
+
+.stakes {
+  background: var(--stakes-bg, color-mix(in srgb, var(--accent) 14%, var(--paper)));
+  color: var(--ink);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  font-size: 0.9rem;
+}
+
+.stakes-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.stakes strong {
+  font-weight: 650;
+}
+
+.hero {
+  position: relative;
+  min-height: min(92vh, 820px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: drift 28s ease-in-out infinite alternate;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--ink) 72%, transparent) 0%,
+    color-mix(in srgb, var(--ink) 28%, transparent) 42%,
+    transparent 72%
+  );
+}
+
+.hero-copy {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 3rem;
+  color: #f8f4ee;
+}
+
+.hero-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5.4rem);
+  line-height: 0.95;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  animation: rise 0.9s ease both;
+}
+
+.hero-lede {
+  max-width: 36ch;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  margin: 0 0 1.4rem;
+  opacity: 0.94;
+  animation: rise 1s ease 0.12s both;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  animation: rise 1.05s ease 0.2s both;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.85rem 1.25rem;
+  border-radius: 4px;
+  min-height: 48px;
+  min-width: 9.5rem;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink, #111);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #f8f4ee;
+  border: 1px solid color-mix(in srgb, #fff 55%, transparent);
+}
+
+.place-credit {
+  margin: 1.1rem 0 0;
+  font-size: 0.82rem;
+  opacity: 0.78;
+  max-width: 52ch;
+}
+
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.05;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.015em;
+}
+
+.section .support {
+  max-width: 48ch;
+  margin: 0 0 1.75rem;
+  opacity: 0.86;
+}
+
+.status {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--paper));
+  font-size: 0.95rem;
+}
+
+.status[data-open="true"] {
+  display: block;
+  animation: rise 0.35s ease both;
+}
+
+.menu-list,
+.vault-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.menu-list {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .menu-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.menu-item {
+  padding: 1rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.menu-item h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.menu-item p {
+  margin: 0;
+  opacity: 0.78;
+  font-size: 0.92rem;
+}
+
+.vault-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .vault-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.vault-card {
+  border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  background: color-mix(in srgb, var(--paper) 92%, var(--ink));
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 100%;
+}
+
+.vault-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.vault-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  flex: 1;
+}
+
+.vault-card .meta {
+  font-size: 0.82rem;
+  opacity: 0.7;
+}
+
+.footer {
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  padding: 2rem 1.25rem 3rem;
+  text-align: center;
+  font-size: 0.88rem;
+  opacity: 0.75;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+  .hero {
+    min-height: 86vh;
+  }
+}

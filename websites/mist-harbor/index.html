@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Fog-side cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    :root {
+      --paper: #e8eef2;
+      --ink: #1b2a41;
+      --accent: #3d7a6e;
+      --accent-ink: #f4fbf9;
+      --font-display: "Libre Baskerville", Georgia, serif;
+      --font-body: "DM Sans", sans-serif;
+      --stakes-bg: #d9e6e8;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 80% 10%, #f2f7f8 0%, transparent 40%),
+        linear-gradient(180deg, #e8eef2, #d5e0e6);
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="note">
+    <div class="stakes-inner">
+      <strong>Weather hold:</strong>
+      <span>Outdoor pier seats close when fog winds exceed safe limits. Indoor counter stays open.</span>
+    </div>
+  </div>
+  <header class="envelope">
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img src="./assets/logo.png" alt="" width="40" height="40" />
+        <span>Mist Harbor</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#menu">Board</a>
+        <a href="#pier">Pier</a>
+        <a href="#hold">Hold a seat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Foggy coastal pier with lighthouse and cafe table" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Mist Harbor</h1>
+        <p class="hero-lede">A quiet cup where the fog writes the morning.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" data-action="hold" data-item="Pier bench A" data-limit="expires in 20 minutes">Hold a seat</button>
+          <a class="btn btn-ghost" href="#menu">Read the board</a>
+        </div>
+        <p class="place-credit">Place: wooden pier at dawn — lighthouse soft in mist, wet boards, steam from the outdoor table.</p>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <h2>Harbor board</h2>
+      <p class="support">One job: what the fog allows today.</p>
+      <div class="menu-list">
+        <article class="menu-item"><h3>Tide drip</h3><p>Cold brew, citrus peel, long finish.</p></article>
+        <article class="menu-item"><h3>Harbor cocoa</h3><p>Dark chocolate, sea salt, steamed milk.</p></article>
+        <article class="menu-item"><h3>Fog bun</h3><p>Steam bun, black sesame, soft center.</p></article>
+        <article class="menu-item"><h3>Pilot tea</h3><p>Smoky oolong for slow mornings.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="pier">
+      <h2>Looking from the pier</h2>
+      <p class="support">The mist is co-author, not backdrop. Seats face the water; conversation stays low.</p>
+    </section>
+
+    <section class="section" id="hold">
+      <h2>Hold a seat</h2>
+      <p class="support">Status copy stays Action + Item + Limit.</p>
+      <button class="btn btn-primary" type="button" data-action="hold" data-item="Window counter" data-limit="expires in 15 minutes">Hold window counter</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">Mist Harbor · Independent cafe · Pass GX Integrate</footer>
+  <script>
+    const status = document.getElementById("status");
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        status.dataset.open = "true";
+        status.textContent = `Holding ${btn.dataset.item} · ${btn.dataset.limit}.`;
+      });
+    });
+  </script>
+</body>
+</html>
