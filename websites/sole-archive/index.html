@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Nike Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --charcoal: #1a1a1a;
+      --bone: #f2ede4;
+      --concrete: #8a8680;
+      --signal: #d4ff00;
+      --warn: #ffb454;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "IBM Plex Sans", sans-serif; background: var(--bone); color: var(--charcoal); line-height: 1.5; }
+    .skip { position: absolute; left: -999px; background: var(--charcoal); color: var(--bone); padding: .5rem 1rem; z-index: 50; }
+    .skip:focus { left: 0; }
+    /* HOOP / envelope — must not vary with vault fill */
+    .hoop {
+      position: sticky; top: 0; z-index: 30;
+      display: grid; grid-template-columns: 1fr auto auto; gap: .75rem; align-items: center;
+      padding: .7rem 1.1rem;
+      background: color-mix(in srgb, var(--bone) 92%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid color-mix(in srgb, var(--charcoal) 12%, transparent);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: inherit; }
+    .brand-lockup img { width: 40px; height: 40px; object-fit: cover; border-radius: 4px; }
+    .brand-lockup span { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: .04em; font-size: .95rem; }
+    nav { display: flex; gap: .9rem; flex-wrap: wrap; font-size: .85rem; }
+    nav a { color: inherit; text-decoration: none; opacity: .75; }
+    nav a:hover, nav a:focus-visible { opacity: 1; outline: 2px solid var(--charcoal); outline-offset: 3px; }
+    .status {
+      font-size: .75rem; font-weight: 500;
+      background: var(--charcoal); color: var(--bone);
+      padding: .4rem .65rem; max-width: 18rem;
+    }
+    .stakes-strip {
+      background: #1a1a1a; color: var(--bone);
+      padding: .7rem 1.1rem; font-size: .86rem;
+      display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; align-items: baseline;
+      border-bottom: 3px solid var(--warn);
+    }
+    .stakes-strip strong { color: var(--warn); font-family: "Space Grotesk", sans-serif; }
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100dvh;
+      display: grid; align-items: end; color: var(--bone); overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(26,26,26,.25), rgba(26,26,26,.82) 58%, rgba(26,26,26,.96)),
+        url("assets/hero.png") center/cover no-repeat;
+      animation: vault 20s ease-in-out infinite alternate;
+    }
+    .hero-inner { position: relative; z-index: 1; padding: 3.5rem 1.25rem 2.5rem; max-width: 42rem; }
+    .hero-mark { width: 86px; height: 86px; border-radius: 6px; margin-bottom: 1rem; animation: rise .85s ease both; }
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.6rem, 8vw, 4.8rem); line-height: .95; font-weight: 700;
+      animation: rise .85s .08s ease both;
+    }
+    .hero p { margin-top: .85rem; max-width: 30rem; font-size: 1.05rem; opacity: .9; animation: rise .85s .14s ease both; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.35rem; animation: rise .85s .2s ease both; }
+    .btn {
+      min-height: 52px; min-width: 11rem; padding: .9rem 1.25rem; border: 0; cursor: pointer;
+      font: 600 .95rem "Space Grotesk", sans-serif; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+    .btn-primary { background: var(--signal); color: var(--charcoal); }
+    .btn-primary:hover { transform: translateY(-1px); background: #e2ff4d; }
+    .btn-ghost { background: transparent; color: var(--bone); border: 1px solid color-mix(in srgb, var(--bone) 45%, transparent); }
+    .place { margin-top: 1.1rem; font-size: .78rem; opacity: .7; animation: rise .85s .26s ease both; }
+    section { padding: 3.75rem 1.25rem; max-width: 72rem; margin: 0 auto; }
+    section h2 { font-family: "Space Grotesk", sans-serif; font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: .5rem; }
+    .lede { color: #55504a; max-width: 36rem; margin-bottom: 1.5rem; }
+    /* Cards ONLY as interaction containers for vault SKUs */
+    .vault {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;
+    }
+    .sku {
+      background: white; border: 1px solid #ddd8cf; padding: 1rem;
+      display: grid; gap: .55rem;
+    }
+    .sku h3 { font-family: "Space Grotesk", sans-serif; font-size: 1.05rem; }
+    .sku .meta { font-size: .82rem; color: var(--concrete); }
+    .sku .price { font-weight: 600; }
+    .hold-btn {
+      min-height: 48px; width: 100%; border: 0; cursor: pointer;
+      background: var(--charcoal); color: var(--bone);
+      font: 600 .9rem "Space Grotesk", sans-serif;
+    }
+    .hold-btn:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+    .hold-btn:hover { background: #2c2c2c; }
+    #live {
+      margin-top: 1.25rem; min-height: 1.5em; font-weight: 600;
+      background: #111; color: var(--signal); padding: .75rem 1rem;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
+    .filters button {
+      min-height: 40px; padding: .45rem .8rem; border: 1px solid #ccc7bd;
+      background: transparent; cursor: pointer; font: 500 .82rem "IBM Plex Sans", sans-serif;
+    }
+    .filters button[aria-pressed="true"] { background: var(--charcoal); color: var(--bone); border-color: var(--charcoal); }
+    footer { padding: 2rem 1.25rem; border-top: 1px solid #ddd8cf; color: #666057; font-size: .85rem; }
+    @keyframes vault {
+      from { transform: scale(1.02); }
+      to { transform: scale(1.06); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .hero::before { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" alt="" width="40" height="40" />
+      <span>Sole Archive</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#vault">Vault</a>
+      <a href="#hold">Hold</a>
+      <a href="#policy">Policy</a>
+    </nav>
+    <p class="status" id="status-chip" role="status">Vault open · holds clear in 24h</p>
+  </header>
+
+  <!-- BREAK progressive disclosure: stakes in the envelope, above the fold -->
+  <div class="stakes-strip" role="note">
+    <strong>Independent reseller.</strong>
+    <span>Not affiliated with Nike, Inc. Collectible pairs are pre-owned / secondary market unless marked deadstock.</span>
+    <span>Hold expiry: <strong>24 hours</strong>.</span>
+  </div>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <img class="hero-mark" src="assets/logo.png" alt="Sole Archive logo — SA monogram, no Nike trademark" width="86" height="86" />
+        <h1>Sole Archive</h1>
+        <p>A small vault for collectible Nike sneakers. Museum light. Concrete quiet. Holds with limits.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#vault">Enter the vault</a>
+          <a class="btn btn-ghost" href="#policy">How holds work</a>
+        </div>
+        <p class="place">Place: Sole Archive concrete vault — pedestals under museum light.</p>
+      </div>
+    </section>
+
+    <section id="vault">
+      <h2>Vault</h2>
+      <p class="lede">Fill varies; the hoop does not. Filters are optional (KEEP progressive disclosure). Hold stakes stay visible above.</p>
+      <div class="filters" role="group" aria-label="Optional vault filters">
+        <button type="button" aria-pressed="true" data-filter="all">All</button>
+        <button type="button" aria-pressed="false" data-filter="dunk">Dunk</button>
+        <button type="button" aria-pressed="false" data-filter="jordan">Jordan</button>
+        <button type="button" aria-pressed="false" data-filter="airmax">Air Max</button>
+      </div>
+      <div class="vault" id="vault-grid">
+        <article class="sku" data-line="dunk">
+          <h3>Dunk Low · Panda</h3>
+          <p class="meta">Size 10 · 2021 · clean</p>
+          <p class="price">$240</p>
+          <button class="hold-btn" type="button" data-item="Dunk Low Panda" data-size="10">Hold this pair</button>
+        </article>
+        <article class="sku" data-line="jordan">
+          <h3>Air Jordan 1 · Chicago</h3>
+          <p class="meta">Size 9.5 · 2015 · box</p>
+          <p class="price">$620</p>
+          <button class="hold-btn" type="button" data-item="Air Jordan 1 Chicago" data-size="9.5">Hold this pair</button>
+        </article>
+        <article class="sku" data-line="airmax">
+          <h3>Air Max 1 · Anniversary</h3>
+          <p class="meta">Size 11 · 2017 · deadstock</p>
+          <p class="price">$310</p>
+          <button class="hold-btn" type="button" data-item="Air Max 1 Anniversary" data-size="11">Hold this pair</button>
+        </article>
+        <article class="sku" data-line="dunk">
+          <h3>Dunk High · Vintage</h3>
+          <p class="meta">Size 8 · 2020 · lightly worn</p>
+          <p class="price">$185</p>
+          <button class="hold-btn" type="button" data-item="Dunk High Vintage" data-size="8">Hold this pair</button>
+        </article>
+      </div>
+      <p id="live" aria-live="polite"></p>
+    </section>
+
+    <section id="hold">
+      <h2>Hold</h2>
+      <p class="lede">Status always reads Action + Item + Limit. No panic copy. Large Fitts target on every Hold button.</p>
+    </section>
+
+    <section id="policy">
+      <h2>Policy</h2>
+      <p class="lede">Holds expire in 24 hours. Payment completes the transfer. We are an independent archive — Nike trademarks appear only on product, never as our store mark.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sole Archive · Pass GW Practice · Envelope≠fill · BREAK disclosure for stakes · no Nike™ in logo</p>
+  </footer>
+
+  <script>
+    const live = document.getElementById('live');
+    const chip = document.getElementById('status-chip');
+    document.querySelectorAll('.hold-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const msg = `Holding ${btn.dataset.item} · size ${btn.dataset.size} · expires in 24 hours`;
+        live.textContent = msg;
+        chip.textContent = msg;
+        live.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+      });
+    });
+    const filters = document.querySelectorAll('.filters button');
+    const skus = document.querySelectorAll('.sku');
+    filters.forEach((f) => {
+      f.addEventListener('click', () => {
+        filters.forEach((x) => x.setAttribute('aria-pressed', 'false'));
+        f.setAttribute('aria-pressed', 'true');
+        const key = f.dataset.filter;
+        skus.forEach((sku) => {
+          sku.hidden = key !== 'all' && sku.dataset.line !== key;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

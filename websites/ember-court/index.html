@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Courtyard Dining</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --burgundy: #6b1e2a;
+      --gold: #c4a35a;
+      --ivory: #f7f1e6;
+      --ink: #1a0f12;
+      --ember: #a33a2c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Source Sans 3", sans-serif; background: var(--ivory); color: var(--ink); line-height: 1.55; }
+    .skip { position: absolute; left: -999px; background: var(--burgundy); color: white; padding: .5rem 1rem; z-index: 40; }
+    .skip:focus { left: 0; }
+    .hoop {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: .75rem 1.25rem;
+      background: color-mix(in srgb, var(--ivory) 90%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: inherit; }
+    .brand-lockup img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .brand-lockup span { font-family: "Libre Bodoni", serif; font-weight: 700; letter-spacing: .04em; }
+    nav { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: .9rem; }
+    nav a { color: inherit; text-decoration: none; opacity: .78; }
+    nav a:hover, nav a:focus-visible { opacity: 1; outline: 2px solid var(--gold); outline-offset: 3px; }
+    .status { font-size: .78rem; background: color-mix(in srgb, var(--gold) 30%, white); color: var(--burgundy); padding: .35rem .7rem; }
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100dvh;
+      display: grid; align-items: end; color: var(--ivory); overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(26,15,18,.18), rgba(26,15,18,.78) 65%, rgba(26,15,18,.94)),
+        url("assets/hero.png") center/cover no-repeat;
+      animation: ember 16s ease-in-out infinite alternate;
+    }
+    .hero-inner { position: relative; z-index: 1; padding: 4.5rem 1.5rem 3rem; max-width: 40rem; }
+    .hero-mark { width: 90px; height: 90px; border-radius: 50%; margin-bottom: 1.1rem; animation: rise .9s ease both; }
+    .hero h1 {
+      font-family: "Libre Bodoni", serif;
+      font-size: clamp(3rem, 8vw, 5.2rem); line-height: .96; font-weight: 700;
+      animation: rise .9s .08s ease both;
+    }
+    .hero p { margin-top: .9rem; max-width: 28rem; font-size: 1.08rem; opacity: .92; animation: rise .9s .14s ease both; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; animation: rise .9s .2s ease both; }
+    .btn {
+      min-height: 48px; padding: .85rem 1.35rem; border: 0; cursor: pointer;
+      font: 600 .95rem "Source Sans 3", sans-serif; text-decoration: none; display: inline-flex; align-items: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .btn-primary { background: var(--gold); color: var(--ink); }
+    .btn-primary:hover { transform: translateY(-1px); background: #d2b36a; }
+    .btn-ghost { background: transparent; color: var(--ivory); border: 1px solid color-mix(in srgb, var(--gold) 55%, white); }
+    .place { margin-top: 1.2rem; font-size: .8rem; opacity: .72; animation: rise .9s .26s ease both; }
+    section { padding: 4.5rem 1.5rem; max-width: 68rem; margin: 0 auto; }
+    section h2 { font-family: "Libre Bodoni", serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: .5rem; color: var(--burgundy); }
+    .lede { color: #6a4d52; max-width: 34rem; margin-bottom: 1.75rem; }
+    .courses { display: grid; gap: .9rem; border-top: 1px solid var(--gold); padding-top: 1.25rem; }
+    .courses li { list-style: none; display: grid; gap: .2rem; padding: .7rem 0; border-bottom: 1px solid color-mix(in srgb, var(--burgundy) 12%, transparent); }
+    .courses strong { font-family: "Libre Bodoni", serif; font-size: 1.15rem; }
+    .stakes { background: #f3e0c8; border-left: 4px solid var(--ember); padding: .85rem 1rem; font-size: .9rem; margin-top: 1rem; }
+    #live { margin-top: 1rem; min-height: 1.4em; font-weight: 600; color: var(--burgundy); }
+    footer { padding: 2rem 1.5rem; border-top: 1px solid #e4d5c0; color: #7a5f55; font-size: .85rem; }
+    @keyframes ember {
+      from { transform: scale(1.03); filter: brightness(1); }
+      to { transform: scale(1.07); filter: brightness(1.06); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .hero::before { transform: none; filter: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" alt="" width="42" height="42" />
+      <span>Ember Court</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#court">The court</a>
+    </nav>
+    <p class="status" id="status-chip">Courtyard fire lit</p>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <img class="hero-mark" src="assets/logo.png" alt="Ember Court logo" width="90" height="90" />
+        <h1>Ember Court</h1>
+        <p>Courtyard fire. Slow courses. Gold light on stone.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Reserve a place</a>
+          <a class="btn btn-ghost" href="#menu">Evening menu</a>
+        </div>
+        <p class="place">Place: Ember Court restaurant courtyard — dusk fire against stone.</p>
+      </div>
+    </section>
+
+    <section id="menu">
+      <h2>Evening menu</h2>
+      <p class="lede">One purpose: the night’s sequence. No card clutter.</p>
+      <ul class="courses">
+        <li><strong>Ember pear</strong><span>Charred pear, blue cheese, bitter greens</span></li>
+        <li><strong>Court lamb</strong><span>Slow shoulder, smoked garlic, winter squash</span></li>
+        <li><strong>Gold tart</strong><span>Burnt honey custard, black sesame</span></li>
+      </ul>
+    </section>
+
+    <section id="reserve">
+      <h2>Reserve a place</h2>
+      <p class="lede">We hold tables with a clear window — hear the stakes, then do the reserve.</p>
+      <p class="stakes"><strong>Allergy stakes (above the fold):</strong> Tree nuts, shellfish, and dairy run through the shared courtyard kitchen. Confirm allergies before you reserve — we will not bury this in a footer.</p>
+      <button class="btn btn-primary" id="reserve-btn" type="button" style="margin-top:1rem;background:var(--burgundy);color:var(--ivory)">Reserve courtyard table</button>
+      <p id="live" aria-live="polite"></p>
+    </section>
+
+    <section id="court">
+      <h2>The court</h2>
+      <p class="lede">Open fire is controlled and watched. Weather may move service indoors without losing the course sequence.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ember Court · Pass GW Practice · Stakes before Reserve · Bodoni hero</p>
+  </footer>
+  <script>
+    const live = document.getElementById('live');
+    const chip = document.getElementById('status-chip');
+    document.getElementById('reserve-btn').addEventListener('click', () => {
+      const msg = 'Reserved courtyard table for 2 · Friday 19:30 · hold ends 15 min before';
+      live.textContent = msg;
+      chip.textContent = msg;
+    });
+  </script>
+</body>
+</html>

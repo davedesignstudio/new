@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln & Cup — Workshop Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --clay: #c45c26;
+      --umber: #3d2314;
+      --ash: #f3e6d8;
+      --smoke: #8a6a52;
+      --ink: #1c100a;
+      --glow: #e8a060;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, sans-serif;
+      color: var(--ink);
+      background: var(--ash);
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .skip {
+      position: absolute; left: -999px; top: 0;
+      background: var(--umber); color: var(--ash); padding: .5rem 1rem; z-index: 100;
+    }
+    .skip:focus { left: 0; }
+    .hoop {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: .75rem 1.25rem;
+      background: color-mix(in srgb, var(--ash) 88%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid color-mix(in srgb, var(--umber) 12%, transparent);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .brand-lockup img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .brand-lockup span { font-family: Fraunces, serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .02em; }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .92rem; }
+    nav a { text-decoration: none; opacity: .8; }
+    nav a:hover, nav a:focus-visible { opacity: 1; outline: 2px solid var(--clay); outline-offset: 3px; }
+    .status {
+      font-size: .8rem; color: var(--umber);
+      background: color-mix(in srgb, var(--glow) 28%, white);
+      padding: .35rem .7rem; border-radius: 4px;
+    }
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100dvh;
+      display: grid; align-items: end;
+      color: var(--ash);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(28,16,10,.15) 0%, rgba(28,16,10,.72) 70%, rgba(28,16,10,.9) 100%),
+        url("assets/hero.png") center/cover no-repeat;
+      transform: scale(1.04);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      padding: 4.5rem 1.5rem 3rem;
+      max-width: 40rem;
+    }
+    .hero-mark {
+      width: 88px; height: 88px; border-radius: 50%;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--ash) 40%, transparent);
+      animation: rise .9s ease both;
+    }
+    .hero h1 {
+      font-family: Fraunces, serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 1.02; font-weight: 700;
+      animation: rise .9s .08s ease both;
+    }
+    .hero p {
+      margin-top: .85rem; font-size: 1.1rem; max-width: 28rem;
+      color: color-mix(in srgb, var(--ash) 88%, var(--glow));
+      animation: rise .9s .16s ease both;
+    }
+    .cta-row {
+      display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem;
+      animation: rise .9s .24s ease both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: .85rem 1.35rem;
+      border: 0; border-radius: 2px; cursor: pointer;
+      font: 600 .95rem Outfit, sans-serif; text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; }
+    .btn-primary { background: var(--clay); color: white; }
+    .btn-primary:hover { background: #a84b1d; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--ash); border: 1px solid color-mix(in srgb, var(--ash) 55%, transparent); }
+    .place {
+      margin-top: 1.25rem; font-size: .8rem; opacity: .75;
+      animation: rise .9s .3s ease both;
+    }
+    section { padding: 4.5rem 1.5rem; max-width: 68rem; margin: 0 auto; }
+    section h2 {
+      font-family: Fraunces, serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: .6rem;
+    }
+    .lede { color: var(--smoke); max-width: 34rem; margin-bottom: 2rem; }
+    .menu-board {
+      display: grid; gap: 1rem;
+      background: linear-gradient(135deg, #fff8f0, #f0dcc8);
+      padding: 1.5rem; border-left: 4px solid var(--clay);
+    }
+    .menu-board li {
+      list-style: none; display: flex; justify-content: space-between; gap: 1rem;
+      padding: .55rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--umber) 20%, transparent);
+      font-size: 1.02rem;
+    }
+    .stakes {
+      margin-top: 1rem; font-size: .88rem; color: var(--umber);
+      background: #ffe8d4; padding: .75rem 1rem;
+    }
+    #live[aria-live="polite"] {
+      margin-top: 1rem; min-height: 1.4em; font-weight: 500; color: var(--clay);
+    }
+    footer {
+      padding: 2rem 1.5rem; border-top: 1px solid color-mix(in srgb, var(--umber) 15%, transparent);
+      font-size: .85rem; color: var(--smoke);
+    }
+    @keyframes drift {
+      from { transform: scale(1.04) translateY(0); }
+      to { transform: scale(1.08) translateY(-1.5%); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important; transition: none !important; scroll-behavior: auto !important;
+      }
+      .hero::before { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" alt="" width="42" height="42" />
+      <span>Kiln &amp; Cup</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#workshop">Workshop</a>
+    </nav>
+    <p class="status" id="status-chip">Open · last pour 4:30</p>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <img class="hero-mark" src="assets/logo.png" alt="Kiln &amp; Cup logo" width="88" height="88" />
+        <h1>Kiln &amp; Cup</h1>
+        <p>Clay-fired mornings. Cups thrown on site, coffee pulled beside the kiln.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Reserve a bench</a>
+          <a class="btn btn-ghost" href="#menu">See today’s board</a>
+        </div>
+        <p class="place">Place: artisan kiln studio cafe — warm clay light on the bench.</p>
+      </div>
+    </section>
+
+    <section id="menu">
+      <h2>Today’s board</h2>
+      <p class="lede">One board. One pour schedule. Nothing staged as a card grid.</p>
+      <ul class="menu-board">
+        <li><span>Kiln drip</span><span>4.5</span></li>
+        <li><span>Honey oat flat white</span><span>5.5</span></li>
+        <li><span>Ash-fired biscuit</span><span>3.5</span></li>
+        <li><span>Tomato clay tart</span><span>7</span></li>
+      </ul>
+    </section>
+
+    <section id="reserve">
+      <h2>Reserve a bench</h2>
+      <p class="lede">Workshops share the floor — we hold seats with a clear limit.</p>
+      <p class="stakes"><strong>Stakes:</strong> Gluten and nut flours used in the kiln kitchen. Tell us allergies before you reserve.</p>
+      <button class="btn btn-primary" id="reserve-btn" type="button" style="margin-top:1rem">Reserve kiln table</button>
+      <p id="live" aria-live="polite"></p>
+    </section>
+
+    <section id="workshop">
+      <h2>Workshop hours</h2>
+      <p class="lede">Throwing demos Saturdays. Cups leave the shelf when the glaze says so — not the calendar.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Kiln &amp; Cup · Pass GW Practice · Brand-first hero · A+I+L reserve status</p>
+  </footer>
+
+  <script>
+    const live = document.getElementById('live');
+    const chip = document.getElementById('status-chip');
+    document.getElementById('reserve-btn').addEventListener('click', () => {
+      const msg = 'Reserved kiln table for 2 · Saturday 10:00 · hold ends 15 min before';
+      live.textContent = msg;
+      chip.textContent = msg;
+    });
+  </script>
+</body>
+</html>

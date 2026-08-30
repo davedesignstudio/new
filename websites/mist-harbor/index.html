@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mist Harbor — Coastal Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0b1f33;
+      --seafoam: #7fbfb0;
+      --mist: #d7e4e8;
+      --foam: #f4fafb;
+      --ink: #0a1622;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; color: var(--ink); background: var(--foam); line-height: 1.55; }
+    .skip { position: absolute; left: -999px; background: var(--navy); color: white; padding: .5rem 1rem; z-index: 40; }
+    .skip:focus { left: 0; }
+    .hoop {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: .7rem 1.25rem;
+      background: color-mix(in srgb, var(--foam) 86%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid color-mix(in srgb, var(--navy) 10%, transparent);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: inherit; }
+    .brand-lockup img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+    .brand-lockup span { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 1.2rem; }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .9rem; }
+    nav a { color: inherit; text-decoration: none; opacity: .75; }
+    nav a:focus-visible, nav a:hover { opacity: 1; outline: 2px solid var(--seafoam); outline-offset: 3px; }
+    .status { font-size: .78rem; background: color-mix(in srgb, var(--seafoam) 35%, white); padding: .35rem .7rem; border-radius: 999px; color: var(--navy); }
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100dvh;
+      display: grid; align-items: end; color: var(--foam); overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11,31,51,.2), rgba(11,31,51,.78) 68%, rgba(11,31,51,.92)),
+        url("assets/hero.png") center/cover no-repeat;
+      animation: fog 22s ease-in-out infinite alternate;
+    }
+    .hero-inner { position: relative; z-index: 1; padding: 4.5rem 1.5rem 3rem; max-width: 38rem; }
+    .hero-mark { width: 84px; height: 84px; border-radius: 50%; margin-bottom: 1rem; animation: lift .85s ease both; }
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 9vw, 5.4rem); line-height: .95; font-weight: 700;
+      animation: lift .85s .08s ease both;
+    }
+    .hero p { margin-top: .9rem; font-size: 1.08rem; max-width: 26rem; opacity: .9; animation: lift .85s .14s ease both; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; animation: lift .85s .2s ease both; }
+    .btn {
+      min-height: 48px; padding: .8rem 1.3rem; border: 0; cursor: pointer;
+      font: 600 .92rem "DM Sans", sans-serif; text-decoration: none; display: inline-flex; align-items: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--seafoam); outline-offset: 3px; }
+    .btn-primary { background: var(--seafoam); color: var(--navy); }
+    .btn-primary:hover { transform: translateY(-1px); background: #6fb3a4; }
+    .btn-ghost { background: transparent; color: var(--foam); border: 1px solid color-mix(in srgb, white 45%, transparent); }
+    .place { margin-top: 1.2rem; font-size: .8rem; opacity: .72; animation: lift .85s .26s ease both; }
+    section { padding: 4.25rem 1.5rem; max-width: 66rem; margin: 0 auto; }
+    section h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: .5rem; }
+    .lede { color: #4d6675; max-width: 34rem; margin-bottom: 1.75rem; }
+    .tide {
+      display: grid; gap: .85rem;
+      background: linear-gradient(160deg, var(--mist), #eef6f7);
+      padding: 1.4rem 1.5rem; border-top: 3px solid var(--navy);
+    }
+    .tide li { list-style: none; display: flex; justify-content: space-between; gap: 1rem; padding: .4rem 0; border-bottom: 1px solid color-mix(in srgb, var(--navy) 12%, transparent); }
+    .stakes { margin-top: 1rem; background: #e5f4f1; padding: .75rem 1rem; font-size: .88rem; color: var(--navy); }
+    #live { margin-top: 1rem; min-height: 1.4em; font-weight: 600; color: #1f6b5f; }
+    footer { padding: 2rem 1.5rem; border-top: 1px solid #d5e2e6; color: #5b7380; font-size: .85rem; }
+    @keyframes fog {
+      from { transform: scale(1.03) translateX(0); filter: saturate(1); }
+      to { transform: scale(1.07) translateX(-1%); filter: saturate(1.08); }
+    }
+    @keyframes lift {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .hero::before { transform: none; filter: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" alt="" width="40" height="40" />
+      <span>Mist Harbor</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#board">Board</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#tide">Tide hours</a>
+    </nav>
+    <p class="status" id="status-chip">Fog bank · pier open</p>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <img class="hero-mark" src="assets/logo.png" alt="Mist Harbor logo" width="84" height="84" />
+        <h1>Mist Harbor</h1>
+        <p>Coffee where the pier disappears into fog. Quiet tables. Salt air in the cup.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Hold a pier seat</a>
+          <a class="btn btn-ghost" href="#board">Morning board</a>
+        </div>
+        <p class="place">Place: Mist Harbor coastal pier — fog as co-author of the light.</p>
+      </div>
+    </section>
+
+    <section id="board">
+      <h2>Morning board</h2>
+      <p class="lede">One job: what to drink while the lighthouse blinks.</p>
+      <ul class="tide">
+        <li><span>Harbor pour-over</span><span>5</span></li>
+        <li><span>Seafoam latte</span><span>5.75</span></li>
+        <li><span>Kelp butter toast</span><span>6</span></li>
+        <li><span>Citrus mist bun</span><span>4.25</span></li>
+      </ul>
+    </section>
+
+    <section id="reserve">
+      <h2>Hold a pier seat</h2>
+      <p class="lede">Outdoor benches weather the mist; we hold them with a clear limit.</p>
+      <p class="stakes"><strong>Stakes:</strong> Pier seating is uncovered. Shellfish prepared in the same kitchen — tell us allergies first.</p>
+      <button class="btn btn-primary" id="reserve-btn" type="button" style="margin-top:1rem;background:var(--navy);color:var(--foam)">Hold pier seat</button>
+      <p id="live" aria-live="polite"></p>
+    </section>
+
+    <section id="tide">
+      <h2>Tide hours</h2>
+      <p class="lede">Open with first light. Last pour when fog takes the channel markers.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mist Harbor · Pass GW Practice · Looking ethic · A+I+L hold copy</p>
+  </footer>
+  <script>
+    const live = document.getElementById('live');
+    const chip = document.getElementById('status-chip');
+    document.getElementById('reserve-btn').addEventListener('click', () => {
+      const msg = 'Holding pier seat for 2 · today 8:00 · expires in 20 minutes';
+      live.textContent = msg;
+      chip.textContent = msg;
+    });
+  </script>
+</body>
+</html>
