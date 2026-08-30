@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Sneaker Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    .btn--primary { background: #c23b22; color: #f4f0e8; }
+    .section { background: #ece8e0; }
+    .section--vault { background: #161616; color: #f4f0e8; }
+    .mark-note {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      opacity: 0.75;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body data-brand="sole-archive">
+  <div class="stake-strip" data-level="critical" role="status" data-testid="stake-strip">
+    <span><strong>Independent reseller:</strong> Sole Archive is not affiliated with Nike, Inc. Authenticated pairs · 24h holds expire automatically.</span>
+    <span class="stake-echo" data-testid="reseller-note">reseller + hold expiry · always visible</span>
+  </div>
+
+  <header class="hero" data-testid="hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="hero.png" alt="" />
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="./" data-testid="logo-link">
+        <img src="logo.png" alt="Sole Archive SA monogram logo" width="48" height="48" data-testid="logo" data-mark="sa-only" />
+        <span>Sole Archive</span>
+      </a>
+      <ul>
+        <li><a href="#vault">Vault</a></li>
+        <li><a href="#hold">Hold</a></li>
+      </ul>
+    </nav>
+    <div class="hero__content">
+      <h1 class="hero__brand kinetic" data-testid="brand-title">Sole Archive</h1>
+      <p class="hero__line">A small vault for collectible Nike sneakers — marked SA, never the swoosh.</p>
+      <p class="mark-note" data-testid="mark-hygiene">Brand mark: SA keyhole monogram only · no Nike trademark in our logo</p>
+      <div class="cta-row">
+        <button type="button" class="btn btn--primary" id="hold-btn" data-testid="primary-cta" style="min-height:48px;min-width:48px">Hold this pair</button>
+        <a class="btn btn--ghost" href="#vault">Browse vault</a>
+      </div>
+      <p class="live-status" id="live-status" data-testid="live-status" data-empty="true" aria-live="polite">No hold yet — choose a pair below.</p>
+      <p class="hero__credit" data-testid="place-credit">Place credit · Graphite vault with archival light · Pass HG practice</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--vault" id="vault">
+      <div class="section__inner">
+        <h2>Vault</h2>
+        <p class="lede">Cards only where you act. Optional filters stay in progressive disclosure; hold stakes never do.</p>
+        <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="advanced-filters" data-testid="filter-toggle">Advanced filters</button>
+        <div class="filters" id="advanced-filters" role="region" aria-hidden="true" aria-labelledby="filter-toggle">
+          <label>Size <input type="number" min="4" max="18" step="0.5" value="10" id="size-filter" /></label>
+          <label style="margin-left:1rem">Condition
+            <select id="condition-filter">
+              <option>Deadstock</option>
+              <option>VNDS</option>
+            </select>
+          </label>
+        </div>
+        <div class="interact-grid" style="margin-top:1.5rem" id="hold">
+          <div class="interact-card" data-testid="sku-dunk">
+            <h3>Dunk Low · Panda</h3>
+            <p>Authenticated collectible Nike Dunk Low. Independent vault listing.</p>
+            <span class="meta">Size 10 · Deadstock · Auth #SA-2041</span>
+            <button type="button" class="btn btn--primary hold-sku" data-item="Dunk Low · Panda" data-size="10" data-testid="hold-dunk" style="min-height:48px">Hold this pair</button>
+          </div>
+          <div class="interact-card">
+            <h3>Air Max 1 · Anniversary</h3>
+            <p>Vault-held collectible. Hold locks size for 24 hours.</p>
+            <span class="meta">Size 9.5 · VNDS · Auth #SA-1987</span>
+            <button type="button" class="btn btn--primary hold-sku" data-item="Air Max 1 · Anniversary" data-size="9.5" data-testid="hold-am1" style="min-height:48px">Hold this pair</button>
+          </div>
+          <div class="interact-card">
+            <h3>Jordan 1 · Chicago (2025 restock)</h3>
+            <p>Collectible listing. Reseller framing remains in the stake strip.</p>
+            <span class="meta">Size 11 · Deadstock · Auth #SA-2301</span>
+            <button type="button" class="btn btn--primary hold-sku" data-item="Jordan 1 · Chicago" data-size="11" data-testid="hold-aj1" style="min-height:48px">Hold this pair</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Sole Archive · Independent reseller · Practice HG site joint</span>
+      <a href="../index.html">Studio hub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var status = document.getElementById("live-status");
+      var toggle = document.getElementById("filter-toggle");
+      var filters = document.getElementById("advanced-filters");
+
+      function setHold(item, size) {
+        status.dataset.empty = "false";
+        status.textContent = "Holding " + item + " · size " + size + " · expires in 24h";
+      }
+
+      document.getElementById("hold-btn").addEventListener("click", function () {
+        setHold("Dunk Low · Panda", "10");
+      });
+
+      document.querySelectorAll(".hold-sku").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setHold(btn.getAttribute("data-item"), btn.getAttribute("data-size"));
+        });
+      });
+
+      toggle.addEventListener("click", function () {
+        var open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+        filters.setAttribute("aria-hidden", open ? "true" : "false");
+      });
+    })();
+  </script>
+</body>
+</html>
