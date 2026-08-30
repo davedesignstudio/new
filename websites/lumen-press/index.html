@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumen Press — Letterpress Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --ink: #2c2416;
+      --paper: #f3ede3;
+      --accent: #8a5a2b;
+      --on-accent: #fff8ef;
+    }
+    body {
+      background:
+        radial-gradient(100% 60% at 100% 0%, rgba(138, 90, 43, 0.12), transparent 50%),
+        linear-gradient(180deg, #f7f1e7 0%, #efe6d8 100%);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="envelope" data-envelope>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="./logo.png" alt="" width="44" height="44" data-logo />
+        <span class="brand-name">Lumen Press</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#board">Board</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#craft">Craft</a></li>
+      </ul>
+    </nav>
+    <div class="stakes" data-stakes>
+      <strong>Allergen:</strong> Soy ink on printed menus · ask before tasting flights
+      <span class="stream-rail" data-stream-rail data-state="streaming">
+        <span class="pulse" aria-hidden="true"></span>
+        <span data-stream-text>Streaming · Board · Skeleton props landing</span>
+      </span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media"><img src="./hero.png" alt="Letterpress loft cafe with espresso and movable type in morning light" /></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Lumen Press</h1>
+        <p class="hero-line">Ink dries slow. Coffee doesn’t wait — except here.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Reserve a press seat</a>
+          <a class="btn btn-ghost" href="#board">See today’s board</a>
+        </div>
+        <p class="place-credit">Place · Letterpress loft · morning steam</p>
+      </div>
+    </section>
+
+    <section class="section" id="board">
+      <h2>Today’s board</h2>
+      <p class="lead">Fill streams in; the hoop (stakes, nav, reserve) stays put — Crosslink HK lattice.</p>
+      <div class="board" data-board>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+      </div>
+      <div class="fallback" data-fallback hidden>
+        <button class="btn btn-primary" type="button" data-force-fallback style="display:none"></button>
+        <p class="ail">Static board active · generative layer skipped · envelope unchanged</p>
+      </div>
+      <p style="margin-top:1rem"><button class="btn btn-primary" type="button" data-force-fallback>Use deterministic fallback</button></p>
+    </section>
+
+    <section class="section panel" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Action · Item · Limit — plain stakes grammar while the board streams.</p>
+      <form class="hold-box" data-hold-form data-action-label="Reserving">
+        <label for="item">Seat</label>
+        <select id="item" name="item">
+          <option>Window press bench</option>
+          <option>Copper bar stool</option>
+          <option>Gallery nook</option>
+        </select>
+        <label for="limit">Hold window</label>
+        <select id="limit" name="limit">
+          <option>15 min</option>
+          <option selected>30 min</option>
+          <option>1 hour</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Confirm reserve</button>
+        <p class="ail" data-ail>Reserving · Window press bench · 30 min</p>
+      </form>
+    </section>
+
+    <section class="section" id="craft">
+      <h2>Craft note</h2>
+      <p class="lead">Shu: hallmark the joint. Ha: stream the fill. Hear-do: soy-ink truth stays visible.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Lumen Press · Pass HK Crosslink</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+
+  <script>
+    window.__BOARD__ = [
+      { title: "Platen Espresso", body: "Single origin, pulled beside the proof press.", meta: "Drink" },
+      { title: "Galley Toast", body: "Sourdough, cultured butter, soy-free jam on request.", meta: "Plate" },
+      { title: "Colophon Cocoa", body: "Steamed oat or dairy · ask for allergen card.", meta: "Drink" },
+      { title: "Proof Flight", body: "Three micro-batches · soy ink menus disclosed.", meta: "Flight" }
+    ];
+  </script>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>

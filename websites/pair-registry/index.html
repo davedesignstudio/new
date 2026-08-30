@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pair Registry — Collectible Sneaker Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f5f5f2;
+      --accent: #2a2a2a;
+      --on-accent: #f5f5f2;
+    }
+    body {
+      background:
+        radial-gradient(60% 40% at 80% 0%, rgba(26, 26, 26, 0.08), transparent 50%),
+        linear-gradient(180deg, #f7f7f4 0%, #ebebe6 100%);
+    }
+    .btn-primary {
+      background: #1a1a1a;
+      color: #f5f5f2;
+    }
+    .auth-note {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      margin: 0 0 1rem;
+      color: color-mix(in srgb, var(--ink) 70%, transparent);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="envelope" data-envelope>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="./logo.png" alt="Pair Registry PR monogram" width="44" height="44" data-logo />
+        <span class="brand-name">Pair Registry</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#vault">Vault</a></li>
+        <li><a href="#hold">24h Hold</a></li>
+        <li><a href="#craft">Craft</a></li>
+      </ul>
+    </nav>
+    <div class="stakes" data-stakes>
+      <strong>Reseller:</strong> Independent reseller · authentications logged · Nike™ not affiliated
+      <span class="stream-rail" data-stream-rail data-state="streaming">
+        <span class="pulse" aria-hidden="true"></span>
+        <span data-stream-text>Streaming · Vault · Skeleton props landing</span>
+      </span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media"><img src="./hero.png" alt="Independent collector vault showroom with archival shelving" /></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Pair Registry</h1>
+        <p class="hero-line">Collectable Nike pairs. Our mark is PR — never theirs.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#hold">Start a 24h hold</a>
+          <a class="btn btn-ghost" href="#vault">Browse the vault</a>
+        </div>
+        <p class="place-credit">Place · Independent vault · museum light</p>
+      </div>
+    </section>
+
+    <section class="section" id="vault">
+      <h2>Vault board</h2>
+      <p class="lead">Label shelves; don’t flatten brands into our hallmark. Optional filters only in disclosure.</p>
+      <p class="auth-note" data-auth>Auth queue · live · holds visible · mark = PR monogram only</p>
+      <div class="filters" role="group" aria-label="Optional vault filters">
+        <button type="button" data-filter aria-pressed="false">Low top</button>
+        <button type="button" data-filter aria-pressed="false">High top</button>
+        <button type="button" data-filter aria-pressed="false">Size 10</button>
+      </div>
+      <div class="board" data-board>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+      </div>
+      <p style="margin-top:1rem"><button class="btn btn-primary" type="button" data-force-fallback>Use deterministic fallback</button></p>
+      <div class="fallback" data-fallback hidden>
+        <p class="ail">Static vault active · generative layer skipped · envelope unchanged</p>
+      </div>
+    </section>
+
+    <section class="section panel" id="hold">
+      <h2>24h Hold</h2>
+      <p class="lead">Holding · pair · 24h — A+I+L always visible. Hear-do while the vault streams.</p>
+      <form class="hold-box" data-hold-form data-action-label="Holding">
+        <label for="item">Pair</label>
+        <select id="item" name="item">
+          <option>Panda Dunk · Sz 10</option>
+          <option>Chicago AJ1 · Sz 9.5</option>
+          <option>Travis Fragment · Sz 11</option>
+        </select>
+        <label for="limit">Hold limit</label>
+        <select id="limit" name="limit">
+          <option selected>24h</option>
+          <option>12h</option>
+          <option>48h (members)</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Place hold</button>
+        <p class="ail" data-ail data-hold-ail>Holding · Panda Dunk · Sz 10 · 24h</p>
+      </form>
+    </section>
+
+    <section class="section" id="craft">
+      <h2>Craft note</h2>
+      <p class="lead">Canon shelves ≠ SKU paste. Guild hallmark = PR. Collectible Nike inventory labeled as reseller stock.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Pair Registry · Pass HK Crosslink · Not affiliated with Nike, Inc.</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+
+  <script>
+    window.__BOARD__ = [
+      { title: "Panda Dunk", body: "Low · Sz 10 · auth #PR-2401 · reseller stock.", meta: "Holdable" },
+      { title: "Chicago AJ1", body: "High · Sz 9.5 · auth #PR-2388.", meta: "Holdable" },
+      { title: "Travis Fragment", body: "Low · Sz 11 · member queue.", meta: "Queue" },
+      { title: "Safari Dunk", body: "Low · Sz 8 · display only tonight.", meta: "Display" }
+    ];
+  </script>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>

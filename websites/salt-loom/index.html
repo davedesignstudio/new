@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salt Loom — Harbor Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --ink: #0e3a45;
+      --paper: #e9f2f1;
+      --accent: #1f6f7a;
+      --on-accent: #f3fbfb;
+    }
+    body {
+      background:
+        radial-gradient(80% 50% at 100% 20%, rgba(31, 111, 122, 0.18), transparent 50%),
+        linear-gradient(180deg, #eef6f5 0%, #d9e8e6 100%);
+    }
+    .hero-media img {
+      animation-name: wind;
+    }
+    @keyframes wind {
+      from { transform: scale(1.04) translate3d(0, 0, 0); }
+      to { transform: scale(1.07) translate3d(1.4%, -0.5%, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-media img { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="envelope" data-envelope>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="./">
+        <img src="./logo.png" alt="" width="44" height="44" data-logo />
+        <span class="brand-name">Salt Loom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#board">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#craft">Craft</a></li>
+      </ul>
+    </nav>
+    <div class="stakes" data-stakes>
+      <strong>Critical:</strong> Shellfish throughout the kitchen · cross-contact possible
+      <span class="stream-rail" data-stream-rail data-state="streaming">
+        <span class="pulse" aria-hidden="true"></span>
+        <span data-stream-text>Streaming · Board · Skeleton props landing</span>
+      </span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media"><img src="./hero.png" alt="Harbor terrace dining at dusk with woven linen runners" /></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Salt Loom</h1>
+        <p class="hero-line">Warp of tide. Weft of fire. Table between.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Reserve the terrace</a>
+          <a class="btn btn-ghost" href="#board">Read the menu</a>
+        </div>
+        <p class="place-credit">Place · Harbor terrace · salt air dusk</p>
+      </div>
+    </section>
+
+    <section class="section" id="board">
+      <h2>Evening menu</h2>
+      <p class="lead">Shellfish truth stays above the fold while courses stream in — hear-do lattice.</p>
+      <div class="board" data-board>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+        <article class="fill-card" data-fill-card data-state="loading"></article>
+      </div>
+      <p style="margin-top:1rem"><button class="btn btn-primary" type="button" data-force-fallback>Use deterministic fallback</button></p>
+      <div class="fallback" data-fallback hidden>
+        <p class="ail">Static menu active · generative layer skipped · envelope unchanged</p>
+      </div>
+    </section>
+
+    <section class="section panel" id="reserve">
+      <h2>Reserve</h2>
+      <p class="lead">Imagist line for mood; plain grammar for holds.</p>
+      <form class="hold-box" data-hold-form data-action-label="Reserving">
+        <label for="item">Table</label>
+        <select id="item" name="item">
+          <option>Rail two-top</option>
+          <option>Loom communal</option>
+          <option>Wind-screen booth</option>
+        </select>
+        <label for="limit">Hold window</label>
+        <select id="limit" name="limit">
+          <option>20 min</option>
+          <option selected>40 min</option>
+          <option>1 hour</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Confirm reserve</button>
+        <p class="ail" data-ail>Reserving · Rail two-top · 40 min</p>
+      </form>
+    </section>
+
+    <section class="section" id="craft">
+      <h2>Craft note</h2>
+      <p class="lead">Loom warp as craft metaphor: tension holds pattern — envelope holds fill.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Salt Loom · Pass HK Crosslink</span>
+    <a href="../index.html">All five brands</a>
+  </footer>
+
+  <script>
+    window.__BOARD__ = [
+      { title: "Kelp Broth", body: "Clear stock · no shellfish stock on request.", meta: "Start" },
+      { title: "Loom Catch", body: "Dayboat fish · shellfish garnish optional.", meta: "Main" },
+      { title: "Salt Crust Root", body: "Land plate · kitchen still handles shellfish.", meta: "Main" },
+      { title: "Tide Citrus", body: "Sherbet · wind-cooled.", meta: "Close" }
+    ];
+  </script>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>
