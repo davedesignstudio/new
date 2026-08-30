@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kiln &amp; Cup — Clay-fired cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --clay: #B84E22;
+  --ink: #1C1612;
+  --stone: #D8D2C8;
+  --ash: #2A2420;
+  --foam: #F2EEE8;
+  --rail: #5C2E18;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(184,78,34,.18), transparent 55%),
+    linear-gradient(180deg, #E8E2D8 0%, #F2EEE8 40%, #E4DED4 100%);
+  line-height: 1.5;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes drift {
+  from { transform: scale(1.06) translateY(0); }
+  to { transform: scale(1) translateY(-1.5%); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.brand-nav {
+  position: absolute; inset: 0 0 auto 0; z-index: 3;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 4vw; color: var(--foam);
+}
+.brand-nav a { color: inherit; text-decoration: none; font-weight: 600; letter-spacing: .02em; }
+.brand-nav .mark { display: flex; align-items: center; gap: .75rem; font-family: Syne, sans-serif; font-weight: 800; font-size: 1.15rem; }
+.brand-nav .mark img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #fff; }
+.hero {
+  position: relative; min-height: calc(100svh - 4.25rem); display: grid; align-items: end;
+  color: var(--foam); overflow: hidden;
+}
+.hero-media {
+  position: absolute; inset: 0; z-index: 0;
+  background: #2A2420 center/cover no-repeat;
+  animation: drift 18s ease-out forwards;
+}
+.hero-media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(28,22,18,.35) 0%, rgba(28,22,18,.15) 35%, rgba(28,22,18,.78) 100%);
+}
+.hero-copy {
+  position: relative; z-index: 1; padding: 0 4vw 4.5rem; max-width: 38rem;
+  animation: rise .9s ease-out both;
+}
+.hero-copy h1 {
+  font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(2.8rem, 8vw, 5.2rem);
+  line-height: .95; letter-spacing: -.03em; margin-bottom: .85rem;
+}
+.hero-copy p { font-size: 1.1rem; max-width: 28rem; margin-bottom: 1.4rem; opacity: .95; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+  padding: .85rem 1.35rem; border: 0; border-radius: 2px; font: inherit; font-weight: 600;
+  cursor: pointer; text-decoration: none; transition: transform .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--clay); color: #fff; }
+.btn-ghost { background: transparent; color: #fff; outline: 1px solid rgba(255,255,255,.55); }
+.stakes {
+  position: relative; z-index: 2; margin-top: -1px;
+  background: var(--rail); color: #F7EDE4; padding: 1rem 4vw;
+  display: grid; gap: .35rem; animation: pulse-soft 4s ease-in-out infinite;
+}
+.stakes strong { font-family: Syne, sans-serif; letter-spacing: .04em; text-transform: uppercase; font-size: .78rem; }
+.stakes p { font-size: .98rem; }
+.place-credit {
+  padding: .65rem 4vw; font-size: .85rem; color: #5A5248;
+  border-bottom: 1px solid rgba(28,22,18,.08);
+}
+section { padding: 4.5rem 4vw; max-width: 72rem; margin: 0 auto; }
+section h2 {
+  font-family: Syne, sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -.02em; margin-bottom: .6rem;
+}
+.lede { max-width: 36rem; margin-bottom: 1.5rem; color: #3F3832; }
+.croze {
+  display: grid; gap: .75rem; padding: 1.25rem 0 0;
+  border-top: 2px solid var(--clay);
+}
+.croze li {
+  list-style: none; display: grid; grid-template-columns: 1.4rem 1fr; gap: .65rem;
+  align-items: start; font-size: 1.02rem;
+}
+.croze li::before {
+  content: ""; width: 1rem; height: 1rem; margin-top: .3rem;
+  border: 2px solid var(--clay); border-radius: 2px;
+}
+footer { padding: 2rem 4vw 3rem; color: #5A5248; font-size: .9rem; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="brand-nav" aria-label="Primary">
+      <a class="mark" href="#top"><img src="assets/logo.png" alt="" />Kiln &amp; Cup</a>
+      <a href="#reserve">Reserve</a>
+    </nav>
+    <div class="hero-media" role="img" aria-label="Ceramic workshop cafe with glowing kiln arch" style="background-image:url('assets/hero.png')"></div>
+    <div class="hero-copy" id="top">
+      <h1>Kiln &amp; Cup</h1>
+      <p>Clay-fired coffee beside the workshop kiln — cups shaped here, pours served warm.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#reserve">Reserve a seat</a>
+        <a class="btn btn-ghost" href="#croze">Allergy croze</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="stakes" role="status" aria-live="polite">
+    <strong>Guest care · croze checklist</strong>
+    <p><b>Ask staff</b> · nut oils may ride kiln glaze dust near the counter · kitchen closes 20:00</p>
+  </aside>
+  <p class="place-credit">Place credit: Workshop kiln, golden hour — hospitality looking (invitation, not spectacle).</p>
+
+  <section id="croze" aria-labelledby="croze-title">
+    <h2 id="croze-title">Allergy croze</h2>
+    <p class="lede">Like a cooper’s croze that seats the barrel head, this rail seats guest safety before flavor talk. Mercy first (Two Ways · life).</p>
+    <ul class="croze">
+      <li><span><b>Item named:</b> nut oils in glaze dust near open kiln</span></li>
+      <li><span><b>Action:</b> ask kitchen before ordering pastry or milk drinks</span></li>
+      <li><span><b>Limit:</b> workshop tours pause when glaze is firing</span></li>
+      <li><span><b>Seen:</b> stakes stay above the fold — we do not bury danger</span></li>
+    </ul>
+  </section>
+
+  <section id="reserve" aria-labelledby="reserve-title">
+    <h2 id="reserve-title">Reserve</h2>
+    <p class="lede">One table, one pour. Tell us allergies in the note — we treat that as neighbor-care, not fine print.</p>
+    <form class="croze" onsubmit="event.preventDefault(); const s=document.getElementById('status'); s.textContent='Hold seat · window table · until 15 minutes past reservation.';">
+      <label>Name<br /><input required name="name" style="min-height:48px;width:min(100%,22rem);padding:.6rem;margin-top:.35rem;border:1px solid #8A7F72;background:#fff;font:inherit;" /></label>
+      <label>Note (allergies welcome)<br /><textarea name="note" rows="3" style="width:min(100%,28rem);padding:.6rem;margin-top:.35rem;border:1px solid #8A7F72;background:#fff;font:inherit;"></textarea></label>
+      <button class="btn btn-primary" type="submit" style="width:fit-content;">Reserve · Action + Item + Limit</button>
+      <p id="status" role="status" style="min-height:1.5em;"></p>
+    </form>
+  </section>
+  <footer>Kiln &amp; Cup · independent craft cafe · Pass GZ deepen · croze = safety groove</footer>
+</body>
+</html>

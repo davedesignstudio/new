@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sole Archive — Collectible Nike sneakers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --ink: #111315; --concrete: #8A8F98; --panel: #1C1F24; --signal: #D6DEE8; --hold: #C9832A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Space Grotesk", system-ui, sans-serif; color: var(--signal);
+  background:
+    radial-gradient(900px 500px at 50% -20%, rgba(138,143,152,.22), transparent 55%),
+    linear-gradient(180deg, #0E1013, #16191E 55%, #0E1013);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes drift {
+  from { transform: scale(1.06) translateY(0); }
+  to { transform: scale(1) translateY(-1.5%); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.brand-nav { position:absolute; inset:0 0 auto; z-index:3; display:flex; justify-content:space-between; align-items:center; padding:1.25rem 4vw; }
+.brand-nav a { color: inherit; text-decoration: none; font-weight: 600; font-size: .92rem; }
+.mark { display:flex; gap:.75rem; align-items:center; font-weight:700; letter-spacing:.04em; text-transform:uppercase; font-size:.95rem; }
+.mark img { width:48px; height:48px; border-radius:8px; object-fit:cover; background:#fff; }
+.hero { position:relative; min-height:calc(100svh - 4.25rem); display:grid; align-items:end; overflow:hidden; }
+.hero-media { position:absolute; inset:0; background:#111 center/cover no-repeat; animation: drift 24s ease-out forwards; }
+.hero-media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,12,14,.55), rgba(10,12,14,.25) 40%, rgba(10,12,14,.9)); }
+.hero-copy { position:relative; z-index:1; padding:0 4vw 4.5rem; max-width:38rem; animation: rise .95s ease-out both; }
+.hero-copy h1 { font-size:clamp(2.8rem, 7vw, 4.8rem); line-height:.95; letter-spacing:-.03em; margin-bottom:.7rem; }
+.hero-copy p { color: #C5CCD6; margin-bottom:1.3rem; max-width:30rem; }
+.btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:.85rem 1.25rem; text-decoration:none; font-weight:600; border-radius:2px; }
+.btn-primary { background: #E8EDF3; color: #111; }
+.btn-ghost { color:#E8EDF3; outline:1px solid rgba(232,237,243,.4); margin-left:.5rem; }
+.stakes { background: #22180F; color: #F0D7B4; padding:1rem 4vw; border-top:2px solid var(--hold); animation: pulse-soft 3.8s ease-in-out infinite; }
+.stakes strong { display:block; font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color: var(--hold); margin-bottom:.3rem; }
+.place-credit { padding:.65rem 4vw; font-size:.8rem; color: var(--concrete); font-family:"IBM Plex Mono", monospace; }
+section { padding:4rem 4vw; max-width:72rem; margin:0 auto; }
+section h2 { font-size:clamp(1.7rem,3.5vw,2.3rem); margin-bottom:.55rem; }
+.lede { max-width:36rem; color:#A7B0BC; margin-bottom:1.4rem; }
+.disclaimer { font-size:.85rem; color:#8A8F98; max-width:40rem; margin-bottom:1.5rem; }
+.vault {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;
+}
+.vault article {
+  background: var(--panel); border: 1px solid #2A3038; padding: 1rem 1rem 1.1rem;
+  display: grid; gap: .45rem; font-family: "IBM Plex Mono", monospace; font-size: .82rem;
+}
+.vault h3 { font-family: "Space Grotesk", sans-serif; font-size: 1.05rem; font-weight: 600; }
+.meta { color: #9AA3AE; }
+.hold-line { color: #F0C48A; }
+.filters { margin-bottom: 1.25rem; }
+.filters summary { cursor: pointer; color: #C5CCD6; margin-bottom: .5rem; }
+.filters fieldset { border: 1px solid #2A3038; padding: .75rem; display: flex; flex-wrap: wrap; gap: .75rem; color: #A7B0BC; }
+.hold-btn {
+  margin-top: .35rem; min-height: 48px; border: 0; background: var(--hold); color: #1A1208;
+  font: inherit; font-weight: 700; font-family: "Space Grotesk", sans-serif; cursor: pointer; padding: .7rem 1rem;
+}
+footer { padding:2rem 4vw 3rem; color:#6F767F; font-size:.85rem; font-family:"IBM Plex Mono", monospace; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="brand-nav"><a class="mark" href="#top"><img src="assets/logo.png" alt="" />Sole Archive</a><a href="#vault">Vault</a></nav>
+    <div class="hero-media" role="img" aria-label="Concrete vault with sneakers on pedestals" style="background-image:url('assets/hero.png')"></div>
+    <div class="hero-copy" id="top">
+      <h1>Sole Archive</h1>
+      <p>A small vault for collectible Nike sneakers — independent reseller, museum light, no corporate costume.</p>
+      <a class="btn btn-primary" href="#vault">Enter vault</a>
+      <a class="btn btn-ghost" href="#schema">Catalog schema</a>
+    </div>
+  </header>
+  <aside class="stakes" role="status">
+    <strong>Collector care · hold &amp; authenticity</strong>
+    <p><b>Complete hold</b> · AJ1 Chicago on pedestal B · expires 18:00 local · independent verification, not Nike-operated</p>
+  </aside>
+  <p class="place-credit">Object label: Vault interior · archival looking (witness the pair, do not cosplay Nike HQ).</p>
+
+  <section id="schema">
+    <h2>Mini catalog schema</h2>
+    <p class="lede">Control plane for vault cards. Envelope (status, authenticity, hold) ≠ fill (product photo). Filters stay in the drawer; holds break disclosure.</p>
+    <p class="disclaimer">Sole Archive is an independent boutique. Nike® and related marks belong to their owners. We sell collectible pairs; the SA monogram is our mark only.</p>
+  </section>
+
+  <section id="vault">
+    <h2>Vault</h2>
+    <p class="lede">Cards exist only as interaction surfaces for hold / inspect.</p>
+    <details class="filters">
+      <summary>Advanced filters (optional · KEEP progressive disclosure)</summary>
+      <fieldset>
+        <label><input type="checkbox" /> DS only</label>
+        <label><input type="checkbox" /> Year ≥ 2018</label>
+        <label><input type="checkbox" /> Verified authenticity</label>
+      </fieldset>
+    </details>
+    <div class="vault">
+      <article data-sku="SA-AJ1-CHI-42">
+        <h3>Air Jordan 1 Retro High</h3>
+        <p class="meta">year: 2015 · condition: VNDS · authenticity: Verified</p>
+        <p class="hold-line">holdStatus: Hold · holdExpiry: 18:00 local</p>
+        <p class="meta">price: $420 · envelope ≠ fill</p>
+        <button class="hold-btn" type="button" onclick="document.getElementById('h').textContent='Complete hold · AJ1 Chicago · until 18:00 local.';">Complete hold</button>
+      </article>
+      <article data-sku="SA-DUNK-PIGEON">
+        <h3>Dunk Low — Pigeon</h3>
+        <p class="meta">year: 2023 · condition: DS · authenticity: Verified</p>
+        <p class="hold-line">holdStatus: Open · holdExpiry: —</p>
+        <p class="meta">price: $310</p>
+        <button class="hold-btn" type="button" onclick="document.getElementById('h').textContent='Start hold · Dunk Pigeon · 2-hour window.';">Start hold</button>
+      </article>
+      <article data-sku="SA-AM1-PATTA">
+        <h3>Air Max 1 — Archive pair</h3>
+        <p class="meta">year: 2018 · condition: Used-graded · authenticity: Independent</p>
+        <p class="hold-line">holdStatus: Open · disclose independent grade</p>
+        <p class="meta">price: $280</p>
+        <button class="hold-btn" type="button" onclick="document.getElementById('h').textContent='Inspect pair · Air Max 1 · desk closes 19:00.';">Inspect pair</button>
+      </article>
+    </div>
+    <p id="h" role="status" style="margin-top:1.25rem;min-height:1.5em;color:#F0C48A;font-family:'IBM Plex Mono',monospace;"></p>
+  </section>
+  <footer>Sole Archive · SA monogram only · Pass GZ deepen · catalog schema as GenUI control plane</footer>
+</body>
+</html>

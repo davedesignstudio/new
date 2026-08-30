@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Design Studio — Five Brands · Pass GZ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+:root { --ink:#16141F; --paper:#F4F5F7; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:"Source Sans 3", system-ui, sans-serif; color:var(--ink);
+  background:
+    radial-gradient(900px 500px at 0% 0%, rgba(14,107,107,.12), transparent 50%),
+    radial-gradient(700px 400px at 100% 0%, rgba(184,78,34,.12), transparent 45%),
+    linear-gradient(180deg, #EEF0F4, #F7F8FA);
+  min-height:100vh; padding:3rem 4vw 4rem;
+}
+h1 { font-family:Syne, sans-serif; font-size:clamp(2rem,5vw,3.2rem); letter-spacing:-.03em; margin-bottom:.5rem; }
+.lede { max-width:40rem; color:#444856; margin-bottom:2rem; }
+.chooser {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;
+}
+a.brand {
+  display:grid; gap:.65rem; padding:1rem; text-decoration:none; color:inherit;
+  background:rgba(255,255,255,.72); border:1px solid rgba(22,20,31,.08);
+  transition: transform .2s ease, border-color .2s ease;
+}
+a.brand:hover { transform:translateY(-2px); border-color:rgba(22,20,31,.22); }
+a.brand img { width:64px; height:64px; object-fit:cover; border-radius:50%; background:#fff; }
+a.brand strong { font-family:Syne, sans-serif; font-size:1.1rem; }
+a.brand span { color:#5A6070; font-size:.92rem; }
+.note { margin-top:2rem; font-size:.9rem; color:#5A6070; max-width:40rem; }
+</style>
+</head>
+<body>
+  <h1>Five brands · Pass GZ</h1>
+  <p class="lede">Research deepen + creative rebuild: 2 cafes, 2 restaurants, 1 collectible Nike sneaker vault. Cards here are interaction only — choose a brand.</p>
+  <div class="chooser">
+    <a class="brand" href="kiln-and-cup/"><img src="kiln-and-cup/assets/logo.png" alt="" /><strong>Kiln &amp; Cup</strong><span>Cafe · clay workshop · allergy croze</span></a>
+    <a class="brand" href="mist-harbor/"><img src="mist-harbor/assets/logo.png" alt="" /><strong>Mist Harbor</strong><span>Cafe · pier fog · A+I+L holds</span></a>
+    <a class="brand" href="ember-court/"><img src="ember-court/assets/logo.png" alt="" /><strong>Ember Court</strong><span>Restaurant · courtyard fire</span></a>
+    <a class="brand" href="citrus-hull/"><img src="citrus-hull/assets/logo.png" alt="" /><strong>Citrus Hull</strong><span>Restaurant · catch board</span></a>
+    <a class="brand" href="sole-archive/"><img src="sole-archive/assets/logo.png" alt="" /><strong>Sole Archive</strong><span>Sneaker vault · Nike collectibles</span></a>
+  </div>
+  <p class="note">Deepen fruit: catalog schema · hospitality vs archival looking · panic FID→A+I+L · Didache/Samaritan mercy stakes · Kiln croze checklist. See <code>research-notes/pass-gz-deepen.md</code>.</p>
+</body>
+</html>
