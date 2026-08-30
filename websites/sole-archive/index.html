@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectable Sneaker Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --bg: #f4f4f2;
+      --ink: #1c1c1c;
+      --accent: #3a3a3a;
+      --accent-ink: #f4f4f2;
+      --display: "Archivo Black", Impact, sans-serif;
+      --body: "Space Grotesk", sans-serif;
+      --stakes-bg: #e6e6e2;
+      --hero-ink: #f4f4f2;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); }
+    .btn-primary { background: #111; color: #f4f4f2; }
+    .hold-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: var(--fitts-min);
+      padding: 0 0.85rem;
+      border-radius: 6px;
+      background: #111;
+      color: #f4f4f2;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header class="envelope" role="banner">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" width="44" height="44" alt="Sole Archive logo — SA monogram" />
+      <span>Sole Archive</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#vault">Vault</a>
+      <a href="#hold">Hold</a>
+      <a href="#filters">Filters</a>
+    </nav>
+  </header>
+
+  <div class="stakes" role="status">
+    <span><strong>Independent reseller:</strong> not affiliated with Nike, Inc.</span>
+    <span><strong>Holds expire:</strong> unpaid holds release at 24h — no extensions by DM</span>
+    <span class="hold-chip" id="auth-chip">Auth desk open</span>
+  </div>
+
+  <section class="hero" aria-label="Sole Archive hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1 class="hero__brand">Sole Archive</h1>
+      <p class="hero__line">A small vault for collectable Nike sneakers — authenticated, held with limits.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#vault">Enter the vault</a>
+        <a class="btn btn-ghost" href="#hold">Check your hold</a>
+      </div>
+      <p class="place-credit">Illustration credit: concrete vault atmosphere · pedestal lighting, archival quiet</p>
+    </div>
+  </section>
+
+  <section class="section" id="vault">
+    <h2>Vault</h2>
+    <p class="lede">Pairs on pedestals. Cards only where you act — hold, inspect, release.</p>
+    <div class="card-grid">
+      <article class="interact-card">
+        <h3>Dunk Low · City Pack</h3>
+        <p>Size run 8–12 · condition grade A</p>
+        <button class="btn btn-primary" type="button" data-hold="Dunk Low City Pack">Hold this pair</button>
+        <div class="vault-field" data-practice="hc-integrate">
+          <label for="last-inspected">lastInspected</label>
+          <input id="last-inspected" name="lastInspected" type="date" value="2026-08-29" />
+        </div>
+      </article>
+      <article class="interact-card">
+        <h3>Air Max 1 · Anniversary</h3>
+        <p>Size 10 · box present · yellowing noted</p>
+        <button class="btn btn-primary" type="button" data-hold="Air Max 1 Anniversary">Hold this pair</button>
+      </article>
+      <article class="interact-card">
+        <h3>Jordan 1 · Lost &amp; Found</h3>
+        <p>Size 9.5 · double-boxed · auth tag on file</p>
+        <button class="btn btn-primary" type="button" data-hold="Jordan 1 Lost & Found">Hold this pair</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="hold">
+    <h2>Hold status</h2>
+    <p class="lede">Action + Item + Limit — never panic language.</p>
+    <p class="status" id="hold-status" aria-live="polite">
+      <strong>Holding</strong>
+      <span>Dunk Low · size 10</span>
+      <span>· expires in 24h</span>
+    </p>
+  </section>
+
+  <section class="section" id="filters">
+    <h2>Optional filters</h2>
+    <p class="lede">Advanced filters stay progressive — danger stays in the stakes strip.</p>
+    <div class="filters" role="group" aria-label="Optional vault filters">
+      <label><input type="checkbox" /> Size 10</label>
+      <label><input type="checkbox" /> Deadstock</label>
+      <label><input type="checkbox" /> With box</label>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    Sole Archive · SA monogram only (no Nike™ in mark) · Fitts ≥48px on hold chips and vault fields · Pass HC Integrate
+  </footer>
+
+  <script>
+    const status = document.getElementById("hold-status");
+    document.querySelectorAll("[data-hold]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.getAttribute("data-hold");
+        status.innerHTML =
+          "<strong>Holding</strong><span>" + item + "</span><span>· expires in 24h</span>";
+      });
+    });
+  </script>
+</body>
+</html>

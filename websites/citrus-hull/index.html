@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Coastal Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --bg: #f3efe4;
+      --ink: #143833;
+      --accent: #1f6f6a;
+      --accent-ink: #f7f3e4;
+      --display: "Libre Baskerville", Georgia, serif;
+      --body: "DM Sans", sans-serif;
+      --stakes-bg: #e2ebe4;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); }
+    .btn-primary { color: var(--accent-ink); }
+  </style>
+</head>
+<body>
+  <header class="envelope" role="banner">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" width="44" height="44" alt="Citrus Hull logo" />
+      <span>Citrus Hull</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#catch">Catch</a>
+      <a href="#terrace">Terrace</a>
+      <a href="#hours">Hours</a>
+    </nav>
+  </header>
+
+  <div class="stakes" role="status">
+    <span><strong>Shellfish croze:</strong> shared fryer — severe allergies: tell us before seating</span>
+    <span><strong>Wind:</strong> terrace closes above 25 knots</span>
+  </div>
+
+  <section class="hero" aria-label="Citrus Hull hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1 class="hero__brand">Citrus Hull</h1>
+      <p class="hero__line">Catch of the day on a bright coastal terrace.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#terrace">Hold a terrace seat</a>
+        <a class="btn btn-ghost" href="#catch">Today’s catch board</a>
+      </div>
+      <p class="place-credit">Illustration credit: coastal terrace atmosphere · citrus bowls, boat hulls offshore</p>
+    </div>
+  </section>
+
+  <section class="section" id="catch">
+    <h2>Catch board</h2>
+    <p class="lede">One job: what came off the boat this morning.</p>
+    <div class="board" role="list">
+      <div class="board-row" role="listitem">
+        <span>Lemon-grilled mackerel</span>
+        <span>$29</span>
+      </div>
+      <div class="board-row" role="listitem" data-practice="hc-integrate">
+        <span>Shellfish croze · citrus broth</span>
+        <span>$34</span>
+      </div>
+      <div class="board-row" role="listitem">
+        <span>Hull greens · preserved orange</span>
+        <span>$14</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="terrace">
+    <h2>Terrace hold</h2>
+    <p class="lede">We say what we are holding, and the limit.</p>
+    <p class="status" id="terrace-status" aria-live="polite">
+      <strong>Holding</strong>
+      <span>terrace two-top windward</span>
+      <span>· expires in 60 min</span>
+    </p>
+    <p style="margin-top:1rem">
+      <button class="btn btn-primary" type="button" id="confirm-terrace">Confirm terrace</button>
+    </p>
+  </section>
+
+  <section class="section" id="hours">
+    <h2>Hours</h2>
+    <p class="lede">Lunch Thu–Mon · dinner Fri–Sat · citrus hour at 4pm.</p>
+  </section>
+
+  <footer class="site-footer">
+    Citrus Hull · envelope≠fill · catch board is stave; stakes strip is hoop
+  </footer>
+
+  <script>
+    document.getElementById("confirm-terrace").addEventListener("click", () => {
+      document.getElementById("terrace-status").innerHTML =
+        "<strong>Seated hold</strong><span>terrace two-top windward</span><span>· arrive by 12:40pm</span>";
+    });
+  </script>
+</body>
+</html>

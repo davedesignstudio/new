@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Courtyard Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --bg: #f5ede3;
+      --ink: #2a1218;
+      --accent: #6b1e2f;
+      --accent-ink: #f8efd8;
+      --display: "Bodoni Moda", "Times New Roman", serif;
+      --body: "Manrope", sans-serif;
+      --stakes-bg: #ead8c8;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); }
+    .btn-primary { color: var(--accent-ink); }
+  </style>
+</head>
+<body>
+  <header class="envelope" role="banner">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" width="44" height="44" alt="Ember Court logo" />
+      <span>Ember Court</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#fire">Fire board</a>
+      <a href="#book">Book</a>
+      <a href="#court">Court</a>
+    </nav>
+  </header>
+
+  <div class="stakes" role="status">
+    <span><strong>Allergens:</strong> walnut ash butter on fire croze — declare allergies when booking</span>
+    <span><strong>Open flame:</strong> courtyard seating near the pit</span>
+  </div>
+
+  <section class="hero" aria-label="Ember Court hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1 class="hero__brand">Ember Court</h1>
+      <p class="hero__line">Evening plates around a contained courtyard fire.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#book">Book the court</a>
+        <a class="btn btn-ghost" href="#fire">Tonight’s fire board</a>
+      </div>
+      <p class="place-credit">Illustration credit: courtyard fire atmosphere · stone walls, ember light</p>
+    </div>
+  </section>
+
+  <section class="section" id="fire">
+    <h2>Fire board</h2>
+    <p class="lede">One service, one board — what the pit is doing tonight.</p>
+    <div class="board" role="list">
+      <div class="board-row" role="listitem" data-practice="hc-integrate">
+        <span>Fire croze · ash-butter trout</span>
+        <span>$38</span>
+      </div>
+      <div class="board-row" role="listitem">
+        <span>Charred chicory · gold vinaigrette</span>
+        <span>$18</span>
+      </div>
+      <div class="board-row" role="listitem">
+        <span>Ember pears · bay leaf cream</span>
+        <span>$16</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <h2>Book</h2>
+    <p class="lede">Reservations speak plainly — what you hold, and until when.</p>
+    <p class="status" id="book-status" aria-live="polite">
+      <strong>Holding</strong>
+      <span>court table 4 · two guests</span>
+      <span>· expires in 2 hours</span>
+    </p>
+    <p style="margin-top:1rem">
+      <button class="btn btn-primary" type="button" id="confirm-book">Confirm booking</button>
+    </p>
+  </section>
+
+  <section class="section" id="court">
+    <h2>The court</h2>
+    <p class="lede">Dinner Wed–Sat · first seating at dusk · jackets welcome, not required.</p>
+  </section>
+
+  <footer class="site-footer">
+    Ember Court · Bodoni hero · hear-and-do: allergens named before the plate arrives
+  </footer>
+
+  <script>
+    document.getElementById("confirm-book").addEventListener("click", () => {
+      document.getElementById("book-status").innerHTML =
+        "<strong>Booked</strong><span>court table 4 · two guests</span><span>· arrive by 7:15pm</span>";
+    });
+  </script>
+</body>
+</html>

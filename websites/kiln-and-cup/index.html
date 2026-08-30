@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln & Cup — Ceramic Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --bg: #f7f0e8;
+      --ink: #3d2314;
+      --accent: #c45c26;
+      --accent-ink: #fff8f2;
+      --display: "Fraunces", Georgia, serif;
+      --body: "Source Sans 3", sans-serif;
+      --stakes-bg: #f0e0d2;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--body); }
+    .hero {
+      background:
+        linear-gradient(135deg, #e8d5c4 0%, #c9a88a 40%, #8a5a3c 100%);
+    }
+  </style>
+</head>
+<body>
+  <header class="envelope" role="banner">
+    <a class="brand-lockup" href="./index.html">
+      <img src="./assets/logo.png" width="44" height="44" alt="Kiln & Cup logo" />
+      <span>Kiln &amp; Cup</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#board">Board</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <div class="stakes" role="status">
+    <span><strong>Allergens:</strong> sesame on croze row — ask before tasting</span>
+    <span><strong>Kiln hours:</strong> glaze firings close the shop 2–4pm Wed</span>
+  </div>
+
+  <section class="hero" aria-label="Kiln & Cup hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="./assets/hero.png" alt="" />
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1 class="hero__brand">Kiln &amp; Cup</h1>
+      <p class="hero__line">Clay-fired coffee in a working ceramics workshop.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#reserve">Reserve a wheel-side seat</a>
+        <a class="btn btn-ghost" href="#board">See today’s board</a>
+      </div>
+      <p class="place-credit">Illustration credit: kiln workshop atmosphere · clay shelves, morning dust light</p>
+    </div>
+  </section>
+
+  <section class="section" id="board">
+    <h2>Today’s croze board</h2>
+    <p class="lede">One board, one purpose — what we poured and what we threw.</p>
+    <div class="board" role="list">
+      <div class="board-row" role="listitem" data-practice="hc-integrate">
+        <span>Sesame oat latte · croze cup #12</span>
+        <span>$6</span>
+      </div>
+      <div class="board-row" role="listitem">
+        <span>Honey filter · stoneware demitasse</span>
+        <span>$5</span>
+      </div>
+      <div class="board-row" role="listitem">
+        <span>Clay-cooled pour-over</span>
+        <span>$5.50</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reserve">
+    <h2>Reserve</h2>
+    <p class="lede">Hold a seat beside the drying rack — we confirm in plain language.</p>
+    <p class="status" id="reserve-status" aria-live="polite">
+      <strong>Holding</strong>
+      <span>wheel-side two-top</span>
+      <span>· expires in 45 min</span>
+    </p>
+    <p style="margin-top:1rem">
+      <button class="btn btn-primary" type="button" id="confirm-reserve">Confirm reserve</button>
+    </p>
+  </section>
+
+  <section class="section" id="visit">
+    <h2>Visit</h2>
+    <p class="lede">Open Tue–Sun · 7am–3pm · alley entrance past the kiln shed.</p>
+  </section>
+
+  <footer class="site-footer">
+    Kiln &amp; Cup · Pass HC Integrate · Fitts targets ≥48px · sesame allergen always above the fold
+  </footer>
+
+  <script>
+    document.getElementById("confirm-reserve").addEventListener("click", () => {
+      const el = document.getElementById("reserve-status");
+      el.innerHTML = "<strong>Reserved</strong><span>wheel-side two-top</span><span>· pickup by 11:30am</span>";
+    });
+  </script>
+</body>
+</html>
