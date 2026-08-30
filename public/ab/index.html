@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A/B test — Philhower &amp; Okrogly</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .ab-wrap { width: min(1100px, 100%); margin: 0 auto; padding: 2rem var(--space) 4rem; }
+    .ab-grid { display:grid; gap:1rem; grid-template-columns: 1fr 1fr; }
+    .ab-card { border:1px solid var(--line); padding:1.25rem; background: rgba(242,244,239,.9); }
+    .ab-card h2 { margin:0 0 .5rem; font-family:var(--font-display); font-size:1.2rem; }
+    .ab-card p { margin:0 0 1rem; color:var(--muted); font-size:.92rem; }
+    .ab-pair { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .ab-pair a { font-size:.8rem; }
+    @media (max-width:700px){ .ab-grid{grid-template-columns:1fr;} }
+    #ab-log { font-family: ui-monospace, monospace; font-size:.78rem; white-space:pre-wrap; background:#111; color:#d7e0c8; padding:1rem; max-height:320px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-mark" href="/">Philhower &amp; Okrogly</a>
+    <nav class="nav" id="site-nav">
+      <a href="/ab/" aria-current="page">A/B test</a>
+      <a href="/library/">Library</a>
+      <a href="/work/">Work</a>
+      <a class="nav-cta" href="/contact/">Start a project</a>
+    </nav>
+  </header>
+  <main class="ab-wrap">
+    <header class="page-hero" style="padding-left:0;padding-right:0">
+      <p class="section-label">45-minute session</p>
+      <h1>A/B brand testing.</h1>
+      <p><strong>A</strong> = legacy “D Philhower Studio” chrome (comparison only). <strong>B</strong> = Philhower and Okrogly Design and Build (candidate). Score brand signal, copy hygiene, and link health.</p>
+    </header>
+    <div class="ab-grid">
+      <div class="ab-card">
+        <h2>Home</h2>
+        <p>Side-by-side surfaces for the timed run.</p>
+        <div class="ab-pair">
+          <a class="btn btn-outline" href="/ab/a/home.html">Open A</a>
+          <a class="btn btn-dark" href="/ab/b/home.html">Open B</a>
+        </div>
+      </div>
+      <div class="ab-card">
+        <h2>Library</h2>
+        <p>Side-by-side surfaces for the timed run.</p>
+        <div class="ab-pair">
+          <a class="btn btn-outline" href="/ab/a/library.html">Open A</a>
+          <a class="btn btn-dark" href="/ab/b/library.html">Open B</a>
+        </div>
+      </div>
+      <div class="ab-card">
+        <h2>Work</h2>
+        <p>Side-by-side surfaces for the timed run.</p>
+        <div class="ab-pair">
+          <a class="btn btn-outline" href="/ab/a/work.html">Open A</a>
+          <a class="btn btn-dark" href="/ab/b/work.html">Open B</a>
+        </div>
+      </div>
+      <div class="ab-card">
+        <h2>About</h2>
+        <p>Side-by-side surfaces for the timed run.</p>
+        <div class="ab-pair">
+          <a class="btn btn-outline" href="/ab/a/about.html">Open A</a>
+          <a class="btn btn-dark" href="/ab/b/about.html">Open B</a>
+        </div>
+      </div>
+    </div>
+    <section class="section" style="padding-left:0;padding-right:0">
+      <h2 class="section-title">Live checklist</h2>
+      <p class="section-copy">Automated runner posts results to <code>/ab/results.json</code> during the 45-minute window.</p>
+      <pre id="ab-log">Loading results…</pre>
+    </section>
+  </main>
+  <script>
+    async function load() {
+      try {
+        const r = await fetch('/ab/results.json?' + Date.now());
+        const j = await r.json();
+        document.getElementById('ab-log').textContent = JSON.stringify(j, null, 2);
+      } catch (e) {
+        document.getElementById('ab-log').textContent = 'No results yet — runner starting.';
+      }
+    }
+    load();
+    setInterval(load, 15000);
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

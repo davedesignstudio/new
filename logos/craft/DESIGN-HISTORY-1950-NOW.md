@@ -9,7 +9,7 @@ Labeled shelves. Parallel streams — not a civilizational ladder.
 
 - Shelves run **in parallel** where dates overlap. Swiss grid and Black Panther newspaper graphics share decades; they are not rungs on one ladder.
 - Each shelf names **what it gave the field** and a **limit** (what it cannot claim).
-- Studio mapping sits at the end — how this history feeds Service The Hills systems, identity kits, and the Techniques canon.
+- Studio mapping sits at the end — how this history feeds Philhower and Okrogly systems, identity kits, and the Techniques canon.
 
 ---
 
@@ -176,7 +176,7 @@ Labeled shelves. Parallel streams — not a civilizational ladder.
 
 ## How this maps to studio work now
 
-1. **STH text system** (caps serif + script + tagline) sits on the corporate-identity shelf (Bass/Rand systems) + mid-century craft of hierarchy.
+1. **Caps–script wordmark system** (caps serif + script + tagline) sits on the corporate-identity shelf (Bass/Rand systems) + mid-century craft of hierarchy.
 2. **Logo / poster / tee / van kits** = identity as operating kit, not a lone mark — Shelf A corporate + Shelf B fashion-as-media.
 3. **Techniques canon** (`DESIGN-TECHNIQUES.md`) = 2010s–now response: GenUI contracts, front-loaded stakes, objecthood, plain writing, labeled canons, cooperage pressure-test.
 4. **Liberation print shelf** remains open — hear+do (Mt 7), not quote-only modernism.

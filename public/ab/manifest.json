@@ -1,0 +1,28 @@
+{
+  "variants": [
+    "A",
+    "B"
+  ],
+  "pages": [
+    {
+      "key": "home",
+      "a": "/ab/a/home.html",
+      "b": "/ab/b/home.html"
+    },
+    {
+      "key": "library",
+      "a": "/ab/a/library.html",
+      "b": "/ab/b/library.html"
+    },
+    {
+      "key": "work",
+      "a": "/ab/a/work.html",
+      "b": "/ab/b/work.html"
+    },
+    {
+      "key": "about",
+      "a": "/ab/a/about.html",
+      "b": "/ab/b/about.html"
+    }
+  ]
+}

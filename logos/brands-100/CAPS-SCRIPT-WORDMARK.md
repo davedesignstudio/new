@@ -1,6 +1,6 @@
-# Service The Hills text system (logo base)
+# Caps–script wordmark text system (logo base)
 
-All curated logos follow the **Service The Hills** wordmark hierarchy:
+All curated logos follow the **Caps–script wordmark** wordmark hierarchy:
 
 1. **Top line** — bold all-caps classic serif (like `SERVICE`), metallic/embossed feel when on dark
 2. **Middle line** — elegant connected script (like `The Hills`), larger visual weight; center any small connecting word

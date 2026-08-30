@@ -1,4 +1,4 @@
-# Design techniques — D Philhower Studio craft canon
+# Design techniques — Philhower and Okrogly Design and Build craft canon
 
 Plain language. Labeled shelves. Pressure-tested work beats polish theater.
 

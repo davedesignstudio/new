@@ -1,0 +1,377 @@
+{
+  "session": "ab-45min",
+  "latest": {
+    "round": 1,
+    "started": "2026-08-30T16:19:59.958674+00:00",
+    "finished": "2026-08-30T16:19:59.991669+00:00",
+    "summary": {
+      "variant_a_avg_score": 1.0,
+      "variant_b_avg_score": 1.0,
+      "preferred": "B",
+      "live_routes_ok": "9/9",
+      "sth_leaks_on_live": [],
+      "legacy_brand_on_live": []
+    },
+    "pages": [
+      {
+        "page": "home",
+        "a": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_legacy_brand": true,
+            "no_okrogly": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "b": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_okrogly": true,
+            "has_design_build": true,
+            "no_legacy_studio": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "winner": "B"
+      },
+      {
+        "page": "library",
+        "a": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_legacy_brand": true,
+            "no_okrogly": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "b": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_okrogly": true,
+            "has_design_build": true,
+            "no_legacy_studio": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "winner": "B"
+      },
+      {
+        "page": "work",
+        "a": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_legacy_brand": true,
+            "no_okrogly": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "b": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_okrogly": true,
+            "has_design_build": true,
+            "no_legacy_studio": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "winner": "B"
+      },
+      {
+        "page": "about",
+        "a": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_legacy_brand": true,
+            "no_okrogly": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "b": {
+          "http": 200,
+          "score": 1.0,
+          "checks": {
+            "has_okrogly": true,
+            "has_design_build": true,
+            "no_legacy_studio": true,
+            "no_sth": true,
+            "has_nav_library": true
+          }
+        },
+        "winner": "B"
+      }
+    ],
+    "live": [
+      {
+        "path": "/",
+        "http": 200,
+        "bytes": 7441,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/library/",
+        "http": 200,
+        "bytes": 5034,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/work/",
+        "http": 200,
+        "bytes": 5323,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/history-100/",
+        "http": 200,
+        "bytes": 48209,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/history-100/process/",
+        "http": 200,
+        "bytes": 132302,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/brands-500/",
+        "http": 200,
+        "bytes": 17678,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/brands-500/process/",
+        "http": 200,
+        "bytes": 63658,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/contact/",
+        "http": 200,
+        "bytes": 3738,
+        "sth_leak": false,
+        "okrogly": true,
+        "legacy": false
+      },
+      {
+        "path": "/img/identity-kits/gilt-tap/logo.png",
+        "http": 200,
+        "bytes": 443170
+      }
+    ]
+  },
+  "history": [
+    {
+      "round": 1,
+      "started": "2026-08-30T16:19:59.958674+00:00",
+      "finished": "2026-08-30T16:19:59.991669+00:00",
+      "summary": {
+        "variant_a_avg_score": 1.0,
+        "variant_b_avg_score": 1.0,
+        "preferred": "B",
+        "live_routes_ok": "9/9",
+        "sth_leaks_on_live": [],
+        "legacy_brand_on_live": []
+      },
+      "pages": [
+        {
+          "page": "home",
+          "a": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_legacy_brand": true,
+              "no_okrogly": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "b": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_okrogly": true,
+              "has_design_build": true,
+              "no_legacy_studio": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "winner": "B"
+        },
+        {
+          "page": "library",
+          "a": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_legacy_brand": true,
+              "no_okrogly": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "b": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_okrogly": true,
+              "has_design_build": true,
+              "no_legacy_studio": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "winner": "B"
+        },
+        {
+          "page": "work",
+          "a": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_legacy_brand": true,
+              "no_okrogly": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "b": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_okrogly": true,
+              "has_design_build": true,
+              "no_legacy_studio": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "winner": "B"
+        },
+        {
+          "page": "about",
+          "a": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_legacy_brand": true,
+              "no_okrogly": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "b": {
+            "http": 200,
+            "score": 1.0,
+            "checks": {
+              "has_okrogly": true,
+              "has_design_build": true,
+              "no_legacy_studio": true,
+              "no_sth": true,
+              "has_nav_library": true
+            }
+          },
+          "winner": "B"
+        }
+      ],
+      "live": [
+        {
+          "path": "/",
+          "http": 200,
+          "bytes": 7441,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/library/",
+          "http": 200,
+          "bytes": 5034,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/work/",
+          "http": 200,
+          "bytes": 5323,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/history-100/",
+          "http": 200,
+          "bytes": 48209,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/history-100/process/",
+          "http": 200,
+          "bytes": 132302,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/brands-500/",
+          "http": 200,
+          "bytes": 17678,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/brands-500/process/",
+          "http": 200,
+          "bytes": 63658,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/contact/",
+          "http": 200,
+          "bytes": 3738,
+          "sth_leak": false,
+          "okrogly": true,
+          "legacy": false
+        },
+        {
+          "path": "/img/identity-kits/gilt-tap/logo.png",
+          "http": 200,
+          "bytes": 443170
+        }
+      ]
+    }
+  ]
+}

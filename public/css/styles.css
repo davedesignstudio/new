@@ -72,9 +72,10 @@ textarea {
 .brand-mark {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(0.82rem, 1.2vw, 1.05rem);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .nav {
@@ -162,6 +163,16 @@ textarea {
   opacity: 0;
   transform: translateY(24px);
   animation: riseIn 0.9s var(--ease) 0.15s forwards;
+}
+
+.hero-discipline {
+  margin: -0.35rem 0 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verdigris);
 }
 
 .hero-line {
