@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Fire Courtyard Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root { --ink: #1a1410; --gold: #c4a35a; --ember: #8b2e1f; }
+    body {
+      font-family: Manrope, system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(800px 480px at 0% 0%, #3a1c14 0%, transparent 55%),
+        linear-gradient(180deg, #241812 0%, #120e0c 55%, #1c1511 100%);
+      color: #f3ebe2;
+    }
+    .brand-mark .name, .section h2, .hero h1 { font-family: "Bodoni Moda", "Times New Roman", serif; }
+    .stakes { background: rgba(139, 46, 31, 0.28); color: #f6ebe0; border-color: rgba(196,163,90,0.35); }
+    .section { color: #f3ebe2; }
+    .croze__row { background: rgba(255,255,255,0.04); }
+    .site-footer { color: #d7c8b6; }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Fire court</strong>
+    <div class="ail">
+      <span data-label="Action">Tell us before we set the flame</span>
+      <span data-label="Item">Open-fire allergen · smoke · dairy butter</span>
+      <span data-label="Limit">Shared hearth · no sealed kitchen</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero__fill" aria-hidden="true"><img src="assets/hero.png" alt="" /></div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="brand-mark">
+        <img src="assets/logo.png" alt="Ember Court logo" width="78" height="78" />
+        <div class="name">Ember Court</div>
+      </div>
+      <h1>Dinner beside the open hearth.</h1>
+      <p class="lede">A courtyard restaurant where the fire is the kitchen wall.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#reserve">Reserve a seat</a>
+        <a class="btn btn--ghost" href="#croze">Fire croze</a>
+      </div>
+    </div>
+    <p class="place-credit">Place · dusk courtyard, ember hearth</p>
+  </header>
+
+  <main>
+    <section class="section" id="reserve">
+      <h2>Courtyard seating</h2>
+      <p class="support">One seating, one fire. We cook what the wood allows tonight.</p>
+      <a class="btn btn--primary" href="mailto:reserve@embercourt.example">Request a table</a>
+    </section>
+
+    <section class="section" id="croze">
+      <h2>Fire croze</h2>
+      <p class="support">Truth-telling about smoke and shared fat—life-way, not CYA panic.</p>
+      <ul class="croze">
+        <li class="croze__row">
+          <div><span class="croze__label">Item</span><span class="croze__value">Open-fire smoke</span></div>
+          <div><span class="croze__label">Action</span><span class="croze__value">Windward seat</span></div>
+          <div><span class="croze__label">Limit</span><span class="croze__value">Hearth always live</span></div>
+          <button type="button" class="croze__seen" aria-pressed="false">Seen</button>
+        </li>
+        <li class="croze__row">
+          <div><span class="croze__label">Item</span><span class="croze__value">Dairy butter</span></div>
+          <div><span class="croze__label">Action</span><span class="croze__value">Oil baste only</span></div>
+          <div><span class="croze__label">Limit</span><span class="croze__value">Shared grate</span></div>
+          <button type="button" class="croze__seen" aria-pressed="false">Seen</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Ember Court · fire courtyard restaurant · Pass HB · <a href="../index.html">All brands</a>
+  </footer>
+  <script>
+    document.querySelectorAll('.croze__seen').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const on = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!on));
+        btn.textContent = on ? 'Seen' : 'Noted';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pass HB — Five Brand Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #14110e;
+      --paper: #f2ebe1;
+      --accent: #c45c26;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Schibsted Grotesk", system-ui, sans-serif;
+      color: var(--paper);
+      background:
+        radial-gradient(900px 500px at 20% -10%, #3a2418 0%, transparent 55%),
+        linear-gradient(165deg, #1a1612, #0c0a09);
+      min-height: 100svh;
+    }
+    header {
+      padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 3rem) 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .lede { max-width: 48ch; opacity: 0.85; margin: 0 0 1.5rem; }
+    .pass {
+      display: inline-block;
+      border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+      color: #f0c2a0;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      padding: 0 clamp(1.25rem, 4vw, 3rem) 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(242, 235, 225, 0.14);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      transition: transform 180ms cubic-bezier(0.22,1,0.36,1), border-color 180ms;
+      min-height: 48px;
+    }
+    a.card:hover { transform: translateY(-3px); border-color: rgba(196,92,38,0.55); }
+    a.card img.logo {
+      width: 72px; height: 72px; object-fit: cover; border-radius: 10px;
+      margin: 1rem 1rem 0; background: #fff;
+    }
+    a.card .body { padding: 0.85rem 1rem 1.15rem; }
+    a.card h2 { font-family: "Instrument Serif", Georgia, serif; font-size: 1.45rem; margin: 0 0 0.25rem; font-weight: 400; }
+    a.card p { margin: 0; font-size: 0.9rem; opacity: 0.75; }
+    footer {
+      padding: 1.5rem clamp(1.25rem, 4vw, 3rem) 2.5rem;
+      opacity: 0.65;
+      font-size: 0.85rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      a.card { transition: none; }
+      a.card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="pass">Pass HB · Hour 4 / 5 · Practice</div>
+    <h1>Five brands from one research spine.</h1>
+    <p class="lede">2 cafes · 2 restaurants · 1 collectible sneaker boutique. Shared pattern language with croze↔vault lockstep practice.</p>
+  </header>
+  <div class="grid">
+    <a class="card" href="kiln-and-cup/index.html">
+      <img class="logo" src="shared/assets/logo_kiln_and_cup.png" alt="" />
+      <div class="body"><h2>Kiln &amp; Cup</h2><p>Cafe · ceramic workshop · sesame croze practice</p></div>
+    </a>
+    <a class="card" href="mist-harbor/index.html">
+      <img class="logo" src="shared/assets/logo_mist_harbor.png" alt="" />
+      <div class="body"><h2>Mist Harbor</h2><p>Cafe · pier board · guest croze</p></div>
+    </a>
+    <a class="card" href="ember-court/index.html">
+      <img class="logo" src="shared/assets/logo_ember_court.png" alt="" />
+      <div class="body"><h2>Ember Court</h2><p>Restaurant · fire courtyard · Bodoni</p></div>
+    </a>
+    <a class="card" href="citrus-hull/index.html">
+      <img class="logo" src="shared/assets/logo_citrus_hull.png" alt="" />
+      <div class="body"><h2>Citrus Hull</h2><p>Restaurant · catch board · shellfish croze</p></div>
+    </a>
+    <a class="card" href="sole-archive/index.html">
+      <img class="logo" src="shared/assets/logo_sole_archive.png" alt="" />
+      <div class="body"><h2>Sole Archive</h2><p>Sneaker vault · lastInspected field practice</p></div>
+    </a>
+  </div>
+  <footer>
+    Research cycle GY→… · Pass HB Practice · Destinations: workspace + automation memory + PR
+  </footer>
+</body>
+</html>

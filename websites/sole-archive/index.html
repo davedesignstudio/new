@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Sneaker Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root { --ink: #121212; --paper: #ede6d9; --gold: #c4a35a; }
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #1a1a1a 0%, #0e0e0e 40%, #171411 100%);
+      color: var(--paper);
+    }
+    .brand-mark .name, .section h2, .hero h1 { font-family: "IBM Plex Serif", Georgia, serif; }
+    .stakes { background: rgba(196, 163, 90, 0.12); color: var(--paper); }
+    .section { color: var(--paper); }
+    .card { background: rgba(237, 230, 217, 0.05); }
+    .site-footer { color: #b9b0a2; }
+    .disclaimer {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      max-width: 62ch;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="status">
+    <strong>Vault hold</strong>
+    <div class="ail">
+      <span data-label="Action">Hold expires · authenticity on every card</span>
+      <span data-label="Item">Collectible pairs · independent archive</span>
+      <span data-label="Limit">Not Nike HQ · no trademark in our mark</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero__fill" aria-hidden="true"><img src="assets/hero.png" alt="" /></div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="brand-mark">
+        <img src="assets/logo.png" alt="Sole Archive logo" width="78" height="78" />
+        <div class="name">Sole Archive</div>
+      </div>
+      <h1>A small vault for collectible Nike sneakers.</h1>
+      <p class="lede">Independent reseller boutique—provenance first, hype second.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#vault">Open vault</a>
+        <a class="btn btn--ghost" href="#filters">Optional filters</a>
+      </div>
+    </div>
+    <p class="place-credit">Object · archival vault shelves, cream labels</p>
+  </header>
+
+  <main>
+    <section class="section" id="vault">
+      <h2>Vault catalog</h2>
+      <p class="support">BREAK: hold + authenticity stay above the fold on each card. KEEP: era/size filters in the drawer.</p>
+      <p class="disclaimer">Sole Archive is an independent boutique. Product names reference collectible Nike models for clarity; this site is not affiliated with Nike, Inc. Our SA monogram does not use Nike trademarks.</p>
+
+      <details class="filters-drawer" id="filters">
+        <summary>Optional filters (KEEP)</summary>
+        <div class="filter-row">
+          <label><input type="checkbox" name="era" value="2010s" /> 2010s</label>
+          <label><input type="checkbox" name="era" value="2020s" /> 2020s</label>
+          <label><input type="checkbox" name="size" value="10" /> US 10</label>
+          <label><input type="checkbox" name="size" value="11" /> US 11</label>
+        </div>
+      </details>
+
+      <div class="vault-grid">
+        <article class="card" data-sku="SA-AJ1-CHICAGO-85">
+          <h3>Air Jordan 1 “Chicago” (archive pair)</h3>
+          <dl class="meta">
+            <dt>SKU</dt><dd>SA-AJ1-CHICAGO-85</dd>
+            <dt>Model / Year</dt><dd>AJ1 High · 2015 remaster</dd>
+            <dt>Condition</dt><dd>Deadstock · box 8/10</dd>
+            <dt>Authenticity</dt><dd>Third-party verified · tag on file</dd>
+            <dt>Hold status</dt><dd><span class="hold-chip">Hold active</span></dd>
+            <dt>Hold expiry</dt><dd>2026-08-31 · 18:00 local</dd>
+            <dt>Last inspected</dt><dd data-practice="hb">2026-08-30 · vault light check</dd>
+            <dt>Price</dt><dd>$1,240</dd>
+          </dl>
+          <button type="button" class="btn btn--primary" style="width:100%; background:#ede6d9; color:#121212;">Request release</button>
+        </article>
+
+        <article class="card" data-sku="SA-DUNK-PIGEON">
+          <h3>Dunk Low “Pigeon” (archive pair)</h3>
+          <dl class="meta">
+            <dt>SKU</dt><dd>SA-DUNK-PIGEON</dd>
+            <dt>Model / Year</dt><dd>Dunk Low · 2023 restock</dd>
+            <dt>Condition</dt><dd>VNDS · worn once indoors</dd>
+            <dt>Authenticity</dt><dd>Receipt + UV stamp</dd>
+            <dt>Hold status</dt><dd><span class="hold-chip">Available</span></dd>
+            <dt>Hold expiry</dt><dd>—</dd>
+            <dt>Last inspected</dt><dd data-practice="hb">2026-08-29 · sole flex audit</dd>
+            <dt>Price</dt><dd>$890</dd>
+          </dl>
+          <button type="button" class="btn btn--primary" style="width:100%; background:#ede6d9; color:#121212;">Place hold</button>
+        </article>
+
+        <article class="card" data-sku="SA-AF1-OFFWHITE-UNC">
+          <h3>Air Force 1 “UNC” (archive pair)</h3>
+          <dl class="meta">
+            <dt>SKU</dt><dd>SA-AF1-OFFWHITE-UNC</dd>
+            <dt>Model / Year</dt><dd>AF1 Low · 2018 collab era</dd>
+            <dt>Condition</dt><dd>Deadstock · plastic intact</dd>
+            <dt>Authenticity</dt><dd>Dual authentication</dd>
+            <dt>Hold status</dt><dd><span class="hold-chip">Hold active</span></dd>
+            <dt>Hold expiry</dt><dd>2026-09-02 · 12:00 local</dd>
+            <dt>Last inspected</dt><dd data-practice="hb">2026-08-30 · zipper bag reseal</dd>
+            <dt>Price</dt><dd>$2,150</dd>
+          </dl>
+          <button type="button" class="btn btn--primary" style="width:100%; background:#ede6d9; color:#121212;">Request release</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Sole Archive · independent collectible sneaker boutique · Pass HB Practice lockstep with Kiln sesame croze · <a href="../index.html">All brands</a>
+  </footer>
+</body>
+</html>
