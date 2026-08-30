@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln & Cup — Ceramic Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+      --accent: #C45C26;
+      --accent-ink: #fff;
+      --ok: #1a7f4b;
+      --warn: #9a3412;
+    }
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: #F7EFE6;
+      color: #2A1C14;
+    }
+    .hero-brand, .section h2, .brand-name {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+  </style>
+</head>
+<body class="kiln-and-cup">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="envelope">
+    <div class="stakes" data-level="warn" role="status" aria-live="polite">
+      <span>Allergen: sesame in morning buns · ask before ordering</span><span aria-hidden="true">·</span><span>Croze: reserve holds 90 minutes</span>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <img src="./logo.png" alt="" width="44" height="44" />
+        <span class="brand-name">Kiln & Cup</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <main id="main">
+    <section class="hero" aria-label="Kiln & Cup hero">
+      <img class="hero-media" src="./hero.png" alt="" />
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand kinetic">Kiln & Cup</h1>
+        <p class="hero-lead">Clay-fired coffee and cups made on the bench beside the kiln.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#reserve">Reserve a seat</a>
+          <a class="btn btn-secondary" href="#menu">See the board</a>
+        </div>
+        <p class="place-credit">Place credit: kiln workshop · morning clay light · Cascades foothills atelier.</p>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <h2 class="organic-shift">On the board</h2>
+      <p class="lede">One purpose: what you can order today. Allergens stay visible above.</p>
+      <div class="interactive-grid" id="board">
+        <article class="interactive-card" >
+          <h3>Kiln drip</h3>
+          <p>Single-origin poured beside the firing bench.</p>
+          <button type="button" class="btn btn-secondary board-act" data-item="Kiln drip">Add</button>
+        </article>
+<article class="interactive-card" >
+          <h3>Sesame morning bun</h3>
+          <p>Contains sesame — named above the fold.</p>
+          <button type="button" class="btn btn-secondary board-act" data-item="Sesame morning bun">Add</button>
+        </article>
+<article class="interactive-card" >
+          <h3>Cup of the week</h3>
+          <p>Thrown that morning; glaze still warm to the touch.</p>
+          <button type="button" class="btn btn-secondary board-act" data-item="Cup of the week">Add</button>
+        </article>
+      </div>
+      <details class="filters" id="filters">
+        <summary>Optional filters</summary>
+        <div class="filter-body" role="group" aria-label="Optional menu filters">
+          <button type="button" class="chip" aria-pressed="false">Dairy-free</button>
+          <button type="button" class="chip" aria-pressed="false">Pastry only</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve a seat</h2>
+      <p class="lede">Reservation confirms what you asked for and when it expires.</p>
+      <div class="interactive-card" style="max-width:28rem">
+        <h3>Table reserve</h3>
+        <p>Primary control meets Fitts ≥48px. Allergens never optional.</p>
+        <button type="button" class="btn btn-primary" id="primary-action">Reserve a seat</button>
+        <p class="status" id="reserve-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p class="lede">Clay-fired coffee and cups made on the bench beside the kiln.</p>
+      <p>Envelope holds allergens and hold limits; fill holds the board. Brand must survive if nav is removed.</p>
+      <p class="canon-note">Design note (Pass HD Survey): kinetic brand type + light organic shift on fill; stakes, Fitts, A+I+L, and mark hygiene kept from Integrate HC. Hear-and-do (Mt 7): visible truth over slogans.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Kiln & Cup. Crafted for Dave Design Studio research cycle HD.</p>
+    <p><a href="../index.html">← All brands</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      const status = document.getElementById('reserve-status');
+      const btn = document.getElementById('primary-action');
+      if (!btn || !status) return;
+      btn.addEventListener('click', function () {
+        status.dataset.tone = 'ok';
+        status.textContent = 'Holding table for 2 · kiln window · expires in 90 minutes';
+      });
+      document.querySelectorAll('.chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          const pressed = chip.getAttribute('aria-pressed') === 'true';
+          chip.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
