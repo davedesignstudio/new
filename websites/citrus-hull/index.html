@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Citrus Hull — Coastal Restaurant</title>
+<meta name="description" content="Terrace dining under citrus and sea air.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600&family=Syne:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F4FBF8;
+  --ink: #143D3A;
+  --accent: #1F6F6A;
+  --muted: #4A6B66;
+  --surface: #DCEEE8;
+  --display: 'Libre Baskerville', Georgia, serif;
+  --body: 'DM Sans', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+@keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+@keyframes drift { from { transform: translateY(0); } to { transform: translateY(-6px); } }
+@keyframes pulse-line { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  header { animation: rise .7s ease both; }
+  .hero-content { animation: rise .8s .05s ease both; }
+  .place-credit { animation: rise .9s .1s ease both; }
+  .stakes { animation: pulse-line 3.5s ease infinite; }
+  .hero-media { animation: drift 14s ease-in-out alternate infinite; }
+}
+
+.site-bg {
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(232,197,71,.2), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(31,111,106,.12), transparent 50%),
+    radial-gradient(ellipse at 80% 10%, rgba(232,197,71,.15), transparent 40%),
+    var(--bg);
+}
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 6vw; position: relative; z-index: 5;
+}
+.brand {
+  display: flex; align-items: center; gap: .75rem;
+  text-decoration: none; color: var(--ink);
+}
+.brand img { width: 48px; height: 48px; object-fit: contain; }
+.brand span {
+  font-family: var(--display);
+  font-size: 1.35rem; font-weight: 600; letter-spacing: .01em;
+}
+nav { display: flex; gap: 1.4rem; }
+nav a {
+  color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500;
+}
+nav a:hover { color: var(--ink); }
+.hero {
+  min-height: calc(100vh - 7rem); min-height: calc(100dvh - 7rem);
+  display: grid; grid-template-rows: 1fr auto;
+  position: relative; color: #fff;
+  width: 100%;
+}
+.hero-media {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  background-color: #1a1210;
+  background-image: linear-gradient(100deg, rgba(20,61,58,.75) 0%, rgba(20,61,58,.28) 58%, rgba(20,61,58,.4) 100%), url('assets/hero.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 18vh 6vw 2rem;
+  max-width: 38rem;
+}
+.hero-content .wordmark {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: .95; font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,.35);
+}
+.hero-content p {
+  font-size: 1.1rem; max-width: 28rem;
+  opacity: .92; margin-bottom: 1.75rem;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: .85rem 1.4rem;
+  border-radius: 2px; font-weight: 600; font-size: .95rem;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-ghost {
+  background: transparent; color: #fff;
+  border: 1px solid rgba(255,255,255,.55);
+}
+.place-credit {
+  position: relative; z-index: 2;
+  padding: 1rem 6vw 1.5rem;
+  font-size: .78rem; letter-spacing: .04em;
+  text-transform: uppercase; opacity: .8;
+}
+.stakes {
+  background: #143D3A;
+  color: #F4FBF8;
+  padding: .9rem 6vw;
+  font-size: .92rem;
+  border-top: 3px solid var(--accent);
+}
+.stakes strong { font-weight: 600; }
+section {
+  padding: 4.5rem 6vw;
+  max-width: 1100px;
+}
+section h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: .6rem; line-height: 1.15;
+}
+section .lead {
+  color: var(--muted); max-width: 36rem; margin-bottom: 2rem;
+}
+.menu-list, .vault-list {
+  display: grid; gap: 1.25rem;
+}
+.menu-list article, .vault-list article {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: .5rem 1.5rem; align-items: baseline;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(20,61,58,.14);
+}
+.menu-list h3, .vault-list h3 {
+  font-family: var(--display); font-size: 1.25rem; font-weight: 600;
+}
+.menu-list p, .vault-list p {
+  grid-column: 1 / -1; color: var(--muted); font-size: .95rem;
+}
+.price { font-weight: 600; color: var(--accent); white-space: nowrap; }
+.ail {
+  background: var(--surface);
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  max-width: 34rem;
+  font-size: .95rem;
+}
+.ail .label {
+  font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .35rem;
+}
+footer {
+  padding: 2.5rem 6vw 3rem;
+  border-top: 1px solid rgba(20,61,58,.14);
+  color: var(--muted); font-size: .88rem;
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
+}
+footer a { color: var(--ink); }
+@media (max-width: 700px) {
+  nav { display: none; }
+  .hero-content { padding-top: 14vh; }
+}
+</style>
+</head>
+<body>
+<div class="site-bg" aria-hidden="true"></div>
+<header>
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Citrus Hull logo" width="48" height="48">
+    <span>Citrus Hull</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#offer">Catch</a>
+    <a href="#visit">Visit</a>
+    <a href="#hold">Reserve</a>
+  </nav>
+</header>
+<aside class="stakes" role="note"><strong>Know this:</strong> Catch board changes with the tide. Shellfish and citrus zest noted on each plate.</aside>
+<main>
+  <section class="hero" aria-label="Hero">
+    <div class="hero-media" role="img" aria-label="Citrus terrace, coastal light"></div>
+    <div class="hero-content">
+      <h1 class="wordmark">Citrus Hull</h1>
+      <p>Citrus shade, hull-side breeze — seafood and bright plates on the terrace.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#hold">Reserve terrace</a>
+        <a class="btn btn-ghost" href="#offer">Catch board</a>
+      </div>
+    </div>
+    <p class="place-credit">Place · Citrus terrace, coastal light</p>
+  </section>
+
+  <section id="offer">
+    <h2>Catch board</h2>
+    <p class="lead">One job: today's catch. No competing promo strips.</p>
+    <div class="menu-list">
+      <article>
+  <h3>Lemon-cured crudo</h3>
+  <span class="price">$19</span>
+  <p>Olive oil, chili thread, citrus leaf.</p>
+</article>
+<article>
+  <h3>Hull grilled fish</h3>
+  <span class="price">$32</span>
+  <p>Market fish, herb butter, grilled lemon.</p>
+</article>
+<article>
+  <h3>Bergamot granita</h3>
+  <span class="price">$9</span>
+  <p>Dairy-free; zest-forward.</p>
+</article>
+    </div>
+  </section>
+
+  <section id="hold">
+    <h2>Reserve the terrace</h2>
+    <p class="lead">Neighborly clarity: Action + Item + Limit on every hold.</p>
+    <div class="ail" id="visit">
+      <div class="label">Status · Action + Item + Limit</div>
+      <p><strong>Reserve</strong> terrace two-top <em>— weather hold moves indoors if wind >20mph.</em></p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>Citrus Hull · Pass GY Survey · Design as hospitality</p>
+  <p><a href="../index.html">All five brands</a></p>
+</footer>
+</body>
+</html>
