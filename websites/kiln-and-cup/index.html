@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiln & Cup — Clay-fired cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    :root {
+      --paper: #f3e6d8;
+      --ink: #3d2314;
+      --accent: #c45c26;
+      --accent-ink: #fff8f2;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Source Sans 3", sans-serif;
+      --stakes-bg: #efe0cf;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 20% 0%, #f8efe4 0%, transparent 45%),
+        linear-gradient(180deg, #f3e6d8 0%, #ead7c4 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="note">
+    <div class="stakes-inner">
+      <strong>Allergy notice:</strong>
+      <span>Dairy and gluten are present in the bakery case. Ask the bar before ordering if you need a safe alternative.</span>
+    </div>
+  </div>
+  <header class="envelope">
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img src="./assets/logo.png" alt="" width="40" height="40" />
+        <span>Kiln &amp; Cup</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#menu">Menu</a>
+        <a href="#workshop">Workshop</a>
+        <a href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Warm pottery workshop with glowing kiln and handmade cups" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Kiln &amp; Cup</h1>
+        <p class="hero-lede">Coffee poured beside clay still warm from the fire.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" data-action="reserve" data-item="Morning table for two" data-limit="held 45 minutes">Reserve a table</button>
+          <a class="btn btn-ghost" href="#menu">See today’s pour</a>
+        </div>
+        <p class="place-credit">Place: the kiln room at first light — shelves of cups, open fire, steam from the pour-over bar.</p>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <h2>Today’s pour</h2>
+      <p class="support">One job: what you can drink and eat now.</p>
+      <div class="menu-list">
+        <article class="menu-item"><h3>Ember espresso</h3><p>Single origin, kiln-side roast, short and bright.</p></article>
+        <article class="menu-item"><h3>Clay oat latte</h3><p>Oat milk steamed soft with honeyed malt.</p></article>
+        <article class="menu-item"><h3>Ash biscuit</h3><p>Charred edge, brown butter, seasonal jam.</p></article>
+        <article class="menu-item"><h3>Studio pour-over</h3><p>Slow V60 on the workshop counter.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="workshop">
+      <h2>Workshop hours</h2>
+      <p class="support">Throw, glaze, and drink in the same room. Cups leave with the heat still in them.</p>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="support">Confirmations use plain Action + Item + Limit — no panic tone.</p>
+      <button class="btn btn-primary" type="button" data-action="reserve" data-item="Window bench" data-limit="held until 11:00">Hold window bench</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">Kiln &amp; Cup · Independent cafe · Pass GX Integrate</footer>
+  <script>
+    const status = document.getElementById("status");
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const action = btn.dataset.action === "reserve" ? "Reserving" : "Holding";
+        status.dataset.open = "true";
+        status.textContent = `${action} ${btn.dataset.item} · ${btn.dataset.limit}.`;
+      });
+    });
+  </script>
+</body>
+</html>

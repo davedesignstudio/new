@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember Court — Firelit restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    :root {
+      --paper: #f7f1e6;
+      --ink: #2a1418;
+      --accent: #6b1e2a;
+      --accent-ink: #f7f1e6;
+      --font-display: "Bodoni Moda", "Times New Roman", serif;
+      --font-body: "Manrope", sans-serif;
+      --stakes-bg: #efe2d4;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 10% 0%, #fbf6ec 0%, transparent 42%),
+        linear-gradient(180deg, #f7f1e6, #eadfcb);
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="note">
+    <div class="stakes-inner">
+      <strong>Allergy stakes:</strong>
+      <span>Open-fire cooking uses shared equipment. Tell us nut, shellfish, or gluten needs before seating — never buried below the menu.</span>
+    </div>
+  </div>
+  <header class="envelope">
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img src="./assets/logo.png" alt="" width="40" height="40" />
+        <span>Ember Court</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#menu">Menu</a>
+        <a href="#court">Courtyard</a>
+        <a href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Evening courtyard dining with fire pit and lanterns" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Ember Court</h1>
+        <p class="hero-lede">Dinner held to the heat of an open court fire.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" data-action="reserve" data-item="Courtyard table for two" data-limit="held 90 minutes">Reserve evening</button>
+          <a class="btn btn-ghost" href="#menu">Open the menu</a>
+        </div>
+        <p class="place-credit">Place: stone courtyard after dusk — lanterns, ember bed, burgundy cloth, gold candlelight.</p>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <h2>Evening fire</h2>
+      <p class="support">One job: the plate beside the flame.</p>
+      <div class="menu-list">
+        <article class="menu-item"><h3>Charred squash</h3><p>Brown butter, hazelnut, sage ash.</p></article>
+        <article class="menu-item"><h3>Court steak</h3><p>Wood fire, bone marrow butter.</p></article>
+        <article class="menu-item"><h3>Ember peaches</h3><p>Grilled fruit, crème fraîche, thyme.</p></article>
+        <article class="menu-item"><h3>Lantern greens</h3><p>Bitter leaves, citrus oil, crisp shallot.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="court">
+      <h2>The court</h2>
+      <p class="support">Service follows the fire cycle. Seating faces the pit; conversation softens with the evening.</p>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="support">Plain confirmation. No panic FID.</p>
+      <button class="btn btn-primary" type="button" data-action="reserve" data-item="Lantern alcove" data-limit="held until 20:30">Reserve lantern alcove</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">Ember Court · Independent restaurant · Pass GX Integrate</footer>
+  <script>
+    const status = document.getElementById("status");
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        status.dataset.open = "true";
+        status.textContent = `Reserving ${btn.dataset.item} · ${btn.dataset.limit}.`;
+      });
+    });
+  </script>
+</body>
+</html>

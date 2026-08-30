@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citrus Hull — Coastal seafood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    :root {
+      --paper: #f6f0e4;
+      --ink: #123838;
+      --accent: #0e7c7b;
+      --accent-ink: #f6fffe;
+      --font-display: "Instrument Serif", Georgia, serif;
+      --font-body: "Outfit", sans-serif;
+      --stakes-bg: #e7f0e8;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 70% 0%, #fff8e8 0%, transparent 40%),
+        linear-gradient(180deg, #f6f0e4, #e7ebe0);
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="note">
+    <div class="stakes-inner">
+      <strong>Shellfish &amp; citrus:</strong>
+      <span>Kitchen handles shellfish and citrus oils daily. Flag allergies before ordering — shown here, not buried in fine print.</span>
+    </div>
+  </div>
+  <header class="envelope">
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img src="./assets/logo.png" alt="" width="40" height="40" />
+        <span>Citrus Hull</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#catch">Catch</a>
+        <a href="#terrace">Terrace</a>
+        <a href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Coastal terrace with citrus and seafood overlooking bright water" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Citrus Hull</h1>
+        <p class="hero-lede">Seafood brightened by lemon light and salt air.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" data-action="reserve" data-item="Terrace two-top" data-limit="held 60 minutes">Reserve terrace</button>
+          <a class="btn btn-ghost" href="#catch">See today’s catch</a>
+        </div>
+        <p class="place-credit">Place: sunlit terrace above the water — citrus halves, grilled fish, boat hull grain nearby.</p>
+      </div>
+    </section>
+
+    <section class="section" id="catch">
+      <h2>Catch board</h2>
+      <p class="support">One job: what came off the boat this morning.</p>
+      <div class="menu-list">
+        <article class="menu-item"><h3>Lemon grill fish</h3><p>Day boat whitefish, citrus butter, herbs.</p></article>
+        <article class="menu-item"><h3>Hull oysters</h3><p>Half dozen, mignonette, cracked pepper.</p></article>
+        <article class="menu-item"><h3>Charred squid</h3><p>Chili oil, green olive, lemon zest.</p></article>
+        <article class="menu-item"><h3>Citrus granita</h3><p>Ice-cold finish, bitter peel perfume.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="terrace">
+      <h2>Terrace</h2>
+      <p class="support">Tables face the water. Service moves with the tide clock, not a dashboard of extras.</p>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="support">Action + Item + Limit. Escape is always clear: cancel before the hold ends.</p>
+      <button class="btn btn-primary" type="button" data-action="reserve" data-item="Hull-side booth" data-limit="held until 18:45">Reserve hull-side booth</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">Citrus Hull · Independent restaurant · Pass GX Integrate</footer>
+  <script>
+    const status = document.getElementById("status");
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        status.dataset.open = "true";
+        status.textContent = `Reserving ${btn.dataset.item} · ${btn.dataset.limit}.`;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Archive — Collectible Nike sneakers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    :root {
+      --paper: #efece6;
+      --ink: #1a1a1a;
+      --accent: #b33a3a;
+      --accent-ink: #fff7f5;
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "IBM Plex Sans", sans-serif;
+      --stakes-bg: #e7ddd4;
+    }
+    body {
+      background:
+        linear-gradient(135deg, #f4f1ea 0%, #e8e4dc 48%, #ddd7cd 100%);
+    }
+    .btn-primary {
+      min-width: 12rem;
+      min-height: 52px;
+      font-size: 1.02rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="stakes" role="note">
+    <div class="stakes-inner">
+      <strong>Independent reseller:</strong>
+      <span>Sole Archive is not affiliated with Nike, Inc. Authenticated collectibles only. Holds expire in 24 hours — stakes stay above the fold (BREAK progressive disclosure).</span>
+    </div>
+  </div>
+  <header class="envelope">
+    <div class="envelope-inner">
+      <a class="brand-lockup" href="./index.html">
+        <img src="./assets/logo.png" alt="" width="40" height="40" />
+        <span>Sole Archive</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#vault">Vault</a>
+        <a href="#auth">Authentication</a>
+        <a href="#hold">Hold</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="./assets/hero.png" alt="Concrete vault gallery with collectible sneakers on pedestals under spotlights" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">Sole Archive</h1>
+        <p class="hero-lede">A small vault for authenticated Nike collectibles.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" data-action="hold" data-item="Dunk Low · size 10" data-limit="expires in 24h">Hold pair</button>
+          <a class="btn btn-ghost" href="#vault">Enter the vault</a>
+        </div>
+        <p class="place-credit">Place: concrete archive room — pedestals, museum light, sneakers as objects, not hype wallpaper.</p>
+      </div>
+    </section>
+
+    <section class="section" id="vault">
+      <h2>Vault</h2>
+      <p class="support">Envelope stays fixed (nav, stakes, live hold). Fill is the grid — cards exist only because each pair is a hold interaction.</p>
+      <div class="vault-grid">
+        <article class="vault-card">
+          <h3>Dunk Low “Archive Clay”</h3>
+          <p>Deadstock, size 10. Box scored, tagged, photographed.</p>
+          <p class="meta">Condition A · Pickup or insured ship</p>
+          <button class="btn btn-primary" type="button" data-action="hold" data-item="Dunk Low Archive Clay · size 10" data-limit="expires in 24h">Hold</button>
+        </article>
+        <article class="vault-card">
+          <h3>Air Max 1 “Vault Cream”</h3>
+          <p>OG pairing, lightly aged midsole, papers included.</p>
+          <p class="meta">Condition A- · In-store preferred</p>
+          <button class="btn btn-primary" type="button" data-action="hold" data-item="Air Max 1 Vault Cream · size 9.5" data-limit="expires in 24h">Hold</button>
+        </article>
+        <article class="vault-card">
+          <h3>Blazer Mid “Court Brick”</h3>
+          <p>Collector grade, matching laces sealed.</p>
+          <p class="meta">Condition A · Hold before ship</p>
+          <button class="btn btn-primary" type="button" data-action="hold" data-item="Blazer Mid Court Brick · size 11" data-limit="expires in 24h">Hold</button>
+        </article>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="section" id="auth">
+      <h2>Authentication</h2>
+      <p class="support">Each pair passes stitch, sole, and box checks before it reaches a pedestal. Nike product authenticity ≠ Nike affiliation.</p>
+    </section>
+
+    <section class="section" id="hold">
+      <h2>How holds work</h2>
+      <p class="support">Holding is irreversible after pickup starts. Escape: cancel in the status line before the 24h limit.</p>
+    </section>
+  </main>
+
+  <footer class="footer">Sole Archive · Independent boutique · Not affiliated with Nike, Inc. · Pass GX Integrate</footer>
+  <script>
+    const status = document.getElementById("status");
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        status.dataset.open = "true";
+        status.textContent = `Holding ${btn.dataset.item} · ${btn.dataset.limit}. Cancel anytime before expiry.`;
+        status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    });
+  </script>
+</body>
+</html>
