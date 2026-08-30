@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cedar Drift · Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;560&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/pattern.css" />
+  </head>
+  <body class="cedar">
+    <header class="site-nav">
+      <a class="brand-lockup" href="./">
+        <img src="logo.png" width="48" height="48" alt="Cedar Drift logo" />
+        <span class="brand-name">Cedar Drift</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="../">Hub</a></li>
+      </ul>
+    </header>
+
+    <div
+      class="stream-rail"
+      data-stream-rail
+      data-state="idle"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <aside class="stakes" data-stakes>
+      <strong>Allergen stake · tree nuts &amp; mist oils</strong>
+      — Hazelnut and almond syrups on shared pumps; cedar aromatic oil in the mist diffuser.
+      <div class="ail" data-ail>
+        <span><b>A</b> Tree-nut + aromatic oil risk acknowledged.</span>
+        <span><b>I</b> Shared syrup pumps; diffuser runs cedar oil mornings.</span>
+        <span><b>L</b> Ask for dedicated pour + diffuser pause before seating.</span>
+      </div>
+    </aside>
+
+    <section
+      class="hero mist-pulse"
+      style="background-image: url('hero.png')"
+      aria-label="Cedar grove cafe"
+    >
+      <div class="hero-inner">
+        <h1 class="hero-brand">Cedar Drift</h1>
+        <p class="hero-lede">
+          Mist between trunks. Ceramic cups. Tea that tastes like rain on bark.
+        </p>
+        <div class="cta-row">
+          <a
+            class="btn btn-primary"
+            href="#reserve"
+            data-primary-cta
+            aria-disabled="true"
+            >Hold a grove seat</a
+          >
+          <a class="btn btn-ghost" href="#menu">Tea list</a>
+          <span class="seal" data-practice-seal data-state="locked"
+            >Practice seal · locked</span
+          >
+        </div>
+        <p class="place-credit">Place · Pacific cedar grove, dawn mist</p>
+      </div>
+    </section>
+
+    <nav class="crosslink-rail" data-crosslink aria-label="Research crosslink bridges">
+      <p class="catalog-note">Pass HQ · Practice · grove bridges</p>
+      <ul class="bridge-list">
+        <li data-bridge="B1"><b>Design↔Craft</b> Grove catalog = registered tea shelf</li>
+        <li data-bridge="B2"><b>Craft↔Bible</b> Seal before grove seat</li>
+        <li data-bridge="B3"><b>Bible↔Writing</b> Nut risk in plain A+I+L</li>
+        <li data-bridge="B4"><b>Writing↔Art</b> Mist place credit · no overlay badges</li>
+        <li data-bridge="B5"><b>Art↔Design</b> Brand survives without nav chrome</li>
+        <li data-bridge="B6"><b>Principles↔Bible</b> BREAK burying tree-nut stakes</li>
+      </ul>
+    </nav>
+
+    <section class="practice-drill" data-practice-drill data-state="drilling" aria-label="Practice joint stamps">
+      <p class="catalog-note">Pass HQ · Practice · six joints before promise</p>
+      <ul class="joint-list" role="list">
+        <li data-joint="J1" data-stamped="false" role="checkbox" aria-checked="false"><b>J1 Design</b> Pattern 2 stream · hoop never streams</li>
+        <li data-joint="J2" data-stamped="false" role="checkbox" aria-checked="false"><b>J2 Principles</b> Stakes above fold · Fitts ≥48</li>
+        <li data-joint="J3" data-stamped="false" role="checkbox" aria-checked="false"><b>J3 Art</b> Place credit · brand survives nav</li>
+        <li data-joint="J4" data-stamped="false" role="checkbox" aria-checked="false"><b>J4 Writing</b> A+I+L · zero panic-FID</li>
+        <li data-joint="J5" data-stamped="false" role="checkbox" aria-checked="false"><b>J5 Bible</b> Hear-do · Two Ways · labeled shelves</li>
+        <li data-joint="J6" data-stamped="false" role="checkbox" aria-checked="false"><b>J6 Craft</b> Practice seal hallmark before ship</li>
+      </ul>
+    </section>
+
+
+    <section class="section" id="menu">
+      <p class="catalog-note">Practice HQ · bound mist catalog · PRM cancels shimmer</p>
+      <h2>Grove service</h2>
+      <p class="support">
+        One job: warm drinks that honor the wet wood — exampleData teaches the
+        nut-free path first.
+      </p>
+      <div class="two-ways">
+        <div class="way way-life">
+          <strong>Way of Life</strong>
+          Name the nut risk before the first pour.
+        </div>
+        <div class="way way-death">
+          <strong>Way of Death</strong>
+          Hiding allergens behind “ask staff later.”
+        </div>
+      </div>
+      <details class="filters">
+        <summary aria-expanded="false">Optional filters</summary>
+        <div class="filter-row">
+          <label><input type="checkbox" data-filter value="tea" /> tea</label>
+          <label><input type="checkbox" data-filter value="nut-free" /> nut-free</label>
+          <label><input type="checkbox" data-filter value="food" /> food</label>
+        </div>
+      </details>
+      <div
+        class="grid-menu"
+        data-stream-fill
+        data-catalog-id="grove"
+        data-examples='[
+          {"title":"Example · Drift Sencha","blurb":"Teaching pour — steam soft as canopy fog.","meta":"tea · nut-free · example"}
+        ]'
+        data-catalog='[
+          {"title":"Drift Sencha","blurb":"Steam soft as canopy fog.","meta":"tea · nut-free"},
+          {"title":"Bark Cocoa","blurb":"Cacao, oat, pinch of smoked salt.","meta":"tea · nut-free"},
+          {"title":"Hazel Mist Latte","blurb":"Named risk — tree-nut syrup.","meta":"tea · tree-nut"},
+          {"title":"Moss Cake","blurb":"Matcha crumb, lemon glaze.","meta":"food · nut-free"}
+        ]'
+      ></div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="support">Seal before promise — grove seats unlock after catalog hydrate.</p>
+      <article class="interact-card">
+        <h3>Grove bench · 40 minutes</h3>
+        <p>Outdoor counter under cedar drip lines.</p>
+        <a class="btn btn-primary" href="mailto:hello@cedardrift.example">Request bench</a>
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <p>Cedar Drift · place credit · Practice HQ bridges</p>
+      <p class="cycle-mark"><a href="../">← Studio hub</a></p>
+    </footer>
+    <script src="../shared/stream.js"></script>
+  </body>
+</html>

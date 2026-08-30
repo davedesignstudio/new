@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forge Table · Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;560&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/pattern.css" />
+  </head>
+  <body class="forge">
+    <header class="site-nav">
+      <a class="brand-lockup" href="./">
+        <img src="logo.png" width="48" height="48" alt="Forge Table logo" />
+        <span class="brand-name">Forge Table</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="../">Hub</a></li>
+      </ul>
+    </header>
+
+    <div
+      class="stream-rail"
+      data-stream-rail
+      data-state="idle"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <aside class="stakes" data-stakes>
+      <strong>Safety stake · open flame &amp; ember ash</strong>
+      — Central hearth grill; sparks and smoke are part of service. Not a low-smoke room.
+      <div class="ail" data-ail>
+        <span><b>A</b> Open flame and ash exposure acknowledged.</span>
+        <span><b>I</b> Hearth grill mid-room; smoke + spark drift at peak service.</span>
+        <span><b>L</b> Choose perimeter seats or a different night if smoke-sensitive.</span>
+      </div>
+    </aside>
+
+    <section
+      class="hero"
+      style="background-image: url('hero.png')"
+      aria-label="Forge hall restaurant"
+    >
+      <div class="hero-inner">
+        <h1 class="hero-brand">Forge Table</h1>
+        <p class="hero-lede">
+          Communal ironwood. Ember light. Food struck like honest metal.
+        </p>
+        <div class="cta-row">
+          <a
+            class="btn btn-primary ember-pulse"
+            href="#reserve"
+            data-primary-cta
+            aria-disabled="true"
+            >Claim forge seat</a
+          >
+          <a class="btn btn-ghost" href="#menu">Fire board</a>
+          <span class="seal" data-practice-seal data-state="locked"
+            >Practice seal · locked</span
+          >
+        </div>
+        <p class="place-credit">Place · forge hall, hearth glow</p>
+      </div>
+    </section>
+
+    <nav class="crosslink-rail" data-crosslink aria-label="Research crosslink bridges">
+      <p class="catalog-note">Pass HQ · Practice · forge bridges</p>
+      <ul class="bridge-list">
+        <li data-bridge="B1"><b>Design↔Craft</b> Fire catalog = marked heat only</li>
+        <li data-bridge="B2"><b>Craft↔Bible</b> Seal = shokunin before claim</li>
+        <li data-bridge="B3"><b>Bible↔Writing</b> Flame stake plain, not panic</li>
+        <li data-bridge="B4"><b>Writing↔Art</b> Ember place credit · no stickers</li>
+        <li data-bridge="B5"><b>Art↔Design</b> Hearth plane full-bleed brand</li>
+        <li data-bridge="B6"><b>Principles↔Bible</b> Ash disclosure = Way of Life</li>
+      </ul>
+    </nav>
+
+    <section class="practice-drill" data-practice-drill data-state="drilling" aria-label="Practice joint stamps">
+      <p class="catalog-note">Pass HQ · Practice · six joints before promise</p>
+      <ul class="joint-list" role="list">
+        <li data-joint="J1" data-stamped="false" role="checkbox" aria-checked="false"><b>J1 Design</b> Pattern 2 stream · hoop never streams</li>
+        <li data-joint="J2" data-stamped="false" role="checkbox" aria-checked="false"><b>J2 Principles</b> Stakes above fold · Fitts ≥48</li>
+        <li data-joint="J3" data-stamped="false" role="checkbox" aria-checked="false"><b>J3 Art</b> Place credit · brand survives nav</li>
+        <li data-joint="J4" data-stamped="false" role="checkbox" aria-checked="false"><b>J4 Writing</b> A+I+L · zero panic-FID</li>
+        <li data-joint="J5" data-stamped="false" role="checkbox" aria-checked="false"><b>J5 Bible</b> Hear-do · Two Ways · labeled shelves</li>
+        <li data-joint="J6" data-stamped="false" role="checkbox" aria-checked="false"><b>J6 Craft</b> Practice seal hallmark before ship</li>
+      </ul>
+    </section>
+
+
+    <section class="section" id="menu">
+      <p class="catalog-note">Practice HQ · shu example · Ri Fitts + PRM · marked heat only</p>
+      <h2>Fire board</h2>
+      <p class="support">
+        Heat as craft — exampleData teaches the ember rib before live fill binds.
+      </p>
+      <div class="two-ways">
+        <div class="way way-life">
+          <strong>Way of Life</strong>
+          Open-flame stake stays above the fold.
+        </div>
+        <div class="way way-death">
+          <strong>Way of Death</strong>
+          Pretty smoke photos without ash disclosure.
+        </div>
+      </div>
+      <details class="filters">
+        <summary aria-expanded="false">Optional filters</summary>
+        <div class="filter-row">
+          <label><input type="checkbox" data-filter value="flame" /> flame</label>
+          <label><input type="checkbox" data-filter value="share" /> share</label>
+          <label><input type="checkbox" data-filter value="veg" /> veg</label>
+        </div>
+      </details>
+      <div
+        class="grid-menu"
+        data-stream-fill
+        data-catalog-id="fire"
+        data-examples='[
+          {"title":"Example · Ember Rib","blurb":"Teaching heat — coal-kissed, named risk.","meta":"flame · share · example"}
+        ]'
+        data-catalog='[
+          {"title":"Ember Rib","blurb":"Coal-kissed, bone marrow glaze.","meta":"flame · share"},
+          {"title":"Anvil Bread","blurb":"Hearth loaf, whipped lardo.","meta":"share"},
+          {"title":"Quench Greens","blurb":"Charred brassica, vinegar spark.","meta":"veg · flame"},
+          {"title":"Slag Citrus","blurb":"Burnt lemon posset.","meta":"veg"}
+        ]'
+      ></div>
+    </section>
+
+    <section class="section" id="reserve">
+      <h2>Reserve</h2>
+      <p class="support">Ember pulse respects reduced-motion — seal still gates the promise.</p>
+      <article class="interact-card">
+        <h3>Forge rail · 90 minutes</h3>
+        <p>Hearth-facing communal board.</p>
+        <a class="btn btn-primary" href="mailto:hello@forgetable.example">Request rail</a>
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <p>Forge Table · shokunin heat · Practice HQ</p>
+      <p class="cycle-mark"><a href="../">← Studio hub</a></p>
+    </footer>
+    <script src="../shared/stream.js"></script>
+  </body>
+</html>
