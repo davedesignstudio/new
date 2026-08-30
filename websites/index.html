@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studio Five — Research Brands · Pass HE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/pattern.css" />
+  <style>
+    :root {
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "DM Sans", sans-serif;
+      --accent: #1a4a52;
+    }
+    body {
+      font-family: var(--font-body);
+      background:
+        radial-gradient(ellipse at 10% 0%, #dce8ea 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, #f0e6d8 0%, transparent 45%),
+        #f7f5f2;
+      color: #1a1512;
+    }
+    .hub-hero {
+      padding: var(--space-5) var(--space-3) var(--space-4);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .hub-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      margin: 0 0 0.5rem;
+      line-height: 1;
+    }
+    .hub-hero p { max-width: 36rem; margin: 0 0 var(--space-3); opacity: 0.85; }
+    .brand-list { list-style: none; margin: 0; padding: 0; }
+    .brand-list .interact-card img {
+      width: 56px; height: 56px; object-fit: contain; border-radius: 8px;
+      background: #fff;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="hub-hero">
+    <p class="tag">Pass HE · Deepen · Hour 2 of 5</p>
+    <h1>Studio Five</h1>
+    <p>Five research-built brands from kinetic type, craft hallmark, and hear-do disclosure: two cafes, two restaurants, one collectible sneaker archive.</p>
+  </header>
+  <main class="section" style="padding-top:0">
+    <ul class="brand-list card-grid">
+      <li>
+        <a class="interact-card" href="kiln-and-cup/index.html">
+          <img src="kiln-and-cup/logo.png" alt="Kiln &amp; Cup logo" width="56" height="56" />
+          <span class="tag">Cafe</span>
+          <h3>Kiln &amp; Cup</h3>
+          <p>Ceramic cafe — kiln warmth, sesame stakes, kinetic brand type.</p>
+          <span class="meta">Open site →</span>
+        </a>
+      </li>
+      <li>
+        <a class="interact-card" href="mist-harbor/index.html">
+          <img src="mist-harbor/logo.png" alt="Mist Harbor logo" width="56" height="56" />
+          <span class="tag">Cafe</span>
+          <h3>Mist Harbor</h3>
+          <p>Fog-pier cafe — weather advisory stakes, organic fill.</p>
+          <span class="meta">Open site →</span>
+        </a>
+      </li>
+      <li>
+        <a class="interact-card" href="ember-court/index.html">
+          <img src="ember-court/logo.png" alt="Ember Court logo" width="56" height="56" />
+          <span class="tag">Restaurant</span>
+          <h3>Ember Court</h3>
+          <p>Courtyard fire dining — walnut ash stakes, Didone display.</p>
+          <span class="meta">Open site →</span>
+        </a>
+      </li>
+      <li>
+        <a class="interact-card" href="citrus-hull/index.html">
+          <img src="citrus-hull/logo.png" alt="Citrus Hull logo" width="56" height="56" />
+          <span class="tag">Restaurant</span>
+          <h3>Citrus Hull</h3>
+          <p>Waterfront seafood — shellfish critical stakes, wind band.</p>
+          <span class="meta">Open site →</span>
+        </a>
+      </li>
+      <li>
+        <a class="interact-card" href="sole-archive/index.html">
+          <img src="sole-archive/logo.png" alt="Sole Archive logo" width="56" height="56" />
+          <span class="tag">Sneaker boutique</span>
+          <h3>Sole Archive</h3>
+          <p>Collectible Nike vault — SA mark only, 24h hold A+I+L.</p>
+          <span class="meta">Open site →</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Research notes: <code>research-notes/pass-he-deepen.md</code></span>
+      <span>Envelope ≠ fill · Fitts ≥48px · PRM covenant</span>
+    </div>
+  </footer>
+</body>
+</html>
