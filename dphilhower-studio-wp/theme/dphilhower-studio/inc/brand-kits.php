@@ -398,6 +398,25 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'fitness-kick-boxing'      => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'One offer, one punch', 'dphilhower-studio' ),
+			'intro'  => __( 'The class is the picture. Trial is the door. Three classes and one pair of gloves is the offer — said once.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'kickbox-print-poster.png',
+					'alt'     => __( 'Square Fitness Kick Boxing trial poster: punch photo, Trial, 3 classes, free gloves', 'dphilhower-studio' ),
+					'heading' => __( 'Poster', 'dphilhower-studio' ),
+					'story'   => __( 'The social square. Same punch, same offer. Trial is a word you can read, not a trail.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'kickbox-print-gloves.png',
+					'alt'     => __( 'Pink boxing gloves and a black focus mitt on a gym bench', 'dphilhower-studio' ),
+					'heading' => __( 'Gloves', 'dphilhower-studio' ),
+					'story'   => __( 'The free gloves in the copy are the gloves in the photo. Not a second story.', 'dphilhower-studio' ),
+				),
+			),
+		),
 	);
 }
 

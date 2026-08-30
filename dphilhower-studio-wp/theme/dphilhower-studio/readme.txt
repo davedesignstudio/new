@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.54 =
+* Fitness Kick Boxing poster study: Trial, 3 classes, free gloves, one punch photo.
+
 = 1.0.53 =
 * Homepage, services, and about use restaurant stills that match the room. Food brands lead.
 

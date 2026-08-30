@@ -130,6 +130,7 @@ function dps_work_archive_slugs() {
 			'service-the-hills',
 			'philhower-okrogly',
 			'magic-buds',
+			'fitness-kick-boxing',
 			'pattern-studies',
 		)
 	);
@@ -181,6 +182,10 @@ function dps_work_card_stills() {
 		'philhower-okrogly'  => array(
 			'file' => 'pok-hero.png',
 			'alt'  => __( 'Philhower & O’Krogly saw-blade lockup: Design + Build', 'dphilhower-studio' ),
+		),
+		'fitness-kick-boxing' => array(
+			'file' => 'kickbox-hero.png',
+			'alt'  => __( 'Fitness Kick Boxing trial poster: punch, Trial, 3 classes, free gloves', 'dphilhower-studio' ),
 		),
 		'pattern-studies'    => array(
 			'file' => 'ember-print-box.png',

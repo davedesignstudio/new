@@ -180,6 +180,7 @@ function dps_seed_demo_content( $force = false ) {
 		'pok-diamond-pk.png'     => dps_sideload_theme_image( 'pok-diamond-pk.png', 'Philhower & O’Krogly PK diamond' ),
 		'cafe-robust-hero.png'   => dps_sideload_theme_image( 'cafe-robust-hero.png', 'Cafe Robust' ),
 		'expresso-hero.png'      => dps_sideload_theme_image( 'expresso-hero.png', 'EXPresso' ),
+		'kickbox-hero.png'       => dps_sideload_theme_image( 'kickbox-hero.png', 'Fitness Kick Boxing' ),
 	);
 
 	if ( $hero_id ) {
@@ -351,6 +352,18 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Northern New Jersey',
 			'content'  => '<p>The name is a pun you can see. EX sits left of the cup, Presso sits right, and the pour is the hyphen. Yellow on roasted beans is the only loud color.</p><p>The coaster is the same lockup, round: EX, the pour, Presso — not a generic Coffee word-cloud. Window and bag keep the yellow so takeaway still reads as EXPresso.</p>',
+		),
+		array(
+			'slug'     => 'fitness-kick-boxing',
+			'title'    => 'Fitness Kick Boxing',
+			'image'    => 'kickbox-hero.png',
+			'excerpt'  => 'One offer. The punch is the picture',
+			'subtitle' => 'One offer. The punch is the picture',
+			'client'   => 'studio study — local class poster',
+			'services' => 'Poster · social · print',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>A class poster has to read as one sentence. Fitness Kick Boxing is the class. Trial is the door. Three classes and a pair of gloves is what you leave with.</p><p>The uploaded draft said Trail and printed Free Gloves twice. This version keeps the punch — pink gloves on a black mitt — and says the offer once. The gloves still in the photo are the gloves in the line.</p>',
 		),
 	);
 
