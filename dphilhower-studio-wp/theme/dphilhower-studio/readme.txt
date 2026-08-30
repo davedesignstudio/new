@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.55 =
+* Increase all type by 2 points. Root html stays 18px / 16px.
+
 = 1.0.54 =
 * Fitness Kick Boxing poster study: Trial, 3 classes, free gloves, one punch photo.
 
