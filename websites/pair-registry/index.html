@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pair Registry — Independent vault · Collectible sneakers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/pattern.css" />
+  <style>
+    :root {
+    --bg: #F3EFE6;
+    --ink: #111111;
+    --accent: #111111;
+    --muted: #5A564E;
+    --surface: #E7E2D6;
+    --hero-overlay: rgba(17,17,17,0.55);
+      --font-display: "Syne", system-ui, sans-serif;
+      --font-body: "IBM Plex Sans", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="kinetic-vault" data-brand="pair-registry" data-pass="HL">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-nav" data-envelope="hoop">
+    <a class="brand-lockup" href="./">
+      <img src="assets/logo.png" width="48" height="48" alt="Pair Registry logo" data-logo />
+      <span>Pair Registry</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#stakes">Stakes</a>
+      <a href="#board">Vault shelf</a>
+      <a href="#reserve">Hold</a>
+      <a href="#auth">Shelf labels</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media">
+        <img src="assets/hero.png" alt="" role="presentation" />
+      </div>
+      <div class="hero-content">
+        <p class="hero-brand" data-hero-brand>Pair Registry</p>
+        <h1 class="hero-headline">Archive pairs. Honest holds.</h1>
+        <p class="hero-support">An independent reseller vault for collectible Nike sneakers — authenticated stock, labeled shelves, no brand cosplay.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-accent-on-dark="1" href="#reserve">Hold this pair</a>
+          <a class="btn btn-ghost" href="#board">View vault shelf</a>
+        </div>
+        <p class="place-credit" data-place-credit>Independent vault — museum light on shelves</p>
+      </div>
+    </section>
+
+    <aside class="stakes" id="stakes" data-stakes role="note" aria-label="Reseller & hold stakes">
+      <strong>Reseller & hold stakes</strong>
+      <p>Independent reseller — not affiliated with Nike, Inc. Authenticity reports are third-party. Holds last 24 hours; unpaid holds release automatically. All sales final on deadstock once paid.</p>
+    </aside>
+
+    <div class="status-rail" data-status-rail aria-live="polite" aria-atomic="true">
+      <span data-ail="action">Loading</span>
+      <span data-ail="item">Board</span>
+      <span data-ail="limit">—</span>
+    </div>
+
+    <section class="section" id="board" aria-labelledby="board-title">
+      <h2 id="board-title">Vault shelf</h2>
+      <p class="lede">Pattern 2 stream: skeleton → partial → ready. Envelope chrome never streams.</p>
+      <div class="stream-board" data-stream-board data-stream-state="skeleton">
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Dunk Low Archive Gray">Dunk Low Archive Gray</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Air Max 1 Vault Cream">Air Max 1 Vault Cream</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Blazer Mid Registry">Blazer Mid Registry</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+          <article class="stream-card" data-stream-card data-state="skeleton">
+            <div class="stream-fill"></div>
+            <div class="stream-fill" style="width:60%"></div>
+            <div class="stream-meta">
+              <div data-title data-fallback="Cortez Shelf 07">Cortez Shelf 07</div>
+              <div class="price" data-price hidden>·</div>
+            </div>
+          </article>
+      </div>
+      <div class="menu-list" style="margin-top:1.5rem">
+          <div class="menu-row"><div><strong>Dunk Low “Archive Gray”</strong></div><div class="price">$220</div><div class="desc">Size 10 · Deadstock · Auth report #PR-4412</div></div>
+          <div class="menu-row"><div><strong>Air Max 1 “Vault Cream”</strong></div><div class="price">$260</div><div class="desc">Size 9.5 · Deadstock · Auth report #PR-4418</div></div>
+          <div class="menu-row"><div><strong>Blazer Mid “Registry”</strong></div><div class="price">$180</div><div class="desc">Size 11 · Deadstock · Auth report #PR-4421</div></div>
+          <div class="menu-row"><div><strong>Cortez “Shelf 07”</strong></div><div class="price">$150</div><div class="desc">Size 8 · Deadstock · Auth report #PR-4427</div></div>
+      </div>
+    </section>
+
+
+    <section class="section" id="auth" aria-labelledby="auth-title">
+      <h2 id="auth-title">Shelf labels</h2>
+      <p class="lede">Independent reseller vault. Stock is labeled by report id — not by borrowed brand theater.</p>
+      <div class="interact-card">
+        <div class="practice-seal" data-practice-seal><span class="dot" aria-hidden="true"></span><span class="label">Joints open</span></div>
+        <h3>Collectible Nike sneakers · third-party authenticated</h3>
+        <p>Pair Registry is not Nike. We sell authenticated collectible pairs with report numbers on every shelf ticket. Mark on this site is the PR seal only.</p>
+        <p><strong>Hold policy:</strong> 24 hours. Unpaid holds release. No Nike trademark appears in our logo mark.</p>
+      </div>
+    </section>
+
+    <section class="section" id="reserve" aria-labelledby="reserve-title">
+      <h2 id="reserve-title">Hold a pair</h2>
+      <p class="lede">Practice HL: the CTA stays locked until stakes, A+I+L, and Fitts joints stamp green.</p>
+      <div class="interact-card">
+        <div class="practice-seal" data-practice-seal><span class="dot" aria-hidden="true"></span><span class="label">Joints open</span></div>
+        <h3>Dunk Low “Archive Gray” · Size 10</h3>
+        <p>Limit: 24 hour hold. Status rail narrates Action · Item · Limit — no panic FID.</p>
+        <button type="button" class="btn btn-primary" data-hold-cta data-fitts-primary style="color:#fff;background:var(--accent)">Hold this pair</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Pair Registry · Sneaker boutique · Pass HL Practice</div>
+    <div class="pass">Joints: stream · hear-do stakes · A+I+L · place-credit · mark hygiene · Fitts</div>
+  </footer>
+
+  <script>
+    window.__PRACTICE__ = {
+      streamItems: ['Dunk Low Archive Gray', 'Air Max 1 Vault Cream', 'Blazer Mid Registry', 'Cortez Shelf 07'],
+      defaultItem: 'Dunk Low “Archive Gray” · Size 10',
+      defaultLimit: 'open',
+      holdAction: 'Holding',
+      holdItem: 'Dunk Low “Archive Gray” · Size 10',
+      holdLimit: '24 hour hold',
+      heldLabel: 'Hold placed'
+    };
+  </script>
+  <script src="../shared/stream.js"></script>
+</body>
+</html>

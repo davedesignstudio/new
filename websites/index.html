@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice HL — Five Brands Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/pattern.css" />
+  <style>
+    :root {
+      --bg: #f6f3ec; --ink: #161616; --accent: #161616;
+      --font-display: "Syne", sans-serif; --font-body: "IBM Plex Sans", sans-serif;
+    }
+    body { font-family: var(--font-body); background:
+      radial-gradient(ellipse at 20% 0%, #e7efe8 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 10%, #efe6d8 0%, transparent 45%),
+      var(--bg); color: var(--ink); }
+    .hub-hero { padding: 3rem 1.5rem 1rem; max-width: 48rem; margin: 0 auto; }
+    .hub-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1; margin: 0 0 0.75rem; }
+    .hub-hero p { margin: 0; max-width: 42ch; color: #555; }
+    .badge { display: inline-block; margin-bottom: 1rem; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #161616; padding: 0.35rem 0.6rem; border-radius: 999px; }
+  </style>
+</head>
+<body data-hub="HL">
+  <header class="hub-hero">
+    <div class="badge">Pass HL · Practice · Hour 4/5</div>
+    <h1>Five brands. Stamped joints.</h1>
+    <p>2 cafes, 2 restaurants, 1 independent sneaker vault — rebuilt with Practice seals on every Reserve/Hold path.</p>
+  </header>
+  <div class="hub-grid">
+    <a class="hub-card" href="lumen-press/">
+      <img class="cover" src="assets/hero-lumen-press.png" alt="" />
+      <div class="body"><img src="assets/logo-lumen-press.png" alt="" width="40" height="40" style="border-radius:8px;margin-bottom:0.5rem" /><h2>Lumen Press</h2><p>Cafe · Letterpress loft · Soy-ink stakes</p></div>
+    </a>
+    <a class="hub-card" href="cedar-drift/">
+      <img class="cover" src="assets/hero-cedar-drift.png" alt="" />
+      <div class="body"><img src="assets/logo-cedar-drift.png" alt="" width="40" height="40" style="border-radius:8px;margin-bottom:0.5rem" /><h2>Cedar Drift</h2><p>Cafe · Grove mist · Tree-nut stakes</p></div>
+    </a>
+    <a class="hub-card" href="salt-loom/">
+      <img class="cover" src="assets/hero-salt-loom.png" alt="" />
+      <div class="body"><img src="assets/logo-salt-loom.png" alt="" width="40" height="40" style="border-radius:8px;margin-bottom:0.5rem" /><h2>Salt Loom</h2><p>Restaurant · Harbor · Shellfish critical</p></div>
+    </a>
+    <a class="hub-card" href="forge-table/">
+      <img class="cover" src="assets/hero-forge-table.png" alt="" />
+      <div class="body"><img src="assets/logo-forge-table.png" alt="" width="40" height="40" style="border-radius:8px;margin-bottom:0.5rem" /><h2>Forge Table</h2><p>Restaurant · Open flame · Ember hall</p></div>
+    </a>
+    <a class="hub-card" href="pair-registry/">
+      <img class="cover" src="assets/hero-pair-registry.png" alt="" />
+      <div class="body"><img src="assets/logo-pair-registry.png" alt="" width="40" height="40" style="border-radius:8px;margin-bottom:0.5rem" /><h2>Pair Registry</h2><p>Sneaker vault · Collectible Nike · PR mark only</p></div>
+    </a>
+  </div>
+  <footer class="footer" style="max-width:72rem;margin:0 auto">
+    <div>Design lab hub · Pass HL Practice</div>
+    <div class="pass">Lattice joints practiced — not merely cited</div>
+  </footer>
+</body>
+</html>
