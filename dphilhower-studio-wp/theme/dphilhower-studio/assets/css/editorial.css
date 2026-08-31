@@ -422,6 +422,10 @@ body {
     font-size: calc(0.95rem + 6pt);
   }
 
+  .hero-brand {
+    display: none;
+  }
+
   .hero-line {
     font-size: calc(clamp(1.45rem, 7vw, 2.1rem) + 6pt);
   }
