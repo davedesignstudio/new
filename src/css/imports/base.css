@@ -1,28 +1,29 @@
 :root {
-  --blue: #2b6cff;
-  --blue-deep: #1547c4;
-  --blue-soft: #8ec5ff;
-  --blue-wash: #e8f0ff;
-  --cherry: #2b6cff;
-  --cherry-dark: #1547c4;
+  --blue: #123055;
+  --blue-deep: #0c2240;
+  --blue-soft: #e2c56a;
+  --blue-wash: #efe6cc;
+  --cherry: #123055;
+  --cherry-dark: #0c2240;
   --turquoise: #2bb3b1;
   --turquoise-dark: #1d7f7e;
-  --cream: #f4f7fb;
-  --formica: #e8eef8;
+  --cream: #f3ead6;
+  --formica: #efe4cd;
   --chrome: #d5d7da;
   --chrome-dark: #8a8e92;
   --mint: #a8d5c2;
-  --black: #071428;
-  --ink: #121a2b;
-  --muted: #5c687c;
+  --black: #123055;
+  --ink: #123055;
+  --muted: #6b5d4a;
   --neon-pink: #ff4f7a;
-  --gold: #2b6cff;
-  --booth-blue: #1648a8;
-  --booth-blue-dark: #0e3278;
-  --navy: #071428;
-  --title-blue: #2b6cff;
-  --title-blue-bright: #8ec5ff;
-  --paper: #f4f7fb;
+  --gold: #c6a03a;
+  --booth-blue: #123055;
+  --booth-blue-dark: #0c2240;
+  --navy: #123055;
+  --title-blue: #123055;
+  --title-blue-bright: #e2c56a;
+  --paper: #f3ead6;
+  --wood: #2b1c14;
   --header-offset: 4.6rem;
 }
 
@@ -112,8 +113,8 @@ p {
   left: 1rem;
   top: -4rem;
   z-index: 200;
-  background: var(--blue);
-  color: #fff;
+  background: var(--gold);
+  color: var(--navy);
   padding: 0.5rem 0.9rem;
   font-family: "Outfit", sans-serif;
   letter-spacing: 0.04em;
@@ -190,8 +191,8 @@ p {
 .header-bar {
   background: var(--navy);
   color: #fff;
-  border-bottom: 2px solid var(--blue);
-  box-shadow: 0 8px 24px rgba(7, 20, 40, 0.18);
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 8px 24px rgba(18, 48, 85, 0.18);
 }
 
 .bauhaus-stripe {
@@ -295,7 +296,7 @@ p {
 .nav-link:focus,
 .nav-link.is-active {
   color: #fff;
-  box-shadow: inset 0 -3px 0 var(--blue);
+  box-shadow: inset 0 -3px 0 var(--gold);
 }
 
 .header-actions {
@@ -324,19 +325,19 @@ p {
 
 .btn-sign-in {
   color: #fff;
-  border: 2px solid var(--blue);
+  border: 2px solid var(--gold);
 }
 
 .btn-sign-in:hover,
 .btn-sign-in:focus {
-  color: var(--blue-soft);
-  border-color: var(--blue-soft);
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .btn-gold,
 .btn {
-  background: var(--blue);
-  color: #fff;
+  background: var(--gold);
+  color: var(--navy);
   border: 0;
   box-shadow: none;
 }
@@ -345,8 +346,8 @@ p {
 .btn-gold:focus,
 .btn:hover,
 .btn:focus {
-  background: var(--blue-deep);
-  color: #fff;
+  background: #d4b24a;
+  color: var(--navy);
 }
 
 .btn-ghost {
@@ -365,7 +366,7 @@ p {
   display: none;
   background: transparent;
   color: #fff;
-  border: 2px solid var(--blue);
+  border: 2px solid var(--gold);
   font-family: "Outfit", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -865,7 +866,7 @@ body.has-scroll-walk .plate-row {
   top: 4.6rem;
   z-index: 90;
   background: var(--navy);
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid var(--gold);
 }
 
 .menu-jump-inner {
@@ -890,8 +891,8 @@ body.has-scroll-walk .plate-row {
 
 .menu-jump a:hover,
 .menu-jump a:focus {
-  color: #fff;
-  background: var(--blue);
+  color: var(--navy);
+  background: var(--gold);
 }
 
 .site-footer {
@@ -939,7 +940,7 @@ body.has-scroll-walk .plate-row {
 }
 
 .site-footer a {
-  color: var(--blue-soft);
+  color: var(--gold);
 }
 
 .footer-studio {
@@ -982,9 +983,9 @@ form textarea {
 
 form button {
   width: auto;
-  background: var(--blue);
-  color: #fff;
-  border-color: var(--blue);
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
   font-family: "Outfit", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -994,8 +995,8 @@ form button {
 }
 
 .wordmark-panel {
-  background: #fff;
-  border: 1px solid #dbe6f6;
+  background: var(--cream);
+  border: 1px solid #e2d4b6;
   box-shadow: none;
   padding: 1.25rem;
   margin: 0 0.6rem 0.8rem 0;
@@ -1342,12 +1343,12 @@ form button {
 }
 
 .object-copy-card {
-  background: #fff;
+  background: var(--cream);
   color: var(--ink);
   padding: 2rem 1.6rem 2.2rem;
   margin: 0 0 1.5rem;
   max-width: 44rem;
-  border: 1px solid #dbe6f6;
+  border: 1px solid #e2d4b6;
   border-radius: 18px;
 }
 

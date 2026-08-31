@@ -182,16 +182,16 @@
   max-width: 14rem;
   margin: 0.4rem;
   color: var(--navy);
-  background: #fff;
-  border: 1px solid #dbe6f6;
+  background: var(--cream);
+  border: 1px solid #e2d4b6;
   border-radius: 16px;
   overflow: hidden;
 }
 
 .room-plate:hover,
 .room-plate:focus {
-  color: var(--blue);
-  border-color: var(--blue);
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .room-plate img {

@@ -2,25 +2,26 @@
   font-size: 2.4rem;
 }
 
-.menu-page {
-  padding-top: 0;
-}
-
 .menu-hours-bar {
-  background: var(--blue);
-  color: #fff;
+  background: var(--gold);
+  color: var(--navy);
   text-align: center;
   padding: 0.45rem 1rem;
-  font-family: "Outfit", sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-family: "Montserrat", "Outfit", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+body.is-menu {
+  background: var(--wood);
 }
 
 body.is-menu .menu-jump {
   top: 4.6rem;
   background: var(--navy);
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid var(--gold);
 }
 
 body.is-menu .menu-jump-inner {
@@ -28,9 +29,10 @@ body.is-menu .menu-jump-inner {
 }
 
 body.is-menu .menu-jump a {
-  font-family: "Outfit", "Oswald", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  font-family: "Montserrat", "Outfit", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -41,8 +43,66 @@ body.is-menu .menu-jump a {
 
 body.is-menu .menu-jump a:hover,
 body.is-menu .menu-jump a:focus {
-  color: var(--blue-soft);
+  color: var(--gold);
   background: transparent;
+}
+
+.menu-page {
+  background: var(--wood);
+  padding: 1.2rem 0 0;
+}
+
+.menu-board {
+  width: 94%;
+  max-width: 1280px;
+  margin: 0.8rem auto 1.6rem;
+  padding: 2.2rem 1.4rem 2.4rem;
+  background: var(--cream);
+  color: var(--navy);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+}
+
+.menu-lockup {
+  text-align: center;
+  margin: 0 0 1.8rem;
+}
+
+.menu-lock-the {
+  margin: 0;
+  font-family: "Great Vibes", "Pacifico", cursive;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.menu-lock-name {
+  margin: 0.05rem 0 0;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 3.4rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 0.9;
+}
+
+.menu-lock-cafe {
+  margin: -0.15rem 0 0.7rem;
+  font-family: "Great Vibes", "Pacifico", cursive;
+  font-size: 3.3rem;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 0.85;
+}
+
+.menu-card-note {
+  margin: 0.4rem 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .menu-masthead,
@@ -59,42 +119,42 @@ body.is-menu .menu-jump a:focus {
 .menu-folio {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
-  width: 96%;
-  max-width: 1440px;
-  margin: 0.6rem auto 1.4rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .menu-leaf {
   flex: 1 1 18rem;
   max-width: 22.5rem;
   min-width: 16.5rem;
-  margin: 0.45rem;
-  padding: 1.15rem 1rem 1.4rem;
-  background: #fff;
-  color: var(--ink);
-  border: 1px solid #dbe6f6;
-  border-radius: 16px;
+  margin: 0.35rem;
+  padding: 0.4rem 0.85rem 0.8rem;
+  background: transparent;
+  color: var(--navy);
+  border: 0;
+  border-radius: 0;
   box-shadow: none;
 }
 
 .menu-leaf-kicker {
   margin: 0;
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--gold);
   text-align: center;
 }
 
 .menu-leaf-script {
   margin: 0 0 0.7rem;
-  font-family: "Outfit", "Jost", sans-serif;
-  font-weight: 600;
-  font-size: 1.85rem;
-  letter-spacing: -0.03em;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
   text-transform: none;
   text-align: center;
   color: var(--navy);
@@ -102,34 +162,49 @@ body.is-menu .menu-jump a:focus {
 }
 
 .menu-leaf-section {
-  margin: 0 0 0.85rem;
-  padding-top: 0.15rem;
+  margin: 0 0 1.15rem;
+  padding-top: 0.2rem;
 }
 
 .menu-leaf-section h3 {
-  margin: 0 0 0.2rem;
-  font-family: "Outfit", sans-serif;
-  font-weight: 600;
-  font-size: 0.92rem;
-  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.55rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--navy);
   line-height: 1.15;
+  text-align: center;
+}
+
+.menu-leaf-section h3::before,
+.menu-leaf-section h3::after {
+  content: "";
+  flex: 1 1 1.4rem;
+  height: 1px;
+  margin: 0 0.65rem;
+  background: var(--gold);
 }
 
 .menu-leaf-note {
-  margin: 0 0 0.35rem;
-  font-size: 0.78rem;
+  margin: 0 0 0.45rem;
+  font-size: 0.74rem;
   font-style: italic;
   color: var(--muted);
+  text-align: center;
 }
 
 .menu-leaf-item {
-  margin: 0 0 0.38rem;
+  margin: 0 0 0.48rem;
 }
 
 html.is-menu,
 body.is-menu {
+  background: var(--wood);
   scroll-padding-top: calc(8rem - 0.2px);
 }
 
@@ -141,7 +216,7 @@ html.is-menu .menu-leaf-item h4[id] {
 .menu-leaf-section h3:target,
 .menu-leaf-item h4:target {
   background: var(--blue-wash);
-  outline: 2px solid var(--blue);
+  outline: 1px solid var(--gold);
   outline-offset: 3px;
 }
 
@@ -153,39 +228,40 @@ html.is-menu .menu-leaf-item h4[id] {
 
 .menu-leaf-item h4 {
   margin: 0;
-  font-family: "Outfit", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  text-transform: none;
-  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
   flex: 0 1 auto;
   min-width: 0;
-  max-width: calc(100% - 5.5rem);
+  max-width: calc(100% - 6.5rem);
 }
 
 .menu-leaf-dots {
   flex: 1 1 0.8rem;
-  border-bottom: 1px dotted #9bb4d8;
-  margin: 0 0.35rem 0.18rem;
+  border-bottom: 1px dotted var(--gold);
+  margin: 0 0.4rem 0.18rem;
   min-width: 0.5rem;
   height: 0.7em;
 }
 
 .menu-leaf-item .price {
-  font-family: "Outfit", sans-serif;
-  font-size: 0.82rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--blue-deep);
-  white-space: normal;
+  color: var(--navy);
+  white-space: nowrap;
   text-align: right;
   flex: 0 0 auto;
-  max-width: 7.2rem;
+  max-width: 9.5rem;
 }
 
 .menu-leaf-item p {
   margin: 0.08rem 0 0;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   line-height: 1.28;
   color: var(--muted);
 }
@@ -199,20 +275,21 @@ html.is-menu .menu-leaf-item h4[id] {
 }
 
 .menu-counter-banner p:first-child {
-  font-family: "Outfit", "Jost", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.8rem;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   text-transform: none;
   margin: 0 0 0.7rem;
 }
 
 .menu-counter-banner .btn {
-  background: var(--blue);
+  background: var(--gold);
+  color: var(--navy);
 }
 
 .menu-counter-banner .btn-ghost {
   color: #fff;
-  border-color: #fff;
+  border-color: var(--gold);
 }
 
 @media (max-width: 800px) {
@@ -223,6 +300,14 @@ html.is-menu .menu-leaf-item h4[id] {
   .menu-masthead h1,
   .object-poster-menu h1 {
     font-size: 2.6rem;
+  }
+
+  .menu-lock-name {
+    font-size: 2.3rem;
+  }
+
+  .menu-lock-cafe {
+    font-size: 2.4rem;
   }
 
   .menu-leaf {

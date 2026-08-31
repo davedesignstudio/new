@@ -20,9 +20,9 @@ sections:
     short: "Juices"
     items:
       - name: "Fresh Squeezed Orange Juice"
-        price: "Small $5.95 · Large $9.55"
+        price: "Sm. 5.95 • Lg. 9.55"
       - name: "Assorted Juices"
-        price: "Small $4.80 · Large $7.25"
+        price: "Sm. 4.80 • Lg. 7.25"
       - name: "Fresh Seasonal Fruit"
         price: "$5.95"
   - id: farm-fresh-eggs
@@ -279,7 +279,7 @@ sections:
     short: "Soups"
     items:
       - name: "Soup of the Day"
-        price: "Pint $5.99 · Quart $10.99"
+        price: "Pt. 5.99 • Qt. 10.99"
   - id: fresh-garden-salads
     page: 3
     name: "Fresh Garden Salads"

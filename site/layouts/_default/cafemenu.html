@@ -11,38 +11,36 @@
 </nav>
 
 <main id="main" class="menu-page">
-  <section class="object-poster object-poster-menu">
-    <p class="object-brand">Boonton Cafe</p>
-    <h1>Menu</h1>
-    <figure class="object-figure">
-      <img src="/img/fifties/diner-booth.jpg" alt="Inside Boonton Cafe">
-    </figure>
-    <p class="object-place">Prices at Hawkins Place. Delivery apps may add their own.</p>
-  </section>
+  <div class="menu-board">
+    <header class="menu-lockup">
+      <p class="menu-lock-the">The</p>
+      <p class="menu-lock-name">BOONTON</p>
+      <p class="menu-lock-cafe">Cafe</p>
+      <p class="menu-card-note">Prices at Hawkins Place. Delivery apps may add their own.</p>
+    </header>
 
-  <div class="menu-folio">
-    {{ range .Site.Data.house.folios }}
-      <article class="menu-leaf" id="leaf-{{ .page }}">
-        <p class="menu-leaf-kicker">{{ .kicker }}</p>
-        <h2 class="menu-leaf-script">{{ .script }}</h2>
-        {{ range where $.Site.Data.house.sections "page" .page }}
-          <section class="menu-leaf-section">
-            <h3 id="{{ .id }}">{{ .name }}</h3>
-            {{ if .note }}<p class="menu-leaf-note">{{ .note }}</p>{{ end }}
-            {{ range .items }}
-              <div class="menu-leaf-item">
-                <div class="menu-leaf-row">
-                  <h4{{ with .id }} id="{{ . }}"{{ end }}>{{ .name }}</h4>
-                  <span class="menu-leaf-dots" aria-hidden="true"></span>
-                  <span class="price">{{ .price }}</span>
+    <div class="menu-folio">
+      {{ range .Site.Data.house.folios }}
+        <article class="menu-leaf" id="leaf-{{ .page }}">
+          {{ range where $.Site.Data.house.sections "page" .page }}
+            <section class="menu-leaf-section">
+              <h3 id="{{ .id }}">{{ .name }}</h3>
+              {{ if .note }}<p class="menu-leaf-note">{{ .note }}</p>{{ end }}
+              {{ range .items }}
+                <div class="menu-leaf-item">
+                  <div class="menu-leaf-row">
+                    <h4{{ with .id }} id="{{ . }}"{{ end }}>{{ .name }}</h4>
+                    <span class="menu-leaf-dots" aria-hidden="true"></span>
+                    <span class="price">{{ .price }}</span>
+                  </div>
+                  {{ if .description }}<p>{{ .description }}</p>{{ end }}
                 </div>
-                {{ if .description }}<p>{{ .description }}</p>{{ end }}
-              </div>
-            {{ end }}
-          </section>
-        {{ end }}
-      </article>
-    {{ end }}
+              {{ end }}
+            </section>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
   </div>
 
   <section class="menu-counter-banner">
