@@ -78,6 +78,12 @@ body {
   max-width: 38rem;
 }
 
+@media (max-height: 860px) {
+  .hero-brand img {
+    width: min(128px, 28vw);
+  }
+}
+
 .brand-mark,
 .custom-logo-link {
   display: inline-flex;
@@ -428,10 +434,6 @@ body {
 
   .hero-line {
     font-size: calc(clamp(1.45rem, 7vw, 2.1rem) + 6pt);
-  }
-
-  .hero-brand img {
-    width: min(120px, 32vw);
   }
 
   .hero-content {
