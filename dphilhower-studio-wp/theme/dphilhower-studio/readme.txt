@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.56 =
+* Homepage hero: smaller studio seal, kitchen photo fills the stage.
+
 = 1.0.55 =
 * Increase all type by 2 points. Root html stays 18px / 16px.
 

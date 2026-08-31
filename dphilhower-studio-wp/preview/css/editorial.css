@@ -75,23 +75,23 @@ body {
 .hero {
   width: var(--stage-width);
   margin-inline: auto;
-  min-height: 88vh;
-  min-height: 88dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   color: #fff8dc;
 }
 
 .hero-media img {
-  object-fit: contain;
-  object-position: center center;
-  transform: none;
+  object-fit: cover;
+  object-position: center 32%;
+  transform: scale(1.06);
   animation: none;
   background: var(--stage);
 }
 
 .hero-media::after {
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.72) 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent 58%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.04) 42%, rgba(0, 0, 0, 0.7) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.38), transparent 52%);
 }
 
 .hero-content {
@@ -105,7 +105,7 @@ body {
 
 .hero-brand img {
   display: block;
-  width: min(400px, 88vw);
+  width: min(280px, 58vw);
   height: auto;
 }
 
