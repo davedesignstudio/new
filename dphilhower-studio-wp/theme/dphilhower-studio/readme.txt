@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.57 =
+* Homepage kitchen still: glowing tossed dough and gold inlay on the oven edges.
+
 = 1.0.56 =
 * Homepage hero: smaller studio seal, kitchen photo fills the stage.
 

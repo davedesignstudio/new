@@ -163,7 +163,7 @@ function dps_seed_demo_content( $force = false ) {
 		return false;
 	}
 
-	$hero_id   = dps_sideload_theme_image( 'studio-runner.png', 'Chef tossing pizza dough in a restaurant kitchen' );
+	$hero_id   = dps_sideload_theme_image( 'studio-runner.png', 'Chef tossing glowing pizza dough toward a gold-inlaid oven' );
 	$about_id  = dps_sideload_theme_image( 'ember-menu-after.png', 'Restaurant menu on a table' );
 	$street_id = dps_sideload_theme_image( 'street.png', 'Downtown street' );
 	$images    = array(
