@@ -1,0 +1,16 @@
+{
+  "name": "websites",
+  "version": "1.0.0",
+  "description": "Pass HS Survey creative delivery — 5 brand sites with Spectrum Match",
+  "main": "index.js",
+  "scripts": {
+    "test": "node shared/verify.mjs",
+    "capture": "node shared/capture.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.49.1"
+  }
+}
