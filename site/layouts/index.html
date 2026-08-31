@@ -1,73 +1,26 @@
 {{ partial "header" . }}
 
 <main id="main">
-  <section class="object-poster object-poster-hero">
-    <p class="object-brand">Boonton Cafe</p>
-    <h1><a href="/menu/#hamburger">Hamburger</a></h1>
-    <figure class="object-figure">
-      <img src="/img/food/smashed-burger.jpg" alt="Hamburger">
-    </figure>
-    <p class="object-place">Boonton, N.J.</p>
+  <section class="room-hero">
+    <img class="room-hero-photo" src="/img/hero/breakfast.jpg" alt="Inside Boonton Cafe: blue vinyl booths, coffee, and breakfast plates">
+    <div class="room-hero-scrim" aria-hidden="true"></div>
+    <div class="container room-hero-copy">
+      <p class="room-kicker">125 Hawkins Place · Boonton</p>
+      <h1>Inside the cafe</h1>
+      <p class="room-lede">Greek diner cooking on a New Jersey counter. Breakfast through four. New owners. Same room.</p>
+      <p class="room-actions">
+        <a class="btn" href="{{ .Site.Params.orderUrl }}">Order</a>
+        <a class="btn-ghost" href="/menu">The menu</a>
+      </p>
+    </div>
   </section>
 
-  <section class="object-row">
-    <article class="object-poster object-poster-mini object-poster-navy">
-      <h2><a href="/menu/#coffee">Coffee</a></h2>
-      <figure class="object-figure">
-        <img src="/img/food/coffee.jpg" alt="Coffee">
-      </figure>
-    </article>
-    <article class="object-poster object-poster-mini object-poster-gold">
-      <h2>Stool</h2>
-      <figure class="object-figure">
-        <img src="/img/fifties/diner-stools.jpg" alt="Counter stool">
-      </figure>
-    </article>
-    <article class="object-poster object-poster-mini">
-      <h2><a href="/menu/#malt">Malt</a></h2>
-      <figure class="object-figure">
-        <img src="/img/fifties/diner-burger-malt.jpg" alt="Burger and malt">
-      </figure>
-    </article>
-  </section>
-
-  <section class="object-row">
-    <article class="object-poster object-poster-mini object-poster-navy">
-      <h2><a href="/menu/#turkey">Turkey</a></h2>
-      <figure class="object-figure">
-        <img src="/img/fifties/dinner-turkey-plate.jpg" alt="Hot turkey dinner">
-      </figure>
-    </article>
-    <article class="object-poster object-poster-mini">
-      <h2><a href="/menu/#meatloaf">Meatloaf</a></h2>
-      <figure class="object-figure">
-        <img src="/img/fifties/dinner-meatloaf.jpg" alt="Meatloaf dinner">
-      </figure>
-    </article>
-    <article class="object-poster object-poster-mini object-poster-gold">
-      <h2><a href="/menu/#steak">Steak</a></h2>
-      <figure class="object-figure">
-        <img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="Chicken fried steak">
-      </figure>
-    </article>
-    <article class="object-poster object-poster-mini object-poster-navy">
-      <h2><a href="/menu/#pie">Pie</a></h2>
-      <figure class="object-figure">
-        <img src="/img/fifties/diner-pie-coffee.jpg" alt="Pie and coffee">
-      </figure>
-    </article>
-  </section>
-
-  <section class="object-band">
-    <div class="container object-band-inner">
+  <section class="room-intro">
+    <div class="container room-intro-inner">
       <div>
-        <p class="object-brand">The house</p>
-        <h2>One diner. One menu.</h2>
-        <p>Greek diner cooking on a New Jersey counter. Breakfast through the last dinner plate at four. New owners. Same stools.</p>
-        <p>
-          <a class="btn" href="{{ .Site.Params.orderUrl }}">Order</a>
-          <a class="btn-ghost" href="/menu">The menu</a>
-        </p>
+        <p class="room-kicker">The house</p>
+        <h2>Sit down. Stay a while.</h2>
+        <p>Blue booths, a chrome-edge counter, and a kitchen that still plates breakfast like it means it. This is the room on Hawkins Place.</p>
       </div>
       <dl class="object-facts">
         <div>
@@ -83,6 +36,77 @@
           <dd>{{ .Site.Params.address }}<br>{{ .Site.Params.city }}</dd>
         </div>
       </dl>
+    </div>
+  </section>
+
+  <section class="room-gallery" aria-label="Inside Boonton Cafe">
+    <figure class="room-tile room-tile-lg">
+      <img src="/img/fifties/diner-booth.jpg" alt="Booth seating inside Boonton Cafe">
+      <figcaption>The booth</figcaption>
+    </figure>
+    <figure class="room-tile">
+      <img src="/img/fifties/diner-counter.jpg" alt="Counter, stools, and the pie case">
+      <figcaption>The counter</figcaption>
+    </figure>
+    <figure class="room-tile">
+      <img src="/img/fifties/diner-stools.jpg" alt="Chrome stools along the counter">
+      <figcaption>Stools</figcaption>
+    </figure>
+    <figure class="room-tile">
+      <img src="/img/fifties/diner-kitchen-pass.jpg" alt="Kitchen pass inside the cafe">
+      <figcaption>The pass</figcaption>
+    </figure>
+    <figure class="room-tile room-tile-wide">
+      <img src="/img/fifties/diner-pie-case.jpg" alt="Pie case at the counter">
+      <figcaption>The case</figcaption>
+    </figure>
+  </section>
+
+  <section class="room-plates">
+    <div class="container">
+      <p class="room-kicker">From the kitchen</p>
+      <h2>What we plate</h2>
+    </div>
+    <div class="room-plate-row">
+      <a class="room-plate" href="/menu/#hamburger">
+        <img src="/img/food/smashed-burger.jpg" alt="">
+        <span>Hamburger</span>
+      </a>
+      <a class="room-plate" href="/menu/#coffee">
+        <img src="/img/food/coffee.jpg" alt="">
+        <span>Coffee</span>
+      </a>
+      <a class="room-plate" href="/menu/#malt">
+        <img src="/img/fifties/diner-burger-malt.jpg" alt="">
+        <span>Malt</span>
+      </a>
+      <a class="room-plate" href="/menu/#turkey">
+        <img src="/img/fifties/dinner-turkey-plate.jpg" alt="">
+        <span>Turkey</span>
+      </a>
+      <a class="room-plate" href="/menu/#meatloaf">
+        <img src="/img/fifties/dinner-meatloaf.jpg" alt="">
+        <span>Meatloaf</span>
+      </a>
+      <a class="room-plate" href="/menu/#steak">
+        <img src="/img/fifties/dinner-chicken-fried-steak.jpg" alt="">
+        <span>Steak</span>
+      </a>
+      <a class="room-plate" href="/menu/#pie">
+        <img src="/img/fifties/diner-pie-coffee.jpg" alt="">
+        <span>Pie</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="room-cta">
+    <div class="container">
+      <p class="room-kicker">Hawkins Place</p>
+      <h2>We’ll have it warm at the counter</h2>
+      <p class="room-actions">
+        <a class="btn" href="{{ .Site.Params.orderUrl }}">Order</a>
+        <a class="btn-ghost" href="tel:+1{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+      </p>
     </div>
   </section>
 </main>

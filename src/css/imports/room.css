@@ -1,0 +1,263 @@
+.room-kicker {
+  margin: 0 0 0.45rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.room-hero {
+  position: relative;
+  min-height: calc(100vh - 4.6rem);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+}
+
+.room-hero-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.room-hero-scrim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(7, 20, 40, 0.12) 0%, rgba(7, 20, 40, 0.38) 42%, rgba(7, 20, 40, 0.82) 100%);
+}
+
+.room-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 4.2rem;
+  max-width: 40rem;
+  margin-left: 5%;
+  margin-right: auto;
+}
+
+.room-hero .room-kicker {
+  color: var(--blue-soft);
+}
+
+.room-hero h1 {
+  margin: 0 0 0.7rem;
+  font-size: 4.1rem;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  color: #fff;
+}
+
+.room-lede {
+  margin: 0 0 1.4rem;
+  font-size: 1.18rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 28rem;
+}
+
+.room-actions .btn-ghost {
+  margin-left: 0.5rem;
+}
+
+.room-intro {
+  padding: 3.4rem 0 2.8rem;
+  background: var(--paper);
+}
+
+.room-intro-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.room-intro-inner > div {
+  flex: 1 1 18rem;
+  max-width: 36rem;
+  margin-right: 2rem;
+}
+
+.room-intro h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.room-intro p {
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.room-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94%;
+  max-width: 1180px;
+  margin: 0 auto 1.2rem;
+}
+
+.room-tile {
+  position: relative;
+  flex: 1 1 16rem;
+  min-width: 14rem;
+  min-height: 16rem;
+  margin: 0.4rem;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--navy);
+}
+
+.room-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 16rem;
+}
+
+.room-tile-lg {
+  flex: 2 1 28rem;
+  min-height: 22rem;
+}
+
+.room-tile-lg img {
+  min-height: 22rem;
+}
+
+.room-tile-wide {
+  flex: 1 1 100%;
+  min-height: 18rem;
+}
+
+.room-tile-wide img {
+  min-height: 18rem;
+}
+
+.room-tile figcaption {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.9rem;
+  margin: 0;
+  padding: 0.28rem 0.7rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(7, 20, 40, 0.72);
+  border-radius: 999px;
+}
+
+.room-plates {
+  padding: 2.8rem 0 1.6rem;
+}
+
+.room-plates h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.room-plate-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.room-plate {
+  flex: 1 1 10rem;
+  min-width: 9.5rem;
+  max-width: 14rem;
+  margin: 0.4rem;
+  color: var(--navy);
+  background: #fff;
+  border: 1px solid #dbe6f6;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.room-plate:hover,
+.room-plate:focus {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.room-plate img {
+  width: 100%;
+  height: 8.5rem;
+  object-fit: cover;
+}
+
+.room-plate span {
+  display: block;
+  padding: 0.7rem 0.8rem 0.85rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.room-cta {
+  margin: 1.4rem 0 0;
+  padding: 3.4rem 0 3.6rem;
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+}
+
+.room-cta .room-kicker {
+  color: var(--blue-soft);
+}
+
+.room-cta h2 {
+  color: #fff;
+  font-size: 2.4rem;
+  margin: 0 auto 1.2rem;
+  max-width: 22rem;
+}
+
+@media (max-width: 800px) {
+  .room-hero {
+    min-height: 78vh;
+  }
+
+  .room-hero-copy {
+    margin-left: auto;
+    padding-bottom: 2.4rem;
+  }
+
+  .room-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .room-intro-inner > div {
+    margin-right: 0;
+  }
+
+  .room-tile,
+  .room-tile-lg,
+  .room-tile-wide {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .room-plate {
+    max-width: none;
+    flex: 1 1 42%;
+  }
+
+  .room-cta h2 {
+    font-size: 1.8rem;
+  }
+}
