@@ -35,6 +35,12 @@ body {
   background: transparent;
   border-bottom: 1px solid var(--line);
   box-shadow: none;
+  left: 50%;
+  right: auto;
+  width: var(--stage-width);
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  padding-inline: clamp(1rem, 3vw, 1.75rem);
 }
 
 .brand-mark,
@@ -77,6 +83,7 @@ body {
   margin-inline: auto;
   min-height: 100vh;
   min-height: 100dvh;
+  align-items: stretch;
   color: #fff8dc;
 }
 
@@ -95,18 +102,29 @@ body {
 }
 
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  min-height: 100%;
   border-left: 3px solid var(--gold);
-  padding-left: clamp(1rem, 3vw, 1.75rem);
+  padding: clamp(5.5rem, 11vh, 7rem) clamp(1rem, 3vw, 1.75rem) clamp(2rem, 5vh, 3.25rem);
 }
 
 .hero-brand {
+  margin: 0;
   max-width: none;
 }
 
 .hero-brand img {
   display: block;
-  width: min(280px, 58vw);
+  width: min(152px, 34vw);
   height: auto;
+}
+
+.hero-copy {
+  max-width: 38rem;
 }
 
 .hero-line {
@@ -406,6 +424,15 @@ body {
 
   .hero-line {
     font-size: calc(clamp(1.45rem, 7vw, 2.1rem) + 6pt);
+  }
+
+  .hero-brand img {
+    width: min(120px, 32vw);
+  }
+
+  .hero-content {
+    padding-top: 5.25rem;
+    gap: 1.15rem;
   }
 
   .hero-support {

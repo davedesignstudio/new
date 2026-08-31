@@ -190,7 +190,7 @@ select {
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
-  align-items: end;
+  align-items: stretch;
   overflow: hidden;
   color: #f4f6f1;
 }

@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.58 =
+* Align the header mark to the stage and keep the hero seal off the headline.
+
 = 1.0.57 =
 * Homepage kitchen still: glowing tossed dough and gold inlay on the oven edges.
 

@@ -25,11 +25,13 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			<p class="hero-brand">
 				<img src="<?php echo esc_url( dps_image_url( 'd-philhower-lockup.png' ) ); ?>" alt="<?php echo esc_attr( dps_mod( 'dps_hero_title', 'D Philhower Studio' ) ); ?>" width="1024" height="1024">
 			</p>
+			<div class="hero-copy">
 			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'We help independent restaurants look as exceptional as the food they serve.' ) ); ?></h1>
 			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'The first conversation is at your restaurant. Then identity, menus, windows, and the site become one place.' ) ); ?></p>
 			<div class="cta-row">
 				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View brands', 'dphilhower-studio' ); ?></a>
 				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Invite us over', 'dphilhower-studio' ); ?></a>
+			</div>
 			</div>
 		</div>
 	</section>
