@@ -82,8 +82,8 @@ body {
 
 .hero-media img {
   object-fit: cover;
-  object-position: center 28%;
-  transform: scale(1.28);
+  object-position: center 18%;
+  transform: scale(1.16);
   animation: none;
   background: var(--stage);
 }
