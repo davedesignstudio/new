@@ -356,8 +356,8 @@ function dps_brand_kits() {
 		),
 		'cafe-robust'              => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
-			'title'  => __( 'The seal, then the sleeve', 'dphilhower-studio' ),
-			'intro'  => __( 'Official CR badge on the cups and bag. Cup-from-above on the board and glass. One shop, two scales.', 'dphilhower-studio' ),
+			'title'  => __( 'The seal, then the pack', 'dphilhower-studio' ),
+			'intro'  => __( 'Official CR badge on the cups. The bag is a full retail pack: weight, origin, facts, brew, lot, barcode. Cup-from-above stays on the glass.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'cafe-robust-print-seal.png',
@@ -367,9 +367,15 @@ function dps_brand_kits() {
 				),
 				array(
 					'file'    => 'cafe-robust-print-cups.png',
-					'alt'     => __( 'Cafe Robust black cup, kraft cup, and kraft bag stamped with the official CR seal', 'dphilhower-studio' ),
-					'heading' => __( 'Cups and bag', 'dphilhower-studio' ),
-					'story'   => __( 'The official seal, centered, on black cup, kraft cup, and kraft bag.', 'dphilhower-studio' ),
+					'alt'     => __( 'Cafe Robust black cup, cream cup, and kraft bag with the official CR seal and House Blend cup copy', 'dphilhower-studio' ),
+					'heading' => __( 'Cups', 'dphilhower-studio' ),
+					'story'   => __( 'Official seal, centered. House Blend, 12 fl oz, contents-hot, recycle, Morristown.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'cafe-robust-print-pack.png',
+					'alt'     => __( 'Cafe Robust 12 ounce House Blend bags: front seal and back nutrition, brew, and barcode label', 'dphilhower-studio' ),
+					'heading' => __( 'Bag', 'dphilhower-studio' ),
+					'story'   => __( 'Front: seal, House Blend, notes, origin, 12 oz, roast date. Back: Nutrition Facts, ingredients, brew, store, barcode, lot.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'cafe-robust-print-window.png',

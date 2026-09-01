@@ -20,6 +20,9 @@ Portfolio, services, about, and project-inquiry templates for a Morris County re
 
 == Changelog ==
 
+= 1.0.59 =
+* Cafe Robust: official crema seal on cups and a full House Blend retail pack (nutrition, brew, lot, barcode).
+
 = 1.0.58 =
 * Align the header mark to the stage and keep the hero seal off the headline.
 
