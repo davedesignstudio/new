@@ -36,13 +36,10 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 	</section>
 
-	<section class="section">
-		<p class="section-label"><?php esc_html_e( 'Studio', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'We start at the table', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'The first conversation is a meal, not a pitch. We sit at your restaurant — a two-top, the bar, or the pass — and talk the way hospitality people talk: who walks in, what they order, what the block already thinks you are. From that table we write, draw, and build so guests recognize you before they sit down.', 'dphilhower-studio' ); ?></p>
-	</section>
+	<?php get_template_part( 'template-parts/contents-nav' ); ?>
+	<?php get_template_part( 'template-parts/method-section' ); ?>
 
-	<section class="section">
+	<section class="section" id="brands">
 		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'Work that has to live in the world', 'dphilhower-studio' ); ?></h2>
 		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant rooms first — pizza, coffee, deli, ice cream — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
@@ -79,7 +76,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 
 	<?php get_template_part( 'template-parts/process-section' ); ?>
 
-	<section class="section locale">
+	<section class="section locale" id="locale">
 		<div class="locale-panel">
 			<h2><?php esc_html_e( 'Bernardsville, Morristown, Morris County', 'dphilhower-studio' ); ?></h2>
 			<p><?php esc_html_e( 'David Philhower designs for owners who want a local partner. The first meeting is at your restaurant — in Bernardsville, Morristown, or the next town over — not a distant mill that retrofits one layout for the next shop.', 'dphilhower-studio' ); ?></p>

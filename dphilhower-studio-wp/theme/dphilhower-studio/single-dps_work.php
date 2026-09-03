@@ -15,17 +15,22 @@ get_header();
 		$services = get_post_meta( get_the_ID(), '_dps_services', true );
 		$year     = get_post_meta( get_the_ID(), '_dps_year', true );
 		$location = get_post_meta( get_the_ID(), '_dps_location', true );
+		$slug     = get_post_field( 'post_name', get_the_ID() );
+		$hero_src = dps_work_hero_src();
 		?>
 		<header class="page-hero">
-			<p class="section-label"><?php esc_html_e( 'Selected work', 'dphilhower-studio' ); ?></p>
+			<p class="section-label"><?php echo 'philhower-okrogly' === $slug ? esc_html__( 'The guild', 'dphilhower-studio' ) : esc_html__( 'Selected work', 'dphilhower-studio' ); ?></p>
 			<h1><?php the_title(); ?></h1>
+			<?php if ( 'philhower-okrogly' === $slug ) : ?>
+				<p class="guild-lede"><?php esc_html_e( 'One roof. Two names. Every trade.', 'dphilhower-studio' ); ?></p>
+			<?php endif; ?>
 			<?php if ( has_excerpt() ) : ?>
 				<p><?php echo esc_html( get_the_excerpt() ); ?></p>
 			<?php endif; ?>
 		</header>
-		<?php if ( has_post_thumbnail() ) : ?>
+		<?php if ( $hero_src ) : ?>
 			<div class="case-hero">
-				<?php the_post_thumbnail( 'full' ); ?>
+				<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php echo esc_attr( dps_work_hero_alt() ); ?>" width="1536" height="1024">
 			</div>
 		<?php endif; ?>
 		<article class="case-body">
@@ -47,7 +52,6 @@ get_header();
 				<?php the_content(); ?>
 			</div>
 			<?php
-			$slug = get_post_field( 'post_name', get_the_ID() );
 			if ( 'philhower-okrogly' === $slug ) {
 				get_template_part( 'template-parts/field-notes-pok' );
 			}

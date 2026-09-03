@@ -12,6 +12,7 @@ $location = dps_mod( 'dps_location', 'Morris County, NJ' );
 ?>
 <main id="main">
 	<header class="page-hero">
+		<p class="section-label"><?php esc_html_e( 'Inquiry', 'dphilhower-studio' ); ?></p>
 		<h1><?php esc_html_e( 'Let’s sit down', 'dphilhower-studio' ); ?></h1>
 		<p><?php esc_html_e( 'Invite us to your restaurant for the first conversation. We will eat, walk the room, and write back what we heard before we draw a line.', 'dphilhower-studio' ); ?></p>
 	</header>

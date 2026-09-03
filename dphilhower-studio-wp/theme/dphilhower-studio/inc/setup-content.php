@@ -170,15 +170,18 @@ function dps_seed_demo_content( $force = false ) {
 		'ember-kit.png'          => dps_sideload_theme_image( 'ember-kit.png', 'Ember Pie Co. kit' ),
 		'bville-hero.png'          => dps_sideload_theme_image( 'bville-hero.png', 'Bville Pizza & Grill' ),
 		'bville-print-window.png'  => dps_sideload_theme_image( 'bville-print-window.png', 'Bville window study' ),
+		'bville-field-glass.png'   => dps_sideload_theme_image( 'bville-field-glass.png', 'Bville storefront glass' ),
 		'ritual-hero.png'        => dps_sideload_theme_image( 'ritual-hero.png', 'The Ritual Café' ),
 		'magicbuds-hero.png'     => dps_sideload_theme_image( 'magicbuds-hero.png', 'Magic Buds' ),
 		'cowlick-hero.png'       => dps_sideload_theme_image( 'cowlick-hero.png', 'Cow Lick' ),
+		'cowlick-field-freezer.png' => dps_sideload_theme_image( 'cowlick-field-freezer.png', 'Cow Lick freezer' ),
 		'sthills-hero.png'       => dps_sideload_theme_image( 'sthills-hero.png', 'Service The Hills' ),
 		'bvdeli-hero.png'        => dps_sideload_theme_image( 'bvdeli-hero.png', 'Bernardsville Deli' ),
 		'pok-hero.png'           => dps_sideload_theme_image( 'pok-hero.png', 'Philhower & O’Krogly' ),
 		'pok-seal-hero.png'      => dps_sideload_theme_image( 'pok-seal-hero.png', 'Philhower & O’Krogly PK seal' ),
 		'pok-diamond-pk.png'     => dps_sideload_theme_image( 'pok-diamond-pk.png', 'Philhower & O’Krogly PK diamond' ),
 		'cafe-robust-hero.png'   => dps_sideload_theme_image( 'cafe-robust-hero.png', 'Cafe Robust' ),
+		'cafe-robust-field-cups.png' => dps_sideload_theme_image( 'cafe-robust-field-cups.png', 'Cafe Robust cups' ),
 		'expresso-hero.png'      => dps_sideload_theme_image( 'expresso-hero.png', 'EXPresso' ),
 		'kickbox-hero.png'       => dps_sideload_theme_image( 'kickbox-hero.png', 'Fitness Kick Boxing' ),
 	);
@@ -246,9 +249,7 @@ function dps_seed_demo_content( $force = false ) {
 			'content'  => '<p>Guests meet this brand in the street, in their hands, and on a screen before the first slice. The kit is the proof: one type family, one red, one cream, used everywhere it has to survive a printer and a rainy sidewalk.</p><p>One type family, one red, one cream — built the way a Morris County pie shop actually prints, not a template with a new logo dropped in.</p>',
 		),
 		array(
-			'slug'     => 'bville-pizza-grill',
-			'title'    => 'Bville Pizza & Grill',
-			'image'    => 'bville-hero.png',
+			'image'    => 'bville-field-glass.png',
 			'excerpt'  => 'In-house design, Bernardsville, 2018–2021',
 			'subtitle' => 'In-house design, Bernardsville, 2018–2021',
 			'client'   => 'Bville Pizza & Grill',
@@ -282,9 +283,7 @@ function dps_seed_demo_content( $force = false ) {
 			'content'  => '<p>Two businesses, one town name. Warm gradients for food you eat now, blue for the aisle you shop later.</p><p>Deli in orange-to-pink is appetite. Bernardsville gets the long B flourish — a signature, family-owned, large enough to survive crumpled paper. The blue line is a horizon between the counter and the grocery.</p>',
 		),
 		array(
-			'slug'     => 'cow-lick',
-			'title'    => 'Cow Lick',
-			'image'    => 'cowlick-hero.png',
+			'image'    => 'cowlick-field-freezer.png',
 			'excerpt'  => 'A joke you can print',
 			'subtitle' => 'A joke you can print',
 			'client'   => 'ice cream shop',
@@ -321,13 +320,13 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'philhower-okrogly',
 			'title'    => 'Philhower & O’Krogly',
 			'image'    => 'pok-hero.png',
-			'excerpt'  => 'Design + Build',
+			'excerpt'  => 'One roof. Two names. Every trade.',
 			'subtitle' => 'Design + Build',
 			'client'   => 'design-build',
 			'services' => 'Identity · embroidery · vehicle · signage',
 			'year'     => '2025',
 			'location' => 'Northern New Jersey',
-			'content'  => '<p>Same Hills blade. Balanced lockup: PK overlapping the carpenter-square on a gold–burgundy field. PHILHOWER and O’Krogly in the diamond points. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black outside the blade.</p><p>NJ carpenter marks cluster into four families — union shield, house-and-script, truck-door gothic, mill-and-saw. This lockup stays with the mill-and-saw line. The diamond is a carpenter’s square — the rule from the trade, not the union shield.</p>',
+			'content'  => '<p>Same Hills blade. Balanced lockup: PK overlapping the carpenter-square on a gold–burgundy field. PHILHOWER and O’Krogly in the diamond points. DESIGN + BUILD on the bottom arc.</p><p>One roof. Two names. Every trade. One lockup. Polo, van, yard, card, fridge. Black outside the blade.</p><p>NJ carpenter marks cluster into four families — union shield, house-and-script, truck-door gothic, mill-and-saw. This lockup stays with the mill-and-saw line. The diamond is a carpenter’s square — the rule from the trade, not the union shield.</p>',
 		),
 		array(
 			'slug'     => 'cafe-robust',
@@ -475,7 +474,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-28' );
+	update_option( 'dps_images_version', 'brands-print-29' );
 	return true;
 }
 

@@ -144,7 +144,7 @@ function dps_work_archive_slugs() {
 function dps_work_card_stills() {
 	return array(
 		'bville-pizza-grill' => array(
-			'file' => 'bville-print-window.png',
+			'file' => 'bville-field-glass.png',
 			'alt'  => __( 'Bville Pizza & Grill dusk window with the lockup on glass', 'dphilhower-studio' ),
 		),
 		'ember-pie-co'       => array(
@@ -152,8 +152,8 @@ function dps_work_card_stills() {
 			'alt'  => __( 'Pizza shop storefront with a gold window mark at dusk', 'dphilhower-studio' ),
 		),
 		'cafe-robust'        => array(
-			'file' => 'cafe-robust-hero.png',
-			'alt'  => __( 'Cafe Robust chalkboard menu hanging in a brick cafe', 'dphilhower-studio' ),
+			'file' => 'cafe-robust-field-cups.png',
+			'alt'  => __( 'Cafe Robust cups and House Blend bag on a cafe counter', 'dphilhower-studio' ),
 		),
 		'ritual-cafe'        => array(
 			'file' => 'ritual-print-cups.png',
@@ -168,8 +168,8 @@ function dps_work_card_stills() {
 			'alt'  => __( 'Bernardsville Deli paper cup with the stacked wordmark', 'dphilhower-studio' ),
 		),
 		'cow-lick'           => array(
-			'file' => 'cowlick-print-pint.png',
-			'alt'  => __( 'Cow Lick ice cream pint with the cow mark', 'dphilhower-studio' ),
+			'file' => 'cowlick-field-freezer.png',
+			'alt'  => __( 'Cow Lick freezer door with the cow mark and pints behind the glass', 'dphilhower-studio' ),
 		),
 		'service-the-hills'  => array(
 			'file' => 'sthills-hero.png',
@@ -223,6 +223,57 @@ function dps_work_card_alt( $post_id = 0 ) {
 	$stills  = dps_work_card_stills();
 	if ( isset( $stills[ $slug ] ) ) {
 		return $stills[ $slug ]['alt'];
+	}
+	return get_the_title( $post_id );
+}
+
+/**
+ * Case-hero stills that prefer the room over the lockup plate.
+ *
+ * @return array<string, array{file:string, alt:string}>
+ */
+function dps_work_hero_stills() {
+	return array(
+		'bville-pizza-grill' => array(
+			'file' => 'bville-field-glass.png',
+			'alt'  => __( 'Bville Pizza & Grill dusk storefront with the lockup on glass', 'dphilhower-studio' ),
+		),
+		'cow-lick'           => array(
+			'file' => 'cowlick-field-freezer.png',
+			'alt'  => __( 'Cow Lick freezer door with the cow mark and pints behind the glass', 'dphilhower-studio' ),
+		),
+	);
+}
+
+/**
+ * Case-hero image URL.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function dps_work_hero_src( $post_id = 0 ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$slug    = get_post_field( 'post_name', $post_id );
+	$heroes  = dps_work_hero_stills();
+	if ( isset( $heroes[ $slug ] ) ) {
+		return dps_image_url( $heroes[ $slug ]['file'] );
+	}
+	$thumb = get_the_post_thumbnail_url( $post_id, 'full' );
+	return $thumb ? $thumb : dps_work_card_src( $post_id );
+}
+
+/**
+ * Case-hero alt text.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function dps_work_hero_alt( $post_id = 0 ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$slug    = get_post_field( 'post_name', $post_id );
+	$heroes  = dps_work_hero_stills();
+	if ( isset( $heroes[ $slug ] ) ) {
+		return $heroes[ $slug ]['alt'];
 	}
 	return get_the_title( $post_id );
 }

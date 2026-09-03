@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DPS_VERSION', '1.0.59' );
+define( 'DPS_VERSION', '1.0.60' );
 define( 'DPS_DIR', get_template_directory() );
 define( 'DPS_URI', get_template_directory_uri() );
 
@@ -70,7 +70,7 @@ add_action( 'after_setup_theme', 'dps_setup' );
 function dps_assets() {
 	wp_enqueue_style(
 		'dps-fonts',
-		'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap',
+		'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap',
 		array(),
 		null
 	);
@@ -164,14 +164,14 @@ function dps_maybe_upgrade_images() {
 	if ( 'dphilhower-studio' !== get_stylesheet() ) {
 		return;
 	}
-	if ( get_option( 'dps_images_version' ) === 'brands-print-28' ) {
+	if ( get_option( 'dps_images_version' ) === 'brands-print-29' ) {
 		return;
 	}
 	if ( ! get_option( 'dps_demo_seeded' ) ) {
 		return;
 	}
 	dps_seed_demo_content( true );
-	update_option( 'dps_images_version', 'brands-print-28' );
+	update_option( 'dps_images_version', 'brands-print-29' );
 }
 
 /**

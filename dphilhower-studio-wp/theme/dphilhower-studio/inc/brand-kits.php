@@ -119,6 +119,12 @@ function dps_brand_kits() {
 			'intro'  => __( 'In-house graphic design, 2018–2021. The uploaded lockup — orange B, green ville, gold edge — sits on the window, the menu, and the burgundy lid. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
+					'file'    => 'bville-field-glass.png',
+					'alt'     => __( 'Bville Pizza & Grill dusk storefront with the lockup on glass, hours, and wooden bench', 'dphilhower-studio' ),
+					'heading' => __( 'In the room', 'dphilhower-studio' ),
+					'story'   => __( 'The window at dusk. Orange B from the lot. Green ville for the town. Cream hours because the menu is cream.', 'dphilhower-studio' ),
+				),
+				array(
 					'file'    => 'bville-print-window.png',
 					'alt'     => __( 'Bville Pizza & Grill dusk window with the uploaded orange and green lockup on glass', 'dphilhower-studio' ),
 					'heading' => __( 'Window', 'dphilhower-studio' ),
@@ -223,6 +229,12 @@ function dps_brand_kits() {
 			'title'  => __( 'A joke you can print', 'dphilhower-studio' ),
 			'intro'  => __( 'The cow licks. That is the brief. The sticker halo exists so the same die-cut can live on a pint, a window, and a freezer door without redrawing the animal.', 'dphilhower-studio' ),
 			'pieces' => array(
+				array(
+					'file'    => 'cowlick-field-freezer.png',
+					'alt'     => __( 'Cow Lick freezer door with the cow mark, hours, and pints behind frosted glass', 'dphilhower-studio' ),
+					'heading' => __( 'In the room', 'dphilhower-studio' ),
+					'story'   => __( 'Freezer light is unkind. The cow still reads through frost, and the pints behind it already wear the mark.', 'dphilhower-studio' ),
+				),
 				array(
 					'file'    => 'cowlick-print-pint.png',
 					'alt'     => __( 'Cow Lick ice cream pint with cow sticker logo', 'dphilhower-studio' ),
@@ -366,8 +378,8 @@ function dps_brand_kits() {
 					'story'   => __( 'The uploaded lockup. Gold CR in the crema ring, silver CAFE / ROBUST, stars. Not a placeholder circle.', 'dphilhower-studio' ),
 				),
 				array(
-					'file'    => 'cafe-robust-print-cups.png',
-					'alt'     => __( 'Cafe Robust black cup, cream cup, and kraft bag with the official CR seal and House Blend cup copy', 'dphilhower-studio' ),
+					'file'    => 'cafe-robust-field-cups.png',
+					'alt'     => __( 'Cafe Robust black cup, cream cup, and kraft bag with the official CR seal on a cafe counter', 'dphilhower-studio' ),
 					'heading' => __( 'Cups', 'dphilhower-studio' ),
 					'story'   => __( 'Official seal, centered. House Blend, 12 fl oz, contents-hot, recycle, Morristown.', 'dphilhower-studio' ),
 				),
