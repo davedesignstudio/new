@@ -226,7 +226,7 @@ function dps_brand_kits() {
 					'file'    => 'true-olive-print-stationery.png',
 					'alt'     => __( 'Cream True Olive menu listing trays, grill, shawarma, and rice, with a black gold-foil business card', 'dphilhower-studio' ),
 					'heading' => __( 'Menu and card', 'dphilhower-studio' ),
-					'story'   => __( 'Trays, grill, shawarma, rice — grape leaves, kabobs, chicken and beef shawarma, roasted lamb, yellow butter rice and basmati. No invented prices. The card is black with gold foil, the same as the hanging sign.', 'dphilhower-studio' ),
+					'story'   => __( 'The paper lists the trays in order: grape leaves, shish, kufta, chicken kabob, chicken and beef shawarma, roasted chicken legs, lemon pepper breast, veggie tray, mixed zucchini onions and peppers, oven-roasted lamb, yellow butter rice, basmati. No invented prices.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'true-olive-print-cups.png',

@@ -251,6 +251,21 @@ a { color: var(--harbor); }
   color: var(--ink);
 }
 
+.menu-board {
+  list-style: none;
+  margin: 0;
+  padding: 1.3rem 1.4rem 1.5rem;
+  max-width: 40rem;
+  background: #fff8ea;
+  border-top: 6px solid var(--olive);
+}
+
+.menu-board li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(26, 20, 8, 0.12);
+  font-size: 1.08rem;
+}
+
 .menu-grid {
   display: grid;
   gap: 1.5rem;
