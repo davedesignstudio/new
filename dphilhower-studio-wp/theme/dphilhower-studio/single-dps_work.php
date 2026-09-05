@@ -31,6 +31,11 @@ get_header();
 				<p><?php echo esc_html( get_the_excerpt() ); ?></p>
 			<?php endif; ?>
 		</header>
+		<?php if ( $hero_src ) : ?>
+			<div class="case-hero">
+				<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php echo esc_attr( dps_work_hero_alt() ); ?>" width="1536" height="1024">
+			</div>
+		<?php endif; ?>
 		<?php if ( 'bville-pizza-grill' === $slug ) : ?>
 			<nav class="contents" aria-label="<?php esc_attr_e( 'On this page', 'dphilhower-studio' ); ?>">
 				<a href="#name"><span>01</span> <?php esc_html_e( 'Name', 'dphilhower-studio' ); ?></a>
@@ -38,11 +43,6 @@ get_header();
 				<a href="#story"><span>03</span> <?php esc_html_e( 'Story', 'dphilhower-studio' ); ?></a>
 				<a href="#print"><span>04</span> <?php esc_html_e( 'Print', 'dphilhower-studio' ); ?></a>
 			</nav>
-		<?php endif; ?>
-		<?php if ( $hero_src ) : ?>
-			<div class="case-hero">
-				<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php echo esc_attr( dps_work_hero_alt() ); ?>" width="1536" height="1024">
-			</div>
 		<?php endif; ?>
 		<article class="case-body" id="name">
 			<ul class="case-meta">
