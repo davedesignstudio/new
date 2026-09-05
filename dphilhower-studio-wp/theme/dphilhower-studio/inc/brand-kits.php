@@ -196,8 +196,26 @@ function dps_brand_kits() {
 		'true-olive'               => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The olive, not the lantern', 'dphilhower-studio' ),
-			'intro'  => __( 'The eastern shore already has limestone and oil. The mark had to hold grit and glamour: an olive in bronze, not a lantern in gold. Black field at the curb, cream on the table. Same seal, two stocks. This is a studio study, not a live job.', 'dphilhower-studio' ),
+			'intro'  => __( 'The seal is bronze on black. The table, the room, and the website keep every ink: tahini, limestone, olive, lemon, sumac, pomegranate, harbor, copper. Mediterranean restaurant sites that work lead with the plate. This is a studio study, not a live job.', 'dphilhower-studio' ),
 			'pieces' => array(
+				array(
+					'file'    => 'true-olive-web-table.png',
+					'alt'     => __( 'True Olive mezze table in full color: labneh, lemon, sumac, pomegranate, olives, oil, grilled fish', 'dphilhower-studio' ),
+					'heading' => __( 'The table', 'dphilhower-studio' ),
+					'story'   => __( 'Every ink at once. Tahini, olive, lemon, sumac, pomegranate, copper, limestone. This is the homepage photograph.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'true-olive-web-room.png',
+					'alt'     => __( 'True Olive limestone dining room with olive trees, copper light, cream linen, and the harbor', 'dphilhower-studio' ),
+					'heading' => __( 'The room', 'dphilhower-studio' ),
+					'story'   => __( 'Golden stone, olive trees, copper, cream, lemon, pomegranate, harbor through the arch. The seal is small on the wall. The weather is the room.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'true-olive-web-press.png',
+					'alt'     => __( 'Grilled sea bass with lemon, olive oil, sumac, pomegranate, and labneh', 'dphilhower-studio' ),
+					'heading' => __( 'Press', 'dphilhower-studio' ),
+					'story'   => __( 'The sea on the plate. Lemon, oil, sumac, pomegranate — nothing greyed out for a black-and-gold lookbook.', 'dphilhower-studio' ),
+				),
 				array(
 					'file'    => 'true-olive-print-window.png',
 					'alt'     => __( 'Black True Olive hanging sign with the bronze olive-leaf seal on a limestone harbor street at dusk', 'dphilhower-studio' ),

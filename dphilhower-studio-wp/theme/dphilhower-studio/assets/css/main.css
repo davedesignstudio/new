@@ -1113,6 +1113,27 @@ select {
 .swatch-bville-cream { background: #f3ead8; color: #1a1408; border: 1px solid rgba(26, 20, 8, 0.16); }
 .swatch-bville-lid { background: #6b1d28; color: #f3ead8; }
 
+.swatches.is-true-olive {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 720px) {
+  .swatches.is-true-olive {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.swatch-olive-bronze { background: #c4a35a; color: #0b0b0b; }
+.swatch-olive-seal { background: #0b0b0b; color: #c4a35a; }
+.swatch-olive-tahini { background: #f5ecd7; color: #1a1408; border: 1px solid rgba(26, 20, 8, 0.16); }
+.swatch-olive-lime { background: #e4d2b0; color: #1a1408; }
+.swatch-olive-leaf { background: #5c6b32; color: #f5ecd7; }
+.swatch-olive-lemon { background: #e8c547; color: #1a1408; }
+.swatch-olive-sumac { background: #8b3a3a; color: #f5ecd7; }
+.swatch-olive-pom { background: #9b1d3a; color: #f5ecd7; }
+.swatch-olive-harbor { background: #1b3a5c; color: #f5ecd7; }
+.swatch-olive-copper { background: #b87333; color: #0b0b0b; }
+
 .type-row {
   display: grid;
   gap: 1rem;

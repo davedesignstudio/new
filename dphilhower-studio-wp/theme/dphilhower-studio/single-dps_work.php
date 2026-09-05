@@ -70,6 +70,9 @@ get_header();
 		if ( 'bville-pizza-grill' === $slug ) {
 			get_template_part( 'template-parts/brand-story-bville' );
 		}
+		if ( 'true-olive' === $slug ) {
+			get_template_part( 'template-parts/brand-story-olive' );
+		}
 		if ( 'ember-pie-co' === $slug ) {
 			get_template_part( 'template-parts/brand-kit-ember' );
 		} else {

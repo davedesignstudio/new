@@ -194,6 +194,9 @@ function dps_seed_demo_content( $force = false ) {
 		'true-olive-print-stationery.png' => dps_sideload_theme_image( 'true-olive-print-stationery.png', 'True Olive menu and card' ),
 		'true-olive-print-cups.png'       => dps_sideload_theme_image( 'true-olive-print-cups.png', 'True Olive cups and oil' ),
 		'true-olive-print-sticker.png'    => dps_sideload_theme_image( 'true-olive-print-sticker.png', 'True Olive oil-tin sticker' ),
+		'true-olive-web-table.png'        => dps_sideload_theme_image( 'true-olive-web-table.png', 'True Olive mezze table' ),
+		'true-olive-web-room.png'         => dps_sideload_theme_image( 'true-olive-web-room.png', 'True Olive dining room' ),
+		'true-olive-web-press.png'        => dps_sideload_theme_image( 'true-olive-web-press.png', 'True Olive sea bass plate' ),
 	);
 
 	if ( $hero_id ) {
@@ -277,10 +280,10 @@ function dps_seed_demo_content( $force = false ) {
 			'excerpt'  => 'The olive, not the lantern',
 			'subtitle' => 'The olive, not the lantern',
 			'client'   => 'Studio study — Eastern Mediterranean restaurant',
-			'services' => 'Identity · signage · menu · packaging',
+			'services' => 'Identity · signage · menu · site',
 			'year'     => '2026',
 			'location' => 'Eastern Mediterranean (studio study)',
-			'content'  => '<p>The eastern shore already has limestone and oil. The mark had to hold grit and glamour: an olive in bronze, not a lantern in gold. This is not Cala’s western cove, and it is not a mosque, a crescent, or a boat sticker. The fruit is the company — the way a saw is the company when the work is wood.</p><p>The wreath is the tool: pointed olive leaves cast as the rim, a black disc, bronze in the type. Serif TRUE is authority. Script Olive is the fruit. PRESS TABLE SHORE on the bottom arc makes a seal, not a flyer. Black field at the curb. Cream on the table. Same construction at four scales. This is a studio study, not a live job.</p>',
+			'content'  => '<p>The eastern shore already has limestone and oil. The mark had to hold grit and glamour: an olive in bronze, not a lantern in gold. This is not Cala’s western cove, and it is not a mosque, a crescent, or a boat sticker. The fruit is the company — the way a saw is the company when the work is wood.</p><p>The wreath is the tool. Serif TRUE is authority. Script Olive is the fruit. PRESS TABLE SHORE on the arc makes a seal. Black is only the disc. The table, the room, and the website keep every ink: tahini, limestone, olive, lemon, sumac, pomegranate, harbor, copper. This is a studio study, not a live job.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
@@ -510,7 +513,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-33' );
+	update_option( 'dps_images_version', 'brands-print-34' );
 	return true;
 }
 
