@@ -1083,6 +1083,20 @@ select {
   max-width: 52ch;
 }
 
+.olive-lede {
+  margin: 0.35rem 0 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  letter-spacing: -0.02em;
+  color: #c4a35a;
+  max-width: 28rem;
+}
+
+.page-hero .olive-lede + p {
+  max-width: 52ch;
+}
+
 .kit-lockup {
   margin: 0 0 1.25rem;
 }
@@ -1094,6 +1108,14 @@ select {
 
 .kit-panel.is-bville {
   border-top-color: #e06a24;
+}
+
+.kit-panel.is-true-olive {
+  border-top-color: #c4a35a;
+}
+
+.kit-panel.is-true-olive .type-card small {
+  color: #8b3a3a;
 }
 
 .swatches.is-bville {

@@ -19,13 +19,26 @@ get_header();
 		$hero_src = dps_work_hero_src();
 		?>
 		<header class="page-hero">
-			<p class="section-label"><?php echo 'philhower-okrogly' === $slug ? esc_html__( 'The guild', 'dphilhower-studio' ) : ( 'bville-pizza-grill' === $slug ? esc_html__( 'Identity', 'dphilhower-studio' ) : esc_html__( 'Selected work', 'dphilhower-studio' ) ); ?></p>
+			<p class="section-label"><?php
+			if ( 'philhower-okrogly' === $slug ) {
+				esc_html_e( 'The guild', 'dphilhower-studio' );
+			} elseif ( 'bville-pizza-grill' === $slug ) {
+				esc_html_e( 'Identity', 'dphilhower-studio' );
+			} elseif ( 'true-olive' === $slug ) {
+				esc_html_e( 'Hospitality', 'dphilhower-studio' );
+			} else {
+				esc_html_e( 'Selected work', 'dphilhower-studio' );
+			}
+			?></p>
 			<h1><?php the_title(); ?></h1>
 			<?php if ( 'philhower-okrogly' === $slug ) : ?>
 				<p class="guild-lede"><?php esc_html_e( 'One roof. Two names. Every trade.', 'dphilhower-studio' ); ?></p>
 			<?php endif; ?>
 			<?php if ( 'bville-pizza-grill' === $slug ) : ?>
 				<p class="bville-lede"><?php esc_html_e( 'The town’s nickname, as a lockup', 'dphilhower-studio' ); ?></p>
+			<?php endif; ?>
+			<?php if ( 'true-olive' === $slug ) : ?>
+				<p class="olive-lede"><?php esc_html_e( 'The olive, not the lantern', 'dphilhower-studio' ); ?></p>
 			<?php endif; ?>
 			<?php if ( has_excerpt() ) : ?>
 				<p><?php echo esc_html( get_the_excerpt() ); ?></p>
@@ -36,7 +49,7 @@ get_header();
 				<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php echo esc_attr( dps_work_hero_alt() ); ?>" width="1536" height="1024">
 			</div>
 		<?php endif; ?>
-		<?php if ( 'bville-pizza-grill' === $slug ) : ?>
+		<?php if ( in_array( $slug, array( 'bville-pizza-grill', 'true-olive' ), true ) ) : ?>
 			<nav class="contents" aria-label="<?php esc_attr_e( 'On this page', 'dphilhower-studio' ); ?>">
 				<a href="#name"><span>01</span> <?php esc_html_e( 'Name', 'dphilhower-studio' ); ?></a>
 				<a href="#system"><span>02</span> <?php esc_html_e( 'System', 'dphilhower-studio' ); ?></a>

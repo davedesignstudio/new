@@ -253,8 +253,8 @@ function dps_work_hero_stills() {
 			'alt'  => __( 'Cala lockup on limewashed plaster with terracotta arch, cream wordmark, and the sea beyond', 'dphilhower-studio' ),
 		),
 		'true-olive'         => array(
-			'file' => 'true-olive-hero.png',
-			'alt'  => __( 'True Olive bronze olive-leaf seal on black: serif TRUE, script Olive, PRESS TABLE SHORE on the arc', 'dphilhower-studio' ),
+			'file' => 'true-olive-web-room.png',
+			'alt'  => __( 'True Olive limestone dining room with olive trees, copper light, cream linen, and the harbor', 'dphilhower-studio' ),
 		),
 		'cow-lick'           => array(
 			'file' => 'cowlick-field-freezer.png',

@@ -1,5 +1,5 @@
-/* True Olive restaurant weather — every ink stays.
-   Not studio maroon chrome. Not a black-and-gold reduction. */
+/* True Olive dinner site — Bville construction, True Olive weather.
+   Cream paper, centered seal, two columns, olive names. Not studio maroon. */
 
 :root {
   --bronze: #c4a35a;
@@ -12,6 +12,7 @@
   --pomegranate: #9b1d3a;
   --harbor: #1b3a5c;
   --copper: #b87333;
+  --cream: #fff8ea;
   --ink: #1a1408;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
@@ -39,6 +40,7 @@ a { color: var(--harbor); }
   left: -999px;
   top: 0;
 }
+
 .skip:focus {
   left: 1rem;
   top: 1rem;
@@ -54,7 +56,7 @@ a { color: var(--harbor); }
   gap: 1rem;
   padding: 0.85rem 1.25rem;
   background: var(--tahini);
-  border-bottom: 3px solid var(--olive);
+  border-bottom: 1px solid rgba(92, 107, 50, 0.35);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -92,8 +94,8 @@ a { color: var(--harbor); }
 .site-top nav {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
-  font-size: 0.82rem;
+  gap: 1.25rem;
+  font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -103,276 +105,216 @@ a { color: var(--harbor); }
   text-decoration: none;
 }
 
-.reserve {
-  background: var(--pomegranate);
-  color: var(--tahini) !important;
-  padding: 0.55rem 0.95rem;
-  text-decoration: none;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  font-weight: 600;
+.site-top nav a:hover {
+  color: var(--olive);
 }
 
-.hero {
-  position: relative;
-  min-height: 78vh;
-  color: var(--tahini);
+.paper-stage {
+  padding: clamp(1.5rem, 5vw, 3.5rem) 1.2rem 3rem;
 }
 
-.hero img {
-  width: 100%;
-  height: 78vh;
-  object-fit: cover;
-}
-
-.hero-copy {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.2rem, 4vw, 3rem);
-  background: linear-gradient(transparent, rgba(11, 11, 11, 0.72) 55%);
-}
-
-.hero-copy p.kicker {
-  margin: 0 0 0.35rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--lemon);
-}
-
-.hero-copy h1 {
-  margin: 0 0 0.5rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.2rem, 6vw, 4.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-}
-
-.hero-copy h1 em {
-  font-style: italic;
-  color: var(--lemon);
-}
-
-.band {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  height: 14px;
-}
-.band i:nth-child(1) { background: var(--olive); }
-.band i:nth-child(2) { background: var(--lemon); }
-.band i:nth-child(3) { background: var(--sumac); }
-.band i:nth-child(4) { background: var(--harbor); }
-.band i:nth-child(5) { background: var(--copper); }
-
-.wrap {
-  width: min(72rem, calc(100% - 2.4rem));
+.dinner {
+  width: min(52rem, 100%);
   margin: 0 auto;
+  padding: clamp(1.6rem, 4vw, 2.8rem) clamp(1.2rem, 4vw, 2.4rem) 1.8rem;
+  background: var(--cream);
+  border: 2px solid var(--olive);
+  box-shadow: inset 0 0 0 1px var(--bronze);
 }
 
-.intro {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
-  max-width: 40rem;
+.dinner-mark {
+  text-align: center;
+  margin-bottom: 1.6rem;
 }
 
-.intro .kicker {
-  margin: 0 0 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.dinner-mark img {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--seal);
+}
+
+.dinner-mark .kicker {
+  margin: 0 0 0.35rem;
   font-size: 0.72rem;
-  color: var(--sumac);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bronze);
 }
 
-.intro h2 {
-  margin: 0 0 0.8rem;
+.dinner-mark h1 {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
   letter-spacing: -0.03em;
   color: var(--olive);
 }
 
-.split {
+.dinner-cols {
   display: grid;
-  gap: 0;
-  background: var(--limestone);
+  gap: 1.5rem 2.2rem;
 }
 
-@media (min-width: 860px) {
-  .split { grid-template-columns: 1.15fr 0.85fr; }
+@media (min-width: 720px) {
+  .dinner-cols {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.4rem;
+    position: relative;
+  }
+
+  .dinner-cols::before {
+    content: "";
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    left: 50%;
+    width: 1px;
+    background: rgba(196, 163, 90, 0.55);
+  }
 }
 
-.split img {
-  width: 100%;
-  height: 100%;
-  min-height: 22rem;
-  object-fit: cover;
-}
-
-.split-copy {
-  padding: clamp(1.6rem, 4vw, 2.8rem);
-  background: var(--harbor);
-  color: var(--tahini);
-}
-
-.split-copy h2 {
-  margin: 0 0 0.8rem;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.split-copy p { margin: 0 0 0.9rem; color: rgba(245, 236, 215, 0.92); }
-
-.menu {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
-}
-
-.menu header {
-  max-width: 36rem;
-  margin-bottom: 1.8rem;
-}
-
-.menu header .kicker {
-  margin: 0 0 0.5rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--copper);
-}
-
-.menu h2 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  color: var(--ink);
-}
-
-.menu-board {
-  list-style: none;
-  margin: 0;
-  padding: 1.3rem 1.4rem 1.5rem;
-  max-width: 40rem;
-  background: #fff8ea;
-  border-top: 6px solid var(--olive);
-}
-
-.menu-board li {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(26, 20, 8, 0.12);
-  font-size: 1.08rem;
-}
-
-.menu-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 700px) {
-  .menu-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1100px) {
-  .menu-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-.menu-col {
-  padding: 1.2rem 1.15rem 1.4rem;
-  background: #fff8ea;
-  border-top: 6px solid var(--olive);
-}
-
-.menu-col:nth-child(2) { border-top-color: var(--sumac); }
-.menu-col:nth-child(3) { border-top-color: var(--harbor); }
-.menu-col:nth-child(4) { border-top-color: var(--lemon); }
-
-.menu-col h3 {
-  margin: 0 0 1rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--sumac);
-}
-
-.menu-col ul {
+.dinner-cols ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.menu-col li {
-  padding: 0.45rem 0;
-  border-bottom: 1px solid rgba(26, 20, 8, 0.12);
-}
-
-.menu-col .note {
-  display: block;
-  font-size: 0.88rem;
-  color: rgba(26, 20, 8, 0.7);
-  padding-top: 0.15rem;
-}
-
-.plate {
+.dinner-cols li {
   margin: 0;
-}
-
-.plate img {
-  width: 100%;
-  height: min(70vh, 38rem);
-  object-fit: cover;
-}
-
-.plate figcaption {
-  padding: 0.85rem 1.25rem 1.3rem;
-  background: var(--olive);
-  color: var(--tahini);
-  font-size: 0.95rem;
-}
-
-.visit {
-  padding: clamp(2.5rem, 6vw, 4.2rem) 0;
-  background: var(--limestone);
-}
-
-.visit-inner {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 720px) {
-  .visit-inner { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
-}
-
-.visit h2 {
-  margin: 0 0 0.6rem;
+  padding: 0.7rem 0 0.55rem;
+  border-bottom: 1px solid rgba(196, 163, 90, 0.45);
   font-family: var(--font-display);
-  font-size: 2.1rem;
-  color: var(--harbor);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--olive);
 }
 
-.visit p { margin: 0 0 0.7rem; max-width: 36rem; }
-
-.hours {
-  background: var(--tahini);
-  padding: 1.2rem 1.3rem;
-  border-left: 6px solid var(--lemon);
-}
-
-.hours dt {
+.dinner-foot {
+  margin: 1.6rem 0 0;
+  text-align: center;
   font-size: 0.72rem;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.story {
+  width: min(52rem, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 0 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.story .kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--sumac);
 }
 
-.hours dd {
-  margin: 0.2rem 0 0.9rem;
+.story h2 {
+  margin: 0 0 0.8rem;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--olive);
 }
+
+.story .lede {
+  margin: 0 0 1.6rem;
+  max-width: 40rem;
+}
+
+.facts {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .facts { grid-template-columns: 1fr 1fr; }
+}
+
+.facts li {
+  margin: 0;
+  padding: 1.1rem 1.15rem 1.2rem;
+  background: var(--cream);
+  border-top: 1px solid var(--bronze);
+}
+
+.facts h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--harbor);
+}
+
+.facts p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.visit {
+  display: grid;
+  background: var(--limestone);
+}
+
+@media (min-width: 860px) {
+  .visit { grid-template-columns: 1.15fr 0.85fr; }
+}
+
+.visit-room img {
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  object-fit: cover;
+}
+
+.visit-copy {
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  background: var(--harbor);
+  color: var(--tahini);
+}
+
+.visit-copy h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.visit-copy p {
+  margin: 0 0 1.1rem;
+  color: rgba(245, 236, 215, 0.92);
+}
+
+.hours {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: rgba(11, 11, 11, 0.28);
+}
+
+.hours dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.hours dd {
+  margin: 0.2rem 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.hours dd:last-child { margin-bottom: 0; }
 
 .site-end {
   padding: 1.1rem 1.25rem;
@@ -388,7 +330,5 @@ a { color: var(--harbor); }
 .site-end a { color: var(--lemon); }
 
 @media (max-width: 700px) {
-  .site-top nav a:not(.reserve) { display: none; }
-  .hero img, .hero { min-height: 62vh; }
-  .hero img { height: 62vh; }
+  .site-top nav a:nth-child(2) { display: none; }
 }

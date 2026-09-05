@@ -241,26 +241,27 @@
 .story-olive-grid li {
   margin: 0;
   padding: 1.2rem 1.3rem;
-  border-top: 4px solid #5c6b32;
+  border-top: 1px solid rgba(196, 163, 90, 0.7);
   background: #fff8ea;
 }
-
-.story-olive-grid li:nth-child(2) { border-top-color: #e8c547; }
-.story-olive-grid li:nth-child(3) { border-top-color: #8b3a3a; }
-.story-olive-grid li:nth-child(4) { border-top-color: #1b3a5c; }
 
 .story-olive-grid h3 {
   margin: 0 0 0.55rem;
   font-family: var(--font-display);
   font-size: 1.12rem;
   font-weight: 600;
-  color: #1b3a5c;
+  color: #5c6b32;
 }
 
 .story-olive-grid p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.story-olive .trail {
+  margin: 1.75rem 0 0;
+  max-width: 42rem;
 }
 
 .story-olive .cta-row {

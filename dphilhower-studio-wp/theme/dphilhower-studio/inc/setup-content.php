@@ -192,6 +192,7 @@ function dps_seed_demo_content( $force = false ) {
 		'true-olive-hero.png'             => dps_sideload_theme_image( 'true-olive-hero.png', 'True Olive bronze olive-leaf seal' ),
 		'true-olive-print-window.png'     => dps_sideload_theme_image( 'true-olive-print-window.png', 'True Olive street sign' ),
 		'true-olive-print-stationery.png' => dps_sideload_theme_image( 'true-olive-print-stationery.png', 'True Olive menu: trays, grill, shawarma, rice' ),
+		'true-olive-print-menu.png'       => dps_sideload_theme_image( 'true-olive-print-menu.png', 'True Olive cream dinner menu, two columns of trays' ),
 		'true-olive-print-cups.png'       => dps_sideload_theme_image( 'true-olive-print-cups.png', 'True Olive cups and oil' ),
 		'true-olive-print-sticker.png'    => dps_sideload_theme_image( 'true-olive-print-sticker.png', 'True Olive oil-tin sticker' ),
 		'true-olive-web-table.png'        => dps_sideload_theme_image( 'true-olive-web-table.png', 'True Olive trays and kabobs' ),
@@ -277,13 +278,13 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'true-olive',
 			'title'    => 'True Olive',
 			'image'    => 'true-olive-hero.png',
-			'excerpt'  => 'The olive, not the lantern',
+			'excerpt'  => 'Studio study. Branding, a cream dinner menu, and the restaurant site — one construction from the seal to the paper the guest holds.',
 			'subtitle' => 'The olive, not the lantern',
 			'client'   => 'Studio study — Eastern Mediterranean restaurant',
 			'services' => 'Identity · signage · menu · site',
 			'year'     => '2026',
 			'location' => 'Eastern Mediterranean (studio study)',
-			'content'  => '<p>The eastern shore already has limestone and oil. The mark had to hold grit and glamour: an olive in bronze, not a lantern in gold. This is not Cala’s western cove, and it is not a mosque, a crescent, or a boat sticker. The fruit is the company — the way a saw is the company when the work is wood.</p><p>The wreath is the tool. Serif TRUE is authority. Script Olive is the fruit. PRESS TABLE SHORE on the arc makes a seal. Black is only the disc. The table, the room, and the website keep every ink: tahini, limestone, olive, lemon, sumac, pomegranate, harbor, copper. This is a studio study, not a live job.</p>',
+			'content'  => '<p>The eastern shore already has limestone and oil. The restaurant is a harbor table. The fruit is the company — the way a saw is the company when the work is wood. This is not Cala’s western cove, and it is not a mosque, a crescent, or a boat sticker. An olive in bronze, not a lantern in gold.</p><p>The wreath is the tool. Serif TRUE is authority. Script Olive is the fruit. PRESS TABLE SHORE on the arc makes a seal. Black is only the disc. Cream is the paper you order from. Olive is the name of the dish. Bronze is the rule. The room keeps the rest of the inks: tahini, limestone, lemon, sumac, pomegranate, harbor, copper.</p><p>The offer is trays, in the order they were given: grape leaves, shish, kufta, chicken kabob, chicken and beef shawarma, roasted chicken legs, lemon pepper breast, veggie tray, mixed zucchini onions and peppers, oven-roasted lamb, yellow butter rice, basmati. No invented prices. No food photos on the dinner menu — the kitchen is twenty feet away. This is a studio study, not a live job.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
@@ -513,7 +514,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-35' );
+	update_option( 'dps_images_version', 'brands-print-36' );
 	return true;
 }
 
