@@ -42,7 +42,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 	<section class="section" id="brands">
 		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'Work that has to live in the world', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant rooms first — pizza, coffee, deli, ice cream — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant rooms first — pizza, a coastal table, coffee, deli, ice cream — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-home">
 			<?php
 			$featured_ids = array();

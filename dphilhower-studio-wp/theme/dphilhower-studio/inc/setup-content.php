@@ -184,6 +184,11 @@ function dps_seed_demo_content( $force = false ) {
 		'cafe-robust-field-cups.png' => dps_sideload_theme_image( 'cafe-robust-field-cups.png', 'Cafe Robust cups' ),
 		'expresso-hero.png'      => dps_sideload_theme_image( 'expresso-hero.png', 'EXPresso' ),
 		'kickbox-hero.png'       => dps_sideload_theme_image( 'kickbox-hero.png', 'Fitness Kick Boxing' ),
+		'cala-hero.png'          => dps_sideload_theme_image( 'cala-hero.png', 'Cala lockup on plaster' ),
+		'cala-print-window.png'  => dps_sideload_theme_image( 'cala-print-window.png', 'Cala storefront window' ),
+		'cala-print-menu.png'    => dps_sideload_theme_image( 'cala-print-menu.png', 'Cala menu' ),
+		'cala-print-cups.png'    => dps_sideload_theme_image( 'cala-print-cups.png', 'Cala cups and olive-oil bag' ),
+		'cala-print-matches.png' => dps_sideload_theme_image( 'cala-print-matches.png', 'Cala matchbook and napkin' ),
 	);
 
 	if ( $hero_id ) {
@@ -247,6 +252,18 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Morristown / Bernardsville area',
 			'content'  => '<p>Guests meet this brand in the street, in their hands, and on a screen before the first slice. The kit is the proof: one type family, one red, one cream, used everywhere it has to survive a printer and a rainy sidewalk.</p><p>One type family, one red, one cream — built the way a Morris County pie shop actually prints, not a template with a new logo dropped in.</p>',
+		),
+		array(
+			'slug'     => 'cala',
+			'title'    => 'Cala',
+			'image'    => 'cala-hero.png',
+			'excerpt'  => 'Table on the water',
+			'subtitle' => 'Table on the water',
+			'client'   => 'Studio study — coastal restaurant',
+			'services' => 'Identity · menu · packaging · print',
+			'year'     => '2026',
+			'location' => 'Mediterranean coast (studio study)',
+			'content'  => '<p>Cala is Catalan and Spanish for cove. The inks come from the site: limewashed plaster, Aegean teal, sunbaked terracotta, olive leaf, lemon, sand. No black-and-gold café costume. No boat clipart. The table faces the water, so the palette does too.</p><p>The mark is an architectural arch — a cove you walk through — terracotta on the rim, sea in the fill. CALA in a high-contrast serif. TABLE ON THE WATER in a grotesque, small enough to survive a napkin band. One construction at four scales: wall, glass, menu, pocket. This is a studio study, not a live job.</p>',
 		),
 		array(
 			'image'    => 'bville-field-glass.png',
@@ -474,7 +491,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-29' );
+	update_option( 'dps_images_version', 'brands-print-30' );
 	return true;
 }
 

@@ -156,6 +156,37 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'cala'                     => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'Color from the cove', 'dphilhower-studio' ),
+			'intro'  => __( 'Cala is Catalan and Spanish for cove. The location supplies the inks: limewashed plaster, Aegean teal, sunbaked terracotta, olive leaf, lemon, sand. Same arch on the wall, the window, the menu, and the matchbook. This is a studio study, not a live job.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'cala-print-window.png',
+					'alt'     => __( 'Whitewashed Cala storefront at dusk with the terracotta arch on glass and the sea to the side', 'dphilhower-studio' ),
+					'heading' => __( 'Window', 'dphilhower-studio' ),
+					'story'   => __( 'Whitewashed plaster, teal frames, the arch on glass. Hours in sand. The water stays to the side — location, not a postcard.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'cala-print-menu.png',
+					'alt'     => __( 'Cream Cala menu with MARE, EARTH, and SWEET, lemon and olive oil on a weathered table', 'dphilhower-studio' ),
+					'heading' => __( 'Menu', 'dphilhower-studio' ),
+					'story'   => __( 'MARE / EARTH / SWEET. Lemon and oil on the table because those are the inks. Teal rules, terracotta prices. The food is the coast, written down.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'cala-print-cups.png',
+					'alt'     => __( 'Cala plaster cup, terracotta cup, and kraft olive-oil bag on a terrace table', 'dphilhower-studio' ),
+					'heading' => __( 'Cups and oil bag', 'dphilhower-studio' ),
+					'story'   => __( 'Cream cup and terracotta cup, same construction. Kraft bag is house olive oil — coast harvest, not a generic coffee sleeve.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'cala-print-matches.png',
+					'alt'     => __( 'Terracotta Cala matchbook and olive napkin band on a plaster ledge over the sea', 'dphilhower-studio' ),
+					'heading' => __( 'Matchbook and napkin', 'dphilhower-studio' ),
+					'story'   => __( 'Terracotta matchbook, olive napkin band. Lemon and salt on the plaster ledge. Pocket scale of the same cove.', 'dphilhower-studio' ),
+				),
+			),
+		),
 		'ritual-cafe'              => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The daily cup as a ritual', 'dphilhower-studio' ),

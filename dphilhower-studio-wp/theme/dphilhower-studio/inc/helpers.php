@@ -109,6 +109,7 @@ function dps_work_subtitle( $post_id = 0 ) {
 function dps_work_home_slugs() {
 	return array(
 		'bville-pizza-grill',
+		'cala',
 		'ember-pie-co',
 		'cafe-robust',
 		'ritual-cafe',
@@ -146,6 +147,10 @@ function dps_work_card_stills() {
 		'bville-pizza-grill' => array(
 			'file' => 'bville-field-glass.png',
 			'alt'  => __( 'Bville Pizza & Grill dusk window with the lockup on glass', 'dphilhower-studio' ),
+		),
+		'cala'               => array(
+			'file' => 'cala-print-window.png',
+			'alt'  => __( 'Whitewashed Cala storefront at dusk with the terracotta arch on glass', 'dphilhower-studio' ),
 		),
 		'ember-pie-co'       => array(
 			'file' => 'ember-window-after.png',
@@ -237,6 +242,10 @@ function dps_work_hero_stills() {
 		'bville-pizza-grill' => array(
 			'file' => 'bville-field-glass.png',
 			'alt'  => __( 'Bville Pizza & Grill dusk storefront with the lockup on glass', 'dphilhower-studio' ),
+		),
+		'cala'               => array(
+			'file' => 'cala-hero.png',
+			'alt'  => __( 'Cala lockup on limewashed plaster with terracotta arch, cream wordmark, and the sea beyond', 'dphilhower-studio' ),
 		),
 		'cow-lick'           => array(
 			'file' => 'cowlick-field-freezer.png',
