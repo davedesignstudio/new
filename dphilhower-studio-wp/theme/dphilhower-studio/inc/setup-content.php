@@ -189,12 +189,11 @@ function dps_seed_demo_content( $force = false ) {
 		'cala-print-menu.png'    => dps_sideload_theme_image( 'cala-print-menu.png', 'Cala menu' ),
 		'cala-print-cups.png'    => dps_sideload_theme_image( 'cala-print-cups.png', 'Cala cups and olive-oil bag' ),
 		'cala-print-matches.png' => dps_sideload_theme_image( 'cala-print-matches.png', 'Cala matchbook and napkin' ),
-		'mina-logo.png'          => dps_sideload_theme_image( 'mina-logo.png', 'Mina lockup on limestone' ),
-		'mina-hero.png'          => dps_sideload_theme_image( 'mina-hero.png', 'Mina lockup with eastern harbor' ),
-		'mina-print-window.png'  => dps_sideload_theme_image( 'mina-print-window.png', 'Mina harbor storefront' ),
-		'mina-print-menu.png'    => dps_sideload_theme_image( 'mina-print-menu.png', 'Mina menu' ),
-		'mina-print-cups.png'    => dps_sideload_theme_image( 'mina-print-cups.png', 'Mina cups and olive-oil bag' ),
-		'mina-print-matches.png' => dps_sideload_theme_image( 'mina-print-matches.png', 'Mina matchbook and napkin' ),
+		'true-olive-hero.png'             => dps_sideload_theme_image( 'true-olive-hero.png', 'True Olive bronze olive-leaf seal' ),
+		'true-olive-print-window.png'     => dps_sideload_theme_image( 'true-olive-print-window.png', 'True Olive street sign' ),
+		'true-olive-print-stationery.png' => dps_sideload_theme_image( 'true-olive-print-stationery.png', 'True Olive menu and card' ),
+		'true-olive-print-cups.png'       => dps_sideload_theme_image( 'true-olive-print-cups.png', 'True Olive cups and oil' ),
+		'true-olive-print-sticker.png'    => dps_sideload_theme_image( 'true-olive-print-sticker.png', 'True Olive oil-tin sticker' ),
 	);
 
 	if ( $hero_id ) {
@@ -272,16 +271,16 @@ function dps_seed_demo_content( $force = false ) {
 			'content'  => '<p>Cala is Catalan and Spanish for cove. The inks come from the site: limewashed plaster, Aegean teal, sunbaked terracotta, olive leaf, lemon, sand. No black-and-gold café costume. No boat clipart. The table faces the water, so the palette does too.</p><p>The mark is an architectural arch — a cove you walk through — terracotta on the rim, sea in the fill. CALA in a high-contrast serif. TABLE ON THE WATER in a grotesque, small enough to survive a napkin band. One construction at four scales: wall, glass, menu, pocket. This is a studio study, not a live job.</p>',
 		),
 		array(
-			'slug'     => 'mina',
-			'title'    => 'Mina',
-			'image'    => 'mina-logo.png',
-			'excerpt'  => 'Harbor table — eastern shore',
-			'subtitle' => 'Harbor table — eastern shore',
-			'client'   => 'Studio study — Levantine harbor restaurant',
-			'services' => 'Identity · menu · packaging · print',
+			'slug'     => 'true-olive',
+			'title'    => 'True Olive',
+			'image'    => 'true-olive-hero.png',
+			'excerpt'  => 'The olive, not the lantern',
+			'subtitle' => 'The olive, not the lantern',
+			'client'   => 'Studio study — Eastern Mediterranean restaurant',
+			'services' => 'Identity · signage · menu · packaging',
 			'year'     => '2026',
 			'location' => 'Eastern Mediterranean (studio study)',
-			'content'  => '<p>Mina is a port — Arabic, and used along the eastern shore for the harbor you eat beside. This is not Cala’s western cove. The inks come from the Levantine coast: golden limestone, copper, indigo night sea, sumac, olive, pomegranate. No mosque silhouette. No crescent as a religion. No lantern pile. No boat clipart.</p><p>The mark is a courtyard arch you walk through to the water — slightly pointed, copper on the rim, harbor in the fill, three quay steps at the sill. MINA in a stone-cut serif. HARBOR TABLE in a grotesque, small enough for a napkin band. One construction at four scales: wall, street, menu, pocket. This is a studio study, not a live job.</p>',
+			'content'  => '<p>The eastern shore already has limestone and oil. The mark had to hold grit and glamour: an olive in bronze, not a lantern in gold. This is not Cala’s western cove, and it is not a mosque, a crescent, or a boat sticker. The fruit is the company — the way a saw is the company when the work is wood.</p><p>The wreath is the tool: pointed olive leaves cast as the rim, a black disc, bronze in the type. Serif TRUE is authority. Script Olive is the fruit. PRESS TABLE SHORE on the bottom arc makes a seal, not a flyer. Black field at the curb. Cream on the table. Same construction at four scales. This is a studio study, not a live job.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
@@ -511,7 +510,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-32' );
+	update_option( 'dps_images_version', 'brands-print-33' );
 	return true;
 }
 
