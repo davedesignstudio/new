@@ -116,8 +116,14 @@ function dps_brand_kits() {
 		'bville-pizza-grill'       => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'How Bville leaves the building', 'dphilhower-studio' ),
-			'intro'  => __( 'In-house graphic design, 2018–2021. The uploaded lockup — orange B, green ville, gold edge — sits on the window, the menu, and the burgundy lid. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
+			'intro'  => __( 'Window, menu, lid, card, napkin. The same lockup — not a circular white-script substitute. Print is the story at the scale a guest actually holds.', 'dphilhower-studio' ),
 			'pieces' => array(
+				array(
+					'file'    => 'bville-hero.png',
+					'alt'     => __( 'Official Bville lockup on slate: orange B, green ville, gold edge, two swooshes', 'dphilhower-studio' ),
+					'heading' => __( 'The lockup', 'dphilhower-studio' ),
+					'story'   => __( 'Orange B, green ville, gold edge, two swooshes on slate. This is the logo. Everything else is this, moved.', 'dphilhower-studio' ),
+				),
 				array(
 					'file'    => 'bville-field-glass.png',
 					'alt'     => __( 'Bville Pizza & Grill dusk storefront with the lockup on glass, hours, and wooden bench', 'dphilhower-studio' ),
@@ -128,7 +134,7 @@ function dps_brand_kits() {
 					'file'    => 'bville-print-window.png',
 					'alt'     => __( 'Bville Pizza & Grill dusk window with the uploaded orange and green lockup on glass', 'dphilhower-studio' ),
 					'heading' => __( 'Window', 'dphilhower-studio' ),
-					'story'   => __( 'The lockup is a sign, so the glass gets the sign. Orange B from the lot. Green ville for the town. Cream hours because the menu is cream.', 'dphilhower-studio' ),
+					'story'   => __( 'The lockup is a sign, so the glass gets the sign. Shop scale of the same split.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-menu.png',
@@ -140,7 +146,7 @@ function dps_brand_kits() {
 					'file'    => 'bville-print-box-burgundy.png',
 					'alt'     => __( 'Burgundy Bville pizza box with the uploaded lockup on the lid', 'dphilhower-studio' ),
 					'heading' => __( 'Delivery box', 'dphilhower-studio' ),
-					'story'   => __( 'Burgundy board, not a coupon kraft. The uploaded lockup sits on the lid. Side panel keeps the B as a letter. The food stays inside.', 'dphilhower-studio' ),
+					'story'   => __( 'Burgundy board, not a coupon kraft. The uploaded lockup sits on the lid. The food stays inside.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-loyalty.png',
@@ -481,7 +487,7 @@ function dps_render_brand_kit( $slug ) {
 	}
 	$kit = $kits[ $slug ];
 	?>
-<section class="brand-kit">
+<section class="brand-kit" id="print">
 	<p class="section-label"><?php echo esc_html( $kit['label'] ); ?></p>
 	<h2 class="section-title"><?php echo esc_html( $kit['title'] ); ?></h2>
 	<p class="section-copy"><?php echo esc_html( $kit['intro'] ); ?></p>

@@ -266,14 +266,16 @@ function dps_seed_demo_content( $force = false ) {
 			'content'  => '<p>Cala is Catalan and Spanish for cove. The inks come from the site: limewashed plaster, Aegean teal, sunbaked terracotta, olive leaf, lemon, sand. No black-and-gold café costume. No boat clipart. The table faces the water, so the palette does too.</p><p>The mark is an architectural arch — a cove you walk through — terracotta on the rim, sea in the fill. CALA in a high-contrast serif. TABLE ON THE WATER in a grotesque, small enough to survive a napkin band. One construction at four scales: wall, glass, menu, pocket. This is a studio study, not a live job.</p>',
 		),
 		array(
+			'slug'     => 'bville-pizza-grill',
+			'title'    => 'Bville Pizza & Grill',
 			'image'    => 'bville-field-glass.png',
-			'excerpt'  => 'In-house design, Bernardsville, 2018–2021',
-			'subtitle' => 'In-house design, Bernardsville, 2018–2021',
+			'excerpt'  => 'In-house graphic design, 2018–2021. Branding, menus, and the website — one construction from the lot to the lid.',
+			'subtitle' => 'In-house design, 2018–2021',
 			'client'   => 'Bville Pizza & Grill',
 			'services' => 'In-house graphic designer · branding · menus · websites',
 			'year'     => '2018–2021',
-			'location' => 'Bernardsville, NJ',
-			'content'  => '<p>David was the graphic designer at Bville Pizza &amp; Grill from 2018 to 2021: branding, menus, and the website. This is the lockup from that work — orange B, green ville, gold edge, two swooshes on slate — used as the logo with no redraw.</p><p>Locals already shorten Bernardsville to Bville. The orange B is appetite and oven heat from the lot. Ville sits in forest green so the town and the grill are in the name, not a second pizza red. No clipart pizza: the food is inside the box.</p>',
+			'location' => '159 Morristown Rd, Bernardsville, NJ',
+			'content'  => '<p>Locals already shorten Bernardsville to Bville. That is the brand. Not an invented word, not a pizza pun. The town saying its own name, written so it can sit on glass.</p><p>David was the graphic designer in the building from 2018 to 2021: branding, menus, and the website. This is the lockup from that work — orange B, green ville, gold edge, two swooshes on slate — used as the logo with no redraw. The B is appetite and oven heat from the lot. Ville sits in forest green so the town and the grill are in the name, not a second pizza red.</p><p>Pizza &amp; Grill are not a slogan under a pie. They are two appetites under one roof: the pie, and the rest of the plate — pasta, salad, the grill. One lockup has to hold both. No clipart pizza. The food is inside the box. The window is a sign, not a collage. The public site had to carry the same name as the glass: the street, the hours, the order.</p><p>Cream is the paper you order from. Orange is the price. Green is the name of the dish. Burgundy is the lid that leaves. Forest green wraps the napkin. Slate is the field the lockup was built on. One split, every scale.</p>',
 		),
 		array(
 			'slug'     => 'ritual-cafe',
@@ -491,7 +493,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-30' );
+	update_option( 'dps_images_version', 'brands-print-31' );
 	return true;
 }
 

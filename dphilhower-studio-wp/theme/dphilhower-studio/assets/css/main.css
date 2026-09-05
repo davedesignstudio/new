@@ -1069,10 +1069,49 @@ select {
   font-family: var(--font-display);
 }
 
-.swatch-ink { background: #1a1714; color: #f3ead8; }
-.swatch-cream { background: #f3ead8; color: #1a1714; border: 1px solid var(--line); }
-.swatch-tomato { background: #c4452d; color: #f3ead8; }
-.swatch-brass { background: #9a7b45; color: #1a1714; }
+.bville-lede {
+  margin: 0.35rem 0 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  letter-spacing: -0.02em;
+  color: #e06a24;
+  max-width: 28rem;
+}
+
+.page-hero .bville-lede + p {
+  max-width: 52ch;
+}
+
+.kit-lockup {
+  margin: 0 0 1.25rem;
+}
+
+.kit-lockup img {
+  width: 100%;
+  height: auto;
+}
+
+.kit-panel.is-bville {
+  border-top-color: #e06a24;
+}
+
+.swatches.is-bville {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 800px) {
+  .swatches.is-bville {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.swatch-bville-heat { background: #e06a24; color: #1a1408; }
+.swatch-bville-ville { background: #5c6b32; color: #f3ead8; }
+.swatch-bville-gold { background: #d4a017; color: #1a1408; }
+.swatch-bville-slate { background: #1a1714; color: #f3ead8; }
+.swatch-bville-cream { background: #f3ead8; color: #1a1408; border: 1px solid rgba(26, 20, 8, 0.16); }
+.swatch-bville-lid { background: #6b1d28; color: #f3ead8; }
 
 .type-row {
   display: grid;

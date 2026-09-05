@@ -147,6 +147,66 @@
   margin-bottom: 0;
 }
 
+.story-bville {
+  width: var(--stage-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter);
+  background: #16110e;
+  color: #f4efe4;
+  box-sizing: border-box;
+}
+
+.story-bville .section-label {
+  color: #e06a24;
+}
+
+.story-bville .section-title {
+  color: #f4efe4;
+}
+
+.story-bville .section-copy {
+  max-width: 42rem;
+  color: rgba(244, 239, 228, 0.82);
+}
+
+.story-bville-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.1rem;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+.story-bville-grid li {
+  margin: 0;
+  padding: 1.2rem 1.3rem;
+  border-top: 1px solid rgba(224, 106, 36, 0.55);
+  background: #1c1814;
+}
+
+.story-bville-grid h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #e06a24;
+}
+
+.story-bville-grid p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(244, 239, 228, 0.82);
+}
+
+.story-bville .trail {
+  margin: 1.75rem 0 0;
+  max-width: 42rem;
+  color: rgba(244, 239, 228, 0.82);
+}
+
 @media (max-width: 800px) {
   .anthem-grid,
   .anthem-cuts {
