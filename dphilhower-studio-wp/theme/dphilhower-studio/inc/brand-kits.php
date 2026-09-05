@@ -196,13 +196,13 @@ function dps_brand_kits() {
 		'true-olive'               => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The olive, not the lantern', 'dphilhower-studio' ),
-			'intro'  => __( 'The seal is bronze on black. The table, the room, and the website keep every ink: tahini, limestone, olive, lemon, sumac, pomegranate, harbor, copper. Mediterranean restaurant sites that work lead with the plate. This is a studio study, not a live job.', 'dphilhower-studio' ),
+			'intro'  => __( 'The seal is bronze on black. The table, the room, and the website keep every ink. The menu is trays, grill, shawarma, and rice — grape leaves, kabobs, roasted lamb, yellow butter rice — not a made-up tasting list. This is a studio study, not a live job.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'true-olive-web-table.png',
-					'alt'     => __( 'True Olive mezze table in full color: labneh, lemon, sumac, pomegranate, olives, oil, grilled fish', 'dphilhower-studio' ),
+					'alt'     => __( 'True Olive trays: grape leaves, kabobs, shawarma, roasted chicken, lamb, veggie tray, yellow butter rice and basmati', 'dphilhower-studio' ),
 					'heading' => __( 'The table', 'dphilhower-studio' ),
-					'story'   => __( 'Every ink at once. Tahini, olive, lemon, sumac, pomegranate, copper, limestone. This is the homepage photograph.', 'dphilhower-studio' ),
+					'story'   => __( 'Grape leaves, shish and kufta, chicken kabob, shawarma, roasted chicken legs, lamb, veggie tray, yellow butter rice and basmati. Every ink stays.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'true-olive-web-room.png',
@@ -212,9 +212,9 @@ function dps_brand_kits() {
 				),
 				array(
 					'file'    => 'true-olive-web-press.png',
-					'alt'     => __( 'Grilled sea bass with lemon, olive oil, sumac, pomegranate, and labneh', 'dphilhower-studio' ),
-					'heading' => __( 'Press', 'dphilhower-studio' ),
-					'story'   => __( 'The sea on the plate. Lemon, oil, sumac, pomegranate — nothing greyed out for a black-and-gold lookbook.', 'dphilhower-studio' ),
+					'alt'     => __( 'Mixed kabob tray with grape leaves, lemon pepper chicken, roasted peppers, zucchini, and yellow butter rice', 'dphilhower-studio' ),
+					'heading' => __( 'Grill and trays', 'dphilhower-studio' ),
+					'story'   => __( 'Shish, kufta, chicken kabob, lemon pepper breast, grape leaves, rice. The food is the menu, photographed — not a made-up tasting list.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'true-olive-print-window.png',
@@ -224,9 +224,9 @@ function dps_brand_kits() {
 				),
 				array(
 					'file'    => 'true-olive-print-stationery.png',
-					'alt'     => __( 'Cream True Olive menu with PRESS TABLE SHORE sections and a black gold-foil business card', 'dphilhower-studio' ),
+					'alt'     => __( 'Cream True Olive menu listing trays, grill, shawarma, and rice, with a black gold-foil business card', 'dphilhower-studio' ),
 					'heading' => __( 'Menu and card', 'dphilhower-studio' ),
-					'story'   => __( 'The menu is cream with a small seal — paper you can order from. The card is black with gold foil, the same as the hanging sign, so the first handshake matches the street. PRESS / TABLE / SHORE is the food written down.', 'dphilhower-studio' ),
+					'story'   => __( 'Trays, grill, shawarma, rice — grape leaves, kabobs, chicken and beef shawarma, roasted lamb, yellow butter rice and basmati. No invented prices. The card is black with gold foil, the same as the hanging sign.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'true-olive-print-cups.png',

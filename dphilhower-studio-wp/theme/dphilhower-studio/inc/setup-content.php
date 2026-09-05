@@ -191,12 +191,12 @@ function dps_seed_demo_content( $force = false ) {
 		'cala-print-matches.png' => dps_sideload_theme_image( 'cala-print-matches.png', 'Cala matchbook and napkin' ),
 		'true-olive-hero.png'             => dps_sideload_theme_image( 'true-olive-hero.png', 'True Olive bronze olive-leaf seal' ),
 		'true-olive-print-window.png'     => dps_sideload_theme_image( 'true-olive-print-window.png', 'True Olive street sign' ),
-		'true-olive-print-stationery.png' => dps_sideload_theme_image( 'true-olive-print-stationery.png', 'True Olive menu and card' ),
+		'true-olive-print-stationery.png' => dps_sideload_theme_image( 'true-olive-print-stationery.png', 'True Olive menu: trays, grill, shawarma, rice' ),
 		'true-olive-print-cups.png'       => dps_sideload_theme_image( 'true-olive-print-cups.png', 'True Olive cups and oil' ),
 		'true-olive-print-sticker.png'    => dps_sideload_theme_image( 'true-olive-print-sticker.png', 'True Olive oil-tin sticker' ),
-		'true-olive-web-table.png'        => dps_sideload_theme_image( 'true-olive-web-table.png', 'True Olive mezze table' ),
+		'true-olive-web-table.png'        => dps_sideload_theme_image( 'true-olive-web-table.png', 'True Olive trays and kabobs' ),
 		'true-olive-web-room.png'         => dps_sideload_theme_image( 'true-olive-web-room.png', 'True Olive dining room' ),
-		'true-olive-web-press.png'        => dps_sideload_theme_image( 'true-olive-web-press.png', 'True Olive sea bass plate' ),
+		'true-olive-web-press.png'        => dps_sideload_theme_image( 'true-olive-web-press.png', 'True Olive kabob and grape-leaf tray' ),
 	);
 
 	if ( $hero_id ) {
@@ -513,7 +513,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-34' );
+	update_option( 'dps_images_version', 'brands-print-35' );
 	return true;
 }
 
