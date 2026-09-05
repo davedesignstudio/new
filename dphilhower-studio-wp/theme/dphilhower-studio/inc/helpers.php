@@ -110,6 +110,7 @@ function dps_work_home_slugs() {
 	return array(
 		'bville-pizza-grill',
 		'cala',
+		'mina',
 		'ember-pie-co',
 		'cafe-robust',
 		'ritual-cafe',
@@ -151,6 +152,10 @@ function dps_work_card_stills() {
 		'cala'               => array(
 			'file' => 'cala-print-window.png',
 			'alt'  => __( 'Whitewashed Cala storefront at dusk with the terracotta arch on glass', 'dphilhower-studio' ),
+		),
+		'mina'               => array(
+			'file' => 'mina-print-window.png',
+			'alt'  => __( 'Mina limestone harbor storefront with the pointed copper arch', 'dphilhower-studio' ),
 		),
 		'ember-pie-co'       => array(
 			'file' => 'ember-window-after.png',
@@ -246,6 +251,10 @@ function dps_work_hero_stills() {
 		'cala'               => array(
 			'file' => 'cala-hero.png',
 			'alt'  => __( 'Cala lockup on limewashed plaster with terracotta arch, cream wordmark, and the sea beyond', 'dphilhower-studio' ),
+		),
+		'mina'               => array(
+			'file' => 'mina-logo.png',
+			'alt'  => __( 'Mina lockup carved in Levantine limestone: pointed copper arch with indigo harbor water', 'dphilhower-studio' ),
 		),
 		'cow-lick'           => array(
 			'file' => 'cowlick-field-freezer.png',

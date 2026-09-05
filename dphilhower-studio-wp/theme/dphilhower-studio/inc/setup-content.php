@@ -189,6 +189,12 @@ function dps_seed_demo_content( $force = false ) {
 		'cala-print-menu.png'    => dps_sideload_theme_image( 'cala-print-menu.png', 'Cala menu' ),
 		'cala-print-cups.png'    => dps_sideload_theme_image( 'cala-print-cups.png', 'Cala cups and olive-oil bag' ),
 		'cala-print-matches.png' => dps_sideload_theme_image( 'cala-print-matches.png', 'Cala matchbook and napkin' ),
+		'mina-logo.png'          => dps_sideload_theme_image( 'mina-logo.png', 'Mina lockup on limestone' ),
+		'mina-hero.png'          => dps_sideload_theme_image( 'mina-hero.png', 'Mina lockup with eastern harbor' ),
+		'mina-print-window.png'  => dps_sideload_theme_image( 'mina-print-window.png', 'Mina harbor storefront' ),
+		'mina-print-menu.png'    => dps_sideload_theme_image( 'mina-print-menu.png', 'Mina menu' ),
+		'mina-print-cups.png'    => dps_sideload_theme_image( 'mina-print-cups.png', 'Mina cups and olive-oil bag' ),
+		'mina-print-matches.png' => dps_sideload_theme_image( 'mina-print-matches.png', 'Mina matchbook and napkin' ),
 	);
 
 	if ( $hero_id ) {
@@ -264,6 +270,18 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Mediterranean coast (studio study)',
 			'content'  => '<p>Cala is Catalan and Spanish for cove. The inks come from the site: limewashed plaster, Aegean teal, sunbaked terracotta, olive leaf, lemon, sand. No black-and-gold café costume. No boat clipart. The table faces the water, so the palette does too.</p><p>The mark is an architectural arch — a cove you walk through — terracotta on the rim, sea in the fill. CALA in a high-contrast serif. TABLE ON THE WATER in a grotesque, small enough to survive a napkin band. One construction at four scales: wall, glass, menu, pocket. This is a studio study, not a live job.</p>',
+		),
+		array(
+			'slug'     => 'mina',
+			'title'    => 'Mina',
+			'image'    => 'mina-logo.png',
+			'excerpt'  => 'Harbor table — eastern shore',
+			'subtitle' => 'Harbor table — eastern shore',
+			'client'   => 'Studio study — Levantine harbor restaurant',
+			'services' => 'Identity · menu · packaging · print',
+			'year'     => '2026',
+			'location' => 'Eastern Mediterranean (studio study)',
+			'content'  => '<p>Mina is a port — Arabic, and used along the eastern shore for the harbor you eat beside. This is not Cala’s western cove. The inks come from the Levantine coast: golden limestone, copper, indigo night sea, sumac, olive, pomegranate. No mosque silhouette. No crescent as a religion. No lantern pile. No boat clipart.</p><p>The mark is a courtyard arch you walk through to the water — slightly pointed, copper on the rim, harbor in the fill, three quay steps at the sill. MINA in a stone-cut serif. HARBOR TABLE in a grotesque, small enough for a napkin band. One construction at four scales: wall, street, menu, pocket. This is a studio study, not a live job.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
@@ -493,7 +511,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-31' );
+	update_option( 'dps_images_version', 'brands-print-32' );
 	return true;
 }
 

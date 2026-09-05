@@ -193,6 +193,43 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'mina'                     => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'Color from the eastern shore', 'dphilhower-studio' ),
+			'intro'  => __( 'Mina is a port. The location supplies the inks: golden limestone, copper, indigo night sea, sumac, olive, pomegranate. Same pointed arch on the wall, the street, the menu, and the matchbook. This is a studio study, not a live job.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'mina-hero.png',
+					'alt'     => __( 'Mina lockup on a limestone terrace with the eastern harbor and port town beyond', 'dphilhower-studio' ),
+					'heading' => __( 'The lockup', 'dphilhower-studio' ),
+					'story'   => __( 'Pointed copper arch, indigo harbor, three steps. Stone-cut MINA. The town stays on the hill — location, not a postcard collage.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'mina-print-window.png',
+					'alt'     => __( 'Mina limestone storefront at dusk with the pointed-arch mark, copper frames, and the harbor to the side', 'dphilhower-studio' ),
+					'heading' => __( 'Street', 'dphilhower-studio' ),
+					'story'   => __( 'Golden limestone, copper frames, the arch on the stone. Hours in sand. The water is the eastern harbor, not a western cove.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'mina-print-menu.png',
+					'alt'     => __( 'Cream Mina menu with HARBOR, EARTH, and SWEET, pomegranate, sumac, lemon, and olive oil', 'dphilhower-studio' ),
+					'heading' => __( 'Menu', 'dphilhower-studio' ),
+					'story'   => __( 'HARBOR / EARTH / SWEET. Sumac, za’atar, labneh, pomegranate. Copper rules, sumac prices. The food is the eastern shore, written down.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'mina-print-cups.png',
+					'alt'     => __( 'Mina cream cup, copper cup, and kraft olive-oil bag on a limestone terrace', 'dphilhower-studio' ),
+					'heading' => __( 'Cups and oil bag', 'dphilhower-studio' ),
+					'story'   => __( 'Cream cup and copper cup, same construction. Kraft bag is house olive oil — coast harvest, not a generic coffee sleeve.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'mina-print-matches.png',
+					'alt'     => __( 'Sumac Mina matchbook and olive napkin band on a limestone ledge over the harbor', 'dphilhower-studio' ),
+					'heading' => __( 'Matchbook and napkin', 'dphilhower-studio' ),
+					'story'   => __( 'Sumac matchbook, olive napkin band. Lemon, salt, and sumac on the limestone ledge. Pocket scale of the same harbor.', 'dphilhower-studio' ),
+				),
+			),
+		),
 		'ritual-cafe'              => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The daily cup as a ritual', 'dphilhower-studio' ),
