@@ -1111,6 +1111,20 @@ select {
   max-width: 52ch;
 }
 
+.page-hero .swell-lede {
+  margin: 0.35rem 0 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  letter-spacing: -0.02em;
+  color: #c4a09a;
+  max-width: 36rem;
+}
+
+.page-hero .swell-lede + p {
+  max-width: 52ch;
+}
+
 .kit-lockup {
   margin: 0 0 1.25rem;
 }
@@ -1139,6 +1153,22 @@ select {
 .kit-panel.is-greenroots .type-card small {
   color: #8b5a2b;
 }
+
+.kit-panel.is-swell {
+  border-top-color: #34354a;
+}
+
+.kit-panel.is-swell .type-card small {
+  color: #c4a09a;
+}
+
+.swatches.is-swell {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.swatch-swell-navy { background: #34354a; color: #f4eee4; }
+.swatch-swell-foam { background: #c4a09a; color: #1a1408; }
+.swatch-swell-sand { background: #d4c7b7; color: #1a1408; }
 
 .swatches.is-greenroots {
   grid-template-columns: repeat(3, 1fr);

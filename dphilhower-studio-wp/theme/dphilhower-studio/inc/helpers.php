@@ -112,6 +112,7 @@ function dps_work_home_slugs() {
 		'cala',
 		'true-olive',
 		'greenroots-collective',
+		'swell-brew-cafe',
 		'ember-pie-co',
 		'cafe-robust',
 		'ritual-cafe',
@@ -161,6 +162,10 @@ function dps_work_card_stills() {
 		'greenroots-collective' => array(
 			'file' => 'greenroots-print-window.png',
 			'alt'  => __( 'Cream clapboard GreenRoots Collective storefront with the uploaded lockup on glass', 'dphilhower-studio' ),
+		),
+		'swell-brew-cafe' => array(
+			'file' => 'swell-brew-print-window.png',
+			'alt'  => __( 'White-shingled Swell Brew Cafe storefront with the uploaded mug-and-wave on glass', 'dphilhower-studio' ),
 		),
 		'ember-pie-co'       => array(
 			'file' => 'ember-window-after.png',
@@ -264,6 +269,10 @@ function dps_work_hero_stills() {
 		'greenroots-collective' => array(
 			'file' => 'greenroots-web-room.png',
 			'alt'  => __( 'GreenRoots Collective dining room: long pine table, cream linen, wildflowers, lockup on plaster', 'dphilhower-studio' ),
+		),
+		'swell-brew-cafe' => array(
+			'file' => 'swell-brew-web-room.png',
+			'alt'  => __( 'Swell Brew Cafe interior: navy frames, pine counter, sea through the glass', 'dphilhower-studio' ),
 		),
 		'cow-lick'           => array(
 			'file' => 'cowlick-field-freezer.png',

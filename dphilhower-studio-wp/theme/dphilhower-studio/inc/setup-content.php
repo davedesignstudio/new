@@ -204,6 +204,12 @@ function dps_seed_demo_content( $force = false ) {
 		'greenroots-print-window.png'     => dps_sideload_theme_image( 'greenroots-print-window.png', 'GreenRoots Collective storefront' ),
 		'greenroots-print-menu.png'       => dps_sideload_theme_image( 'greenroots-print-menu.png', 'GreenRoots Collective cream market-table menu' ),
 		'greenroots-print-table.png'      => dps_sideload_theme_image( 'greenroots-print-table.png', 'GreenRoots hangtag and garden basket' ),
+		'swell-brew-hero.png'             => dps_sideload_theme_image( 'swell-brew-hero.png', 'Swell Brew Cafe lockup' ),
+		'swell-brew-board.png'            => dps_sideload_theme_image( 'swell-brew-board.png', 'Swell Brew Cafe uploaded print' ),
+		'swell-brew-web-room.png'         => dps_sideload_theme_image( 'swell-brew-web-room.png', 'Swell Brew Cafe dining room' ),
+		'swell-brew-print-window.png'     => dps_sideload_theme_image( 'swell-brew-print-window.png', 'Swell Brew Cafe storefront' ),
+		'swell-brew-print-menu.png'       => dps_sideload_theme_image( 'swell-brew-print-menu.png', 'Swell Brew Cafe cream board' ),
+		'swell-brew-print-cups.png'       => dps_sideload_theme_image( 'swell-brew-print-cups.png', 'Swell Brew Cafe cups and sleeve' ),
 	);
 
 	if ( $hero_id ) {
@@ -303,6 +309,18 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Garden table (studio study)',
 			'content'  => '<p>The mark was uploaded as a board, so the board is the identity. A tree with cupped-hand roots and a seed in the palms. A yellow sun behind the trunk. Script GreenRoots. Caps COLLECTIVE. The sentence under it is the offer: Growing Better, Together. This is not a lantern, not a pizza pun, and not a costume farm alphabet dropped onto a template.</p><p>Forest green is the name of the tree. Earth brown is the hands and the rule. Creamy yellow is the sun. Cream is the paper you order from. Kraft is the tag that leaves on burlap. The garden still on the board — tomatoes, carrots, greens, squash in a wicker basket — is the table, photographed. No invented street. No invented years in-house. No invented dishes: the kitchen has not given a list yet, so the dinner paper keeps ruled lines and two honest headers, From the garden / From the kitchen.</p>',
+		),
+		array(
+			'slug'     => 'swell-brew-cafe',
+			'title'    => 'Swell Brew Cafe',
+			'image'    => 'swell-brew-hero.png',
+			'excerpt'  => 'Studio study. The uploaded lockup, a cream cafe board, and the site — one construction from the mug to the paper the guest reads before they order.',
+			'subtitle' => 'The swell is in the cup',
+			'client'   => 'Studio study — coastal cafe',
+			'services' => 'Identity · signage · board · site',
+			'year'     => '2026',
+			'location' => 'Coast (studio study)',
+			'content'  => '<p>The mark was uploaded as a print on paper, so that print is the identity. A mug seen from above. The handle is a tab. Inside the rim, a swell — a wave, not a clipart surfboard and not a second coffee bean. Dusty pink light sits in the curl. Rounded Swell Brew over Cafe in the same navy. This is not Ritual’s broken ring, not EXPresso’s pour, and not a lantern on the shore.</p><p>Navy is the cup and the name. Foam pink is the light in the wave. Sand is the paper. Cream is the board you order from. No invented street. No invented years in-house. No invented drinks: the kitchen has not given a list yet, so the board keeps ruled lines and two honest headers, The cup / The oven.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
@@ -532,7 +550,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-37' );
+	update_option( 'dps_images_version', 'brands-print-38' );
 	return true;
 }
 

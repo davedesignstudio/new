@@ -24,7 +24,7 @@ get_header();
 				esc_html_e( 'The guild', 'dphilhower-studio' );
 			} elseif ( 'bville-pizza-grill' === $slug ) {
 				esc_html_e( 'Identity', 'dphilhower-studio' );
-			} elseif ( in_array( $slug, array( 'true-olive', 'greenroots-collective' ), true ) ) {
+			} elseif ( in_array( $slug, array( 'true-olive', 'greenroots-collective', 'swell-brew-cafe' ), true ) ) {
 				esc_html_e( 'Hospitality', 'dphilhower-studio' );
 			} else {
 				esc_html_e( 'Selected work', 'dphilhower-studio' );
@@ -43,6 +43,9 @@ get_header();
 			<?php if ( 'greenroots-collective' === $slug ) : ?>
 				<p class="greenroots-lede"><?php esc_html_e( 'Growing Better, Together.', 'dphilhower-studio' ); ?></p>
 			<?php endif; ?>
+			<?php if ( 'swell-brew-cafe' === $slug ) : ?>
+				<p class="swell-lede"><?php esc_html_e( 'The swell is in the cup', 'dphilhower-studio' ); ?></p>
+			<?php endif; ?>
 			<?php if ( has_excerpt() ) : ?>
 				<p><?php echo esc_html( get_the_excerpt() ); ?></p>
 			<?php endif; ?>
@@ -52,7 +55,7 @@ get_header();
 				<img src="<?php echo esc_url( $hero_src ); ?>" alt="<?php echo esc_attr( dps_work_hero_alt() ); ?>" width="1536" height="1024">
 			</div>
 		<?php endif; ?>
-		<?php if ( in_array( $slug, array( 'bville-pizza-grill', 'true-olive', 'greenroots-collective' ), true ) ) : ?>
+		<?php if ( in_array( $slug, array( 'bville-pizza-grill', 'true-olive', 'greenroots-collective', 'swell-brew-cafe' ), true ) ) : ?>
 			<nav class="contents" aria-label="<?php esc_attr_e( 'On this page', 'dphilhower-studio' ); ?>">
 				<a href="#name"><span>01</span> <?php esc_html_e( 'Name', 'dphilhower-studio' ); ?></a>
 				<a href="#system"><span>02</span> <?php esc_html_e( 'System', 'dphilhower-studio' ); ?></a>
@@ -91,6 +94,9 @@ get_header();
 		}
 		if ( 'greenroots-collective' === $slug ) {
 			get_template_part( 'template-parts/brand-story-greenroots' );
+		}
+		if ( 'swell-brew-cafe' === $slug ) {
+			get_template_part( 'template-parts/brand-story-swell' );
 		}
 		if ( 'ember-pie-co' === $slug ) {
 			get_template_part( 'template-parts/brand-kit-ember' );

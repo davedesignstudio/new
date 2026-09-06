@@ -1,0 +1,325 @@
+/* Swell Brew Cafe — cream board, navy names, foam in the wave. */
+
+:root {
+  --navy: #34354a;
+  --foam: #c4a09a;
+  --sand: #d4c7b7;
+  --cream: #f4eee4;
+  --sheet: #fffaf3;
+  --ink: #1a1408;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--navy); }
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 20;
+  background: var(--cream);
+  padding: 0.4rem 0.7rem;
+}
+
+.site-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(52, 53, 74, 0.28);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.wordmark img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  background: var(--sheet);
+}
+
+.wordmark span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.wordmark em {
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--foam);
+  margin-left: 0.35rem;
+}
+
+.site-top nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.site-top nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-top nav a:hover { color: var(--navy); }
+
+.paper-stage {
+  padding: clamp(1.5rem, 5vw, 3.5rem) 1.2rem 3rem;
+}
+
+.dinner {
+  width: min(52rem, 100%);
+  margin: 0 auto;
+  padding: clamp(1.6rem, 4vw, 2.8rem) clamp(1.2rem, 4vw, 2.4rem) 1.8rem;
+  background: var(--sheet);
+  border: 2px solid var(--navy);
+  box-shadow: inset 0 0 0 1px var(--foam);
+}
+
+.dinner-mark {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.dinner-mark img {
+  width: 11rem;
+  height: auto;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+  background: var(--sheet);
+}
+
+.dinner-mark .kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--foam);
+}
+
+.dinner-mark h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -0.03em;
+  color: var(--navy);
+}
+
+.dinner-cols {
+  display: grid;
+  gap: 1.5rem 2.2rem;
+}
+
+@media (min-width: 720px) {
+  .dinner-cols {
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+
+  .dinner-cols::before {
+    content: "";
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    left: 50%;
+    width: 1px;
+    background: rgba(52, 53, 74, 0.45);
+  }
+}
+
+.dinner-cols h2 {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--foam);
+  font-weight: 600;
+}
+
+.dinner-cols p {
+  margin: 0;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(52, 53, 74, 0.35);
+  font-family: var(--font-display);
+  color: var(--navy);
+}
+
+.dinner-foot {
+  margin: 1.6rem 0 0;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--foam);
+}
+
+.story {
+  width: min(52rem, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 0 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.story .kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--foam);
+}
+
+.story h2 {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+}
+
+.story .lede {
+  margin: 0 0 1.6rem;
+  max-width: 40rem;
+}
+
+.facts {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .facts { grid-template-columns: 1fr 1fr; }
+}
+
+.facts li {
+  margin: 0;
+  padding: 1.1rem 1.15rem 1.2rem;
+  background: var(--sheet);
+  border-top: 1px solid var(--foam);
+}
+
+.facts h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.facts p { margin: 0; font-size: 0.95rem; }
+
+.visit {
+  display: grid;
+  background: var(--sand);
+}
+
+@media (min-width: 860px) {
+  .visit { grid-template-columns: 1.15fr 0.85fr; }
+}
+
+.visit-room img {
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  object-fit: cover;
+}
+
+.visit-copy {
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.visit-copy h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.visit-copy p {
+  margin: 0 0 1.1rem;
+  color: rgba(244, 238, 228, 0.92);
+}
+
+.hours {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: rgba(26, 20, 8, 0.28);
+}
+
+.hours dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--foam);
+}
+
+.hours dd {
+  margin: 0.2rem 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.hours dd:last-child { margin-bottom: 0; }
+
+.site-end {
+  padding: 1.1rem 1.25rem;
+  background: var(--navy);
+  color: var(--foam);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.site-end a { color: var(--sand); }
+
+@media (max-width: 700px) {
+  .site-top nav a:nth-child(2) { display: none; }
+}

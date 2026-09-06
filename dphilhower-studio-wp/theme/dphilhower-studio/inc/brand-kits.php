@@ -285,6 +285,49 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'swell-brew-cafe'          => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'How Swell Brew leaves the counter', 'dphilhower-studio' ),
+			'intro'  => __( 'Print, mug, room, street, board, cups. The same lockup — not a substitute bean stamp. Print is the cafe at the scale a guest actually holds.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'swell-brew-hero.png',
+					'alt'     => __( 'Swell Brew Cafe lockup on cream: navy mug-from-above with a wave inside', 'dphilhower-studio' ),
+					'heading' => __( 'The lockup', 'dphilhower-studio' ),
+					'story'   => __( 'Uploaded mug, wave, Swell Brew Cafe. This is the logo. Everything else is this, moved.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'swell-brew-board.png',
+					'alt'     => __( 'Photograph of the uploaded Swell Brew Cafe print on paper', 'dphilhower-studio' ),
+					'heading' => __( 'The upload', 'dphilhower-studio' ),
+					'story'   => __( 'The mark as it arrived: navy on cream paper. That print is the identity.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'swell-brew-web-room.png',
+					'alt'     => __( 'Swell Brew Cafe interior with navy frames, pine counter, and the sea through the glass', 'dphilhower-studio' ),
+					'heading' => __( 'In the room', 'dphilhower-studio' ),
+					'story'   => __( 'Whitewash, navy, pine, the water outside. The lockup is small on the wall. The weather is the cafe.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'swell-brew-print-window.png',
+					'alt'     => __( 'White-shingled Swell Brew Cafe storefront at dusk with the lockup on glass', 'dphilhower-studio' ),
+					'heading' => __( 'Street', 'dphilhower-studio' ),
+					'story'   => __( 'White shingle, navy door, the uploaded lockup on glass. Hours stay cream. The swell stays in the cup.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'swell-brew-print-menu.png',
+					'alt'     => __( 'Cream Swell Brew Cafe board with two empty columns The cup and The oven, no prices', 'dphilhower-studio' ),
+					'heading' => __( 'The board', 'dphilhower-studio' ),
+					'story'   => __( 'Cream stock. Centered seal. Two columns. Names wait for the morning. No drink photos on the sheet: the bar is twenty feet away.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'swell-brew-print-cups.png',
+					'alt'     => __( 'Navy Swell Brew cup, cream cup, and kraft sleeve on driftwood at the shore', 'dphilhower-studio' ),
+					'heading' => __( 'Cups and sleeve', 'dphilhower-studio' ),
+					'story'   => __( 'Navy cup and cream cup, same construction. Kraft sleeve is the walk. The mug-and-wave survives takeaway.', 'dphilhower-studio' ),
+				),
+			),
+		),
 		'ritual-cafe'              => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The daily cup as a ritual', 'dphilhower-studio' ),
