@@ -1097,6 +1097,20 @@ select {
   max-width: 52ch;
 }
 
+.greenroots-lede {
+  margin: 0.35rem 0 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  letter-spacing: -0.02em;
+  color: #4c7a34;
+  max-width: 36rem;
+}
+
+.page-hero .greenroots-lede + p {
+  max-width: 52ch;
+}
+
 .kit-lockup {
   margin: 0 0 1.25rem;
 }
@@ -1117,6 +1131,22 @@ select {
 .kit-panel.is-true-olive .type-card small {
   color: #8b3a3a;
 }
+
+.kit-panel.is-greenroots {
+  border-top-color: #4c7a34;
+}
+
+.kit-panel.is-greenroots .type-card small {
+  color: #8b5a2b;
+}
+
+.swatches.is-greenroots {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.swatch-gr-forest { background: #4c7a34; color: #f7f1e6; }
+.swatch-gr-earth { background: #8b5a2b; color: #f7f1e6; }
+.swatch-gr-sun { background: #f5e1a4; color: #1a1408; }
 
 .swatches.is-bville {
   grid-template-columns: repeat(3, 1fr);

@@ -111,6 +111,7 @@ function dps_work_home_slugs() {
 		'bville-pizza-grill',
 		'cala',
 		'true-olive',
+		'greenroots-collective',
 		'ember-pie-co',
 		'cafe-robust',
 		'ritual-cafe',
@@ -156,6 +157,10 @@ function dps_work_card_stills() {
 		'true-olive'         => array(
 			'file' => 'true-olive-print-window.png',
 			'alt'  => __( 'True Olive black hanging sign with bronze olive-leaf seal on a limestone harbor street', 'dphilhower-studio' ),
+		),
+		'greenroots-collective' => array(
+			'file' => 'greenroots-print-window.png',
+			'alt'  => __( 'Cream clapboard GreenRoots Collective storefront with the uploaded lockup on glass', 'dphilhower-studio' ),
 		),
 		'ember-pie-co'       => array(
 			'file' => 'ember-window-after.png',
@@ -255,6 +260,10 @@ function dps_work_hero_stills() {
 		'true-olive'         => array(
 			'file' => 'true-olive-web-room.png',
 			'alt'  => __( 'True Olive limestone dining room with olive trees, copper light, cream linen, and the harbor', 'dphilhower-studio' ),
+		),
+		'greenroots-collective' => array(
+			'file' => 'greenroots-web-room.png',
+			'alt'  => __( 'GreenRoots Collective dining room: long pine table, cream linen, wildflowers, lockup on plaster', 'dphilhower-studio' ),
 		),
 		'cow-lick'           => array(
 			'file' => 'cowlick-field-freezer.png',

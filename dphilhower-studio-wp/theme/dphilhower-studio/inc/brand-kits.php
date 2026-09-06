@@ -242,6 +242,49 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'greenroots-collective'    => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'How GreenRoots leaves the garden', 'dphilhower-studio' ),
+			'intro'  => __( 'Board, tree, room, street, dinner paper, tag and basket. The same lockup — not a substitute farm stamp. Print is the restaurant at the scale a guest actually holds.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'greenroots-hero.png',
+					'alt'     => __( 'GreenRoots Collective lockup on cream: tree with cupped-hand roots, yellow sun, script GreenRoots, caps COLLECTIVE', 'dphilhower-studio' ),
+					'heading' => __( 'The lockup', 'dphilhower-studio' ),
+					'story'   => __( 'Uploaded tree, hands, sun, script GreenRoots, caps COLLECTIVE, Growing Better, Together. This is the logo. Everything else is this, moved.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'greenroots-board.png',
+					'alt'     => __( 'GreenRoots Collective identity board: lockup, three inks, kraft hangtag, and a produce basket', 'dphilhower-studio' ),
+					'heading' => __( 'The board', 'dphilhower-studio' ),
+					'story'   => __( 'The uploaded kit. Three inks named. Kraft tag and garden basket on the same sheet as the tree.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'greenroots-web-room.png',
+					'alt'     => __( 'GreenRoots Collective dining room with the lockup on plaster, pine table, and herb pots in the window', 'dphilhower-studio' ),
+					'heading' => __( 'In the room', 'dphilhower-studio' ),
+					'story'   => __( 'Pine table, cream linen, wildflowers, herbs on the sill. The lockup is small on the wall. The weather is the restaurant.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'greenroots-print-window.png',
+					'alt'     => __( 'Cream clapboard GreenRoots Collective storefront at dusk with the lockup on glass and produce crates on a bench', 'dphilhower-studio' ),
+					'heading' => __( 'Street', 'dphilhower-studio' ),
+					'story'   => __( 'Cream clapboard, forest door, the uploaded lockup on glass. Produce on the bench because the garden is the offer. Hours stay cream.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'greenroots-print-menu.png',
+					'alt'     => __( 'Cream GreenRoots Collective market-table menu with centered lockup, two empty columns, no prices', 'dphilhower-studio' ),
+					'heading' => __( 'Dinner menu', 'dphilhower-studio' ),
+					'story'   => __( 'Cream stock. Centered seal. Two columns. Names wait for the kitchen. No food photos on the sheet: the garden is twenty feet away.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'greenroots-print-table.png',
+					'alt'     => __( 'Kraft GreenRoots hangtag on burlap beside a wicker basket of tomatoes, carrots, greens, and squash', 'dphilhower-studio' ),
+					'heading' => __( 'Tag and basket', 'dphilhower-studio' ),
+					'story'   => __( 'Kraft is how the lockup leaves. The basket is the garden still from the board — tomatoes, carrots, greens, squash — not a made-up plate.', 'dphilhower-studio' ),
+				),
+			),
+		),
 		'ritual-cafe'              => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The daily cup as a ritual', 'dphilhower-studio' ),

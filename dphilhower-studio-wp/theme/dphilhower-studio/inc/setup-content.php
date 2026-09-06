@@ -198,6 +198,12 @@ function dps_seed_demo_content( $force = false ) {
 		'true-olive-web-table.png'        => dps_sideload_theme_image( 'true-olive-web-table.png', 'True Olive trays and kabobs' ),
 		'true-olive-web-room.png'         => dps_sideload_theme_image( 'true-olive-web-room.png', 'True Olive dining room' ),
 		'true-olive-web-press.png'        => dps_sideload_theme_image( 'true-olive-web-press.png', 'True Olive kabob and grape-leaf tray' ),
+		'greenroots-hero.png'             => dps_sideload_theme_image( 'greenroots-hero.png', 'GreenRoots Collective lockup' ),
+		'greenroots-board.png'            => dps_sideload_theme_image( 'greenroots-board.png', 'GreenRoots Collective identity board' ),
+		'greenroots-web-room.png'         => dps_sideload_theme_image( 'greenroots-web-room.png', 'GreenRoots Collective dining room' ),
+		'greenroots-print-window.png'     => dps_sideload_theme_image( 'greenroots-print-window.png', 'GreenRoots Collective storefront' ),
+		'greenroots-print-menu.png'       => dps_sideload_theme_image( 'greenroots-print-menu.png', 'GreenRoots Collective cream market-table menu' ),
+		'greenroots-print-table.png'      => dps_sideload_theme_image( 'greenroots-print-table.png', 'GreenRoots hangtag and garden basket' ),
 	);
 
 	if ( $hero_id ) {
@@ -285,6 +291,18 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Eastern Mediterranean (studio study)',
 			'content'  => '<p>The eastern shore already has limestone and oil. The restaurant is a harbor table. The fruit is the company — the way a saw is the company when the work is wood. This is not Cala’s western cove, and it is not a mosque, a crescent, or a boat sticker. An olive in bronze, not a lantern in gold.</p><p>The wreath is the tool. Serif TRUE is authority. Script Olive is the fruit. PRESS TABLE SHORE on the arc makes a seal. Black is only the disc. Cream is the paper you order from. Olive is the name of the dish. Bronze is the rule. The room keeps the rest of the inks: tahini, limestone, lemon, sumac, pomegranate, harbor, copper.</p><p>The offer is trays, in the order they were given: grape leaves, shish, kufta, chicken kabob, chicken and beef shawarma, roasted chicken legs, lemon pepper breast, veggie tray, mixed zucchini onions and peppers, oven-roasted lamb, yellow butter rice, basmati. No invented prices. No food photos on the dinner menu — the kitchen is twenty feet away. This is a studio study, not a live job.</p>',
+		),
+		array(
+			'slug'     => 'greenroots-collective',
+			'title'    => 'GreenRoots Collective',
+			'image'    => 'greenroots-hero.png',
+			'excerpt'  => 'Studio study. The uploaded lockup, a cream market-table menu, and the restaurant site — one construction from the tree to the paper the guest holds.',
+			'subtitle' => 'Growing Better, Together.',
+			'client'   => 'Studio study — farm table',
+			'services' => 'Identity · signage · menu · site',
+			'year'     => '2026',
+			'location' => 'Garden table (studio study)',
+			'content'  => '<p>The mark was uploaded as a board, so the board is the identity. A tree with cupped-hand roots and a seed in the palms. A yellow sun behind the trunk. Script GreenRoots. Caps COLLECTIVE. The sentence under it is the offer: Growing Better, Together. This is not a lantern, not a pizza pun, and not a costume farm alphabet dropped onto a template.</p><p>Forest green is the name of the tree. Earth brown is the hands and the rule. Creamy yellow is the sun. Cream is the paper you order from. Kraft is the tag that leaves on burlap. The garden still on the board — tomatoes, carrots, greens, squash in a wicker basket — is the table, photographed. No invented street. No invented years in-house. No invented dishes: the kitchen has not given a list yet, so the dinner paper keeps ruled lines and two honest headers, From the garden / From the kitchen.</p>',
 		),
 		array(
 			'slug'     => 'bville-pizza-grill',
@@ -514,7 +532,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-36' );
+	update_option( 'dps_images_version', 'brands-print-37' );
 	return true;
 }
 
