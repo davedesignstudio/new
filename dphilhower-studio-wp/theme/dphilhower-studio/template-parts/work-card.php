@@ -1,0 +1,16 @@
+<?php
+/**
+ * Work card.
+ *
+ * @package DPhilhowerStudio
+ */
+
+$thumb = dps_work_card_src();
+?>
+<a class="work-item" href="<?php the_permalink(); ?>">
+	<img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_attr( dps_work_card_alt() ); ?>" width="1536" height="1024">
+	<div class="work-meta">
+		<h3><?php the_title(); ?></h3>
+		<p><?php echo esc_html( dps_work_subtitle() ); ?></p>
+	</div>
+</a>
