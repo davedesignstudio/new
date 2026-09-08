@@ -52,6 +52,11 @@
 		</figure>
 	</div>
 </section>
+<?php
+if ( function_exists( 'dps_render_brand_system' ) ) {
+	dps_render_brand_system( 'ember-pie-co' );
+}
+?>
 <section class="brand-kit">
 	<p class="section-label"><?php esc_html_e( 'Print system', 'dphilhower-studio' ); ?></p>
 	<h2 class="section-title"><?php esc_html_e( 'How the brand leaves the shop', 'dphilhower-studio' ); ?></h2>

@@ -18,6 +18,7 @@ require_once DPS_DIR . '/inc/cpt.php';
 require_once DPS_DIR . '/inc/customizer.php';
 require_once DPS_DIR . '/inc/contact-form.php';
 require_once DPS_DIR . '/inc/brand-kits.php';
+require_once DPS_DIR . '/inc/brand-systems.php';
 require_once DPS_DIR . '/inc/setup-content.php';
 
 /**

@@ -18,7 +18,7 @@ function dps_brand_kits() {
 	return array(
 		'pattern-studies'          => array(
 			'label'  => __( 'Pattern studies', 'dphilhower-studio' ),
-			'title'  => __( 'Fifteen designs from the uploaded marks', 'dphilhower-studio' ),
+			'title'  => __( 'Fifteen designs from the studio marks', 'dphilhower-studio' ),
 			'intro'  => __( 'Each piece takes a rule already in the logo — the color split, the cup from above, the sticker halo, the saw blade, the B flourish, the gold script — and puts it on something a guest actually holds.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
@@ -29,13 +29,13 @@ function dps_brand_kits() {
 				),
 				array(
 					'file'    => 'bville-print-loyalty.png',
-					'alt'     => __( 'Cream Bville loyalty card with the uploaded orange and green lockup', 'dphilhower-studio' ),
+					'alt'     => __( 'Cream Bville loyalty card with the official orange and green lockup', 'dphilhower-studio' ),
 					'heading' => __( '2. Bville loyalty', 'dphilhower-studio' ),
-					'story'   => __( 'The uploaded lockup at the top. Oval punches below so ten pies still earn one on the house.', 'dphilhower-studio' ),
+					'story'   => __( 'The official lockup at the top. Oval punches below so ten pies still earn one on the house.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-matches.png',
-					'alt'     => __( 'Forest green Bville napkin band and matchbook with the uploaded lockup', 'dphilhower-studio' ),
+					'alt'     => __( 'Forest green Bville napkin band and matchbook with the official lockup', 'dphilhower-studio' ),
 					'heading' => __( '3. Bville napkin band', 'dphilhower-studio' ),
 					'story'   => __( 'Ville green around linen. The same slate lockup, pocket scale.', 'dphilhower-studio' ),
 				),
@@ -116,35 +116,35 @@ function dps_brand_kits() {
 		'bville-pizza-grill'       => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'How Bville leaves the building', 'dphilhower-studio' ),
-			'intro'  => __( 'In-house graphic design, 2018–2021. The uploaded lockup — orange B, green ville, gold edge — sits on the window, the menu, and the burgundy lid. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
+			'intro'  => __( 'In-house graphic design, 2018–2021. The official lockup — orange B, green ville, gold edge — sits on the window, the menu, and the burgundy lid. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'bville-print-window.png',
-					'alt'     => __( 'Bville Pizza & Grill dusk window with the uploaded orange and green lockup on glass', 'dphilhower-studio' ),
+					'alt'     => __( 'Bville Pizza & Grill dusk window with the official orange and green lockup on glass', 'dphilhower-studio' ),
 					'heading' => __( 'Window', 'dphilhower-studio' ),
 					'story'   => __( 'The lockup is a sign, so the glass gets the sign. Orange B from the lot. Green ville for the town. Cream hours because the menu is cream.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-menu.png',
-					'alt'     => __( 'Cream Bville Pizza & Grill menu with the uploaded lockup at the top', 'dphilhower-studio' ),
+					'alt'     => __( 'Cream Bville Pizza & Grill menu with the official lockup at the top', 'dphilhower-studio' ),
 					'heading' => __( 'Menu', 'dphilhower-studio' ),
 					'story'   => __( 'Cream stock. Names in forest green, prices in orange — the same split as the wordmark. No food photos: the kitchen is twenty feet away.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-box-burgundy.png',
-					'alt'     => __( 'Burgundy Bville pizza box with the uploaded lockup on the lid', 'dphilhower-studio' ),
+					'alt'     => __( 'Burgundy Bville pizza box with the official lockup on the lid', 'dphilhower-studio' ),
 					'heading' => __( 'Delivery box', 'dphilhower-studio' ),
-					'story'   => __( 'Burgundy board, not a coupon kraft. The uploaded lockup sits on the lid. Side panel keeps the B as a letter. The food stays inside.', 'dphilhower-studio' ),
+					'story'   => __( 'Burgundy board, not a coupon kraft. The official lockup sits on the lid. Side panel keeps the B as a letter. The food stays inside.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-loyalty.png',
-					'alt'     => __( 'Cream Bville loyalty card with the uploaded orange and green lockup', 'dphilhower-studio' ),
+					'alt'     => __( 'Cream Bville loyalty card with the official orange and green lockup', 'dphilhower-studio' ),
 					'heading' => __( 'Loyalty card', 'dphilhower-studio' ),
-					'story'   => __( 'The uploaded lockup at the top. Oval punches below so ten pies still earn one on the house.', 'dphilhower-studio' ),
+					'story'   => __( 'The official lockup at the top. Oval punches below so ten pies still earn one on the house.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-matches.png',
-					'alt'     => __( 'Forest green Bville napkin band and matchbook with the uploaded lockup', 'dphilhower-studio' ),
+					'alt'     => __( 'Forest green Bville napkin band and matchbook with the official lockup', 'dphilhower-studio' ),
 					'heading' => __( 'Napkin band and matchbook', 'dphilhower-studio' ),
 					'story'   => __( 'Forest green is the ville color wrapped around linen. The same slate lockup, small enough for a matchbook.', 'dphilhower-studio' ),
 				),
@@ -227,7 +227,7 @@ function dps_brand_kits() {
 					'file'    => 'cowlick-print-pint.png',
 					'alt'     => __( 'Cow Lick ice cream pint with cow sticker logo', 'dphilhower-studio' ),
 					'heading' => __( 'Pint', 'dphilhower-studio' ),
-					'story'   => __( 'Freezer light is unkind. The thick sticker outline keeps the cow readable at arm’s length. Chocolate-to-tan type reads as ice cream, not a farm NGO. Flavor sits in a quiet brown so the tongue remains the joke.', 'dphilhower-studio' ),
+					'story'   => __( 'Official die-cut on the tub. Chocolate, net weight, keep frozen — the same facts as the pack label, small enough for a lid band.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'cowlick-print-window.png',
@@ -363,7 +363,7 @@ function dps_brand_kits() {
 					'file'    => 'cafe-robust-print-seal.png',
 					'alt'     => __( 'Official Cafe Robust circular seal: gold CR, silver CAFE and ROBUST, stars, crema ring', 'dphilhower-studio' ),
 					'heading' => __( 'Seal', 'dphilhower-studio' ),
-					'story'   => __( 'The uploaded lockup. Gold CR in the crema ring, silver CAFE / ROBUST, stars. Not a placeholder circle.', 'dphilhower-studio' ),
+					'story'   => __( 'The official lockup. Gold CR in the crema ring, silver CAFE / ROBUST, stars. Not a placeholder circle.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'cafe-robust-print-cups.png',
@@ -437,6 +437,9 @@ function dps_render_brand_kit( $slug ) {
 		return;
 	}
 	$kit = $kits[ $slug ];
+	if ( function_exists( 'dps_render_brand_system' ) ) {
+		dps_render_brand_system( $slug );
+	}
 	?>
 <section class="brand-kit">
 	<p class="section-label"><?php echo esc_html( $kit['label'] ); ?></p>

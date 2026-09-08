@@ -225,9 +225,9 @@ function dps_seed_demo_content( $force = false ) {
 			'slug'     => 'pattern-studies',
 			'title'    => 'Fifteen pattern studies',
 			'image'    => 'bville-print-window.png',
-			'excerpt'  => 'Print pulled from the uploaded marks',
-			'subtitle' => 'Print pulled from the uploaded marks',
-			'client'   => 'Studio studies from six uploaded identities',
+			'excerpt'  => 'Print pulled from the studio marks',
+			'subtitle' => 'Print pulled from the studio marks',
+			'client'   => 'Studio studies from six identities',
 			'services' => 'Identity · print · packaging',
 			'year'     => '2026',
 			'location' => 'Morris County, NJ',
@@ -363,7 +363,7 @@ function dps_seed_demo_content( $force = false ) {
 			'services' => 'Poster · social · print',
 			'year'     => '2026',
 			'location' => 'Morris County, NJ',
-			'content'  => '<p>A class poster has to read as one sentence. Fitness Kick Boxing is the class. Trial is the door. Three classes and a pair of gloves is what you leave with.</p><p>The uploaded draft said Trail and printed Free Gloves twice. This version keeps the punch — pink gloves on a black mitt — and says the offer once. The gloves still in the photo are the gloves in the line.</p>',
+			'content'  => '<p>A class poster has to read as one sentence. Fitness Kick Boxing is the class. Trial is the door. Three classes and a pair of gloves is what you leave with.</p><p>The first draft said Trail and printed Free Gloves twice. This version keeps the punch — pink gloves on a black mitt — and says the offer once. The gloves still in the photo are the gloves in the line.</p>',
 		),
 	);
 

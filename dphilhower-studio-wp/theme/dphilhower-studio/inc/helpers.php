@@ -189,7 +189,7 @@ function dps_work_card_stills() {
 		),
 		'pattern-studies'    => array(
 			'file' => 'ember-print-box.png',
-			'alt'  => __( 'Kraft pizza box stamped from the uploaded marks', 'dphilhower-studio' ),
+			'alt'  => __( 'Kraft pizza box stamped from the studio marks', 'dphilhower-studio' ),
 		),
 	);
 }
