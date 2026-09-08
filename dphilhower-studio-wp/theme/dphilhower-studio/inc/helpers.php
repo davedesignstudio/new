@@ -110,6 +110,7 @@ function dps_work_home_slugs() {
 	return array(
 		'bville-pizza-grill',
 		'ember-pie-co',
+		'casa-forno',
 		'cafe-robust',
 		'ritual-cafe',
 		'expresso',
@@ -150,6 +151,10 @@ function dps_work_card_stills() {
 		'ember-pie-co'       => array(
 			'file' => 'ember-window-after.png',
 			'alt'  => __( 'Pizza shop storefront with a gold window mark at dusk', 'dphilhower-studio' ),
+		),
+		'casa-forno'         => array(
+			'file' => 'casa-forno-print-window.png',
+			'alt'  => __( 'Casa Forno brick trattoria at dusk with the gold CF seal on the window', 'dphilhower-studio' ),
 		),
 		'cafe-robust'        => array(
 			'file' => 'cafe-robust-hero.png',

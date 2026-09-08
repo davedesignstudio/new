@@ -330,6 +330,18 @@ function dps_seed_demo_content( $force = false ) {
 			'content'  => '<p>Same Hills blade. Balanced lockup: PK overlapping the carpenter-square on a gold–burgundy field. PHILHOWER and O’Krogly in the diamond points. DESIGN + BUILD on the bottom arc.</p><p>One lockup. Polo, van, yard, card, fridge. Black outside the blade.</p><p>NJ carpenter marks cluster into four families — union shield, house-and-script, truck-door gothic, mill-and-saw. This lockup stays with the mill-and-saw line. The diamond is a carpenter’s square — the rule from the trade, not the union shield.</p>',
 		),
 		array(
+			'slug'     => 'casa-forno',
+			'title'    => 'Casa Forno',
+			'image'    => 'casa-forno-hero.png',
+			'excerpt'  => 'Trattoria · Forno · Vino',
+			'subtitle' => 'Trattoria · Forno · Vino',
+			'client'   => 'Studio identity — Italian trattoria',
+			'services' => 'Identity · menu · window · packaging',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>The seal starts from the Cafe Robust badge the studio already prints: a circular gold lockup, arched name, a center monogram. Casa Forno rewrites that language for a room with an oven. CF in gold. CASA / FORNO in silver. Wheat instead of stars. Wine enamel instead of espresso. An olive-oil ring instead of crema.</p><p>No Italian flag. No clipart pizza. The food is inside. Trattoria · Forno · Vino sits under the seal so the sidewalk, the menu, and the oil bottle agree. This is a studio identity, not a live account.</p>',
+		),
+		array(
 			'slug'     => 'cafe-robust',
 			'title'    => 'Cafe Robust',
 			'image'    => 'cafe-robust-hero.png',

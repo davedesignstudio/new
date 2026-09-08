@@ -153,6 +153,19 @@ function dps_brand_label_systems() {
 				array( 'label' => __( 'Note', 'dphilhower-studio' ), 'value' => __( 'Studio study — not a live gym account', 'dphilhower-studio' ) ),
 			),
 		),
+		'casa-forno'          => array(
+			'title' => __( 'Wheat at the sides, the oven in the name', 'dphilhower-studio' ),
+			'mark'  => __( 'The official seal borrows the Cafe Robust badge: gold CF in the center, silver CASA / FORNO on the arcs, wheat instead of stars, a wine-burgundy plate, an olive-oil ring. No flag, no clipart pizza. The food is inside. Trattoria · Forno · Vino sits under the seal so the room, the oven, and the list agree.', 'dphilhower-studio' ),
+			'pack'  => array(
+				array( 'label' => __( 'Oil', 'dphilhower-studio' ), 'value' => __( 'Extra virgin · cold pressed · 16.9 fl oz (500 mL)', 'dphilhower-studio' ) ),
+				array( 'label' => __( 'Pasta', 'dphilhower-studio' ), 'value' => __( 'House ragù · 16 oz (454 g)', 'dphilhower-studio' ) ),
+				array( 'label' => __( 'Keep', 'dphilhower-studio' ), 'value' => __( 'Oil: cool, dark. Ragù: keep refrigerated.', 'dphilhower-studio' ) ),
+				array( 'label' => __( 'Menu', 'dphilhower-studio' ), 'value' => __( 'Primi · Secondi · Dolci', 'dphilhower-studio' ) ),
+				array( 'label' => __( 'Line', 'dphilhower-studio' ), 'value' => __( 'Trattoria · Forno · Vino', 'dphilhower-studio' ) ),
+				array( 'label' => __( 'Lot', 'dphilhower-studio' ), 'value' => 'CF-260908' ),
+				array( 'label' => __( 'Packed', 'dphilhower-studio' ), 'value' => __( 'Studio identity — Morris County, NJ', 'dphilhower-studio' ) ),
+			),
+		),
 		'pattern-studies'     => array(
 			'title' => __( 'Six marks, fifteen holds', 'dphilhower-studio' ),
 			'mark'  => __( 'Each piece takes a rule already in the logo — the color split, the cup from above, the sticker halo, the saw blade, the B flourish, the gold script — and puts it on something a guest actually holds. These are studio studies, not live jobs.', 'dphilhower-studio' ),

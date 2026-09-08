@@ -404,6 +404,37 @@ function dps_brand_kits() {
 				),
 			),
 		),
+		'casa-forno'               => array(
+			'label'  => __( 'Print system', 'dphilhower-studio' ),
+			'title'  => __( 'The seal, then the room', 'dphilhower-studio' ),
+			'intro'  => __( 'Official CF badge on black. Gold vinyl on the dusk window. Cream menu with primi, secondi, dolci. Oil bottle and ragù box carry weight, keep, and lot.', 'dphilhower-studio' ),
+			'pieces' => array(
+				array(
+					'file'    => 'casa-forno-print-seal.png',
+					'alt'     => __( 'Official Casa Forno circular seal: gold CF, silver CASA and FORNO, wheat, wine plate', 'dphilhower-studio' ),
+					'heading' => __( 'Seal', 'dphilhower-studio' ),
+					'story'   => __( 'The official lockup. Gold CF, silver CASA / FORNO, wheat at the sides. Same badge language as Cafe Robust, rewritten for the oven.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-window.png',
+					'alt'     => __( 'Casa Forno brick trattoria at dusk with the gold CF seal on the window', 'dphilhower-studio' ),
+					'heading' => __( 'Window', 'dphilhower-studio' ),
+					'story'   => __( 'Gold seal on glass, cream hours, hanging wordmark. The sidewalk should know the room before the door.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-menu.png',
+					'alt'     => __( 'Cream Casa Forno dinner menu with gold seal and primi, secondi, dolci', 'dphilhower-studio' ),
+					'heading' => __( 'Menu', 'dphilhower-studio' ),
+					'story'   => __( 'Cream stock, wine headings, gold rules. No food photos: the kitchen is twenty feet away.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-pack.png',
+					'alt'     => __( 'Casa Forno olive oil bottle and house ragù takeaway box with the official seal', 'dphilhower-studio' ),
+					'heading' => __( 'Oil and box', 'dphilhower-studio' ),
+					'story'   => __( 'Same seal on green glass and kraft. Extra virgin 500 mL, house ragù 16 oz, lot CF-260908.', 'dphilhower-studio' ),
+				),
+			),
+		),
 		'fitness-kick-boxing'      => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'One offer, one punch', 'dphilhower-studio' ),
