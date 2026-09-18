@@ -1,0 +1,101 @@
+:root {
+  --lo-flour: #f7f0e4;
+  --lo-cocoa: #3d2a1f;
+  --lo-terra: #c46a3a;
+  --lo-leaf: #6f8454;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Nunito Sans", "Helvetica Neue", sans-serif;
+  --space: clamp(1.1rem, 4vw, 2.6rem);
+}
+
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body {
+  margin: 0;
+  background: var(--lo-flour);
+  color: var(--lo-cocoa);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; height: auto; }
+
+.lo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--space);
+  background: var(--lo-cocoa);
+  color: var(--lo-flour);
+}
+.lo-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+.lo-brand img { width: 2.2rem; height: 2.2rem; color: var(--lo-terra); }
+.lo-nav { display: flex; gap: 1.2rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.lo-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 70vh;
+}
+.lo-hero-copy { padding: clamp(2.5rem, 6vw, 4.5rem) var(--space); align-self: center; }
+.lo-hero-copy p.kicker { margin: 0 0 0.6rem; color: var(--lo-terra); letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.75rem; }
+.lo-hero-copy h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0 0 0.8rem;
+}
+.lo-hero img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+
+.lo-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: clamp(2.2rem, 6vw, 4rem) var(--space);
+}
+.lo-card {
+  background: #fffaf2;
+  border: 1px solid rgb(61 42 31 / 0.12);
+  padding: 1.15rem;
+}
+.lo-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  color: var(--lo-leaf);
+}
+.lo-card ul { margin: 0; padding-left: 1.1rem; }
+.lo-hours { padding: 0 var(--space) 3.5rem; max-width: 720px; }
+.lo-cta {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--lo-terra);
+  color: var(--lo-flour);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+.lo-footer {
+  padding: 1.1rem var(--space);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: var(--lo-cocoa);
+  color: var(--lo-flour);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 800px) {
+  .lo-hero, .lo-board { grid-template-columns: 1fr; }
+}

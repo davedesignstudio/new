@@ -1,37 +1,37 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# D Philhower Studio
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+Marketing site for **D Philhower Studio** — identity, menus, windows, and websites for independent restaurants in Morristown and Morris County, New Jersey.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+The live site is static HTML in `public/`.
 
-To install and run the example site locally, here’s what you’ll need:
+## Featured brands
 
-## System Requirements
+Three hospitality systems from the same table-first process:
 
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
+- [North Hollow](public/brands/north-hollow/index.html) — Chester tavern
+- [Kumo Counter](public/brands/kumo-counter/index.html) — Morristown omakase
+- [Linden Oven](public/brands/linden-oven/index.html) — Madison bakery-café
 
-## Usage
+Studio case studies live under `/work/`. Each brand also has a live microsite under `/brands/`.
 
-Clone this repository and run:
+## Local development
 
 ```bash
-npm install
-npm run start
+npm start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+Open [http://localhost:3000](http://localhost:3000).
 
-To build your static output to the `/dist` folder, use:
+## Deploy
 
-```bash
-npm run build
-```
+Netlify publish directory: `public` (see `netlify.toml`).
 
-## License
+## Pages
 
-[MIT](LICENSE)
+- `/` — Home
+- `/work/` — Brands
+- `/work/north-hollow/` `/work/kumo-counter/` `/work/linden-oven/` — case studies
+- `/brands/...` — live brand sites
+- `/services/` — Process
+- `/about/` — Studio
+- `/contact/` — Project inquiry

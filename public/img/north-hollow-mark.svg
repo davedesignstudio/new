@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="North Hollow">
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#C4A35A" stroke-width="2"/>
+  <path d="M60 22 C44 38 38 50 38 64 C38 80 48 94 60 94 C72 94 82 80 82 64 C82 50 76 38 60 22 Z" fill="none" stroke="#C4A35A" stroke-width="2"/>
+  <path d="M60 46 C54 54 52 60 52 66 C52 74 55.5 80 60 80 C64.5 80 68 74 68 66 C68 60 66 54 60 46 Z" fill="#C4A35A"/>
+</svg>
