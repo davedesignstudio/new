@@ -106,17 +106,32 @@ function dps_work_subtitle( $post_id = 0 ) {
  *
  * @return string[]
  */
-function dps_work_home_slugs() {
+function dps_full_restaurant_slugs() {
+	return array( 'bville-pizza-grill', 'ember-pie-co', 'casa-forno' );
+}
+
+/**
+ * Other hospitality rooms on the homepage (not the three full restaurant kits).
+ *
+ * @return string[]
+ */
+function dps_work_home_other_slugs() {
 	return array(
-		'bville-pizza-grill',
-		'ember-pie-co',
-		'casa-forno',
 		'cafe-robust',
 		'ritual-cafe',
 		'expresso',
 		'bernardsville-deli',
 		'cow-lick',
 	);
+}
+
+/**
+ * Home grid: three full restaurant systems, then the other rooms.
+ *
+ * @return string[]
+ */
+function dps_work_home_slugs() {
+	return array_merge( dps_full_restaurant_slugs(), dps_work_home_other_slugs() );
 }
 
 /**

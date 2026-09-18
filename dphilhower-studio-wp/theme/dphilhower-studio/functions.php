@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DPS_VERSION', '1.0.59' );
+define( 'DPS_VERSION', '1.1.0' );
 define( 'DPS_DIR', get_template_directory() );
 define( 'DPS_URI', get_template_directory_uri() );
 
@@ -19,6 +19,7 @@ require_once DPS_DIR . '/inc/customizer.php';
 require_once DPS_DIR . '/inc/contact-form.php';
 require_once DPS_DIR . '/inc/brand-kits.php';
 require_once DPS_DIR . '/inc/brand-systems.php';
+require_once DPS_DIR . '/inc/restaurant-full.php';
 require_once DPS_DIR . '/inc/setup-content.php';
 
 /**

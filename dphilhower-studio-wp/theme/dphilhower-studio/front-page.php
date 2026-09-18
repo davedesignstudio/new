@@ -43,13 +43,13 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 	</section>
 
 	<section class="section">
-		<p class="section-label"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title"><?php esc_html_e( 'Work that has to live in the world', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant rooms first — pizza, coffee, deli, ice cream — including Bville Pizza & Grill in Bernardsville, where David was in-house graphic designer from 2018 to 2021. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
-		<div class="work-grid is-home">
+		<p class="section-label"><?php esc_html_e( 'Three restaurants', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title is-wide"><?php esc_html_e( 'Full process, full branding', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Sit down, write it back, draw, build — then the window, the menu, the pack, and the phone. Three rooms, each as one kit: Bville Pizza & Grill in-house, Ember Pie Co., and Casa Forno.', 'dphilhower-studio' ); ?></p>
+		<div class="work-grid is-trio">
 			<?php
 			$featured_ids = array();
-			foreach ( dps_work_home_slugs() as $featured_slug ) {
+			foreach ( dps_full_restaurant_slugs() as $featured_slug ) {
 				$featured_post = get_page_by_path( $featured_slug, OBJECT, 'dps_work' );
 				if ( $featured_post ) {
 					$featured_ids[] = $featured_post->ID;
@@ -66,6 +66,38 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			if ( $works->have_posts() ) :
 				while ( $works->have_posts() ) :
 					$works->the_post();
+					get_template_part( 'template-parts/work-card' );
+				endwhile;
+				wp_reset_postdata();
+			endif;
+			?>
+		</div>
+	</section>
+
+	<section class="section">
+		<p class="section-label"><?php esc_html_e( 'Also in the studio', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title"><?php esc_html_e( 'Coffee, deli, ice cream', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'The other hospitality rooms — including Cafe Robust, Ritual, EXPresso, Bernardsville Deli, and Cow Lick. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
+		<div class="work-grid">
+			<?php
+			$other_ids = array();
+			foreach ( dps_work_home_other_slugs() as $other_slug ) {
+				$other_post = get_page_by_path( $other_slug, OBJECT, 'dps_work' );
+				if ( $other_post ) {
+					$other_ids[] = $other_post->ID;
+				}
+			}
+			$others = new WP_Query(
+				array(
+					'post_type'      => 'dps_work',
+					'post__in'       => $other_ids ? $other_ids : array( 0 ),
+					'orderby'        => 'post__in',
+					'posts_per_page' => count( $other_ids ),
+				)
+			);
+			if ( $others->have_posts() ) :
+				while ( $others->have_posts() ) :
+					$others->the_post();
 					get_template_part( 'template-parts/work-card' );
 				endwhile;
 				wp_reset_postdata();

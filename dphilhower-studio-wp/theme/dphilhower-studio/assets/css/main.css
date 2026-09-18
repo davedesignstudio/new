@@ -699,7 +699,7 @@ select {
   padding: 0.75rem 0.85rem;
   border: 1px solid var(--line);
   background: #fff;
-  color: var(--ink);
+  color: #1c1610;
 }
 
 .contact-form textarea {
@@ -944,8 +944,9 @@ select {
 
 .kit-panel {
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: rgba(242, 244, 239, 0.78);
+  background: rgba(242, 244, 239, 0.96);
   border: 1px solid var(--line);
+  color: #1c1610;
 }
 
 .kit-wordmark {
@@ -955,6 +956,7 @@ select {
   font-size: calc(clamp(2rem, 6vw, 3.6rem) + 6pt);
   letter-spacing: -0.04em;
   line-height: 0.95;
+  color: #1c1610;
 }
 
 .kit-wordmark span {
@@ -1052,13 +1054,14 @@ select {
 .compare figcaption {
   padding: 0.7rem 0.9rem 0.9rem;
   font-size: calc(0.88rem + 6pt);
-  color: var(--muted);
+  color: #3a2e24;
+  background: var(--paper);
 }
 
 .compare figcaption strong {
   display: block;
   font-family: var(--font-display);
-  color: var(--ink);
+  color: #1c1610;
   margin-bottom: 0.15rem;
 }
 
@@ -1214,14 +1217,14 @@ select {
   padding: 0.85rem 1rem 1.1rem;
   font-size: calc(0.92rem + 6pt);
   line-height: 1.45;
-  color: var(--muted);
+  color: #3a2e24;
   background: var(--paper);
 }
 
 .print-system figcaption strong {
   display: block;
   font-family: var(--font-display);
-  color: var(--ink);
+  color: #1c1610;
   margin-bottom: 0.35rem;
   font-size: calc(1.05rem + 6pt);
 }

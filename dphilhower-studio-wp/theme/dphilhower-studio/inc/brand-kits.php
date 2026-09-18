@@ -116,7 +116,7 @@ function dps_brand_kits() {
 		'bville-pizza-grill'       => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'How Bville leaves the building', 'dphilhower-studio' ),
-			'intro'  => __( 'In-house graphic design, 2018–2021. The official lockup — orange B, green ville, gold edge — sits on the window, the menu, and the burgundy lid. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
+			'intro'  => __( 'In-house graphic design, 2018–2021. The official lockup — orange B, green ville, gold edge — sits on the window, the menu, the burgundy lid, the table, and the phone. No clipart pizza: the food is inside.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'bville-print-window.png',
@@ -137,10 +137,28 @@ function dps_brand_kits() {
 					'story'   => __( 'Burgundy board, not a coupon kraft. The official lockup sits on the lid. Side panel keeps the B as a letter. The food stays inside.', 'dphilhower-studio' ),
 				),
 				array(
+					'file'    => 'bville-print-cards.png',
+					'alt'     => __( 'Forest green and cream Bville business cards with the official lockup', 'dphilhower-studio' ),
+					'heading' => __( 'Business cards', 'dphilhower-studio' ),
+					'story'   => __( 'Ville green in a pocket. Cream reverse sits next to the menu. A name, a phone, a street — the same lockup, no QR stack.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'bville-print-coasters.png',
+					'alt'     => __( 'Cream and forest-green Bville coasters with the official lockup', 'dphilhower-studio' ),
+					'heading' => __( 'Coasters', 'dphilhower-studio' ),
+					'story'   => __( 'Round like a pie. The lockup in the center so a glass still frames the mark. Forest green is the ville color on the table.', 'dphilhower-studio' ),
+				),
+				array(
 					'file'    => 'bville-print-loyalty.png',
 					'alt'     => __( 'Cream Bville loyalty card with the official orange and green lockup', 'dphilhower-studio' ),
 					'heading' => __( 'Loyalty card', 'dphilhower-studio' ),
 					'story'   => __( 'The official lockup at the top. Oval punches below so ten pies still earn one on the house.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'bville-print-poster.png',
+					'alt'     => __( 'Cream dining-room poster reading The Town in the Name with the Bville lockup', 'dphilhower-studio' ),
+					'heading' => __( 'Dining-room poster', 'dphilhower-studio' ),
+					'story'   => __( 'The line is the brief, dining-room scale. Cream sheet, forest ink, one orange rule. No food photography; the room already has the pie.', 'dphilhower-studio' ),
 				),
 				array(
 					'file'    => 'bville-print-matches.png',
@@ -407,7 +425,7 @@ function dps_brand_kits() {
 		'casa-forno'               => array(
 			'label'  => __( 'Print system', 'dphilhower-studio' ),
 			'title'  => __( 'The seal, then the room', 'dphilhower-studio' ),
-			'intro'  => __( 'Official CF badge on black. Gold vinyl on the dusk window. Cream menu with primi, secondi, dolci. Oil bottle and ragù box carry weight, keep, and lot.', 'dphilhower-studio' ),
+			'intro'  => __( 'Official CF badge on black. Gold vinyl on the dusk window. Cream menu with primi, secondi, dolci. Oil, ragù, cards, coasters, loyalty, poster, and matchbook carry the same wine and gold.', 'dphilhower-studio' ),
 			'pieces' => array(
 				array(
 					'file'    => 'casa-forno-print-seal.png',
@@ -432,6 +450,36 @@ function dps_brand_kits() {
 					'alt'     => __( 'Casa Forno olive oil bottle and house ragù takeaway box with the official seal', 'dphilhower-studio' ),
 					'heading' => __( 'Oil and box', 'dphilhower-studio' ),
 					'story'   => __( 'Same seal on green glass and kraft. Extra virgin 500 mL, house ragù 16 oz, lot CF-260908.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-cards.png',
+					'alt'     => __( 'Wine and cream Casa Forno business cards with the official CF seal', 'dphilhower-studio' ),
+					'heading' => __( 'Business cards', 'dphilhower-studio' ),
+					'story'   => __( 'Wine field is the plate, gold CF is the window stamp in a pocket. Cream reverse sits next to the menu. A name, a phone, a street.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-coasters.png',
+					'alt'     => __( 'Cream and wine Casa Forno coasters with the official CF seal', 'dphilhower-studio' ),
+					'heading' => __( 'Coasters', 'dphilhower-studio' ),
+					'story'   => __( 'The seal in the center so a glass still frames the mark. Wine and wheat on the reverse so the table stays on-brand when a coaster is flipped.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-loyalty.png',
+					'alt'     => __( 'Cream Casa Forno loyalty card with wheat punch holes', 'dphilhower-studio' ),
+					'heading' => __( 'Loyalty card', 'dphilhower-studio' ),
+					'story'   => __( 'Ten visits, one dolci. Wheat punches instead of circles so every return restates the seal.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-poster.png',
+					'alt'     => __( 'Cream dining-room poster reading Trattoria Forno Vino with the Casa Forno seal', 'dphilhower-studio' ),
+					'heading' => __( 'Dining-room poster', 'dphilhower-studio' ),
+					'story'   => __( 'The line is the only copy besides the seal. Dining-room scale of the window lettering. Cream sheet, wine ink, one gold rule.', 'dphilhower-studio' ),
+				),
+				array(
+					'file'    => 'casa-forno-print-matches.png',
+					'alt'     => __( 'Wine napkin band and matchbook with the official Casa Forno seal', 'dphilhower-studio' ),
+					'heading' => __( 'Napkin band and matchbook', 'dphilhower-studio' ),
+					'story'   => __( 'Wine band around cream linen. The matchbook is a pocket version of the poster line. Same seal, small enough to leave with a guest.', 'dphilhower-studio' ),
 				),
 			),
 		),
@@ -468,6 +516,12 @@ function dps_render_brand_kit( $slug ) {
 		return;
 	}
 	$kit = $kits[ $slug ];
+	if ( function_exists( 'dps_render_brand_process' ) ) {
+		dps_render_brand_process( $slug );
+	}
+	if ( function_exists( 'dps_render_identity_kit' ) ) {
+		dps_render_identity_kit( $slug, 'ember-pie-co' !== $slug );
+	}
 	if ( function_exists( 'dps_render_brand_system' ) ) {
 		dps_render_brand_system( $slug );
 	}
@@ -486,4 +540,7 @@ function dps_render_brand_kit( $slug ) {
 	</div>
 </section>
 	<?php
+	if ( function_exists( 'dps_render_touchpoints' ) ) {
+		dps_render_touchpoints( $slug );
+	}
 }

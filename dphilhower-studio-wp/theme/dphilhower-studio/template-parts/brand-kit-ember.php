@@ -5,6 +5,11 @@
  * @package DPhilhowerStudio
  */
 ?>
+<?php
+if ( function_exists( 'dps_render_brand_process' ) ) {
+	dps_render_brand_process( 'ember-pie-co' );
+}
+?>
 <section class="brand-kit">
 	<p class="section-label"><?php esc_html_e( 'The kit', 'dphilhower-studio' ); ?></p>
 	<h2 class="section-title"><?php esc_html_e( 'Mark, color, type', 'dphilhower-studio' ); ?></h2>
