@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start a project — D Philhower Studio</title>
+  <meta name="description" content="Contact D Philhower Studio in Morristown, NJ about identity, menus, windows, or a website for your restaurant.">
+  <link rel="canonical" href="https://dphilhowerstudio.com/contact/">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/studio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/img/mark.svg" width="64" height="64" alt="">
+      <span>D Philhower Studio</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav">
+      <a href="/work/">Brands</a>
+      <a href="/services/">Process</a>
+      <a href="/about/">Studio</a>
+      <a class="nav-cta" href="/contact/" aria-current="page">Start a project</a>
+    </nav>
+  </header>
+  <main id="main">
+    <header class="page-hero">
+      <p class="section-label">Contact</p>
+      <h1>Invite us over</h1>
+      <p>Tell us the restaurant, the town, and what needs to change. If it’s a fit, the next step is a meal at your table — not a pitch deck.</p>
+    </header>
+    <section class="section" style="padding-top:1.5rem">
+      <form class="contact-form" name="studio-project" method="POST" data-netlify="true" data-studio-form>
+        <input type="hidden" name="form-name" value="studio-project">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="restaurant">Restaurant or project</label>
+        <input id="restaurant" name="restaurant" type="text" required>
+        <label for="need">What do you need?</label>
+        <select id="need" name="need">
+          <option>Identity</option>
+          <option>Menus &amp; paper</option>
+          <option>Windows &amp; print</option>
+          <option>Website</option>
+          <option>A full system</option>
+        </select>
+        <label for="message">A little more</label>
+        <textarea id="message" name="message" placeholder="Town, timeline, and anything we should know before we sit down."></textarea>
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="form-status" role="status">Thanks — we’ll write back with next steps.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="y"></span> D Philhower Studio</span>
+      <a href="mailto:dphilhowerstudio@gmail.com">dphilhowerstudio@gmail.com</a>
+    </div>
+  </footer>
+  <script src="/js/studio.js"></script>
+</body>
+</html>
