@@ -1,0 +1,105 @@
+:root {
+  --pv-plaster: #f3e6d4;
+  --pv-brick: #8c2f24;
+  --pv-brick-deep: #5e1d16;
+  --pv-olive: #4f5d32;
+  --pv-straw: #c9a15b;
+  --font-display: "Playfair Display", "Times New Roman", serif;
+  --font-body: "Karla", "Helvetica Neue", sans-serif;
+  --space: clamp(1.1rem, 4vw, 2.6rem);
+}
+
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body {
+  margin: 0;
+  background: var(--pv-plaster);
+  color: var(--pv-brick-deep);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; height: auto; }
+
+.pv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem var(--space);
+  background: var(--pv-brick);
+  color: var(--pv-plaster);
+}
+.pv-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-style: italic;
+}
+.pv-brand img { width: 2.3rem; height: 2.3rem; }
+.pv-nav { display: flex; gap: 1.3rem; font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.pv-nav a:hover { color: var(--pv-straw); }
+
+.pv-hero {
+  min-height: 76vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 4rem var(--space);
+  color: var(--pv-plaster);
+  background:
+    linear-gradient(180deg, rgb(94 29 22 / 0.2), rgb(94 29 22 / 0.72)),
+    url("/img/porta-vecchia-hero.jpg") center / cover no-repeat;
+}
+.pv-hero img { width: 5.2rem; height: 5.2rem; margin: 0 auto 1rem; }
+.pv-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin: 0;
+  line-height: 0.95;
+}
+.pv-hero p { margin: 0.8rem 0 0; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.76rem; color: var(--pv-straw); }
+
+.pv-section { padding: clamp(3rem, 7vw, 5.5rem) var(--space); max-width: 980px; margin: 0 auto; }
+.pv-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  font-style: italic;
+  margin: 0 0 1rem;
+  color: var(--pv-olive);
+}
+.pv-menu { display: grid; gap: 0.85rem; }
+.pv-item { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgb(140 47 36 / 0.18); padding-bottom: 0.7rem; }
+.pv-item strong { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; }
+.pv-hours { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.pv-cta {
+  display: inline-block;
+  margin-top: 1.4rem;
+  padding: 0.75rem 1.2rem;
+  background: var(--pv-brick);
+  color: var(--pv-plaster);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+.pv-cta:hover { background: var(--pv-brick-deep); }
+.pv-footer {
+  padding: 1.2rem var(--space);
+  background: var(--pv-brick);
+  color: var(--pv-plaster);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.pv-studio { color: var(--pv-straw); }
+
+@media (max-width: 700px) {
+  .pv-header, .pv-hours { flex-wrap: wrap; grid-template-columns: 1fr; }
+  .pv-nav { width: 100%; }
+}

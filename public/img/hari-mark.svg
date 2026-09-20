@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Hari">
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#D4A017" stroke-width="2"/>
+  <circle cx="60" cy="60" r="12" fill="#D4A017"/>
+  <path d="M60 22 C64 36 64 44 60 48 C56 44 56 36 60 22 Z" fill="none" stroke="#D4A017" stroke-width="1.6"/>
+  <path d="M60 98 C56 84 56 76 60 72 C64 76 64 84 60 98 Z" fill="none" stroke="#D4A017" stroke-width="1.6"/>
+  <path d="M22 60 C36 56 44 56 48 60 C44 64 36 64 22 60 Z" fill="none" stroke="#D4A017" stroke-width="1.6"/>
+  <path d="M98 60 C84 64 76 64 72 60 C76 56 84 56 98 60 Z" fill="none" stroke="#D4A017" stroke-width="1.6"/>
+  <path d="M33 33 C44 40 50 46 52 52 C46 50 40 44 33 33 Z" fill="none" stroke="#D4A017" stroke-width="1.4"/>
+  <path d="M87 87 C76 80 70 74 68 68 C74 70 80 76 87 87 Z" fill="none" stroke="#D4A017" stroke-width="1.4"/>
+  <path d="M87 33 C80 44 74 50 68 52 C70 46 76 40 87 33 Z" fill="none" stroke="#D4A017" stroke-width="1.4"/>
+  <path d="M33 87 C40 76 46 70 52 68 C50 74 44 80 33 87 Z" fill="none" stroke="#D4A017" stroke-width="1.4"/>
+</svg>

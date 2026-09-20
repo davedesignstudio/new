@@ -6,8 +6,13 @@ The live site is static HTML in `public/`.
 
 ## Featured brands
 
-Three hospitality systems from the same table-first process:
+Eight hospitality systems from the same table-first process:
 
+- [Porta Vecchia](public/brands/porta-vecchia/index.html) — Chatham trattoria
+- [Salt + Cedar](public/brands/salt-cedar/index.html) — Morristown oyster bar
+- [Hari](public/brands/hari/index.html) — Summit modern Indian
+- [Nightjar](public/brands/nightjar/index.html) — Madison wine bar
+- [Ash & Marrow](public/brands/ash-marrow/index.html) — Randolph wood-fired
 - [North Hollow](public/brands/north-hollow/index.html) — Chester tavern
 - [Kumo Counter](public/brands/kumo-counter/index.html) — Morristown omakase
 - [Linden Oven](public/brands/linden-oven/index.html) — Madison bakery-café
@@ -30,7 +35,7 @@ Netlify publish directory: `public` (see `netlify.toml`).
 
 - `/` — Home
 - `/work/` — Brands
-- `/work/north-hollow/` `/work/kumo-counter/` `/work/linden-oven/` — case studies
+- `/work/{slug}/` — case studies for all eight brands
 - `/brands/...` — live brand sites
 - `/services/` — Process
 - `/about/` — Studio
