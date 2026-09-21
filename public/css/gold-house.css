@@ -59,6 +59,7 @@ img { max-width: 100%; display: block; height: auto; }
   font-size: clamp(2.6rem, 7vw, 5.2rem);
   margin: 0;
   letter-spacing: 0.04em;
+  text-shadow: 0 8px 28px rgb(10 20 32 / 0.55);
 }
 .gh-hero .script {
   display: block;
