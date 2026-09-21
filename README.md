@@ -6,7 +6,11 @@ The live site is static HTML in `public/`.
 
 ## Featured brands
 
-Eleven hospitality systems from the same table-first process:
+Fourteen hospitality systems from the same table-first process:
+
+- [Foxhollow](public/brands/foxhollow/index.html) — Far Hills inn (gold fox seal on burgundy)
+- [The Brass Door](public/brands/brass-door/index.html) — Madison supper (knocker seal)
+- [Cider Hill](public/brands/cider-hill/index.html) — Long Valley farm kitchen (apple seal)
 
 - [The Mill House](public/brands/mill-house/index.html) — Mendham kitchen (gold millstone seal)
 - [Bell & Court](public/brands/bell-court/index.html) — Morristown supper club (diamond lockup)
@@ -38,7 +42,7 @@ Netlify publish directory: `public` (see `netlify.toml`).
 
 - `/` — Home
 - `/work/` — Brands
-- `/work/{slug}/` — case studies for all eleven brands
+- `/work/{slug}/` — case studies for all fourteen brands
 - `/brands/...` — live brand sites
 - `/services/` — Process
 - `/about/` — Studio

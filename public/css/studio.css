@@ -674,6 +674,18 @@ main {
   background-image: linear-gradient(180deg, rgb(15 28 46 / 0.18), rgb(15 28 46 / 0.78)), url("/img/stag-lantern-window.jpg");
 }
 
+.fox-hero {
+  background-image: linear-gradient(180deg, rgb(61 15 28 / 0.2), rgb(42 10 18 / 0.78)), url("/img/foxhollow-window.jpg");
+}
+
+.brass-hero {
+  background-image: linear-gradient(180deg, rgb(15 28 46 / 0.2), rgb(15 28 46 / 0.78)), url("/img/brass-door-window.jpg");
+}
+
+.cider-hero {
+  background-image: linear-gradient(180deg, rgb(66 20 31 / 0.2), rgb(44 13 20 / 0.78)), url("/img/cider-hill-window.jpg");
+}
+
 .print-kicker {
   margin: 0 0 0.45rem;
   font-size: 0.72rem;

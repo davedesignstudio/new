@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Foxhollow">
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A44A" stroke-width="2.2"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#C9A44A" stroke-width="1"/>
+  <path d="M48 44 L60 34 L72 44 L68 50 L60 48 L52 50 Z M52 50 C48 58 50 70 60 74 C70 70 72 58 68 50" fill="none" stroke="#C9A44A" stroke-width="1.6" stroke-linejoin="round"/>
+  <text x="60" y="92" text-anchor="middle" fill="#C9A44A" font-family="Georgia, serif" font-size="7" letter-spacing="1.4">FOXHOLLOW</text>
+</svg>

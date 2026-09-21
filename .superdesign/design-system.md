@@ -4,15 +4,15 @@ Independent restaurant design studio in the Morristown / Morris County, NJ area.
 
 ## Jobs to be done
 
-- Show eleven featured brand systems as proof the studio can give a room a complete visual language.
+- Show fourteen featured brand systems as proof the studio can give a room a complete visual language.
 - Explain the design process (Listen → Shape → Print & build) without agency jargon.
 - Convert independent restaurant owners into a first meeting (in person, at their table).
 
 ## Key pages
 
-- `/` Home — manifesto + eleven brand tiles + process
+- `/` Home — manifesto + fourteen brand tiles + process
 - `/work/` Brands index
-- `/work/{slug}/` case studies for all eleven brands
+- `/work/{slug}/` case studies for all fourteen brands
 - `/brands/{slug}/` live brand microsites (the identity in the world)
 - `/services/` Process & services
 - `/about/` Studio
@@ -65,9 +65,12 @@ Warm rag-paper ground, printer’s-ink black, one studio red. Editorial type, no
 - **Process steps:** 01 / 02 / 03 with a left rule
 - **Case study:** hero band in the brand’s palette, then studio paper for the write-up, then a link into the live brand site
 
-## Eleven brands
+## Fourteen brands
 
-1. **The Mill House** — kitchen, Mendham. Navy `#0F1C2E`, brass `#C4A35A`, stone `#E8DFD0`, wood `#6B4E32`, charcoal `#1A1A1A`. Playfair Display + Allura + Montserrat. Saw-tooth millstone seal; print lockup; window gold leaf.
+1. **Foxhollow** — inn, Far Hills. Burgundy `#5C1220`, gold `#C9A44A`, cream `#F3EDE0`, forest `#243024`, charcoal `#1A1A1A`. Playfair Display + Allura + Montserrat. Double-ring fox seal; print lockup; window gold leaf.
+2. **The Brass Door** — supper, Madison. Navy `#0F1C2E`, brass `#C4A35A`, stone `#E8DFD0`, walnut `#5A3A24`, charcoal `#1A1A1A`. Playfair Display + Allura + Montserrat. Knocker seal; print lockup; window gold leaf.
+3. **Cider Hill** — farm kitchen, Long Valley. Cider `#6B1C28`, gold `#C9A44A`, cream `#F4EDE0`, leaf `#4F6B3A`, charcoal `#1A1A1A`. Playfair Display + Allura + Montserrat. Apple-and-wheat seal; print lockup; window gold leaf.
+4. **The Mill House** — kitchen, Mendham. Navy `#0F1C2E`, brass `#C4A35A`, stone `#E8DFD0`, wood `#6B4E32`, charcoal `#1A1A1A`. Playfair Display + Allura + Montserrat. Saw-tooth millstone seal; print lockup; window gold leaf.
 2. **Bell & Court** — supper club, Morristown. Black `#111111`, gold `#C9A44A`, cream `#F3EDE0`, forest `#243024`, brass `#A67C3A`. Playfair Display + Allura + Montserrat. Diamond BC monogram; print lockup; window gold leaf.
 3. **Stag Lantern** — wood grill, Bernardsville. Same navy/brass craftsman palette as The Mill House. Playfair Display + Allura + Montserrat. Stag-and-lantern toothed seal; print lockup; window gold leaf.
 4. **Porta Vecchia** — trattoria in Chatham, NJ. Plaster `#F3E6D4`, brick `#8C2F24`, olive `#4F5D32`, straw `#C9A15B`. Playfair Display + Karla.
