@@ -4,15 +4,15 @@ Independent restaurant design studio in the Morristown / Morris County, NJ area.
 
 ## Jobs to be done
 
-- Show eight featured brand systems as proof the studio can give a room a complete visual language.
+- Show eleven featured brand systems as proof the studio can give a room a complete visual language.
 - Explain the design process (Listen → Shape → Print & build) without agency jargon.
 - Convert independent restaurant owners into a first meeting (in person, at their table).
 
 ## Key pages
 
-- `/` Home — manifesto + eight brand tiles + process
+- `/` Home — manifesto + eleven brand tiles + process
 - `/work/` Brands index
-- `/work/{slug}/` case studies for all eight brands
+- `/work/{slug}/` case studies for all eleven brands
 - `/brands/{slug}/` live brand microsites (the identity in the world)
 - `/services/` Process & services
 - `/about/` Studio
@@ -65,9 +65,12 @@ Warm rag-paper ground, printer’s-ink black, one studio red. Editorial type, no
 - **Process steps:** 01 / 02 / 03 with a left rule
 - **Case study:** hero band in the brand’s palette, then studio paper for the write-up, then a link into the live brand site
 
-## Eight brands
+## Eleven brands
 
-1. **Porta Vecchia** — trattoria in Chatham, NJ. Plaster `#F3E6D4`, brick `#8C2F24`, olive `#4F5D32`, straw `#C9A15B`. Playfair Display + Karla.
+1. **The Mill House** — kitchen, Mendham. Navy `#0F1C2E`, brass `#C4A35A`, stone `#E8DFD0`, wood `#6B4E32`, charcoal `#1A1A1A`. Playfair Display + Allura + Montserrat. Saw-tooth millstone seal; print lockup; window gold leaf.
+2. **Bell & Court** — supper club, Morristown. Black `#111111`, gold `#C9A44A`, cream `#F3EDE0`, forest `#243024`, brass `#A67C3A`. Playfair Display + Allura + Montserrat. Diamond BC monogram; print lockup; window gold leaf.
+3. **Stag Lantern** — wood grill, Bernardsville. Same navy/brass craftsman palette as The Mill House. Playfair Display + Allura + Montserrat. Stag-and-lantern toothed seal; print lockup; window gold leaf.
+4. **Porta Vecchia** — trattoria in Chatham, NJ. Plaster `#F3E6D4`, brick `#8C2F24`, olive `#4F5D32`, straw `#C9A15B`. Playfair Display + Karla.
 2. **Salt + Cedar** — oyster bar, Morristown. Slate `#1B2830`, salt `#F0EBE1`, cedar `#9A4E2C`, tide `#7FA3A0`. Newsreader + IBM Plex Sans.
 3. **Hari** — modern Indian, Summit. Night `#1C120E`, cream `#F6EFE4`, saffron `#C75B1A`, turmeric `#D4A017`, leaf `#2E5A38`. Cormorant Garamond + Outfit.
 4. **Nightjar** — wine bar, Madison. Midnight `#16131C`, plum `#3D2140`, gold `#C8B07A`, paper `#F1EBE0`. Libre Bodoni + Manrope.

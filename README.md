@@ -6,8 +6,11 @@ The live site is static HTML in `public/`.
 
 ## Featured brands
 
-Eight hospitality systems from the same table-first process:
+Eleven hospitality systems from the same table-first process:
 
+- [The Mill House](public/brands/mill-house/index.html) — Mendham kitchen (gold millstone seal)
+- [Bell & Court](public/brands/bell-court/index.html) — Morristown supper club (diamond lockup)
+- [Stag Lantern](public/brands/stag-lantern/index.html) — Bernardsville grill (stag + lantern)
 - [Porta Vecchia](public/brands/porta-vecchia/index.html) — Chatham trattoria
 - [Salt + Cedar](public/brands/salt-cedar/index.html) — Morristown oyster bar
 - [Hari](public/brands/hari/index.html) — Summit modern Indian
@@ -35,7 +38,7 @@ Netlify publish directory: `public` (see `netlify.toml`).
 
 - `/` — Home
 - `/work/` — Brands
-- `/work/{slug}/` — case studies for all eight brands
+- `/work/{slug}/` — case studies for all eleven brands
 - `/brands/...` — live brand sites
 - `/services/` — Process
 - `/about/` — Studio
