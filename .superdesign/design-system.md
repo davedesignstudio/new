@@ -71,12 +71,12 @@ Warm rag-paper ground, printer’s-ink black, one studio red. Editorial type, no
 2. **Bell & Court** — supper club, Morristown. Black `#111111`, gold `#C9A44A`, cream `#F3EDE0`, forest `#243024`, brass `#A67C3A`. Playfair Display + Allura + Montserrat. Diamond BC monogram; print lockup; window gold leaf.
 3. **Stag Lantern** — wood grill, Bernardsville. Same navy/brass craftsman palette as The Mill House. Playfair Display + Allura + Montserrat. Stag-and-lantern toothed seal; print lockup; window gold leaf.
 4. **Porta Vecchia** — trattoria in Chatham, NJ. Plaster `#F3E6D4`, brick `#8C2F24`, olive `#4F5D32`, straw `#C9A15B`. Playfair Display + Karla.
-2. **Salt + Cedar** — oyster bar, Morristown. Slate `#1B2830`, salt `#F0EBE1`, cedar `#9A4E2C`, tide `#7FA3A0`. Newsreader + IBM Plex Sans.
-3. **Hari** — modern Indian, Summit. Night `#1C120E`, cream `#F6EFE4`, saffron `#C75B1A`, turmeric `#D4A017`, leaf `#2E5A38`. Cormorant Garamond + Outfit.
-4. **Nightjar** — wine bar, Madison. Midnight `#16131C`, plum `#3D2140`, gold `#C8B07A`, paper `#F1EBE0`. Libre Bodoni + Manrope.
-5. **Ash & Marrow** — wood-fired, Randolph. Charcoal `#161311`, ash `#C9C2B6`, ember `#C44A1A`, bone `#EBE4D6`. Oswald + Source Sans 3.
-6. **North Hollow** — tavern in Chester, NJ. Forest `#1C2A22`, cream `#EDE6D4`, brass `#C4A35A`. Cormorant Garamond + Barlow.
-7. **Kumo Counter** — eight-seat omakase, Morristown. Sumi `#111111`, washi `#EFECE4`, indigo `#24315C`, vermillion `#C44536`. Shippori Mincho + Zen Kaku Gothic New.
-8. **Linden Oven** — bakery-café, Madison. Flour `#F7F0E4`, cocoa `#3D2A1F`, terracotta `#C46A3A`, leaf `#6F8454`. Fraunces + Nunito Sans.
+5. **Salt + Cedar** — oyster bar, Morristown. Slate `#1B2830`, salt `#F0EBE1`, cedar `#9A4E2C`, tide `#7FA3A0`. Newsreader + IBM Plex Sans.
+6. **Hari** — modern Indian, Summit. Night `#1C120E`, cream `#F6EFE4`, saffron `#C75B1A`, turmeric `#D4A017`, leaf `#2E5A38`. Cormorant Garamond + Outfit.
+7. **Nightjar** — wine bar, Madison. Midnight `#16131C`, plum `#3D2140`, gold `#C8B07A`, paper `#F1EBE0`. Libre Bodoni + Manrope.
+8. **Ash & Marrow** — wood-fired, Randolph. Charcoal `#161311`, ash `#C9C2B6`, ember `#C44A1A`, bone `#EBE4D6`. Oswald + Source Sans 3.
+9. **North Hollow** — tavern in Chester, NJ. Forest `#1C2A22`, cream `#EDE6D4`, brass `#C4A35A`. Cormorant Garamond + Barlow.
+10. **Kumo Counter** — eight-seat omakase, Morristown. Sumi `#111111`, washi `#EFECE4`, indigo `#24315C`, vermillion `#C44536`. Shippori Mincho + Zen Kaku Gothic New.
+11. **Linden Oven** — bakery-café, Madison. Flour `#F7F0E4`, cocoa `#3D2A1F`, terracotta `#C46A3A`, leaf `#6F8454`. Fraunces + Nunito Sans.
 
 Do not mix brand palettes into studio chrome. Do not reintroduce Rock Salt, PT Sans coral (`#ff7660`), or the previous maroon/gold stage.
