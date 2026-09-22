@@ -43,9 +43,9 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 	</section>
 
 	<section class="section">
-		<p class="section-label"><?php esc_html_e( 'Three restaurants', 'dphilhower-studio' ); ?></p>
+		<p class="section-label"><?php esc_html_e( 'Restaurants', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title is-wide"><?php esc_html_e( 'Full process, full branding', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'Sit down, write it back, draw, build — then the window, the menu, the pack, and the phone. Three rooms, each as one kit: Bville Pizza & Grill in-house, Ember Pie Co., and Casa Forno.', 'dphilhower-studio' ); ?></p>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Sit down, write it back, draw, build — then the window, the menu, the pack, and the phone. Eight rooms, each as one kit: Bville Pizza & Grill in-house, Ember Pie Co., Casa Forno, and five new studio systems — Salt & Cedar, Noche Roja, Hearth & Rye, Black Olive, and Mizu.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-trio">
 			<?php
 			$featured_ids = array();

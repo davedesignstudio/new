@@ -1,8 +1,9 @@
 <?php
 /**
- * Full process + identity kits for the three restaurant systems.
+ * Full process + identity kits for the restaurant systems.
  *
- * Bville Pizza & Grill (in-house 2018–2021), Ember Pie Co., Casa Forno.
+ * Bville Pizza & Grill (in-house 2018–2021), Ember Pie Co., Casa Forno,
+ * plus Salt & Cedar, Noche Roja, Hearth & Rye, Black Olive, and Mizu.
  *
  * @package DPhilhowerStudio
  */
@@ -96,11 +97,141 @@ function dps_brand_processes() {
 				),
 			),
 		),
+		'salt-cedar' => array(
+			'title' => __( 'From the bar to the harbor', 'dphilhower-studio' ),
+			'intro' => __( 'A coastal bar system written for dusk on Main Street. Sit on a stool, write the line the window can hold, draw the brass seal, then print cream, navy, and kraft until takeaway still reads as Salt & Cedar.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
+					'title' => __( 'A stool at the oyster bar', 'dphilhower-studio' ),
+					'copy'  => __( 'The first conversation is who walks in for a dozen, who stays for a drink, and what has to live on glass in brass — not a cartoon shell.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
+					'title' => __( 'Oysters · Bar · Harbor', 'dphilhower-studio' ),
+					'copy'  => __( 'The brief: navy for depth, cedar for the board, pearl for cream stock, brass for the sign. The food stays inside. The line under the seal has to agree with the menu and the bottle.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
+					'title' => __( 'Brass SC, pearl ring', 'dphilhower-studio' ),
+					'copy'  => __( 'Official circular seal: brass SC, SALT & CEDAR on the top arc, OYSTER BAR on the bottom, wave and cedar at the sides, navy plate. Quiet serif for the list. Brass rules.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '04 · Build', 'dphilhower-studio' ),
+					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Dusk window, cream menu, vinegar and takeaway, cards, coasters, loyalty, poster, matchbook, and a homepage that uses the same navy and brass. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'noche-roja' => array(
+			'title' => __( 'From the mesa to the fuego', 'dphilhower-studio' ),
+			'intro' => __( 'A cantina system written for dusk and a red door. Sit down, write the line the window can hold, draw the marigold seal, then print cream, chili, and kraft until takeaway still reads as Noche Roja.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
+					'title' => __( 'A table under the string lights', 'dphilhower-studio' ),
+					'copy'  => __( 'The first conversation is who walks in for tacos, who stays for mezcal, and what has to live on glass in marigold — not a cartoon sombrero.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
+					'title' => __( 'Cantina · Fuego · Mesa', 'dphilhower-studio' ),
+					'copy'  => __( 'The brief: chili for heat, adobe for the wall, ink for night, marigold for the stamp. The food stays inside. The line under the seal has to agree with the menu and the jar.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
+					'title' => __( 'Marigold NR, chili plate', 'dphilhower-studio' ),
+					'copy'  => __( 'Official circular seal: marigold NR, NOCHE ROJA on the top arc, CANTINA on the bottom, chili and sun at the sides. Quiet serif for the list. Marigold rules.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '04 · Build', 'dphilhower-studio' ),
+					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Dusk window, cream menu, salsa and takeaway, cards, coasters, loyalty, poster, matchbook, and a homepage that uses the same chili and marigold. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'hearth-rye' => array(
+			'title' => __( 'From the hearth to the loaf', 'dphilhower-studio' ),
+			'intro' => __( 'A roast-house system written for charcoal and copper. Sit down, write the line the window can hold, draw the copper seal, then print cream, charcoal, and kraft until takeaway still reads as Hearth & Rye.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
+					'title' => __( 'A booth by the fire', 'dphilhower-studio' ),
+					'copy'  => __( 'The first conversation is who walks in for a roast, who takes bread home, and what has to live on glass in copper — not a cartoon steak.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
+					'title' => __( 'Roast · Rye · Fire', 'dphilhower-studio' ),
+					'copy'  => __( 'The brief: charcoal for the room, rye for the loaf, cream for stock, copper for the stamp. The food stays inside. The line under the seal has to agree with the menu and the jar.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
+					'title' => __( 'Copper HR, charcoal plate', 'dphilhower-studio' ),
+					'copy'  => __( 'Official circular seal: copper HR, HEARTH & RYE on the top arc, ROAST HOUSE on the bottom, wheat and flame at the sides. Quiet serif for the list. Copper rules.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '04 · Build', 'dphilhower-studio' ),
+					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Dusk window, cream menu, mustard and takeaway, cards, coasters, loyalty, poster, matchbook, and a homepage that uses the same charcoal and copper. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'black-olive' => array(
+			'title' => __( 'From the grove to the sea', 'dphilhower-studio' ),
+			'intro' => __( 'A meze system written for whitewash and olive green. Sit down, write the line the window can hold, draw the BO seal, then print cream, olive, and kraft until takeaway still reads as Black Olive.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
+					'title' => __( 'A table in the whitewash', 'dphilhower-studio' ),
+					'copy'  => __( 'The first conversation is who walks in for meze, who takes oil home, and what has to live on glass in cream — not a cartoon column.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
+					'title' => __( 'Meze · Olive · Sea', 'dphilhower-studio' ),
+					'copy'  => __( 'The brief: olive for the grove, black for night, whitewash for the wall, Aegean for water. The food stays inside. The line under the seal has to agree with the menu and the bottle.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
+					'title' => __( 'Cream BO, olive plate', 'dphilhower-studio' ),
+					'copy'  => __( 'Official circular seal: cream BO, BLACK OLIVE on the top arc, MEZE on the bottom, olive branch at the sides. Quiet serif for the list. Aegean rules.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '04 · Build', 'dphilhower-studio' ),
+					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Dusk window, cream menu, oil and takeaway, cards, coasters, loyalty, poster, matchbook, and a homepage that uses the same olive and Aegean. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'mizu' => array(
+			'title' => __( 'From the steam to the night', 'dphilhower-studio' ),
+			'intro' => __( 'A ramen system written for indigo and steam. Sit at the counter, write the line the window can hold, draw the seal, then print cream, indigo, and kraft until takeaway still reads as Mizu.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
+					'title' => __( 'A stool at the counter', 'dphilhower-studio' ),
+					'copy'  => __( 'The first conversation is who walks in for a bowl, who takes chili oil home, and what has to live on glass in white — not a cartoon noodle.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
+					'title' => __( 'Ramen · Steam · Night', 'dphilhower-studio' ),
+					'copy'  => __( 'The brief: indigo for night, steam for cream stock, charcoal for the counter, vermillion for heat. The food stays inside. The line under the seal has to agree with the menu and the bottle.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
+					'title' => __( 'White MIZU, indigo plate', 'dphilhower-studio' ),
+					'copy'  => __( 'Official circular seal: MIZU in condensed white caps, RAMEN on the top arc, STEAM · NIGHT on the bottom, wave motif, thin vermillion ring. Quiet sans for the list.', 'dphilhower-studio' ),
+				),,
+				array(
+					'num'   => __( '04 · Build', 'dphilhower-studio' ),
+					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Dusk window, cream menu, chili oil and takeaway, cards, coasters, loyalty, poster, matchbook, and a homepage that uses the same indigo and vermillion. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
 	);
 }
 
 /**
- * Mark / color / type boards for the three restaurants.
+ * Mark / color / type boards for the restaurant systems.
  *
  * @return array
  */
@@ -159,6 +290,96 @@ function dps_identity_kits() {
 			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
 			'body_label'     => __( 'Body — quiet serif', 'dphilhower-studio' ),
 			'body_note'      => __( 'Primi, secondi, dolci. Prices in a column. The kitchen is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'salt-cedar' => array(
+			'wordmark'       => 'Salt',
+			'wordmark_span'  => '& Cedar',
+			'blurb'          => __( 'Trajan-like caps for the seal. Quiet serif for oysters and chilled seafood. Navy plate, brass SC, pearl ring, cedar at the sides. Cream stock, brass rules.', 'dphilhower-studio' ),
+			'board'          => 'salt-cedar-kit.png',
+			'board_alt'      => __( 'Salt & Cedar identity board: official seal, navy, cedar, pearl, brass', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-salt-navy', 'name' => 'Navy', 'hex' => '#0B1F33' ),
+				array( 'class' => 'swatch-salt-cedar', 'name' => 'Cedar', 'hex' => '#8B5A2B' ),
+				array( 'class' => 'swatch-salt-pearl', 'name' => 'Pearl', 'hex' => '#F2EDE4' ),
+				array( 'class' => 'swatch-salt-brass', 'name' => 'Brass', 'hex' => '#C4A35A' ),
+			),
+			'display_label'  => __( 'Display — Trajan-like caps', 'dphilhower-studio' ),
+			'display_sample' => 'SALT & CEDAR',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet serif', 'dphilhower-studio' ),
+			'body_note'      => __( 'Oysters, chilled, bar. Prices in a column. The shucker is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'noche-roja' => array(
+			'wordmark'       => 'Noche',
+			'wordmark_span'  => 'Roja',
+			'blurb'          => __( 'Condensed caps for the seal. Quiet serif for antojitos and tacos. Chili plate, marigold NR, adobe warmth, ink night. Cream stock, marigold rules.', 'dphilhower-studio' ),
+			'board'          => 'noche-roja-kit.png',
+			'board_alt'      => __( 'Noche Roja identity board: official seal, chili, adobe, ink, marigold', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-noche-chili', 'name' => 'Chili', 'hex' => '#B91C1C' ),
+				array( 'class' => 'swatch-noche-adobe', 'name' => 'Adobe', 'hex' => '#C4784A' ),
+				array( 'class' => 'swatch-noche-ink', 'name' => 'Ink', 'hex' => '#1A120E' ),
+				array( 'class' => 'swatch-noche-marigold', 'name' => 'Marigold', 'hex' => '#E8A317' ),
+			),
+			'display_label'  => __( 'Display — condensed caps', 'dphilhower-studio' ),
+			'display_sample' => 'NOCHE ROJA',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet serif', 'dphilhower-studio' ),
+			'body_note'      => __( 'Antojitos, tacos, mezcal. Prices in a column. The grill is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'hearth-rye' => array(
+			'wordmark'       => 'Hearth',
+			'wordmark_span'  => '& Rye',
+			'blurb'          => __( 'Serif caps for the seal. Quiet serif for roasts and sides. Charcoal plate, copper HR, rye amber, cream stock. Copper rules.', 'dphilhower-studio' ),
+			'board'          => 'hearth-rye-kit.png',
+			'board_alt'      => __( 'Hearth & Rye identity board: official seal, charcoal, rye, cream, copper', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-hearth-charcoal', 'name' => 'Charcoal', 'hex' => '#1F1A17' ),
+				array( 'class' => 'swatch-hearth-rye', 'name' => 'Rye', 'hex' => '#B8894A' ),
+				array( 'class' => 'swatch-hearth-cream', 'name' => 'Cream', 'hex' => '#F1E6D2' ),
+				array( 'class' => 'swatch-hearth-copper', 'name' => 'Copper', 'hex' => '#B87333' ),
+			),
+			'display_label'  => __( 'Display — serif caps', 'dphilhower-studio' ),
+			'display_sample' => 'HEARTH & RYE',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet serif', 'dphilhower-studio' ),
+			'body_note'      => __( 'Roasts, rye, sides. Prices in a column. The hearth is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'black-olive' => array(
+			'wordmark'       => 'Black',
+			'wordmark_span'  => 'Olive',
+			'blurb'          => __( 'Trajan-like caps for the seal. Quiet serif for meze and grilled fish. Olive plate, cream BO, black night, Aegean blue. Cream stock, Aegean rules.', 'dphilhower-studio' ),
+			'board'          => 'black-olive-kit.png',
+			'board_alt'      => __( 'Black Olive identity board: official seal, olive, black, whitewash, Aegean', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-olive-green', 'name' => 'Olive', 'hex' => '#3F4F2E' ),
+				array( 'class' => 'swatch-olive-black', 'name' => 'Black', 'hex' => '#121210' ),
+				array( 'class' => 'swatch-olive-wash', 'name' => 'Whitewash', 'hex' => '#F5F1E8' ),
+				array( 'class' => 'swatch-olive-aegean', 'name' => 'Aegean', 'hex' => '#2F5D7C' ),
+			),
+			'display_label'  => __( 'Display — Trajan-like caps', 'dphilhower-studio' ),
+			'display_sample' => 'BLACK OLIVE',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet serif', 'dphilhower-studio' ),
+			'body_note'      => __( 'Meze, olives, grilled fish. Prices in a column. The kitchen is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'mizu' => array(
+			'wordmark'       => 'Mizu',
+			'wordmark_span'  => 'Ramen',
+			'blurb'          => __( 'Condensed caps for the seal. Quiet sans for ramen and small plates. Indigo plate, steam cream, charcoal counter, vermillion accent. Cream stock, thin rules.', 'dphilhower-studio' ),
+			'board'          => 'mizu-kit.png',
+			'board_alt'      => __( 'Mizu identity board: official seal, indigo, steam, charcoal, vermillion', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-mizu-indigo', 'name' => 'Indigo', 'hex' => '#1B2A4A' ),
+				array( 'class' => 'swatch-mizu-steam', 'name' => 'Steam', 'hex' => '#F3F0EA' ),
+				array( 'class' => 'swatch-mizu-charcoal', 'name' => 'Charcoal', 'hex' => '#1C1C1C' ),
+				array( 'class' => 'swatch-mizu-vermillion', 'name' => 'Vermillion', 'hex' => '#C73E2A' ),
+			),
+			'display_label'  => __( 'Display — condensed caps', 'dphilhower-studio' ),
+			'display_sample' => 'MIZU',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet sans', 'dphilhower-studio' ),
+			'body_note'      => __( 'Ramen, small plates, tea. Prices in a column. The kitchen is twenty feet away — no food photos.', 'dphilhower-studio' ),
 		),
 	);
 }
@@ -229,6 +450,111 @@ function dps_brand_touchpoints() {
 				array(
 					'file'  => 'casa-forno-print-pack.png',
 					'alt'   => __( 'Casa Forno olive oil bottle and house ragù takeaway box with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'salt-cedar' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Brass seal on glass. Vinegar and kraft carry weight, keep, and lot. The homepage uses the same navy and brass as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'salt-cedar-print-window.png',
+					'alt'   => __( 'Salt & Cedar dusk oyster-bar window with the brass seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'salt-cedar-phone.png',
+					'alt'   => __( 'Phone showing the Salt & Cedar homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'salt-cedar-print-pack.png',
+					'alt'   => __( 'Salt & Cedar vinegar bottle and kraft takeaway with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'noche-roja' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Marigold seal on glass. Salsa and kraft carry weight, keep, and lot. The homepage uses the same chili and marigold as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'noche-roja-print-window.png',
+					'alt'   => __( 'Noche Roja dusk cantina window with the marigold seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'noche-roja-phone.png',
+					'alt'   => __( 'Phone showing the Noche Roja homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'noche-roja-print-pack.png',
+					'alt'   => __( 'Noche Roja salsa jar and kraft takeaway with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'hearth-rye' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Copper seal on glass. Mustard and kraft carry weight, keep, and lot. The homepage uses the same charcoal and copper as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'hearth-rye-print-window.png',
+					'alt'   => __( 'Hearth & Rye dusk roast-house window with the copper seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'hearth-rye-phone.png',
+					'alt'   => __( 'Phone showing the Hearth & Rye homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'hearth-rye-print-pack.png',
+					'alt'   => __( 'Hearth & Rye mustard jar and kraft takeaway with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'black-olive' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Seal on glass. Oil and kraft carry weight, keep, and lot. The homepage uses the same olive and Aegean as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'black-olive-print-window.png',
+					'alt'   => __( 'Black Olive dusk meze window with the seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'black-olive-phone.png',
+					'alt'   => __( 'Phone showing the Black Olive homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'black-olive-print-pack.png',
+					'alt'   => __( 'Black Olive oil bottle and kraft takeaway with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'mizu' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Seal on glass. Chili oil and kraft carry weight, keep, and lot. The homepage uses the same indigo and vermillion as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'mizu-print-window.png',
+					'alt'   => __( 'Mizu dusk ramen window with the seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'mizu-phone.png',
+					'alt'   => __( 'Phone showing the Mizu homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'mizu-print-pack.png',
+					'alt'   => __( 'Mizu chili oil bottle and kraft takeaway with the official seal', 'dphilhower-studio' ),
 					'phone' => false,
 				),
 			),

@@ -497,6 +497,26 @@ body {
 .swatch-casa-gold { background: #D4AF37; color: #1c1610; }
 .swatch-casa-silver { background: #C5C7C9; color: #1c1610; }
 .swatch-casa-cream { background: #F4EFE4; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-salt-navy { background: #0B1F33; color: #f2ede4; }
+.swatch-salt-cedar { background: #8B5A2B; color: #f2ede4; }
+.swatch-salt-pearl { background: #F2EDE4; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-salt-brass { background: #C4A35A; color: #1c1610; }
+.swatch-noche-chili { background: #B91C1C; color: #f2ede4; }
+.swatch-noche-adobe { background: #C4784A; color: #1c1610; }
+.swatch-noche-ink { background: #1A120E; color: #f2ede4; }
+.swatch-noche-marigold { background: #E8A317; color: #1c1610; }
+.swatch-hearth-charcoal { background: #1F1A17; color: #f1e6d2; }
+.swatch-hearth-rye { background: #B8894A; color: #1c1610; }
+.swatch-hearth-cream { background: #F1E6D2; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-hearth-copper { background: #B87333; color: #1c1610; }
+.swatch-olive-green { background: #3F4F2E; color: #f5f1e8; }
+.swatch-olive-black { background: #121210; color: #f5f1e8; }
+.swatch-olive-wash { background: #F5F1E8; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-olive-aegean { background: #2F5D7C; color: #f5f1e8; }
+.swatch-mizu-indigo { background: #1B2A4A; color: #f3f0ea; }
+.swatch-mizu-steam { background: #F3F0EA; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-mizu-charcoal { background: #1C1C1C; color: #f3f0ea; }
+.swatch-mizu-vermillion { background: #C73E2A; color: #f3f0ea; }
 
 .work-grid.is-trio {
   display: grid;
@@ -507,13 +527,21 @@ body {
   .work-grid.is-trio,
   .work-grid.is-trio.is-home {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(220px, 28vw);
+    grid-auto-rows: minmax(200px, 24vw);
   }
 
   .work-grid.is-trio .work-item:first-child,
   .work-grid.is-home.is-trio .work-item:first-child {
     grid-column: auto;
     grid-row: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .work-grid.is-trio,
+  .work-grid.is-trio.is-home {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, 18vw);
   }
 }
 
