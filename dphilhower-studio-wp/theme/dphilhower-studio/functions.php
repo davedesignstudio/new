@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DPS_VERSION', '1.2.0' );
+define( 'DPS_VERSION', '1.3.0' );
 define( 'DPS_DIR', get_template_directory() );
 define( 'DPS_URI', get_template_directory_uri() );
 
@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'dps_setup' );
 function dps_assets() {
 	wp_enqueue_style(
 		'dps-fonts',
-		'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap',
+		'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Syne:wght@500;600;700;800&display=swap',
 		array(),
 		null
 	);

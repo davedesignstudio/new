@@ -36,13 +36,19 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section reveal">
 		<p class="section-label"><?php esc_html_e( 'Studio', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'We start at the table', 'dphilhower-studio' ); ?></h2>
 		<p class="section-copy is-wide"><?php esc_html_e( 'The first conversation is a meal, not a pitch. We sit at your restaurant — a two-top, the bar, or the pass — and talk the way hospitality people talk: who walks in, what they order, what the block already thinks you are. From that table we write, draw, and build so guests recognize you before they sit down.', 'dphilhower-studio' ); ?></p>
 	</section>
 
-	<section class="section">
+	<section class="section reveal" id="craft">
+		<p class="section-label"><?php esc_html_e( 'Craft · 2024–now', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title is-wide"><?php esc_html_e( 'Bold structure. Human grain.', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant design right now rewards two things at once: a clean modernist spine guests can read in a glance, and a tactile human signal that AI polish cannot fake. We keep the hierarchy sharp — then leave room for paper tooth, imperfect type, and marks that feel cooked, not generated.', 'dphilhower-studio' ); ?></p>
+	</section>
+
+	<section class="section reveal">
 		<p class="section-label"><?php esc_html_e( 'Restaurants', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title is-wide"><?php esc_html_e( 'Full process, full branding', 'dphilhower-studio' ); ?></h2>
 		<p class="section-copy is-wide"><?php esc_html_e( 'Sit down, write it back, draw, build — then the window, the menu, the pack, and the phone. Eight rooms, each as one kit: Bville Pizza & Grill in-house, Ember Pie Co., Casa Forno, and five new studio systems — Salt & Cedar, Noche Roja, Hearth & Rye, Black Olive, and Mizu.', 'dphilhower-studio' ); ?></p>
@@ -74,7 +80,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section reveal">
 		<p class="section-label"><?php esc_html_e( 'Also in the studio', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'Coffee, deli, ice cream', 'dphilhower-studio' ); ?></h2>
 		<p class="section-copy is-wide"><?php esc_html_e( 'The other hospitality rooms — including Cafe Robust, Ritual, EXPresso, Bernardsville Deli, and Cow Lick. Construction, sleep, and Design + Build live with the rest of the brands.', 'dphilhower-studio' ); ?></p>
@@ -111,7 +117,7 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 
 	<?php get_template_part( 'template-parts/process-section' ); ?>
 
-	<section class="section locale">
+	<section class="section locale reveal">
 		<div class="locale-panel">
 			<h2><?php esc_html_e( 'Bernardsville, Morristown, Morris County', 'dphilhower-studio' ); ?></h2>
 			<p><?php esc_html_e( 'David Philhower designs for owners who want a local partner. The first meeting is at your restaurant — in Bernardsville, Morristown, or the next town over — not a distant mill that retrofits one layout for the next shop.', 'dphilhower-studio' ); ?></p>

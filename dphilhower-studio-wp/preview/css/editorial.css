@@ -1,24 +1,25 @@
-/* Studio chrome: maroon sides, black center. Official client marks stay as they are. */
+/* Studio chrome: wine rails, charcoal stage, film grain. Official client marks stay as they are. */
 
 :root {
-  --ink: #f3ead8;
-  --ink-soft: #d8cbb8;
-  --stone: #ece6c4;
-  --stone-deep: #d8d09a;
-  --paper: #f8f4dc;
-  --maroon: #6b1324;
-  --stage: #000000;
+  --ink: #f2eadc;
+  --ink-soft: #d8cbb6;
+  --stone: #cfc4b2;
+  --stone-deep: #b5a894;
+  --paper: #e4dccb;
+  --maroon: #3f141c;
+  --stage: #14110f;
   --stage-width: min(1240px, 100%);
-  --verdigris: #c42e86;
-  --verdigris-bright: #d03393;
-  --heat: #2e41a1;
-  --heat-bright: #3d54c4;
-  --brass: #fcdd44;
-  --gold: #d4af37;
-  --muted: #c4b4a4;
-  --line: rgba(212, 175, 55, 0.22);
-  --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
-  --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
+  --verdigris: #c9a24a;
+  --verdigris-bright: #dfb65a;
+  --heat: #c45a2e;
+  --heat-bright: #d86a3a;
+  --brass: #c9a24a;
+  --gold: #c9a24a;
+  --muted: #a89884;
+  --line: rgba(201, 162, 74, 0.28);
+  --font-display: "Syne", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
 body {
