@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article class="project">
+  <header class="page-header page-header--project">
+    <div class="container">
+      <p class="eyebrow"><a href="/work/">Work</a> <span aria-hidden="true">/</span> {{ .Params.client }}</p>
+      <h1 class="page-header__title">{{ .Title }}</h1>
+      {{ with .Params.summary }}<p class="page-header__lead">{{ . }}</p>{{ end }}
+
+      <dl class="project__meta">
+        <div><dt>Client</dt><dd>{{ .Params.client }}{{ if and .Params.sample .Site.Params.show_sample_tags }} <span class="tag tag--sample tag--inline">Sample</span>{{ end }}</dd></div>
+        <div><dt>Location</dt><dd>{{ .Params.location }}</dd></div>
+        <div><dt>Year</dt><dd>{{ .Params.year }}</dd></div>
+        <div><dt>Services</dt><dd>{{ delimit .Params.services ", " }}</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <figure class="project__hero container">
+    <img src="{{ .Params.image }}" alt="{{ .Title }} — cover image">
+  </figure>
+
+  <div class="container project__body">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+
+  {{ with .Params.images }}
+  <div class="container project__gallery">
+    {{ range . }}
+    <figure class="project__gallery-item reveal"><img src="{{ . }}" alt="" loading="lazy"></figure>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* Hugo's NextInSection points up the list (towards the first page), so
+       the labels are swapped to read in reading order. */}}
+  <nav class="project__nav container" aria-label="More projects">
+    {{ with .NextInSection }}
+    <a class="project__nav-link" href="{{ .RelPermalink }}">
+      <span class="eyebrow">Previous</span>
+      <span class="project__nav-title">{{ .Title }}</span>
+    </a>
+    {{ else }}<span></span>{{ end }}
+    {{ with .PrevInSection }}
+    <a class="project__nav-link project__nav-link--next" href="{{ .RelPermalink }}">
+      <span class="eyebrow">Next</span>
+      <span class="project__nav-title">{{ .Title }} {{ partial "icon-arrow" . }}</span>
+    </a>
+    {{ end }}
+  </nav>
+</article>
+
+{{ partial "cta" . }}
+{{ end }}

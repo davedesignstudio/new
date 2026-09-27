@@ -22,20 +22,18 @@ gulp.task("hugo", cb => buildSite(cb));
 gulp.task("hugo-preview", cb => buildSite(cb, hugoArgsPreview));
 
 // Run server tasks
-gulp.task("server", ["hugo", "css", "js", "fonts", "videos", "images"], cb =>
+gulp.task("server", ["hugo", "css", "js", "fonts", "images"], cb =>
   runServer(cb)
 );
-gulp.task(
-  "server-preview",
-  ["hugo-preview", "css", "js", "fonts", "videos", "images"],
-  cb => runServer(cb)
+gulp.task("server-preview", ["hugo-preview", "css", "js", "fonts", "images"], cb =>
+  runServer(cb)
 );
 
 // Build/production tasks
-gulp.task("build", ["css", "js", "fonts", "videos", "images"], cb =>
+gulp.task("build", ["css", "js", "fonts", "images"], cb =>
   buildSite(cb, [], "production")
 );
-gulp.task("build-preview", ["css", "js", "fonts", "videos", "images"], cb =>
+gulp.task("build-preview", ["css", "js", "fonts", "images"], cb =>
   buildSite(cb, hugoArgsPreview, "production")
 );
 
@@ -47,7 +45,9 @@ gulp.task("css", () =>
       postcss([
         cssImport({ from: "./src/css/main.css" }),
         cssNested(),
-        cssnext()
+        // Custom properties are left untouched so per-section theme overrides
+        // (e.g. dark sections) keep working at runtime.
+        cssnext({ features: { customProperties: false, rem: false } })
       ])
     )
     .pipe(gulp.dest("./dist/css"))
@@ -81,14 +81,6 @@ gulp.task("fonts", () =>
     .pipe(browserSync.stream())
 );
 
-// Move all videos in a flattened directory
-gulp.task("videos", () =>
-  gulp
-    .src("./src/videos/**/*")
-    .pipe(gulp.dest("./dist/videos"))
-    .pipe(browserSync.stream())
-);
-
 // Move all images in a flattened directory
 gulp.task("images", () =>
   gulp
@@ -108,7 +100,6 @@ function runServer() {
   gulp.watch("./src/css/**/*.css", ["css"]);
   gulp.watch("./src/fonts/**/*", ["fonts"]);
   gulp.watch("./src/img/**/*", ["images"]);
-  gulp.watch("./src/videos/**/*", ["videos"]);
   gulp.watch("./site/**/*", ["hugo"]);
 }
 
@@ -116,7 +107,14 @@ function runServer() {
  * Run hugo and build the site
  */
 function buildSite(cb, options, environment = "development") {
-  const args = options ? hugoArgsDefault.concat(options) : hugoArgsDefault;
+  let args = options ? hugoArgsDefault.concat(options) : hugoArgsDefault;
+
+  // On Netlify, use the deploy URL as Hugo's baseURL so canonical and
+  // Open Graph URLs are absolute. Deploy previews get their own URL.
+  const siteUrl = process.env.DEPLOY_PRIME_URL || process.env.URL;
+  if (environment === "production" && siteUrl) {
+    args = args.concat(["-b", siteUrl]);
+  }
 
   process.env.NODE_ENV = environment;
 

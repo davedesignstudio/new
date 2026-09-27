@@ -1,0 +1,31 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="container">
+    <p class="eyebrow">About</p>
+    <h1 class="page-header__title">{{ .Params.lead | default .Title }}</h1>
+  </div>
+</header>
+
+<section class="section section--flush-top">
+  <div class="container about-layout">
+    <aside class="about-layout__aside">
+      {{ with .Params.image }}
+      <figure class="about-layout__media reveal">
+        <img src="{{ . }}" alt="Knife, board and small bowls of ingredients on a dark surface">
+      </figure>
+      {{ end }}
+      <dl class="about-layout__facts">
+        <div><dt>Founder</dt><dd>{{ .Site.Params.founder }}</dd></div>
+        <div><dt>Based in</dt><dd>{{ .Site.Params.location }}</dd></div>
+        <div><dt>Since</dt><dd>2013</dd></div>
+        <div><dt>Focus</dt><dd>Restaurants &amp; small business</dd></div>
+      </dl>
+    </aside>
+    <div class="prose about-layout__body">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{ partial "cta" . }}
+{{ end }}

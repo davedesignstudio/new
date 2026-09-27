@@ -1,0 +1,13 @@
+<section class="cta">
+  <div class="container cta__inner reveal">
+    <div>
+      <p class="eyebrow eyebrow--light">Let's talk</p>
+      <h2 class="cta__title">Have a menu that deserves better?</h2>
+      <p class="cta__text">Opening a place, fixing a brand that has outgrown itself or replacing the sign out front. Tell us what's cooking.</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--light" href="/contact/">Start a project {{ partial "icon-arrow" . }}</a>
+      {{ with .Site.Params.email }}<a class="cta__email" href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+    </div>
+  </div>
+</section>

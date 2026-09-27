@@ -1,18 +1,21 @@
 {{ define "main" }}
 <header class="page-header">
   <div class="container">
-    <p class="eyebrow">{{ .Title }}</p>
-    <h1 class="page-header__title">{{ .Title }}</h1>
+    <p class="eyebrow">Work</p>
+    <h1 class="page-header__title">Selected projects</h1>
     {{ with .Content }}<div class="page-header__intro prose">{{ . }}</div>{{ end }}
   </div>
 </header>
+
 <section class="section section--flush-top">
   <div class="container">
-    <ul class="plain-list">
-      {{ range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
+    <div class="work-grid">
+      {{- range .Pages.ByWeight }}
+      {{ partial "work-card" . }}
+      {{- end }}
+    </div>
   </div>
 </section>
+
+{{ partial "cta" . }}
 {{ end }}

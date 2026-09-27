@@ -1,11 +1,40 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+title = "D. Philhower Design"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  # Short name used in the wordmark and footer.
+  studio_name = "D. Philhower"
+  studio_suffix = "Design Studio"
+  tagline = "Brands that put your best food forward."
+  description = "D. Philhower Design is an independent brand and design studio in Oak Ridge, New Jersey. We build identities, menus, websites and spaces for restaurants and the small businesses around them."
+  founder = "David Philhower"
+  location = "Oak Ridge, New Jersey"
+  # Update these with real contact details before publishing.
+  email = "hello@dphilhower.com"
+  phone = ""
+  instagram = "https://www.instagram.com/"
+  linkedin = "https://www.linkedin.com/in/david-philhower-984264169"
+  # Set to true to show a small "Sample" tag on placeholder projects.
+  show_sample_tags = true
 
 [[menu.main]]
-    name = "About"
-    url  = "/about"
-    weight = 1
+  name = "Work"
+  url = "/work/"
+  weight = 10
+
+[[menu.main]]
+  name = "Services"
+  url = "/services/"
+  weight = 20
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 40

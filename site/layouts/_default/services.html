@@ -1,0 +1,57 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="container">
+    <p class="eyebrow">Services</p>
+    <h1 class="page-header__title">{{ .Params.lead | default .Title }}</h1>
+    {{ with .Content }}<div class="page-header__intro prose">{{ . }}</div>{{ end }}
+  </div>
+</header>
+
+<section class="section section--flush-top">
+  <div class="container">
+    <ol class="service-list">
+      {{- range .Site.Data.services }}
+      <li class="service-detail reveal" id="{{ .id }}">
+        <div class="service-detail__head">
+          <span class="service__number">{{ .number }}</span>
+          <h2 class="service-detail__title">{{ .title }}</h2>
+        </div>
+        <p class="service-detail__summary">{{ .summary }}</p>
+        <ul class="service-detail__deliverables">
+          {{- range .deliverables }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      </li>
+      {{- end }}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container faq">
+    <div class="faq__head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="section__title">Fixed fees, short timelines, no surprises</h2>
+    </div>
+    <dl class="faq__list reveal">
+      <div>
+        <dt>How long does a project take?</dt>
+        <dd>A menu refresh is usually two to three weeks. A full identity with menus and a website runs eight to twelve, depending on how quickly we can get feedback between services.</dd>
+      </div>
+      <div>
+        <dt>What does it cost?</dt>
+        <dd>Every project is quoted as a fixed fee before we start, based on the scope we agree together. No hourly surprises. Half up front, half on delivery.</dd>
+      </div>
+      <div>
+        <dt>Do you only work with restaurants?</dt>
+        <dd>Mostly, and by choice. But cafés, bars, food trucks, farms, markets and the small businesses that share a street with them are all welcome.</dd>
+      </div>
+      <div>
+        <dt>Can you build the sign too?</dt>
+        <dd>Yes. Through Okrogly + Philhower Design and Build we can draw, fabricate and install signage and interior elements, or hand finished drawings to your own contractor.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+{{ partial "cta" . }}
+{{ end }}

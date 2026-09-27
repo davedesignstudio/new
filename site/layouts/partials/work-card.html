@@ -1,0 +1,18 @@
+<article class="work-card reveal">
+  <a class="work-card__link" href="{{ .RelPermalink }}">
+    <div class="work-card__media">
+      <img src="{{ .Params.image }}" alt="{{ .Title }} — {{ delimit .Params.services ", " }}" loading="lazy">
+      {{- if and .Params.sample .Site.Params.show_sample_tags }}
+      <span class="tag tag--sample">Sample</span>
+      {{- end }}
+    </div>
+    <div class="work-card__body">
+      <div class="work-card__meta">
+        <span>{{ .Params.client }}</span>
+        <span class="work-card__year">{{ .Params.year }}</span>
+      </div>
+      <h3 class="work-card__title">{{ .Title }}</h3>
+      <p class="work-card__services">{{ delimit .Params.services " · " }}</p>
+    </div>
+  </a>
+</article>

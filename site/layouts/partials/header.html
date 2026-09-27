@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  {{ .Hugo.Generator }}
+{{- $current := . -}}
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="wordmark" href="/" aria-label="{{ .Site.Title }} home">
+      <span class="wordmark__name">{{ .Site.Params.studio_name }}</span>
+      <span class="wordmark__suffix">{{ .Site.Params.studio_suffix }}</span>
+    </a>
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        {{- range .Site.Menus.main }}
+        {{- $active := or ($current.IsMenuCurrent "main" .) (and (ne .URL "/") (hasPrefix $current.RelPermalink .URL)) }}
+        <li>
+          <a class="site-nav__link{{ if $active }} is-active{{ end }}" href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        </li>
+        {{- end }}
+      </ul>
+      <a class="btn btn--primary site-nav__cta" href="/contact/">Start a project {{ partial "icon-arrow" . }}</a>
+    </nav>
 
-  {{ if .IsHome }}
-  <title>{{ .Site.Title }}</title>
-  {{ else }}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-  {{ end }}
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/main.css">
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/img/favicon.png">
-
-  <!-- RSS -->
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-</head>
-<body class="{{ .Section | urlize }}">
-
-{{ partial "sidebar" . }}
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="nav-toggle__label" data-nav-label>Menu</span>
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+</header>

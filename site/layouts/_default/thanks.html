@@ -2,9 +2,9 @@
 <section class="section section--tall">
   <div class="container">
     <div class="prose prose--narrow">
-      <p class="eyebrow">404</p>
-      <h1 class="page-header__title">That page isn't on the menu.</h1>
-      <p>The link may be old or the address mistyped. Head back to the homepage, or have a look at some <a href="/work/">recent work</a>.</p>
+      <p class="eyebrow">Message sent</p>
+      <h1 class="page-header__title">{{ .Params.lead | default .Title }}</h1>
+      {{ .Content }}
       <p><a class="btn btn--primary" href="/">Back to the homepage {{ partial "icon-arrow" . }}</a></p>
     </div>
   </div>

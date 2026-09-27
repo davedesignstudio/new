@@ -1,0 +1,39 @@
+- id: identity
+  number: "01"
+  title: Brand identity
+  summary: Naming, logo systems, colour, type and the rules that hold it all together, so your brand looks like itself on a menu, a storefront and a phone screen.
+  deliverables:
+    - Naming & positioning
+    - Logo & wordmark systems
+    - Colour, type & pattern
+    - Brand guidelines
+
+- id: print
+  number: "02"
+  title: Menus & print
+  summary: Menus that are easy to read at a dim table and easy to update in the back office. Plus the table cards, packaging, uniforms and merch that carry the brand out the door.
+  deliverables:
+    - Dine-in & takeout menus
+    - Packaging & labels
+    - Table cards & signage
+    - Merch & apparel
+
+- id: web
+  number: "03"
+  title: Websites
+  summary: Fast, simple sites you can edit yourself, built around what guests actually come for. Hours, menu, location and how to order, in that order.
+  deliverables:
+    - Design & build
+    - Online menu & ordering links
+    - Google Business & maps setup
+    - Editable content
+
+- id: space
+  number: "04"
+  title: Signage & spaces
+  summary: Exterior signage, window graphics, wall art and interior finishes that make the room feel like the brand. We plan, draw and, when needed, help build it.
+  deliverables:
+    - Exterior & interior signage
+    - Window & wall graphics
+    - Interior concepts & finishes
+    - Design-build coordination
