@@ -1,7 +1,11 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <a href="{{ .Site.BaseURL }}">
+        <img class="sidebar-mark" src="/img/brand/logo-mark.svg" alt="{{ .Site.Title }} crest">
+        <h1>{{ .Site.Title }}</h1>
+      </a>
+      {{ with .Site.Data.brand.tagline }}<p class="sidebar-tagline">{{ . }}</p>{{ end }}
       <p class="lead">{{ .Site.Params.description | markdownify }}</p>
     </div>
 

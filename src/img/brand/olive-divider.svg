@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 40" role="img" aria-label="Olive branch divider">
+  <defs>
+    <path id="lf" d="M0 0 C6 -6 13 -7 18 -2 C13 3 6 4 0 0 Z" fill="#6B7A3A"/>
+  </defs>
+  <line x1="0" y1="20" x2="120" y2="20" stroke="#D9A84E" stroke-width="1"/>
+  <line x1="200" y1="20" x2="320" y2="20" stroke="#D9A84E" stroke-width="1"/>
+  <g transform="translate(160,20)">
+    <path d="M-34 0 H34" stroke="#6B7A3A" stroke-width="2" stroke-linecap="round"/>
+    <use href="#lf" transform="translate(-30,-1) rotate(-30)"/>
+    <use href="#lf" transform="translate(-26,1) rotate(30) scale(1,-1)"/>
+    <use href="#lf" transform="translate(-14,-1) rotate(-30)"/>
+    <use href="#lf" transform="translate(-10,1) rotate(30) scale(1,-1)"/>
+    <use href="#lf" transform="translate(30,-1) rotate(-150) scale(1,-1)"/>
+    <use href="#lf" transform="translate(26,1) rotate(150)"/>
+    <use href="#lf" transform="translate(14,-1) rotate(-150) scale(1,-1)"/>
+    <use href="#lf" transform="translate(10,1) rotate(150)"/>
+    <circle cx="0" cy="0" r="3.2" fill="#2A2421"/>
+  </g>
+</svg>

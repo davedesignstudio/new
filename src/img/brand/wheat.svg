@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 100" role="img" aria-label="Wheat icon">
+  <defs>
+    <path id="grain" d="M0 0 C4 -4 5 -10 2 -15 C-2 -10 -3 -4 0 0 Z" fill="#D9A84E"/>
+  </defs>
+  <g transform="translate(30,92)">
+    <path d="M0 0 V-58" stroke="#6B7A3A" stroke-width="2" stroke-linecap="round"/>
+    <use href="#grain" transform="translate(0,-62) scale(1.1)"/>
+    <use href="#grain" transform="translate(-3,-52) rotate(-35)"/>
+    <use href="#grain" transform="translate(3,-52) rotate(35)"/>
+    <use href="#grain" transform="translate(-3,-42) rotate(-35)"/>
+    <use href="#grain" transform="translate(3,-42) rotate(35)"/>
+    <use href="#grain" transform="translate(-3,-32) rotate(-35)"/>
+    <use href="#grain" transform="translate(3,-32) rotate(35)"/>
+    <use href="#grain" transform="translate(-3,-22) rotate(-35)"/>
+    <use href="#grain" transform="translate(3,-22) rotate(35)"/>
+    <path d="M0 -12 C-6 -16 -12 -14 -16 -6" fill="none" stroke="#6B7A3A" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M0 -8 C6 -12 12 -10 16 -2" fill="none" stroke="#6B7A3A" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+</svg>

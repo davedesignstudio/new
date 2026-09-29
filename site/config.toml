@@ -1,11 +1,33 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Tasty Licks"
+# Placeholder name for the blended Mediterranean identity. Change it here and
+# in site/data/brand.toml (name) to rebrand the whole site.
+title = "Olive & Ember"
 
 [params]
-  description = "An example website for restaurants built by [@eliwilliamson](https://github.com/eliwilliamson) using [Victor Hugo](https://github.com/netlify/victor-hugo)."
+  description = "A Mediterranean table: wood-fired bread, mezze, and grilled fish. Simple ingredients, shared stories."
+
+[[menu.main]]
+    name = "Menu"
+    url  = "/food"
+    weight = 1
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery"
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url  = "/about"
-    weight = 1
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact"
+    weight = 4
+
+[[menu.main]]
+    name = "Brand Kit"
+    url  = "/brand"
+    weight = 5

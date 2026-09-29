@@ -1,0 +1,117 @@
+{{ partial "header" . }}
+{{ $brand := .Site.Data.brand }}
+
+<div class="content container brand-board">
+  <h1>{{ .Title }}</h1>
+  <p class="brand-lede">{{ $brand.intro }}</p>
+
+  <section class="brand-hero">
+    <img src="/img/brand/logo-mark.svg" alt="{{ $brand.name }} crest">
+    <div>
+      <p class="brand-wordmark">{{ $brand.name }}</p>
+      <p class="brand-tagline">{{ $brand.tagline }}</p>
+      <p class="brand-meta subhead">{{ $brand.style }}</p>
+    </div>
+  </section>
+
+  {{ with $brand.logo }}
+  <h2>{{ .title }}</h2>
+  <p>A crest or monogram built around:</p>
+  <ul class="brand-list">
+    {{ range .elements }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  <p><strong>Tone:</strong> {{ .tone }}</p>
+  {{ end }}
+
+  <div class="olive-divider" role="presentation"></div>
+
+  <h2>Color Palette</h2>
+  <ul class="swatches">
+    {{ range $brand.colors }}
+    <li>
+      <div class="swatch">
+        <div class="swatch-chip{{ if .dark }} on-dark{{ end }}" style="background-color: {{ .hex }}">
+          <span>{{ .hex }}</span>
+        </div>
+        <span class="swatch-name">{{ .name }}</span>
+        <span class="swatch-role">{{ .role }}</span>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+  <p>This palette balances coastal freshness with rustic warmth.</p>
+
+  <div class="olive-divider" role="presentation"></div>
+
+  {{ with $brand.typography }}
+  <h2>Typography System</h2>
+  <p>{{ .note }}</p>
+  <ul class="type-specimens">
+    {{ range .roles }}
+    <li>
+      <span class="type-role subhead">{{ .role }}</span>
+      <p class="type-sample {{ .class }}">{{ .sample }}</p>
+      <span class="type-family"><strong>{{ .family }}</strong> &middot; Alternates: {{ .alternates }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  <div class="olive-divider" role="presentation"></div>
+
+  {{ with $brand.textures }}
+  <h2>{{ .title }}</h2>
+  <ul class="materials">
+    <li><div class="material material-brass"></div><span class="material-name">{{ index .items 0 }}</span></li>
+    <li><div class="material material-terracotta"></div><span class="material-name">{{ index .items 1 }}</span></li>
+    <li><div class="material material-linen"></div><span class="material-name">{{ index .items 2 }}</span></li>
+    <li><div class="material material-olivewood"></div><span class="material-name">{{ index .items 3 }}</span></li>
+    <li><div class="material material-plaster"></div><span class="material-name">{{ index .items 4 }}</span></li>
+  </ul>
+  <p>{{ .note }}</p>
+  {{ end }}
+
+  <div class="olive-divider" role="presentation"></div>
+
+  {{ with $brand.moodboard }}
+  <h2>{{ .title }}</h2>
+  <ul class="brand-list">
+    {{ range .items }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  {{ end }}
+
+  <div class="wave-band" role="presentation"></div>
+
+  <h2>Graphic Elements</h2>
+  <ul class="graphic-elements">
+    {{ range $brand.graphics }}
+    <li>
+      <img src="{{ .svg }}" alt="{{ .name }}">
+      <span class="graphic-name">{{ .name }}</span>
+    </li>
+    {{ end }}
+  </ul>
+
+  <div class="olive-divider" role="presentation"></div>
+
+  {{ with $brand.voice }}
+  <h2>{{ .title }}</h2>
+  <p>{{ .note }}</p>
+  <ul class="voice-lines">
+    {{ range .lines }}<li>&ldquo;{{ . }}&rdquo;</li>{{ end }}
+  </ul>
+  {{ end }}
+
+  <div class="olive-divider" role="presentation"></div>
+
+  {{ with $brand.applications }}
+  <h2>{{ .title }}</h2>
+  <ul class="brand-list">
+    {{ range .items }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  {{ end }}
+
+  {{ .Content }}
+</div>
+
+{{ partial "footer" . }}

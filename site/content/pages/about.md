@@ -4,11 +4,15 @@ title = "About"
 url = "/about"
 +++
 
-## Something about the restaurant goes here
+## Fire, earth, and sea
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis placerat nulla, eget tempus arcu volutpat ut. Pellentesque ut ligula sit amet sapien mattis pretium. Nullam viverra, est tincidunt sagittis pretium, ligula orci tristique augue, ac feugiat libero ante ut orci. Sed dictum at arcu ac bibendum. Aenean purus libero, molestie sit amet iaculis quis, sodales et erat. Nulla auctor porta mi, id tristique orci malesuada quis. Proin commodo lacinia fringilla. In suscipit ligula a tristique consectetur. Mauris non tortor felis. Morbi nec ornare quam. Aenean ac felis porttitor, varius odio et, finibus purus. Duis at nulla rutrum, vestibulum nunc quis, interdum nunc. Morbi ac arcu eget elit blandit tincidunt. Cras velit arcu, dapibus id massa posuere, vestibulum semper orci. Aliquam ullamcorper ut justo non laoreet.
+Olive & Ember began with a clay oven and a long table. Everything we cook is rooted in the coastlines of the Mediterranean: bread pulled from the fire and torn by hand, mezze meant to be passed around, fish grilled over olive-wood embers, and vegetables roasted until they taste of the sun.
+
+We keep the ingredients simple and the plates generous. Olive oil, lemon, sea salt, herbs from the garden, and whatever the market brings in that morning. The rest is the company you keep.
+
+> Gathered around the table. Simple ingredients, shared stories.
 
 Sincerely,
-# Mr. Bojangles
+# The Olive & Ember Family

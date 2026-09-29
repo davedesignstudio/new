@@ -15,6 +15,8 @@
   {{ end }}
 
   <!-- CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
 
   <!-- Icons -->
@@ -24,6 +26,6 @@
   <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }}">
+<body class="{{ if .IsHome }}home{{ else }}{{ .Section | urlize }}{{ end }}">
 
 {{ partial "sidebar" . }}
