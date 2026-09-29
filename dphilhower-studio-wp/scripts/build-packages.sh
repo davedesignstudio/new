@@ -80,11 +80,26 @@ fi
 cp "$ROOT/docker-compose.yml" "$PKG/docker-compose.yml"
 cp "$ROOT/INSTALL.md" "$PKG/INSTALL.md"
 cp "$ROOT/README.md" "$PKG/README.md"
-cp "$RELEASES/dphilhower-studio-theme.zip" "$PKG/dphilhower-studio-theme.zip"
+# Theme is already installed under wordpress/wp-content/themes/dphilhower-studio.
+# Ship a separate theme.zip beside this package for existing WordPress installs
+# (do not nest it here — it roughly doubles the archive).
+
+# Studio extras also live inside the theme at assets/studio-extras/
+if [[ -d "$THEME_DIR/assets/studio-extras" ]]; then
+  mkdir -p "$PKG/studio-extras"
+  cp -a "$THEME_DIR/assets/studio-extras"/. "$PKG/studio-extras"/
+fi
 
 cat > "$PKG/START-HERE.txt" <<'TXT'
 D Philhower Studio — all-in-one WordPress package
 =================================================
+
+Contents
+  wordpress/       Full WordPress with D Philhower Studio theme pre-installed
+  studio-extras/   LUMEN marks, studies, painting (studio concepts)
+  INSTALL.md       Step-by-step install
+  docker-compose.yml
+  README.md
 
 For a new site on dphilhower.com:
   1. Read INSTALL.md
@@ -94,7 +109,8 @@ For a new site on dphilhower.com:
   5. Activate the D Philhower Studio theme if pages are empty
 
 Already have WordPress?
-  Upload dphilhower-studio-theme.zip via Appearance → Themes → Upload Theme.
+  Use the separate dphilhower-studio-theme.zip from releases/
+  (Appearance → Themes → Upload Theme).
 
 Local preview with Docker:
   docker compose up -d
