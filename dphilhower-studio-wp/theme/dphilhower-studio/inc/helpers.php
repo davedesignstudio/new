@@ -107,7 +107,16 @@ function dps_work_subtitle( $post_id = 0 ) {
  * @return string[]
  */
 function dps_full_restaurant_slugs() {
-	return array( 'bville-pizza-grill', 'ember-pie-co', 'casa-forno' );
+	return array(
+		'bville-pizza-grill',
+		'ember-pie-co',
+		'casa-forno',
+		'salt-cedar',
+		'noche-roja',
+		'hearth-rye',
+		'black-olive',
+		'mizu',
+	);
 }
 
 /**
@@ -170,6 +179,26 @@ function dps_work_card_stills() {
 		'casa-forno'         => array(
 			'file' => 'casa-forno-print-window.png',
 			'alt'  => __( 'Casa Forno brick trattoria at dusk with the gold CF seal on the window', 'dphilhower-studio' ),
+		),
+		'salt-cedar'         => array(
+			'file' => 'salt-cedar-print-window.png',
+			'alt'  => __( 'Salt & Cedar dusk oyster-bar window with the brass seal on glass', 'dphilhower-studio' ),
+		),
+		'noche-roja'         => array(
+			'file' => 'noche-roja-print-window.png',
+			'alt'  => __( 'Noche Roja dusk cantina window with the marigold seal on glass', 'dphilhower-studio' ),
+		),
+		'hearth-rye'         => array(
+			'file' => 'hearth-rye-print-window.png',
+			'alt'  => __( 'Hearth & Rye dusk roast-house window with the copper seal on glass', 'dphilhower-studio' ),
+		),
+		'black-olive'        => array(
+			'file' => 'black-olive-print-window.png',
+			'alt'  => __( 'Black Olive dusk meze window with the seal on glass', 'dphilhower-studio' ),
+		),
+		'mizu'               => array(
+			'file' => 'mizu-print-window.png',
+			'alt'  => __( 'Mizu dusk ramen window with the seal on glass', 'dphilhower-studio' ),
 		),
 		'cafe-robust'        => array(
 			'file' => 'cafe-robust-hero.png',

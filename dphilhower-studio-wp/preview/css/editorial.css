@@ -1,24 +1,25 @@
-/* Studio chrome: maroon sides, black center. Official client marks stay as they are. */
+/* Studio chrome: wine rails, charcoal stage, film grain. Official client marks stay as they are. */
 
 :root {
-  --ink: #f3ead8;
-  --ink-soft: #d8cbb8;
-  --stone: #ece6c4;
-  --stone-deep: #d8d09a;
-  --paper: #f8f4dc;
-  --maroon: #6b1324;
-  --stage: #000000;
+  --ink: #f2eadc;
+  --ink-soft: #d8cbb6;
+  --stone: #cfc4b2;
+  --stone-deep: #b5a894;
+  --paper: #e4dccb;
+  --maroon: #3f141c;
+  --stage: #14110f;
   --stage-width: min(1240px, 100%);
-  --verdigris: #c42e86;
-  --verdigris-bright: #d03393;
-  --heat: #2e41a1;
-  --heat-bright: #3d54c4;
-  --brass: #fcdd44;
-  --gold: #d4af37;
-  --muted: #c4b4a4;
-  --line: rgba(212, 175, 55, 0.22);
-  --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
-  --font-body: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", sans-serif;
+  --verdigris: #c9a24a;
+  --verdigris-bright: #dfb65a;
+  --heat: #c45a2e;
+  --heat-bright: #d86a3a;
+  --brass: #c9a24a;
+  --gold: #c9a24a;
+  --muted: #a89884;
+  --line: rgba(201, 162, 74, 0.28);
+  --font-display: "Syne", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
 body {
@@ -497,6 +498,26 @@ body {
 .swatch-casa-gold { background: #D4AF37; color: #1c1610; }
 .swatch-casa-silver { background: #C5C7C9; color: #1c1610; }
 .swatch-casa-cream { background: #F4EFE4; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-salt-navy { background: #0B1F33; color: #f2ede4; }
+.swatch-salt-cedar { background: #8B5A2B; color: #f2ede4; }
+.swatch-salt-pearl { background: #F2EDE4; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-salt-brass { background: #C4A35A; color: #1c1610; }
+.swatch-noche-chili { background: #B91C1C; color: #f2ede4; }
+.swatch-noche-adobe { background: #C4784A; color: #1c1610; }
+.swatch-noche-ink { background: #1A120E; color: #f2ede4; }
+.swatch-noche-marigold { background: #E8A317; color: #1c1610; }
+.swatch-hearth-charcoal { background: #1F1A17; color: #f1e6d2; }
+.swatch-hearth-rye { background: #B8894A; color: #1c1610; }
+.swatch-hearth-cream { background: #F1E6D2; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-hearth-copper { background: #B87333; color: #1c1610; }
+.swatch-olive-green { background: #3F4F2E; color: #f5f1e8; }
+.swatch-olive-black { background: #121210; color: #f5f1e8; }
+.swatch-olive-wash { background: #F5F1E8; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-olive-aegean { background: #2F5D7C; color: #f5f1e8; }
+.swatch-mizu-indigo { background: #1B2A4A; color: #f3f0ea; }
+.swatch-mizu-steam { background: #F3F0EA; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-mizu-charcoal { background: #1C1C1C; color: #f3f0ea; }
+.swatch-mizu-vermillion { background: #C73E2A; color: #f3f0ea; }
 
 .work-grid.is-trio {
   display: grid;
@@ -507,13 +528,21 @@ body {
   .work-grid.is-trio,
   .work-grid.is-trio.is-home {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(220px, 28vw);
+    grid-auto-rows: minmax(200px, 24vw);
   }
 
   .work-grid.is-trio .work-item:first-child,
   .work-grid.is-home.is-trio .work-item:first-child {
     grid-column: auto;
     grid-row: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .work-grid.is-trio,
+  .work-grid.is-trio.is-home {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, 18vw);
   }
 }
 

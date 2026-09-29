@@ -11,8 +11,8 @@ After the package build (or from `releases/` in this repo):
 | File | Use |
 | --- | --- |
 | `releases/dphilhower-studio-html-css-js.zip` | Static site: all HTML, CSS, and JS. Unzip and open `index.html`, or upload the folder to `public_html` |
-| `releases/dphilhower-studio-theme.zip` | Upload in an existing WordPress under **Appearance → Themes → Add New → Upload Theme** |
-| `releases/dphilhower-studio-wordpress-all-in-one.zip` | Full WordPress + this theme. Unzip and upload to hosting, or run with Docker |
+| `releases/dphilhower-studio-theme.zip` | Upload in an existing WordPress under **Appearance → Themes → Add New → Upload Theme** (includes `assets/studio-extras/`) |
+| `releases/dphilhower-studio-wordpress-all-in-one.zip` | Full WordPress + this theme + `studio-extras/`. Unzip and upload to hosting, or run with Docker |
 
 Rebuild the zips:
 

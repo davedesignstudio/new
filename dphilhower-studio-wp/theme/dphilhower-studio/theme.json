@@ -5,11 +5,11 @@
     "appearanceTools": true,
     "color": {
       "palette": [
-        { "slug": "ink", "color": "#1c1814", "name": "Ink" },
-        { "slug": "paper", "color": "#f4efe4", "name": "Paper" },
-        { "slug": "heat", "color": "#c24e1e", "name": "Terracotta" },
-        { "slug": "olive", "color": "#5c6b32", "name": "Olive" },
-        { "slug": "brass", "color": "#c9a227", "name": "Gold" }
+        { "slug": "ink", "color": "#14110f", "name": "Charcoal" },
+        { "slug": "paper", "color": "#e4dccb", "name": "Stone Paper" },
+        { "slug": "wine", "color": "#3f141c", "name": "Wine" },
+        { "slug": "brass", "color": "#c9a24a", "name": "Brass" },
+        { "slug": "heat", "color": "#c45a2e", "name": "Ember" }
       ]
     },
     "layout": {
@@ -19,14 +19,19 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "Fraunces, Palatino Linotype, Palatino, serif",
+          "fontFamily": "Syne, Avenir Next Condensed, Arial Narrow, sans-serif",
           "slug": "display",
-          "name": "Fraunces"
+          "name": "Syne"
         },
         {
-          "fontFamily": "Source Sans 3, Helvetica Neue, sans-serif",
+          "fontFamily": "Newsreader, Iowan Old Style, Palatino Linotype, Georgia, serif",
           "slug": "body",
-          "name": "Source Sans 3"
+          "name": "Newsreader"
+        },
+        {
+          "fontFamily": "IBM Plex Mono, ui-monospace, monospace",
+          "slug": "mono",
+          "name": "IBM Plex Mono"
         }
       ]
     }

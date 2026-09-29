@@ -18,8 +18,8 @@
 	</div>
 	<div class="process-step">
 		<span class="process-num"><?php esc_html_e( '03 · Draw', 'dphilhower-studio' ); ?></span>
-		<strong><?php esc_html_e( 'Research, then marks', 'dphilhower-studio' ); ?></strong>
-		<p><?php esc_html_e( 'We look at the street, the neighbors, and the history of the room. Then we draw — type, color, lockup — until the name can sit on a window and still feel like dinner. Clear messaging over clutter.', 'dphilhower-studio' ); ?></p>
+		<strong><?php esc_html_e( 'Reduce, then mark', 'dphilhower-studio' ); ?></strong>
+		<p><?php esc_html_e( 'Research the street. Cut until the name can sit on a window with clean modern lines — then add the human grain: texture, custom lettering, a seal that feels held, not stock.', 'dphilhower-studio' ); ?></p>
 	</div>
 	<div class="process-step">
 		<span class="process-num"><?php esc_html_e( '04 · Build', 'dphilhower-studio' ); ?></span>

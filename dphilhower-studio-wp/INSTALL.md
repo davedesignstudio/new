@@ -12,6 +12,8 @@ Use this if you want the studio site as plain files — no WordPress, no databas
 
 All `.html`, `.css`, and `.js` files are listed in `files.html` and `FILE-LIST.txt`.
 
+Studio extras (LUMEN lockups, mark studies, winter barns repaint) ship inside the theme at `assets/studio-extras/` and also at the root of the all-in-one package as `studio-extras/`. These are studio concepts unless the site copy says otherwise.
+
 ## B. Theme only (`dphilhower-studio-theme.zip`)
 
 Use this if WordPress is already installed.
