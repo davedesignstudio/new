@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Mosaic-inspired corner motif">
+  <g shape-rendering="crispEdges">
+    <rect x="4" y="4" width="10" height="10" fill="#1F4E79"/>
+    <rect x="16" y="4" width="10" height="10" fill="#D9A84E"/>
+    <rect x="28" y="4" width="10" height="10" fill="#1F4E79"/>
+    <rect x="40" y="4" width="10" height="10" fill="#C46A3B"/>
+    <rect x="52" y="4" width="10" height="10" fill="#1F4E79"/>
+    <rect x="64" y="4" width="10" height="10" fill="#D9A84E"/>
+    <rect x="76" y="4" width="10" height="10" fill="#1F4E79"/>
+    <rect x="88" y="4" width="8" height="10" fill="#C46A3B"/>
+
+    <rect x="4" y="16" width="10" height="10" fill="#D9A84E"/>
+    <rect x="4" y="28" width="10" height="10" fill="#1F4E79"/>
+    <rect x="4" y="40" width="10" height="10" fill="#C46A3B"/>
+    <rect x="4" y="52" width="10" height="10" fill="#1F4E79"/>
+    <rect x="4" y="64" width="10" height="10" fill="#D9A84E"/>
+    <rect x="4" y="76" width="10" height="10" fill="#1F4E79"/>
+    <rect x="4" y="88" width="10" height="8" fill="#C46A3B"/>
+
+    <rect x="16" y="16" width="10" height="10" fill="#C46A3B"/>
+    <rect x="28" y="16" width="10" height="10" fill="#F4EDE2" stroke="#D9A84E" stroke-width="1"/>
+    <rect x="16" y="28" width="10" height="10" fill="#F4EDE2" stroke="#D9A84E" stroke-width="1"/>
+    <rect x="28" y="28" width="10" height="10" fill="#6B7A3A"/>
+    <rect x="40" y="16" width="10" height="10" fill="#6B7A3A"/>
+    <rect x="16" y="40" width="10" height="10" fill="#6B7A3A"/>
+  </g>
+  <path d="M46 46 q12 -8 24 0 t24 0" fill="none" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+  <path d="M46 46 q-8 12 0 24 t0 24" fill="none" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+</svg>

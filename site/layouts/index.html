@@ -5,6 +5,19 @@
     <source src="/videos/SDVid.mp4" type="video/mp4">
     <source src="/videos/SDVid.ogg" type="video/ogg">
   </video>
+
+  {{ with .Site.Data.brand }}
+  <section class="home-hero">
+    <img src="/img/brand/logo-mark.svg" alt="{{ $.Site.Title }} crest">
+    <h1>{{ $.Site.Title }}</h1>
+    <p class="home-tagline">{{ .tagline }}</p>
+    <p class="home-lede">Bread from the clay oven, olives from the grove, fish from the morning boats. Gathered around the table, plates are meant to be shared.</p>
+    <div class="home-actions">
+      <a class="button" href="/food">View the Menu</a>
+      <a class="button button-outline" href="/contact">Reserve a Table</a>
+    </div>
+  </section>
+  {{ end }}
 </div>
 
 {{ partial "footer" . }}

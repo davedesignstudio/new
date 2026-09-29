@@ -1,0 +1,434 @@
+/*
+ * Mediterranean brand kit tokens.
+ * Keep the palette in sync with site/data/brand.toml.
+ */
+:root {
+  --aegean-blue: #1F4E79;
+  --terracotta-clay: #C46A3B;
+  --terracotta-clay-dark: #A5552C;
+  --olive-leaf: #6B7A3A;
+  --cream-linen: #F4EDE2;
+  --cream-linen-deep: #EADFCF;
+  --charcoal-stone: #2A2421;
+  --charcoal-stone-soft: #4B4340;
+  --gold-saffron: #D9A84E;
+
+  --font-headline: "Cormorant Garamond", "Cormorant", "Lora", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  --font-subhead: var(--font-body);
+}
+
+/* Small-caps subhead treatment (labels, menu categories, nav). */
+.subhead,
+.type-subhead {
+  font-family: var(--font-subhead);
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: var(--olive-leaf);
+}
+
+.type-headline {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--aegean-blue);
+}
+
+.type-body {
+  font-family: var(--font-body);
+  color: var(--charcoal-stone);
+}
+
+/* Olive-branch divider used between menu sections and brand board panels. */
+.olive-divider {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: 2.5rem;
+  margin: 1.5rem auto;
+  background: url("/img/brand/olive-divider.svg") center / contain no-repeat;
+}
+
+/* Subtle linen paper grain for the page background. */
+.linen {
+  background-color: var(--cream-linen);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(42, 36, 33, 0.025) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(42, 36, 33, 0.025) 0 1px, transparent 1px 3px);
+}
+
+/* ---------- Brand board (/brand) ---------- */
+.brand-board {
+  h2 {
+    margin-top: 3rem;
+  }
+
+  .brand-lede {
+    font-family: var(--font-headline);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--charcoal-stone-soft);
+  }
+}
+
+.brand-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  background: var(--cream-linen-deep);
+  border: 1px solid var(--gold-saffron);
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: url("/img/brand/mosaic-corner.svg") no-repeat center / contain;
+  }
+  &:before {
+    top: 0.35rem;
+    left: 0.35rem;
+  }
+  &:after {
+    right: 0.35rem;
+    bottom: 0.35rem;
+    transform: rotate(180deg);
+  }
+
+  img {
+    width: 9rem;
+    height: 9rem;
+    min-height: 0;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .brand-wordmark {
+    font-family: var(--font-headline);
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--aegean-blue);
+    margin: 0 0 0.35rem;
+    text-transform: none;
+  }
+
+  .brand-tagline {
+    margin: 0;
+    font-family: var(--font-headline);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--terracotta-clay);
+  }
+}
+
+.brand-meta {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+}
+
+.brand-list {
+  columns: 2;
+  column-gap: 2rem;
+
+  li {
+    display: block;
+    break-inside: avoid;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--cream-linen-deep);
+  }
+
+  @media (max-width: 30em) {
+    columns: 1;
+  }
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+
+  li {
+    display: block;
+    padding: 0;
+  }
+}
+
+.swatch {
+  display: block;
+  border: 1px solid rgba(42, 36, 33, 0.12);
+
+  .swatch-chip {
+    height: 6rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--charcoal-stone);
+    &.on-dark {
+      color: var(--cream-linen);
+    }
+  }
+
+  .swatch-name {
+    display: block;
+    padding: 0.6rem 0.75rem 0.15rem;
+    font-family: var(--font-headline);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--charcoal-stone);
+    background: #fff;
+  }
+
+  .swatch-role {
+    display: block;
+    padding: 0 0.75rem 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--charcoal-stone-soft);
+    background: #fff;
+  }
+}
+
+.type-specimens {
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+
+  li {
+    display: block;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--cream-linen-deep);
+  }
+
+  .type-role {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .type-sample {
+    display: block;
+    margin: 0 0 0.5rem;
+  }
+
+  .type-headline.type-sample {
+    font-size: 2.4rem;
+  }
+
+  .type-subhead.type-sample {
+    font-size: 1.1rem;
+  }
+
+  .type-family {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--charcoal-stone-soft);
+  }
+}
+
+.materials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+
+  li {
+    display: block;
+    padding: 0;
+  }
+
+  .material {
+    height: 5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(42, 36, 33, 0.12);
+  }
+
+  .material-brass {
+    background: linear-gradient(135deg, #b98a3c 0%, #e6c67a 35%, #d9a84e 50%, #a67a2f 100%);
+  }
+
+  .material-terracotta {
+    background-color: var(--terracotta-clay);
+    background-image:
+      linear-gradient(rgba(244, 237, 226, 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244, 237, 226, 0.35) 1px, transparent 1px);
+    background-size: 1.5rem 1.5rem;
+  }
+
+  .material-linen {
+    background-color: var(--cream-linen);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(42, 36, 33, 0.06) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(42, 36, 33, 0.06) 0 1px, transparent 1px 3px);
+  }
+
+  .material-olivewood {
+    background-color: #8a6a3f;
+    background-image: repeating-linear-gradient(
+      100deg,
+      rgba(42, 36, 33, 0.25) 0 2px,
+      transparent 2px 7px,
+      rgba(107, 122, 58, 0.25) 7px 9px,
+      transparent 9px 16px
+    );
+  }
+
+  .material-plaster {
+    background-color: #e8e1d6;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(42, 36, 33, 0.08) 0 12%, transparent 13%),
+      radial-gradient(circle at 70% 60%, rgba(42, 36, 33, 0.06) 0 18%, transparent 19%),
+      radial-gradient(circle at 40% 80%, rgba(217, 168, 78, 0.12) 0 10%, transparent 11%);
+  }
+
+  .material-name {
+    font-size: 0.8rem;
+  }
+}
+
+.graphic-elements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+
+  li {
+    display: block;
+    padding: 0;
+    text-align: center;
+  }
+
+  img {
+    height: 6rem;
+    min-height: 0;
+    margin: 0 auto 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0;
+    background: #fff;
+    border: 1px solid var(--cream-linen-deep);
+  }
+
+  .graphic-name {
+    font-size: 0.8rem;
+  }
+}
+
+.voice-lines {
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style: none;
+
+  li {
+    display: block;
+    padding: 0.75rem 0 0.75rem 1.25rem;
+    border-left: 3px solid var(--terracotta-clay);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--aegean-blue);
+  }
+}
+
+.wave-band {
+  height: 2.5rem;
+  margin: 2rem 0;
+  background: url("/img/brand/wave-pattern.svg") repeat-x center / auto 100%;
+  opacity: 0.8;
+}
+
+/* ---------- Home hero ---------- */
+.home-hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  max-width: 28rem;
+  background: rgba(244, 237, 226, 0.94);
+  border: 1px solid var(--gold-saffron);
+  box-shadow: 0 1rem 3rem rgba(42, 36, 33, 0.25);
+
+  img {
+    width: 8rem;
+    height: 8rem;
+    min-height: 0;
+    margin: 0 auto 1.25rem;
+  }
+
+  h1 {
+    margin: 0 0 0.5rem;
+    padding-bottom: 0;
+    font-family: var(--font-headline);
+    font-size: 2.4rem;
+    text-transform: none;
+    color: var(--aegean-blue);
+    &:after {
+      display: none;
+    }
+  }
+
+  .home-tagline {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-headline);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--terracotta-clay);
+  }
+
+  .home-lede {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-linen);
+    background: var(--terracotta-clay);
+    transition: background 0.2s ease;
+    &:hover,
+    &:focus {
+      background: var(--terracotta-clay-dark);
+      color: var(--cream-linen);
+    }
+    &.button-outline {
+      color: var(--aegean-blue);
+      background: transparent;
+      border: 1px solid var(--aegean-blue);
+      &:hover,
+      &:focus {
+        background: var(--aegean-blue);
+        color: var(--cream-linen);
+      }
+    }
+  }
+}

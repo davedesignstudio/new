@@ -1,0 +1,139 @@
+# Mediterranean restaurant brand kit.
+# Rendered by layouts/_default/brand.html and used as the source of truth for
+# the identity board at /brand. Colors here must stay in sync with the
+# custom properties declared in src/css/imports/brand.css.
+
+name = "Olive & Ember"
+style = "Blended Mediterranean"
+tagline = "Fire, earth, and sea."
+intro = "A complete identity system with colors, typography, textures, symbols, and brand voice. Warmth, heritage, and sensory richness: sun-baked textures, coastal colors, and a balance of rustic and refined."
+
+[logo]
+title = "Primary Logo Concept"
+tone = "Heritage + modern hospitality."
+elements = [
+  "Olive branch wreath",
+  "Amphora or clay oven silhouette",
+  "Sun-disc or wave motif",
+  "Serif wordmark with subtle ligatures"
+]
+
+[[colors]]
+name = "Aegean Blue"
+hex = "#1F4E79"
+role = "Primary. Coastal depth for wordmark, links, and signage."
+dark = true
+
+[[colors]]
+name = "Terracotta Clay"
+hex = "#C46A3B"
+role = "Accent. Fire and clay for buttons, prices, and packaging."
+dark = true
+
+[[colors]]
+name = "Olive Leaf"
+hex = "#6B7A3A"
+role = "Secondary. Groves and uniforms; dividers and icons."
+dark = true
+
+[[colors]]
+name = "Cream Linen"
+hex = "#F4EDE2"
+role = "Background. Linen paper stock for menus and pages."
+dark = false
+
+[[colors]]
+name = "Charcoal Stone"
+hex = "#2A2421"
+role = "Text and sidebar. Stone, plaster, and wood-fired char."
+dark = true
+
+[[colors]]
+name = "Gold Saffron"
+hex = "#D9A84E"
+role = "Highlight. Brass details, sun-disc, and small caps."
+dark = false
+
+[typography]
+note = "Headlines in a refined serif with Mediterranean character, subheads in small caps, body in a humanist sans for menus and signage."
+
+[[typography.roles]]
+role = "Headline"
+family = "Cormorant Garamond"
+alternates = "Cormorant, Lora, Recoleta, or a custom Roman-inspired serif"
+sample = "Gathered around the table"
+class = "type-headline"
+
+[[typography.roles]]
+role = "Subhead"
+family = "Inter, small caps"
+alternates = "Futura PT, Avenir, or Sofia Pro"
+sample = "Mezze · Grill · Bakery · Cellar"
+class = "type-subhead"
+
+[[typography.roles]]
+role = "Body"
+family = "Inter"
+alternates = "Source Sans, Inter"
+sample = "Simple ingredients, shared stories. Bread from the clay oven, olives from the grove, fish from the morning boats."
+class = "type-body"
+
+[textures]
+title = "Textures & Materials"
+note = "These create tactile authenticity."
+items = [
+  "Brushed brass or aged bronze",
+  "Terracotta tile",
+  "Linen paper stock",
+  "Olive-wood grain",
+  "Stone or plaster wall texture"
+]
+
+[moodboard]
+title = "Moodboard Direction"
+items = [
+  "Sunlit courtyards",
+  "Clay ovens, fire, and bread",
+  "Olive groves and vineyards",
+  "Ceramic patterns (Hellenic, Levantine, Sicilian)",
+  "Rustic table settings with shared plates"
+]
+
+[[graphics]]
+name = "Olive branch divider"
+svg = "/img/brand/olive-divider.svg"
+
+[[graphics]]
+name = "Wave-line pattern"
+svg = "/img/brand/wave-pattern.svg"
+
+[[graphics]]
+name = "Amphora silhouette"
+svg = "/img/brand/amphora.svg"
+
+[[graphics]]
+name = "Wheat icon"
+svg = "/img/brand/wheat.svg"
+
+[[graphics]]
+name = "Mosaic corner motif"
+svg = "/img/brand/mosaic-corner.svg"
+
+[voice]
+title = "Brand Voice"
+note = "Warm, communal, sensory, rooted in tradition."
+lines = [
+  "Gathered around the table.",
+  "Fire, earth, and sea.",
+  "Simple ingredients, shared stories."
+]
+
+[applications]
+title = "Applications"
+items = [
+  "Menu system (linen texture + serif headlines)",
+  "Takeout packaging with terracotta accents",
+  "Window signage in brass or cream",
+  "Social media templates with mosaic borders",
+  "Staff uniforms in olive + cream"
+]

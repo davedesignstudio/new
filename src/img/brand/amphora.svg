@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" role="img" aria-label="Amphora silhouette">
+  <g transform="translate(40,34)">
+    <path d="M-9 -26 h18 v6 h-4 v6 c14 4 22 16 22 30 c0 16 -9 28 -18 34 h-18 c-9 -6 -18 -18 -18 -34 c0 -14 8 -26 22 -30 v-6 h-4 Z" fill="#C46A3B"/>
+    <path d="M-16 -8 c-10 2 -18 12 -18 22 c0 6 4 10 8 10 c2 0 3 -2 2 -4 c-4 -6 -2 -16 8 -22 Z" fill="#C46A3B"/>
+    <path d="M16 -8 c10 2 18 12 18 22 c0 6 -4 10 -8 10 c-2 0 -3 -2 -2 -4 c4 -6 2 -16 -8 -22 Z" fill="#C46A3B"/>
+    <path d="M-12 8 h24 M-13 14 h26" stroke="#F4EDE2" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M-16 44 h32 l3 5 h-38 Z" fill="#2A2421"/>
+  </g>
+</svg>

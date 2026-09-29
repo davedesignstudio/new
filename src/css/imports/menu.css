@@ -1,17 +1,68 @@
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: saturate(0.85) sepia(0.12);
+}
+
+.home .content {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .content {
   h1 {
-    font-family: "Rock Salt", cursive;
+    font-family: var(--font-headline);
     text-transform: capitalize;
-    margin: 0 0 64px 0;
+    margin: 0 0 2.5rem 0;
+    padding-bottom: 1rem;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 4rem;
+      height: 2px;
+      background: var(--terracotta-clay);
+    }
   }
 
-  h2 em, h3 {
+  /* Menu category headings are set in small caps, subhead style. */
+  h2 em {
+    font-family: var(--font-subhead);
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+    text-transform: lowercase;
+    color: var(--olive-leaf);
+  }
+
+  h3 {
     text-transform: capitalize;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--charcoal-stone);
   }
 
   h2 em:after {
-    content: '. ';
-    color: #ff7660;
+    content: ' · ';
+    color: var(--terracotta-clay);
+  }
+
+  hr {
+    border-top: 0;
+    height: 2.5rem;
+    margin: 0 0 1rem;
+    background: url("/img/brand/olive-divider.svg") left center / auto 100% no-repeat;
   }
 
   ul {
@@ -23,15 +74,21 @@
     li {
       display: flex;
       align-items: top;
+      padding: 0.35rem 0;
+      border-bottom: 1px dotted rgba(42, 36, 33, 0.18);
     }
 
     p {
       flex-grow: 1;
       display: inline-block;
+      margin-bottom: 0;
 
       &:last-child {
         padding-left: 16px;
         text-align: right;
+        font-family: var(--font-headline);
+        font-weight: 600;
+        color: var(--terracotta-clay);
       }
     }
   }
@@ -44,9 +101,12 @@
     box-sizing: border-box;
     box-shadow: none;
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    border-radius: 0;
+    border: 1px solid var(--cream-linen-deep);
+    background: #fff;
+    font-family: var(--font-body);
     font-size: 16px;
+    color: var(--charcoal-stone);
     padding: 16px;
     margin-bottom: 16px;
   }
@@ -54,7 +114,7 @@
   input,
   textarea {
     &:focus {
-      border: 1px solid #444;
+      border: 1px solid var(--aegean-blue);
     }
   }
 
@@ -63,14 +123,18 @@
   }
 
   button {
-    color: white;
-    background: #ff7660;
+    color: var(--cream-linen);
+    background: var(--terracotta-clay);
     border: none;
     cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 14px;
     transition: background .2s ease;
 
     &:hover {
-      background: #d35b48;
+      background: var(--terracotta-clay-dark);
     }
 
     &.half-button {
@@ -82,4 +146,10 @@
       }
     }
   }
+}
+
+.gallery-carousel img {
+  border-radius: 0;
+  border: 6px solid #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(42, 36, 33, 0.15);
 }
