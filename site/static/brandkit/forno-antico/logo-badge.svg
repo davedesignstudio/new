@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Forno Antico circular badge">
+  <title>Forno Antico badge</title>
+  <circle cx="120" cy="120" r="114" fill="#211D18"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="#C99A3F" stroke-width="2"/>
+  <circle cx="120" cy="120" r="88" fill="none" stroke="#C99A3F" stroke-width="1.5"/>
+  <defs>
+    <path id="fa-top" d="M120 32a88 88 0 0 1 62 26" fill="none"/>
+    <path id="fa-bottom" d="M58 146a88 88 0 0 0 62 62 88 88 0 0 0 62-62" fill="none"/>
+  </defs>
+  <text font-family="'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" letter-spacing="4.5" fill="#F6F1E7">
+    <textPath href="#fa-top" startOffset="50%" text-anchor="middle">FORNO ANTICO</textPath>
+  </text>
+  <text font-family="'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16.5" letter-spacing="4.5" fill="#F6F1E7">
+    <textPath href="#fa-bottom" startOffset="50%" text-anchor="middle">CUCINA ITALIANA</textPath>
+  </text>
+  <circle cx="44" cy="120" r="3" fill="#C99A3F"/>
+  <circle cx="196" cy="120" r="3" fill="#C99A3F"/>
+  <path d="M120 78c9 12 19 19 19 36a19 19 0 0 1-38 0c0-12 8-17 10-27 2 4 4 7 6 9-1-7-1-13 3-18z" fill="#B33A2B"/>
+  <text x="120" y="172" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="44" fill="#F6F1E7">FA</text>
+</svg>

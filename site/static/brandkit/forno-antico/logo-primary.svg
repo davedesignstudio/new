@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-label="Forno Antico  Cucina Italiana">
+  <title>Forno Antico primary logo</title>
+  <g fill="none">
+    <path d="M52 22c10 14 22 22 22 42a22 22 0 0 1-44 0c0-14 9-20 12-32 2 5 4 8 7 11-1-8 0-15 3-21z" fill="#B33A2B"/>
+    <path d="M52 44c4 6 9 9 9 17a9 9 0 0 1-18 0c0-6 4-8 5-13 1 2 2 3 4 4-.5-3-.5-5 0-8z" fill="#F6F1E7"/>
+  </g>
+  <text x="104" y="102" font-family="Fraunces, 'Iowan Old Style', Georgia, serif" font-weight="600" font-size="72" letter-spacing="-1" fill="#211D18">Forno Antico</text>
+  <text x="106" y="146" font-family="'DM Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="500" font-size="21" letter-spacing="8" fill="#6B7042">CUCINA ITALIANA</text>
+  <rect x="106" y="118" width="392" height="2" fill="#C99A3F"/>
+</svg>

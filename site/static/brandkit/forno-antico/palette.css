@@ -1,0 +1,13 @@
+/* Forno Antico — Cucina Italiana · brand palette
+   Part of the D. Philhower Design brandkit. Free to use with the identity. */
+
+:root {
+  --forno-pomodoro: #b33a2b; /* primary · tomato red — signage, CTAs, accents */
+  --forno-ink: #211d18;      /* type + dark surfaces — menus, chalkboards */
+  --forno-crema: #f6f1e7;    /* background — paper, walls, boxes */
+  --forno-olio: #6b7042;     /* secondary — herbs, veg, "fresh" cues */
+  --forno-oro: #c99a3f;      /* gold accent — rules, seals, specials */
+
+  --forno-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --forno-text: "DM Sans", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+}
