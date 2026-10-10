@@ -479,6 +479,21 @@ select {
   .process {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .process.is-room {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .process.is-room {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.15rem;
+  }
+
+  .process.is-room.rules-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .process-step {

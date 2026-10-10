@@ -181,6 +181,9 @@ function dps_seed_demo_content( $force = false ) {
 		'cafe-robust-hero.png'   => dps_sideload_theme_image( 'cafe-robust-hero.png', 'Cafe Robust' ),
 		'expresso-hero.png'      => dps_sideload_theme_image( 'expresso-hero.png', 'EXPresso' ),
 		'kickbox-hero.png'       => dps_sideload_theme_image( 'kickbox-hero.png', 'Fitness Kick Boxing' ),
+		'aurea-hero.png'         => dps_sideload_theme_image( 'aurea-hero.png', 'Aurea' ),
+		'juniper-hero.png'       => dps_sideload_theme_image( 'juniper-hero.png', 'Juniper Bar' ),
+		'kiln-hero.png'          => dps_sideload_theme_image( 'kiln-hero.png', 'Kiln Fired' ),
 	);
 
 	if ( $hero_id ) {
@@ -212,6 +215,12 @@ function dps_seed_demo_content( $force = false ) {
 		__( 'Contact', 'dphilhower-studio' ),
 		'',
 		'page-templates/template-contact.php'
+	);
+	dps_upsert_page(
+		'process',
+		__( 'Process', 'dphilhower-studio' ),
+		'',
+		'page-templates/template-process.php'
 	);
 
 	update_option( 'show_on_front', 'page' );
@@ -340,6 +349,42 @@ function dps_seed_demo_content( $force = false ) {
 			'year'     => '2026',
 			'location' => 'Morris County, NJ',
 			'content'  => '<p>The seal starts from the Cafe Robust badge the studio already prints: a circular gold lockup, arched name, a center monogram. Casa Forno rewrites that language for a room with an oven. CF in gold. CASA / FORNO in silver. Wheat instead of stars. Wine enamel instead of espresso. An olive-oil ring instead of crema.</p><p>No Italian flag. No clipart pizza. The food is inside. Trattoria · Forno · Vino sits under the seal so the sidewalk, the menu, and the oil bottle agree. This is a studio identity, not a live account.</p>',
+		),
+		array(
+			'slug'     => 'aurea',
+			'title'    => 'Aurea',
+			'image'    => 'aurea-hero.png',
+			'excerpt'  => 'Room Method · gold-leaf trattoria',
+			'subtitle' => 'Room Method · gold-leaf trattoria',
+			'client'   => 'Studio identity — Italian trattoria (gold leaf)',
+			'services' => 'Identity · Room Method · menu · window · packaging · website',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>Aurea is built in the Philhower &amp; O\'Krogly register: black field, gold leaf, an ornate monogram that has to survive embroidery and a dusk window. The Room Method locked the brief before the foil.</p><p>No Italian flag. No clipart pizza. The food is inside. Trattoria · Forno · Vino sits under the seal. This is a studio identity, not a live account.</p>',
+		),
+		array(
+			'slug'     => 'juniper',
+			'title'    => 'Juniper Bar',
+			'image'    => 'juniper-hero.png',
+			'excerpt'  => 'Room Method · botanical bar',
+			'subtitle' => 'Room Method · botanical bar',
+			'client'   => 'Studio identity — botanical bar',
+			'services' => 'Identity · Room Method · menu · window · packaging · website',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>Juniper Bar is a studio system written for a room that wants a botanical seal, not a neon cocktail. Sit at the rail, say Gin · Bar · Night, shear to one branch and berries, then stage on glass, cream, and kraft.</p><p>No cartoon martini. This is a studio identity, not a live account.</p>',
+		),
+		array(
+			'slug'     => 'kiln',
+			'title'    => 'Kiln Fired',
+			'image'    => 'kiln-hero.png',
+			'excerpt'  => 'Room Method · wood-fired room',
+			'subtitle' => 'Room Method · wood-fired room',
+			'client'   => 'Studio identity — wood-fired room',
+			'services' => 'Identity · Room Method · menu · window · packaging · website',
+			'year'     => '2026',
+			'location' => 'Morris County, NJ',
+			'content'  => '<p>Kiln Fired is a studio system written for a room with an oven mouth and one flame. Sit at the pass, say Fire · Dough · Night, shear to an arch and a single orange flame, then stage on glass, cream, and kraft.</p><p>No clipart pizza. This is a studio identity, not a live account.</p>',
 		),
 		array(
 			'slug'     => 'salt-cedar',
@@ -506,7 +551,7 @@ function dps_seed_demo_content( $force = false ) {
 		)
 	);
 
-	foreach ( array( 'services' => 'Services', 'about' => 'About' ) as $slug => $label ) {
+	foreach ( array( 'process' => 'Process', 'services' => 'Services', 'about' => 'About' ) as $slug => $label ) {
 		$page = get_page_by_path( $slug );
 		if ( $page ) {
 			wp_update_nav_menu_item(
@@ -547,7 +592,7 @@ function dps_seed_demo_content( $force = false ) {
 	flush_rewrite_rules();
 
 	update_option( 'dps_demo_seeded', DPS_VERSION );
-	update_option( 'dps_images_version', 'brands-print-28' );
+	update_option( 'dps_images_version', 'brands-room-method-14' );
 	return true;
 }
 

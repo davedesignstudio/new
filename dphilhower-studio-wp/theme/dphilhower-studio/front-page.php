@@ -27,10 +27,10 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 			</p>
 			<div class="hero-copy">
 			<h1 class="hero-line"><?php echo esc_html( dps_mod( 'dps_hero_line', 'We help independent restaurants look as exceptional as the food they serve.' ) ); ?></h1>
-			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'The first conversation is at your restaurant. Then identity, menus, windows, and the site become one place.' ) ); ?></p>
+			<p class="hero-support"><?php echo esc_html( dps_mod( 'dps_hero_support', 'The first conversation is at your restaurant. Then the Room Method turns identity, menus, windows, and the site into one place.' ) ); ?></p>
 			<div class="cta-row">
 				<a class="btn btn-primary" href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'View brands', 'dphilhower-studio' ); ?></a>
-				<a class="btn btn-ghost" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Invite us over', 'dphilhower-studio' ); ?></a>
+				<a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/process/' ) ); ?>"><?php esc_html_e( 'The Room Method', 'dphilhower-studio' ); ?></a>
 			</div>
 			</div>
 		</div>
@@ -39,19 +39,19 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 	<section class="section reveal">
 		<p class="section-label"><?php esc_html_e( 'Studio', 'dphilhower-studio' ); ?></p>
 		<h2 class="section-title"><?php esc_html_e( 'We start at the table', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'The first conversation is a meal, not a pitch. We sit at your restaurant — a two-top, the bar, or the pass — and talk the way hospitality people talk: who walks in, what they order, what the block already thinks you are. From that table we write, draw, and build so guests recognize you before they sit down.', 'dphilhower-studio' ); ?></p>
+		<p class="section-copy is-wide"><?php esc_html_e( 'The first conversation is a meal, not a pitch. We sit at your restaurant — a two-top, the bar, or the pass — and talk the way hospitality people talk: who walks in, what they order, what the block already thinks you are. From that table we Sit, Say, Scatter, Shear, Stage, and Ship so guests recognize you before they sit down.', 'dphilhower-studio' ); ?></p>
 	</section>
 
 	<section class="section reveal" id="craft">
-		<p class="section-label"><?php esc_html_e( 'Craft · 2024–now', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title is-wide"><?php esc_html_e( 'Bold structure. Human grain.', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'Restaurant design right now rewards two things at once: a clean modernist spine guests can read in a glance, and a tactile human signal that AI polish cannot fake. We keep the hierarchy sharp — then leave room for paper tooth, imperfect type, and marks that feel cooked, not generated.', 'dphilhower-studio' ); ?></p>
+		<p class="section-label"><?php esc_html_e( 'Craft · learned in the work', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title is-wide"><?php esc_html_e( 'Bold structure. Human grain. One cut.', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'From Golden’s CBS Eye to gold-leaf marks that survive embroidery: restaurant design rewards a clean modernist spine guests can read in a glance, and a tactile signal AI polish cannot fake. We Shear until one idea remains — then Stage it on glass, paper, and phone.', 'dphilhower-studio' ); ?></p>
 	</section>
 
 	<section class="section reveal">
-		<p class="section-label"><?php esc_html_e( 'Restaurants', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title is-wide"><?php esc_html_e( 'Full process, full branding', 'dphilhower-studio' ); ?></h2>
-		<p class="section-copy is-wide"><?php esc_html_e( 'Sit down, write it back, draw, build — then the window, the menu, the pack, and the phone. Eight rooms, each as one kit: Bville Pizza & Grill in-house, Ember Pie Co., Casa Forno, and five new studio systems — Salt & Cedar, Noche Roja, Hearth & Rye, Black Olive, and Mizu.', 'dphilhower-studio' ); ?></p>
+		<p class="section-label"><?php esc_html_e( 'Restaurants · eleven kits', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title is-wide"><?php esc_html_e( 'Full Room Method, full branding', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'Eleven rooms, each as one kit. Bville Pizza & Grill in-house. Ember, Casa Forno, Aurea, Juniper Bar, Kiln Fired. Then Salt & Cedar, Noche Roja, Hearth & Rye, Black Olive, and Mizu.', 'dphilhower-studio' ); ?></p>
 		<div class="work-grid is-trio">
 			<?php
 			$featured_ids = array();

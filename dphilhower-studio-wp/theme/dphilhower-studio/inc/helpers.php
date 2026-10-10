@@ -75,6 +75,7 @@ function dps_primary_nav() {
 	?>
 	<ul class="nav" id="site-nav">
 		<li><a href="<?php echo esc_url( $work_url ); ?>"><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></a></li>
+		<li><a href="<?php echo esc_url( home_url( '/process/' ) ); ?>"><?php esc_html_e( 'Process', 'dphilhower-studio' ); ?></a></li>
 		<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Services', 'dphilhower-studio' ); ?></a></li>
 		<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About', 'dphilhower-studio' ); ?></a></li>
 		<li class="cta"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Start a project', 'dphilhower-studio' ); ?></a></li>
@@ -111,6 +112,21 @@ function dps_full_restaurant_slugs() {
 		'bville-pizza-grill',
 		'ember-pie-co',
 		'casa-forno',
+		'aurea',
+		'juniper',
+		'kiln',
+		'aurea'              => array(
+			'file' => 'aurea-print-window.png',
+			'alt'  => __( 'Aurea dusk trattoria window with the gold-leaf seal on glass', 'dphilhower-studio' ),
+		),
+		'juniper'            => array(
+			'file' => 'juniper-print-window.png',
+			'alt'  => __( 'Juniper Bar dusk window with the botanical seal on glass', 'dphilhower-studio' ),
+		),
+		'kiln'               => array(
+			'file' => 'kiln-print-window.png',
+			'alt'  => __( 'Kiln Fired dusk window with the kiln seal on glass', 'dphilhower-studio' ),
+		),
 		'salt-cedar',
 		'noche-roja',
 		'hearth-rye',

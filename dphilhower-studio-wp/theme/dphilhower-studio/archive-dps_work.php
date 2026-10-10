@@ -22,11 +22,11 @@ $other_slugs      = array_values( array_diff( dps_work_archive_slugs(), $restaur
 <main id="main">
 	<header class="page-hero">
 		<h1><?php esc_html_e( 'Brands', 'dphilhower-studio' ); ?></h1>
-		<p><?php esc_html_e( 'Eight restaurants with the full process and full branding — then coffee, deli, ice cream, and the rest of the marks. Including in-house design for Bville Pizza & Grill, 2018–2021.', 'dphilhower-studio' ); ?></p>
+		<p><?php esc_html_e( 'Eleven restaurants with the full Room Method and full branding — then coffee, deli, ice cream, and the rest of the marks. Including in-house design for Bville Pizza & Grill, 2018–2021.', 'dphilhower-studio' ); ?></p>
 	</header>
 	<section class="section" style="padding-top:0">
 		<p class="section-label"><?php esc_html_e( 'Restaurants', 'dphilhower-studio' ); ?></p>
-		<h2 class="section-title is-wide"><?php esc_html_e( 'Full process, full branding', 'dphilhower-studio' ); ?></h2>
+		<h2 class="section-title is-wide"><?php esc_html_e( 'Full Room Method, full branding', 'dphilhower-studio' ); ?></h2>
 		<div class="work-grid is-trio">
 			<?php
 			foreach ( $restaurant_slugs as $slug ) {
