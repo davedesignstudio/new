@@ -518,6 +518,61 @@ body {
 .swatch-mizu-steam { background: #F3F0EA; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
 .swatch-mizu-charcoal { background: #1C1C1C; color: #f3f0ea; }
 .swatch-mizu-vermillion { background: #C73E2A; color: #f3f0ea; }
+.swatch-aurea-black { background: #0E0E0E; color: #f4efe4; }
+.swatch-aurea-gold { background: #C9A24A; color: #1c1610; }
+.swatch-aurea-teal { background: #2F5F63; color: #f4efe4; }
+.swatch-aurea-cream { background: #F4EFE4; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-juniper-navy { background: #1C2430; color: #f3efe6; }
+.swatch-juniper-cream { background: #F3EFE6; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-juniper-sage { background: #6B7F6A; color: #f3efe6; }
+.swatch-juniper-brass { background: #C4A35A; color: #1c1610; }
+.swatch-kiln-charcoal { background: #1C1C1C; color: #f7f1e6; }
+.swatch-kiln-flame { background: #E85C28; color: #1c1610; }
+.swatch-kiln-cream { background: #F7F1E6; color: #1c1610; border: 1px solid rgba(28, 22, 16, 0.14); }
+.swatch-kiln-ash { background: #8A847A; color: #1c1610; }
+
+.room-plate {
+  margin-bottom: 0;
+}
+
+.room-plate img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top: 3px solid var(--gold);
+}
+
+.process.is-room .process-step {
+  background: rgba(248, 244, 220, 0.05);
+  padding: 1.1rem 1rem 1.25rem;
+  border-top: 3px solid var(--gold);
+}
+
+.hero-content {
+  animation: heroRise 1.1s var(--ease) both;
+}
+
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.work-item img {
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
+}
+
+.work-item:hover img {
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.section-label {
+  animation: labelIn 0.8s var(--ease) both;
+}
+
+@keyframes labelIn {
+  from { opacity: 0; letter-spacing: 0.32em; }
+  to { opacity: 1; letter-spacing: 0.2em; }
+}
 
 .work-grid.is-trio {
   display: grid;

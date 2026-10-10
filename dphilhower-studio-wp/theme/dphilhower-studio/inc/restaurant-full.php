@@ -3,7 +3,8 @@
  * Full process + identity kits for the restaurant systems.
  *
  * Bville Pizza & Grill (in-house 2018–2021), Ember Pie Co., Casa Forno,
- * plus Salt & Cedar, Noche Roja, Hearth & Rye, Black Olive, and Mizu.
+ * Aurea, Juniper Bar, Kiln Fired, plus Salt & Cedar, Noche Roja,
+ * Hearth & Rye, Black Olive, and Mizu. Room Method on the new trio.
  *
  * @package DPhilhowerStudio
  */
@@ -105,17 +106,17 @@ function dps_brand_processes() {
 					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
 					'title' => __( 'A stool at the oyster bar', 'dphilhower-studio' ),
 					'copy'  => __( 'The first conversation is who walks in for a dozen, who stays for a drink, and what has to live on glass in brass — not a cartoon shell.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
 					'title' => __( 'Oysters · Bar · Harbor', 'dphilhower-studio' ),
 					'copy'  => __( 'The brief: navy for depth, cedar for the board, pearl for cream stock, brass for the sign. The food stays inside. The line under the seal has to agree with the menu and the bottle.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
 					'title' => __( 'Brass SC, pearl ring', 'dphilhower-studio' ),
 					'copy'  => __( 'Official circular seal: brass SC, SALT & CEDAR on the top arc, OYSTER BAR on the bottom, wave and cedar at the sides, navy plate. Quiet serif for the list. Brass rules.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '04 · Build', 'dphilhower-studio' ),
 					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
@@ -131,17 +132,17 @@ function dps_brand_processes() {
 					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
 					'title' => __( 'A table under the string lights', 'dphilhower-studio' ),
 					'copy'  => __( 'The first conversation is who walks in for tacos, who stays for mezcal, and what has to live on glass in marigold — not a cartoon sombrero.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
 					'title' => __( 'Cantina · Fuego · Mesa', 'dphilhower-studio' ),
 					'copy'  => __( 'The brief: chili for heat, adobe for the wall, ink for night, marigold for the stamp. The food stays inside. The line under the seal has to agree with the menu and the jar.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
 					'title' => __( 'Marigold NR, chili plate', 'dphilhower-studio' ),
 					'copy'  => __( 'Official circular seal: marigold NR, NOCHE ROJA on the top arc, CANTINA on the bottom, chili and sun at the sides. Quiet serif for the list. Marigold rules.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '04 · Build', 'dphilhower-studio' ),
 					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
@@ -157,17 +158,17 @@ function dps_brand_processes() {
 					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
 					'title' => __( 'A booth by the fire', 'dphilhower-studio' ),
 					'copy'  => __( 'The first conversation is who walks in for a roast, who takes bread home, and what has to live on glass in copper — not a cartoon steak.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
 					'title' => __( 'Roast · Rye · Fire', 'dphilhower-studio' ),
 					'copy'  => __( 'The brief: charcoal for the room, rye for the loaf, cream for stock, copper for the stamp. The food stays inside. The line under the seal has to agree with the menu and the jar.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
 					'title' => __( 'Copper HR, charcoal plate', 'dphilhower-studio' ),
 					'copy'  => __( 'Official circular seal: copper HR, HEARTH & RYE on the top arc, ROAST HOUSE on the bottom, wheat and flame at the sides. Quiet serif for the list. Copper rules.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '04 · Build', 'dphilhower-studio' ),
 					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
@@ -183,17 +184,17 @@ function dps_brand_processes() {
 					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
 					'title' => __( 'A table in the whitewash', 'dphilhower-studio' ),
 					'copy'  => __( 'The first conversation is who walks in for meze, who takes oil home, and what has to live on glass in cream — not a cartoon column.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
 					'title' => __( 'Meze · Olive · Sea', 'dphilhower-studio' ),
 					'copy'  => __( 'The brief: olive for the grove, black for night, whitewash for the wall, Aegean for water. The food stays inside. The line under the seal has to agree with the menu and the bottle.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
 					'title' => __( 'Cream BO, olive plate', 'dphilhower-studio' ),
 					'copy'  => __( 'Official circular seal: cream BO, BLACK OLIVE on the top arc, MEZE on the bottom, olive branch at the sides. Quiet serif for the list. Aegean rules.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '04 · Build', 'dphilhower-studio' ),
 					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
@@ -209,21 +210,129 @@ function dps_brand_processes() {
 					'num'   => __( '01 · Sit down', 'dphilhower-studio' ),
 					'title' => __( 'A stool at the counter', 'dphilhower-studio' ),
 					'copy'  => __( 'The first conversation is who walks in for a bowl, who takes chili oil home, and what has to live on glass in white — not a cartoon noodle.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '02 · Write it back', 'dphilhower-studio' ),
 					'title' => __( 'Ramen · Steam · Night', 'dphilhower-studio' ),
 					'copy'  => __( 'The brief: indigo for night, steam for cream stock, charcoal for the counter, vermillion for heat. The food stays inside. The line under the seal has to agree with the menu and the bottle.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '03 · Draw', 'dphilhower-studio' ),
 					'title' => __( 'White MIZU, indigo plate', 'dphilhower-studio' ),
 					'copy'  => __( 'Official circular seal: MIZU in condensed white caps, RAMEN on the top arc, STEAM · NIGHT on the bottom, wave motif, thin vermillion ring. Quiet sans for the list.', 'dphilhower-studio' ),
-				),,
+				),
 				array(
 					'num'   => __( '04 · Build', 'dphilhower-studio' ),
 					'title' => __( 'Window, list, pack, phone', 'dphilhower-studio' ),
 					'copy'  => __( 'Dusk window, cream menu, chili oil and takeaway, cards, coasters, loyalty, poster, matchbook, and a homepage that uses the same indigo and vermillion. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'aurea' => array(
+			'title' => __( 'From leaf to glass', 'dphilhower-studio' ),
+			'intro' => __( 'Aurea was sheared in the Room Method: one gold-leaf idea that reads on black, on cream, and on glass — then staged on every hold.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit', 'dphilhower-studio' ),
+					'title' => __( 'A room that wants leaf', 'dphilhower-studio' ),
+					'copy'  => __( 'Who stays for primi, who takes oil home, and what has to live on glass in gold leaf — not a flag, not clipart pizza.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '02 · Say', 'dphilhower-studio' ),
+					'title' => __( 'Trattoria · Forno · Vino', 'dphilhower-studio' ),
+					'copy'  => __( 'One line the window can hold. Black is the plate. Gold is the leaf. Teal is the diamond that frames the monogram.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '03 · Scatter', 'dphilhower-studio' ),
+					'title' => __( 'Twenty gold answers', 'dphilhower-studio' ),
+					'copy'  => __( 'Monograms, seals, Trajan arcs, blackletter locks. Quantity first. No favorites until Shear.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '04 · Shear', 'dphilhower-studio' ),
+					'title' => __( 'One leaf, one idea', 'dphilhower-studio' ),
+					'copy'  => __( 'Ornate gold monogram on black. AUREA in the same leaf. Thin teal diamond. Kill every second idea.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '05 · Stage', 'dphilhower-studio' ),
+					'title' => __( 'Seal, menu, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Prove the mark on glass, cream list, oil and ragù, cards, coasters, and a homepage that uses the same black and gold.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '06 · Ship', 'dphilhower-studio' ),
+					'title' => __( 'One kit, every surface', 'dphilhower-studio' ),
+					'copy'  => __( 'Print files, naming, and a system the room can run. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'juniper' => array(
+			'title' => __( 'From the branch to the glass', 'dphilhower-studio' ),
+			'intro' => __( 'Juniper was sheared to one botanical idea that reads on cream, on navy, and on a coaster under a glass.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit', 'dphilhower-studio' ),
+					'title' => __( 'A stool at the rail', 'dphilhower-studio' ),
+					'copy'  => __( 'Who walks in for gin, who stays for the night, and what has to live on glass in navy — not a cartoon cocktail.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '02 · Say', 'dphilhower-studio' ),
+					'title' => __( 'Gin · Bar · Night', 'dphilhower-studio' ),
+					'copy'  => __( 'One line the window can hold. Cream is the stock. Navy is the ink. The branch is the only picture.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '03 · Scatter', 'dphilhower-studio' ),
+					'title' => __( 'Twenty botanical answers', 'dphilhower-studio' ),
+					'copy'  => __( 'Seals, wordmarks, berry clusters, apothecary labels. Quantity first.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '04 · Shear', 'dphilhower-studio' ),
+					'title' => __( 'Branch, berries, double ring', 'dphilhower-studio' ),
+					'copy'  => __( 'JUNIPER on the top arc. BAR under a rule. Kill decoration that does not carry the plant.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '05 · Stage', 'dphilhower-studio' ),
+					'title' => __( 'Seal, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Prove the mark on glass, cream menu, bottle and kraft, cards, coasters, and a homepage that uses the same navy and cream.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '06 · Ship', 'dphilhower-studio' ),
+					'title' => __( 'One kit, every surface', 'dphilhower-studio' ),
+					'copy'  => __( 'Print files and a system the bar can run. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+				),
+			),
+		),
+		'kiln' => array(
+			'title' => __( 'From the mouth to the flame', 'dphilhower-studio' ),
+			'intro' => __( 'Kiln was sheared to one idea: an arch, a pile of coal, a single orange flame that still reads on a coaster.', 'dphilhower-studio' ),
+			'steps' => array(
+				array(
+					'num'   => __( '01 · Sit', 'dphilhower-studio' ),
+					'title' => __( 'Stand at the oven mouth', 'dphilhower-studio' ),
+					'copy'  => __( 'Who walks in for fire, who takes dough home, and what has to live on glass in orange — not a cartoon pizza.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '02 · Say', 'dphilhower-studio' ),
+					'title' => __( 'Fire · Dough · Night', 'dphilhower-studio' ),
+					'copy'  => __( 'One line the window can hold. Charcoal is the kiln. Cream is the stock. Orange is the only loud color.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '03 · Scatter', 'dphilhower-studio' ),
+					'title' => __( 'Twenty fire answers', 'dphilhower-studio' ),
+					'copy'  => __( 'Seals, wordmarks, oven doors, wheat-and-flame locks. Quantity first.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '04 · Shear', 'dphilhower-studio' ),
+					'title' => __( 'Arch, coal, one flame', 'dphilhower-studio' ),
+					'copy'  => __( 'KILN on the top arc. FIRED on the bottom. Kill every second flame and every second idea.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '05 · Stage', 'dphilhower-studio' ),
+					'title' => __( 'Seal, list, pack, phone', 'dphilhower-studio' ),
+					'copy'  => __( 'Prove the mark on glass, cream menu, jar and kraft, cards, coasters, and a homepage that uses the same charcoal and orange.', 'dphilhower-studio' ),
+				),
+				array(
+					'num'   => __( '06 · Ship', 'dphilhower-studio' ),
+					'title' => __( 'One kit, every surface', 'dphilhower-studio' ),
+					'copy'  => __( 'Print files and a system the room can run. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
 				),
 			),
 		),
@@ -380,6 +489,60 @@ function dps_identity_kits() {
 			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
 			'body_label'     => __( 'Body — quiet sans', 'dphilhower-studio' ),
 			'body_note'      => __( 'Ramen, small plates, tea. Prices in a column. The kitchen is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'aurea' => array(
+			'wordmark'       => 'Aurea',
+			'wordmark_span'  => 'Trattoria',
+			'blurb'          => __( 'Gold-leaf display for the seal. Quiet serif for primi, secondi, dolci. Black plate, gold monogram, teal diamond, cream stock.', 'dphilhower-studio' ),
+			'board'          => 'aurea-kit.png',
+			'board_alt'      => __( 'Aurea identity board: gold-leaf monogram, black, gold, teal, cream', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-aurea-black', 'name' => 'Black', 'hex' => '#0E0E0E' ),
+				array( 'class' => 'swatch-aurea-gold', 'name' => 'Gold', 'hex' => '#C9A24A' ),
+				array( 'class' => 'swatch-aurea-teal', 'name' => 'Teal', 'hex' => '#2F5F63' ),
+				array( 'class' => 'swatch-aurea-cream', 'name' => 'Cream', 'hex' => '#F4EFE4' ),
+			),
+			'display_label'  => __( 'Display — gold-leaf blackletter', 'dphilhower-studio' ),
+			'display_sample' => 'AUREA',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet serif', 'dphilhower-studio' ),
+			'body_note'      => __( 'Primi, secondi, dolci. Prices in a column. The kitchen is twenty feet away — no food photos.', 'dphilhower-studio' ),
+		),
+		'juniper' => array(
+			'wordmark'       => 'Juniper',
+			'wordmark_span'  => 'Bar',
+			'blurb'          => __( 'Serif for JUNIPER on the arc. Quiet sans for BAR. Navy ink, cream plate, sage leaf, brass edge.', 'dphilhower-studio' ),
+			'board'          => 'juniper-kit.png',
+			'board_alt'      => __( 'Juniper Bar identity board: botanical seal, navy, cream, sage, brass', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-juniper-navy', 'name' => 'Navy', 'hex' => '#1C2430' ),
+				array( 'class' => 'swatch-juniper-cream', 'name' => 'Cream', 'hex' => '#F3EFE6' ),
+				array( 'class' => 'swatch-juniper-sage', 'name' => 'Sage', 'hex' => '#6B7F6A' ),
+				array( 'class' => 'swatch-juniper-brass', 'name' => 'Brass', 'hex' => '#C4A35A' ),
+			),
+			'display_label'  => __( 'Display — high-contrast serif', 'dphilhower-studio' ),
+			'display_sample' => 'JUNIPER',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet sans', 'dphilhower-studio' ),
+			'body_note'      => __( 'Gin, bar, small plates. Prices in a column. The rail is twenty feet away — no cocktail photos.', 'dphilhower-studio' ),
+		),
+		'kiln' => array(
+			'wordmark'       => 'Kiln',
+			'wordmark_span'  => 'Fired',
+			'blurb'          => __( 'Heavy sans for KILN / FIRED. Quiet body for the list. Charcoal plate, orange flame, cream stock, ash ground.', 'dphilhower-studio' ),
+			'board'          => 'kiln-kit.png',
+			'board_alt'      => __( 'Kiln Fired identity board: kiln seal, charcoal, flame, cream, ash', 'dphilhower-studio' ),
+			'swatches'       => array(
+				array( 'class' => 'swatch-kiln-charcoal', 'name' => 'Charcoal', 'hex' => '#1C1C1C' ),
+				array( 'class' => 'swatch-kiln-flame', 'name' => 'Flame', 'hex' => '#E85C28' ),
+				array( 'class' => 'swatch-kiln-cream', 'name' => 'Cream', 'hex' => '#F7F1E6' ),
+				array( 'class' => 'swatch-kiln-ash', 'name' => 'Ash', 'hex' => '#8A847A' ),
+			),
+			'display_label'  => __( 'Display — heavy sans', 'dphilhower-studio' ),
+			'display_sample' => 'KILN FIRED',
+			'display_note'   => __( 'Seal, window vinyl, poster. Never a paragraph of specials.', 'dphilhower-studio' ),
+			'body_label'     => __( 'Body — quiet sans', 'dphilhower-studio' ),
+			'body_note'      => __( 'Fire, dough, sides. Prices in a column. The oven is twenty feet away — no food photos.', 'dphilhower-studio' ),
 		),
 	);
 }
@@ -555,6 +718,69 @@ function dps_brand_touchpoints() {
 				array(
 					'file'  => 'mizu-print-pack.png',
 					'alt'   => __( 'Mizu chili oil bottle and kraft takeaway with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'aurea' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Gold leaf on glass. Oil and ragù carry weight, keep, and lot. The homepage uses the same black and gold as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'aurea-print-window.png',
+					'alt'   => __( 'Aurea dusk trattoria window with the gold-leaf seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'aurea-phone.png',
+					'alt'   => __( 'Phone showing the Aurea homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'aurea-print-pack.png',
+					'alt'   => __( 'Aurea olive oil and house ragù with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'juniper' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Seal on glass. Tonic and kraft carry weight, keep, and lot. The homepage uses the same navy and cream as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'juniper-print-window.png',
+					'alt'   => __( 'Juniper Bar dusk window with the botanical seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'juniper-phone.png',
+					'alt'   => __( 'Phone showing the Juniper Bar homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'juniper-print-pack.png',
+					'alt'   => __( 'Juniper Bar tonic bottle and kraft takeaway with the official seal', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+			),
+		),
+		'kiln' => array(
+			'title' => __( 'Window, pack, homepage', 'dphilhower-studio' ),
+			'copy'  => __( 'Seal on glass. Oil and kraft carry weight, keep, and lot. The homepage uses the same charcoal and flame as the menu. Studio identity — Morris County, NJ.', 'dphilhower-studio' ),
+			'items' => array(
+				array(
+					'file'  => 'kiln-print-window.png',
+					'alt'   => __( 'Kiln Fired dusk window with the kiln seal on glass', 'dphilhower-studio' ),
+					'phone' => false,
+				),
+				array(
+					'file'  => 'kiln-phone.png',
+					'alt'   => __( 'Phone showing the Kiln Fired homepage', 'dphilhower-studio' ),
+					'phone' => true,
+				),
+				array(
+					'file'  => 'kiln-print-pack.png',
+					'alt'   => __( 'Kiln Fired oil bottle and kraft takeaway with the official seal', 'dphilhower-studio' ),
 					'phone' => false,
 				),
 			),
