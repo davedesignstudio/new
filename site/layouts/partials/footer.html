@@ -1,4 +1,31 @@
-<script src="/js/siema.min.js"></script>
-<script src="/app.js"></script>
+  <footer class="site-footer">
+    <div class="site-footer__rule" aria-hidden="true"></div>
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="eyebrow">D Philhower Studio</p>
+        <p class="site-footer__claim">{{ .Site.Params.tagline }}</p>
+      </div>
+      <div class="site-footer__group">
+        <p class="eyebrow">Studio</p>
+        <p>{{ .Site.Params.location }}</p>
+        <p><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+        <p><a href="tel:+12015727907">{{ .Site.Params.phone }}</a></p>
+      </div>
+      <div class="site-footer__group">
+        <p class="eyebrow">Index</p>
+        <ul class="plain-list">
+          {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="site-footer__group">
+        <p class="eyebrow">Method</p>
+        <p>Proximity. Similarity. Continuity. Closure. Figure and ground. Prägnanz.</p>
+      </div>
+    </div>
+    <p class="site-footer__legal">© 2026 D Philhower Studio. All rights reserved.</p>
+  </footer>
+  <script src="/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+{{ partial "header" . }}
+
+<main id="main" class="page">
+  <header class="page-hero">
+    <p class="eyebrow">Contact</p>
+    <h1>{{ .Params.headline }}</h1>
+    <p class="lede">{{ .Params.lede }}</p>
+  </header>
+
+  <div class="contact-split">
+    <form class="contact-form" name="project" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/">
+      <input type="hidden" name="form-name" value="project">
+      <p class="visually-hidden">
+        <label>Don’t fill this in <input name="bot-field"></label>
+      </p>
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>
+        <span>Restaurant or business</span>
+        <input type="text" name="business" autocomplete="organization">
+      </label>
+      <label>
+        <span>What do you need</span>
+        <select name="need">
+          <option value="identity">Identity</option>
+          <option value="menus">Menus</option>
+          <option value="spaces">Spaces</option>
+          <option value="packaging">Packaging</option>
+          <option value="web">Web</option>
+          <option value="full-system">Full brand system</option>
+        </select>
+      </label>
+      <label>
+        <span>The project</span>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button class="btn btn--focal" type="submit">Send to the studio</button>
+      <p class="form-status" hidden>Received. David will write back.</p>
+    </form>
+
+    <aside class="contact-aside">
+      <p class="eyebrow">Studio</p>
+      <p>{{ .Site.Params.location }}</p>
+      <p><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+      <p><a href="tel:+12015727907">{{ .Site.Params.phone }}</a></p>
+      <p class="contact-aside__note">Replies within two business days. New restaurant systems are booked one at a time so the work stays close.</p>
+    </aside>
+  </div>
+</main>
+
+{{ partial "footer" . }}

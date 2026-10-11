@@ -1,0 +1,147 @@
+{{ partial "header" . }}
+
+<main id="main" class="page method-page">
+  <header class="page-hero">
+    <p class="eyebrow">Method</p>
+    <h1>{{ .Params.headline }}</h1>
+    <p class="lede">{{ .Params.lede }}</p>
+  </header>
+
+  <div class="method-spine">
+    <article class="principle" id="proximity">
+      <div class="principle__copy">
+        <p class="eyebrow">01</p>
+        <h2>Proximity</h2>
+        <p>Things that sit close are read as a group. On a menu, that is category, price, and the dish that belongs with them. On a site, it is title, lede, and services sharing one region so the project does not fall apart.</p>
+        <p class="principle__use"><strong>In the room:</strong> specials live with specials. The guest should never cross a desert of space to find the wine that matches the plate.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board">
+          <div class="g-prox">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="g-prox g-prox--apart">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <figcaption>Two clusters. Same dots. Different meaning.</figcaption>
+      </figure>
+    </article>
+
+    <article class="principle" id="similarity">
+      <div class="principle__copy">
+        <p class="eyebrow">02</p>
+        <h2>Similarity</h2>
+        <p>Shared shape, weight, or color is a silent “these belong.” A restaurant brand that changes type on every card is asking the guest to relearn the room each time.</p>
+        <p class="principle__use"><strong>In the room:</strong> the takeout bag, the window vinyl, and the Instagram tile use one crop, one red, one wordmark.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board">
+          <div class="g-sim">
+            <span class="g-sim__dot"></span>
+            <span class="g-sim__dot"></span>
+            <span class="g-sim__sq"></span>
+            <span class="g-sim__dot"></span>
+            <span class="g-sim__dot"></span>
+          </div>
+        </div>
+        <figcaption>One shape breaks the set. The eye goes there first.</figcaption>
+      </figure>
+    </article>
+
+    <article class="principle" id="continuity">
+      <div class="principle__copy">
+        <p class="eyebrow">03</p>
+        <h2>Continuity</h2>
+        <p>The eye prefers a path. We build one from the fascia to the host stand to the menu to the check presenter. Alignment is not decoration. It is how a guest moves.</p>
+        <p class="principle__use"><strong>In the room:</strong> the wordmark on the awning sits on the same axis as the mark on the menu. The line continues even when the surface changes.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board">
+          <div class="g-cont">
+            <i></i><i></i><i></i><i></i><i></i>
+            <b></b>
+          </div>
+        </div>
+        <figcaption>Separate marks. One implied line.</figcaption>
+      </figure>
+    </article>
+
+    <article class="principle" id="closure">
+      <div class="principle__copy">
+        <p class="eyebrow">04</p>
+        <h2>Closure</h2>
+        <p>The mind completes what is almost there. A mark can leave a gap and still lock. Work frames on this site are open on one side for the same reason — the picture finishes itself.</p>
+        <p class="principle__use"><strong>In the room:</strong> a letterform that opens toward the plate. A window decal that does not need a full box to read as a sign.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board">
+          <div class="g-close"></div>
+        </div>
+        <figcaption>An open circle still reads as a circle.</figcaption>
+      </figure>
+    </article>
+
+    <article class="principle principle--invert" id="figure-ground">
+      <div class="principle__copy">
+        <p class="eyebrow">05</p>
+        <h2>Figure and ground</h2>
+        <p>What advances and what recedes is a choice. Black type on cream is one reading. Cream type in a dark field is another. We decide which is the dish and which is the table.</p>
+        <p class="principle__use"><strong>In the room:</strong> a bright plate on a dark bar. A quiet wall behind a loud specials board. Contrast is hospitality.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board diagram__board--ink">
+          <div class="g-fg">
+            <span>P</span>
+          </div>
+        </div>
+        <figcaption>The letter is figure. The field is ground. Reverse them and the brand still holds.</figcaption>
+      </figure>
+    </article>
+
+    <article class="principle" id="pragnanz">
+      <div class="principle__copy">
+        <p class="eyebrow">06</p>
+        <h2>Prägnanz</h2>
+        <p>People see the simplest stable form. A dining room is already loud. The identity has to reduce, not add. If a mark needs a paragraph to explain, it is not ready for a 40-second wait at the host stand.</p>
+        <p class="principle__use"><strong>In the room:</strong> one wordmark, one accent, one rhythm of space. Complexity lives in the food. The brand stays lucid.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board">
+          <div class="g-prag">
+            <span class="g-prag__noise"></span>
+            <span class="g-prag__form"></span>
+          </div>
+        </div>
+        <figcaption>Noise versus the simplest true shape.</figcaption>
+      </figure>
+    </article>
+
+    <article class="principle" id="focal-point">
+      <div class="principle__copy">
+        <p class="eyebrow">07</p>
+        <h2>Focal point</h2>
+        <p>A field needs one thing that is unlike the rest. On this site it is the rust call to action. On a menu it is the dish you want to sell tonight. If everything shouts, nothing is seen.</p>
+        <p class="principle__use"><strong>In the room:</strong> one special, one color, one light over the bar. The rest supports.</p>
+      </div>
+      <figure class="diagram" aria-hidden="true">
+        <div class="diagram__board">
+          <div class="g-focal">
+            <span></span><span></span><span></span>
+            <span></span><span class="is-focal"></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <figcaption>Eight quiet units. One that is not.</figcaption>
+      </figure>
+    </article>
+  </div>
+
+  <section class="band band--cta">
+    <p class="eyebrow">Next</p>
+    <h2>Bring the method into the room.</h2>
+    <a class="btn btn--focal" href="/contact/">Start a project</a>
+  </section>
+</main>
+
+{{ partial "footer" . }}

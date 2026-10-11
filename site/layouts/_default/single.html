@@ -1,7 +1,14 @@
 {{ partial "header" . }}
 
-<div class="content container">
-  {{ .Content }}
-</div>
+<main id="main" class="page">
+  <header class="page-hero">
+    <p class="eyebrow">{{ .Title }}</p>
+    <h1>{{ with .Params.headline }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <article class="page-body">
+    {{ .Content }}
+  </article>
+</main>
 
 {{ partial "footer" . }}

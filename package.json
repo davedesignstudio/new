@@ -1,14 +1,14 @@
 {
-  "name": "victor-hugo",
+  "name": "dphilhower-studio",
   "version": "1.0.0",
-  "description": "Victor Hugo is a Hugo boilerplate for creating truly epic websites!",
+  "description": "D Philhower Studio — North Jersey graphic design site, built with Gestalt methods.",
   "repository": "netlify/victor-hugo",
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
-    "build": "gulp build",
+    "build": "node scripts/build.js",
     "build-preview": "gulp build-preview",
-    "start": "gulp server",
+    "start": "node scripts/dev.js",
     "start-preview": "gulp server-preview",
     "lint": "eslint src"
   },

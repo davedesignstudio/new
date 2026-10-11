@@ -1,0 +1,58 @@
+{{ partial "header" . }}
+
+<main id="main" class="page project">
+  <header class="project-hero">
+    <p class="eyebrow">{{ .Params.index }} — {{ .Params.client }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lede">{{ .Params.lede }}</p>
+    <dl class="project-facts">
+      <div>
+        <dt>Client</dt>
+        <dd>{{ .Params.client }}</dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>{{ .Params.location }}</dd>
+      </div>
+      <div>
+        <dt>Services</dt>
+        <dd>{{ delimit .Params.services ", " }}</dd>
+      </div>
+      <div>
+        <dt>Gestalt</dt>
+        <dd>{{ .Params.gestalt }}</dd>
+      </div>
+    </dl>
+  </header>
+
+  <figure class="project-cover">
+    <div class="work-card__frame work-card__frame--tall">
+      <img src="{{ .Params.image }}" alt="{{ .Params.image_alt }}">
+    </div>
+  </figure>
+
+  <article class="project-body">
+    {{ .Content }}
+  </article>
+
+  {{ if .Params.gallery }}
+  <div class="project-gallery">
+    {{ range .Params.gallery }}
+    <figure class="work-card__frame">
+      <img src="{{ .src }}" alt="{{ .alt }}">
+    </figure>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <nav class="project-next" aria-label="More work">
+    <p class="eyebrow">Next</p>
+    {{ if .NextInSection }}
+      <a class="text-link" href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a>
+    {{ else }}
+      <a class="text-link" href="/work/">All work</a>
+    {{ end }}
+  </nav>
+</main>
+
+{{ partial "footer" . }}
