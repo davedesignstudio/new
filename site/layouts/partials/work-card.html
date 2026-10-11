@@ -1,0 +1,15 @@
+<article class="work-card">
+  <a class="work-card__link" href="{{ .Permalink }}">
+    <div class="work-card__frame">
+      <img src="{{ .Params.image }}" alt="{{ .Params.image_alt }}">
+    </div>
+    <div class="work-card__meta">
+      <p class="work-card__index">{{ .Params.index }}</p>
+      <div class="work-card__copy">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.lede }}</p>
+      </div>
+      <p class="work-card__services">{{ delimit .Params.services " / " }}</p>
+    </div>
+  </a>
+</article>

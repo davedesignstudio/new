@@ -1,36 +1,35 @@
-# Example site for restaurants built with Victor Hugo
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/restaurant-template-cms&stack=cms)
+# D Philhower Studio
 
-![homepage of an example restaurant website](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+North Jersey graphic design studio site for David Philhower. Brand systems for restaurants — identity, menus, spaces, packaging, and web — designed with Gestalt methods.
 
-This is the repository for the example site featured in the [Coding Modern Websites with the JAMstack](https://www.netlify.com/blog/2017/10/06/coding-modern-websites-with-the-jamstack-part-1/) tutorial.
+The site is built on the Victor Hugo pipeline (Hugo + Gulp + webpack). Content lives in `site/content`. Layout and Gestalt diagrams live in `site/layouts` and `src/css`.
 
-To install and run the example site locally, here’s what you’ll need:
+## Run locally
 
-## System Requirements
-
-* [git](https://git-scm.com)
-* [NodeJS](nodejs.org) 8 or greater
-* [Hugo](https://gohugo.io/overview/installing/)
-
-## Usage
-
-Clone this repository and run:
+Needs Node and the repo dependencies:
 
 ```bash
 npm install
-npm run start
+npm start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+Then open http://localhost:3000.
 
-To build your static output to the `/dist` folder, use:
+## Build
 
 ```bash
 npm run build
 ```
+
+Static output goes to `/dist`.
+
+## Pages
+
+- `/` selected work, method index, services
+- `/work/` hospitality case studies
+- `/method/` Gestalt diagrams: proximity, similarity, continuity, closure, figure/ground, prägnanz, focal point
+- `/about/` studio
+- `/contact/` project form
 
 ## License
 

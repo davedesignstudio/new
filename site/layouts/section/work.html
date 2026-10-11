@@ -1,0 +1,16 @@
+{{ partial "header" . }}
+
+<main id="main" class="page">
+  <header class="page-hero">
+    <p class="eyebrow">Work</p>
+    <h1>Hospitality systems, seen as a whole.</h1>
+    <p class="lede">Each project is a brand kit: identity, menus, space, and web, held together by Gestalt methods so the guest never feels a seam.</p>
+  </header>
+  <div class="work-grid">
+    {{ range where .Data.Pages.ByWeight "Section" "work" }}
+      {{ partial "work-card" . }}
+    {{ end }}
+  </div>
+</main>
+
+{{ partial "footer" . }}
