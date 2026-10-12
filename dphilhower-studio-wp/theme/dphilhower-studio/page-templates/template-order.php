@@ -25,6 +25,9 @@ foreach ( $catalog as $sku => $item ) {
 		<p class="section-label"><?php esc_html_e( 'Design system', 'dphilhower-studio' ); ?></p>
 		<h1><?php esc_html_e( 'Build the brand. Take the order. Print the ticket.', 'dphilhower-studio' ); ?></h1>
 		<p><?php esc_html_e( 'Five layers, one restaurant. WooCommerce records the pickup order. The kitchen ticket is sent to the printer at the restaurant when the order is placed.', 'dphilhower-studio' ); ?></p>
+		<p class="cta-row" style="margin-top:1.25rem">
+			<a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/system/' ) ); ?>"><?php esc_html_e( 'Assemble the pieces', 'dphilhower-studio' ); ?></a>
+		</p>
 	</header>
 
 	<section class="section" style="padding-top:0">

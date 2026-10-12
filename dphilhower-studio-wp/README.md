@@ -45,6 +45,14 @@ The static preview of that flow is `preview/order/`. Run it with PHP so the samp
 php -S 127.0.0.1:8770 -t dphilhower-studio-wp/preview dphilhower-studio-wp/preview/order/router.php
 ```
 
+Open `http://127.0.0.1:8770/order/`.
+
+## Modular pieces
+
+Six pieces share one frame: a mark (seal, wordmark, or monogram), a color chord, a menu sheet, a window band, a pack label, and a kitchen ticket. Swapping the mark or the chord keeps the menu, the window, the pack, and the ticket aligned. Ember, Casa Forno, Salt & Cedar, Mizu, Juniper, and Kiln are studio identities on that board, not live accounts.
+
+The System page is `/system/`. The same board is in the static preview at `http://127.0.0.1:8770/system/` when the preview server above is running.
+
 ## Install the theme zip (you already have WordPress)
 
 1. In wp-admin go to **Appearance → Themes → Add New → Upload Theme**.

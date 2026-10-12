@@ -53,7 +53,10 @@ get_header();
 						<li><?php esc_html_e( 'One ticket per order', 'dphilhower-studio' ); ?></li>
 						<li><?php esc_html_e( 'Network printer on port 9100', 'dphilhower-studio' ); ?></li>
 					</ul>
-					<p><a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/order/' ) ); ?>"><?php esc_html_e( 'Open the order system', 'dphilhower-studio' ); ?></a></p>
+					<p class="cta-row">
+						<a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/system/' ) ); ?>"><?php esc_html_e( 'Assemble the pieces', 'dphilhower-studio' ); ?></a>
+						<a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/order/' ) ); ?>"><?php esc_html_e( 'Open the order system', 'dphilhower-studio' ); ?></a>
+					</p>
 				</div>
 			</article>
 		</div>
