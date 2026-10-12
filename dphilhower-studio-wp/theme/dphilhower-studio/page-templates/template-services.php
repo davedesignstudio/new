@@ -43,6 +43,19 @@ get_header();
 					</ul>
 				</div>
 			</article>
+			<article class="service-row">
+				<h2><?php esc_html_e( 'Orders that print in the kitchen', 'dphilhower-studio' ); ?></h2>
+				<div class="service-body">
+					<p><?php esc_html_e( 'The brand system includes the menu and the pickup order. WooCommerce takes the order. Each one becomes a kitchen ticket and is sent to the printer at the restaurant.', 'dphilhower-studio' ); ?></p>
+					<ul>
+						<li><?php esc_html_e( 'Identity, menu, order, ticket, printer', 'dphilhower-studio' ); ?></li>
+						<li><?php esc_html_e( 'WooCommerce pickup, no shipping', 'dphilhower-studio' ); ?></li>
+						<li><?php esc_html_e( 'One ticket per order', 'dphilhower-studio' ); ?></li>
+						<li><?php esc_html_e( 'Network printer on port 9100', 'dphilhower-studio' ); ?></li>
+					</ul>
+					<p><a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/order/' ) ); ?>"><?php esc_html_e( 'Open the order system', 'dphilhower-studio' ); ?></a></p>
+				</div>
+			</article>
 		</div>
 	</section>
 	<?php get_template_part( 'template-parts/process-section' ); ?>

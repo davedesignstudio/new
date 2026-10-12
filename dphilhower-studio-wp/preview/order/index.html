@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurant order system — D Philhower Studio</title>
+  <meta name="description" content="Design system for restaurant brands: identity, menu, WooCommerce pickup orders, and a kitchen ticket sent to the printer at the restaurant.">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/editorial.css">
+  <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand-mark" href="../index.html"><img src="../img/d-philhower-lockup.png" alt="D Philhower Studio" width="1024" height="1024"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <ul class="nav" id="site-nav">
+      <li><a href="../work/index.html">Brands</a></li>
+      <li><a href="../services/index.html">Services</a></li>
+      <li><a href="../order/index.html" aria-current="page">Order</a></li>
+      <li><a href="../about/index.html">About</a></li>
+      <li class="cta"><a href="../contact/index.html">Start a project</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    <header class="page-hero">
+      <p class="section-label">Design system</p>
+      <h1>Build the brand. Take the order. Print the ticket.</h1>
+      <p>Five layers, one restaurant. WooCommerce records the pickup order. The kitchen ticket is sent to the printer at the restaurant when the order is placed.</p>
+    </header>
+    <section class="section" style="padding-top:0">
+      <div class="system-layers">
+        <article>
+          <span class="process-num">01</span>
+          <h3>Identity</h3>
+          <p>Lock the mark, the colors, and the type. The same kit has to read on the window, the menu, and the phone.</p>
+        </article>
+        <article>
+          <span class="process-num">02</span>
+          <h3>Menu</h3>
+          <p>Categories, kitchen names, and prices. The server owns the price. The cart only sends a sku and a quantity.</p>
+        </article>
+        <article>
+          <span class="process-num">03</span>
+          <h3>Order</h3>
+          <p>WooCommerce takes the order: guest name, phone, ready window, and a note. Pickup. No shipping.</p>
+        </article>
+        <article>
+          <span class="process-num">04</span>
+          <h3>Ticket</h3>
+          <p>One kitchen ticket per order. Item, quantity, total, and the note. Nothing else.</p>
+        </article>
+        <article>
+          <span class="process-num">05</span>
+          <h3>Printer</h3>
+          <p>The ticket is sent to the printer at the restaurant (port 9100) when the order is placed. A second status change does not print it again.</p>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="order">
+      <p class="section-label">Studio sample</p>
+      <h2 class="section-title">Ember Pie Co. pickup</h2>
+      <p class="order-note">Ember Pie Co. is a studio identity, not a live account. Prices are checked on the server. Place an order and the ticket is what the restaurant printer receives.</p>
+      <div class="order-desk">
+        <div>
+          <div class="menu-group">
+            <h3>Pies</h3>
+            <button class="menu-item" type="button" data-sku="ember-plain"><span><b>Plain pie<span class="qty-badge"></span></b><small>Plain pie</small></span><span>$16.00</span></button>
+            <button class="menu-item" type="button" data-sku="ember-pepperoni"><span><b>Pepperoni pie<span class="qty-badge"></span></b><small>Pepperoni pie</small></span><span>$18.00</span></button>
+            <button class="menu-item" type="button" data-sku="ember-margherita"><span><b>Margherita pie<span class="qty-badge"></span></b><small>Margherita pie</small></span><span>$19.00</span></button>
+          </div>
+          <div class="menu-group">
+            <h3>After 4</h3>
+            <button class="menu-item" type="button" data-sku="ember-slice"><span><b>Cheese slice<span class="qty-badge"></span></b><small>Cheese slice</small></span><span>$4.00</span></button>
+            <button class="menu-item" type="button" data-sku="ember-salad"><span><b>Green salad<span class="qty-badge"></span></b><small>Green salad</small></span><span>$8.00</span></button>
+          </div>
+        </div>
+        <form class="order-panel" id="order-form" method="post" action="api/order">
+          <h2>Ticket</h2>
+          <ul class="order-lines" id="order-lines"></ul>
+          <p class="order-total"><span>Total</span><span id="order-total">$0.00</span></p>
+          <input type="hidden" name="items" id="order-items" value="[]">
+          <label>Name on the ticket
+            <input name="guest" required maxlength="80" autocomplete="name">
+          </label>
+          <label>Phone
+            <input name="phone" type="tel" maxlength="24" autocomplete="tel">
+          </label>
+          <label>Ready window
+            <input name="ready" maxlength="40" placeholder="6:30 PM">
+          </label>
+          <label>Note for the kitchen
+            <textarea name="note" rows="3" maxlength="240"></textarea>
+          </label>
+          <div class="order-actions">
+            <button class="btn btn-primary" type="submit">Place order</button>
+            <button class="btn btn-ghost" type="button" id="order-sample">Send a sample ticket</button>
+            <button class="btn btn-ghost" type="button" id="order-clear">Clear</button>
+          </div>
+          <p class="order-status" id="order-status" role="status"></p>
+        </form>
+      </div>
+      <section class="printer-slip" id="printer-received" hidden>
+        <h2>Printer received</h2>
+        <p>This is the ticket that went to the restaurant printer.</p>
+        <pre id="printer-ticket"></pre>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="dps-year">2026</span> D Philhower Studio · dphilhower.com</span>
+      <a href="../services/index.html">Services</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script src="order.js"></script>
+</body>
+</html>

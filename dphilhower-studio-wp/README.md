@@ -30,6 +30,21 @@ bash dphilhower-studio-wp/scripts/build-packages.sh
 
 Edit studio email, phone, location, and hero copy under **Appearance → Customize → Studio details**.
 
+## Restaurant order system
+
+The theme includes a five-layer system for a restaurant brand: identity, menu, WooCommerce pickup order, kitchen ticket, and the printer at the restaurant.
+
+1. Install and activate **WooCommerce**. The theme adds the Ember Pie Co. studio sample menu as virtual products (a studio identity, not a live account).
+2. For pay-at-pickup, enable **Cash on delivery** and rename it in WooCommerce. Those orders move to Processing and print immediately. Card payments print when the order reaches Processing, after payment.
+3. Set the printer under **Appearance → Customize → Kitchen printer**. Choose “Restaurant printer on the network” and enter the printer’s IP. Port **9100** is the usual raw/AppSocket port. Until a host is set, tickets are saved under `wp-content/uploads/dps-kitchen/`.
+4. The Order page (`/order/`) places a pickup order. Each order prints once. In WooCommerce, the order action **Send ticket to kitchen printer** prints it again.
+
+The static preview of that flow is `preview/order/`. Run it with PHP so the sample order can reach a printer:
+
+```bash
+php -S 127.0.0.1:8770 -t dphilhower-studio-wp/preview dphilhower-studio-wp/preview/order/router.php
+```
+
 ## Install the theme zip (you already have WordPress)
 
 1. In wp-admin go to **Appearance → Themes → Add New → Upload Theme**.

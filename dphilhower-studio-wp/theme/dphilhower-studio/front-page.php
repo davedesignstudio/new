@@ -115,6 +115,15 @@ $contact_url = $contact ? get_permalink( $contact ) : home_url( '/contact/' );
 		</p>
 	</section>
 
+	<section class="section reveal" id="ordering">
+		<p class="section-label"><?php esc_html_e( 'Restaurant system', 'dphilhower-studio' ); ?></p>
+		<h2 class="section-title is-wide"><?php esc_html_e( 'Identity, menu, order, ticket, printer', 'dphilhower-studio' ); ?></h2>
+		<p class="section-copy is-wide"><?php esc_html_e( 'A restaurant brand is not finished at the logo. WooCommerce takes the pickup order. Each order is one kitchen ticket, sent to the printer at the restaurant when it is placed.', 'dphilhower-studio' ); ?></p>
+		<p class="cta-row">
+			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/order/' ) ); ?>"><?php esc_html_e( 'Open the order system', 'dphilhower-studio' ); ?></a>
+		</p>
+	</section>
+
 	<?php get_template_part( 'template-parts/process-section' ); ?>
 
 	<section class="section locale reveal">
